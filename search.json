@@ -161,6 +161,20 @@
     "text": "Slack\n\nOnline forum for asking and answering questions\nPrivate repo in the course organization\nYou will need to join the course organization for access\nAsk and answer questions related to course logistics, assignment, etc. here\nPersonal questions (e.g., extensions, illnesses, etc.) should be via email to me\nOnce you join, browse the channels to make sure you’re posting questions in the right channel, update your profile with your name, photo/avatar of you that matches your GitHub profile, and your pronouns\nUnfortunately Slack is not the best place to in-depth questions, but it’s a great place for real-time connection and collaboration"
   },
   {
+    "objectID": "lectures/01/01-welcome.html#github",
+    "href": "lectures/01/01-welcome.html#github",
+    "title": "Welcome to STA 113FS",
+    "section": "GitHub",
+    "text": "GitHub\n\nhttps://github.com/sta113-f23\n\n\nGitHub organization for the course\nAll of your work and your membership (enrollment) in the organization is private\nEach assignment is a private repo on GitHub, I distribute the assignments on GitHub and you submit them there\nFeedback on assignments is given as GitHub issues, scores recorded on Canvas Gradebook"
+  },
+  {
+    "objectID": "lectures/01/01-welcome.html#github-username-advice",
+    "href": "lectures/01/01-welcome.html#github-username-advice",
+    "title": "Welcome to STA 113FS",
+    "section": "GitHub username advice",
+    "text": "GitHub username advice\nSome brief advice about selecting your account names (particularly for GitHub),\n\nIncorporate your actual name! People like to know who they’re dealing with and makes your username easier for people to guess or remember\nReuse your username from other contexts, e.g., Twitter or Slack\nPick a username you will be comfortable revealing to your future boss\nShorter is better than longer, but be as unique as possible\nMake it timeless. Avoid highlighting your current university, employer, or place of residence"
+  },
+  {
     "objectID": "lectures/01/01-welcome.html#to-do-before-1",
     "href": "lectures/01/01-welcome.html#to-do-before-1",
     "title": "Welcome to STA 113FS",
@@ -289,7 +303,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "STA 101: Data Analysis and Statistical Inference",
+    "title": "STA 113: Visualizing Data",
     "section": "",
     "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n  \n    \n    \n    \n    \n    \n    \n  \n  \n    \n    \n      WEEK\n      DATE\n      TOPIC\n      PREPARE\n      MATERIALS\n      DUE\n    \n  \n  \n    1\nTue, Aug 29\nWelcome to STA 113FS!\n\n\n🖥️ slides \n☁️ [ae-01] - To be posted \n🔘 Survey: Getting to know you\n\n\n    \nThu, Aug 31\n\n\n\n\n    2\nTue, Sep 5\n\n\n\n\n    \nThu, Sep 7\n\n\n\n\n    3\nTue, Sep 12\n\n\n\n\n    \nThu, Sep 14\n\n\n\n\n    4\nTue, Sep 19\n\n\n\n\n    \nThu, Sep 21\n\n\n\n\n    5\nTue, Sep 26\n\n\n\n\n    \nThu, Sep 28\n\n\n\n\n    6\nTue, Oct 3\nExam 1 - In class\n\n\n\n\n    \nThu, Oct 5\n\n\n\nExam 1 - Take home at 1 pm\n\n    7\nTue, Oct 10\n\n\n\n\n    \nThu, Oct 12\nProject 1 presentations\n\n\n\nProject 1 at 1pm\n\n    8\nTue, Oct 17\nFall Break - No lecture\n\n\n\n\n    \nThu, Oct 19\n\n\n\n\n    9\nTue, Oct 24\n\n\n\n\n    \nThu, Oct 26\n\n\n\n\n    10\nTue, Oct 31\n\n\n\n\n    \nThu, Nov 2\n\n\n\n\n    11\nTue, Nov 7\n\n\n\n\n    \nThu, Nov 9\n\n\n\n\n    12\nTue, Nov 14\nExam 2 - In class\n\n\n\n\n    \nThu, Nov 16\n\n\n\nExam 2 - Take home at 1 pm\n\n    13\nTue, Nov 21\n\n\n\n\n    \nThu, Nov 23\nThanksgiving Break - No lecture\n\n\n\n\n    14\nTue, Nov 28\n\n\n\n\n    \nThu, Nov 30\n\n\n\n\n    15\nTue, Dec 5\n\n\n\n\n    \nThu, Dec 7\nProject 2 presentations\n\n\n\nProject 2 at 1 pm"
   },
