@@ -44,8 +44,6 @@ Shelby Tisdale
 ::: task
 -   Form a small group (2-4 people) with people sitting around you
 
--   First, introduce yourselves to each other -- name (and proper pronunciation of name), year, major, where are you from, etc.
-
 -   Play the game: <https://nyti.ms/3suUJHG>
 :::
 
@@ -210,7 +208,7 @@ Presentation dates cannot be changed. If you can't present on that date, you sho
 
 -   Only work that is clearly assigned as team work should be completed collaboratively (projects)
 
--   Exams must be completed individually, you may not discuss answers with teammates, clarification questions should only be asked to myself and the TAs
+-   Exams must be completed individually, you may not discuss answers with teammates, clarification questions should only be asked to myself and the TA
 
 -   HW must be completed individually. You may not directly share answers / code with others, however you are welcome to discuss the problems in general and ask for advice
 
@@ -256,9 +254,9 @@ ask if you're not sure if something violates a policy!
 
 ## Office hours
 
--   Mine: Tuesdays 3:30 - 4:30 pm - Old Chem 213 + by appointment (on Zoom or in person depending on day/time)
+-   Mine: TBA
 
--   TAs: See the course team and course support pages on the course website. We have a total of 17 TA office hours per week!
+-   Shelby: Thu 3-4 pm in Old Chem 213 and Sun 7 - 8 pm on Zoom (link to be shared)
 
 -   \+ lots more resources listed on the syllabus!
 
