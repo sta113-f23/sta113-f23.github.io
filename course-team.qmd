@@ -18,6 +18,7 @@ title: "Teaching team"
 
 [Shelby Tisdale](https://www.linkedin.com/in/shelby-tisdale-0497091b4/) is our teaching assistant. Shelby is a Statistical Science major and she is also pursuing secondary teacher certification in mathematics and a certificate in Child Policy Research.
 
-| Office hours | Location |
-|--------------|----------|
-| TBA          | TBA      |
+| Office hours | Location     |
+|--------------|--------------|
+| Thu 3 - 4 pm | Old Chem 213 |
+| Sun 7 - 8 pm | Zoom         |
