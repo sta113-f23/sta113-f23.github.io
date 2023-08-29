@@ -96,8 +96,8 @@ website:
 format:
   html:
     theme:
-      light: [cosmo, style/sta101.scss]
-      dark: [cosmo, style/sta101.scss, style/dark.scss]
+      light: [cosmo, style/sta113.scss]
+      dark: [cosmo, style/sta113.scss, style/dark.scss]
     linkcolor: "#0E538F"
     toc: true
     code-copy: true
