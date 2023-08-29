@@ -195,7 +195,6 @@ Presentation dates cannot be changed. If you can't present on that date, you sho
 
     -   Late, but within 24 hours of deadline: -20% of available points
     -   Any later: No credit, and we will not provide written feedback
-    -   Two days late or later: No credit, and we will not provide written feedback
 
 -   Project presentation: Late submissions not accepted
 
