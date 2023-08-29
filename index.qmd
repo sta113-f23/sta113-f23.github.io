@@ -1,5 +1,5 @@
 ---
-title: "STA 101: Data Analysis and Statistical Inference"
+title: "STA 113: Visualizing Data"
 execute: 
   freeze: false
 ---
