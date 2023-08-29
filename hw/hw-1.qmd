@@ -1,6 +1,5 @@
 ---
 title: "HW 1"
-subtitle: "STA 101 - Fall 2023"
 editor: visual
 ---
 
