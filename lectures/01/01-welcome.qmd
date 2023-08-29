@@ -302,6 +302,34 @@ I want to make sure that you learn everything you were hoping to learn from this
 
 -   **Unfortunately** Slack is **not** the best place to in-depth questions, but it's a great place for real-time connection and collaboration
 
+## GitHub
+
+::: {.large style="text-align: center;"}
+<https://github.com/sta113-f23>
+:::
+
+-   GitHub organization for the course
+
+-   All of your work and your membership (enrollment) in the organization is private
+
+-   Each assignment is a private repo on GitHub, I distribute the assignments on GitHub and you submit them there
+
+-   Feedback on assignments is given as GitHub issues, scores recorded on Canvas Gradebook
+
+## GitHub username advice
+
+Some brief advice about selecting your account names (particularly for GitHub),
+
+-   Incorporate your actual name! People like to know who they're dealing with and makes your username easier for people to guess or remember
+
+-   Reuse your username from other contexts, e.g., Twitter or Slack
+
+-   Pick a username you will be comfortable revealing to your future boss
+
+-   Shorter is better than longer, but be as unique as possible
+
+-   Make it timeless. Avoid highlighting your current university, employer, or place of residence
+
 # To do before...
 
 ## To do before... {.smaller}

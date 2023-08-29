@@ -8,9 +8,9 @@
 
 $font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
 $font-family-monospace: "Source Code Pro", monospace;
-$presentation-heading-color: #798b93;
-$link-color: #798b93;
-$code-color: #798b93;
+$presentation-heading-color: #0E538F;
+$link-color: #0E538F;
+$code-color: #0E538F;
 $code-block-font-size: 0.7em;
 $presentation-h2-font-size: 1.4em !default;
 $presentation-h3-font-size: 1.1em !default;
@@ -24,14 +24,14 @@ details>summary {
 }
 
 #title-slide .subtitle {
-  color: #798b93;
+  color: #0E538F;
   font-weight: bold;
   text-align: left;
 }
 
 #title-slide .title {
   text-align: left;
-  color: #798b93;
+  color: #0E538F;
 }
 
 #title-slide .institute {
@@ -60,7 +60,7 @@ details>summary {
 }
 
 .reveal h3 {
-  color: #93798b;
+  color: #8f0e53;
 }
 
 .reveal .hand {
@@ -81,6 +81,6 @@ details>summary {
   padding-bottom: 3px;
   margin-bottom: 6px;
   margin-top: 6px;
-  border-left: solid 5px #798b93;
-  background-color: #798b9350;
+  border-left: solid 5px #0E538F;
+  background-color: #0E538F50;
 }
