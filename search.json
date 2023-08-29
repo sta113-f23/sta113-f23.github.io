@@ -18,7 +18,7 @@
     "href": "lectures/01/01-welcome.html#lets-play-a-game",
     "title": "Welcome to STA 113FS",
     "section": "Let’s play a game!",
-    "text": "Let’s play a game!\n\n\nForm a small group (2-4 people) with people sitting around you\nFirst, introduce yourselves to each other – name (and proper pronunciation of name), year, major, where are you from, etc.\nPlay the game: https://nyti.ms/3suUJHG"
+    "text": "Let’s play a game!\n\n\nForm a small group (2-4 people) with people sitting around you\nPlay the game: https://nyti.ms/3suUJHG"
   },
   {
     "objectID": "lectures/01/01-welcome.html#course-website",
@@ -109,7 +109,7 @@
     "href": "lectures/01/01-welcome.html#collaboration-policy",
     "title": "Welcome to STA 113FS",
     "section": "Collaboration policy",
-    "text": "Collaboration policy\n\nOnly work that is clearly assigned as team work should be completed collaboratively (projects)\nExams must be completed individually, you may not discuss answers with teammates, clarification questions should only be asked to myself and the TAs\nHW must be completed individually. You may not directly share answers / code with others, however you are welcome to discuss the problems in general and ask for advice"
+    "text": "Collaboration policy\n\nOnly work that is clearly assigned as team work should be completed collaboratively (projects)\nExams must be completed individually, you may not discuss answers with teammates, clarification questions should only be asked to myself and the TA\nHW must be completed individually. You may not directly share answers / code with others, however you are welcome to discuss the problems in general and ask for advice"
   },
   {
     "objectID": "lectures/01/01-welcome.html#sharing-reusing-code-policy",
@@ -137,7 +137,7 @@
     "href": "lectures/01/01-welcome.html#office-hours",
     "title": "Welcome to STA 113FS",
     "section": "Office hours",
-    "text": "Office hours\n\nMine: Tuesdays 3:30 - 4:30 pm - Old Chem 213 + by appointment (on Zoom or in person depending on day/time)\nTAs: See the course team and course support pages on the course website. We have a total of 17 TA office hours per week!\n+ lots more resources listed on the syllabus!"
+    "text": "Office hours\n\nMine: TBA\nShelby: Thu 3-4 pm in Old Chem 213 and Sun 7 - 8 pm on Zoom (link to be shared)\n+ lots more resources listed on the syllabus!"
   },
   {
     "objectID": "lectures/01/01-welcome.html#wellness",
@@ -186,7 +186,7 @@
     "href": "lectures/01/01-welcome.html#application-exercise-un-votes",
     "title": "Welcome to STA 113FS",
     "section": "Application exercise: UN Votes",
-    "text": "Application exercise: UN Votes\n\nGo to Posit Cloud and start the project called UN Votes. Render the document titled unvotes.qmd. Review the narrative and the data visualization you just created. Then, change “Turkey” to another country of your choice. Re-render the document. Show the plot you created to your neighbor and discuss (1) why you chose that country and (2) how this new visualization is different than the original (and what that says about country politics, if anything).\nTime permitting: How were these data collected?\n\n\n\n\n🔗 sta113-f23.github.io"
+    "text": "Application exercise: UN Votes\n\nGo to Posit Cloud and start the project called UN Votes. Render the document titled unvotes.qmd. Review the narrative and the data visualization you just created. Then, change “Turkey” to another country of your choice. Re-render the document. Show the plot you created to your neighbor and discuss (1) why you chose that country and (2) how this new visualization is different than the original (and what that says about country politics, if anything).\n\n\n\n\n🔗 sta113-f23.github.io"
   },
   {
     "objectID": "course-support.html",
