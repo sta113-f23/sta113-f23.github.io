@@ -356,6 +356,4 @@ See course announcement (on Canvas or in your email) and click on the links to
 
 ::: task
 Go to Posit Cloud and start the project called UN Votes. Render the document titled `unvotes.qmd`. Review the narrative and the data visualization you just created. Then, change "Turkey" to another country of your choice. Re-render the document. Show the plot you created to your neighbor and discuss (1) why you chose that country and (2) how this new visualization is different than the original (and what that says about country politics, if anything).
-
-Time permitting: How were these data collected?
 :::
