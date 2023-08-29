@@ -1,6 +1,6 @@
-institute: "Duke University <br> STA 101 - Fall 2023"
+institute: "Duke University <br> STA 113 - Fall 2023"
 author: "Dr. Mine Çetinkaya-Rundel"
-footer: "[🔗 sta101-f23.github.io](https://sta101-f23.github.io/)"
+footer: "[🔗 sta113-f23.github.io](https://sta113-f23.github.io/)"
 logo: "../logo.png"
 format:
   revealjs:
