@@ -1,0 +1,23 @@
+---
+title: "Teaching team"
+---
+
+## Instructor
+
+![](images/team/mine.png){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Dr. Mine Çetinkaya-Rundel" width="200"}
+
+[**Dr. Mine Çetinkaya-Rundel**](http://mine-cr.com/) (she/her) is Professor of the Practice and Director of Undergraduate Studies at the [Department of Statistical Science](https://stat.duke.edu/) at Duke University and an affiliated faculty in the [Computational Media, Arts, and Cultures](https://cmac.duke.edu/). Mine's work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education as well as pedagogical approaches for enhancing retention of women and under-represented minorities in STEM.
+
+| Office hours       | Location     |
+|--------------------|--------------|
+| Tue 3:30 - 5:30 pm | Old Chem 213 |
+
+## Teaching assistant
+
+![](images/team/shelby.png){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Shelby Tisdale" width="200"}
+
+[Shelby Tisdale](https://www.linkedin.com/in/shelby-tisdale-0497091b4/) is our teaching assistant. Shelby is a Statistical Science major and she is also pursuing secondary teacher certification in mathematics and a certificate in Child Policy Research.
+
+| Office hours | Location |
+|--------------|----------|
+| TBA          | TBA      |

@@ -1,0 +1,14 @@
+institute: "Duke University <br> STA 101 - Fall 2023"
+author: "Dr. Mine Çetinkaya-Rundel"
+footer: "[🔗 sta101-f23.github.io](https://sta101-f23.github.io/)"
+logo: "../logo.png"
+format:
+  revealjs:
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    chalkboard: true
+editor: visual
+execute:
+  freeze: auto
+  echo: true

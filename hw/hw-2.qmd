@@ -1,0 +1,7 @@
+---
+title: "HW 2"
+subtitle: "STA 101 - Fall 2023"
+editor: visual
+---
+
+To be posted...

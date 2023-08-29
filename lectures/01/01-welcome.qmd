@@ -1,0 +1,335 @@
+---
+title: Welcome to STA 113FS
+subtitle: Lecture 1
+format: revealjs
+auto-stretch: false
+---
+
+# Course Details
+
+## Teaching team {.smaller}
+
+::: columns
+::: {.column width="50%"}
+### Instructor
+
+Dr. Mine Çetinkaya-Rundel
+
+Old Chem 213
+
+[mc301\@duke.edu](mailto:mc301@duke.edu)
+:::
+
+::: {.column width="50%"}
+### Teaching assistant
+
+Shelby Tisdale
+
+[shelby.tisdale\@duke.edu](mailto:shelby.tisdale@duke.edu)
+:::
+:::
+
+## Learning objectives {.smaller}
+
+-   Learn a modern toolkit commonly used in data science research and careers (R, RStudio, Quarto, Git, GitHub).
+-   Introduce students to the ideas and methods of data visualization in a comprehensible reproducible way using this toolkit.
+-   Understand the principles of designing and creating data visualizations.
+-   Evaluate, critique, and improve upon one's own and others' data visualizations through an iterative process.
+-   Use data visualization to look for and answer questions of societal importance and of interest to students.
+
+# But first...
+
+## Let's play a game!
+
+::: task
+-   Form a small group (2-4 people) with people sitting around you
+
+-   First, introduce yourselves to each other -- name (and proper pronunciation of name), year, major, where are you from, etc.
+
+-   Play the game: <https://nyti.ms/3suUJHG>
+:::
+
+# Course components
+
+## Course website
+
+::: {.large style="text-align: center;"}
+[sta113-f23.github.io](https://sta113-f23.github.io/)
+:::
+
+::: {.hand-pink style="text-align: center;"}
+aka "the one link to rule them all"
+:::
+
+::: {style="text-align: center;"}
+```{=html}
+<iframe width="1000" height="400" src="https://sta113-f23.github.io/" frameborder="1" style="background:white;"></iframe>
+```
+:::
+
+## Lectures
+
+-   In person
+
+-   Attendance is required (as long as you're healthy!)
+
+-   A little bit of everything:
+
+    -   Traditional lecture
+    -   Live coding + demos
+    -   Short exercises + solution discussion
+
+-   Recordings will be posted after class -- to be used for review + make-up if you can't make it to class due to health reasons, they're not an alternative to class attendance
+
+## Announcements
+
+-   Posted on Canvas (Announcements) and sent via email, be sure to check both regularly
+
+-   I'll assume that you've read an announcement by the next "business" day
+
+## Diversity and inclusion {.smaller}
+
+It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.
+
+-   If you have a name that differs from those that appear in your official Duke records, please let me know! Add your name pronunciation to your Canvas and Slack profiles.
+
+-   Please let me know your preferred pronouns and add these to your Canvas and Slack profiles.
+
+-   If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.
+
+-   I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it.
+
+## Accessibility
+
+-   The [Student Disability Access Office (SDAO)](https://access.duke.edu/students) is available to ensure that students are able to engage with their courses and related assignments.
+
+-   We will have **in class exams**. If you need special accommodations, please book the **testing center** ASAP!
+
+-   I am committed to making all course materials accessible and I'm always learning how to do this better. If any course component is not accessible to you in any way, please don't hesitate to let me know.
+
+# Assessments
+
+## Attendance + participation (10%)
+
+Required throughout the semester as well as on Slack
+
+::: callout-tip
+If you attend at least 80% of the classes, you'll get all available points for this component.
+:::
+
+## HW (25%)
+
+Submitted as GitHub repos, individual, can discuss with classmates
+
+::: callout-tip
+Lowest HW score is dropped, whether it's an actual low score or a 0 from not turning it in.
+:::
+
+## Exams {.smaller}
+
+-   Two exams, each 15%
+
+-   Each exam comprised of two parts:
+
+    -   In class: 75 minute in-class exam. Closed book, one sheet of notes ("cheat sheet", no larger than 8 1/2 x 11, both sides, **must be prepared by you**) -- 70% of the grade
+
+    -   Take home: 48 hours to complete the take home portion. The take home portion will follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam -- 30% of the grade
+
+::: callout-caution
+Exam dates cannot be changed and no make-up exams will be given. If you can't take the exams on these dates, you should drop this class.
+:::
+
+## Projects {.smaller}
+
+-   Project 1 (15%)
+
+    -   Same data, limited methods
+
+-   Project 2 (20%)
+
+    -   Dataset of your choice, method of your choice
+    -   New team
+
+-   Both projects have a presentation and write-up
+
+-   Interim deadlines, peer review on content, peer evaluation for team contribution
+
+-   Some class sessions allocated to working on projects, doing peer review, getting feedback from TA and instructor
+
+::: callout-caution
+Presentation dates cannot be changed. If you can't present on that date, you should drop this class.
+:::
+
+## Teams
+
+-   Teamwork
+    -   Projects (required), in class exercises (recommended)
+    -   Assigned different teams for each project
+    -   Peer evaluation during teamwork and after completion
+-   Expectations and roles
+    -   Everyone is expected to contribute equal *effort*
+    -   Everyone is expected to understand *all* code turned in
+    -   Individual contribution evaluated by peer evaluation, commits, etc.
+
+# Course policies
+
+## COVID policies
+
+-   Wear a mask if the university requires
+
+-   Stay home if you're sick and follow guidance
+
+-   Read and follow university guidance
+
+## Late work policy {.smaller}
+
+-   Interactive tutorials: Late submissions past the hard deadlines not accepted
+
+-   HW:
+
+    -   Late, but within 24 hours of deadline: -20% of available points
+
+    -   Any later: No credit, and we will not provide written feedback
+
+    -   Note that lowest HW score will be dropped, even if that score is a 0
+
+-   Project write-ups:
+
+    -   Late, but within 24 hours of deadline: -20% of available points
+    -   Any later: No credit, and we will not provide written feedback
+    -   Two days late or later: No credit, and we will not provide written feedback
+
+-   Project presentation: Late submissions not accepted
+
+-   Peer evaluation:
+
+    -   Late submissions not accepted
+    -   Must turn in peer evaluation if you want your own score from others
+
+## Collaboration policy
+
+-   Only work that is clearly assigned as team work should be completed collaboratively (projects)
+
+-   Exams must be completed individually, you may not discuss answers with teammates, clarification questions should only be asked to myself and the TAs
+
+-   HW must be completed individually. You may not directly share answers / code with others, however you are welcome to discuss the problems in general and ask for advice
+
+## Sharing / reusing code policy
+
+-   We are aware that a huge volume of code is available on the web, and many tasks may have solutions posted
+
+-   Unless explicitly stated otherwise, this course's policy is that you may make use of any online resources (e.g., StackOverflow) but you must explicitly cite where you obtained any code you directly use or use as inspiration in your solution(s)
+
+-   Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism, regardless of source
+
+## Generative AI policy {.smaller}
+
+You should treat generative AI, such as ChatGPT, the same as other online resources. There are two guiding principles that govern how you can use AI in this course:[^1]
+
+[^1]: These guiding principles are based on [*Course Policies related to ChatGPT and other AI Tools*](https://docs.google.com/document/d/1WpCeTyiWCPQ9MNCsFeKMDQLSTsg1oKfNIH6MzoSFXqQ/preview) developed by Joel Gladd, Ph.D.
+
+\(1\) *Cognitive dimension:* Working with AI should not reduce your ability to think clearly. We will practice using AI to facilitate---rather than hinder---learning.
+
+\(2\) *Ethical dimension***:** Students using AI should be transparent about their use and make sure it aligns with academic integrity.
+
+-   **✅ AI tools for code:** You may make use of the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.
+
+-   **❌ AI tools for narrative:** Unless instructed otherwise, you may not use generative AI to write narrative on assignments. In general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect your understanding of the course content.
+
+## Academic integrity
+
+To uphold the Duke Community Standard:
+
+> -   I will not lie, cheat, or steal in my academic endeavors;
+> -   I will conduct myself honorably in all my endeavors; and
+> -   I will act if the Standard is compromised.
+
+<br><br>
+
+::: {.large .hand-pink style="text-align: center"}
+most importantly:
+
+ask if you're not sure if something violates a policy!
+:::
+
+# Support
+
+## Office hours
+
+-   Mine: Tuesdays 3:30 - 4:30 pm - Old Chem 213 + by appointment (on Zoom or in person depending on day/time)
+
+-   TAs: See the course team and course support pages on the course website. We have a total of 17 TA office hours per week!
+
+-   \+ lots more resources listed on the syllabus!
+
+## Wellness
+
+I want to make sure that you learn everything you were hoping to learn from this class. If this requires flexibility, please don't hesitate to ask.
+
+-   You never owe me personal information about your health (mental or physical) but you're always welcome to talk to me. If I can't help, I likely know someone who can.
+
+-   I want you to learn lots of things from this class, but I primarily want you to stay healthy, balanced, and grounded.
+
+# Course Tools
+
+## RStudio
+
+::: {.large style="text-align: center;"}
+<https://posit.cloud>
+:::
+
+-   Browser based RStudio instance(s) provided by Posit
+
+-   Requires internet connection to access
+
+-   Provides consistency in hardware and software environments
+
+-   Local R installations are fine but we will not guarantee support
+
+## Slack {.smaller}
+
+-   Online forum for asking and answering questions
+
+-   Private repo in the course organization
+
+-   You will need to join the course organization for access
+
+-   Ask **and answer** questions related to course logistics, assignment, etc. here
+
+-   Personal questions (e.g., extensions, illnesses, etc.) should be via email to me
+
+-   Once you join, browse the channels to make sure you're posting questions in the right channel, update your profile with your name, photo/avatar of you that matches your GitHub profile, and your pronouns
+
+-   **Unfortunately** Slack is **not** the best place to in-depth questions, but it's a great place for real-time connection and collaboration
+
+# To do before...
+
+## To do before... {.smaller}
+
+### we move on
+
+See course announcement (on Canvas or in your email) and click on the links to
+
+-   Log in to Posit Cloud -- and update your profile
+-   Log in to Slack -- and update your profile with your photo, pronouns, name pronunciation
+-   Complete the *Getting to know you* survey on Canvas
+
+### the next class on Thursday
+
+-   Read the [syllabus](https://sta101-f23.github.io/course-syllabus.html)
+
+-   Complete the readings
+
+### the end of the week
+
+-   Get started on the first HW assignment
+
+# Hello data
+
+## Application exercise: UN Votes
+
+::: task
+Go to Posit Cloud and start the project called UN Votes. Render the document titled `unvotes.qmd`. Review the narrative and the data visualization you just created. Then, change "Turkey" to another country of your choice. Re-render the document. Show the plot you created to your neighbor and discuss (1) why you chose that country and (2) how this new visualization is different than the original (and what that says about country politics, if anything).
+
+Time permitting: How were these data collected?
+:::

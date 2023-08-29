@@ -1,0 +1,9 @@
+---
+title: "Computing troubleshooting"
+---
+
+If you're having difficulty launching an RStudio session from Posit Cloud, go to [status.posit.co](https://status.posit.co/) and check under Posit Cloud.
+
+-   If it shows "Operational", this means the system is expected to be working. Check your internet connection, if need be, restart your computer to ensure a fresh new connection. If your issue persists, post on the course Slack with details on what you've tried and the errors you see (including verbatim errors and/or screenshots).
+
+-   If it shows "Partial Outage" or "Outage" (or anything other than "Operational"), this means there is a known incident with the containers. Check back later to see if it's been resolved. If there's a deadline coming up soon, post on the course Slack to let us know that there's an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don't anticipate this to happen regularly, the systems are Operational a huge majority of the time!s
