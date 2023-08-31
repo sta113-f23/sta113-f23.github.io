@@ -20,5 +20,5 @@ title: "Teaching team"
 
 | Office hours | Location     |
 |--------------|--------------|
-| Thu 3 - 4 pm | Old Chem 213 |
+| Thu 3 - 4 pm | Old Chem 025 |
 | Sun 7 - 8 pm | Zoom         |
