@@ -28,6 +28,9 @@ website:
       - icon: slack
         href: https://sta113-f23.slack.com
         text: "Slack"
+      - icon: file-play
+        href: https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=82374550-c813-415d-be91-b06f010856ce
+        text: "Panopto"
       - icon: person-fill
         text: "Canvas"
         menu:
