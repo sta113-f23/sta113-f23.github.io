@@ -5,6 +5,10 @@ format: html
 editor: visual
 ---
 
+::: {.callout-tip appearance="minimal" icon="false"}
+Go to Posit Cloud to get started.
+:::
+
 ## Introduction
 
 How do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.
