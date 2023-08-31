@@ -1,0 +1,211 @@
+---
+title: Meet the toolkit
+subtitle: Lecture 2
+format: revealjs
+auto-stretch: false
+---
+
+# Warm up
+
+## Reflection
+
+::: question
+What is one thing you learned from your reading that was "new" to you? And what is one question you have from the reading?
+:::
+
+## Announcements
+
+-   My office hours: Thursdays 10-11am on Zoom (link to be posted!)
+
+-   Course webpage updated with tentative schedule for due dates
+
+# From last time...
+
+## Application exercise: UN Votes
+
+::: task
+Go to Posit Cloud and start the project called **ae-01-un-votes**. Render the document titled `unvotes.qmd`. Review the narrative and the data visualization you just created. Then, change "Turkey" to another country of your choice. Re-render the document. Show the plot you created to your neighbor and discuss (1) why you chose that country and (2) how this new visualization is different than the original (and what that says about country politics, if anything).
+:::
+
+# Meet the toolkit: Computing with R and RStudio
+
+## Learning goals {.smaller}
+
+By the end of the course, you will be able to...
+
+::: incremental
+-   gain insight from data
+-   gain insight from data, **reproducibly**
+-   gain insight from data, reproducibly, **using modern programming tools and techniques**
+-   gain insight from data, reproducibly **and collaboratively**, using modern programming tools and techniques
+-   gain insight from data, reproducibly **(with literate programming and version control)** and collaboratively, using modern programming tools and techniques
+:::
+
+# Reproducible data analysis
+
+## Reproducibility checklist {.smaller}
+
+::: question
+What does it mean for a data analysis to be "reproducible"?
+:::
+
+. . .
+
+**Near-term goals:**
+
+-   Are the tables and figures reproducible from the code and data?
+-   Does the code actually do what you think it does?
+-   In addition to what was done, is it clear *why* it was done?
+
+. . .
+
+**Long-term goals:**
+
+-   Can the code be used for other data?
+-   Can you extend the code to do other things?
+
+## Toolkit for reproducibility
+
+-   Scriptability $\rightarrow$ R
+-   Literate programming (code, narrative, output in one place) $\rightarrow$ Quarto
+-   Version control $\rightarrow$ Git / GitHub
+
+# R and RStudio
+
+## R and RStudio {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](images/r-logo.png){fig-alt="R logo" fig-align="center"}
+
+-   R is an open-source statistical **programming language**
+-   R is also an environment for statistical computing and graphics
+-   It's easily extensible with *packages*
+:::
+
+::: {.column .fragment width="50%"}
+![](images/rstudio-logo.png){fig-alt="RStudio logo"}
+
+-   RStudio is a convenient interface for R called an **IDE** (integrated development environment), e.g. *"I write R code in the RStudio IDE"*
+-   RStudio is not a requirement for programming with R, but it's very commonly used by R programmers and data scientists
+:::
+:::
+
+## R vs. RStudio
+
+[![](images/r_vs_rstudio.png){fig-alt="On the left: a car engine. On the right: a car dashboard. The engine is labelled R. The dashboard is labelled RStudio." fig-align="center" width="1001"}](https://moderndive.com/1-getting-started.html)
+
+::: aside
+Source: [Modern Dive](https://moderndive.com/1-getting-started.html).
+:::
+
+## R packages
+
+::: incremental
+-   **Packages**: Fundamental units of reproducible R code, including reusable R functions, the documentation that describes how to use them, and sample data<sup>1</sup>
+
+-   As of September 2022, there are over 18,000 R packages available on **CRAN** (the Comprehensive R Archive Network)<sup>2</sup>
+
+-   We're going to work with a small (but important) subset of these!
+:::
+
+::: aside
+<sup>1</sup> Wickham and Bryan, [R Packages](https://r-pkgs.org/).
+
+<sup>2</sup> [CRAN contributed packages](https://cran.r-project.org/web/packages/).
+:::
+
+## Tour: R and RStudio
+
+![](images/tour-r-rstudio.png)
+
+## A short list (for now) of R essentials
+
+-   Functions are (most often) verbs, followed by what they will be applied to in parentheses:
+
+```{r}
+#| eval: false
+
+do_this(to_this)
+do_that(to_this, to_that, with_those)
+```
+
+. . .
+
+-   Packages are installed with the `install.packages()` function and loaded with the `library` function, once per session:
+
+```{r}
+#| eval: false
+
+install.packages("package_name")
+library(package_name)
+```
+
+## R essentials (continued)
+
+-   Columns (variables) in data frames are accessed with `$`:
+
+```{r}
+#| eval: false
+
+dataframe$var_name
+```
+
+. . .
+
+-   Object documentation can be accessed with `?`
+
+```{r}
+#| eval: false
+
+?mean
+```
+
+## tidyverse
+
+::: columns
+::: {.column width="50%"}
+[![](images/tidyverse.png){fig-alt="Hex logos for dplyr, ggplot2, forcats, tibble, readr, stringr, tidyr, and purrr"}](https://tidyverse.org)
+:::
+
+::: {.column width="50%"}
+[tidyverse.org](https://www.tidyverse.org/)
+
+-   The **tidyverse** is an opinionated collection of R packages designed for data science
+-   All packages share an underlying philosophy and a common grammar
+:::
+:::
+
+# Quarto
+
+## Quarto
+
+::: incremental
+-   Fully reproducible reports -- each time you render the analysis is ran from the beginning
+-   Code goes in chunks narrative goes outside of chunks
+-   A visual editor for a familiar / Google docs-like editing experience
+:::
+
+## Tour: Quarto
+
+![](images/tour-quarto.png){fig-alt="RStudio IDE with a Quarto document, source code on the left and output on the right. Annotated to show the YAML, a link, a header, and a code chunk." fig-align="center"}
+
+## How will we use Quarto?
+
+-   Every assignment / report / project / etc. is an Quarto document
+-   You'll always have a template Quarto document to start with
+-   The amount of scaffolding in the template will decrease over the semester
+
+## Application exercise: Flint
+
+::: task
+Go to Posit Cloud and start the project called **ae-02-flint**. Open the document titled `flint.qmd`.
+:::
+
+# Wrap up
+
+## Next time
+
+- We'll continue out "Meet the toolkit" journey, focusing on version control tools, Git and GitHub, the last piece of the puzzle
+
+- We'll then move on to the nuts and bolts of data visualization in R with ggplot2
