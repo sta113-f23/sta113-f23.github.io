@@ -19,6 +19,9 @@ website:
     align: center
 
     tools:
+      - icon: github
+        href: https://github.com/sta113-f23
+        text: "GitHub"
       - icon: cloud
         href: https://posit.cloud/spaces/406325/
         text: "Posit Cloud"
