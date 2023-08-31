@@ -62,6 +62,9 @@ d |>
     materials ~ px(90),
     due ~ px(190)
   ) |>
+  cols_label(
+    due = "Due (at 1 pm)",
+  ) |>
   cols_label_with(fn = function(x) {
       janitor::make_clean_names(x, case = "title") |>
         toupper() |>
