@@ -206,6 +206,6 @@ Go to Posit Cloud and start the project called **ae-02-flint**. Open the documen
 
 ## Next time
 
-- We'll continue out "Meet the toolkit" journey, focusing on version control tools, Git and GitHub, the last piece of the puzzle
+-   We'll continue out "Meet the toolkit" journey, focusing on version control tools, Git and GitHub, the last piece of the puzzle
 
-- We'll then move on to the nuts and bolts of data visualization in R with ggplot2
+-   We'll then move on to the nuts and bolts of data visualization in R with ggplot2
