@@ -64,7 +64,7 @@ The data we will analyze contains monetary contributions from January 2019 to Ma
 [^2]: For a more recent list of such bills, see <https://www.aclu.org/legislative-attacks-on-lgbtq-rights>.
 
 |           |                                                                                                       |                                                  |
-|------------------|------------------------------------|------------------|
+|------------|---------------------|---------------------------------------|
 | **State** | **Bill Number**                                                                                       | **Purpose**                                      |
 | FL        | [CS/CS/HB 1557](https://www.flsenate.gov/Session/Bill/2022/1557/?Tab=BillText)                        | Silence discussion of queer identities in school |
 | AZ        | [SB.1138](https://apps.azleg.gov/BillStatus/BillOverview/76466)                                       | Restrict access to gender affirming healthcare   |
@@ -84,12 +84,14 @@ You can read the data as follows:
 anti_lgbtq <- read_csv("data/anti-lgbtq.csv")
 ```
 
-Descrition of variables is given in @tbl-codebook.
+The companies included in this dataset are corporations who are either Fortune 500 companies or Pride sponsors.
+
+Description of variables is given in @tbl-codebook.
 
 | Variable              | Description                                                                                                                                            |
-|------------------------|------------------------------------------------|
+|------------------------|-----------------------------------------------|
 | `company`             | Name of company                                                                                                                                        |
-| `pride_sponsor`       | Whether the company sponsored a Pride event                                                                                                            |
+| `pride_sponsor`       | Whether the company sponsored a Pride event in SF, NYC, Seattle, LA, Chicago, Houston, Atlanta, or Miami                                               |
 | `hrc_pledge`          | Whether the company took the [Human Rights Campaign Business Pledge](https://www.hrc.org/resources/business-statement-on-anti-lgbtq-state-legislation) |
 | `contribution_amount` | Amount of contribution, in USD                                                                                                                         |
 | `n_politicians`       | Number of anti-LGBTQ politicians supported                                                                                                             |
@@ -102,9 +104,10 @@ Descrition of variables is given in @tbl-codebook.
 
 ## Exercise 1
 
+Using inline code to generate the number of rows and columns and include them in a sentence, answer the following questions:
+
 -   How many rows are in the `anti_lgbtq` dataset? What does each row represent?
--   How many columns are in the `anti_lgbtq` dataset? Indicate the type of each variable.
--   Include the code and resulting output used to support your answer.
+-   How many columns are in the `anti_lgbtq` dataset? Indicate the type of each variable (categorical or numerical).
 
 ::: render-commit-push
 Now is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding. You can use a commit message like "Finished Exercise 1".
@@ -112,7 +115,7 @@ Now is a good time to render, commit, and push. Make sure that you commit and pu
 
 ## Exercise 2
 
-Visualize the distribution of contribution amounts using a histogram and a density plot. Based on the shape, calculate the appropriate summary statistics for the center and spread of the distribution. Using the visualization and the summary statistics you calculated, describe the distribution of contribution amounts to politicians sponsoring anti-LGBTQ+ legislation and/or government policy in the 2021-2022 legislative session.
+Visualize the distribution of contribution amounts using a histogram. Based on the shape, calculate the appropriate summary statistics for the center and spread of the distribution. Using the visualization and the summary statistics you calculated, describe the distribution of contribution amounts to politicians sponsoring anti-LGBTQ+ legislation and/or government policy in the 2021-2022 legislative session.
 
 ::: render-commit-push
 Now is again a good time to render, commit, and push, with a commit message line "Finished Exercise 2". Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
@@ -120,7 +123,13 @@ Now is again a good time to render, commit, and push, with a commit message line
 
 ## Exercise 3
 
-For this exercise, make two visualizations that display the distribution of pride sponsors based on whether the is a Fortune 500 company. The first distribution should allow you to compare the **numbers** of pride sponsors who are and are not Fortune 500 companies. The second visualization should allow you to compare the **proportions** instead. What information about these two variables can you
+For this exercise, make two visualizations that display the distribution of Pride sponsors based on whether the company is a Fortune 500 company.
+
+-   The first distribution should allow you to compare the **numbers** of Pride sponsors who are and are not Fortune 500 companies.
+
+-   The second visualization should allow you to compare the **proportions** instead.
+
+What information about these two variables can you
 
 -   get from both visualizations?
 
@@ -136,7 +145,7 @@ Render, commit, and push, with an appropriate commit message. Make sure that you
 
 ## Exercise 4
 
-Visualize the distribution of pride sponsors based on whether the company has made an HRC pledge. Make sure that your visualization allows you to make statements about the proportion of pride sponsors who have and have not made the HRC pledge. Describe the relationship, if any, between these two variables using features of your visualization as justification for your conclusions.
+First, make a bar plot of `hrc_pledge` and take note of the number of companies who have take the HRC pledge. Then, visualize the distribution of pride sponsors based on whether the company has made an HRC pledge. Make sure that your visualization allows you to make statements about the proportion of pride sponsors who have and have not made the HRC pledge. Describe the relationship, if any, between these two variables using features of your visualization as justification for your conclusions.
 
 ::: render-commit-push
 Render, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
@@ -148,10 +157,9 @@ Suppose you're helping a friend who is writing a piece for The Chronicle about c
 
 Luckily, you can help them answer this question with data visualization!
 
--   Make histograms of contribution amounts based on whether the company sponsored a Pride event by creating a different facet for each type of company. Pay attention to whether these facets should be stacked or placed next to each other for more straightforward comparison of distributions of contribution amounts.
--   Choose an appropriate binwidth and decide whether a legend is needed, and turn it off if not.
+-   Make side-by-side box plots of contribution amounts based on whether the company sponsored a Pride.
 -   Include informative title and axis labels.
--   Finally, include a brief (2-3 sentence) narrative comparing the distributions of anti-LGBTQ+ contribution amounts from companies that did and did not sponsor Pride events. Your narrative should touch on whether having sponsored a Pride event "makes a difference" in terms of the contribution amount.
+-   Finally, write a brief narrative comparing the distributions of anti-LGBTQ+ contribution amounts from companies that did and did not sponsor Pride events. Your narrative should touch on whether having sponsored a Pride event "makes a difference" in terms of the contribution amount.
 
 ::: render-commit-push
 Render, commit, and push, with an appropriate commit message. Before proceeding, check that you've committed and pushed all changed documents and your Git pane is completely empty.
