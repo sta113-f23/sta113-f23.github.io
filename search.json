@@ -408,9 +408,114 @@
   {
     "objectID": "hw/hw-1.html",
     "href": "hw/hw-1.html",
-    "title": "HW 1",
+    "title": "HW 1 - Anti-LGBTQ+ contributions",
     "section": "",
-    "text": "To be posted…"
+    "text": "Important\n\n\n\nThis homework is due Tuesday, Sep 12 at 1:00 pm ET."
+  },
+  {
+    "objectID": "hw/hw-1.html#packages",
+    "href": "hw/hw-1.html#packages",
+    "title": "HW 1 - Anti-LGBTQ+ contributions",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "hw/hw-1.html#sec-guidelines-tips",
+    "href": "hw/hw-1.html#sec-guidelines-tips",
+    "title": "HW 1 - Anti-LGBTQ+ contributions",
+    "section": "Guidelines + tips",
+    "text": "Guidelines + tips\nAs we’ve discussed in lecture, your plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.\nRemember that continuing to develop a sound workflow for reproducible data analysis is important as you complete this homework and other assignments in this course. There will be periodic reminders in this assignment to remind you to knit, commit, and push your changes to GithHub. You should have at least 3 commits with meaningful commit messages by the end of the assignment.\n\n\n\n\n\n\nNote\n\n\n\nNote: Do not let R output answer the question for you unless the question specifically asks for just a plot. For example, if the question asks for the number of columns in the data set, please type out the number of columns. You are subject to lose points if you do not."
+  },
+  {
+    "objectID": "hw/hw-1.html#workflow-formatting",
+    "href": "hw/hw-1.html#workflow-formatting",
+    "title": "HW 1 - Anti-LGBTQ+ contributions",
+    "section": "Workflow + formatting",
+    "text": "Workflow + formatting\nMake sure to\n\nUpdate author name on your document.\nLabel all code chunks informatively and concisely.\nFollow the Tidyverse code style guidelines.\nMake at least 3 commits.\nResize figures where needed, avoid tiny or huge plots.\nUse informative title and axis labels.\nTurn in an organized, well formatted document."
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-1",
+    "href": "hw/hw-1.html#exercise-1",
+    "title": "HW 1 - Anti-LGBTQ+ contributions",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nHow many rows are in the anti_lgbtq dataset? What does each row represent?\nHow many columns are in the anti_lgbtq dataset? Indicate the type of each variable.\nInclude the code and resulting output used to support your answer.\n\n\nNow is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding. You can use a commit message like “Finished Exercise 1”."
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-2",
+    "href": "hw/hw-1.html#exercise-2",
+    "title": "HW 1 - Anti-LGBTQ+ contributions",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nVisualize the distribution of contribution amounts using a histogram and a density plot. Based on the shape, calculate the appropriate summary statistics for the center and spread of the distribution. Using the visualization and the summary statistics you calculated, describe the distribution of contribution amounts to politicians sponsoring anti-LGBTQ+ legislation and/or government policy in the 2021-2022 legislative session.\n\nNow is again a good time to render, commit, and push, with a commit message line “Finished Exercise 2”. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-3",
+    "href": "hw/hw-1.html#exercise-3",
+    "title": "HW 1 - Anti-LGBTQ+ contributions",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nFor this exercise, make two visualizations that display the distribution of pride sponsors based on whether the is a Fortune 500 company. The first distribution should allow you to compare the numbers of pride sponsors who are and are not Fortune 500 companies. The second visualization should allow you to compare the proportions instead. What information about these two variables can you\n\nget from both visualizations?\nget from from the first visualization, but not the second?\nget from from the second visualization, but not the first?\nget from neither visualization?\n\n\nRender, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-4",
+    "href": "hw/hw-1.html#exercise-4",
+    "title": "HW 1 - Anti-LGBTQ+ contributions",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nVisualize the distribution of pride sponsors based on whether the company has made an HRC pledge. Make sure that your visualization allows you to make statements about the proportion of pride sponsors who have and have not made the HRC pledge. Describe the relationship, if any, between these two variables using features of your visualization as justification for your conclusions.\n\nRender, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-5",
+    "href": "hw/hw-1.html#exercise-5",
+    "title": "HW 1 - Anti-LGBTQ+ contributions",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nSuppose you’re helping a friend who is writing a piece for The Chronicle about companies that both contribute to anti-LGBTQ+ politicians and sponsor Pride events. Your friend wonders: Does sponsoring a Pride event make a difference?\nLuckily, you can help them answer this question with data visualization!\n\nMake histograms of contribution amounts based on whether the company sponsored a Pride event by creating a different facet for each type of company. Pay attention to whether these facets should be stacked or placed next to each other for more straightforward comparison of distributions of contribution amounts.\nChoose an appropriate binwidth and decide whether a legend is needed, and turn it off if not.\nInclude informative title and axis labels.\nFinally, include a brief (2-3 sentence) narrative comparing the distributions of anti-LGBTQ+ contribution amounts from companies that did and did not sponsor Pride events. Your narrative should touch on whether having sponsored a Pride event “makes a difference” in terms of the contribution amount.\n\n\nRender, commit, and push, with an appropriate commit message. Before proceeding, check that you’ve committed and pushed all changed documents and your Git pane is completely empty."
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-6",
+    "href": "hw/hw-1.html#exercise-6",
+    "title": "HW 1 - Anti-LGBTQ+ contributions",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nNext, your friend is curious if about the relationship between contribution amounts and number of politicians companies contribute to. They wonder: Does the contribution amount go up as the number of politicians contributed to increases?\nOnce again, data visualization to the rescue!\n\nVisualize the relationship between the number of politicians (on the x-axis) and the contribution amount (on the y-axis) and describe the relationship between these two variables.\nIdentify any extreme outliers – you will need to dive into the data to figure out which companies these are. (Hint: There are two extreme outliers that are visibly very far away from the rest of the data.)\nRe-create the visualization without these two outliers and comment on whether the relationship is different without them.\n\nYour narrative should touch on whether the contribution amount goes up as the number of politicians contributed to increases.\n\nRender, commit, and push, with an appropriate commit message. Before proceeding, check that you’ve committed and pushed all changed documents and your Git pane is completely empty."
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-7",
+    "href": "hw/hw-1.html#exercise-7",
+    "title": "HW 1 - Anti-LGBTQ+ contributions",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nCreate a data visualization of interest to you based on these data. You can use the entire dataset, a subset based on a variable, or just a few companies of particular interest to you. Write a brief (2-3 sentence) narrative on why you chose this visualization and what the visualization displays/reveals.\n\nRender, commit, and push, with an appropriate commit message. Before proceeding, check that you’ve committed and pushed all changed documents and your Git pane is completely empty.\n\n\n\n\n\n\n\nNote\n\n\n\nThe following exercises are conceptual and do not require a dataset or writing original code, however you may need to refer to code documentation to answer them."
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-8",
+    "href": "hw/hw-1.html#exercise-8",
+    "title": "HW 1 - Anti-LGBTQ+ contributions",
+    "section": "Exercise 8",
+    "text": "Exercise 8\n\nDescribe the following terms in your own words:\n\nData-to-ink ratio\nSnake case\nWhisker (of a box plot)\n\nRead ?facet_wrap. What does nrow do? What does ncol do? What other options control the layout of the individual panels? Why doesn’t facet_grid() have nrow and ncol arguments?\n\n\nYou know the drill: render, commit, and push!"
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-9",
+    "href": "hw/hw-1.html#exercise-9",
+    "title": "HW 1 - Anti-LGBTQ+ contributions",
+    "section": "Exercise 9",
+    "text": "Exercise 9\n\nFill in the blanks:\n\nThe gg in the name of the package ggplot2 stands for ___.\nIf you map the same continuous variable to both x and y aesthetics in a scatterplot, you get a straight ___ line. (Choose between “vertical”, “horizontal”, or “diagonal”.)\n\nCode style: Fix up the code style by spaces and line breaks where needed. Briefly describe your fixes. (Hint: You can refer to the Tidyverse style guide.)\n\n\nggplot(data=mpg,mapping=aes(x=drv,fill=class))+geom_bar() +scale_fill_viridis_d()\n\n\nRender, commit, and push one last time.\nMake sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "hw/hw-1.html#review",
+    "href": "hw/hw-1.html#review",
+    "title": "HW 1 - Anti-LGBTQ+ contributions",
+    "section": "Review",
+    "text": "Review\nBefore you call it “done”,\n\nmake sure you’ve answered all questions (or, at least, have not skipped any accidentally) and\nreview the Section 1.2 section and make any edits/corrections needed.\n\nYou can change answers to exercises you’ve “completed” and commit and push again. We will only grade the final version of your assignment. You can commit and push as many times as you like until the deadline."
+  },
+  {
+    "objectID": "hw/hw-1.html#submission",
+    "href": "hw/hw-1.html#submission",
+    "title": "HW 1 - Anti-LGBTQ+ contributions",
+    "section": "Submission",
+    "text": "Submission\nYou do not have to do anything special to “submit” your assignment. We will close the repos to further pushes at the deadline, and will take your work as of that time point as your submission.\nIf you need to submit late for any reason, contact the professor."
+  },
+  {
+    "objectID": "hw/hw-1.html#grading",
+    "href": "hw/hw-1.html#grading",
+    "title": "HW 1 - Anti-LGBTQ+ contributions",
+    "section": "Grading",
+    "text": "Grading\n\nExercise 1-9: 10 points each\nWorkflow + formatting: 10 points\nTotal: 100 points"
   },
   {
     "objectID": "hw/hw-3.html",
