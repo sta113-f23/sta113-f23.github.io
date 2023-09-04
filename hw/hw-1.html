@@ -520,7 +520,8 @@ Note
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>anti_lgbtq <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/anti-lgbtq.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Descrition of variables is given in <a href="#tbl-codebook" class="quarto-xref">Table&nbsp;2</a>.</p>
+<p>The companies included in this dataset are corporations who are either Fortune 500 companies or Pride sponsors.</p>
+<p>Description of variables is given in <a href="#tbl-codebook" class="quarto-xref">Table&nbsp;2</a>.</p>
 <div id="tbl-codebook" class="anchored">
 <table class="table-striped table-hover table">
 <caption>Table&nbsp;2: Codebook for `anti_lgbtq` dataset</caption>
@@ -537,7 +538,7 @@ Note
 </tr>
 <tr class="even">
 <td><code>pride_sponsor</code></td>
-<td>Whether the company sponsored a Pride event</td>
+<td>Whether the company sponsored a Pride event in SF, NYC, Seattle, LA, Chicago, Houston, Atlanta, or Miami</td>
 </tr>
 <tr class="odd">
 <td><code>hrc_pledge</code></td>
@@ -567,10 +568,10 @@ Note
 <h1>Exercises</h1>
 <section id="exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<p>Using inline code to generate the number of rows and columns and include them in a sentence, answer the following questions:</p>
 <ul>
 <li>How many rows are in the <code>anti_lgbtq</code> dataset? What does each row represent?</li>
-<li>How many columns are in the <code>anti_lgbtq</code> dataset? Indicate the type of each variable.</li>
-<li>Include the code and resulting output used to support your answer.</li>
+<li>How many columns are in the <code>anti_lgbtq</code> dataset? Indicate the type of each variable (categorical or numerical).</li>
 </ul>
 <div class="render-commit-push">
 <p>Now is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding. You can use a commit message like “Finished Exercise 1”.</p>
@@ -578,14 +579,19 @@ Note
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Visualize the distribution of contribution amounts using a histogram and a density plot. Based on the shape, calculate the appropriate summary statistics for the center and spread of the distribution. Using the visualization and the summary statistics you calculated, describe the distribution of contribution amounts to politicians sponsoring anti-LGBTQ+ legislation and/or government policy in the 2021-2022 legislative session.</p>
+<p>Visualize the distribution of contribution amounts using a histogram. Based on the shape, calculate the appropriate summary statistics for the center and spread of the distribution. Using the visualization and the summary statistics you calculated, describe the distribution of contribution amounts to politicians sponsoring anti-LGBTQ+ legislation and/or government policy in the 2021-2022 legislative session.</p>
 <div class="render-commit-push">
 <p>Now is again a good time to render, commit, and push, with a commit message line “Finished Exercise 2”. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
 </div>
 </section>
 <section id="exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>For this exercise, make two visualizations that display the distribution of pride sponsors based on whether the is a Fortune 500 company. The first distribution should allow you to compare the <strong>numbers</strong> of pride sponsors who are and are not Fortune 500 companies. The second visualization should allow you to compare the <strong>proportions</strong> instead. What information about these two variables can you</p>
+<p>For this exercise, make two visualizations that display the distribution of Pride sponsors based on whether the company is a Fortune 500 company.</p>
+<ul>
+<li><p>The first distribution should allow you to compare the <strong>numbers</strong> of Pride sponsors who are and are not Fortune 500 companies.</p></li>
+<li><p>The second visualization should allow you to compare the <strong>proportions</strong> instead.</p></li>
+</ul>
+<p>What information about these two variables can you</p>
 <ul>
 <li><p>get from both visualizations?</p></li>
 <li><p>get from from the first visualization, but not the second?</p></li>
@@ -598,7 +604,7 @@ Note
 </section>
 <section id="exercise-4" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<p>Visualize the distribution of pride sponsors based on whether the company has made an HRC pledge. Make sure that your visualization allows you to make statements about the proportion of pride sponsors who have and have not made the HRC pledge. Describe the relationship, if any, between these two variables using features of your visualization as justification for your conclusions.</p>
+<p>First, make a bar plot of <code>hrc_pledge</code> and take note of the number of companies who have take the HRC pledge. Then, visualize the distribution of pride sponsors based on whether the company has made an HRC pledge. Make sure that your visualization allows you to make statements about the proportion of pride sponsors who have and have not made the HRC pledge. Describe the relationship, if any, between these two variables using features of your visualization as justification for your conclusions.</p>
 <div class="render-commit-push">
 <p>Render, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
 </div>
@@ -608,10 +614,9 @@ Note
 <p>Suppose you’re helping a friend who is writing a piece for The Chronicle about companies that both contribute to anti-LGBTQ+ politicians and sponsor Pride events. Your friend wonders: <strong>Does sponsoring a Pride event make a difference?</strong></p>
 <p>Luckily, you can help them answer this question with data visualization!</p>
 <ul>
-<li>Make histograms of contribution amounts based on whether the company sponsored a Pride event by creating a different facet for each type of company. Pay attention to whether these facets should be stacked or placed next to each other for more straightforward comparison of distributions of contribution amounts.</li>
-<li>Choose an appropriate binwidth and decide whether a legend is needed, and turn it off if not.</li>
+<li>Make side-by-side box plots of contribution amounts based on whether the company sponsored a Pride.</li>
 <li>Include informative title and axis labels.</li>
-<li>Finally, include a brief (2-3 sentence) narrative comparing the distributions of anti-LGBTQ+ contribution amounts from companies that did and did not sponsor Pride events. Your narrative should touch on whether having sponsored a Pride event “makes a difference” in terms of the contribution amount.</li>
+<li>Finally, write a brief narrative comparing the distributions of anti-LGBTQ+ contribution amounts from companies that did and did not sponsor Pride events. Your narrative should touch on whether having sponsored a Pride event “makes a difference” in terms of the contribution amount.</li>
 </ul>
 <div class="render-commit-push">
 <p>Render, commit, and push, with an appropriate commit message. Before proceeding, check that you’ve committed and pushed all changed documents and your Git pane is completely empty.</p>
