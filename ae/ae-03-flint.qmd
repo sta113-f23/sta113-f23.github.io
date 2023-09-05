@@ -5,7 +5,7 @@ editor: visual
 ---
 
 ::: {.callout-note appearance="minimal" icon="false"}
-{{< fa brands github size=xl >}} Go to the course [GitHub organization](https://github.com/sta101-f23) to get started.
+{{< fa brands github size=xl >}} Go to the course [GitHub organization](https://github.com/sta113-f23) to get started.
 
 This is an updated version of the previous application exercise. The data analysis exercises R the same, but workflow steps have been updated for a Git and GitHub based workflow.
 :::
