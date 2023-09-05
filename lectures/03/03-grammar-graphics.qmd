@@ -1,0 +1,112 @@
+---
+title: Meet the toolkit 2 + Grammar of Graphics
+subtitle: Lecture 3
+format: revealjs
+auto-stretch: false
+---
+
+# Warm up
+
+## Before we get started
+
+::: task
+{{< fa user >}} Check your email and accept the invitations to the course GitHub organization!
+:::
+
+## Reflection
+
+::: question
+{{< fa users >}} What is one thing you learned from your reading that was "new" to you? And what is one question you have from the reading?
+:::
+
+## Announcements
+
+-   HW 1 is posted, due next Tuesday at 1 pm
+
+# Meet the toolkit: Version control and collaboration with Git and GitHub
+
+## Git and GitHub {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](images/git-logo.png){fig-alt="Git logo" fig-align="center" width="200"}
+
+Git is a version control system, like "Track Changes" features from Microsoft Word but more powerful.
+:::
+
+::: {.column width="50%"}
+![](images/github-logo.png){fig-alt="GitHub logo" fig-align="center" width="200"}
+
+GitHub is the home for your Git-based projects on the internet, like DropBox but much better.
+:::
+:::
+
+## Connecting your Posit Cloud and GitHub accounts
+
+You should only need to do the following once:
+
+-   Go to [Posit Cloud](https://posit.cloud/spaces/406325/) and log in.
+
+-   Click on your profile avatar (top right) and then click on "Authentication".
+
+-   Under Login Options, check the box for "Enabled". This will open another window where you should click on "Authorize rstudio".
+
+-   Then, go back to the Posit Cloud authentication page, and check the box for "Private repo access also enabled".
+
+## Application exercise: Flint {.smaller}
+
+::: task
+{{< fa user >}} 
+
+-   Go to the course GitHub Organization and locate your own `ae-03-flint` repository. This repository will be called `ae-03-flint-YOUR_GITHUB_NAME`.
+
+-   Click on the green **Code** button, make sure HTTPS is selected, and copy the URL (by clicking on {{< fa copy size=l >}}).
+
+-   Go to Posit Cloud. Make sure you're in the course space -- it should say STA 113 - F23 on the top left.
+
+-   Click on the blue **New Project** button, and then **New Project from Git Repository**. Paste the URL you copied from your GitHub repository here. Make sure *Add packages from the base project* is checked.
+
+*continue on next slide*
+:::
+
+## Application exercise: Flint {.smaller}
+
+::: task
+-   Once you're in the project, go to the Console and run
+
+    ```{r}
+    #| eval: false
+
+    usethis::create_github_token()
+    ```
+
+-   On the page that pops open in your browser, create a new GitHub Personal Access Token (i.e., sort of like a password you store):
+
+    -   Describe the token's use case under *Note*, e.g., `ae-03`
+
+    -   Extend expiration date to 90 days
+
+    -   Scroll down and click on **Generate Token**
+
+-   Copy the token by clicking on {{< fa copy >}}.
+
+-   Go back to Posit Cloud, to your Console, and run
+
+    ```{r}
+    #| eval: false
+
+    gitcreds::gitcreds_set()
+    ```
+
+    and paste the token you just copied.
+
+🎉 You're now ready to work on your application exercise analyzing a dataset with **R**, in **RStudio** that you access via **Posit Cloud**, version controlled with **Git**, and hosted on **GitHub**. And that's your data science toolkit! 🛠️
+:::
+
+# Wrap up
+
+## Next time
+
+-   We'll continue to learn about visualizing various types of data and get practice with the data science workflow.
+
+-   We'll review questions you might have on the homework assignment.

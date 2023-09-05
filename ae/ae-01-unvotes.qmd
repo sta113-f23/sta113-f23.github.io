@@ -1,12 +1,11 @@
 ---
 title: "UN Votes"
-author: "Mine Çetinkaya-Rundel"
-format: html
+categories: "Application Exercise"
 editor: visual
 ---
 
-::: {.callout-tip appearance="minimal" icon="false"}
-Go to Posit Cloud to get started.
+::: {.callout-note appearance="minimal" icon="false"}
+{{< fa cloud size=xl >}} Go to [Posit Cloud](https://posit.cloud/spaces/406325/) to get started.
 :::
 
 ## Introduction

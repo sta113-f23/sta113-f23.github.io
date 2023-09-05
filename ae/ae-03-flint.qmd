@@ -5,14 +5,16 @@ editor: visual
 ---
 
 ::: {.callout-note appearance="minimal" icon="false"}
-{{< fa cloud size=xl >}} Go to [Posit Cloud](https://posit.cloud/spaces/406325/) to get started.
+{{< fa brands github size=xl >}} Go to the course [GitHub organization](https://github.com/sta101-f23) to get started.
+
+This is an updated version of the previous application exercise. The data analysis exercises R the same, but workflow steps have been updated for a Git and GitHub based workflow.
 :::
 
 # Goals
 
 By the end of this application exercise you will
 
--   meet the computational toolkit for the course
+-   meet the **full** computational toolkit for the course
 -   practice using `glimpse()`, `names()`, `nrow()`, `ncol()`, `count()`
 -   define and compute various statistics
 -   begin to gain familiarity with making data visualizations with `ggplot()`
@@ -20,44 +22,6 @@ By the end of this application exercise you will
 We will do this using water lead content data from Flint, MI. The following paragraph will be useful in evaluating the lead amount values we'll see in the dataset.
 
 > While there is no completely safe amount of lead consumption, the limit allowed by the Lead and Copper Rule (LCR) of 1991 is 15 parts per billion (ppb). If this is exceeded in more than 10% of homes tested (or if the 90th percentile value of the total sample is above 15 ppb), action is required. And to make sure problems are caught, sampling for lead in water is supposed to target the "worst-case" homes -- those in areas served by lead pipes.
-
-# Meet the toolkit
-
-## RStudio
-
--   Files, plots, viewer, environment, etc. panes
-
--   Console
-
--   Editor
-
-## R
-
--   Writing code in the console
-
--   Basic math with R
-
--   Creating variables in R, the assignment operator (`<-`), and the Environment pane
-
--   R functions and packages and the Packages pane
-
--   Getting help with R and the Help pane
-
-## Quarto
-
--   YAML: Metadata
-
--   Narrative: Edited with the visual editor (or the source editor)
-
--   Code: In code chunks
-
-    -   Chunk options (following `#|`)
-
-    -   Comments (following `#`)
-
-    -   Code
-
--   Running individual code chunks vs. rendering a document
 
 # Back to analysis
 
@@ -118,6 +82,10 @@ In the case we want to learn about the lead content in all of Flint, MI homes bu
 # add code here
 ```
 
+::: render-commit-push
+Render, commit, and push, with an appropriate commit message like "Finished Exercise 1". Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+:::
+
 ## Frequencies
 
 Let's `count()` to find the number of different time points water was sampled with the `count()` function.
@@ -172,6 +140,10 @@ flint |>
 # add code here
 ```
 
+::: render-commit-push
+Render, commit, and push, with an appropriate commit message like "Finished exercises 2 and 3". Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+:::
+
 # Summarization
 
 What is a statistic? It's **any mathematical function of the data**. Sometimes, a statistic is referred to as "sample statistic" or "summary statistic", since you compute it from a **sample** (the observed data) and not the entire **population**.
@@ -206,6 +178,10 @@ What is a statistic? It's **any mathematical function of the data**. Sometimes, 
 
 # add code here
 ```
+
+::: render-commit-push
+Render, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+:::
 
 # Plotting
 
@@ -273,6 +249,10 @@ ggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +
   )
 ```
 
+::: render-commit-push
+Render, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+:::
+
 **Exercise 8:** Add labels for `x`, `y`, a `title`, and `subtitle` to the code below to update the corresponding plot.
 
 ```{r}
@@ -294,6 +274,10 @@ ggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +
 **Exercise 9:** What is the difference between the two plots? What are the advantages and disadvantages to each plot?
 
 *\[Add your answer here\]*
+
+::: render-commit-push
+Render, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding. Confirm that your output looks as expected on your GitHub repository.
+:::
 
 # References
 
