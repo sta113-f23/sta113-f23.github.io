@@ -345,12 +345,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
-  <li><a href="#meet-the-toolkit" id="toc-meet-the-toolkit" class="nav-link" data-scroll-target="#meet-the-toolkit">Meet the toolkit</a>
-  <ul class="collapse">
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
-  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
-  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
-  </ul></li>
   <li><a href="#back-to-analysis" id="toc-back-to-analysis" class="nav-link" data-scroll-target="#back-to-analysis">Back to analysis</a>
   <ul class="collapse">
   <li><a href="#load-packages" id="toc-load-packages" class="nav-link" data-scroll-target="#load-packages">Load packages</a></li>
@@ -372,7 +366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/edit/main/ae/ae-02-flint.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/edit/main/ae/ae-03-flint.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -404,7 +398,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><i class="fa-solid fa-cloud fa-xl" aria-hidden="true"></i> Go to <a href="https://posit.cloud/spaces/406325/">Posit Cloud</a> to get started.</p>
+<p><i class="fa-brands fa-github fa-xl" aria-hidden="true"></i> Go to the course <a href="https://github.com/sta101-f23">GitHub organization</a> to get started.</p>
+<p>This is an updated version of the previous application exercise. The data analysis exercises R the same, but workflow steps have been updated for a Git and GitHub based workflow.</p>
 </div>
 </div>
 </div>
@@ -412,7 +407,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Goals</h1>
 <p>By the end of this application exercise you will</p>
 <ul>
-<li>meet the computational toolkit for the course</li>
+<li>meet the <strong>full</strong> computational toolkit for the course</li>
 <li>practice using <code>glimpse()</code>, <code>names()</code>, <code>nrow()</code>, <code>ncol()</code>, <code>count()</code></li>
 <li>define and compute various statistics</li>
 <li>begin to gain familiarity with making data visualizations with <code>ggplot()</code></li>
@@ -421,41 +416,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>While there is no completely safe amount of lead consumption, the limit allowed by the Lead and Copper Rule (LCR) of 1991 is 15 parts per billion (ppb). If this is exceeded in more than 10% of homes tested (or if the 90th percentile value of the total sample is above 15 ppb), action is required. And to make sure problems are caught, sampling for lead in water is supposed to target the “worst-case” homes – those in areas served by lead pipes.</p>
 </blockquote>
-</section>
-<section id="meet-the-toolkit" class="level1">
-<h1>Meet the toolkit</h1>
-<section id="rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="rstudio">RStudio</h2>
-<ul>
-<li><p>Files, plots, viewer, environment, etc. panes</p></li>
-<li><p>Console</p></li>
-<li><p>Editor</p></li>
-</ul>
-</section>
-<section id="r" class="level2">
-<h2 class="anchored" data-anchor-id="r">R</h2>
-<ul>
-<li><p>Writing code in the console</p></li>
-<li><p>Basic math with R</p></li>
-<li><p>Creating variables in R, the assignment operator (<code>&lt;-</code>), and the Environment pane</p></li>
-<li><p>R functions and packages and the Packages pane</p></li>
-<li><p>Getting help with R and the Help pane</p></li>
-</ul>
-</section>
-<section id="quarto" class="level2">
-<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
-<ul>
-<li><p>YAML: Metadata</p></li>
-<li><p>Narrative: Edited with the visual editor (or the source editor)</p></li>
-<li><p>Code: In code chunks</p>
-<ul>
-<li><p>Chunk options (following <code>#|</code>)</p></li>
-<li><p>Comments (following <code>#</code>)</p></li>
-<li><p>Code</p></li>
-</ul></li>
-<li><p>Running individual code chunks vs.&nbsp;rendering a document</p></li>
-</ul>
-</section>
 </section>
 <section id="back-to-analysis" class="level1">
 <h1>Back to analysis</h1>
@@ -523,6 +483,9 @@ dbl (4): id, zip, ward, lead
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="render-commit-push">
+<p>Render, commit, and push, with an appropriate commit message like “Finished Exercise 1”. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
+</div>
 </section>
 <section id="frequencies" class="level2">
 <h2 class="anchored" data-anchor-id="frequencies">Frequencies</h2>
@@ -589,6 +552,9 @@ dbl (4): id, zip, ward, lead
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="render-commit-push">
+<p>Render, commit, and push, with an appropriate commit message like “Finished exercises 2 and 3”. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
+</div>
 </section>
 </section>
 <section id="summarization" class="level1">
@@ -625,6 +591,9 @@ dbl (4): id, zip, ward, lead
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="render-commit-push">
+<p>Render, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
+</div>
 </section>
 </section>
 <section id="plotting" class="level1">
@@ -639,7 +608,7 @@ dbl (4): id, zip, ward, lead
 <pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="ae-02-flint_files/figure-html/flint-histogram-1-1.png" class="img-fluid" width="672"></p>
+<p><img src="ae-03-flint_files/figure-html/flint-histogram-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We can make this plot look nicer/more useful by adjusting the number of bins and zooming into the x-axis.</p>
@@ -648,7 +617,7 @@ dbl (4): id, zip, ward, lead
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="ae-02-flint_files/figure-html/flint-histogram-2-1.png" class="img-fluid" width="672"></p>
+<p><img src="ae-03-flint_files/figure-html/flint-histogram-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Let’s visualize some of our summary statistics on the plot.</p>
@@ -658,7 +627,7 @@ dbl (4): id, zip, ward, lead
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span> </span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="ae-02-flint_files/figure-html/overlay-mean-1.png" class="img-fluid" width="672"></p>
+<p><img src="ae-03-flint_files/figure-html/overlay-mean-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p><strong>Exercise 6:</strong> Add one more layer which overlays the median, in a different color.</p>
@@ -683,8 +652,11 @@ dbl (4): id, zip, ward, lead
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"0 (sec)"</span>, <span class="st">"45 (sec)"</span>, <span class="st">"120 (sec)"</span>)</span>
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="ae-02-flint_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+<p><img src="ae-03-flint_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
+</div>
+<div class="render-commit-push">
+<p>Render, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
 </div>
 <p><strong>Exercise 8:</strong> Add labels for <code>x</code>, <code>y</code>, a <code>title</code>, and <code>subtitle</code> to the code below to update the corresponding plot.</p>
 <div class="cell">
@@ -702,11 +674,14 @@ dbl (4): id, zip, ward, lead
 <span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">50</span>)) <span class="sc">+</span></span>
 <span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="ae-02-flint_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+<p><img src="ae-03-flint_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p><strong>Exercise 9:</strong> What is the difference between the two plots? What are the advantages and disadvantages to each plot?</p>
 <p><em>[Add your answer here]</em></p>
+<div class="render-commit-push">
+<p>Render, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding. Confirm that your output looks as expected on your GitHub repository.</p>
+</div>
 </section>
 </section>
 <section id="references" class="level1">
