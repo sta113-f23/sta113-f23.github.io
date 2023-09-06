@@ -2,4 +2,4 @@
 title: "Project 1"
 ---
 
-More info to be posted.
+More info to be posted...
