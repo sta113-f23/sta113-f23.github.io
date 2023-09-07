@@ -1,0 +1,57 @@
+---
+title: Visualizing various types of data
+subtitle: Lecture 4
+format: revealjs
+---
+
+# Warm up
+
+## Reflection
+
+::: question
+{{< fa users >}} What is one thing you learned from your reading or videos that was "new" to you? And what is one question you have from the reading, videos, or material we've covered so far?
+:::
+
+## Announcements
+
+-   HW 1 due next Tuesday at 1 pm
+
+# Types of data
+
+## Identifying variable types
+
+::: question
+{{< fa users >}} Identify the type of each of the following variables.
+
+-   Favorite food
+-   Number of classes you're taking this semester
+-   Zip code
+-   Full name
+-   Age
+:::
+
+## The way data is displayed matters
+
+::: question
+What do these three plots show?
+:::
+
+![Source: [#barbarplots](https://cogtales.wordpress.com/2016/06/06/congratulations-barbarplots/)](images/bar-plot-meme.png){fig-alt="Three representations of the same data: Bar plot of means, box plots, histograms." fig-align="center"}
+
+# Application exercise
+
+## `ae-04`
+
+::: task
+{{< fa user >}} 
+-   Go to the course [GitHub org](https://github.com/sta113-f23) and find your `ae-03-sat` (repo name will be suffixed with your GitHub name).
+-   Clone the repo in Posit Cloud, open the Quarto document in the repo, and follow along and complete the exercises.
+-   Render, commit, and push your edits as you work through it
+:::
+
+## Recap of AE
+
+-   Pick geoms based on data types.
+-   Set appropriate binwidths for histograms.
+-   Turn off legends when they provide redundant information with `show.legend = FALSE`.
+-   Create plots with multiple geoms, and pay attention to order.
