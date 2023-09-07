@@ -224,254 +224,184 @@
     "text": "Appendix\nBelow is a list of countries in the dataset:"
   },
   {
-    "objectID": "ae/ae-04-sat.html",
-    "href": "ae/ae-04-sat.html",
-    "title": "Visualizing data and investigating relationships",
+    "objectID": "ae/ae-03-flint.html",
+    "href": "ae/ae-03-flint.html",
+    "title": "Exploring Flint’s water data",
     "section": "",
-    "text": "The main question we’ll explore today is “How are SAT scores and teacher salaries associated?” What do you think?\nAlong the way we will:\n\ncreate data visualizations and calculating summary statistics for comparing trends across groups\ndistinguish observational studies and experiments\nidentify confounding variables and Simpson’s paradox"
+    "text": "Go to the course GitHub organization to get started.\nThis is an updated version of the previous application exercise. The data analysis exercises R the same, but workflow steps have been updated for a Git and GitHub based workflow."
   },
   {
-    "objectID": "ae/ae-04-sat.html#single-variable",
-    "href": "ae/ae-04-sat.html#single-variable",
-    "title": "Visualizing data and investigating relationships",
-    "section": "Single variable",
-    "text": "Single variable\nAnalyzing the a single variable is called univariate analysis.\nCreate visualizations of the distribution of average SAT scores, total.\n\nMake a histogram. Set an appropriate binwidth.\n\n\nggplot(SAT_2010, aes(x = total)) +\n  geom_histogram(binwidth = 40)\n\n\n\n\n\nMake a boxplot.\n\n\nggplot(SAT_2010, aes(x = total)) +\n  geom_boxplot()\n\n\n\n\n\nMake a density plot.\n\n\nggplot(SAT_2010, aes(x = total)) +\n  geom_density(fill = \"gray\")\n\n\n\n\n\nBased on these, determine if each of the following statements about the shape of the distribution is true or false.\n\nThe distribution of average SAT scores in 2010 is right skewed. ___\nThe distribution of average SAT scores in 2010 is unimodal. ___"
+    "objectID": "ae/ae-03-flint.html#load-packages",
+    "href": "ae/ae-03-flint.html#load-packages",
+    "title": "Exploring Flint’s water data",
+    "section": "Load packages",
+    "text": "Load packages\nWe’ll use the tidyverse package for analysis, which offers functionality for data import, wrangling, visualization, and more.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nLoading this package prints out a message. What does this message mean? How can we suppress the message from the output?"
   },
   {
-    "objectID": "ae/ae-04-sat.html#two-variables",
-    "href": "ae/ae-04-sat.html#two-variables",
-    "title": "Visualizing data and investigating relationships",
-    "section": "Two variables",
-    "text": "Two variables\nAnalyzing the relationship between two variables is called bivariate analysis.\n\nWhat would you expect the relationship between average SAT scores (total) and average teacher salaries (salary) to look like? What type of plot would you use to visualize this relationship? Create the plot below.\n\nAdd your answer here.\n\nggplot(SAT_2010, aes(x = salary, y = total)) + \n  geom_point() + \n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\nLurking in the background, however, is another important factor. The percentage of students who take the SAT in each state varies dramatically between states. First, let’s visualize the distribution of this variable, sat_pct.\n\nAdd your response here.\n\nggplot(SAT_2010, aes(x = sat_pct)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\nLet’s label states with low SAT participation \"Low\" and the others \"High\". For the cutoff point, let’s use the median participation level.\n\nAdd your response here.\n\nSAT_2010 |&gt;\n  summarize(med = median(sat_pct))\n\n  med\n1  27\n\nSAT_2010 &lt;- SAT_2010 |&gt;\n  mutate(sat_pct_grp = ifelse(sat_pct &lt;= 27, \"Low\", \"High\"))"
+    "objectID": "ae/ae-03-flint.html#load-data",
+    "href": "ae/ae-03-flint.html#load-data",
+    "title": "Exploring Flint’s water data",
+    "section": "Load data",
+    "text": "Load data\nThe read_csv() function can be used for reading CSV (comma separated values) files. The file we’re reading is called flint with the suffix (.csv) which indicates its file type. The file is in the data folder.\nBefore reading in the file, go to the data folder in the Files pane to confirm that it is, indeed, there. Then, read the file by running the code chunk below by clicking on the green triangle icon on the code chunk.\n\nflint &lt;- read_csv(\"data/flint.csv\")\n\nRows: 813 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): draw\ndbl (4): id, zip, ward, lead\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nOne of two things may have happened:\n\nThe file was read successfully and you now see a dataset called flint in your Environment pane.\nThe file was not read successfully and you see an error Error in read_csv(\"data/flint.csv\") : could not find function \"read_csv\".\n\nIf (1) happened, great!\nIf (2) happened, let’s troubleshoot first before continuing."
   },
   {
-    "objectID": "ae/ae-04-sat.html#multiple-variables",
-    "href": "ae/ae-04-sat.html#multiple-variables",
-    "title": "Visualizing data and investigating relationships",
-    "section": "Multiple variables",
-    "text": "Multiple variables\n\nRecreate the scatterplot of average SAT scores, this time coloring each state based on whether they had low or high participation in the SAT. Describe the relationship between SAT scores and teacher salaries, when conditioning on SAT participation.\n\n\nggplot(SAT_2010, aes(x = salary, y = total, color = sat_pct_grp)) + \n  geom_point() + \n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\nFill in the blanks below.\n\nAmong all states, salaries and SAT scores are ___ associated.\nAmong states with a low percentage taking the SAT, teacher salaries and SAT scores are ___ associated.\nAmong states with a high percentage taking the SAT, teacher salaries and SAT scores are ___ associated.\n\n\nThis phenomenon is called Simpson’s paradox – a trend appears in subsets of the data, but disappears or reverses when the subsets are combined. The paradox can be resolved when confounding variables and causal relations are appropriately addressed in the analysis. In the above example, the confounding variable is SAT participation rate.\n\nImprove the visual display of the plot you just created.\n\n\nggplot(SAT_2010, aes(x = salary, y = total, color = sat_pct_grp)) + \n  geom_point() + \n  geom_smooth(method = \"lm\") +\n  labs(\n    x = \"Average teacher salary ((in 2010 US $)\",\n    y = \"Average total score on the SAT\",\n    color = \"SAT participation rate\",\n    title = \"Average SAT scores and teacher salaries in US States\"\n  ) +\n  scale_color_colorblind(labels = c(\"Low (27%)\", \"High (&gt;27%)\")) +\n  scale_x_continuous(labels = label_dollar(scale = 1/1000, suffix = \"K\")) +\n  theme_minimal() +\n  theme(legend.position = \"bottom\")\n\n`geom_smooth()` using formula = 'y ~ x'"
+    "objectID": "ae/ae-03-flint.html#data-dictionary",
+    "href": "ae/ae-03-flint.html#data-dictionary",
+    "title": "Exploring Flint’s water data",
+    "section": "Data dictionary",
+    "text": "Data dictionary\nThe following variables are in the flint data frame:\n\nid: sample ID number (identifies the home)\nzip: ZIP code in Flint of the sample’s location\nward: ward in Flint of the sample’s location\ndraw: which time point the water was sampled from\nlead: lead content in parts per billion (ppb)"
   },
   {
-    "objectID": "course-team.html",
-    "href": "course-team.html",
-    "title": "Teaching team",
+    "objectID": "ae/ae-03-flint.html#populations-and-samples",
+    "href": "ae/ae-03-flint.html#populations-and-samples",
+    "title": "Exploring Flint’s water data",
+    "section": "Populations and samples",
+    "text": "Populations and samples\nWe want to learn about the population using a sample.\nIn the case we want to learn about the lead content in all of Flint, MI homes but only have available water readings from a sample of homes (our data set).\nExercise 1: Look at the data, how many observations are there? How many variables?\n\n# add code here\n\n\nRender, commit, and push, with an appropriate commit message like “Finished Exercise 1”. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "ae/ae-03-flint.html#frequencies",
+    "href": "ae/ae-03-flint.html#frequencies",
+    "title": "Exploring Flint’s water data",
+    "section": "Frequencies",
+    "text": "Frequencies\nLet’s count() to find the number of different time points water was sampled with the count() function.\n\nThe first argument is flint: the data frame\nThe second argument is draw: the variable\n\n\ncount(flint, draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can achieve the same result with the following “piped” operation as well.\n\nThe first line is flint: the data frame\nThen the pipe operator, read as “and then”, which places what comes before it as the first argument of what comes after it\nThe second line is count(draw)\n\n\nflint |&gt;\n  count(draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can use a similar approach to fund out how many unique homes are in the data set:\n\nflint |&gt;\n  count(id)\n\n# A tibble: 269 × 2\n      id     n\n   &lt;dbl&gt; &lt;int&gt;\n 1     1     3\n 2     2     3\n 3     4     3\n 4     5     3\n 5     6     3\n 6     7     3\n 7     8     3\n 8     9     3\n 9    12     3\n10    13     3\n# ℹ 259 more rows\n\n\nExercise 2: How many samples were taken from each zip code?\n\n# add code here\n\nExercise 3: Which ZIP code had the most samples drawn? Hint: See the help for count.\n\n# add code here\n\n\nRender, commit, and push, with an appropriate commit message like “Finished exercises 2 and 3”. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "ae/ae-03-flint.html#measures-of-central-tendency",
+    "href": "ae/ae-03-flint.html#measures-of-central-tendency",
+    "title": "Exploring Flint’s water data",
+    "section": "Measures of central tendency",
+    "text": "Measures of central tendency\n\nmean\nmedian\nmode"
+  },
+  {
+    "objectID": "ae/ae-03-flint.html#measures-of-spread",
+    "href": "ae/ae-03-flint.html#measures-of-spread",
+    "title": "Exploring Flint’s water data",
+    "section": "Measures of spread",
+    "text": "Measures of spread\n\nvariance\nstandard deviation\nrange\nquartiles\ninter-quartile range (IQR)"
+  },
+  {
+    "objectID": "ae/ae-03-flint.html#order-statistics",
+    "href": "ae/ae-03-flint.html#order-statistics",
+    "title": "Exploring Flint’s water data",
+    "section": "Order statistics",
+    "text": "Order statistics\n\nquantiles\nminimum (0 percentile)\nmedian (50th percentile)\nmaximum (100 percentile)\n\n… and any other arbitrary function of the data you can come up with!\nExercise 4: Compute each of these statistics for lead ppb.\n\n# add code here\n\n\nRender, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "ae/ae-03-flint.html#histograms",
+    "href": "ae/ae-03-flint.html#histograms",
+    "title": "Exploring Flint’s water data",
+    "section": "Histograms",
+    "text": "Histograms\nLet’s take a look at the distribution of lead content in homes in Flint, MI.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nWe can make this plot look nicer/more useful by adjusting the number of bins and zooming into the x-axis.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram(bins = 50) +\n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\nLet’s visualize some of our summary statistics on the plot.\nExercise 5: Add a new layer, geom_vline(xintercept = __, color = \"red\"), to the histogram below, filling in the blank with the mean.\n\nggplot(flint, aes(x = lead)) + \n  geom_histogram(bins = 50) + \n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\nExercise 6: Add one more layer which overlays the median, in a different color.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-03-flint.html#box-plots",
+    "href": "ae/ae-03-flint.html#box-plots",
+    "title": "Exploring Flint’s water data",
+    "section": "Box plots",
+    "text": "Box plots\nNext, let’s narrow our focus to the zip codes 48503, 48504, 48505, 48506, and 48507 and observations with lead values less than 1,000 ppb.\n\nflint_focus &lt;- flint |&gt;\n  filter(zip %in% 48503:48507 & lead &lt; 1000)\n\nExercise 7: Below are side-by-side box plots for the three flushing times in each of the five zip codes we considered. Add x and y labels; add a title by inserting title = \"title_name\" inside the labs() function.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) +\n  labs(x = \"___\", y = \"___\", fill = \"Flushing time\") +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  )\n\n\n\n\n\nRender, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.\n\nExercise 8: Add labels for x, y, a title, and subtitle to the code below to update the corresponding plot.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) + \n  labs(\n    x = \"___\", y = \"___\", fill = \"Flushing time\",\n    title = \"___\",\n    subtitle = \"___\"\n    ) +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  ) +\n  coord_cartesian(xlim = c(0, 50)) +\n  theme_bw()\n\n\n\n\nExercise 9: What is the difference between the two plots? What are the advantages and disadvantages to each plot?\n[Add your answer here]\n\nRender, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding. Confirm that your output looks as expected on your GitHub repository."
+  },
+  {
+    "objectID": "ae/ae-02-flint.html",
+    "href": "ae/ae-02-flint.html",
+    "title": "Exploring Flint’s water data",
     "section": "",
-    "text": "Dr. Mine Çetinkaya-Rundel (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University and an affiliated faculty in the Computational Media, Arts, and Cultures. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education as well as pedagogical approaches for enhancing retention of women and under-represented minorities in STEM.\n\n\n\nOffice hours\nLocation\n\n\n\n\nThursdays 10 - 11 am\nZoom"
+    "text": "Go to Posit Cloud to get started."
   },
   {
-    "objectID": "course-team.html#instructor",
-    "href": "course-team.html#instructor",
-    "title": "Teaching team",
-    "section": "",
-    "text": "Dr. Mine Çetinkaya-Rundel (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University and an affiliated faculty in the Computational Media, Arts, and Cultures. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education as well as pedagogical approaches for enhancing retention of women and under-represented minorities in STEM.\n\n\n\nOffice hours\nLocation\n\n\n\n\nThursdays 10 - 11 am\nZoom"
+    "objectID": "ae/ae-02-flint.html#rstudio",
+    "href": "ae/ae-02-flint.html#rstudio",
+    "title": "Exploring Flint’s water data",
+    "section": "RStudio",
+    "text": "RStudio\n\nFiles, plots, viewer, environment, etc. panes\nConsole\nEditor"
   },
   {
-    "objectID": "course-team.html#teaching-assistant",
-    "href": "course-team.html#teaching-assistant",
-    "title": "Teaching team",
-    "section": "Teaching assistant",
-    "text": "Teaching assistant\n\nShelby Tisdale is our teaching assistant. Shelby is a Statistical Science major and she is also pursuing secondary teacher certification in mathematics and a certificate in Child Policy Research.\n\n\n\nOffice hours\nLocation\n\n\n\n\nThu 3 - 4 pm\nOld Chem 025\n\n\nSun 7 - 8 pm\nZoom"
+    "objectID": "ae/ae-02-flint.html#r",
+    "href": "ae/ae-02-flint.html#r",
+    "title": "Exploring Flint’s water data",
+    "section": "R",
+    "text": "R\n\nWriting code in the console\nBasic math with R\nCreating variables in R, the assignment operator (&lt;-), and the Environment pane\nR functions and packages and the Packages pane\nGetting help with R and the Help pane"
   },
   {
-    "objectID": "hw/hw-6.html",
-    "href": "hw/hw-6.html",
-    "title": "HW 6",
-    "section": "",
-    "text": "To be posted…"
+    "objectID": "ae/ae-02-flint.html#quarto",
+    "href": "ae/ae-02-flint.html#quarto",
+    "title": "Exploring Flint’s water data",
+    "section": "Quarto",
+    "text": "Quarto\n\nYAML: Metadata\nNarrative: Edited with the visual editor (or the source editor)\nCode: In code chunks\n\nChunk options (following #|)\nComments (following #)\nCode\n\nRunning individual code chunks vs. rendering a document"
   },
   {
-    "objectID": "hw/hw-4.html",
-    "href": "hw/hw-4.html",
-    "title": "HW 4",
-    "section": "",
-    "text": "To be posted…"
+    "objectID": "ae/ae-02-flint.html#load-packages",
+    "href": "ae/ae-02-flint.html#load-packages",
+    "title": "Exploring Flint’s water data",
+    "section": "Load packages",
+    "text": "Load packages\nWe’ll use the tidyverse package for analysis, which offers functionality for data import, wrangling, visualization, and more.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nLoading this package prints out a message. What does this message mean? How can we suppress the message from the output?"
   },
   {
-    "objectID": "hw/hw-7.html",
-    "href": "hw/hw-7.html",
-    "title": "HW 7",
-    "section": "",
-    "text": "To be posted…"
+    "objectID": "ae/ae-02-flint.html#load-data",
+    "href": "ae/ae-02-flint.html#load-data",
+    "title": "Exploring Flint’s water data",
+    "section": "Load data",
+    "text": "Load data\nThe read_csv() function can be used for reading CSV (comma separated values) files. The file we’re reading is called flint with the suffix (.csv) which indicates its file type. The file is in the data folder.\nBefore reading in the file, go to the data folder in the Files pane to confirm that it is, indeed, there. Then, read the file by running the code chunk below by clicking on the green triangle icon on the code chunk.\n\nflint &lt;- read_csv(\"data/flint.csv\")\n\nRows: 813 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): draw\ndbl (4): id, zip, ward, lead\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nOne of two things may have happened:\n\nThe file was read successfully and you now see a dataset called flint in your Environment pane.\nThe file was not read successfully and you see an error Error in read_csv(\"data/flint.csv\") : could not find function \"read_csv\".\n\nIf (1) happened, great!\nIf (2) happened, let’s troubleshoot first before continuing."
   },
   {
-    "objectID": "hw/hw-5.html",
-    "href": "hw/hw-5.html",
-    "title": "HW 5",
-    "section": "",
-    "text": "To be posted…"
+    "objectID": "ae/ae-02-flint.html#data-dictionary",
+    "href": "ae/ae-02-flint.html#data-dictionary",
+    "title": "Exploring Flint’s water data",
+    "section": "Data dictionary",
+    "text": "Data dictionary\nThe following variables are in the flint data frame:\n\nid: sample ID number (identifies the home)\nzip: ZIP code in Flint of the sample’s location\nward: ward in Flint of the sample’s location\ndraw: which time point the water was sampled from\nlead: lead content in parts per billion (ppb)"
   },
   {
-    "objectID": "project/project-2.html",
-    "href": "project/project-2.html",
-    "title": "Project 2",
-    "section": "",
-    "text": "More info to be posted."
+    "objectID": "ae/ae-02-flint.html#populations-and-samples",
+    "href": "ae/ae-02-flint.html#populations-and-samples",
+    "title": "Exploring Flint’s water data",
+    "section": "Populations and samples",
+    "text": "Populations and samples\nWe want to learn about the population using a sample.\nIn the case we want to learn about the lead content in all of Flint, MI homes but only have available water readings from a sample of homes (our data set).\nExercise 1: Look at the data, how many observations are there? How many variables?\n\n# add code here"
   },
   {
-    "objectID": "computing/computing-cheatsheets.html",
-    "href": "computing/computing-cheatsheets.html",
-    "title": "R cheatsheets",
-    "section": "",
-    "text": "The following cheatsheets come from https://posit.co/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references."
+    "objectID": "ae/ae-02-flint.html#frequencies",
+    "href": "ae/ae-02-flint.html#frequencies",
+    "title": "Exploring Flint’s water data",
+    "section": "Frequencies",
+    "text": "Frequencies\nLet’s count() to find the number of different time points water was sampled with the count() function.\n\nThe first argument is flint: the data frame\nThe second argument is draw: the variable\n\n\ncount(flint, draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can achieve the same result with the following “piped” operation as well.\n\nThe first line is flint: the data frame\nThen the pipe operator, read as “and then”, which places what comes before it as the first argument of what comes after it\nThe second line is count(draw)\n\n\nflint |&gt;\n  count(draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can use a similar approach to fund out how many unique homes are in the data set:\n\nflint |&gt;\n  count(id)\n\n# A tibble: 269 × 2\n      id     n\n   &lt;dbl&gt; &lt;int&gt;\n 1     1     3\n 2     2     3\n 3     4     3\n 4     5     3\n 5     6     3\n 6     7     3\n 7     8     3\n 8     9     3\n 9    12     3\n10    13     3\n# ℹ 259 more rows\n\n\nExercise 2: How many samples were taken from each zip code?\n\n# add code here\n\nExercise 3: Which ZIP code had the most samples drawn? Hint: See the help for count.\n\n# add code here"
   },
   {
-    "objectID": "computing/computing-troubleshooting.html",
-    "href": "computing/computing-troubleshooting.html",
-    "title": "Computing troubleshooting",
-    "section": "",
-    "text": "If you’re having difficulty launching an RStudio session from Posit Cloud, go to status.posit.co and check under Posit Cloud.\n\nIf it shows “Operational”, this means the system is expected to be working. Check your internet connection, if need be, restart your computer to ensure a fresh new connection. If your issue persists, post on the course Slack with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).\nIf it shows “Partial Outage” or “Outage” (or anything other than “Operational”), this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the course Slack to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!s"
+    "objectID": "ae/ae-02-flint.html#measures-of-central-tendency",
+    "href": "ae/ae-02-flint.html#measures-of-central-tendency",
+    "title": "Exploring Flint’s water data",
+    "section": "Measures of central tendency",
+    "text": "Measures of central tendency\n\nmean\nmedian\nmode"
   },
   {
-    "objectID": "course-links.html",
-    "href": "course-links.html",
-    "title": "Useful links",
-    "section": "",
-    "text": "Posit Cloud\n🔗 Posit Cloud\n\n\nLecture recordings\n🔗 Panopto\n\n\nSlack\n🔗 Slack\n\n\nGradebook\n🔗 on Canvas\n\n\nAnnouncements\n🔗 on Canvas\n\n\nTutorial submission\n🔗 on Canvas\n\n\nTextbooks\n🔗 R for Data Science, 2nd Edition\n🔗 Data Visualization: A Practical Introduction\n🔗 Introduction to Modern Statistics, 2nd Edition\n\n\nPackage documentation\n🔗 tidyverse: tidyverse.org\n🔗 tidymodels: tidymodels.org"
+    "objectID": "ae/ae-02-flint.html#measures-of-spread",
+    "href": "ae/ae-02-flint.html#measures-of-spread",
+    "title": "Exploring Flint’s water data",
+    "section": "Measures of spread",
+    "text": "Measures of spread\n\nvariance\nstandard deviation\nrange\nquartiles\ninter-quartile range (IQR)"
   },
   {
-    "objectID": "course-syllabus.html",
-    "href": "course-syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "This course will teach you how to use modern data science tools to visualize data and, through the lens of visualization, it will introduce you to programming and data science concepts and workflows. Working with data on issues of local, national, and global societal importance, we will learn to create elegant, insightful, and impactful data visualizations through iterative and reproducible processes. We will also discuss the role of visualization in exploratory data analyses as well as in communicating the results of statistical inference and modeling.\nThe main goal of the course is to empower students with a toolkit to explore topics of interest to them via visualizations they create while also learning programming and data science concepts.\nStudents will first learn the basics of the R statistical programming language as well as modern data science toolkit including RStudio for an integrated development environment, Quarto for reproducible computational documents, and Git and GitHub for version control and collaboration.\nBuilding on this foundation, students will continue to hone their visualization skills through the analysis of increasingly complex datasets throughout the semester. These datasets will be selected to reflect current issues of societal importance at the local (Duke/Durham), national, and global levels."
+    "objectID": "ae/ae-02-flint.html#order-statistics",
+    "href": "ae/ae-02-flint.html#order-statistics",
+    "title": "Exploring Flint’s water data",
+    "section": "Order statistics",
+    "text": "Order statistics\n\nquantiles\nminimum (0 percentile)\nmedian (50th percentile)\nmaximum (100 percentile)\n\n… and any other arbitrary function of the data you can come up with!\nExercise 4: Compute each of these statistics for lead ppb.\n\n# add code here"
   },
   {
-    "objectID": "course-syllabus.html#course-description",
-    "href": "course-syllabus.html#course-description",
-    "title": "Syllabus",
-    "section": "",
-    "text": "This course will teach you how to use modern data science tools to visualize data and, through the lens of visualization, it will introduce you to programming and data science concepts and workflows. Working with data on issues of local, national, and global societal importance, we will learn to create elegant, insightful, and impactful data visualizations through iterative and reproducible processes. We will also discuss the role of visualization in exploratory data analyses as well as in communicating the results of statistical inference and modeling.\nThe main goal of the course is to empower students with a toolkit to explore topics of interest to them via visualizations they create while also learning programming and data science concepts.\nStudents will first learn the basics of the R statistical programming language as well as modern data science toolkit including RStudio for an integrated development environment, Quarto for reproducible computational documents, and Git and GitHub for version control and collaboration.\nBuilding on this foundation, students will continue to hone their visualization skills through the analysis of increasingly complex datasets throughout the semester. These datasets will be selected to reflect current issues of societal importance at the local (Duke/Durham), national, and global levels."
+    "objectID": "ae/ae-02-flint.html#histograms",
+    "href": "ae/ae-02-flint.html#histograms",
+    "title": "Exploring Flint’s water data",
+    "section": "Histograms",
+    "text": "Histograms\nLet’s take a look at the distribution of lead content in homes in Flint, MI.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nWe can make this plot look nicer/more useful by adjusting the number of bins and zooming into the x-axis.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram(bins = 50) +\n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\nLet’s visualize some of our summary statistics on the plot.\nExercise 5: Add a new layer, geom_vline(xintercept = __, color = \"red\"), to the histogram below, filling in the blank with the mean.\n\nggplot(flint, aes(x = lead)) + \n  geom_histogram(bins = 50) + \n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\nExercise 6: Add one more layer which overlays the median, in a different color.\n\n# add code here"
   },
   {
-    "objectID": "course-syllabus.html#learning-objectives",
-    "href": "course-syllabus.html#learning-objectives",
-    "title": "Syllabus",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\nLearn a modern toolkit commonly used in data science research and careers (R, RStudio, Quarto, Git, GitHub).\nIntroduce students to the ideas and methods of data visualization in a comprehensible reproducible way using this toolkit.\nUnderstand the principles of designing and creating data visualizations.\nEvaluate, critique, and improve upon one’s own and others’ data visualizations through an iterative process.\nUse data visualization to look for and answer questions of societal importance and of interest to students."
+    "objectID": "ae/ae-02-flint.html#box-plots",
+    "href": "ae/ae-02-flint.html#box-plots",
+    "title": "Exploring Flint’s water data",
+    "section": "Box plots",
+    "text": "Box plots\nNext, let’s narrow our focus to the zip codes 48503, 48504, 48505, 48506, and 48507 and observations with lead values less than 1,000 ppb.\n\nflint_focus &lt;- flint |&gt;\n  filter(zip %in% 48503:48507 & lead &lt; 1000)\n\nExercise 7: Below are side-by-side box plots for the three flushing times in each of the five zip codes we considered. Add x and y labels; add a title by inserting title = \"title_name\" inside the labs() function.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) +\n  labs(x = \"___\", y = \"___\", fill = \"Flushing time\") +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  )\n\n\n\n\nExercise 8: Add labels for x, y, a title, and subtitle to the code below to update the corresponding plot.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) + \n  labs(\n    x = \"___\", y = \"___\", fill = \"Flushing time\",\n    title = \"___\",\n    subtitle = \"___\"\n    ) +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  ) +\n  coord_cartesian(xlim = c(0, 50)) +\n  theme_bw()\n\n\n\n\nExercise 9: What is the difference between the two plots? What are the advantages and disadvantages to each plot?\n[Add your answer here]"
   },
   {
-    "objectID": "course-syllabus.html#prerequisites",
-    "href": "course-syllabus.html#prerequisites",
-    "title": "Syllabus",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nThis course has no pre-requisites."
-  },
-  {
-    "objectID": "course-syllabus.html#workload",
-    "href": "course-syllabus.html#workload",
-    "title": "Syllabus",
-    "section": "Workload",
-    "text": "Workload\nYou are expected to put in ~6 hours of work / week outside of class. Some of you will do well with less time than this, and some of you will need more."
-  },
-  {
-    "objectID": "course-syllabus.html#tips-for-success",
-    "href": "course-syllabus.html#tips-for-success",
-    "title": "Syllabus",
-    "section": "Tips for success",
-    "text": "Tips for success\n\nComplete the readings before each class.\nBe an active participant during lectures.\nAsk questions - during class or office hours, or by email. Ask me, your TAs, and your classmates.\nDo the homework assignments - start early and make sure you attempt and understand all questions.\nStart your project early and and allow adequate time to complete it.\nGive yourself plenty of time time to prepare a good cheat sheet for exams. This requires going through the material and taking the time to review the concepts that you’re not comfortable with.\nDo not procrastinate - don’t let a unit go by with unanswered questions as it will just make the following unit’s material even more difficult to follow."
-  },
-  {
-    "objectID": "course-syllabus.html#textbooks",
-    "href": "course-syllabus.html#textbooks",
-    "title": "Syllabus",
-    "section": "Textbooks",
-    "text": "Textbooks\nReadings for the course will come from the following textbooks. They are freely available online and you do not need to purchase a physical copy of either book to succeed in this class.\n\n[r4ds]: Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. R for Data Science. 2nd edition. O’Reilly, 2022.\n[socviz] Kieran Healy. Data Visualization: A Practical Introduction. Princeton University Press, 2018.\n[ims]: Mine Çetinkaya-Rundel and Jo Hardin. Introduction to Modern Statistics. (in progress) 2nd edition. OpenIntro, 2023."
-  },
-  {
-    "objectID": "course-syllabus.html#course-community",
-    "href": "course-syllabus.html#course-community",
-    "title": "Syllabus",
-    "section": "Course community",
-    "text": "Course community\n\nDuke Community Standard\nAll students must adhere to the Duke Community Standard (DCS): Duke University is a community dedicated to scholarship, leadership, and service and to the principles of honesty, fairness, and accountability. Citizens of this community commit to reflect upon these principles in all academic and non-academic endeavors, and to protect and promote a culture of integrity.\nTo uphold the Duke Community Standard, students agree:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\n\n\n\n\nInclusive community\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent to present materials and activities that are respectful of diversity and in alignment with Duke’s Commitment to Diversity and Inclusion. Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.\nFurthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives and experiences, and honors your identities. To help accomplish this:\n\nIf you have a name that differs from those that appear in your official Duke records, please let me know! You’ll be able to note this in the Getting to know you survey.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please let me or a member of the teaching team know.\n\n\n\nPronouns\nPronouns are meaningful tools to communicate identities and experiences, and using pronouns supports a campus environment where all community members can thrive.\nPlease update your gender pronouns in Duke Hub. You can learn more at the Center for Sexual and Gender Diversity’s website.\n\n\nAccessibility\nIf there is any portion of the course that is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments. Students should be in touch with the Student Disability Access Office to request or update accommodations under these circumstances.\n\n\nCommunication\nAll lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website: sta101-f23.github.io.\nI will regularly send course announcements via email and Canvas, make sure to check one or the other of these regularly. If an announcement is sent Monday through Thursday, I will assume that you have read the announcement by the next day. If an announcement is sent on a Friday or over the weekend, I will assume that you have read it by Monday.\n\n\nWhere to get help\n\nIf you have a question during lectures, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!\nOutside of class and office hours, any general questions about course content or assignments should be posted on the course Slack. There is a chance another student has already asked a similar question, so please check the other posts on Slack before adding a new question. If you know the answer to a question posted on Slack, I encourage you to respond!\n\nCheck out the Support page for more resources.\nI want to make sure that you learn everything you were hoping to learn from this class. If this requires flexibility, please don’t hesitate to ask.\n\nYou never owe me personal information about your health (mental or physical) but you’re always welcome to talk to me. If I can’t help, I likely know someone who can.\nI want you to learn lots of things from this class, but I primarily want you to stay healthy, balanced, and grounded during this crisis."
-  },
-  {
-    "objectID": "course-syllabus.html#lectures",
-    "href": "course-syllabus.html#lectures",
-    "title": "Syllabus",
-    "section": "Lectures",
-    "text": "Lectures\nThe goal of the lectures is for them to be as interactive as possible. My role as instructor is to introduce you new tools and techniques, but it is up to you to take them and make use of them. A lot of what you do in this course will involve writing code, and coding is a skill that is best learned by doing. Therefore, as much as possible, you will be working on a variety of tasks and activities throughout each lecture. Attendance will not be taken during class but you are expected to attend all lecture sessions and meaningfully contribute to in-class exercises and discussion.\nYou are expected to bring a laptop to each class so that you can take part in the in-class exercises. Please make sure your laptop is fully charged before you come to class as the number of outlets in the classroom will not be sufficient to accommodate everyone. See Duke LIFE loaner laptop program if you need a loaner laptop."
-  },
-  {
-    "objectID": "course-syllabus.html#assessments-and-grading",
-    "href": "course-syllabus.html#assessments-and-grading",
-    "title": "Syllabus",
-    "section": "Assessments and grading",
-    "text": "Assessments and grading\nThe final course grade will be calculated as follows:\n\n\n\nCategory\nPercentage\n\n\n\n\nAttendance and participation\n10%\n\n\nHomework\n25%\n\n\nExam 1\n15%\n\n\nExam 2\n15%\n\n\nProject 1\n15%\n\n\nProject 2\n20%\n\n\n\nThe final letter grade will be determined based on the following thresholds:\n\n\n\nLetter Grade\nFinal Course Grade\n\n\n\n\nA\n&gt;= 93\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n73 - 76.99\n\n\nC-\n70 - 72.99\n\n\nD+\n67 - 69.99\n\n\nD\n63 - 66.99\n\n\nD-\n60 - 62.99\n\n\nF\n&lt; 60\n\n\n\nThese are upper bounds for grade cutoffs, depending on the class performance the cutoffs may be lowered but they won’t be increased.\nAll work is expected to be submitted by the deadline and there are no make ups for any missed assessments. See Section 10.2 for policies on late work.\n\nAttendance and participation\nYou are expected to be present at class meeting and actively participate in the discussion. Your attendance and participation during class, as well as your activity on the course Slack will make up a non-insignificant portion of your grade in this class. While I might sometimes call on you during the class discussion, it is your responsibility to be an active participant without being called on.\nIf you attend at least 80% of the classes, you’ll get all available points for this component.\n\n\nHomework\nIn homework assignments, you will apply the concepts discussed in lecture to various data analysis scenarios. Homework assignments will focus on both computation and conceptualization. They will be completed using Quarto and submitted in GitHub repositories. While you may collaborate with others on homework assignments, your final solution should be your own.\nLowest homework score will be dropped.\n\n\nExams\nThere will be two exams. Each exam will be comprised of two components:\n\nIn class: 75 minute in-class exam. This exam is closed book, however you are allowed to use one sheet of notes (“cheat sheet”) to the midterm and the final. This sheet must be no larger than 8 1/2 x 11, and must be prepared by you. You may use both sides of the sheet. (70% of the grade)\nTake home: Following the in class exam, you’ll have 48 hours to complete the take home portion of your exam. The take home portion will follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam. (30% of the grade)\n\nThrough these exams you have the opportunity to demonstrate what you’ve learned in the course thus far. Each exam will include small analyses and computational tasks related to the content in application exercises. More details about the content and structure of the exams will be discussed during the semester.\nSee Section 12 for dates and times of the exams. Exam dates cannot be changed and no make-up exams will be given. If you can’t take the exams on these dates, you should drop this class.\n\n\nProjects\nYou will work on two projects that consist of analyses of datasets of students’ own choosing. The data set may already exist, or students may collect their own data using a survey or by conducting an experiment. The goal of the projects is for you to demonstrate proficiency in the techniques we have covered in this class (and beyond, if preferred) and apply them to a novel data set in a meaningful way.\nThe mid-semester project will be on visualizing a dataset given to you and the final project will be on visualizing a dataset of your own choice. More details about the projects will be provided during the semester. Projects will be completed in teams.\nYou will be assigned to a different team for each of your two projects. You are encouraged to sit with your teammates in lectures. All team members are expected to contribute equally to the completion of each project and you will be asked to evaluate your team members after each assignment is due. Failure to adequately contribute to an assignment will result in a penalty to your mark relative to the team’s overall mark.\nSee Section 12 for dates and times of project deadlines. Project deadlines cannot be changed. If you can’t be in class for the final project presentation, you should drop this class."
-  },
-  {
-    "objectID": "course-syllabus.html#course-policies",
-    "href": "course-syllabus.html#course-policies",
-    "title": "Syllabus",
-    "section": "Course policies",
-    "text": "Course policies\n\nAcademic honesty\nTL;DR: Don’t cheat!\nPlease abide by the following as you work on assignments in this course:\n\nCollaboration: Only work that is clearly assigned as team work should be completed collaboratively.\n\nThe homework assignments must also be completed individually and you are welcomed to discuss the assignment with classmates at a high level (e.g., discuss what’s the best way for approaching a problem, what functions are useful for accomplishing a particular task, etc.). However you may not directly share answers to homework questions (including any code) with anyone other than myself and the teaching assistants.\nFor the projects, collaboration within teams is not only allowed, but expected. Communication between teams at a high level is also allowed however you may not share code or components of the project across teams.\nOn individual assignments you may not directly share code with another student in this class, and on team assignments you may not directly share code with another team in this class.\n\nOnline resources: I am well aware that a huge volume of code is available on the web to solve any number of problems. Unless I explicitly tell you not to use something, the course’s policy is that you may make use of any online resources (e.g., StackOverflow) but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.\nUse of generative artificial intelligence (AI): You should treat generative AI, such as ChatGPT, the same as other online resources. There are two guiding principles that govern how you can use AI in this course:1 (1) Cognitive dimension: Working with AI should not reduce your ability to think clearly. We will practice using AI to facilitate—rather than hinder—learning. (2) Ethical dimension: Students using AI should be transparent about their use and make sure it aligns with academic integrity.\n\n✅ AI tools for code: You may make use of the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. You may use these guidelines for citing AI-generated content.\n❌ AI tools for narrative: Unless instructed otherwise, you may not use generative AI to write narrative on assignments. In general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect your understanding of the course content.\n\n\nRegardless of course delivery format, it is the responsibility of all students to understand and follow all Duke policies, including academic integrity (e.g., completing one’s own work, following proper citation of sources, adhering to guidance around group work projects, and more). Ignoring these requirements is a violation of the Duke Community Standard. Any questions and/or concerns regarding academic integrity can be directed to the Office of Student Conduct and Community Standards at conduct@duke.edu.\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will\n\nautomatically result in a 0 for the assignment,\ncan further impact your overall course grade, and\nwill be reported to the Office of Student Conduct for further action.\n\n\n\nLate work & extensions\nThe due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback within a timely manner. We understand that things come up periodically that could make it difficult to submit an assignment by the deadline.\nPolicy on late work depends on the particular course component:\n\nHomework assignments:\n\nLate, but within 24 hours of deadline: -20% of available points.\nAny later: No credit, and we will not provide written feedback.\nNote that lowest homework score will be dropped, even if that score is a 0.\n\nExams:\n\nIn class portions of the exams can obviously not be turned in late.\nLate exams are not accepted.\n\nProjects: The following three components contribute to your project score.\n\nPresentation: Late presentations are not accepted and there are no make ups for missed presentations.\nWrite up: GitHub repositories will be closed to contributions at the deadline. If you need to submit your work late, Slack/email me to reopen your repository.\n\nLate, but within 24 hours of deadline: -20% of available points.\nAny later: No credit, and we will not provide written feedback.\n\nPeer evaluation: Late peer evaluations are not accepted. If you do not turn in your peer evaluation, you get 0 points for your own peer score as well, regardless of how your teammates have evaluated you.\n\n\n\n\nWaiver for extenuating circumstances\nIf there are circumstances that prevent you from completing a homework assignment by the stated due date, you may email the Head TA (Shuo Wang, shuo.wang717@duke.edu) before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide explanation. This waiver may only be used for once in the semester, so only use it for a truly extenuating circumstance.\nIf there are circumstances that are having a longer-term impact on your academic performance, please let your academic dean know, as they can be a resource. Please let me know if you need help contacting your academic dean.\n\n\nRegrade requests\nEvery effort will be made to mark your work accurately. We are on your side, and want you to receive every point you have worked to earn. However, sometimes grading mistakes happen. If you believe that an error has been made, return the paper to the instructor within four days, stating your claim in writing.\nThe following claims will be considered for re-grading:\n\npoints are not totaled correctly;\nthe grader did not see a correct answer that is on your paper;\nyour answer is the same as the correct answer, but in a different form (e.g., you wrote a correct answer as 1/3 and the grader was looking for 0.333);\nyour answer to a free response question is essentially correct but stated slightly differently than the grader’s expectation.\n\nThe following claims will not be considered for re-grading:\n\narguments about the number of points lost;\narguments about question wording.\n\nConsidering re-grades consumes time and resources that TAs and the instructor would rather spend helping you understand material. Please bring only claims of type 1-4 to our attention.\nNote that during the regrade process your score could go up or go down or not change.\n\n\n\n\n\n\nWarning\n\n\n\nNo grades will be changed after the project presentations.\n\n\n\n\nAttendance policy\nResponsibility for class attendance rests with individual students. Since regular and punctual class attendance is expected, students must accept the consequences of failure to attend. More details on Trinity attendance policies are available here.\nHowever, there may be many reasons why you cannot be in class on a given day, particularly with possible extra personal and academic stress and health concerns this semester. All course lectures will be recorded and available to enrolled students after class. If you miss a lecture, make sure to watch the recording and review the material before the next class session. Given the technologies we use in the course, this is straightforward to do asynchronously. Overall these policies are put in place to ensure communication between team members, respect for each others’ time, and also to give you a safety net in the case of illness or other reasons that keep you away from attending class.\nNote that attendance and participation is part of your grade as well.\n\n\nAttendance policy related to COVID symptoms, exposure, or infection\nStudent health, safety, and well-being are the university’s top priorities. To help ensure your well-being and the well-being of those around you, please do not come to class if you have tested positive for COVID-19 or have possible symptoms and have not yet been tested. If any of these situations apply to you, you must follow university guidance related to the ongoing COVID-19 pandemic and current health and safety protocols. If you are experiencing any COVID-19 symptoms, contact student health (dshcheckin@duke.edu, 919- 681-9355). Learn more about current university policy related to COVID-19 at https://coronavirus.duke.edu. To keep the university community as safe and healthy as possible, you will be expected to follow these guidelines. Please reach out to me and your academic dean as soon as possible if you need to quarantine or isolate so that we can discuss arrangements for your continued participation in class.\n\n\nInclement weather policy\nIn the event of inclement weather or other connectivity-related events that prohibit class attendance, I will notify you how we will make up missed course content and work. This might entail holding the class on Zoom synchronously, we may rely on Duke’s designated make-up days, or you may be asked to watch a recording of the class.\n\n\nPolicy on video recording course content\nAll lectures will be recorded and available on Panopto, so students should not need to create their own recordings of lectures. If you feel that you need record the lectures yourself, you must get permission from me ahead of time and these recordings should be used for personal study only, no for distribution. The full policy on recording of lectures falls under the Duke University Policy on Intellectual Property Rights, available at https://policies.provost.duke.edu/docs/faculty-handbook-appendix-m-intellectual-property. Unauthorized distribution is a cause for disciplinary action by the Judicial Board."
-  },
-  {
-    "objectID": "course-syllabus.html#accommodations",
-    "href": "course-syllabus.html#accommodations",
-    "title": "Syllabus",
-    "section": "Accommodations",
-    "text": "Accommodations\n\nAcademic accommodations\nIf you are a student with a disability and need accommodations for this class, it is your responsibility to register with the Student Disability Access Office (SDAO) and provide them with documentation of your disability. SDAO will work with you to determine what accommodations are appropriate for your situation. Please note that accommodations are not retroactive and disability accommodations cannot be provided until a Faculty Accommodation Letter has been given to me. Please contact SDAO for more information: sdao@duke.edu or access.duke.edu.\n\n\nReligious accommodations\nStudents are permitted by university policy to be absent from class to observe a religious holiday. Accordingly, Trinity College of Arts & Sciences and the Pratt School of Engineering have established procedures to be followed by students for notifying their instructors of an absence necessitated by the observance of a religious holiday. Please submit requests for religious accommodations at the beginning of the semester so that we can work to make suitable arrangements well ahead of time. You can find the policy and relevant notification form here: https://trinity.duke.edu/undergraduate/academic-policies/religious-holidays.\nNote: If you’ve read this far in the syllabus, email me a picture of your pet if you have one or your favorite meme!"
-  },
-  {
-    "objectID": "course-syllabus.html#sec-important-dates",
-    "href": "course-syllabus.html#sec-important-dates",
-    "title": "Syllabus",
-    "section": "Important dates",
-    "text": "Important dates\n\nMonday, August 28: Classes begin\nFriday, September 8: Drop/add ends\nTuesday, October 3: Exam 1 - In class\nThursday, October 5: Exam 1 - Take home due\nThursday, October 12: Project 1 due + presentations\nFriday, October 13: Mid-semester grades reported\nTuesday, October 17: Fall Break - No lecture\nFriday, November 10: Last day to withdraw with W\nTuesday, November 14: Exam 2 - In class\nThursday, November 16: Exam 2 - Take home due\nThursday, November 23: Thanksgiving Break - No lecture\nThursday, December 7: Project 2 due + presentations\n\nFor more important dates, see the full Duke Academic Calendar."
-  },
-  {
-    "objectID": "course-faq.html",
-    "href": "course-faq.html",
-    "title": "FAQ",
-    "section": "",
-    "text": "The short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.3.1: https://cran.r-project.org\nDownload and install the preview build of RStudio: https://posit.co/download/rstudio-desktop\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here."
-  },
-  {
-    "objectID": "course-faq.html#can-i-use-a-local-install-of-posit-cloud",
-    "href": "course-faq.html#can-i-use-a-local-install-of-posit-cloud",
-    "title": "FAQ",
-    "section": "",
-    "text": "The short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.3.1: https://cran.r-project.org\nDownload and install the preview build of RStudio: https://posit.co/download/rstudio-desktop\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STA 113: Visualizing Data",
-    "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n  \n    \n    \n    \n    \n    \n    \n  \n  \n    \n    \n      WEEK\n      DATE\n      TOPIC\n      PREPARE\n      MATERIALS\n      DUE AT 1 PM\n    \n  \n  \n    1\nTue, Aug 29\nWelcome to STA 113FS!\n\n\n🖥️ slides\n\n\n    \nThu, Aug 31\nMeet the toolkit (R + RStudio)\n\n📖 socviz: Chp 1\n\n🖥️ slides \n⌨️ ae-01 \n⌨️ ae-02\n\nGetting to know you survey \nGitHub usernames\n\n    2\nTue, Sep 5\nMeet the toolkit (Git + GitHub) + \nGrammar of graphics\n\n📖 r4ds: Chp 2.1 - 2.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-03\n\n\n    \nThu, Sep 7\nVisualizing various types of data\n\n📖 r4ds: Chp 2.5 - 2.8 \n📖 r4ds: Chp 3 \n🎥 video\n\n🖥️ slides \n⌨️ ae-04\n\n\n    3\nTue, Sep 12\nGrammar of data wrangling\n\n\n\n📄 HW 1\n\n    \nThu, Sep 14\nWorking with multiple data frames\n\n\n\n\n    4\nTue, Sep 19\nProject 1 workday\n\n\n\n📄 HW 2\n\n    \nThu, Sep 21\nRubenstein Library Visit (Rubenstein Room 150)\n\n\n\n\n    5\nTue, Sep 26\nTidying data\n\n\n\n📄 HW 3\n\n    \nThu, Sep 28\nData types and classes\n\n\n\nProject 1 proposal\n\n    6\nTue, Oct 3\nExam 1 - In class\n\n\n\n\n    \nThu, Oct 5\nImporting and recoding data\n\n\n\nExam 1 - Take home\n\n    7\nTue, Oct 10\nPresentation ready plots\n\n\n\nProject 1 peer review\n\n    \nThu, Oct 12\nProject 1 presentations\n\n\n\nProject 1\n\n    8\nTue, Oct 17\nFall Break - No lecture\n\n\n\n\n    \nThu, Oct 19\nThe language of models\n\n\n\n\n    9\nTue, Oct 24\nModels with a single predictor\n\n\n\n📄 HW 4\n\n    \nThu, Oct 26\nProject 2 workday\n\n\n\n\n    10\nTue, Oct 31\nModels with multiple predictors\n\n\n\n📄 HW 5\n\n    \nThu, Nov 2\nModels with multiple predictors + Overfitting\n\n\n\nProject 2 proposal\n\n    11\nTue, Nov 7\nQuantifying uncertainty with bootstrap intervals\n\n\n\n📄 HW 6\n\n    \nThu, Nov 9\nQuantifying uncertainty with bootstrap intervals\n\n\n\n\n    12\nTue, Nov 14\nExam 2 - In class\n\n\n\n\n    \nThu, Nov 16\nHypothesis testing via simulation\n\n\n\nExam 2 - Take home\n\n    13\nTue, Nov 21\nHypothesis testing via simulation\n\n\n\n\n    \nThu, Nov 23\nThanksgiving Break - No lecture\n\n\n\n\n    14\nTue, Nov 28\nCommunicating data science results effectively\n\n\n\n📄 HW 7\n\n    \nThu, Nov 30\nData visualization accessibility\n\n\n\nProject 2 peer review\n\n    15\nTue, Dec 5\nDu Bois visualizations\n\n\n\n\n    \nThu, Dec 7\nProject 2 presentations\n\n\n\nProject 2 at 1 pm"
-  },
-  {
-    "objectID": "computing/computing-access.html",
-    "href": "computing/computing-access.html",
-    "title": "Computing access",
-    "section": "",
-    "text": "To access RStudio in the browser, go to the Posit Cloud space for this course.\nAt the beginning of the semester you should have received a link to join this space. If you haven’t yet joined, you can find the link in Canvas Announcements or ask for it on the course Slack."
-  },
-  {
-    "objectID": "project/project-tips-resources.html",
-    "href": "project/project-tips-resources.html",
-    "title": "Project tips + resources",
-    "section": "",
-    "text": "To be posted."
-  },
-  {
-    "objectID": "project/project-1.html",
-    "href": "project/project-1.html",
-    "title": "Project 1",
-    "section": "",
-    "text": "More info to be posted…"
-  },
-  {
-    "objectID": "hw/hw-8.html",
-    "href": "hw/hw-8.html",
-    "title": "HW 8",
-    "section": "",
-    "text": "To be posted…"
-  },
-  {
-    "objectID": "hw/hw-2.html",
-    "href": "hw/hw-2.html",
-    "title": "HW 2",
+    "objectID": "hw/hw-3.html",
+    "href": "hw/hw-3.html",
+    "title": "HW 3",
     "section": "",
     "text": "To be posted…"
   },
@@ -588,186 +518,284 @@
     "text": "Grading\n\nExercise 1-9: 10 points each\nWorkflow + formatting: 10 points\nTotal: 100 points"
   },
   {
-    "objectID": "hw/hw-3.html",
-    "href": "hw/hw-3.html",
-    "title": "HW 3",
+    "objectID": "hw/hw-2.html",
+    "href": "hw/hw-2.html",
+    "title": "HW 2",
     "section": "",
     "text": "To be posted…"
   },
   {
-    "objectID": "ae/ae-02-flint.html",
-    "href": "ae/ae-02-flint.html",
-    "title": "Exploring Flint’s water data",
+    "objectID": "hw/hw-8.html",
+    "href": "hw/hw-8.html",
+    "title": "HW 8",
     "section": "",
-    "text": "Go to Posit Cloud to get started."
+    "text": "To be posted…"
   },
   {
-    "objectID": "ae/ae-02-flint.html#rstudio",
-    "href": "ae/ae-02-flint.html#rstudio",
-    "title": "Exploring Flint’s water data",
-    "section": "RStudio",
-    "text": "RStudio\n\nFiles, plots, viewer, environment, etc. panes\nConsole\nEditor"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#r",
-    "href": "ae/ae-02-flint.html#r",
-    "title": "Exploring Flint’s water data",
-    "section": "R",
-    "text": "R\n\nWriting code in the console\nBasic math with R\nCreating variables in R, the assignment operator (&lt;-), and the Environment pane\nR functions and packages and the Packages pane\nGetting help with R and the Help pane"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#quarto",
-    "href": "ae/ae-02-flint.html#quarto",
-    "title": "Exploring Flint’s water data",
-    "section": "Quarto",
-    "text": "Quarto\n\nYAML: Metadata\nNarrative: Edited with the visual editor (or the source editor)\nCode: In code chunks\n\nChunk options (following #|)\nComments (following #)\nCode\n\nRunning individual code chunks vs. rendering a document"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#load-packages",
-    "href": "ae/ae-02-flint.html#load-packages",
-    "title": "Exploring Flint’s water data",
-    "section": "Load packages",
-    "text": "Load packages\nWe’ll use the tidyverse package for analysis, which offers functionality for data import, wrangling, visualization, and more.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nLoading this package prints out a message. What does this message mean? How can we suppress the message from the output?"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#load-data",
-    "href": "ae/ae-02-flint.html#load-data",
-    "title": "Exploring Flint’s water data",
-    "section": "Load data",
-    "text": "Load data\nThe read_csv() function can be used for reading CSV (comma separated values) files. The file we’re reading is called flint with the suffix (.csv) which indicates its file type. The file is in the data folder.\nBefore reading in the file, go to the data folder in the Files pane to confirm that it is, indeed, there. Then, read the file by running the code chunk below by clicking on the green triangle icon on the code chunk.\n\nflint &lt;- read_csv(\"data/flint.csv\")\n\nRows: 813 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): draw\ndbl (4): id, zip, ward, lead\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nOne of two things may have happened:\n\nThe file was read successfully and you now see a dataset called flint in your Environment pane.\nThe file was not read successfully and you see an error Error in read_csv(\"data/flint.csv\") : could not find function \"read_csv\".\n\nIf (1) happened, great!\nIf (2) happened, let’s troubleshoot first before continuing."
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#data-dictionary",
-    "href": "ae/ae-02-flint.html#data-dictionary",
-    "title": "Exploring Flint’s water data",
-    "section": "Data dictionary",
-    "text": "Data dictionary\nThe following variables are in the flint data frame:\n\nid: sample ID number (identifies the home)\nzip: ZIP code in Flint of the sample’s location\nward: ward in Flint of the sample’s location\ndraw: which time point the water was sampled from\nlead: lead content in parts per billion (ppb)"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#populations-and-samples",
-    "href": "ae/ae-02-flint.html#populations-and-samples",
-    "title": "Exploring Flint’s water data",
-    "section": "Populations and samples",
-    "text": "Populations and samples\nWe want to learn about the population using a sample.\nIn the case we want to learn about the lead content in all of Flint, MI homes but only have available water readings from a sample of homes (our data set).\nExercise 1: Look at the data, how many observations are there? How many variables?\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#frequencies",
-    "href": "ae/ae-02-flint.html#frequencies",
-    "title": "Exploring Flint’s water data",
-    "section": "Frequencies",
-    "text": "Frequencies\nLet’s count() to find the number of different time points water was sampled with the count() function.\n\nThe first argument is flint: the data frame\nThe second argument is draw: the variable\n\n\ncount(flint, draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can achieve the same result with the following “piped” operation as well.\n\nThe first line is flint: the data frame\nThen the pipe operator, read as “and then”, which places what comes before it as the first argument of what comes after it\nThe second line is count(draw)\n\n\nflint |&gt;\n  count(draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can use a similar approach to fund out how many unique homes are in the data set:\n\nflint |&gt;\n  count(id)\n\n# A tibble: 269 × 2\n      id     n\n   &lt;dbl&gt; &lt;int&gt;\n 1     1     3\n 2     2     3\n 3     4     3\n 4     5     3\n 5     6     3\n 6     7     3\n 7     8     3\n 8     9     3\n 9    12     3\n10    13     3\n# ℹ 259 more rows\n\n\nExercise 2: How many samples were taken from each zip code?\n\n# add code here\n\nExercise 3: Which ZIP code had the most samples drawn? Hint: See the help for count.\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#measures-of-central-tendency",
-    "href": "ae/ae-02-flint.html#measures-of-central-tendency",
-    "title": "Exploring Flint’s water data",
-    "section": "Measures of central tendency",
-    "text": "Measures of central tendency\n\nmean\nmedian\nmode"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#measures-of-spread",
-    "href": "ae/ae-02-flint.html#measures-of-spread",
-    "title": "Exploring Flint’s water data",
-    "section": "Measures of spread",
-    "text": "Measures of spread\n\nvariance\nstandard deviation\nrange\nquartiles\ninter-quartile range (IQR)"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#order-statistics",
-    "href": "ae/ae-02-flint.html#order-statistics",
-    "title": "Exploring Flint’s water data",
-    "section": "Order statistics",
-    "text": "Order statistics\n\nquantiles\nminimum (0 percentile)\nmedian (50th percentile)\nmaximum (100 percentile)\n\n… and any other arbitrary function of the data you can come up with!\nExercise 4: Compute each of these statistics for lead ppb.\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#histograms",
-    "href": "ae/ae-02-flint.html#histograms",
-    "title": "Exploring Flint’s water data",
-    "section": "Histograms",
-    "text": "Histograms\nLet’s take a look at the distribution of lead content in homes in Flint, MI.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nWe can make this plot look nicer/more useful by adjusting the number of bins and zooming into the x-axis.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram(bins = 50) +\n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\nLet’s visualize some of our summary statistics on the plot.\nExercise 5: Add a new layer, geom_vline(xintercept = __, color = \"red\"), to the histogram below, filling in the blank with the mean.\n\nggplot(flint, aes(x = lead)) + \n  geom_histogram(bins = 50) + \n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\nExercise 6: Add one more layer which overlays the median, in a different color.\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#box-plots",
-    "href": "ae/ae-02-flint.html#box-plots",
-    "title": "Exploring Flint’s water data",
-    "section": "Box plots",
-    "text": "Box plots\nNext, let’s narrow our focus to the zip codes 48503, 48504, 48505, 48506, and 48507 and observations with lead values less than 1,000 ppb.\n\nflint_focus &lt;- flint |&gt;\n  filter(zip %in% 48503:48507 & lead &lt; 1000)\n\nExercise 7: Below are side-by-side box plots for the three flushing times in each of the five zip codes we considered. Add x and y labels; add a title by inserting title = \"title_name\" inside the labs() function.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) +\n  labs(x = \"___\", y = \"___\", fill = \"Flushing time\") +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  )\n\n\n\n\nExercise 8: Add labels for x, y, a title, and subtitle to the code below to update the corresponding plot.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) + \n  labs(\n    x = \"___\", y = \"___\", fill = \"Flushing time\",\n    title = \"___\",\n    subtitle = \"___\"\n    ) +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  ) +\n  coord_cartesian(xlim = c(0, 50)) +\n  theme_bw()\n\n\n\n\nExercise 9: What is the difference between the two plots? What are the advantages and disadvantages to each plot?\n[Add your answer here]"
-  },
-  {
-    "objectID": "ae/ae-03-flint.html",
-    "href": "ae/ae-03-flint.html",
-    "title": "Exploring Flint’s water data",
+    "objectID": "project/project-1.html",
+    "href": "project/project-1.html",
+    "title": "Project 1",
     "section": "",
-    "text": "Go to the course GitHub organization to get started.\nThis is an updated version of the previous application exercise. The data analysis exercises R the same, but workflow steps have been updated for a Git and GitHub based workflow."
+    "text": "More info to be posted…"
   },
   {
-    "objectID": "ae/ae-03-flint.html#load-packages",
-    "href": "ae/ae-03-flint.html#load-packages",
-    "title": "Exploring Flint’s water data",
-    "section": "Load packages",
-    "text": "Load packages\nWe’ll use the tidyverse package for analysis, which offers functionality for data import, wrangling, visualization, and more.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nLoading this package prints out a message. What does this message mean? How can we suppress the message from the output?"
+    "objectID": "project/project-tips-resources.html",
+    "href": "project/project-tips-resources.html",
+    "title": "Project tips + resources",
+    "section": "",
+    "text": "To be posted."
   },
   {
-    "objectID": "ae/ae-03-flint.html#load-data",
-    "href": "ae/ae-03-flint.html#load-data",
-    "title": "Exploring Flint’s water data",
-    "section": "Load data",
-    "text": "Load data\nThe read_csv() function can be used for reading CSV (comma separated values) files. The file we’re reading is called flint with the suffix (.csv) which indicates its file type. The file is in the data folder.\nBefore reading in the file, go to the data folder in the Files pane to confirm that it is, indeed, there. Then, read the file by running the code chunk below by clicking on the green triangle icon on the code chunk.\n\nflint &lt;- read_csv(\"data/flint.csv\")\n\nRows: 813 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): draw\ndbl (4): id, zip, ward, lead\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nOne of two things may have happened:\n\nThe file was read successfully and you now see a dataset called flint in your Environment pane.\nThe file was not read successfully and you see an error Error in read_csv(\"data/flint.csv\") : could not find function \"read_csv\".\n\nIf (1) happened, great!\nIf (2) happened, let’s troubleshoot first before continuing."
+    "objectID": "computing/computing-access.html",
+    "href": "computing/computing-access.html",
+    "title": "Computing access",
+    "section": "",
+    "text": "To access RStudio in the browser, go to the Posit Cloud space for this course.\nAt the beginning of the semester you should have received a link to join this space. If you haven’t yet joined, you can find the link in Canvas Announcements or ask for it on the course Slack."
   },
   {
-    "objectID": "ae/ae-03-flint.html#data-dictionary",
-    "href": "ae/ae-03-flint.html#data-dictionary",
-    "title": "Exploring Flint’s water data",
-    "section": "Data dictionary",
-    "text": "Data dictionary\nThe following variables are in the flint data frame:\n\nid: sample ID number (identifies the home)\nzip: ZIP code in Flint of the sample’s location\nward: ward in Flint of the sample’s location\ndraw: which time point the water was sampled from\nlead: lead content in parts per billion (ppb)"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 113: Visualizing Data",
+    "section": "",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n  \n    \n    \n    \n    \n    \n    \n  \n  \n    \n    \n      WEEK\n      DATE\n      TOPIC\n      PREPARE\n      MATERIALS\n      DUE AT 1 PM\n    \n  \n  \n    1\nTue, Aug 29\nWelcome to STA 113FS!\n\n\n🖥️ slides\n\n\n    \nThu, Aug 31\nMeet the toolkit (R + RStudio)\n\n📖 socviz: Chp 1\n\n🖥️ slides \n⌨️ ae-01 \n⌨️ ae-02\n\nGetting to know you survey \nGitHub usernames\n\n    2\nTue, Sep 5\nMeet the toolkit (Git + GitHub) + \nGrammar of graphics\n\n📖 r4ds: Chp 2.1 - 2.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-03\n\n\n    \nThu, Sep 7\nVisualizing various types of data\n\n📖 r4ds: Chp 2.5 - 2.8 \n📖 r4ds: Chp 3 \n🎥 video\n\n🖥️ slides \n⌨️ ae-04\n\n\n    3\nTue, Sep 12\nGrammar of data wrangling\n\n\n\n📄 HW 1\n\n    \nThu, Sep 14\nWorking with multiple data frames\n\n\n\n\n    4\nTue, Sep 19\nProject 1 workday\n\n\n\n📄 HW 2\n\n    \nThu, Sep 21\nRubenstein Library Visit (Rubenstein Room 150)\n\n\n\n\n    5\nTue, Sep 26\nTidying data\n\n\n\n📄 HW 3\n\n    \nThu, Sep 28\nData types and classes\n\n\n\nProject 1 proposal\n\n    6\nTue, Oct 3\nExam 1 - In class\n\n\n\n\n    \nThu, Oct 5\nImporting and recoding data\n\n\n\nExam 1 - Take home\n\n    7\nTue, Oct 10\nPresentation ready plots\n\n\n\nProject 1 peer review\n\n    \nThu, Oct 12\nProject 1 presentations\n\n\n\nProject 1\n\n    8\nTue, Oct 17\nFall Break - No lecture\n\n\n\n\n    \nThu, Oct 19\nThe language of models\n\n\n\n\n    9\nTue, Oct 24\nModels with a single predictor\n\n\n\n📄 HW 4\n\n    \nThu, Oct 26\nProject 2 workday\n\n\n\n\n    10\nTue, Oct 31\nModels with multiple predictors\n\n\n\n📄 HW 5\n\n    \nThu, Nov 2\nModels with multiple predictors + Overfitting\n\n\n\nProject 2 proposal\n\n    11\nTue, Nov 7\nQuantifying uncertainty with bootstrap intervals\n\n\n\n📄 HW 6\n\n    \nThu, Nov 9\nQuantifying uncertainty with bootstrap intervals\n\n\n\n\n    12\nTue, Nov 14\nExam 2 - In class\n\n\n\n\n    \nThu, Nov 16\nHypothesis testing via simulation\n\n\n\nExam 2 - Take home\n\n    13\nTue, Nov 21\nHypothesis testing via simulation\n\n\n\n\n    \nThu, Nov 23\nThanksgiving Break - No lecture\n\n\n\n\n    14\nTue, Nov 28\nCommunicating data science results effectively\n\n\n\n📄 HW 7\n\n    \nThu, Nov 30\nData visualization accessibility\n\n\n\nProject 2 peer review\n\n    15\nTue, Dec 5\nDu Bois visualizations\n\n\n\n\n    \nThu, Dec 7\nProject 2 presentations\n\n\n\nProject 2 at 1 pm"
   },
   {
-    "objectID": "ae/ae-03-flint.html#populations-and-samples",
-    "href": "ae/ae-03-flint.html#populations-and-samples",
-    "title": "Exploring Flint’s water data",
-    "section": "Populations and samples",
-    "text": "Populations and samples\nWe want to learn about the population using a sample.\nIn the case we want to learn about the lead content in all of Flint, MI homes but only have available water readings from a sample of homes (our data set).\nExercise 1: Look at the data, how many observations are there? How many variables?\n\n# add code here\n\n\nRender, commit, and push, with an appropriate commit message like “Finished Exercise 1”. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+    "objectID": "course-faq.html",
+    "href": "course-faq.html",
+    "title": "FAQ",
+    "section": "",
+    "text": "The short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.3.1: https://cran.r-project.org\nDownload and install the preview build of RStudio: https://posit.co/download/rstudio-desktop\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here."
   },
   {
-    "objectID": "ae/ae-03-flint.html#frequencies",
-    "href": "ae/ae-03-flint.html#frequencies",
-    "title": "Exploring Flint’s water data",
-    "section": "Frequencies",
-    "text": "Frequencies\nLet’s count() to find the number of different time points water was sampled with the count() function.\n\nThe first argument is flint: the data frame\nThe second argument is draw: the variable\n\n\ncount(flint, draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can achieve the same result with the following “piped” operation as well.\n\nThe first line is flint: the data frame\nThen the pipe operator, read as “and then”, which places what comes before it as the first argument of what comes after it\nThe second line is count(draw)\n\n\nflint |&gt;\n  count(draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can use a similar approach to fund out how many unique homes are in the data set:\n\nflint |&gt;\n  count(id)\n\n# A tibble: 269 × 2\n      id     n\n   &lt;dbl&gt; &lt;int&gt;\n 1     1     3\n 2     2     3\n 3     4     3\n 4     5     3\n 5     6     3\n 6     7     3\n 7     8     3\n 8     9     3\n 9    12     3\n10    13     3\n# ℹ 259 more rows\n\n\nExercise 2: How many samples were taken from each zip code?\n\n# add code here\n\nExercise 3: Which ZIP code had the most samples drawn? Hint: See the help for count.\n\n# add code here\n\n\nRender, commit, and push, with an appropriate commit message like “Finished exercises 2 and 3”. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+    "objectID": "course-faq.html#can-i-use-a-local-install-of-posit-cloud",
+    "href": "course-faq.html#can-i-use-a-local-install-of-posit-cloud",
+    "title": "FAQ",
+    "section": "",
+    "text": "The short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.3.1: https://cran.r-project.org\nDownload and install the preview build of RStudio: https://posit.co/download/rstudio-desktop\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here."
   },
   {
-    "objectID": "ae/ae-03-flint.html#measures-of-central-tendency",
-    "href": "ae/ae-03-flint.html#measures-of-central-tendency",
-    "title": "Exploring Flint’s water data",
-    "section": "Measures of central tendency",
-    "text": "Measures of central tendency\n\nmean\nmedian\nmode"
+    "objectID": "course-syllabus.html",
+    "href": "course-syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This course will teach you how to use modern data science tools to visualize data and, through the lens of visualization, it will introduce you to programming and data science concepts and workflows. Working with data on issues of local, national, and global societal importance, we will learn to create elegant, insightful, and impactful data visualizations through iterative and reproducible processes. We will also discuss the role of visualization in exploratory data analyses as well as in communicating the results of statistical inference and modeling.\nThe main goal of the course is to empower students with a toolkit to explore topics of interest to them via visualizations they create while also learning programming and data science concepts.\nStudents will first learn the basics of the R statistical programming language as well as modern data science toolkit including RStudio for an integrated development environment, Quarto for reproducible computational documents, and Git and GitHub for version control and collaboration.\nBuilding on this foundation, students will continue to hone their visualization skills through the analysis of increasingly complex datasets throughout the semester. These datasets will be selected to reflect current issues of societal importance at the local (Duke/Durham), national, and global levels."
   },
   {
-    "objectID": "ae/ae-03-flint.html#measures-of-spread",
-    "href": "ae/ae-03-flint.html#measures-of-spread",
-    "title": "Exploring Flint’s water data",
-    "section": "Measures of spread",
-    "text": "Measures of spread\n\nvariance\nstandard deviation\nrange\nquartiles\ninter-quartile range (IQR)"
+    "objectID": "course-syllabus.html#course-description",
+    "href": "course-syllabus.html#course-description",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This course will teach you how to use modern data science tools to visualize data and, through the lens of visualization, it will introduce you to programming and data science concepts and workflows. Working with data on issues of local, national, and global societal importance, we will learn to create elegant, insightful, and impactful data visualizations through iterative and reproducible processes. We will also discuss the role of visualization in exploratory data analyses as well as in communicating the results of statistical inference and modeling.\nThe main goal of the course is to empower students with a toolkit to explore topics of interest to them via visualizations they create while also learning programming and data science concepts.\nStudents will first learn the basics of the R statistical programming language as well as modern data science toolkit including RStudio for an integrated development environment, Quarto for reproducible computational documents, and Git and GitHub for version control and collaboration.\nBuilding on this foundation, students will continue to hone their visualization skills through the analysis of increasingly complex datasets throughout the semester. These datasets will be selected to reflect current issues of societal importance at the local (Duke/Durham), national, and global levels."
   },
   {
-    "objectID": "ae/ae-03-flint.html#order-statistics",
-    "href": "ae/ae-03-flint.html#order-statistics",
-    "title": "Exploring Flint’s water data",
-    "section": "Order statistics",
-    "text": "Order statistics\n\nquantiles\nminimum (0 percentile)\nmedian (50th percentile)\nmaximum (100 percentile)\n\n… and any other arbitrary function of the data you can come up with!\nExercise 4: Compute each of these statistics for lead ppb.\n\n# add code here\n\n\nRender, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+    "objectID": "course-syllabus.html#learning-objectives",
+    "href": "course-syllabus.html#learning-objectives",
+    "title": "Syllabus",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nLearn a modern toolkit commonly used in data science research and careers (R, RStudio, Quarto, Git, GitHub).\nIntroduce students to the ideas and methods of data visualization in a comprehensible reproducible way using this toolkit.\nUnderstand the principles of designing and creating data visualizations.\nEvaluate, critique, and improve upon one’s own and others’ data visualizations through an iterative process.\nUse data visualization to look for and answer questions of societal importance and of interest to students."
   },
   {
-    "objectID": "ae/ae-03-flint.html#histograms",
-    "href": "ae/ae-03-flint.html#histograms",
-    "title": "Exploring Flint’s water data",
-    "section": "Histograms",
-    "text": "Histograms\nLet’s take a look at the distribution of lead content in homes in Flint, MI.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nWe can make this plot look nicer/more useful by adjusting the number of bins and zooming into the x-axis.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram(bins = 50) +\n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\nLet’s visualize some of our summary statistics on the plot.\nExercise 5: Add a new layer, geom_vline(xintercept = __, color = \"red\"), to the histogram below, filling in the blank with the mean.\n\nggplot(flint, aes(x = lead)) + \n  geom_histogram(bins = 50) + \n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\nExercise 6: Add one more layer which overlays the median, in a different color.\n\n# add code here"
+    "objectID": "course-syllabus.html#prerequisites",
+    "href": "course-syllabus.html#prerequisites",
+    "title": "Syllabus",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nThis course has no pre-requisites."
   },
   {
-    "objectID": "ae/ae-03-flint.html#box-plots",
-    "href": "ae/ae-03-flint.html#box-plots",
-    "title": "Exploring Flint’s water data",
-    "section": "Box plots",
-    "text": "Box plots\nNext, let’s narrow our focus to the zip codes 48503, 48504, 48505, 48506, and 48507 and observations with lead values less than 1,000 ppb.\n\nflint_focus &lt;- flint |&gt;\n  filter(zip %in% 48503:48507 & lead &lt; 1000)\n\nExercise 7: Below are side-by-side box plots for the three flushing times in each of the five zip codes we considered. Add x and y labels; add a title by inserting title = \"title_name\" inside the labs() function.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) +\n  labs(x = \"___\", y = \"___\", fill = \"Flushing time\") +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  )\n\n\n\n\n\nRender, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.\n\nExercise 8: Add labels for x, y, a title, and subtitle to the code below to update the corresponding plot.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) + \n  labs(\n    x = \"___\", y = \"___\", fill = \"Flushing time\",\n    title = \"___\",\n    subtitle = \"___\"\n    ) +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  ) +\n  coord_cartesian(xlim = c(0, 50)) +\n  theme_bw()\n\n\n\n\nExercise 9: What is the difference between the two plots? What are the advantages and disadvantages to each plot?\n[Add your answer here]\n\nRender, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding. Confirm that your output looks as expected on your GitHub repository."
+    "objectID": "course-syllabus.html#workload",
+    "href": "course-syllabus.html#workload",
+    "title": "Syllabus",
+    "section": "Workload",
+    "text": "Workload\nYou are expected to put in ~6 hours of work / week outside of class. Some of you will do well with less time than this, and some of you will need more."
+  },
+  {
+    "objectID": "course-syllabus.html#tips-for-success",
+    "href": "course-syllabus.html#tips-for-success",
+    "title": "Syllabus",
+    "section": "Tips for success",
+    "text": "Tips for success\n\nComplete the readings before each class.\nBe an active participant during lectures.\nAsk questions - during class or office hours, or by email. Ask me, your TAs, and your classmates.\nDo the homework assignments - start early and make sure you attempt and understand all questions.\nStart your project early and and allow adequate time to complete it.\nGive yourself plenty of time time to prepare a good cheat sheet for exams. This requires going through the material and taking the time to review the concepts that you’re not comfortable with.\nDo not procrastinate - don’t let a unit go by with unanswered questions as it will just make the following unit’s material even more difficult to follow."
+  },
+  {
+    "objectID": "course-syllabus.html#textbooks",
+    "href": "course-syllabus.html#textbooks",
+    "title": "Syllabus",
+    "section": "Textbooks",
+    "text": "Textbooks\nReadings for the course will come from the following textbooks. They are freely available online and you do not need to purchase a physical copy of either book to succeed in this class.\n\n[r4ds]: Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. R for Data Science. 2nd edition. O’Reilly, 2022.\n[socviz] Kieran Healy. Data Visualization: A Practical Introduction. Princeton University Press, 2018.\n[ims]: Mine Çetinkaya-Rundel and Jo Hardin. Introduction to Modern Statistics. (in progress) 2nd edition. OpenIntro, 2023."
+  },
+  {
+    "objectID": "course-syllabus.html#course-community",
+    "href": "course-syllabus.html#course-community",
+    "title": "Syllabus",
+    "section": "Course community",
+    "text": "Course community\n\nDuke Community Standard\nAll students must adhere to the Duke Community Standard (DCS): Duke University is a community dedicated to scholarship, leadership, and service and to the principles of honesty, fairness, and accountability. Citizens of this community commit to reflect upon these principles in all academic and non-academic endeavors, and to protect and promote a culture of integrity.\nTo uphold the Duke Community Standard, students agree:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\n\n\n\n\nInclusive community\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent to present materials and activities that are respectful of diversity and in alignment with Duke’s Commitment to Diversity and Inclusion. Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.\nFurthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives and experiences, and honors your identities. To help accomplish this:\n\nIf you have a name that differs from those that appear in your official Duke records, please let me know! You’ll be able to note this in the Getting to know you survey.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please let me or a member of the teaching team know.\n\n\n\nPronouns\nPronouns are meaningful tools to communicate identities and experiences, and using pronouns supports a campus environment where all community members can thrive.\nPlease update your gender pronouns in Duke Hub. You can learn more at the Center for Sexual and Gender Diversity’s website.\n\n\nAccessibility\nIf there is any portion of the course that is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments. Students should be in touch with the Student Disability Access Office to request or update accommodations under these circumstances.\n\n\nCommunication\nAll lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website: sta101-f23.github.io.\nI will regularly send course announcements via email and Canvas, make sure to check one or the other of these regularly. If an announcement is sent Monday through Thursday, I will assume that you have read the announcement by the next day. If an announcement is sent on a Friday or over the weekend, I will assume that you have read it by Monday.\n\n\nWhere to get help\n\nIf you have a question during lectures, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!\nOutside of class and office hours, any general questions about course content or assignments should be posted on the course Slack. There is a chance another student has already asked a similar question, so please check the other posts on Slack before adding a new question. If you know the answer to a question posted on Slack, I encourage you to respond!\n\nCheck out the Support page for more resources.\nI want to make sure that you learn everything you were hoping to learn from this class. If this requires flexibility, please don’t hesitate to ask.\n\nYou never owe me personal information about your health (mental or physical) but you’re always welcome to talk to me. If I can’t help, I likely know someone who can.\nI want you to learn lots of things from this class, but I primarily want you to stay healthy, balanced, and grounded during this crisis."
+  },
+  {
+    "objectID": "course-syllabus.html#lectures",
+    "href": "course-syllabus.html#lectures",
+    "title": "Syllabus",
+    "section": "Lectures",
+    "text": "Lectures\nThe goal of the lectures is for them to be as interactive as possible. My role as instructor is to introduce you new tools and techniques, but it is up to you to take them and make use of them. A lot of what you do in this course will involve writing code, and coding is a skill that is best learned by doing. Therefore, as much as possible, you will be working on a variety of tasks and activities throughout each lecture. Attendance will not be taken during class but you are expected to attend all lecture sessions and meaningfully contribute to in-class exercises and discussion.\nYou are expected to bring a laptop to each class so that you can take part in the in-class exercises. Please make sure your laptop is fully charged before you come to class as the number of outlets in the classroom will not be sufficient to accommodate everyone. See Duke LIFE loaner laptop program if you need a loaner laptop."
+  },
+  {
+    "objectID": "course-syllabus.html#assessments-and-grading",
+    "href": "course-syllabus.html#assessments-and-grading",
+    "title": "Syllabus",
+    "section": "Assessments and grading",
+    "text": "Assessments and grading\nThe final course grade will be calculated as follows:\n\n\n\nCategory\nPercentage\n\n\n\n\nAttendance and participation\n10%\n\n\nHomework\n25%\n\n\nExam 1\n15%\n\n\nExam 2\n15%\n\n\nProject 1\n15%\n\n\nProject 2\n20%\n\n\n\nThe final letter grade will be determined based on the following thresholds:\n\n\n\nLetter Grade\nFinal Course Grade\n\n\n\n\nA\n&gt;= 93\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n73 - 76.99\n\n\nC-\n70 - 72.99\n\n\nD+\n67 - 69.99\n\n\nD\n63 - 66.99\n\n\nD-\n60 - 62.99\n\n\nF\n&lt; 60\n\n\n\nThese are upper bounds for grade cutoffs, depending on the class performance the cutoffs may be lowered but they won’t be increased.\nAll work is expected to be submitted by the deadline and there are no make ups for any missed assessments. See Section 10.2 for policies on late work.\n\nAttendance and participation\nYou are expected to be present at class meeting and actively participate in the discussion. Your attendance and participation during class, as well as your activity on the course Slack will make up a non-insignificant portion of your grade in this class. While I might sometimes call on you during the class discussion, it is your responsibility to be an active participant without being called on.\nIf you attend at least 80% of the classes, you’ll get all available points for this component.\n\n\nHomework\nIn homework assignments, you will apply the concepts discussed in lecture to various data analysis scenarios. Homework assignments will focus on both computation and conceptualization. They will be completed using Quarto and submitted in GitHub repositories. While you may collaborate with others on homework assignments, your final solution should be your own.\nLowest homework score will be dropped.\n\n\nExams\nThere will be two exams. Each exam will be comprised of two components:\n\nIn class: 75 minute in-class exam. This exam is closed book, however you are allowed to use one sheet of notes (“cheat sheet”) to the midterm and the final. This sheet must be no larger than 8 1/2 x 11, and must be prepared by you. You may use both sides of the sheet. (70% of the grade)\nTake home: Following the in class exam, you’ll have 48 hours to complete the take home portion of your exam. The take home portion will follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam. (30% of the grade)\n\nThrough these exams you have the opportunity to demonstrate what you’ve learned in the course thus far. Each exam will include small analyses and computational tasks related to the content in application exercises. More details about the content and structure of the exams will be discussed during the semester.\nSee Section 12 for dates and times of the exams. Exam dates cannot be changed and no make-up exams will be given. If you can’t take the exams on these dates, you should drop this class.\n\n\nProjects\nYou will work on two projects that consist of analyses of datasets of students’ own choosing. The data set may already exist, or students may collect their own data using a survey or by conducting an experiment. The goal of the projects is for you to demonstrate proficiency in the techniques we have covered in this class (and beyond, if preferred) and apply them to a novel data set in a meaningful way.\nThe mid-semester project will be on visualizing a dataset given to you and the final project will be on visualizing a dataset of your own choice. More details about the projects will be provided during the semester. Projects will be completed in teams.\nYou will be assigned to a different team for each of your two projects. You are encouraged to sit with your teammates in lectures. All team members are expected to contribute equally to the completion of each project and you will be asked to evaluate your team members after each assignment is due. Failure to adequately contribute to an assignment will result in a penalty to your mark relative to the team’s overall mark.\nSee Section 12 for dates and times of project deadlines. Project deadlines cannot be changed. If you can’t be in class for the final project presentation, you should drop this class."
+  },
+  {
+    "objectID": "course-syllabus.html#course-policies",
+    "href": "course-syllabus.html#course-policies",
+    "title": "Syllabus",
+    "section": "Course policies",
+    "text": "Course policies\n\nAcademic honesty\nTL;DR: Don’t cheat!\nPlease abide by the following as you work on assignments in this course:\n\nCollaboration: Only work that is clearly assigned as team work should be completed collaboratively.\n\nThe homework assignments must also be completed individually and you are welcomed to discuss the assignment with classmates at a high level (e.g., discuss what’s the best way for approaching a problem, what functions are useful for accomplishing a particular task, etc.). However you may not directly share answers to homework questions (including any code) with anyone other than myself and the teaching assistants.\nFor the projects, collaboration within teams is not only allowed, but expected. Communication between teams at a high level is also allowed however you may not share code or components of the project across teams.\nOn individual assignments you may not directly share code with another student in this class, and on team assignments you may not directly share code with another team in this class.\n\nOnline resources: I am well aware that a huge volume of code is available on the web to solve any number of problems. Unless I explicitly tell you not to use something, the course’s policy is that you may make use of any online resources (e.g., StackOverflow) but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.\nUse of generative artificial intelligence (AI): You should treat generative AI, such as ChatGPT, the same as other online resources. There are two guiding principles that govern how you can use AI in this course:1 (1) Cognitive dimension: Working with AI should not reduce your ability to think clearly. We will practice using AI to facilitate—rather than hinder—learning. (2) Ethical dimension: Students using AI should be transparent about their use and make sure it aligns with academic integrity.\n\n✅ AI tools for code: You may make use of the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. You may use these guidelines for citing AI-generated content.\n❌ AI tools for narrative: Unless instructed otherwise, you may not use generative AI to write narrative on assignments. In general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect your understanding of the course content.\n\n\nRegardless of course delivery format, it is the responsibility of all students to understand and follow all Duke policies, including academic integrity (e.g., completing one’s own work, following proper citation of sources, adhering to guidance around group work projects, and more). Ignoring these requirements is a violation of the Duke Community Standard. Any questions and/or concerns regarding academic integrity can be directed to the Office of Student Conduct and Community Standards at conduct@duke.edu.\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will\n\nautomatically result in a 0 for the assignment,\ncan further impact your overall course grade, and\nwill be reported to the Office of Student Conduct for further action.\n\n\n\nLate work & extensions\nThe due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback within a timely manner. We understand that things come up periodically that could make it difficult to submit an assignment by the deadline.\nPolicy on late work depends on the particular course component:\n\nHomework assignments:\n\nLate, but within 24 hours of deadline: -20% of available points.\nAny later: No credit, and we will not provide written feedback.\nNote that lowest homework score will be dropped, even if that score is a 0.\n\nExams:\n\nIn class portions of the exams can obviously not be turned in late.\nLate exams are not accepted.\n\nProjects: The following three components contribute to your project score.\n\nPresentation: Late presentations are not accepted and there are no make ups for missed presentations.\nWrite up: GitHub repositories will be closed to contributions at the deadline. If you need to submit your work late, Slack/email me to reopen your repository.\n\nLate, but within 24 hours of deadline: -20% of available points.\nAny later: No credit, and we will not provide written feedback.\n\nPeer evaluation: Late peer evaluations are not accepted. If you do not turn in your peer evaluation, you get 0 points for your own peer score as well, regardless of how your teammates have evaluated you.\n\n\n\n\nWaiver for extenuating circumstances\nIf there are circumstances that prevent you from completing a homework assignment by the stated due date, you may email the Head TA (Shuo Wang, shuo.wang717@duke.edu) before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide explanation. This waiver may only be used for once in the semester, so only use it for a truly extenuating circumstance.\nIf there are circumstances that are having a longer-term impact on your academic performance, please let your academic dean know, as they can be a resource. Please let me know if you need help contacting your academic dean.\n\n\nRegrade requests\nEvery effort will be made to mark your work accurately. We are on your side, and want you to receive every point you have worked to earn. However, sometimes grading mistakes happen. If you believe that an error has been made, return the paper to the instructor within four days, stating your claim in writing.\nThe following claims will be considered for re-grading:\n\npoints are not totaled correctly;\nthe grader did not see a correct answer that is on your paper;\nyour answer is the same as the correct answer, but in a different form (e.g., you wrote a correct answer as 1/3 and the grader was looking for 0.333);\nyour answer to a free response question is essentially correct but stated slightly differently than the grader’s expectation.\n\nThe following claims will not be considered for re-grading:\n\narguments about the number of points lost;\narguments about question wording.\n\nConsidering re-grades consumes time and resources that TAs and the instructor would rather spend helping you understand material. Please bring only claims of type 1-4 to our attention.\nNote that during the regrade process your score could go up or go down or not change.\n\n\n\n\n\n\nWarning\n\n\n\nNo grades will be changed after the project presentations.\n\n\n\n\nAttendance policy\nResponsibility for class attendance rests with individual students. Since regular and punctual class attendance is expected, students must accept the consequences of failure to attend. More details on Trinity attendance policies are available here.\nHowever, there may be many reasons why you cannot be in class on a given day, particularly with possible extra personal and academic stress and health concerns this semester. All course lectures will be recorded and available to enrolled students after class. If you miss a lecture, make sure to watch the recording and review the material before the next class session. Given the technologies we use in the course, this is straightforward to do asynchronously. Overall these policies are put in place to ensure communication between team members, respect for each others’ time, and also to give you a safety net in the case of illness or other reasons that keep you away from attending class.\nNote that attendance and participation is part of your grade as well.\n\n\nAttendance policy related to COVID symptoms, exposure, or infection\nStudent health, safety, and well-being are the university’s top priorities. To help ensure your well-being and the well-being of those around you, please do not come to class if you have tested positive for COVID-19 or have possible symptoms and have not yet been tested. If any of these situations apply to you, you must follow university guidance related to the ongoing COVID-19 pandemic and current health and safety protocols. If you are experiencing any COVID-19 symptoms, contact student health (dshcheckin@duke.edu, 919- 681-9355). Learn more about current university policy related to COVID-19 at https://coronavirus.duke.edu. To keep the university community as safe and healthy as possible, you will be expected to follow these guidelines. Please reach out to me and your academic dean as soon as possible if you need to quarantine or isolate so that we can discuss arrangements for your continued participation in class.\n\n\nInclement weather policy\nIn the event of inclement weather or other connectivity-related events that prohibit class attendance, I will notify you how we will make up missed course content and work. This might entail holding the class on Zoom synchronously, we may rely on Duke’s designated make-up days, or you may be asked to watch a recording of the class.\n\n\nPolicy on video recording course content\nAll lectures will be recorded and available on Panopto, so students should not need to create their own recordings of lectures. If you feel that you need record the lectures yourself, you must get permission from me ahead of time and these recordings should be used for personal study only, no for distribution. The full policy on recording of lectures falls under the Duke University Policy on Intellectual Property Rights, available at https://policies.provost.duke.edu/docs/faculty-handbook-appendix-m-intellectual-property. Unauthorized distribution is a cause for disciplinary action by the Judicial Board."
+  },
+  {
+    "objectID": "course-syllabus.html#accommodations",
+    "href": "course-syllabus.html#accommodations",
+    "title": "Syllabus",
+    "section": "Accommodations",
+    "text": "Accommodations\n\nAcademic accommodations\nIf you are a student with a disability and need accommodations for this class, it is your responsibility to register with the Student Disability Access Office (SDAO) and provide them with documentation of your disability. SDAO will work with you to determine what accommodations are appropriate for your situation. Please note that accommodations are not retroactive and disability accommodations cannot be provided until a Faculty Accommodation Letter has been given to me. Please contact SDAO for more information: sdao@duke.edu or access.duke.edu.\n\n\nReligious accommodations\nStudents are permitted by university policy to be absent from class to observe a religious holiday. Accordingly, Trinity College of Arts & Sciences and the Pratt School of Engineering have established procedures to be followed by students for notifying their instructors of an absence necessitated by the observance of a religious holiday. Please submit requests for religious accommodations at the beginning of the semester so that we can work to make suitable arrangements well ahead of time. You can find the policy and relevant notification form here: https://trinity.duke.edu/undergraduate/academic-policies/religious-holidays.\nNote: If you’ve read this far in the syllabus, email me a picture of your pet if you have one or your favorite meme!"
+  },
+  {
+    "objectID": "course-syllabus.html#sec-important-dates",
+    "href": "course-syllabus.html#sec-important-dates",
+    "title": "Syllabus",
+    "section": "Important dates",
+    "text": "Important dates\n\nMonday, August 28: Classes begin\nFriday, September 8: Drop/add ends\nTuesday, October 3: Exam 1 - In class\nThursday, October 5: Exam 1 - Take home due\nThursday, October 12: Project 1 due + presentations\nFriday, October 13: Mid-semester grades reported\nTuesday, October 17: Fall Break - No lecture\nFriday, November 10: Last day to withdraw with W\nTuesday, November 14: Exam 2 - In class\nThursday, November 16: Exam 2 - Take home due\nThursday, November 23: Thanksgiving Break - No lecture\nThursday, December 7: Project 2 due + presentations\n\nFor more important dates, see the full Duke Academic Calendar."
+  },
+  {
+    "objectID": "course-links.html",
+    "href": "course-links.html",
+    "title": "Useful links",
+    "section": "",
+    "text": "Posit Cloud\n🔗 Posit Cloud\n\n\nLecture recordings\n🔗 Panopto\n\n\nSlack\n🔗 Slack\n\n\nGradebook\n🔗 on Canvas\n\n\nAnnouncements\n🔗 on Canvas\n\n\nTutorial submission\n🔗 on Canvas\n\n\nTextbooks\n🔗 R for Data Science, 2nd Edition\n🔗 Data Visualization: A Practical Introduction\n🔗 Introduction to Modern Statistics, 2nd Edition\n\n\nPackage documentation\n🔗 tidyverse: tidyverse.org\n🔗 tidymodels: tidymodels.org"
+  },
+  {
+    "objectID": "computing/computing-troubleshooting.html",
+    "href": "computing/computing-troubleshooting.html",
+    "title": "Computing troubleshooting",
+    "section": "",
+    "text": "If you’re having difficulty launching an RStudio session from Posit Cloud, go to status.posit.co and check under Posit Cloud.\n\nIf it shows “Operational”, this means the system is expected to be working. Check your internet connection, if need be, restart your computer to ensure a fresh new connection. If your issue persists, post on the course Slack with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).\nIf it shows “Partial Outage” or “Outage” (or anything other than “Operational”), this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the course Slack to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!s"
+  },
+  {
+    "objectID": "computing/computing-cheatsheets.html",
+    "href": "computing/computing-cheatsheets.html",
+    "title": "R cheatsheets",
+    "section": "",
+    "text": "The following cheatsheets come from https://posit.co/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references."
+  },
+  {
+    "objectID": "project/project-2.html",
+    "href": "project/project-2.html",
+    "title": "Project 2",
+    "section": "",
+    "text": "More info to be posted."
+  },
+  {
+    "objectID": "hw/hw-5.html",
+    "href": "hw/hw-5.html",
+    "title": "HW 5",
+    "section": "",
+    "text": "To be posted…"
+  },
+  {
+    "objectID": "hw/hw-7.html",
+    "href": "hw/hw-7.html",
+    "title": "HW 7",
+    "section": "",
+    "text": "To be posted…"
+  },
+  {
+    "objectID": "hw/hw-4.html",
+    "href": "hw/hw-4.html",
+    "title": "HW 4",
+    "section": "",
+    "text": "To be posted…"
+  },
+  {
+    "objectID": "hw/hw-6.html",
+    "href": "hw/hw-6.html",
+    "title": "HW 6",
+    "section": "",
+    "text": "To be posted…"
+  },
+  {
+    "objectID": "course-team.html",
+    "href": "course-team.html",
+    "title": "Teaching team",
+    "section": "",
+    "text": "Dr. Mine Çetinkaya-Rundel (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University and an affiliated faculty in the Computational Media, Arts, and Cultures. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education as well as pedagogical approaches for enhancing retention of women and under-represented minorities in STEM.\n\n\n\nOffice hours\nLocation\n\n\n\n\nThursdays 10 - 11 am\nZoom"
+  },
+  {
+    "objectID": "course-team.html#instructor",
+    "href": "course-team.html#instructor",
+    "title": "Teaching team",
+    "section": "",
+    "text": "Dr. Mine Çetinkaya-Rundel (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University and an affiliated faculty in the Computational Media, Arts, and Cultures. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education as well as pedagogical approaches for enhancing retention of women and under-represented minorities in STEM.\n\n\n\nOffice hours\nLocation\n\n\n\n\nThursdays 10 - 11 am\nZoom"
+  },
+  {
+    "objectID": "course-team.html#teaching-assistant",
+    "href": "course-team.html#teaching-assistant",
+    "title": "Teaching team",
+    "section": "Teaching assistant",
+    "text": "Teaching assistant\n\nShelby Tisdale is our teaching assistant. Shelby is a Statistical Science major and she is also pursuing secondary teacher certification in mathematics and a certificate in Child Policy Research.\n\n\n\nOffice hours\nLocation\n\n\n\n\nThu 3 - 4 pm\nOld Chem 025\n\n\nSun 7 - 8 pm\nZoom"
+  },
+  {
+    "objectID": "ae/ae-04-sat.html",
+    "href": "ae/ae-04-sat.html",
+    "title": "Visualizing data and investigating relationships",
+    "section": "",
+    "text": "The main question we’ll explore today is “How are SAT scores and teacher salaries associated?” What do you think?\nAlong the way we will:\n\ncreate data visualizations and calculating summary statistics for comparing trends across groups\ndistinguish observational studies and experiments\nidentify confounding variables and Simpson’s paradox"
+  },
+  {
+    "objectID": "ae/ae-04-sat.html#single-variable",
+    "href": "ae/ae-04-sat.html#single-variable",
+    "title": "Visualizing data and investigating relationships",
+    "section": "Single variable",
+    "text": "Single variable\nAnalyzing the a single variable is called univariate analysis.\nCreate visualizations of the distribution of average SAT scores, total.\n\nMake a histogram. Set an appropriate binwidth.\n\n\n# add code here\n\n\nMake a boxplot.\n\n\n# add code here\n\n\nMake a density plot.\n\n\n# add code here\n\n\nBased on these, determine if each of the following statements about the shape of the distribution is true or false.\n\nThe distribution of average SAT scores in 2010 is right skewed. ___\nThe distribution of average SAT scores in 2010 is unimodal. ___"
+  },
+  {
+    "objectID": "ae/ae-04-sat.html#two-variables",
+    "href": "ae/ae-04-sat.html#two-variables",
+    "title": "Visualizing data and investigating relationships",
+    "section": "Two variables",
+    "text": "Two variables\nAnalyzing the relationship between two variables is called bivariate analysis.\n\nWhat would you expect the relationship between average SAT scores (total) and average teacher salaries (salary) to look like? What type of plot would you use to visualize this relationship? Create the plot below.\n\nAdd your answer here.\n\n# add code here\n\n\nLurking in the background, however, is another important factor. The percentage of students who take the SAT in each state varies dramatically between states. First, let’s visualize the distribution of this variable, sat_pct.\n\nAdd your response here.\n\n# add code here\n\n\nLet’s label states with low SAT participation \"Low\" and the others \"High\". For the cutoff point, let’s use the median participation level.\n\nAdd your response here.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-04-sat.html#multiple-variables",
+    "href": "ae/ae-04-sat.html#multiple-variables",
+    "title": "Visualizing data and investigating relationships",
+    "section": "Multiple variables",
+    "text": "Multiple variables\n\nRecreate the scatterplot of average SAT scores, this time coloring each state based on whether they had low or high participation in the SAT. Describe the relationship between SAT scores and teacher salaries, when conditioning on SAT participation.\n\n\n# add code here\n\n\nFill in the blanks below.\n\nAmong all states, salaries and SAT scores are ___ associated.\nAmong states with a low percentage taking the SAT, teacher salaries and SAT scores are ___ associated.\nAmong states with a high percentage taking the SAT, teacher salaries and SAT scores are ___ associated.\n\n\nThis phenomenon is called Simpson’s paradox – a trend appears in subsets of the data, but disappears or reverses when the subsets are combined. The paradox can be resolved when confounding variables and causal relations are appropriately addressed in the analysis. In the above example, the confounding variable is SAT participation rate.\n\nImprove the visual display of the plot you just created.\n\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-04-sat-sa.html",
+    "href": "ae/ae-04-sat-sa.html",
+    "title": "Visualizing data and investigating relationships",
+    "section": "",
+    "text": "The main question we’ll explore today is “How are SAT scores and teacher salaries associated?” What do you think?\nAlong the way we will:\n\ncreate data visualizations and calculating summary statistics for comparing trends across groups\ndistinguish observational studies and experiments\nidentify confounding variables and Simpson’s paradox"
+  },
+  {
+    "objectID": "ae/ae-04-sat-sa.html#single-variable",
+    "href": "ae/ae-04-sat-sa.html#single-variable",
+    "title": "Visualizing data and investigating relationships",
+    "section": "Single variable",
+    "text": "Single variable\nAnalyzing the a single variable is called univariate analysis.\nCreate visualizations of the distribution of average SAT scores, total.\n\nMake a histogram. Set an appropriate binwidth.\n\n\nggplot(SAT_2010, aes(x = total)) +\n  geom_histogram(binwidth = 40)\n\n\n\n\n\nMake a boxplot.\n\n\nggplot(SAT_2010, aes(x = total)) +\n  geom_boxplot()\n\n\n\n\n\nMake a density plot.\n\n\nggplot(SAT_2010, aes(x = total)) +\n  geom_density(fill = \"gray\")\n\n\n\n\n\nBased on these, determine if each of the following statements about the shape of the distribution is true or false.\n\nThe distribution of average SAT scores in 2010 is right skewed. ___\nThe distribution of average SAT scores in 2010 is unimodal. ___"
+  },
+  {
+    "objectID": "ae/ae-04-sat-sa.html#two-variables",
+    "href": "ae/ae-04-sat-sa.html#two-variables",
+    "title": "Visualizing data and investigating relationships",
+    "section": "Two variables",
+    "text": "Two variables\nAnalyzing the relationship between two variables is called bivariate analysis.\n\nWhat would you expect the relationship between average SAT scores (total) and average teacher salaries (salary) to look like? What type of plot would you use to visualize this relationship? Create the plot below.\n\nAdd your answer here.\n\nggplot(SAT_2010, aes(x = salary, y = total)) + \n  geom_point() + \n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\nLurking in the background, however, is another important factor. The percentage of students who take the SAT in each state varies dramatically between states. First, let’s visualize the distribution of this variable, sat_pct.\n\nAdd your response here.\n\nggplot(SAT_2010, aes(x = sat_pct)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\nLet’s label states with low SAT participation \"Low\" and the others \"High\". For the cutoff point, let’s use the median participation level.\n\nAdd your response here.\n\nSAT_2010 |&gt;\n  summarize(med = median(sat_pct))\n\n  med\n1  27\n\nSAT_2010 &lt;- SAT_2010 |&gt;\n  mutate(sat_pct_grp = ifelse(sat_pct &lt;= 27, \"Low\", \"High\"))"
+  },
+  {
+    "objectID": "ae/ae-04-sat-sa.html#multiple-variables",
+    "href": "ae/ae-04-sat-sa.html#multiple-variables",
+    "title": "Visualizing data and investigating relationships",
+    "section": "Multiple variables",
+    "text": "Multiple variables\n\nRecreate the scatterplot of average SAT scores, this time coloring each state based on whether they had low or high participation in the SAT. Describe the relationship between SAT scores and teacher salaries, when conditioning on SAT participation.\n\n\nggplot(SAT_2010, aes(x = salary, y = total, color = sat_pct_grp)) + \n  geom_point() + \n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\nFill in the blanks below.\n\nAmong all states, salaries and SAT scores are ___ associated.\nAmong states with a low percentage taking the SAT, teacher salaries and SAT scores are ___ associated.\nAmong states with a high percentage taking the SAT, teacher salaries and SAT scores are ___ associated.\n\n\nThis phenomenon is called Simpson’s paradox – a trend appears in subsets of the data, but disappears or reverses when the subsets are combined. The paradox can be resolved when confounding variables and causal relations are appropriately addressed in the analysis. In the above example, the confounding variable is SAT participation rate.\n\nImprove the visual display of the plot you just created.\n\n\nggplot(SAT_2010, aes(x = salary, y = total, color = sat_pct_grp)) + \n  geom_point() + \n  geom_smooth(method = \"lm\") +\n  labs(\n    x = \"Average teacher salary ((in 2010 US $)\",\n    y = \"Average total score on the SAT\",\n    color = \"SAT participation rate\",\n    title = \"Average SAT scores and teacher salaries in US States\"\n  ) +\n  scale_color_colorblind(labels = c(\"Low (27%)\", \"High (&gt;27%)\")) +\n  scale_x_continuous(labels = label_dollar(scale = 1/1000, suffix = \"K\")) +\n  theme_minimal() +\n  theme(legend.position = \"bottom\")\n\n`geom_smooth()` using formula = 'y ~ x'"
   },
   {
     "objectID": "course-support.html",
