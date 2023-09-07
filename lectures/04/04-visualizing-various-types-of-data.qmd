@@ -34,7 +34,7 @@ format: revealjs
 ## The way data is displayed matters
 
 ::: question
-What do these three plots show?
+{{< fa user >}} What do these three plots show?
 :::
 
 ![Source: [#barbarplots](https://cogtales.wordpress.com/2016/06/06/congratulations-barbarplots/)](images/bar-plot-meme.png){fig-alt="Three representations of the same data: Bar plot of means, box plots, histograms." fig-align="center"}
