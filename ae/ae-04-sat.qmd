@@ -7,6 +7,10 @@ editor_options:
   chunk_output_type: console
 ---
 
+::: {.callout-note appearance="minimal" icon="false"}
+{{< fa brands github size=xl >}} Go to the course [GitHub organization](https://github.com/sta113-f23) to get started.
+:::
+
 # Goals
 
 The main question we'll explore today is "How are SAT scores and teacher salaries associated?" What do you think?
