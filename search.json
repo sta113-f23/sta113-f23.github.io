@@ -158,7 +158,7 @@
     "href": "lectures/04/04-visualizing-various-types-of-data.html#ae-04",
     "title": "Visualizing various types of data",
     "section": "ae-04",
-    "text": "ae-04\n\n\n\nGo to the course GitHub org and find your ae-04-sat (repo name will be suffixed with your GitHub name).\nClone the repo in Posit Cloud, open the Quarto document in the repo, set up a new PAT, and follow along and complete the exercises.\nRender, commit, and push your edits as you work through it"
+    "text": "ae-04\n\n\n\nGo to the course GitHub org and find your ae-04-sat (repo name will be suffixed with your GitHub name).\nClone the repo in Posit Cloud, open the Quarto document in the repo, and follow along and complete the exercises.\nRender, commit, and push your edits as you work through it"
   },
   {
     "objectID": "lectures/04/04-visualizing-various-types-of-data.html#recap-of-ae",
