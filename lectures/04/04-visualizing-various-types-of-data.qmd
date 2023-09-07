@@ -9,7 +9,7 @@ format: revealjs
 ## Reflection
 
 ::: question
-{{< fa users >}} What is one thing you learned from your reading or videos that was "new" to you? And what is one question you have from the reading, videos, or material we've covered so far?
+{{< fa users >}} What is one thing you learned from your reading or videos that was "new" to you? And what is one question you have from the reading, videos, or material we've covered so far, including the previous application exercise?
 :::
 
 ## Announcements
@@ -44,10 +44,11 @@ format: revealjs
 ## `ae-04`
 
 ::: task
-{{< fa user >}} 
--   Go to the course [GitHub org](https://github.com/sta113-f23) and find your `ae-03-sat` (repo name will be suffixed with your GitHub name).
--   Clone the repo in Posit Cloud, open the Quarto document in the repo, and follow along and complete the exercises.
--   Render, commit, and push your edits as you work through it
+{{< fa user >}}  
+
+- Go to the course [GitHub org](https://github.com/sta113-f23) and find your `ae-04-sat` (repo name will be suffixed with your GitHub name). 
+- Clone the repo in Posit Cloud, open the Quarto document in the repo, and follow along and complete the exercises. 
+- Render, commit, and push your edits as you work through it
 :::
 
 ## Recap of AE
