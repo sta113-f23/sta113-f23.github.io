@@ -15,6 +15,7 @@ format: revealjs
 ## Announcements
 
 -   HW 1 due next Tuesday at 1 pm
+-   Office hours -- move to in person?
 
 # Types of data
 
