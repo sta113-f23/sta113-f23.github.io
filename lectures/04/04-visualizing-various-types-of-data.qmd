@@ -47,7 +47,7 @@ format: revealjs
 {{< fa user >}}  
 
 - Go to the course [GitHub org](https://github.com/sta113-f23) and find your `ae-04-sat` (repo name will be suffixed with your GitHub name). 
-- Clone the repo in Posit Cloud, open the Quarto document in the repo, and follow along and complete the exercises. 
+- Clone the repo in Posit Cloud, open the Quarto document in the repo, set up a new PAT, and follow along and complete the exercises. 
 - Render, commit, and push your edits as you work through it
 :::
 
