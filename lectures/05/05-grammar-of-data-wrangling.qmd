@@ -1,6 +1,6 @@
 ---
 title: Grammar of data wrangling
-subtitle: Lecture 4
+subtitle: Lecture 5
 format: revealjs
 ---
 
@@ -14,11 +14,11 @@ format: revealjs
 
 ## Announcements
 
--   HW 1 due next today at 5 pm
--   Subsequent HW deadlines adjusted accordingly
+-   HW 1 due today at 5 pm
+-   Subsequent HW deadlines adjusted accordingly for the first part of the semester
 -   Next week:
     -   Tuesday: Project 1 workday
-    -   Thursday: Rubenstein Lubrary rare collections visit
+    -   Thursday: Rubenstein Library rare collections visit
 
 # Grammar of data wrangling
 
@@ -65,10 +65,10 @@ want to slice it, and dice it, and juice it, and process it, so we can plot it
 
 ::: columns
 ::: {.column width="50%"}
-- Start with a data frame
-- And then (`|>`)
-- Transform it with a function
-- Result in a data frame
+-   Start with a data frame
+-   And then (`|>`)
+-   Transform it with a function
+-   Result in a data frame
 :::
 
 ::: {.column width="50%"}
@@ -83,13 +83,13 @@ df |>
 
 ## Commonly used data wrangling functions
 
-- `distinct()`
-- `select()`, `relocate()`
-- `arrange()`, `arrange(desc())`
-- `slice()`, `slice_head()`, `slice_tail()`, `slice_sample()`
-- `filter()`
-- `mutate()`
-- `summarize()`, `count()`
+-   `distinct()`
+-   `select()`, `relocate()`
+-   `arrange()`, `arrange(desc())`
+-   `slice()`, `slice_head()`, `slice_tail()`, `slice_sample()`
+-   `filter()`
+-   `mutate()`
+-   `summarize()`, `count()`
 
 ## `distcint`
 
@@ -268,13 +268,16 @@ hotels |>
 
 # Application exercise
 
-## `ae-05`
+## `ae-05` {.smaller}
 
 ::: task
 {{< fa user >}}
 
 -   Go to the course [GitHub org](https://github.com/sta113-f23) and find your `ae-05-hotels` (repo name will be suffixed with your GitHub name).
--   Clone the repo in Posit Cloud, open the Quarto document in the repo, set up a new PAT, and then run `git config credential.helper store` in the Terminal.
--   Follow along and complete the exercises.
+-   Clone the repo in Posit Cloud, and set up your PAT:
+    -   In the Console, run `usethis::create_github_token()` to create a new PAT or grab the one you created previously from a space you might have safely stored it (e.g., 1Password or similar)
+    -   In the Console, run `gitcreds::gitcreds_set()` and paste your PAT when prompted.
+    -   In the Terminal, run `git config credential.helper store` to make sure your PAT persists throughout the whole time you're working on this assignment / Cloud project.
+-   Open the Quarto document (`.qmd`) and follow along and complete the exercises.
 -   Render, commit, and push your edits as you work through it
 :::
