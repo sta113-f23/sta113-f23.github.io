@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA 113FS - F23 - Visualizing data and investigating relationships</title>
+<title>STA 113FS - F23 - Exploring Flint’s water data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,7 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="STA 113FS - F23 - Visualizing data and investigating relationships">
+<meta property="og:title" content="STA 113FS - F23 - Exploring Flint’s water data">
 <meta property="og:description" content="Homepage for STA 113FS - Visualizing Data at Duke University, Fall 2023.">
 <meta property="og:site_name" content="STA 113FS - F23">
 </head>
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Visualizing data and investigating relationships</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Exploring Flint’s water data</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -331,24 +331,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
-  <li><a href="#data-and-packages" id="toc-data-and-packages" class="nav-link" data-scroll-target="#data-and-packages">Data and packages</a>
+  <li><a href="#meet-the-toolkit" id="toc-meet-the-toolkit" class="nav-link" data-scroll-target="#meet-the-toolkit">Meet the toolkit</a>
   <ul class="collapse">
-  <li><a href="#single-variable" id="toc-single-variable" class="nav-link" data-scroll-target="#single-variable">Single variable</a></li>
-  <li><a href="#two-variables" id="toc-two-variables" class="nav-link" data-scroll-target="#two-variables">Two variables</a></li>
-  <li><a href="#multiple-variables" id="toc-multiple-variables" class="nav-link" data-scroll-target="#multiple-variables">Multiple variables</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
   </ul></li>
-  <li><a href="#looking-forward" id="toc-looking-forward" class="nav-link" data-scroll-target="#looking-forward">Looking forward</a></li>
+  <li><a href="#back-to-analysis" id="toc-back-to-analysis" class="nav-link" data-scroll-target="#back-to-analysis">Back to analysis</a>
+  <ul class="collapse">
+  <li><a href="#load-packages" id="toc-load-packages" class="nav-link" data-scroll-target="#load-packages">Load packages</a></li>
+  <li><a href="#load-data" id="toc-load-data" class="nav-link" data-scroll-target="#load-data">Load data</a></li>
+  <li><a href="#data-dictionary" id="toc-data-dictionary" class="nav-link" data-scroll-target="#data-dictionary">Data dictionary</a></li>
+  <li><a href="#populations-and-samples" id="toc-populations-and-samples" class="nav-link" data-scroll-target="#populations-and-samples">Populations and samples</a></li>
+  <li><a href="#frequencies" id="toc-frequencies" class="nav-link" data-scroll-target="#frequencies">Frequencies</a></li>
+  </ul></li>
+  <li><a href="#summarization" id="toc-summarization" class="nav-link" data-scroll-target="#summarization">Summarization</a>
+  <ul class="collapse">
+  <li><a href="#measures-of-central-tendency" id="toc-measures-of-central-tendency" class="nav-link" data-scroll-target="#measures-of-central-tendency">Measures of central tendency</a></li>
+  <li><a href="#measures-of-spread" id="toc-measures-of-spread" class="nav-link" data-scroll-target="#measures-of-spread">Measures of spread</a></li>
+  <li><a href="#order-statistics" id="toc-order-statistics" class="nav-link" data-scroll-target="#order-statistics">Order statistics</a></li>
+  </ul></li>
+  <li><a href="#plotting" id="toc-plotting" class="nav-link" data-scroll-target="#plotting">Plotting</a>
+  <ul class="collapse">
+  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms">Histograms</a></li>
+  <li><a href="#box-plots" id="toc-box-plots" class="nav-link" data-scroll-target="#box-plots">Box plots</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/edit/main/ae/ae-04-sat-sa.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/edit/main/ae/ae-02-flint-sa.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Visualizing data and investigating relationships</h1>
+<h1 class="title">Exploring Flint’s water data</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Application exercise</div>
+    <div class="quarto-category">Application Exercise</div>
   </div>
   </div>
 
@@ -380,194 +399,393 @@ Important
 </div>
 <section id="goals" class="level1">
 <h1>Goals</h1>
-<p>The main question we’ll explore today is “How are SAT scores and teacher salaries associated?” What do you think?</p>
-<p>Along the way we will:</p>
+<p>By the end of this application exercise you will</p>
 <ul>
-<li><p>create data visualizations and calculating summary statistics for comparing trends across groups</p></li>
-<li><p>distinguish observational studies and experiments</p></li>
-<li><p>identify confounding variables and Simpson’s paradox</p></li>
+<li>meet the computational toolkit for the course</li>
+<li>practice using <code>glimpse()</code>, <code>names()</code>, <code>nrow()</code>, <code>ncol()</code>, <code>count()</code></li>
+<li>define and compute various statistics</li>
+<li>begin to gain familiarity with making data visualizations with <code>ggplot()</code></li>
+</ul>
+<p>We will do this using water lead content data from Flint, MI. The following paragraph will be useful in evaluating the lead amount values we’ll see in the dataset.</p>
+<blockquote class="blockquote">
+<p>While there is no completely safe amount of lead consumption, the limit allowed by the Lead and Copper Rule (LCR) of 1991 is 15 parts per billion (ppb). If this is exceeded in more than 10% of homes tested (or if the 90th percentile value of the total sample is above 15 ppb), action is required. And to make sure problems are caught, sampling for lead in water is supposed to target the “worst-case” homes – those in areas served by lead pipes.</p>
+</blockquote>
+</section>
+<section id="meet-the-toolkit" class="level1">
+<h1>Meet the toolkit</h1>
+<section id="rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio">RStudio</h2>
+<ul>
+<li><p>Files, plots, viewer, environment, etc. panes</p></li>
+<li><p>Console</p></li>
+<li><p>Editor</p></li>
 </ul>
 </section>
-<section id="data-and-packages" class="level1">
-<h1>Data and packages</h1>
-<p>For this application exercise we’ll use the <code>SAT_2010</code> from the <strong>mdsr</strong> package, which includes information on average SAT scores, average teacher salaries, and percentage of students taking SAT for each state. The data are from 2010.</p>
-<p>Let’s first load the packages we’ll use:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mdsr)      <span class="co"># for the data</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># for data visualization and wrangling</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)    <span class="co"># for better axis labels</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)  <span class="co"># for better colors</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)   <span class="co"># for avoiding ovarlap in plots</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="single-variable" class="level2">
-<h2 class="anchored" data-anchor-id="single-variable">Single variable</h2>
-<p>Analyzing the a single variable is called <strong>univariate</strong> analysis.</p>
-<p>Create visualizations of the distribution of average SAT scores, <code>total</code>.</p>
-<ol type="1">
-<li>Make a histogram. Set an appropriate binwidth.</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SAT_2010, <span class="fu">aes</span>(<span class="at">x =</span> total)) <span class="sc">+</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">40</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="ae-04-sat-sa_files/figure-html/score-hist-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<ol start="2" type="1">
-<li>Make a boxplot.</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SAT_2010, <span class="fu">aes</span>(<span class="at">x =</span> total)) <span class="sc">+</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="ae-04-sat-sa_files/figure-html/score-box-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<ol start="3" type="1">
-<li>Make a density plot.</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SAT_2010, <span class="fu">aes</span>(<span class="at">x =</span> total)) <span class="sc">+</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">"gray"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="ae-04-sat-sa_files/figure-html/score-density-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<ol start="4" type="1">
-<li><p>Based on these, determine if each of the following statements about the shape of the distribution is true or false.</p>
+<section id="r" class="level2">
+<h2 class="anchored" data-anchor-id="r">R</h2>
 <ul>
-<li><p>The distribution of average SAT scores in 2010 is right skewed. ___</p></li>
-<li><p>The distribution of average SAT scores in 2010 is unimodal. ___</p></li>
-</ul></li>
-</ol>
+<li><p>Writing code in the console</p></li>
+<li><p>Basic math with R</p></li>
+<li><p>Creating variables in R, the assignment operator (<code>&lt;-</code>), and the Environment pane</p></li>
+<li><p>R functions and packages and the Packages pane</p></li>
+<li><p>Getting help with R and the Help pane</p></li>
+</ul>
 </section>
-<section id="two-variables" class="level2">
-<h2 class="anchored" data-anchor-id="two-variables">Two variables</h2>
-<p>Analyzing the relationship between two variables is called <strong>bivariate</strong> analysis.</p>
-<ol start="5" type="1">
-<li>What would you expect the relationship between average SAT scores (<code>total</code>) and average teacher salaries (<code>salary</code>) to look like? What type of plot would you use to visualize this relationship? Create the plot below.</li>
-</ol>
-<p><em>Add your answer here.</em></p>
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<ul>
+<li><p>YAML: Metadata</p></li>
+<li><p>Narrative: Edited with the visual editor (or the source editor)</p></li>
+<li><p>Code: In code chunks</p>
+<ul>
+<li><p>Chunk options (following <code>#|</code>)</p></li>
+<li><p>Comments (following <code>#</code>)</p></li>
+<li><p>Code</p></li>
+</ul></li>
+<li><p>Running individual code chunks vs.&nbsp;rendering a document</p></li>
+</ul>
+</section>
+</section>
+<section id="back-to-analysis" class="level1">
+<h1>Back to analysis</h1>
+<section id="load-packages" class="level2">
+<h2 class="anchored" data-anchor-id="load-packages">Load packages</h2>
+<p>We’ll use the tidyverse package for analysis, which offers functionality for data import, wrangling, visualization, and more.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SAT_2010, <span class="fu">aes</span>(<span class="at">x =</span> salary, <span class="at">y =</span> total)) <span class="sc">+</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.3     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<div class="cell-output-display">
-<p><img src="ae-04-sat-sa_files/figure-html/score-salary-1.png" class="img-fluid" width="672"></p>
 </div>
-</div>
-<ol start="6" type="1">
-<li>Lurking in the background, however, is another important factor. The percentage of students who take the SAT in each state varies dramatically between states. First, let’s visualize the distribution of this variable, <code>sat_pct</code>.</li>
-</ol>
-<p><em>Add your response here.</em></p>
+<p>Loading this package prints out a message. What does this message mean? How can we suppress the message from the output?</p>
+</section>
+<section id="load-data" class="level2">
+<h2 class="anchored" data-anchor-id="load-data">Load data</h2>
+<p>The <code>read_csv()</code> function can be used for reading CSV (comma separated values) files. The file we’re reading is called <code>flint</code> with the suffix (<code>.csv</code>) which indicates its file type. The file is in the <code>data</code> folder.</p>
+<p>Before reading in the file, go to the <code>data</code> folder in the Files pane to confirm that it is, indeed, there. Then, read the file by running the code chunk below by clicking on the green triangle icon on the code chunk.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SAT_2010, <span class="fu">aes</span>(<span class="at">x =</span> sat_pct)) <span class="sc">+</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>flint <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/flint.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 813 Columns: 5
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): draw
+dbl (4): id, zip, ward, lead
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<p>One of two things may have happened:</p>
+<ol type="1">
+<li>The file was read successfully and you now see a dataset called <code>flint</code> in your Environment pane.</li>
+<li>The file was not read successfully and you see an error <code>Error in read_csv("data/flint.csv") : could not find function "read_csv"</code>.</li>
+</ol>
+<p>If (1) happened, great!</p>
+<p>If (2) happened, let’s troubleshoot first before continuing.</p>
+</section>
+<section id="data-dictionary" class="level2">
+<h2 class="anchored" data-anchor-id="data-dictionary">Data dictionary</h2>
+<p>The following variables are in the <code>flint</code> data frame:</p>
+<ul>
+<li><code>id</code>: sample ID number (identifies the home)</li>
+<li><code>zip</code>: ZIP code in Flint of the sample’s location</li>
+<li><code>ward</code>: ward in Flint of the sample’s location</li>
+<li><code>draw</code>: which time point the water was sampled from</li>
+<li><code>lead</code>: lead content in parts per billion (ppb)</li>
+</ul>
+</section>
+<section id="populations-and-samples" class="level2">
+<h2 class="anchored" data-anchor-id="populations-and-samples">Populations and samples</h2>
+<p>We want to learn about the <strong>population</strong> using a <strong>sample</strong>.</p>
+<p>In the case we want to learn about the lead content in all of Flint, MI homes but only have available water readings from a sample of homes (our data set).</p>
+<p><strong>Exercise 1:</strong> Look at the data, how many observations are there? How many variables?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(flint)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 813</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(flint)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+</section>
+<section id="frequencies" class="level2">
+<h2 class="anchored" data-anchor-id="frequencies">Frequencies</h2>
+<p>Let’s <code>count()</code> to find the number of different time points water was sampled with the <code>count()</code> function.</p>
+<ul>
+<li><p>The first argument is <code>flint</code>: the data frame</p></li>
+<li><p>The second argument is <code>draw</code>: the variable</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">count</span>(flint, draw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  draw       n
+  &lt;chr&gt;  &lt;int&gt;
+1 first    271
+2 second   271
+3 third    271</code></pre>
+</div>
+</div>
+<p>We can achieve the same result with the following “piped” operation as well.</p>
+<ul>
+<li><p>The first line is <code>flint</code>: the data frame</p></li>
+<li><p>Then the pipe operator, read as “and then”, which places what comes before it as the first argument of what comes after it</p></li>
+<li><p>The second line is <code>count(draw)</code></p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>flint <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(draw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  draw       n
+  &lt;chr&gt;  &lt;int&gt;
+1 first    271
+2 second   271
+3 third    271</code></pre>
+</div>
+</div>
+<p>We can use a similar approach to fund out how many unique homes are in the data set:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>flint <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 269 × 2
+      id     n
+   &lt;dbl&gt; &lt;int&gt;
+ 1     1     3
+ 2     2     3
+ 3     4     3
+ 4     5     3
+ 5     6     3
+ 6     7     3
+ 7     8     3
+ 8     9     3
+ 9    12     3
+10    13     3
+# ℹ 259 more rows</code></pre>
+</div>
+</div>
+<p><strong>Exercise 2:</strong> How many samples were taken from each zip code?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>flint <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(zip)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 2
+    zip     n
+  &lt;dbl&gt; &lt;int&gt;
+1 48502     3
+2 48503   207
+3 48504   165
+4 48505   144
+5 48506   132
+6 48507   153
+7 48529     3
+8 48532     6</code></pre>
+</div>
+</div>
+<p><strong>Exercise 3:</strong> Which ZIP code had the most samples drawn? Hint: See the help for <code>count</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>flint <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(zip, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 2
+    zip     n
+  &lt;dbl&gt; &lt;int&gt;
+1 48503   207
+2 48504   165
+3 48507   153
+4 48505   144
+5 48506   132
+6 48532     6
+7 48502     3
+8 48529     3</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="summarization" class="level1">
+<h1>Summarization</h1>
+<p>What is a statistic? It’s <strong>any mathematical function of the data</strong>. Sometimes, a statistic is referred to as “sample statistic” or “summary statistic”, since you compute it from a <strong>sample</strong> (the observed data) and not the entire <strong>population</strong>.</p>
+<section id="measures-of-central-tendency" class="level2">
+<h2 class="anchored" data-anchor-id="measures-of-central-tendency">Measures of central tendency</h2>
+<ul>
+<li>mean</li>
+<li>median</li>
+<li>mode</li>
+</ul>
+</section>
+<section id="measures-of-spread" class="level2">
+<h2 class="anchored" data-anchor-id="measures-of-spread">Measures of spread</h2>
+<ul>
+<li>variance</li>
+<li>standard deviation</li>
+<li>range</li>
+<li>quartiles</li>
+<li>inter-quartile range (IQR)</li>
+</ul>
+</section>
+<section id="order-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="order-statistics">Order statistics</h2>
+<ul>
+<li>quantiles</li>
+<li>minimum (0 percentile)</li>
+<li>median (50th percentile)</li>
+<li>maximum (100 percentile)</li>
+</ul>
+<p>… and any other arbitrary function of the data you can come up with!</p>
+<p><strong>Exercise 4:</strong> Compute each of these statistics for <code>lead</code> ppb.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>flint <span class="sc">|&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_lead =</span> <span class="fu">mean</span>(lead),</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_lead =</span> <span class="fu">median</span>(lead),</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_lead =</span> <span class="fu">sd</span>(lead),</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># etc.</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  mean_lead median_lead sd_lead
+      &lt;dbl&gt;       &lt;dbl&gt;   &lt;dbl&gt;
+1      8.20        1.85    41.5</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="plotting" class="level1">
+<h1>Plotting</h1>
+<section id="histograms" class="level2">
+<h2 class="anchored" data-anchor-id="histograms">Histograms</h2>
+<p>Let’s take a look at the <strong>distribution</strong> of lead content in homes in Flint, MI.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(flint, <span class="fu">aes</span>(<span class="at">x =</span> lead)) <span class="sc">+</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="ae-04-sat-sa_files/figure-html/sat-pct-hist-1.png" class="img-fluid" width="672"></p>
+<p><img src="ae-02-flint-sa_files/figure-html/flint-histogram-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<ol start="7" type="1">
-<li>Let’s label states with low SAT participation <code>"Low"</code> and the others <code>"High"</code>. For the cutoff point, let’s use the median participation level.</li>
-</ol>
-<p><em>Add your response here.</em></p>
+<p>We can make this plot look nicer/more useful by adjusting the number of bins and zooming into the x-axis.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>SAT_2010 <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">med =</span> <span class="fu">median</span>(sat_pct))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(flint, <span class="fu">aes</span>(<span class="at">x =</span> lead)) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-02-flint-sa_files/figure-html/flint-histogram-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Let’s visualize some of our summary statistics on the plot.</p>
+<p><strong>Exercise 5:</strong> Add a new layer, <code>geom_vline(xintercept = __, color = "red")</code>, to the histogram below, filling in the blank with the mean.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(flint, <span class="fu">aes</span>(<span class="at">x =</span> lead)) <span class="sc">+</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span> </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-02-flint-sa_files/figure-html/overlay-mean-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>Exercise 6:</strong> Add one more layer which overlays the median, in a different color.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(flint, <span class="fu">aes</span>(<span class="at">x =</span> lead)) <span class="sc">+</span> </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span> </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">1.852</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-02-flint-sa_files/figure-html/overlay-median-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  med
-1  27</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>SAT_2010 <span class="ot">&lt;-</span> SAT_2010 <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sat_pct_grp =</span> <span class="fu">ifelse</span>(sat_pct <span class="sc">&lt;=</span> <span class="dv">27</span>, <span class="st">"Low"</span>, <span class="st">"High"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="multiple-variables" class="level2">
-<h2 class="anchored" data-anchor-id="multiple-variables">Multiple variables</h2>
-<ol start="8" type="1">
-<li>Recreate the scatterplot of average SAT scores, this time coloring each state based on whether they had low or high participation in the SAT. Describe the relationship between SAT scores and teacher salaries, when <em>conditioning on</em> SAT participation.</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SAT_2010, <span class="fu">aes</span>(<span class="at">x =</span> salary, <span class="at">y =</span> total, <span class="at">color =</span> sat_pct_grp)) <span class="sc">+</span> </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output-display">
-<p><img src="ae-04-sat-sa_files/figure-html/score-salary-grp-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<ol start="9" type="1">
-<li>Fill in the blanks below.
-<ul>
-<li><p>Among all states, salaries and SAT scores are ___ associated.</p></li>
-<li><p>Among states with a low percentage taking the SAT, teacher salaries and SAT scores are ___ associated.</p></li>
-<li><p>Among states with a high percentage taking the SAT, teacher salaries and SAT scores are ___ associated.</p></li>
-</ul></li>
-</ol>
-<p>This phenomenon is called <strong>Simpson’s paradox</strong> – a trend appears in subsets of the data, but disappears or reverses when the subsets are combined. The paradox can be resolved when <strong>confounding variables</strong> and causal relations are appropriately addressed in the analysis. In the above example, the confounding variable is SAT participation rate.</p>
-<ol start="10" type="1">
-<li>Improve the visual display of the plot you just created.</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(SAT_2010, <span class="fu">aes</span>(<span class="at">x =</span> salary, <span class="at">y =</span> total, <span class="at">color =</span> sat_pct_grp)) <span class="sc">+</span> </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Average teacher salary ((in 2010 US $)"</span>,</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average total score on the SAT"</span>,</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"SAT participation rate"</span>,</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Average SAT scores and teacher salaries in US States"</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_colorblind</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Low (27%)"</span>, <span class="st">"High (&gt;27%)"</span>)) <span class="sc">+</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> <span class="fu">label_dollar</span>(<span class="at">scale =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">1000</span>, <span class="at">suffix =</span> <span class="st">"K"</span>)) <span class="sc">+</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output-display">
-<p><img src="ae-04-sat-sa_files/figure-html/score-salary-grp-improved-1.png" class="img-fluid" width="672"></p>
+<pre><code>&lt;ggproto object: Class CoordCartesian, Coord, gg&gt;
+    aspect: function
+    backtransform_range: function
+    clip: on
+    default: FALSE
+    distance: function
+    expand: TRUE
+    is_free: function
+    is_linear: function
+    labels: function
+    limits: list
+    modify_scales: function
+    range: function
+    render_axis_h: function
+    render_axis_v: function
+    render_bg: function
+    render_fg: function
+    setup_data: function
+    setup_layout: function
+    setup_panel_guides: function
+    setup_panel_params: function
+    setup_params: function
+    train_panel_guides: function
+    transform: function
+    super:  &lt;ggproto object: Class CoordCartesian, Coord, gg&gt;</code></pre>
 </div>
 </div>
 </section>
-</section>
-<section id="looking-forward" class="level1">
-<h1>Looking forward</h1>
-<p>Below is an example of a type of plot you’ll be making soon! Review the plot and the code. How is it different from what we had before? What aspects of it do you like better? Are there any aspects you don’t like? Are there any features of the plot that you can identify the corresponding code for? Are there any features that you can’t identify the code for and you’d like to learn?</p>
+<section id="box-plots" class="level2">
+<h2 class="anchored" data-anchor-id="box-plots">Box plots</h2>
+<p>Next, let’s narrow our focus to the zip codes 48503, 48504, 48505, 48506, and 48507 and observations with lead values less than 1,000 ppb.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>states <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">state_name =</span> state.name,</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">state_abb =</span> state.abb</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>SAT_2010 <span class="sc">|&gt;</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(states, <span class="at">by =</span> <span class="fu">join_by</span>(state <span class="sc">==</span> state_name)) <span class="sc">|&gt;</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> salary, <span class="at">y =</span> total, <span class="at">color =</span> sat_pct_grp)) <span class="sc">+</span> </span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> state_abb), <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Average teacher salary (in 2010 US $)"</span>,</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average total score on the SAT"</span>,</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"SAT participation rate"</span>,</span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Average SAT scores and teacher salaries in US States"</span></span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_colorblind</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Low (27%)"</span>, <span class="st">"High (&gt;27%)"</span>)) <span class="sc">+</span></span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> <span class="fu">label_dollar</span>(<span class="at">scale =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">1000</span>, <span class="at">suffix =</span> <span class="st">"K"</span>)) <span class="sc">+</span></span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>flint_focus <span class="ot">&lt;-</span> flint <span class="sc">|&gt;</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(zip <span class="sc">%in%</span> <span class="dv">48503</span><span class="sc">:</span><span class="dv">48507</span> <span class="sc">&amp;</span> lead <span class="sc">&lt;</span> <span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Exercise 7:</strong> Below are side-by-side box plots for the three flushing times in each of the five zip codes we considered. Add <code>x</code> and <code>y</code> labels; add a title by inserting <code>title = "title_name"</code> inside the <code>labs()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> flint_focus, <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">factor</span>(zip), <span class="at">x =</span> lead)) <span class="sc">+</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">factor</span>(draw))) <span class="sc">+</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Lead amount (PPB)"</span>, <span class="at">y =</span> <span class="st">"Zip code"</span>, <span class="at">fill =</span> <span class="st">"Flushing time"</span>) <span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete</span>(</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="st">"first"</span>, <span class="st">"second"</span>, <span class="st">"third"</span>),</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"0 (sec)"</span>, <span class="st">"45 (sec)"</span>, <span class="st">"120 (sec)"</span>)</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="ae-04-sat-sa_files/figure-html/text-labels-1.png" class="img-fluid" width="768"></p>
+<p><img src="ae-02-flint-sa_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p><strong>Exercise 8:</strong> Add labels for <code>x</code>, <code>y</code>, a <code>title</code>, and <code>subtitle</code> to the code below to update the corresponding plot.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> flint_focus, <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">factor</span>(zip), <span class="at">x =</span> lead)) <span class="sc">+</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">factor</span>(draw))) <span class="sc">+</span> </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Lead amount (PPB)"</span>, <span class="at">y =</span> <span class="st">"Zip code"</span>, <span class="at">fill =</span> <span class="st">"Flushing time"</span>,</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Amount of lead in water"</span>,</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Across various zip codes and flushing times"</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete</span>(</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="st">"first"</span>, <span class="st">"second"</span>, <span class="st">"third"</span>),</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"0 (sec)"</span>, <span class="st">"45 (sec)"</span>, <span class="st">"120 (sec)"</span>)</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">50</span>)) <span class="sc">+</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="ae-02-flint-sa_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>Exercise 9:</strong> What is the difference between the two plots? What are the advantages and disadvantages to each plot?</p>
+<blockquote class="blockquote">
+<p>It’s easier to see the distribution of the bulk of data in the latter plot, but the extreme observations are gone, which can also be important in this context.</p>
+</blockquote>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<ol type="1">
+<li><p>Langkjaer-Bain, R. (2017). The murky tale of Flint’s deceptive water data. Significance, 14: 16-21. doi: <a href="https://doi.org/10.1111/j.1740-9713.2017.01016.x" class="uri">https://doi.org/10.1111/j.1740-9713.2017.01016.x</a>.</p></li>
+<li><p>Kelsey J. Pieper, et. al.&nbsp;Evaluating Water Lead Levels During the Flint Water Crisis. Edwards Environmental Science &amp; Technology 2018 52 (15), 8124-8132 doi: <a href="https://doi.org/10.1021/acs.est.8b00791" class="uri">https://doi.org/10.1021/acs.est.8b00791</a>.</p></li>
+</ol>
 
 
 </section>

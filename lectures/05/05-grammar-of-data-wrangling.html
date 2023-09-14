@@ -569,7 +569,7 @@ $ reservation_status_date        &lt;date&gt; 2015-07-01, 2015-07-01, 2015-07-02
 </ul>
 </section>
 <section id="distcint" class="slide level2">
-<h2><code>distcint</code></h2>
+<h2><code>distcint()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -599,7 +599,7 @@ $ reservation_status_date        &lt;date&gt; 2015-07-01, 2015-07-01, 2015-07-02
 </div>
 </section>
 <section id="select-relocate" class="slide level2 smaller">
-<h2><code>select</code> / <code>relocate()</code></h2>
+<h2><code>select()</code> / <code>relocate()</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -628,25 +628,25 @@ $ reservation_status_date        &lt;date&gt; 2015-07-01, 2015-07-01, 2015-07-02
 <span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">relocate</span>(is_canceled)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 119,390 × 32
-   is_canceled hotel        lead_time arrival_date_year arrival_date_month
-         &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             
- 1           0 Resort Hotel       342              2015 July              
- 2           0 Resort Hotel       737              2015 July              
- 3           0 Resort Hotel         7              2015 July              
- 4           0 Resort Hotel        13              2015 July              
- 5           0 Resort Hotel        14              2015 July              
- 6           0 Resort Hotel        14              2015 July              
- 7           0 Resort Hotel         0              2015 July              
- 8           0 Resort Hotel         9              2015 July              
- 9           1 Resort Hotel        85              2015 July              
-10           1 Resort Hotel        75              2015 July              
+   is_canceled hotel        lead_time
+         &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;
+ 1           0 Resort Hotel       342
+ 2           0 Resort Hotel       737
+ 3           0 Resort Hotel         7
+ 4           0 Resort Hotel        13
+ 5           0 Resort Hotel        14
+ 6           0 Resort Hotel        14
+ 7           0 Resort Hotel         0
+ 8           0 Resort Hotel         9
+ 9           1 Resort Hotel        85
+10           1 Resort Hotel        75
 # ℹ 119,380 more rows
-# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,
-#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,
-#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,
-#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,
-#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,
-#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;, …</code></pre>
+# ℹ 29 more variables:
+#   arrival_date_year &lt;dbl&gt;,
+#   arrival_date_month &lt;chr&gt;,
+#   arrival_date_week_number &lt;dbl&gt;,
+#   arrival_date_day_of_month &lt;dbl&gt;,
+#   stays_in_weekend_nights &lt;dbl&gt;, …</code></pre>
 </div>
 </div>
 </div>
@@ -658,61 +658,63 @@ $ reservation_status_date        &lt;date&gt; 2015-07-01, 2015-07-01, 2015-07-02
 <div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>hotels <span class="sc">|&gt;</span> </span>
-<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">arrange</span>(adr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">arrange</span>(adr) <span class="sc">|&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">relocate</span>(adr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 119,390 × 32
-   hotel        is_canceled lead_time arrival_date_year arrival_date_month
-   &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             
- 1 Resort Hotel           0       195              2017 March             
- 2 Resort Hotel           0       342              2015 July              
- 3 Resort Hotel           0       737              2015 July              
- 4 Resort Hotel           0        32              2015 July              
- 5 Resort Hotel           0       111              2015 July              
- 6 Resort Hotel           0         0              2015 July              
- 7 Resort Hotel           0         8              2015 July              
- 8 Resort Hotel           0         8              2015 July              
- 9 Resort Hotel           1        57              2015 July              
-10 Resort Hotel           0        57              2015 July              
+     adr hotel     is_canceled lead_time
+   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;
+ 1 -6.38 Resort H…           0       195
+ 2  0    Resort H…           0       342
+ 3  0    Resort H…           0       737
+ 4  0    Resort H…           0        32
+ 5  0    Resort H…           0       111
+ 6  0    Resort H…           0         0
+ 7  0    Resort H…           0         8
+ 8  0    Resort H…           0         8
+ 9  0    Resort H…           1        57
+10  0    Resort H…           0        57
 # ℹ 119,380 more rows
-# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,
-#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,
-#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,
-#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,
-#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,
-#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;, …</code></pre>
+# ℹ 28 more variables:
+#   arrival_date_year &lt;dbl&gt;,
+#   arrival_date_month &lt;chr&gt;,
+#   arrival_date_week_number &lt;dbl&gt;,
+#   arrival_date_day_of_month &lt;dbl&gt;,
+#   stays_in_weekend_nights &lt;dbl&gt;, …</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>hotels <span class="sc">|&gt;</span> </span>
-<span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(adr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(adr)) <span class="sc">|&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>  <span class="fu">relocate</span>(adr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 119,390 × 32
-   hotel        is_canceled lead_time arrival_date_year arrival_date_month
-   &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             
- 1 City Hotel             1        35              2016 March             
- 2 City Hotel             0         0              2017 May               
- 3 Resort Hotel           0         1              2015 July              
- 4 City Hotel             0        81              2016 December          
- 5 Resort Hotel           1       378              2017 August            
- 6 Resort Hotel           1        59              2017 August            
- 7 Resort Hotel           0        31              2017 August            
- 8 Resort Hotel           0       104              2017 August            
- 9 Resort Hotel           0        26              2017 July              
-10 Resort Hotel           1       116              2017 August            
+     adr hotel     is_canceled lead_time
+   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;
+ 1 5400  City Hot…           1        35
+ 2  510  City Hot…           0         0
+ 3  508  Resort H…           0         1
+ 4  452. City Hot…           0        81
+ 5  450  Resort H…           1       378
+ 6  437  Resort H…           1        59
+ 7  426. Resort H…           0        31
+ 8  402  Resort H…           0       104
+ 9  397. Resort H…           0        26
+10  392  Resort H…           1       116
 # ℹ 119,380 more rows
-# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,
-#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,
-#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,
-#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,
-#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,
-#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;, …</code></pre>
+# ℹ 28 more variables:
+#   arrival_date_year &lt;dbl&gt;,
+#   arrival_date_month &lt;chr&gt;,
+#   arrival_date_week_number &lt;dbl&gt;,
+#   arrival_date_day_of_month &lt;dbl&gt;,
+#   stays_in_weekend_nights &lt;dbl&gt;, …</code></pre>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="slice" class="slide level2">
+<section id="slice" class="slide level2 smaller">
 <h2><code>slice()</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>hotels <span class="sc">|&gt;</span></span>
@@ -744,20 +746,20 @@ $ reservation_status_date        &lt;date&gt; 2015-07-01, 2015-07-01, 2015-07-02
 <span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 32
-  hotel        is_canceled lead_time arrival_date_year arrival_date_month
-  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             
-1 Resort Hotel           0       342              2015 July              
-2 Resort Hotel           0       737              2015 July              
-3 Resort Hotel           0         7              2015 July              
-4 Resort Hotel           0        13              2015 July              
-5 Resort Hotel           0        14              2015 July              
-# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,
-#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,
-#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,
-#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,
-#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,
-#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,
-#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …</code></pre>
+  hotel        is_canceled lead_time
+  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;
+1 Resort Hotel           0       342
+2 Resort Hotel           0       737
+3 Resort Hotel           0         7
+4 Resort Hotel           0        13
+5 Resort Hotel           0        14
+# ℹ 29 more variables:
+#   arrival_date_year &lt;dbl&gt;,
+#   arrival_date_month &lt;chr&gt;,
+#   arrival_date_week_number &lt;dbl&gt;,
+#   arrival_date_day_of_month &lt;dbl&gt;,
+#   stays_in_weekend_nights &lt;dbl&gt;,
+#   stays_in_week_nights &lt;dbl&gt;, …</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -766,20 +768,20 @@ $ reservation_status_date        &lt;date&gt; 2015-07-01, 2015-07-01, 2015-07-02
 <span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">slice_tail</span>(<span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 32
-  hotel      is_canceled lead_time arrival_date_year arrival_date_month
-  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             
-1 City Hotel           0        23              2017 August            
-2 City Hotel           0       102              2017 August            
-3 City Hotel           0        34              2017 August            
-4 City Hotel           0       109              2017 August            
-5 City Hotel           0       205              2017 August            
-# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,
-#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,
-#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,
-#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,
-#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,
-#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,
-#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …</code></pre>
+  hotel      is_canceled lead_time
+  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;
+1 City Hotel           0        23
+2 City Hotel           0       102
+3 City Hotel           0        34
+4 City Hotel           0       109
+5 City Hotel           0       205
+# ℹ 29 more variables:
+#   arrival_date_year &lt;dbl&gt;,
+#   arrival_date_month &lt;chr&gt;,
+#   arrival_date_week_number &lt;dbl&gt;,
+#   arrival_date_day_of_month &lt;dbl&gt;,
+#   stays_in_weekend_nights &lt;dbl&gt;,
+#   stays_in_week_nights &lt;dbl&gt;, …</code></pre>
 </div>
 </div>
 </div>
@@ -792,13 +794,13 @@ $ reservation_status_date        &lt;date&gt; 2015-07-01, 2015-07-01, 2015-07-02
 <span id="cb26-2"><a href="#cb26-2"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 32
-  hotel        is_canceled lead_time arrival_date_year arrival_date_month
-  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             
-1 Resort Hotel           0         6              2017 June              
-2 City Hotel             0         1              2017 March             
-3 City Hotel             0        74              2015 September         
-4 City Hotel             0       183              2016 October           
-5 City Hotel             0         6              2016 September         
+  hotel      is_canceled lead_time arrival_date_year arrival_date_month
+  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             
+1 City Hotel           0       127              2016 November          
+2 City Hotel           0        55              2015 August            
+3 City Hotel           0        84              2017 April             
+4 City Hotel           0       140              2015 November          
+5 City Hotel           0       307              2017 May               
 # ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,
 #   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,
 #   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,
