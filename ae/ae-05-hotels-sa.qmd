@@ -2,10 +2,11 @@
 title: "Grammar of data wrangling"
 categories: 
   - Application exercise
+  - Sugested answers
 ---
 
-::: {.callout-note appearance="minimal" icon="false"}
-{{< fa brands github size=xl >}} Go to the course [GitHub organization](https://github.com/sta113-f23) to get started.
+::: {.callout-important appearance="minimal" icon="false"}
+These are suggested answers to the application exercise. They may differ slightly from the code we developed in class and may not be complete. They're provided after class to help review the application activity, but are not an alternative to working on the exercise and actively participating in class.
 :::
 
 ```{r}
@@ -25,7 +26,7 @@ Recreate the visualization from the slides.
 
 hotels |>
   mutate(
-    arrival_date = glue::glue("{arrival_date_year}-{arrival_date_month}-{arrival_date_day_of_month}"),
+    arrival_date = paste(arrival_date_year, arrival_date_month, arrival_date_day_of_month),
     arrival_date = ymd(arrival_date)
     ) |>
   group_by(hotel, arrival_date) |>

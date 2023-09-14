@@ -97,7 +97,7 @@ df |>
 -   `mutate()`
 -   `summarize()`, `count()`
 
-## `distcint`
+## `distcint()`
 
 ::: columns
 ::: {.column width="50%"}
@@ -115,7 +115,13 @@ hotels |>
 :::
 :::
 
-## `select` / `relocate()` {.smaller}
+## `select()` / `relocate()` {.smaller}
+
+```{r}
+#| include: false
+
+options(width = 40)
+```
 
 ::: columns
 ::: {.column width="50%"}
@@ -135,30 +141,50 @@ hotels |>
 
 ## `arrange()` / `arrange(desc())` {.smaller}
 
+```{r}
+#| include: false
+
+options(width = 40)
+```
+
 ::: columns
 ::: {.column width="50%"}
 ```{r}
 hotels |> 
-  arrange(adr)
+  arrange(adr) |>
+  relocate(adr)
 ```
 :::
 
 ::: {.column width="50%"}
 ```{r}
 hotels |> 
-  arrange(desc(adr))
+  arrange(desc(adr)) |>
+  relocate(adr)
 ```
 :::
 :::
 
-## `slice()`
+## `slice()` {.smaller}
+
+```{r}
+#| include: false
+
+options(width = 80)
+```
 
 ```{r}
 hotels |>
   slice(1:4)
 ```
 
-## `slice_head()` / `slice_tail()` {.smaller}
+## `slice_head()` / `slice_tail()`  {.smaller}
+
+```{r}
+#| include: false
+
+options(width = 40)
+```
 
 ::: columns
 ::: {.column width="50%"}
@@ -179,11 +205,23 @@ hotels |>
 ## `slice_sample()` {.smaller}
 
 ```{r}
+#| include: false
+
+options(width = 80)
+```
+
+```{r}
 hotels |> 
   slice_sample(n = 5)
 ```
 
 ## `filter()` {.smaller}
+
+```{r}
+#| include: false
+
+options(width = 40)
+```
 
 ::: columns
 ::: {.column width="50%"}
@@ -204,6 +242,12 @@ hotels |>
 :::
 
 ## `mutate()` {.smaller}
+
+```{r}
+#| include: false
+
+options(width = 80)
+```
 
 ```{r}
 hotels |>

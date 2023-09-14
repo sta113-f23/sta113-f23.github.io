@@ -7,6 +7,10 @@ editor_options:
   chunk_output_type: console
 ---
 
+::: callout-important
+These are suggested answers to the application exercise. They may differ slightly from the code we developed in class and may not be complete. They're provided after class to help review the application activity, but are not an alternative to working on the exercise and actively participating in class.
+:::
+
 # Goals
 
 The main question we'll explore today is "How are SAT scores and teacher salaries associated?" What do you think?
