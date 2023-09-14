@@ -390,7 +390,7 @@
     }
   </style>
 <meta property="og:title" content="STA 113FS - F23 - Grammar of data wrangling">
-<meta property="og:description" content="Lecture 4">
+<meta property="og:description" content="Lecture 5">
 <meta property="og:site_name" content="STA 113FS - F23">
 </head>
 <body class="quarto-light">
@@ -399,7 +399,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Grammar of data wrangling</h1>
-  <p class="subtitle">Lecture 4</p>
+  <p class="subtitle">Lecture 5</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -427,12 +427,12 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 <ul>
-<li>HW 1 due next today at 5 pm</li>
-<li>Subsequent HW deadlines adjusted accordingly</li>
+<li>HW 1 due today at 5 pm</li>
+<li>Subsequent HW deadlines adjusted accordingly for the first part of the semester</li>
 <li>Next week:
 <ul>
 <li>Tuesday: Project 1 workday</li>
-<li>Thursday: Rubenstein Lubrary rare collections visit</li>
+<li>Thursday: Rubenstein Library rare collections visit</li>
 </ul></li>
 </ul>
 </section></section>
@@ -786,11 +786,11 @@ $ reservation_status_date        &lt;date&gt; 2015-07-01, 2015-07-01, 2015-07-02
 <pre><code># A tibble: 5 × 32
   hotel        is_canceled lead_time arrival_date_year arrival_date_month
   &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             
-1 Resort Hotel           0       120              2016 December          
-2 Resort Hotel           0         0              2016 October           
-3 City Hotel             1       150              2017 July              
-4 City Hotel             0         1              2015 November          
-5 Resort Hotel           0        53              2015 July              
+1 City Hotel             1        85              2017 May               
+2 Resort Hotel           0        32              2016 January           
+3 City Hotel             0        12              2016 August            
+4 City Hotel             1       105              2015 October           
+5 Resort Hotel           0       187              2016 December          
 # ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,
 #   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,
 #   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,
@@ -919,14 +919,19 @@ $ reservation_status_date        &lt;date&gt; 2015-07-01, 2015-07-01, 2015-07-02
 <h1>Application exercise</h1>
 
 </section>
-<section id="ae-05" class="slide level2">
+<section id="ae-05" class="slide level2 smaller">
 <h2><code>ae-05</code></h2>
 <div class="task">
 <p><i class="fa-solid fa-user" aria-hidden="true"></i></p>
 <ul>
 <li>Go to the course <a href="https://github.com/sta113-f23">GitHub org</a> and find your <code>ae-05-hotels</code> (repo name will be suffixed with your GitHub name).</li>
-<li>Clone the repo in Posit Cloud, open the Quarto document in the repo, set up a new PAT, and then run <code>git config credential.helper store</code> in the Terminal.</li>
-<li>Follow along and complete the exercises.</li>
+<li>Clone the repo in Posit Cloud, and set up your PAT:
+<ul>
+<li>In the Console, run <code>usethis::create_github_token()</code> to create a new PAT or grab the one you created previously from a space you might have safely stored it (e.g., 1Password or similar)</li>
+<li>In the Console, run <code>gitcreds::gitcreds_set()</code> and paste your PAT when prompted.</li>
+<li>In the Terminal, run <code>git config credential.helper store</code> to make sure your PAT persists throughout the whole time you’re working on this assignment / Cloud project.</li>
+</ul></li>
+<li>Open the Quarto document (<code>.qmd</code>) and follow along and complete the exercises.</li>
 <li>Render, commit, and push your edits as you work through it</li>
 </ul>
 </div>

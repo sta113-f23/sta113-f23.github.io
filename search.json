@@ -1,670 +1,5 @@
 [
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#reflection",
-    "href": "lectures/02/02-meet-toolkit.html#reflection",
-    "title": "Meet the toolkit",
-    "section": "Reflection",
-    "text": "Reflection\n\nWhat is one thing you learned from your reading that was “new” to you? And what is one question you have from the reading?"
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#announcements",
-    "href": "lectures/02/02-meet-toolkit.html#announcements",
-    "title": "Meet the toolkit",
-    "section": "Announcements",
-    "text": "Announcements\n\nMy office hours: Thursdays 10-11am on Zoom (link to be posted!)\nCourse webpage updated with tentative schedule for due dates"
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#application-exercise-un-votes",
-    "href": "lectures/02/02-meet-toolkit.html#application-exercise-un-votes",
-    "title": "Meet the toolkit",
-    "section": "Application exercise: UN Votes",
-    "text": "Application exercise: UN Votes\n\nGo to Posit Cloud and start the project called ae-01-un-votes. Render the document titled unvotes.qmd. Review the narrative and the data visualization you just created. Then, change “Turkey” to another country of your choice. Re-render the document. Show the plot you created to your neighbor and discuss (1) why you chose that country and (2) how this new visualization is different than the original (and what that says about country politics, if anything)."
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#learning-goals",
-    "href": "lectures/02/02-meet-toolkit.html#learning-goals",
-    "title": "Meet the toolkit",
-    "section": "Learning goals",
-    "text": "Learning goals\nBy the end of the course, you will be able to…\n\n\ngain insight from data\ngain insight from data, reproducibly\ngain insight from data, reproducibly, using modern programming tools and techniques\ngain insight from data, reproducibly and collaboratively, using modern programming tools and techniques\ngain insight from data, reproducibly (with literate programming and version control) and collaboratively, using modern programming tools and techniques"
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#reproducibility-checklist",
-    "href": "lectures/02/02-meet-toolkit.html#reproducibility-checklist",
-    "title": "Meet the toolkit",
-    "section": "Reproducibility checklist",
-    "text": "Reproducibility checklist\n\nWhat does it mean for a data analysis to be “reproducible”?\n\n\nNear-term goals:\n\nAre the tables and figures reproducible from the code and data?\nDoes the code actually do what you think it does?\nIn addition to what was done, is it clear why it was done?\n\n\n\nLong-term goals:\n\nCan the code be used for other data?\nCan you extend the code to do other things?"
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#toolkit-for-reproducibility",
-    "href": "lectures/02/02-meet-toolkit.html#toolkit-for-reproducibility",
-    "title": "Meet the toolkit",
-    "section": "Toolkit for reproducibility",
-    "text": "Toolkit for reproducibility\n\nScriptability \\(\\rightarrow\\) R\nLiterate programming (code, narrative, output in one place) \\(\\rightarrow\\) Quarto\nVersion control \\(\\rightarrow\\) Git / GitHub"
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#r-and-rstudio-1",
-    "href": "lectures/02/02-meet-toolkit.html#r-and-rstudio-1",
-    "title": "Meet the toolkit",
-    "section": "R and RStudio",
-    "text": "R and RStudio\n\n\n\n\n\n\n\n\nR is an open-source statistical programming language\nR is also an environment for statistical computing and graphics\nIt’s easily extensible with packages\n\n\n\n\nRStudio is a convenient interface for R called an IDE (integrated development environment), e.g. “I write R code in the RStudio IDE”\nRStudio is not a requirement for programming with R, but it’s very commonly used by R programmers and data scientists"
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#r-vs.-rstudio",
-    "href": "lectures/02/02-meet-toolkit.html#r-vs.-rstudio",
-    "title": "Meet the toolkit",
-    "section": "R vs. RStudio",
-    "text": "R vs. RStudio\n\n\n\n\n\n\n\nSource: Modern Dive."
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#r-packages",
-    "href": "lectures/02/02-meet-toolkit.html#r-packages",
-    "title": "Meet the toolkit",
-    "section": "R packages",
-    "text": "R packages\n\n\nPackages: Fundamental units of reproducible R code, including reusable R functions, the documentation that describes how to use them, and sample data1\nAs of September 2022, there are over 18,000 R packages available on CRAN (the Comprehensive R Archive Network)2\nWe’re going to work with a small (but important) subset of these!\n\n\n\n\n1 Wickham and Bryan, R Packages.\n2 CRAN contributed packages."
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#tour-r-and-rstudio",
-    "href": "lectures/02/02-meet-toolkit.html#tour-r-and-rstudio",
-    "title": "Meet the toolkit",
-    "section": "Tour: R and RStudio",
-    "text": "Tour: R and RStudio"
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#a-short-list-for-now-of-r-essentials",
-    "href": "lectures/02/02-meet-toolkit.html#a-short-list-for-now-of-r-essentials",
-    "title": "Meet the toolkit",
-    "section": "A short list (for now) of R essentials",
-    "text": "A short list (for now) of R essentials\n\nFunctions are (most often) verbs, followed by what they will be applied to in parentheses:\n\n\ndo_this(to_this)\ndo_that(to_this, to_that, with_those)\n\n\n\nPackages are installed with the install.packages() function and loaded with the library function, once per session:\n\n\ninstall.packages(\"package_name\")\nlibrary(package_name)"
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#r-essentials-continued",
-    "href": "lectures/02/02-meet-toolkit.html#r-essentials-continued",
-    "title": "Meet the toolkit",
-    "section": "R essentials (continued)",
-    "text": "R essentials (continued)\n\nColumns (variables) in data frames are accessed with $:\n\n\ndataframe$var_name\n\n\n\nObject documentation can be accessed with ?\n\n\n?mean"
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#tidyverse",
-    "href": "lectures/02/02-meet-toolkit.html#tidyverse",
-    "title": "Meet the toolkit",
-    "section": "tidyverse",
-    "text": "tidyverse\n\n\n\n\n\n\n\n\ntidyverse.org\n\nThe tidyverse is an opinionated collection of R packages designed for data science\nAll packages share an underlying philosophy and a common grammar"
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#quarto-1",
-    "href": "lectures/02/02-meet-toolkit.html#quarto-1",
-    "title": "Meet the toolkit",
-    "section": "Quarto",
-    "text": "Quarto\n\n\nFully reproducible reports – each time you render the analysis is ran from the beginning\nCode goes in chunks narrative goes outside of chunks\nA visual editor for a familiar / Google docs-like editing experience"
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#tour-quarto",
-    "href": "lectures/02/02-meet-toolkit.html#tour-quarto",
-    "title": "Meet the toolkit",
-    "section": "Tour: Quarto",
-    "text": "Tour: Quarto"
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#how-will-we-use-quarto",
-    "href": "lectures/02/02-meet-toolkit.html#how-will-we-use-quarto",
-    "title": "Meet the toolkit",
-    "section": "How will we use Quarto?",
-    "text": "How will we use Quarto?\n\nEvery assignment / report / project / etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#application-exercise-flint",
-    "href": "lectures/02/02-meet-toolkit.html#application-exercise-flint",
-    "title": "Meet the toolkit",
-    "section": "Application exercise: Flint",
-    "text": "Application exercise: Flint\n\nGo to Posit Cloud and start the project called ae-02-flint. Open the document titled flint.qmd."
-  },
-  {
-    "objectID": "lectures/02/02-meet-toolkit.html#next-time",
-    "href": "lectures/02/02-meet-toolkit.html#next-time",
-    "title": "Meet the toolkit",
-    "section": "Next time",
-    "text": "Next time\n\nWe’ll continue out “Meet the toolkit” journey, focusing on version control tools, Git and GitHub, the last piece of the puzzle\nWe’ll then move on to the nuts and bolts of data visualization in R with ggplot2\n\n\n\n\n🔗 sta113-f23.github.io"
-  },
-  {
-    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#reflection",
-    "href": "lectures/04/04-visualizing-various-types-of-data.html#reflection",
-    "title": "Visualizing various types of data",
-    "section": "Reflection",
-    "text": "Reflection\n\n What is one thing you learned from your reading or videos that was “new” to you? And what is one question you have from the reading, videos, or material we’ve covered so far, including the previous application exercise?"
-  },
-  {
-    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#announcements",
-    "href": "lectures/04/04-visualizing-various-types-of-data.html#announcements",
-    "title": "Visualizing various types of data",
-    "section": "Announcements",
-    "text": "Announcements\n\nHW 1 due next Tuesday at 1 pm\nOffice hours – move to in person?"
-  },
-  {
-    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#identifying-variable-types",
-    "href": "lectures/04/04-visualizing-various-types-of-data.html#identifying-variable-types",
-    "title": "Visualizing various types of data",
-    "section": "Identifying variable types",
-    "text": "Identifying variable types\n\n Identify the type of each of the following variables.\n\nFavorite food\nNumber of classes you’re taking this semester\nZip code\nFull name\nAge"
-  },
-  {
-    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#the-way-data-is-displayed-matters",
-    "href": "lectures/04/04-visualizing-various-types-of-data.html#the-way-data-is-displayed-matters",
-    "title": "Visualizing various types of data",
-    "section": "The way data is displayed matters",
-    "text": "The way data is displayed matters\n\n What do these three plots show?\n\n\nSource: #barbarplots"
-  },
-  {
-    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#ae-04",
-    "href": "lectures/04/04-visualizing-various-types-of-data.html#ae-04",
-    "title": "Visualizing various types of data",
-    "section": "ae-04",
-    "text": "ae-04\n\n\n\nGo to the course GitHub org and find your ae-04-sat (repo name will be suffixed with your GitHub name).\nClone the repo in Posit Cloud, open the Quarto document in the repo, set up a new PAT, and follow along and complete the exercises.\nRender, commit, and push your edits as you work through it"
-  },
-  {
-    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#recap-of-ae",
-    "href": "lectures/04/04-visualizing-various-types-of-data.html#recap-of-ae",
-    "title": "Visualizing various types of data",
-    "section": "Recap of AE",
-    "text": "Recap of AE\n\nPick geoms based on data types.\nSet appropriate binwidths for histograms.\nTurn off legends when they provide redundant information with show.legend = FALSE.\nCreate plots with multiple geoms, and pay attention to order.\n\n\n\n\n🔗 sta113-f23.github.io"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#reflection",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#reflection",
-    "title": "Grammar of data wrangling",
-    "section": "Reflection",
-    "text": "Reflection\n\n What is one thing you learned from your reading or videos that was “new” to you? And what is one question you have from the reading, videos, or material we’ve covered so far, including the previous application exercise?"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#announcements",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#announcements",
-    "title": "Grammar of data wrangling",
-    "section": "Announcements",
-    "text": "Announcements\n\nHW 1 due next today at 5 pm\nSubsequent HW deadlines adjusted accordingly\nNext week:\n\nTuesday: Project 1 workday\nThursday: Rubenstein Lubrary rare collections visit"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#packages",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#packages",
-    "title": "Grammar of data wrangling",
-    "section": "Packages",
-    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(scales)"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#data-hotel-bookings",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#data-hotel-bookings",
-    "title": "Grammar of data wrangling",
-    "section": "Data: Hotel bookings",
-    "text": "Data: Hotel bookings\n\nData from two hotels: one resort and one city hotel\nObservations: Each row represents a hotel booking\n\n\nhotels &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv\")"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#variables",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#variables",
-    "title": "Grammar of data wrangling",
-    "section": "Variables",
-    "text": "Variables\n\nnames(hotels)\n\n [1] \"hotel\"                          \"is_canceled\"                   \n [3] \"lead_time\"                      \"arrival_date_year\"             \n [5] \"arrival_date_month\"             \"arrival_date_week_number\"      \n [7] \"arrival_date_day_of_month\"      \"stays_in_weekend_nights\"       \n [9] \"stays_in_week_nights\"           \"adults\"                        \n[11] \"children\"                       \"babies\"                        \n[13] \"meal\"                           \"country\"                       \n[15] \"market_segment\"                 \"distribution_channel\"          \n[17] \"is_repeated_guest\"              \"previous_cancellations\"        \n[19] \"previous_bookings_not_canceled\" \"reserved_room_type\"            \n[21] \"assigned_room_type\"             \"booking_changes\"               \n[23] \"deposit_type\"                   \"agent\"                         \n[25] \"company\"                        \"days_in_waiting_list\"          \n[27] \"customer_type\"                  \"adr\"                           \n[29] \"required_car_parking_spaces\"    \"total_of_special_requests\"     \n[31] \"reservation_status\"             \"reservation_status_date\""
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#glimpse",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#glimpse",
-    "title": "Grammar of data wrangling",
-    "section": "glimpse()",
-    "text": "glimpse()\n\nglimpse(hotels)\n\nRows: 119,390\nColumns: 32\n$ hotel                          &lt;chr&gt; \"Resort Hotel\", \"Resort Hotel\", \"Resort…\n$ is_canceled                    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, …\n$ lead_time                      &lt;dbl&gt; 342, 737, 7, 13, 14, 14, 0, 9, 85, 75, …\n$ arrival_date_year              &lt;dbl&gt; 2015, 2015, 2015, 2015, 2015, 2015, 201…\n$ arrival_date_month             &lt;chr&gt; \"July\", \"July\", \"July\", \"July\", \"July\",…\n$ arrival_date_week_number       &lt;dbl&gt; 27, 27, 27, 27, 27, 27, 27, 27, 27, 27,…\n$ arrival_date_day_of_month      &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ stays_in_weekend_nights        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ stays_in_week_nights           &lt;dbl&gt; 0, 0, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4, 4, …\n$ adults                         &lt;dbl&gt; 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, …\n$ children                       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ babies                         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ meal                           &lt;chr&gt; \"BB\", \"BB\", \"BB\", \"BB\", \"BB\", \"BB\", \"BB…\n$ country                        &lt;chr&gt; \"PRT\", \"PRT\", \"GBR\", \"GBR\", \"GBR\", \"GBR…\n$ market_segment                 &lt;chr&gt; \"Direct\", \"Direct\", \"Direct\", \"Corporat…\n$ distribution_channel           &lt;chr&gt; \"Direct\", \"Direct\", \"Direct\", \"Corporat…\n$ is_repeated_guest              &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ previous_cancellations         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ previous_bookings_not_canceled &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ reserved_room_type             &lt;chr&gt; \"C\", \"C\", \"A\", \"A\", \"A\", \"A\", \"C\", \"C\",…\n$ assigned_room_type             &lt;chr&gt; \"C\", \"C\", \"C\", \"A\", \"A\", \"A\", \"C\", \"C\",…\n$ booking_changes                &lt;dbl&gt; 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ deposit_type                   &lt;chr&gt; \"No Deposit\", \"No Deposit\", \"No Deposit…\n$ agent                          &lt;chr&gt; \"NULL\", \"NULL\", \"NULL\", \"304\", \"240\", \"…\n$ company                        &lt;chr&gt; \"NULL\", \"NULL\", \"NULL\", \"NULL\", \"NULL\",…\n$ days_in_waiting_list           &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ customer_type                  &lt;chr&gt; \"Transient\", \"Transient\", \"Transient\", …\n$ adr                            &lt;dbl&gt; 0.00, 0.00, 75.00, 75.00, 98.00, 98.00,…\n$ required_car_parking_spaces    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ total_of_special_requests      &lt;dbl&gt; 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 3, …\n$ reservation_status             &lt;chr&gt; \"Check-Out\", \"Check-Out\", \"Check-Out\", …\n$ reservation_status_date        &lt;date&gt; 2015-07-01, 2015-07-01, 2015-07-02, 20…"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#plan",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#plan",
-    "title": "Grammar of data wrangling",
-    "section": "Plan",
-    "text": "Plan\nWe…\nhave a single data frame\nwant to slice it, and dice it, and juice it, and process it, so we can plot it"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#grammar-of-data-wrangling-1",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#grammar-of-data-wrangling-1",
-    "title": "Grammar of data wrangling",
-    "section": "Grammar of data wrangling",
-    "text": "Grammar of data wrangling\n\n\n\nStart with a data frame\nAnd then (|&gt;)\nTransform it with a function\nResult in a data frame\n\n\n\ndf |&gt;\n  function(...)"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#commonly-used-data-wrangling-functions",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#commonly-used-data-wrangling-functions",
-    "title": "Grammar of data wrangling",
-    "section": "Commonly used data wrangling functions",
-    "text": "Commonly used data wrangling functions\n\ndistinct()\nselect(), relocate()\narrange(), arrange(desc())\nslice(), slice_head(), slice_tail(), slice_sample()\nfilter()\nmutate()\nsummarize(), count()"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#distcint",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#distcint",
-    "title": "Grammar of data wrangling",
-    "section": "distcint",
-    "text": "distcint\n\n\n\nhotels |&gt; \n  distinct(hotel)\n\n# A tibble: 2 × 1\n  hotel       \n  &lt;chr&gt;       \n1 Resort Hotel\n2 City Hotel  \n\n\n\n\nhotels |&gt; \n  distinct(is_canceled)\n\n# A tibble: 2 × 1\n  is_canceled\n        &lt;dbl&gt;\n1           0\n2           1"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#select-relocate",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#select-relocate",
-    "title": "Grammar of data wrangling",
-    "section": "select / relocate()",
-    "text": "select / relocate()\n\n\n\nhotels |&gt; \n  select(hotel)\n\n# A tibble: 119,390 × 1\n   hotel       \n   &lt;chr&gt;       \n 1 Resort Hotel\n 2 Resort Hotel\n 3 Resort Hotel\n 4 Resort Hotel\n 5 Resort Hotel\n 6 Resort Hotel\n 7 Resort Hotel\n 8 Resort Hotel\n 9 Resort Hotel\n10 Resort Hotel\n# ℹ 119,380 more rows\n\n\n\n\nhotels |&gt; \n  relocate(is_canceled)\n\n# A tibble: 119,390 × 32\n   is_canceled hotel        lead_time arrival_date_year arrival_date_month\n         &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n 1           0 Resort Hotel       342              2015 July              \n 2           0 Resort Hotel       737              2015 July              \n 3           0 Resort Hotel         7              2015 July              \n 4           0 Resort Hotel        13              2015 July              \n 5           0 Resort Hotel        14              2015 July              \n 6           0 Resort Hotel        14              2015 July              \n 7           0 Resort Hotel         0              2015 July              \n 8           0 Resort Hotel         9              2015 July              \n 9           1 Resort Hotel        85              2015 July              \n10           1 Resort Hotel        75              2015 July              \n# ℹ 119,380 more rows\n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;, …"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#arrange-arrangedesc",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#arrange-arrangedesc",
-    "title": "Grammar of data wrangling",
-    "section": "arrange() / arrange(desc())",
-    "text": "arrange() / arrange(desc())\n\n\n\nhotels |&gt; \n  arrange(adr)\n\n# A tibble: 119,390 × 32\n   hotel        is_canceled lead_time arrival_date_year arrival_date_month\n   &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n 1 Resort Hotel           0       195              2017 March             \n 2 Resort Hotel           0       342              2015 July              \n 3 Resort Hotel           0       737              2015 July              \n 4 Resort Hotel           0        32              2015 July              \n 5 Resort Hotel           0       111              2015 July              \n 6 Resort Hotel           0         0              2015 July              \n 7 Resort Hotel           0         8              2015 July              \n 8 Resort Hotel           0         8              2015 July              \n 9 Resort Hotel           1        57              2015 July              \n10 Resort Hotel           0        57              2015 July              \n# ℹ 119,380 more rows\n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;, …\n\n\n\n\nhotels |&gt; \n  arrange(desc(adr))\n\n# A tibble: 119,390 × 32\n   hotel        is_canceled lead_time arrival_date_year arrival_date_month\n   &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n 1 City Hotel             1        35              2016 March             \n 2 City Hotel             0         0              2017 May               \n 3 Resort Hotel           0         1              2015 July              \n 4 City Hotel             0        81              2016 December          \n 5 Resort Hotel           1       378              2017 August            \n 6 Resort Hotel           1        59              2017 August            \n 7 Resort Hotel           0        31              2017 August            \n 8 Resort Hotel           0       104              2017 August            \n 9 Resort Hotel           0        26              2017 July              \n10 Resort Hotel           1       116              2017 August            \n# ℹ 119,380 more rows\n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;, …"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#slice",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#slice",
-    "title": "Grammar of data wrangling",
-    "section": "slice()",
-    "text": "slice()\n\nhotels |&gt;\n  slice(1:4)\n\n# A tibble: 4 × 32\n  hotel        is_canceled lead_time arrival_date_year arrival_date_month\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n1 Resort Hotel           0       342              2015 July              \n2 Resort Hotel           0       737              2015 July              \n3 Resort Hotel           0         7              2015 July              \n4 Resort Hotel           0        13              2015 July              \n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,\n#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#slice_head-slice_tail",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#slice_head-slice_tail",
-    "title": "Grammar of data wrangling",
-    "section": "slice_head() / slice_tail()",
-    "text": "slice_head() / slice_tail()\n\n\n\nhotels |&gt; \n  slice_head(n = 5)\n\n# A tibble: 5 × 32\n  hotel        is_canceled lead_time arrival_date_year arrival_date_month\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n1 Resort Hotel           0       342              2015 July              \n2 Resort Hotel           0       737              2015 July              \n3 Resort Hotel           0         7              2015 July              \n4 Resort Hotel           0        13              2015 July              \n5 Resort Hotel           0        14              2015 July              \n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,\n#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …\n\n\n\n\nhotels |&gt; \n  slice_tail(n = 5)\n\n# A tibble: 5 × 32\n  hotel      is_canceled lead_time arrival_date_year arrival_date_month\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n1 City Hotel           0        23              2017 August            \n2 City Hotel           0       102              2017 August            \n3 City Hotel           0        34              2017 August            \n4 City Hotel           0       109              2017 August            \n5 City Hotel           0       205              2017 August            \n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,\n#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#slice_sample",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#slice_sample",
-    "title": "Grammar of data wrangling",
-    "section": "slice_sample()",
-    "text": "slice_sample()\n\nhotels |&gt; \n  slice_sample(n = 5)\n\n# A tibble: 5 × 32\n  hotel        is_canceled lead_time arrival_date_year arrival_date_month\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n1 Resort Hotel           0       120              2016 December          \n2 Resort Hotel           0         0              2016 October           \n3 City Hotel             1       150              2017 July              \n4 City Hotel             0         1              2015 November          \n5 Resort Hotel           0        53              2015 July              \n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,\n#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#filter",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#filter",
-    "title": "Grammar of data wrangling",
-    "section": "filter()",
-    "text": "filter()\n\n\n\nhotels |&gt;\n  filter(adr &gt; 1000) |&gt;\n  select(adr, hotel)\n\n# A tibble: 1 × 2\n    adr hotel     \n  &lt;dbl&gt; &lt;chr&gt;     \n1  5400 City Hotel\n\n\n\n\nhotels |&gt; \n  filter(babies &gt; 5) |&gt;\n  select(adults, babies)\n\n# A tibble: 2 × 2\n  adults babies\n   &lt;dbl&gt;  &lt;dbl&gt;\n1      2     10\n2      1      9"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#mutate",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#mutate",
-    "title": "Grammar of data wrangling",
-    "section": "mutate()",
-    "text": "mutate()\n\nhotels |&gt;\n  mutate(people = adults + babies + children) |&gt;\n  relocate(people) |&gt;\n  arrange(desc(people))\n\n# A tibble: 119,390 × 33\n   people hotel       is_canceled lead_time arrival_date_year arrival_date_month\n    &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n 1     55 Resort Hot…           1       338              2015 October           \n 2     50 Resort Hot…           1       336              2015 September         \n 3     40 Resort Hot…           1       304              2015 September         \n 4     27 Resort Hot…           1       349              2015 September         \n 5     27 Resort Hot…           1       352              2015 September         \n 6     26 Resort Hot…           1       333              2015 September         \n 7     26 Resort Hot…           1       340              2015 September         \n 8     26 Resort Hot…           1       347              2015 September         \n 9     26 Resort Hot…           1       354              2015 September         \n10     26 Resort Hot…           1       361              2015 October           \n# ℹ 119,380 more rows\n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;, …"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#summarize",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#summarize",
-    "title": "Grammar of data wrangling",
-    "section": "summarize()",
-    "text": "summarize()\n\n\n\nhotels |&gt;\n  summarize(mean_adr = mean(adr))\n\n# A tibble: 1 × 1\n  mean_adr\n     &lt;dbl&gt;\n1     102.\n\n\n\n\nhotels |&gt;\n  group_by(hotel) |&gt;\n  summarize(mean_adr = mean(adr))\n\n# A tibble: 2 × 2\n  hotel        mean_adr\n  &lt;chr&gt;           &lt;dbl&gt;\n1 City Hotel      105. \n2 Resort Hotel     95.0"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#count",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#count",
-    "title": "Grammar of data wrangling",
-    "section": "count()",
-    "text": "count()\n\nhotels |&gt;\n  count(hotel)\n\n# A tibble: 2 × 2\n  hotel            n\n  &lt;chr&gt;        &lt;int&gt;\n1 City Hotel   79330\n2 Resort Hotel 40060"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#average-cost-of-daily-stay",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#average-cost-of-daily-stay",
-    "title": "Grammar of data wrangling",
-    "section": "Average cost of daily stay",
-    "text": "Average cost of daily stay\n\nWhat are the variables represented in this visualization?"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#ae-05",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#ae-05",
-    "title": "Grammar of data wrangling",
-    "section": "ae-05",
-    "text": "ae-05\n\n\n\nGo to the course GitHub org and find your ae-05-hotels (repo name will be suffixed with your GitHub name).\nClone the repo in Posit Cloud, open the Quarto document in the repo, set up a new PAT, and then run git config credential.helper store in the Terminal.\nFollow along and complete the exercises.\nRender, commit, and push your edits as you work through it\n\n\n\n\n\n🔗 sta113-f23.github.io"
-  },
-  {
-    "objectID": "course-support.html",
-    "href": "course-support.html",
-    "title": "Course support",
-    "section": "",
-    "text": "Most of you will need help at some point and we want to make sure you can identify when that is without getting too frustrated and feel comfortable seeking help."
-  },
-  {
-    "objectID": "course-support.html#lectures",
-    "href": "course-support.html#lectures",
-    "title": "Course support",
-    "section": "Lectures",
-    "text": "Lectures\nIf you have a question during a lecture, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone."
-  },
-  {
-    "objectID": "course-support.html#office-hours",
-    "href": "course-support.html#office-hours",
-    "title": "Course support",
-    "section": "Office hours",
-    "text": "Office hours\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours during the times posted on the home page to ask questions about the course content and assignments. A lot of questions are most effectively answered in-person, so office hours are a valuable resource. I encourage each and every one of you to take advantage of this resource! Make a pledge to stop by office hours at least once during the first three weeks of class. If you truly have no questions to ask, just stop by and say hi and introduce yourself. You can find a list of everyone’s office hours here."
-  },
-  {
-    "objectID": "course-support.html#slack",
-    "href": "course-support.html#slack",
-    "title": "Course support",
-    "section": "Slack",
-    "text": "Slack\nHave a question that can’t wait for office hours? Prefer to write out your question in detail rather than asking in person? The course Slack is the best venue for these! There is a chance another student has already asked a similar question, so please check the other posts on Slack before asking a new question. If you know the answer to a question that is posted, I encourage you to respond!"
-  },
-  {
-    "objectID": "course-support.html#email",
-    "href": "course-support.html#email",
-    "title": "Course support",
-    "section": "Email",
-    "text": "Email\nPlease refrain from emailing any course content questions (those should go to Slack), and only use email for questions about personal matters that may not be appropriate for the public course forum (e.g., illness, accommodations, etc.). For such matters, you may email Dr. Mine Çetinkaya-Rundel at mc301@duke.edu.\nIf there is a question that’s not appropriate for the public forum, you are welcome to email me directly. If you email me, please include “STA 101” in the subject line. Barring extenuating circumstances, I will respond to STA 101 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday."
-  },
-  {
-    "objectID": "course-support.html#academic-support",
-    "href": "course-support.html#academic-support",
-    "title": "Course support",
-    "section": "Academic support",
-    "text": "Academic support\nThere are times may need help with the class that is beyond what can be provided by the teaching team. In those instances, I encourage you to visit the Academic Resource Center. The Academic Resource Center (ARC) offers free services to all students during their undergraduate careers at Duke. Services include Learning Consultations, Peer Tutoring and Study Groups, ADHD/LD Coaching, Outreach Workshops, and more. Because learning is a process unique to every individual, they work with each student to discover and develop their own academic strategy for success at Duke. Contact the ARC to schedule an appointment. Undergraduates in any year, studying any discipline can benefit! Contact ARC@duke.edu, 919-684-5917."
-  },
-  {
-    "objectID": "course-support.html#mental-health-and-wellness",
-    "href": "course-support.html#mental-health-and-wellness",
-    "title": "Course support",
-    "section": "Mental health and wellness",
-    "text": "Mental health and wellness\nStudent mental health and wellness are of primary importance at Duke, and the university offers resources to support students in managing daily stress and self-care. Duke offers several resources for students to seek assistance on coursework and to nurture daily habits that support overall well-being, some of which are listed below.\n\nThe Academic Resource Center: (919) 684-5917, theARC@duke.edu, or arc.duke.edu.\nDuWell: (919) 681-8421, provides Moments of Mindfulness (stress management and resilience building) and meditation programming to assist students in developing a daily emotional well-being practice. To see schedules for programs please see https://studentaffairs.duke.edu/duwell. All are welcome and no experience necessary.\n\nIf your mental health concerns and/or stressful events negatively affect your daily emotional state, academic performance, or ability to participate in your daily activities, many resources are available to help you through difficult times. Duke encourages all students to access these resources.\n\nDukeReach: Provides comprehensive outreach services to identify and support students in managing all aspects of well-being. If you have concerns about a student’s behavior or health visit the website for resources and assistance: http://studentaffairs.duke.edu/dukereach.\nCounseling and Psychological Services (CAPS): CAPS services include individual and group counseling services, psychiatric services, and workshops. To initiate services, walk-in/call-in 9-4 M,W,Th,F and 9-6 Tuesdays. CAPS also provides referral to off-campus resources for specialized care. (919) 660-1000 or https://students.duke.edu/wellness/caps.\nTimelyCare: (formerly known as Blue Devils Care) An online platform that is a convenient, confidential, and free way for Duke students to receive 24/7 mental health support through TalkNow and scheduled counseling: https://bluedevilscare.duke.edu."
-  },
-  {
-    "objectID": "course-support.html#course-costs",
-    "href": "course-support.html#course-costs",
-    "title": "Course support",
-    "section": "Course costs",
-    "text": "Course costs\n\nTextbooks: The textbooks for this course are freely available on the web.\nLaptops: Each student is expected to have a laptop they can bring to each lecture.\n\nIf you are having difficulty with costs associated with this course, here are some resources:\n\nContact the financial aid office (whether or not you are on aid). They have loans and resources for connecting students with programs on campus that might be able to help alleviate these costs.\nDukeLIFE offers course materials assistance for eligible students. Please note that students who are eligible for DukeLIFE benefits are notified prior to the start of the semester; program resources are limited.\nDuke Libraries offers textbook rentals through the Top Textbook Program, where you can rent out a textbook for 3 hours at a time.\nFor course-specific technology needs such as Digital Voice Recorder, HD Video Camera, TI-84 Plus CE, DSLR camera kit, Tripod, Shotgun Mic, iPad Mini 4, a Handheld Projector, or a GoPro, you can reserve rental equipment from the Link."
-  },
-  {
-    "objectID": "course-support.html#assistance-with-canvas-and-zoom",
-    "href": "course-support.html#assistance-with-canvas-and-zoom",
-    "title": "Course support",
-    "section": "Assistance with Canvas and Zoom",
-    "text": "Assistance with Canvas and Zoom\nFor technical help with Canvas or Zoom, contact the Duke OIT Service Desk at oit.duke.edu/help. You can also access the self-service help documentation for Zoom here and for Canvas here.\nNote that we will be making minimal use of Canvas in this course (primarily for announcements and grade book). All assignment submission will take place on GitHub and conversation on Slack.\nZoom will be used for online office hours as well as as a backup option should we need to hold the course online instead of in person."
-  },
-  {
-    "objectID": "ae/ae-01-unvotes.html",
-    "href": "ae/ae-01-unvotes.html",
-    "title": "UN Votes",
-    "section": "",
-    "text": "Go to Posit Cloud to get started."
-  },
-  {
-    "objectID": "ae/ae-01-unvotes.html#introduction",
-    "href": "ae/ae-01-unvotes.html#introduction",
-    "title": "UN Votes",
-    "section": "Introduction",
-    "text": "Introduction\nHow do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\nPackages\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\nlibrary(tidyverse)\nlibrary(scales)\nlibrary(DT)\nlibrary(unvotes)\nlibrary(ggthemes)\n\n\n\nData\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis.\n\nunvotes &lt;- un_votes |&gt;\n  inner_join(un_roll_calls, by = \"rcid\") |&gt;\n  inner_join(un_roll_call_issues, by = \"rcid\", relationship = \"many-to-many\")"
-  },
-  {
-    "objectID": "ae/ae-01-unvotes.html#un-voting-patterns",
-    "href": "ae/ae-01-unvotes.html#un-voting-patterns",
-    "title": "UN Votes",
-    "section": "UN voting patterns",
-    "text": "UN voting patterns\nLet’s create a data visualization that displays how the voting record of the UK & NI changed over time on a variety of issues, and compares it to two other countries: US and Turkey.\nWe can easily change which countries are being plotted by changing which countries the code above filters for. Note that the country name should be spelled and capitalized exactly the same way as it appears in the data. See the Appendix for a list of the countries in the data.\n\nunvotes |&gt;\n  filter(country %in% c(\"United Kingdom\", \"United States\", \"Turkey\")) |&gt;\n  mutate(year = year(date)) |&gt;\n  group_by(country, year, issue) |&gt;\n  summarize(percent_yes = mean(vote == \"yes\")) |&gt;\n  ggplot(mapping = aes(x = year, y = percent_yes, color = country)) +\n  geom_point(alpha = 0.4) +\n  geom_smooth(method = \"loess\", se = FALSE) +\n  facet_wrap(~issue) +\n  scale_y_continuous(labels = percent) +\n  scale_color_colorblind() +\n  labs(\n    title = \"Percentage of 'Yes' votes in the UN General Assembly\",\n    subtitle = \"1946 to 2019\",\n    y = \"% Yes\",\n    x = \"Year\",\n    color = \"Country\"\n  )"
-  },
-  {
-    "objectID": "ae/ae-01-unvotes.html#references",
-    "href": "ae/ae-01-unvotes.html#references",
-    "title": "UN Votes",
-    "section": "References",
-    "text": "References\n\nRobinson D (2021). unvotes: United Nations General Assembly Voting Data. R package version 0.3.0, https://github.com/dgrtwo/unvotes.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
-  },
-  {
-    "objectID": "ae/ae-01-unvotes.html#appendix",
-    "href": "ae/ae-01-unvotes.html#appendix",
-    "title": "UN Votes",
-    "section": "Appendix",
-    "text": "Appendix\nBelow is a list of countries in the dataset:"
-  },
-  {
-    "objectID": "ae/ae-03-flint.html",
-    "href": "ae/ae-03-flint.html",
-    "title": "Exploring Flint’s water data",
-    "section": "",
-    "text": "Go to the course GitHub organization to get started.\nThis is an updated version of the previous application exercise. The data analysis exercises R the same, but workflow steps have been updated for a Git and GitHub based workflow."
-  },
-  {
-    "objectID": "ae/ae-03-flint.html#load-packages",
-    "href": "ae/ae-03-flint.html#load-packages",
-    "title": "Exploring Flint’s water data",
-    "section": "Load packages",
-    "text": "Load packages\nWe’ll use the tidyverse package for analysis, which offers functionality for data import, wrangling, visualization, and more.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nLoading this package prints out a message. What does this message mean? How can we suppress the message from the output?"
-  },
-  {
-    "objectID": "ae/ae-03-flint.html#load-data",
-    "href": "ae/ae-03-flint.html#load-data",
-    "title": "Exploring Flint’s water data",
-    "section": "Load data",
-    "text": "Load data\nThe read_csv() function can be used for reading CSV (comma separated values) files. The file we’re reading is called flint with the suffix (.csv) which indicates its file type. The file is in the data folder.\nBefore reading in the file, go to the data folder in the Files pane to confirm that it is, indeed, there. Then, read the file by running the code chunk below by clicking on the green triangle icon on the code chunk.\n\nflint &lt;- read_csv(\"data/flint.csv\")\n\nRows: 813 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): draw\ndbl (4): id, zip, ward, lead\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nOne of two things may have happened:\n\nThe file was read successfully and you now see a dataset called flint in your Environment pane.\nThe file was not read successfully and you see an error Error in read_csv(\"data/flint.csv\") : could not find function \"read_csv\".\n\nIf (1) happened, great!\nIf (2) happened, let’s troubleshoot first before continuing."
-  },
-  {
-    "objectID": "ae/ae-03-flint.html#data-dictionary",
-    "href": "ae/ae-03-flint.html#data-dictionary",
-    "title": "Exploring Flint’s water data",
-    "section": "Data dictionary",
-    "text": "Data dictionary\nThe following variables are in the flint data frame:\n\nid: sample ID number (identifies the home)\nzip: ZIP code in Flint of the sample’s location\nward: ward in Flint of the sample’s location\ndraw: which time point the water was sampled from\nlead: lead content in parts per billion (ppb)"
-  },
-  {
-    "objectID": "ae/ae-03-flint.html#populations-and-samples",
-    "href": "ae/ae-03-flint.html#populations-and-samples",
-    "title": "Exploring Flint’s water data",
-    "section": "Populations and samples",
-    "text": "Populations and samples\nWe want to learn about the population using a sample.\nIn the case we want to learn about the lead content in all of Flint, MI homes but only have available water readings from a sample of homes (our data set).\nExercise 1: Look at the data, how many observations are there? How many variables?\n\n# add code here\n\n\nRender, commit, and push, with an appropriate commit message like “Finished Exercise 1”. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
-  },
-  {
-    "objectID": "ae/ae-03-flint.html#frequencies",
-    "href": "ae/ae-03-flint.html#frequencies",
-    "title": "Exploring Flint’s water data",
-    "section": "Frequencies",
-    "text": "Frequencies\nLet’s count() to find the number of different time points water was sampled with the count() function.\n\nThe first argument is flint: the data frame\nThe second argument is draw: the variable\n\n\ncount(flint, draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can achieve the same result with the following “piped” operation as well.\n\nThe first line is flint: the data frame\nThen the pipe operator, read as “and then”, which places what comes before it as the first argument of what comes after it\nThe second line is count(draw)\n\n\nflint |&gt;\n  count(draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can use a similar approach to fund out how many unique homes are in the data set:\n\nflint |&gt;\n  count(id)\n\n# A tibble: 269 × 2\n      id     n\n   &lt;dbl&gt; &lt;int&gt;\n 1     1     3\n 2     2     3\n 3     4     3\n 4     5     3\n 5     6     3\n 6     7     3\n 7     8     3\n 8     9     3\n 9    12     3\n10    13     3\n# ℹ 259 more rows\n\n\nExercise 2: How many samples were taken from each zip code?\n\n# add code here\n\nExercise 3: Which ZIP code had the most samples drawn? Hint: See the help for count.\n\n# add code here\n\n\nRender, commit, and push, with an appropriate commit message like “Finished exercises 2 and 3”. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
-  },
-  {
-    "objectID": "ae/ae-03-flint.html#measures-of-central-tendency",
-    "href": "ae/ae-03-flint.html#measures-of-central-tendency",
-    "title": "Exploring Flint’s water data",
-    "section": "Measures of central tendency",
-    "text": "Measures of central tendency\n\nmean\nmedian\nmode"
-  },
-  {
-    "objectID": "ae/ae-03-flint.html#measures-of-spread",
-    "href": "ae/ae-03-flint.html#measures-of-spread",
-    "title": "Exploring Flint’s water data",
-    "section": "Measures of spread",
-    "text": "Measures of spread\n\nvariance\nstandard deviation\nrange\nquartiles\ninter-quartile range (IQR)"
-  },
-  {
-    "objectID": "ae/ae-03-flint.html#order-statistics",
-    "href": "ae/ae-03-flint.html#order-statistics",
-    "title": "Exploring Flint’s water data",
-    "section": "Order statistics",
-    "text": "Order statistics\n\nquantiles\nminimum (0 percentile)\nmedian (50th percentile)\nmaximum (100 percentile)\n\n… and any other arbitrary function of the data you can come up with!\nExercise 4: Compute each of these statistics for lead ppb.\n\n# add code here\n\n\nRender, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
-  },
-  {
-    "objectID": "ae/ae-03-flint.html#histograms",
-    "href": "ae/ae-03-flint.html#histograms",
-    "title": "Exploring Flint’s water data",
-    "section": "Histograms",
-    "text": "Histograms\nLet’s take a look at the distribution of lead content in homes in Flint, MI.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nWe can make this plot look nicer/more useful by adjusting the number of bins and zooming into the x-axis.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram(bins = 50) +\n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\nLet’s visualize some of our summary statistics on the plot.\nExercise 5: Add a new layer, geom_vline(xintercept = __, color = \"red\"), to the histogram below, filling in the blank with the mean.\n\nggplot(flint, aes(x = lead)) + \n  geom_histogram(bins = 50) + \n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\nExercise 6: Add one more layer which overlays the median, in a different color.\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-03-flint.html#box-plots",
-    "href": "ae/ae-03-flint.html#box-plots",
-    "title": "Exploring Flint’s water data",
-    "section": "Box plots",
-    "text": "Box plots\nNext, let’s narrow our focus to the zip codes 48503, 48504, 48505, 48506, and 48507 and observations with lead values less than 1,000 ppb.\n\nflint_focus &lt;- flint |&gt;\n  filter(zip %in% 48503:48507 & lead &lt; 1000)\n\nExercise 7: Below are side-by-side box plots for the three flushing times in each of the five zip codes we considered. Add x and y labels; add a title by inserting title = \"title_name\" inside the labs() function.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) +\n  labs(x = \"___\", y = \"___\", fill = \"Flushing time\") +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  )\n\n\n\n\n\nRender, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.\n\nExercise 8: Add labels for x, y, a title, and subtitle to the code below to update the corresponding plot.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) + \n  labs(\n    x = \"___\", y = \"___\", fill = \"Flushing time\",\n    title = \"___\",\n    subtitle = \"___\"\n    ) +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  ) +\n  coord_cartesian(xlim = c(0, 50)) +\n  theme_bw()\n\n\n\n\nExercise 9: What is the difference between the two plots? What are the advantages and disadvantages to each plot?\n[Add your answer here]\n\nRender, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding. Confirm that your output looks as expected on your GitHub repository."
-  },
-  {
-    "objectID": "ae/ae-02-flint.html",
-    "href": "ae/ae-02-flint.html",
-    "title": "Exploring Flint’s water data",
-    "section": "",
-    "text": "Go to Posit Cloud to get started."
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#rstudio",
-    "href": "ae/ae-02-flint.html#rstudio",
-    "title": "Exploring Flint’s water data",
-    "section": "RStudio",
-    "text": "RStudio\n\nFiles, plots, viewer, environment, etc. panes\nConsole\nEditor"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#r",
-    "href": "ae/ae-02-flint.html#r",
-    "title": "Exploring Flint’s water data",
-    "section": "R",
-    "text": "R\n\nWriting code in the console\nBasic math with R\nCreating variables in R, the assignment operator (&lt;-), and the Environment pane\nR functions and packages and the Packages pane\nGetting help with R and the Help pane"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#quarto",
-    "href": "ae/ae-02-flint.html#quarto",
-    "title": "Exploring Flint’s water data",
-    "section": "Quarto",
-    "text": "Quarto\n\nYAML: Metadata\nNarrative: Edited with the visual editor (or the source editor)\nCode: In code chunks\n\nChunk options (following #|)\nComments (following #)\nCode\n\nRunning individual code chunks vs. rendering a document"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#load-packages",
-    "href": "ae/ae-02-flint.html#load-packages",
-    "title": "Exploring Flint’s water data",
-    "section": "Load packages",
-    "text": "Load packages\nWe’ll use the tidyverse package for analysis, which offers functionality for data import, wrangling, visualization, and more.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nLoading this package prints out a message. What does this message mean? How can we suppress the message from the output?"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#load-data",
-    "href": "ae/ae-02-flint.html#load-data",
-    "title": "Exploring Flint’s water data",
-    "section": "Load data",
-    "text": "Load data\nThe read_csv() function can be used for reading CSV (comma separated values) files. The file we’re reading is called flint with the suffix (.csv) which indicates its file type. The file is in the data folder.\nBefore reading in the file, go to the data folder in the Files pane to confirm that it is, indeed, there. Then, read the file by running the code chunk below by clicking on the green triangle icon on the code chunk.\n\nflint &lt;- read_csv(\"data/flint.csv\")\n\nRows: 813 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): draw\ndbl (4): id, zip, ward, lead\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nOne of two things may have happened:\n\nThe file was read successfully and you now see a dataset called flint in your Environment pane.\nThe file was not read successfully and you see an error Error in read_csv(\"data/flint.csv\") : could not find function \"read_csv\".\n\nIf (1) happened, great!\nIf (2) happened, let’s troubleshoot first before continuing."
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#data-dictionary",
-    "href": "ae/ae-02-flint.html#data-dictionary",
-    "title": "Exploring Flint’s water data",
-    "section": "Data dictionary",
-    "text": "Data dictionary\nThe following variables are in the flint data frame:\n\nid: sample ID number (identifies the home)\nzip: ZIP code in Flint of the sample’s location\nward: ward in Flint of the sample’s location\ndraw: which time point the water was sampled from\nlead: lead content in parts per billion (ppb)"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#populations-and-samples",
-    "href": "ae/ae-02-flint.html#populations-and-samples",
-    "title": "Exploring Flint’s water data",
-    "section": "Populations and samples",
-    "text": "Populations and samples\nWe want to learn about the population using a sample.\nIn the case we want to learn about the lead content in all of Flint, MI homes but only have available water readings from a sample of homes (our data set).\nExercise 1: Look at the data, how many observations are there? How many variables?\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#frequencies",
-    "href": "ae/ae-02-flint.html#frequencies",
-    "title": "Exploring Flint’s water data",
-    "section": "Frequencies",
-    "text": "Frequencies\nLet’s count() to find the number of different time points water was sampled with the count() function.\n\nThe first argument is flint: the data frame\nThe second argument is draw: the variable\n\n\ncount(flint, draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can achieve the same result with the following “piped” operation as well.\n\nThe first line is flint: the data frame\nThen the pipe operator, read as “and then”, which places what comes before it as the first argument of what comes after it\nThe second line is count(draw)\n\n\nflint |&gt;\n  count(draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can use a similar approach to fund out how many unique homes are in the data set:\n\nflint |&gt;\n  count(id)\n\n# A tibble: 269 × 2\n      id     n\n   &lt;dbl&gt; &lt;int&gt;\n 1     1     3\n 2     2     3\n 3     4     3\n 4     5     3\n 5     6     3\n 6     7     3\n 7     8     3\n 8     9     3\n 9    12     3\n10    13     3\n# ℹ 259 more rows\n\n\nExercise 2: How many samples were taken from each zip code?\n\n# add code here\n\nExercise 3: Which ZIP code had the most samples drawn? Hint: See the help for count.\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#measures-of-central-tendency",
-    "href": "ae/ae-02-flint.html#measures-of-central-tendency",
-    "title": "Exploring Flint’s water data",
-    "section": "Measures of central tendency",
-    "text": "Measures of central tendency\n\nmean\nmedian\nmode"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#measures-of-spread",
-    "href": "ae/ae-02-flint.html#measures-of-spread",
-    "title": "Exploring Flint’s water data",
-    "section": "Measures of spread",
-    "text": "Measures of spread\n\nvariance\nstandard deviation\nrange\nquartiles\ninter-quartile range (IQR)"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#order-statistics",
-    "href": "ae/ae-02-flint.html#order-statistics",
-    "title": "Exploring Flint’s water data",
-    "section": "Order statistics",
-    "text": "Order statistics\n\nquantiles\nminimum (0 percentile)\nmedian (50th percentile)\nmaximum (100 percentile)\n\n… and any other arbitrary function of the data you can come up with!\nExercise 4: Compute each of these statistics for lead ppb.\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#histograms",
-    "href": "ae/ae-02-flint.html#histograms",
-    "title": "Exploring Flint’s water data",
-    "section": "Histograms",
-    "text": "Histograms\nLet’s take a look at the distribution of lead content in homes in Flint, MI.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nWe can make this plot look nicer/more useful by adjusting the number of bins and zooming into the x-axis.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram(bins = 50) +\n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\nLet’s visualize some of our summary statistics on the plot.\nExercise 5: Add a new layer, geom_vline(xintercept = __, color = \"red\"), to the histogram below, filling in the blank with the mean.\n\nggplot(flint, aes(x = lead)) + \n  geom_histogram(bins = 50) + \n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\nExercise 6: Add one more layer which overlays the median, in a different color.\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-02-flint.html#box-plots",
-    "href": "ae/ae-02-flint.html#box-plots",
-    "title": "Exploring Flint’s water data",
-    "section": "Box plots",
-    "text": "Box plots\nNext, let’s narrow our focus to the zip codes 48503, 48504, 48505, 48506, and 48507 and observations with lead values less than 1,000 ppb.\n\nflint_focus &lt;- flint |&gt;\n  filter(zip %in% 48503:48507 & lead &lt; 1000)\n\nExercise 7: Below are side-by-side box plots for the three flushing times in each of the five zip codes we considered. Add x and y labels; add a title by inserting title = \"title_name\" inside the labs() function.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) +\n  labs(x = \"___\", y = \"___\", fill = \"Flushing time\") +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  )\n\n\n\n\nExercise 8: Add labels for x, y, a title, and subtitle to the code below to update the corresponding plot.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) + \n  labs(\n    x = \"___\", y = \"___\", fill = \"Flushing time\",\n    title = \"___\",\n    subtitle = \"___\"\n    ) +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  ) +\n  coord_cartesian(xlim = c(0, 50)) +\n  theme_bw()\n\n\n\n\nExercise 9: What is the difference between the two plots? What are the advantages and disadvantages to each plot?\n[Add your answer here]"
-  },
-  {
-    "objectID": "course-team.html",
-    "href": "course-team.html",
-    "title": "Teaching team",
-    "section": "",
-    "text": "Dr. Mine Çetinkaya-Rundel (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University and an affiliated faculty in the Computational Media, Arts, and Cultures. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education as well as pedagogical approaches for enhancing retention of women and under-represented minorities in STEM.\n\n\n\nOffice hours\nLocation\n\n\n\n\nThursdays 10 - 11 am\nZoom"
-  },
-  {
-    "objectID": "course-team.html#instructor",
-    "href": "course-team.html#instructor",
-    "title": "Teaching team",
-    "section": "",
-    "text": "Dr. Mine Çetinkaya-Rundel (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University and an affiliated faculty in the Computational Media, Arts, and Cultures. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education as well as pedagogical approaches for enhancing retention of women and under-represented minorities in STEM.\n\n\n\nOffice hours\nLocation\n\n\n\n\nThursdays 10 - 11 am\nZoom"
-  },
-  {
-    "objectID": "course-team.html#teaching-assistant",
-    "href": "course-team.html#teaching-assistant",
-    "title": "Teaching team",
-    "section": "Teaching assistant",
-    "text": "Teaching assistant\n\nShelby Tisdale is our teaching assistant. Shelby is a Statistical Science major and she is also pursuing secondary teacher certification in mathematics and a certificate in Child Policy Research.\n\n\n\nOffice hours\nLocation\n\n\n\n\nThu 3 - 4 pm\nOld Chem 025\n\n\nSun 7 - 8 pm\nZoom"
-  },
-  {
-    "objectID": "hw/hw-6.html",
-    "href": "hw/hw-6.html",
-    "title": "HW 6",
-    "section": "",
-    "text": "To be posted…"
-  },
-  {
-    "objectID": "hw/hw-4.html",
-    "href": "hw/hw-4.html",
-    "title": "HW 4",
-    "section": "",
-    "text": "To be posted…"
-  },
-  {
-    "objectID": "hw/hw-7.html",
-    "href": "hw/hw-7.html",
-    "title": "HW 7",
-    "section": "",
-    "text": "To be posted…"
-  },
-  {
-    "objectID": "hw/hw-5.html",
-    "href": "hw/hw-5.html",
-    "title": "HW 5",
-    "section": "",
-    "text": "To be posted…"
-  },
-  {
-    "objectID": "project/project-2.html",
-    "href": "project/project-2.html",
-    "title": "Project 2",
-    "section": "",
-    "text": "More info to be posted."
-  },
-  {
-    "objectID": "computing/computing-cheatsheets.html",
-    "href": "computing/computing-cheatsheets.html",
-    "title": "R cheatsheets",
-    "section": "",
-    "text": "The following cheatsheets come from https://posit.co/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references."
-  },
-  {
-    "objectID": "computing/computing-troubleshooting.html",
-    "href": "computing/computing-troubleshooting.html",
-    "title": "Computing troubleshooting",
-    "section": "",
-    "text": "If you’re having difficulty launching an RStudio session from Posit Cloud, go to status.posit.co and check under Posit Cloud.\n\nIf it shows “Operational”, this means the system is expected to be working. Check your internet connection, if need be, restart your computer to ensure a fresh new connection. If your issue persists, post on the course Slack with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).\nIf it shows “Partial Outage” or “Outage” (or anything other than “Operational”), this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the course Slack to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!s"
-  },
-  {
-    "objectID": "course-links.html",
-    "href": "course-links.html",
-    "title": "Useful links",
-    "section": "",
-    "text": "Posit Cloud\n🔗 Posit Cloud\n\n\nLecture recordings\n🔗 Panopto\n\n\nSlack\n🔗 Slack\n\n\nGradebook\n🔗 on Canvas\n\n\nAnnouncements\n🔗 on Canvas\n\n\nTutorial submission\n🔗 on Canvas\n\n\nTextbooks\n🔗 R for Data Science, 2nd Edition\n🔗 Data Visualization: A Practical Introduction\n🔗 Introduction to Modern Statistics, 2nd Edition\n\n\nPackage documentation\n🔗 tidyverse: tidyverse.org\n🔗 tidymodels: tidymodels.org"
-  },
-  {
     "objectID": "course-syllabus.html",
     "href": "course-syllabus.html",
     "title": "Syllabus",
@@ -756,46 +91,81 @@
     "text": "Important dates\n\nMonday, August 28: Classes begin\nFriday, September 8: Drop/add ends\nTuesday, October 3: Exam 1 - In class\nThursday, October 5: Exam 1 - Take home due\nThursday, October 12: Project 1 due + presentations\nFriday, October 13: Mid-semester grades reported\nTuesday, October 17: Fall Break - No lecture\nFriday, November 10: Last day to withdraw with W\nTuesday, November 14: Exam 2 - In class\nThursday, November 16: Exam 2 - Take home due\nThursday, November 23: Thanksgiving Break - No lecture\nThursday, December 7: Project 2 due + presentations\n\nFor more important dates, see the full Duke Academic Calendar."
   },
   {
-    "objectID": "course-faq.html",
-    "href": "course-faq.html",
-    "title": "FAQ",
+    "objectID": "computing/computing-cheatsheets.html",
+    "href": "computing/computing-cheatsheets.html",
+    "title": "R cheatsheets",
     "section": "",
-    "text": "The short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.3.1: https://cran.r-project.org\nDownload and install the preview build of RStudio: https://posit.co/download/rstudio-desktop\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here."
+    "text": "The following cheatsheets come from https://posit.co/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references."
   },
   {
-    "objectID": "course-faq.html#can-i-use-a-local-install-of-posit-cloud",
-    "href": "course-faq.html#can-i-use-a-local-install-of-posit-cloud",
-    "title": "FAQ",
+    "objectID": "course-support.html",
+    "href": "course-support.html",
+    "title": "Course support",
     "section": "",
-    "text": "The short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.3.1: https://cran.r-project.org\nDownload and install the preview build of RStudio: https://posit.co/download/rstudio-desktop\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here."
+    "text": "Most of you will need help at some point and we want to make sure you can identify when that is without getting too frustrated and feel comfortable seeking help."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STA 113: Visualizing Data",
-    "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n  \n    \n    \n    \n    \n    \n    \n  \n  \n    \n    \n      WEEK\n      DATE\n      TOPIC\n      PREPARE\n      MATERIALS\n      DUE AT 1 PM\n    \n  \n  \n    1\nTue, Aug 29\nWelcome to STA 113FS!\n\n\n🖥️ slides\n\n\n    \nThu, Aug 31\nMeet the toolkit (R + RStudio)\n\n📖 socviz: Chp 1\n\n🖥️ slides \n⌨️ ae-01 \n⌨️ ae-02\n\nGetting to know you survey \nGitHub usernames\n\n    2\nTue, Sep 5\nMeet the toolkit (Git + GitHub) + \nGrammar of graphics\n\n📖 r4ds: Chp 2.1 - 2.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-03\n\n\n    \nThu, Sep 7\nVisualizing various types of data\n\n📖 r4ds: Chp 2.5 - 2.8 \n📖 r4ds: Chp 3 \n🎥 video\n\n🖥️ slides \n⌨️ ae-04\n\n\n    3\nTue, Sep 12\nClass cancelled\n\n\n\n\n    \nThu, Sep 14\nGrammar of data wrangling\n\n📖 r4ds: Chp 4.1 - 4.5 \n🎥 video\n\n🖥️ slides) \n⌨️ ae-05\n\n📄 HW 1\n\n    4\nTue, Sep 19\nProject 1 workday\n\n📖 r4ds: Chp 4.5 - 4.7 \n🎥 video\n\n\n\n    \nThu, Sep 21\nRubenstein Library Visit (Rubenstein Room 150)\n\n📖 r4ds: Chp 5\n\n\n📄 HW 2\n\n    5\nTue, Sep 26\nWorking with multiple data frames\n\n\n\n\n    \nThu, Sep 28\nTidying data\n\n\n\nProject 1 proposal\n\n    6\nTue, Oct 3\nExam 1 - In class\n\n\n\n\n    \nThu, Oct 5\nData types and classes\n\n\n\nExam 1 - Take home\n\n    7\nTue, Oct 10\nPresentation ready plots\n\n\n\nProject 1 peer review\n\n    \nThu, Oct 12\nProject 1 presentations\n\n\n\nProject 1\n\n    8\nTue, Oct 17\nFall Break - No lecture\n\n\n\n\n    \nThu, Oct 19\n\n\n\n\n    9\nTue, Oct 24\n\n\n\n📄 HW 3\n\n    \nThu, Oct 26\nProject 2 workday\n\n\n\n\n    10\nTue, Oct 31\n\n\n\n📄 HW 4\n\n    \nThu, Nov 2\n\n\n\nProject 2 proposal\n\n    11\nTue, Nov 7\n\n\n\n📄 HW 5\n\n    \nThu, Nov 9\n\n\n\n\n    12\nTue, Nov 14\nExam 2 - In class\n\n\n\n\n    \nThu, Nov 16\n\n\n\nExam 2 - Take home\n\n    13\nTue, Nov 21\n\n\n\n\n    \nThu, Nov 23\nThanksgiving Break - No lecture\n\n\n\n\n    14\nTue, Nov 28\n\n\n\n📄 HW 6\n\n    \nThu, Nov 30\n\n\n\nProject 2 peer review\n\n    15\nTue, Dec 5\n\n\n\n\n    \nThu, Dec 7\nProject 2 presentations\n\n\n\nProject 2 at 1 pm"
+    "objectID": "course-support.html#lectures",
+    "href": "course-support.html#lectures",
+    "title": "Course support",
+    "section": "Lectures",
+    "text": "Lectures\nIf you have a question during a lecture, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone."
   },
   {
-    "objectID": "computing/computing-access.html",
-    "href": "computing/computing-access.html",
-    "title": "Computing access",
-    "section": "",
-    "text": "To access RStudio in the browser, go to the Posit Cloud space for this course.\nAt the beginning of the semester you should have received a link to join this space. If you haven’t yet joined, you can find the link in Canvas Announcements or ask for it on the course Slack."
+    "objectID": "course-support.html#office-hours",
+    "href": "course-support.html#office-hours",
+    "title": "Course support",
+    "section": "Office hours",
+    "text": "Office hours\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours during the times posted on the home page to ask questions about the course content and assignments. A lot of questions are most effectively answered in-person, so office hours are a valuable resource. I encourage each and every one of you to take advantage of this resource! Make a pledge to stop by office hours at least once during the first three weeks of class. If you truly have no questions to ask, just stop by and say hi and introduce yourself. You can find a list of everyone’s office hours here."
   },
   {
-    "objectID": "project/project-tips-resources.html",
-    "href": "project/project-tips-resources.html",
-    "title": "Project tips + resources",
-    "section": "",
-    "text": "To be posted."
+    "objectID": "course-support.html#slack",
+    "href": "course-support.html#slack",
+    "title": "Course support",
+    "section": "Slack",
+    "text": "Slack\nHave a question that can’t wait for office hours? Prefer to write out your question in detail rather than asking in person? The course Slack is the best venue for these! There is a chance another student has already asked a similar question, so please check the other posts on Slack before asking a new question. If you know the answer to a question that is posted, I encourage you to respond!"
   },
   {
-    "objectID": "project/project-1.html",
-    "href": "project/project-1.html",
-    "title": "Project 1",
+    "objectID": "course-support.html#email",
+    "href": "course-support.html#email",
+    "title": "Course support",
+    "section": "Email",
+    "text": "Email\nPlease refrain from emailing any course content questions (those should go to Slack), and only use email for questions about personal matters that may not be appropriate for the public course forum (e.g., illness, accommodations, etc.). For such matters, you may email Dr. Mine Çetinkaya-Rundel at mc301@duke.edu.\nIf there is a question that’s not appropriate for the public forum, you are welcome to email me directly. If you email me, please include “STA 101” in the subject line. Barring extenuating circumstances, I will respond to STA 101 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday."
+  },
+  {
+    "objectID": "course-support.html#academic-support",
+    "href": "course-support.html#academic-support",
+    "title": "Course support",
+    "section": "Academic support",
+    "text": "Academic support\nThere are times may need help with the class that is beyond what can be provided by the teaching team. In those instances, I encourage you to visit the Academic Resource Center. The Academic Resource Center (ARC) offers free services to all students during their undergraduate careers at Duke. Services include Learning Consultations, Peer Tutoring and Study Groups, ADHD/LD Coaching, Outreach Workshops, and more. Because learning is a process unique to every individual, they work with each student to discover and develop their own academic strategy for success at Duke. Contact the ARC to schedule an appointment. Undergraduates in any year, studying any discipline can benefit! Contact ARC@duke.edu, 919-684-5917."
+  },
+  {
+    "objectID": "course-support.html#mental-health-and-wellness",
+    "href": "course-support.html#mental-health-and-wellness",
+    "title": "Course support",
+    "section": "Mental health and wellness",
+    "text": "Mental health and wellness\nStudent mental health and wellness are of primary importance at Duke, and the university offers resources to support students in managing daily stress and self-care. Duke offers several resources for students to seek assistance on coursework and to nurture daily habits that support overall well-being, some of which are listed below.\n\nThe Academic Resource Center: (919) 684-5917, theARC@duke.edu, or arc.duke.edu.\nDuWell: (919) 681-8421, provides Moments of Mindfulness (stress management and resilience building) and meditation programming to assist students in developing a daily emotional well-being practice. To see schedules for programs please see https://studentaffairs.duke.edu/duwell. All are welcome and no experience necessary.\n\nIf your mental health concerns and/or stressful events negatively affect your daily emotional state, academic performance, or ability to participate in your daily activities, many resources are available to help you through difficult times. Duke encourages all students to access these resources.\n\nDukeReach: Provides comprehensive outreach services to identify and support students in managing all aspects of well-being. If you have concerns about a student’s behavior or health visit the website for resources and assistance: http://studentaffairs.duke.edu/dukereach.\nCounseling and Psychological Services (CAPS): CAPS services include individual and group counseling services, psychiatric services, and workshops. To initiate services, walk-in/call-in 9-4 M,W,Th,F and 9-6 Tuesdays. CAPS also provides referral to off-campus resources for specialized care. (919) 660-1000 or https://students.duke.edu/wellness/caps.\nTimelyCare: (formerly known as Blue Devils Care) An online platform that is a convenient, confidential, and free way for Duke students to receive 24/7 mental health support through TalkNow and scheduled counseling: https://bluedevilscare.duke.edu."
+  },
+  {
+    "objectID": "course-support.html#course-costs",
+    "href": "course-support.html#course-costs",
+    "title": "Course support",
+    "section": "Course costs",
+    "text": "Course costs\n\nTextbooks: The textbooks for this course are freely available on the web.\nLaptops: Each student is expected to have a laptop they can bring to each lecture.\n\nIf you are having difficulty with costs associated with this course, here are some resources:\n\nContact the financial aid office (whether or not you are on aid). They have loans and resources for connecting students with programs on campus that might be able to help alleviate these costs.\nDukeLIFE offers course materials assistance for eligible students. Please note that students who are eligible for DukeLIFE benefits are notified prior to the start of the semester; program resources are limited.\nDuke Libraries offers textbook rentals through the Top Textbook Program, where you can rent out a textbook for 3 hours at a time.\nFor course-specific technology needs such as Digital Voice Recorder, HD Video Camera, TI-84 Plus CE, DSLR camera kit, Tripod, Shotgun Mic, iPad Mini 4, a Handheld Projector, or a GoPro, you can reserve rental equipment from the Link."
+  },
+  {
+    "objectID": "course-support.html#assistance-with-canvas-and-zoom",
+    "href": "course-support.html#assistance-with-canvas-and-zoom",
+    "title": "Course support",
+    "section": "Assistance with Canvas and Zoom",
+    "text": "Assistance with Canvas and Zoom\nFor technical help with Canvas or Zoom, contact the Duke OIT Service Desk at oit.duke.edu/help. You can also access the self-service help documentation for Zoom here and for Canvas here.\nNote that we will be making minimal use of Canvas in this course (primarily for announcements and grade book). All assignment submission will take place on GitHub and conversation on Slack.\nZoom will be used for online office hours as well as as a backup option should we need to hold the course online instead of in person."
+  },
+  {
+    "objectID": "hw/hw-2.html",
+    "href": "hw/hw-2.html",
+    "title": "HW 2",
     "section": "",
-    "text": "More info to be posted…"
+    "text": "To be posted…"
   },
   {
     "objectID": "hw/hw-8.html",
@@ -805,9 +175,9 @@
     "text": "To be posted…"
   },
   {
-    "objectID": "hw/hw-2.html",
-    "href": "hw/hw-2.html",
-    "title": "HW 2",
+    "objectID": "hw/hw-4.html",
+    "href": "hw/hw-4.html",
+    "title": "HW 4",
     "section": "",
     "text": "To be posted…"
   },
@@ -924,11 +294,18 @@
     "text": "Grading\n\nExercise 1-9: 10 points each\nWorkflow + formatting: 10 points\nTotal: 100 points"
   },
   {
-    "objectID": "hw/hw-3.html",
-    "href": "hw/hw-3.html",
-    "title": "HW 3",
+    "objectID": "course-faq.html",
+    "href": "course-faq.html",
+    "title": "FAQ",
     "section": "",
-    "text": "To be posted…"
+    "text": "The short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.3.1: https://cran.r-project.org\nDownload and install the preview build of RStudio: https://posit.co/download/rstudio-desktop\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here."
+  },
+  {
+    "objectID": "course-faq.html#can-i-use-a-local-install-of-posit-cloud",
+    "href": "course-faq.html#can-i-use-a-local-install-of-posit-cloud",
+    "title": "FAQ",
+    "section": "",
+    "text": "The short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.3.1: https://cran.r-project.org\nDownload and install the preview build of RStudio: https://posit.co/download/rstudio-desktop\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here."
   },
   {
     "objectID": "ae/ae-05-hotels-sa.html",
@@ -936,6 +313,139 @@
     "title": "Grammar of data wrangling",
     "section": "",
     "text": "Go to the course GitHub organization to get started.\n\n\n\n\nlibrary(tidyverse)\nlibrary(scales)\n\nhotels &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv\")\n\nRecreate the visualization from the slides.\n\nhotels |&gt;\n  mutate(\n    arrival_date = glue::glue(\"{arrival_date_year}-{arrival_date_month}-{arrival_date_day_of_month}\"),\n    arrival_date = ymd(arrival_date)\n    ) |&gt;\n  group_by(hotel, arrival_date) |&gt;\n  summarise(mean_adr = mean(adr), .groups = \"drop\") |&gt;\n  ggplot(aes(x = arrival_date, y = mean_adr, group = hotel, color = hotel)) +\n  geom_line() +\n  scale_color_manual(values = c(\"cornsilk4\", \"deepskyblue3\")) +\n  scale_y_continuous(labels = label_dollar()) +\n  labs(\n    x = \"Arrival date\",\n    y = \"Mean average\\ndaily rate (USD)\",\n    color = NULL,\n    title = \"Cost of daily hotel stay\",\n    subtitle = \"July 2015 to August 2017\",\n    caption = \"Source: Antonio, Almeida and Nunes (2019) | TidyTuesday\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = c(0.15, 0.9))"
+  },
+  {
+    "objectID": "ae/ae-01-unvotes.html",
+    "href": "ae/ae-01-unvotes.html",
+    "title": "UN Votes",
+    "section": "",
+    "text": "Go to Posit Cloud to get started."
+  },
+  {
+    "objectID": "ae/ae-01-unvotes.html#introduction",
+    "href": "ae/ae-01-unvotes.html#introduction",
+    "title": "UN Votes",
+    "section": "Introduction",
+    "text": "Introduction\nHow do various countries vote in the United Nations General Assembly, how have their voting patterns evolved throughout time, and how similarly or differently do they view certain issues? Answering these questions (at a high level) is the focus of this analysis.\n\nPackages\nWe will use the tidyverse, lubridate, and scales packages for data wrangling and visualization, and the DT package for interactive display of tabular output, and the unvotes package for the data.\n\nlibrary(tidyverse)\nlibrary(scales)\nlibrary(DT)\nlibrary(unvotes)\nlibrary(ggthemes)\n\n\n\nData\nThe data we’re using originally come from the unvotes package. In the chunk below we modify the data by joining the various data frames provided in the package to help you get started with the analysis.\n\nunvotes &lt;- un_votes |&gt;\n  inner_join(un_roll_calls, by = \"rcid\") |&gt;\n  inner_join(un_roll_call_issues, by = \"rcid\", relationship = \"many-to-many\")"
+  },
+  {
+    "objectID": "ae/ae-01-unvotes.html#un-voting-patterns",
+    "href": "ae/ae-01-unvotes.html#un-voting-patterns",
+    "title": "UN Votes",
+    "section": "UN voting patterns",
+    "text": "UN voting patterns\nLet’s create a data visualization that displays how the voting record of the UK & NI changed over time on a variety of issues, and compares it to two other countries: US and Turkey.\nWe can easily change which countries are being plotted by changing which countries the code above filters for. Note that the country name should be spelled and capitalized exactly the same way as it appears in the data. See the Appendix for a list of the countries in the data.\n\nunvotes |&gt;\n  filter(country %in% c(\"United Kingdom\", \"United States\", \"Turkey\")) |&gt;\n  mutate(year = year(date)) |&gt;\n  group_by(country, year, issue) |&gt;\n  summarize(percent_yes = mean(vote == \"yes\")) |&gt;\n  ggplot(mapping = aes(x = year, y = percent_yes, color = country)) +\n  geom_point(alpha = 0.4) +\n  geom_smooth(method = \"loess\", se = FALSE) +\n  facet_wrap(~issue) +\n  scale_y_continuous(labels = percent) +\n  scale_color_colorblind() +\n  labs(\n    title = \"Percentage of 'Yes' votes in the UN General Assembly\",\n    subtitle = \"1946 to 2019\",\n    y = \"% Yes\",\n    x = \"Year\",\n    color = \"Country\"\n  )"
+  },
+  {
+    "objectID": "ae/ae-01-unvotes.html#references",
+    "href": "ae/ae-01-unvotes.html#references",
+    "title": "UN Votes",
+    "section": "References",
+    "text": "References\n\nRobinson D (2021). unvotes: United Nations General Assembly Voting Data. R package version 0.3.0, https://github.com/dgrtwo/unvotes.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
+  },
+  {
+    "objectID": "ae/ae-01-unvotes.html#appendix",
+    "href": "ae/ae-01-unvotes.html#appendix",
+    "title": "UN Votes",
+    "section": "Appendix",
+    "text": "Appendix\nBelow is a list of countries in the dataset:"
+  },
+  {
+    "objectID": "ae/ae-02-flint.html",
+    "href": "ae/ae-02-flint.html",
+    "title": "Exploring Flint’s water data",
+    "section": "",
+    "text": "Go to Posit Cloud to get started."
+  },
+  {
+    "objectID": "ae/ae-02-flint.html#rstudio",
+    "href": "ae/ae-02-flint.html#rstudio",
+    "title": "Exploring Flint’s water data",
+    "section": "RStudio",
+    "text": "RStudio\n\nFiles, plots, viewer, environment, etc. panes\nConsole\nEditor"
+  },
+  {
+    "objectID": "ae/ae-02-flint.html#r",
+    "href": "ae/ae-02-flint.html#r",
+    "title": "Exploring Flint’s water data",
+    "section": "R",
+    "text": "R\n\nWriting code in the console\nBasic math with R\nCreating variables in R, the assignment operator (&lt;-), and the Environment pane\nR functions and packages and the Packages pane\nGetting help with R and the Help pane"
+  },
+  {
+    "objectID": "ae/ae-02-flint.html#quarto",
+    "href": "ae/ae-02-flint.html#quarto",
+    "title": "Exploring Flint’s water data",
+    "section": "Quarto",
+    "text": "Quarto\n\nYAML: Metadata\nNarrative: Edited with the visual editor (or the source editor)\nCode: In code chunks\n\nChunk options (following #|)\nComments (following #)\nCode\n\nRunning individual code chunks vs. rendering a document"
+  },
+  {
+    "objectID": "ae/ae-02-flint.html#load-packages",
+    "href": "ae/ae-02-flint.html#load-packages",
+    "title": "Exploring Flint’s water data",
+    "section": "Load packages",
+    "text": "Load packages\nWe’ll use the tidyverse package for analysis, which offers functionality for data import, wrangling, visualization, and more.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nLoading this package prints out a message. What does this message mean? How can we suppress the message from the output?"
+  },
+  {
+    "objectID": "ae/ae-02-flint.html#load-data",
+    "href": "ae/ae-02-flint.html#load-data",
+    "title": "Exploring Flint’s water data",
+    "section": "Load data",
+    "text": "Load data\nThe read_csv() function can be used for reading CSV (comma separated values) files. The file we’re reading is called flint with the suffix (.csv) which indicates its file type. The file is in the data folder.\nBefore reading in the file, go to the data folder in the Files pane to confirm that it is, indeed, there. Then, read the file by running the code chunk below by clicking on the green triangle icon on the code chunk.\n\nflint &lt;- read_csv(\"data/flint.csv\")\n\nRows: 813 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): draw\ndbl (4): id, zip, ward, lead\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nOne of two things may have happened:\n\nThe file was read successfully and you now see a dataset called flint in your Environment pane.\nThe file was not read successfully and you see an error Error in read_csv(\"data/flint.csv\") : could not find function \"read_csv\".\n\nIf (1) happened, great!\nIf (2) happened, let’s troubleshoot first before continuing."
+  },
+  {
+    "objectID": "ae/ae-02-flint.html#data-dictionary",
+    "href": "ae/ae-02-flint.html#data-dictionary",
+    "title": "Exploring Flint’s water data",
+    "section": "Data dictionary",
+    "text": "Data dictionary\nThe following variables are in the flint data frame:\n\nid: sample ID number (identifies the home)\nzip: ZIP code in Flint of the sample’s location\nward: ward in Flint of the sample’s location\ndraw: which time point the water was sampled from\nlead: lead content in parts per billion (ppb)"
+  },
+  {
+    "objectID": "ae/ae-02-flint.html#populations-and-samples",
+    "href": "ae/ae-02-flint.html#populations-and-samples",
+    "title": "Exploring Flint’s water data",
+    "section": "Populations and samples",
+    "text": "Populations and samples\nWe want to learn about the population using a sample.\nIn the case we want to learn about the lead content in all of Flint, MI homes but only have available water readings from a sample of homes (our data set).\nExercise 1: Look at the data, how many observations are there? How many variables?\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-02-flint.html#frequencies",
+    "href": "ae/ae-02-flint.html#frequencies",
+    "title": "Exploring Flint’s water data",
+    "section": "Frequencies",
+    "text": "Frequencies\nLet’s count() to find the number of different time points water was sampled with the count() function.\n\nThe first argument is flint: the data frame\nThe second argument is draw: the variable\n\n\ncount(flint, draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can achieve the same result with the following “piped” operation as well.\n\nThe first line is flint: the data frame\nThen the pipe operator, read as “and then”, which places what comes before it as the first argument of what comes after it\nThe second line is count(draw)\n\n\nflint |&gt;\n  count(draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can use a similar approach to fund out how many unique homes are in the data set:\n\nflint |&gt;\n  count(id)\n\n# A tibble: 269 × 2\n      id     n\n   &lt;dbl&gt; &lt;int&gt;\n 1     1     3\n 2     2     3\n 3     4     3\n 4     5     3\n 5     6     3\n 6     7     3\n 7     8     3\n 8     9     3\n 9    12     3\n10    13     3\n# ℹ 259 more rows\n\n\nExercise 2: How many samples were taken from each zip code?\n\n# add code here\n\nExercise 3: Which ZIP code had the most samples drawn? Hint: See the help for count.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-02-flint.html#measures-of-central-tendency",
+    "href": "ae/ae-02-flint.html#measures-of-central-tendency",
+    "title": "Exploring Flint’s water data",
+    "section": "Measures of central tendency",
+    "text": "Measures of central tendency\n\nmean\nmedian\nmode"
+  },
+  {
+    "objectID": "ae/ae-02-flint.html#measures-of-spread",
+    "href": "ae/ae-02-flint.html#measures-of-spread",
+    "title": "Exploring Flint’s water data",
+    "section": "Measures of spread",
+    "text": "Measures of spread\n\nvariance\nstandard deviation\nrange\nquartiles\ninter-quartile range (IQR)"
+  },
+  {
+    "objectID": "ae/ae-02-flint.html#order-statistics",
+    "href": "ae/ae-02-flint.html#order-statistics",
+    "title": "Exploring Flint’s water data",
+    "section": "Order statistics",
+    "text": "Order statistics\n\nquantiles\nminimum (0 percentile)\nmedian (50th percentile)\nmaximum (100 percentile)\n\n… and any other arbitrary function of the data you can come up with!\nExercise 4: Compute each of these statistics for lead ppb.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-02-flint.html#histograms",
+    "href": "ae/ae-02-flint.html#histograms",
+    "title": "Exploring Flint’s water data",
+    "section": "Histograms",
+    "text": "Histograms\nLet’s take a look at the distribution of lead content in homes in Flint, MI.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nWe can make this plot look nicer/more useful by adjusting the number of bins and zooming into the x-axis.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram(bins = 50) +\n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\nLet’s visualize some of our summary statistics on the plot.\nExercise 5: Add a new layer, geom_vline(xintercept = __, color = \"red\"), to the histogram below, filling in the blank with the mean.\n\nggplot(flint, aes(x = lead)) + \n  geom_histogram(bins = 50) + \n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\nExercise 6: Add one more layer which overlays the median, in a different color.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-02-flint.html#box-plots",
+    "href": "ae/ae-02-flint.html#box-plots",
+    "title": "Exploring Flint’s water data",
+    "section": "Box plots",
+    "text": "Box plots\nNext, let’s narrow our focus to the zip codes 48503, 48504, 48505, 48506, and 48507 and observations with lead values less than 1,000 ppb.\n\nflint_focus &lt;- flint |&gt;\n  filter(zip %in% 48503:48507 & lead &lt; 1000)\n\nExercise 7: Below are side-by-side box plots for the three flushing times in each of the five zip codes we considered. Add x and y labels; add a title by inserting title = \"title_name\" inside the labs() function.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) +\n  labs(x = \"___\", y = \"___\", fill = \"Flushing time\") +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  )\n\n\n\n\nExercise 8: Add labels for x, y, a title, and subtitle to the code below to update the corresponding plot.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) + \n  labs(\n    x = \"___\", y = \"___\", fill = \"Flushing time\",\n    title = \"___\",\n    subtitle = \"___\"\n    ) +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  ) +\n  coord_cartesian(xlim = c(0, 50)) +\n  theme_bw()\n\n\n\n\nExercise 9: What is the difference between the two plots? What are the advantages and disadvantages to each plot?\n[Add your answer here]"
   },
   {
     "objectID": "ae/ae-04-sat.html",
@@ -964,118 +474,6 @@
     "title": "Visualizing data and investigating relationships",
     "section": "Multiple variables",
     "text": "Multiple variables\n\nRecreate the scatterplot of average SAT scores, this time coloring each state based on whether they had low or high participation in the SAT. Describe the relationship between SAT scores and teacher salaries, when conditioning on SAT participation.\n\n\n# add code here\n\n\nFill in the blanks below.\n\nAmong all states, salaries and SAT scores are ___ associated.\nAmong states with a low percentage taking the SAT, teacher salaries and SAT scores are ___ associated.\nAmong states with a high percentage taking the SAT, teacher salaries and SAT scores are ___ associated.\n\n\nThis phenomenon is called Simpson’s paradox – a trend appears in subsets of the data, but disappears or reverses when the subsets are combined. The paradox can be resolved when confounding variables and causal relations are appropriately addressed in the analysis. In the above example, the confounding variable is SAT participation rate.\n\nImprove the visual display of the plot you just created.\n\n\n# add code here"
-  },
-  {
-    "objectID": "ae/ae-04-sat-sa.html",
-    "href": "ae/ae-04-sat-sa.html",
-    "title": "Visualizing data and investigating relationships",
-    "section": "",
-    "text": "The main question we’ll explore today is “How are SAT scores and teacher salaries associated?” What do you think?\nAlong the way we will:\n\ncreate data visualizations and calculating summary statistics for comparing trends across groups\ndistinguish observational studies and experiments\nidentify confounding variables and Simpson’s paradox"
-  },
-  {
-    "objectID": "ae/ae-04-sat-sa.html#single-variable",
-    "href": "ae/ae-04-sat-sa.html#single-variable",
-    "title": "Visualizing data and investigating relationships",
-    "section": "Single variable",
-    "text": "Single variable\nAnalyzing the a single variable is called univariate analysis.\nCreate visualizations of the distribution of average SAT scores, total.\n\nMake a histogram. Set an appropriate binwidth.\n\n\nggplot(SAT_2010, aes(x = total)) +\n  geom_histogram(binwidth = 40)\n\n\n\n\n\nMake a boxplot.\n\n\nggplot(SAT_2010, aes(x = total)) +\n  geom_boxplot()\n\n\n\n\n\nMake a density plot.\n\n\nggplot(SAT_2010, aes(x = total)) +\n  geom_density(fill = \"gray\")\n\n\n\n\n\nBased on these, determine if each of the following statements about the shape of the distribution is true or false.\n\nThe distribution of average SAT scores in 2010 is right skewed. ___\nThe distribution of average SAT scores in 2010 is unimodal. ___"
-  },
-  {
-    "objectID": "ae/ae-04-sat-sa.html#two-variables",
-    "href": "ae/ae-04-sat-sa.html#two-variables",
-    "title": "Visualizing data and investigating relationships",
-    "section": "Two variables",
-    "text": "Two variables\nAnalyzing the relationship between two variables is called bivariate analysis.\n\nWhat would you expect the relationship between average SAT scores (total) and average teacher salaries (salary) to look like? What type of plot would you use to visualize this relationship? Create the plot below.\n\nAdd your answer here.\n\nggplot(SAT_2010, aes(x = salary, y = total)) + \n  geom_point() + \n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\nLurking in the background, however, is another important factor. The percentage of students who take the SAT in each state varies dramatically between states. First, let’s visualize the distribution of this variable, sat_pct.\n\nAdd your response here.\n\nggplot(SAT_2010, aes(x = sat_pct)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\nLet’s label states with low SAT participation \"Low\" and the others \"High\". For the cutoff point, let’s use the median participation level.\n\nAdd your response here.\n\nSAT_2010 |&gt;\n  summarize(med = median(sat_pct))\n\n  med\n1  27\n\nSAT_2010 &lt;- SAT_2010 |&gt;\n  mutate(sat_pct_grp = ifelse(sat_pct &lt;= 27, \"Low\", \"High\"))"
-  },
-  {
-    "objectID": "ae/ae-04-sat-sa.html#multiple-variables",
-    "href": "ae/ae-04-sat-sa.html#multiple-variables",
-    "title": "Visualizing data and investigating relationships",
-    "section": "Multiple variables",
-    "text": "Multiple variables\n\nRecreate the scatterplot of average SAT scores, this time coloring each state based on whether they had low or high participation in the SAT. Describe the relationship between SAT scores and teacher salaries, when conditioning on SAT participation.\n\n\nggplot(SAT_2010, aes(x = salary, y = total, color = sat_pct_grp)) + \n  geom_point() + \n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\nFill in the blanks below.\n\nAmong all states, salaries and SAT scores are ___ associated.\nAmong states with a low percentage taking the SAT, teacher salaries and SAT scores are ___ associated.\nAmong states with a high percentage taking the SAT, teacher salaries and SAT scores are ___ associated.\n\n\nThis phenomenon is called Simpson’s paradox – a trend appears in subsets of the data, but disappears or reverses when the subsets are combined. The paradox can be resolved when confounding variables and causal relations are appropriately addressed in the analysis. In the above example, the confounding variable is SAT participation rate.\n\nImprove the visual display of the plot you just created.\n\n\nggplot(SAT_2010, aes(x = salary, y = total, color = sat_pct_grp)) + \n  geom_point() + \n  geom_smooth(method = \"lm\") +\n  labs(\n    x = \"Average teacher salary ((in 2010 US $)\",\n    y = \"Average total score on the SAT\",\n    color = \"SAT participation rate\",\n    title = \"Average SAT scores and teacher salaries in US States\"\n  ) +\n  scale_color_colorblind(labels = c(\"Low (27%)\", \"High (&gt;27%)\")) +\n  scale_x_continuous(labels = label_dollar(scale = 1/1000, suffix = \"K\")) +\n  theme_minimal() +\n  theme(legend.position = \"bottom\")\n\n`geom_smooth()` using formula = 'y ~ x'"
-  },
-  {
-    "objectID": "ae/ae-05-hotels.html",
-    "href": "ae/ae-05-hotels.html",
-    "title": "Grammar of data wrangling",
-    "section": "",
-    "text": "Go to the course GitHub organization to get started.\n\n\n\n\nlibrary(tidyverse)\nlibrary(scales)\n\nhotels &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv\")\n\nRecreate the visualization from the slides.\n\n# add code here"
-  },
-  {
-    "objectID": "course-overview.html",
-    "href": "course-overview.html",
-    "title": "Course overview",
-    "section": "",
-    "text": "This is the homepage for STA 113FS - Visualizing Data taught by Dr. Mine Çetinkaya-Rundel in Fall 2023 at Duke University. All course materials will be posted on this site.\nYou can find the course syllabus here and the course schedule here."
-  },
-  {
-    "objectID": "course-overview.html#class-meetings",
-    "href": "course-overview.html#class-meetings",
-    "title": "Course overview",
-    "section": "Class meetings",
-    "text": "Class meetings\n\n\n\nMeeting\nLocation\nTime\n\n\n\n\nLectures\nPerkins LINK 070 (Seminar 4)\nTue & Thu 1:25 - 2:40 pm"
-  },
-  {
-    "objectID": "course-overview.html#license",
-    "href": "course-overview.html#license",
-    "title": "Course overview",
-    "section": "License",
-    "text": "License\n\nThis online work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International. Visit here for more information about the license."
-  },
-  {
-    "objectID": "lectures/03/03-grammar-graphics.html#before-we-get-started",
-    "href": "lectures/03/03-grammar-graphics.html#before-we-get-started",
-    "title": "Meet the toolkit 2 + Grammar of Graphics",
-    "section": "Before we get started",
-    "text": "Before we get started\n\n Check your email and accept the invitations to the course GitHub organization!"
-  },
-  {
-    "objectID": "lectures/03/03-grammar-graphics.html#reflection",
-    "href": "lectures/03/03-grammar-graphics.html#reflection",
-    "title": "Meet the toolkit 2 + Grammar of Graphics",
-    "section": "Reflection",
-    "text": "Reflection\n\n What is one thing you learned from your reading that was “new” to you? And what is one question you have from the reading?"
-  },
-  {
-    "objectID": "lectures/03/03-grammar-graphics.html#announcements",
-    "href": "lectures/03/03-grammar-graphics.html#announcements",
-    "title": "Meet the toolkit 2 + Grammar of Graphics",
-    "section": "Announcements",
-    "text": "Announcements\n\nHW 1 is posted, due next Tuesday at 1 pm"
-  },
-  {
-    "objectID": "lectures/03/03-grammar-graphics.html#git-and-github",
-    "href": "lectures/03/03-grammar-graphics.html#git-and-github",
-    "title": "Meet the toolkit 2 + Grammar of Graphics",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub\n\n\n\n\n\n\n\nGit is a version control system, like “Track Changes” features from Microsoft Word but more powerful.\n\n\n\n\n\n\nGitHub is the home for your Git-based projects on the internet, like DropBox but much better."
-  },
-  {
-    "objectID": "lectures/03/03-grammar-graphics.html#connecting-your-posit-cloud-and-github-accounts",
-    "href": "lectures/03/03-grammar-graphics.html#connecting-your-posit-cloud-and-github-accounts",
-    "title": "Meet the toolkit 2 + Grammar of Graphics",
-    "section": "Connecting your Posit Cloud and GitHub accounts",
-    "text": "Connecting your Posit Cloud and GitHub accounts\nYou should only need to do the following once:\n\nGo to Posit Cloud and log in.\nClick on your profile avatar (top right) and then click on “Authentication”.\nUnder Login Options, check the box for “Enabled”. This will open another window where you should click on “Authorize rstudio”.\nThen, go back to the Posit Cloud authentication page, and check the box for “Private repo access also enabled”."
-  },
-  {
-    "objectID": "lectures/03/03-grammar-graphics.html#application-exercise-flint",
-    "href": "lectures/03/03-grammar-graphics.html#application-exercise-flint",
-    "title": "Meet the toolkit 2 + Grammar of Graphics",
-    "section": "Application exercise: Flint",
-    "text": "Application exercise: Flint\n\n\n\nGo to the course GitHub Organization and locate your own ae-03-flint repository. This repository will be called ae-03-flint-YOUR_GITHUB_NAME.\nClick on the green Code button, make sure HTTPS is selected, and copy the URL (by clicking on ).\nGo to Posit Cloud. Make sure you’re in the course space – it should say STA 113 - F23 on the top left.\nClick on the blue New Project button, and then New Project from Git Repository. Paste the URL you copied from your GitHub repository here. Make sure Add packages from the base project is checked.\n\ncontinue on next slide"
-  },
-  {
-    "objectID": "lectures/03/03-grammar-graphics.html#application-exercise-flint-1",
-    "href": "lectures/03/03-grammar-graphics.html#application-exercise-flint-1",
-    "title": "Meet the toolkit 2 + Grammar of Graphics",
-    "section": "Application exercise: Flint",
-    "text": "Application exercise: Flint\n\n\nOnce you’re in the project, go to the Console and run\n\nusethis::create_github_token()\n\nOn the page that pops open in your browser, create a new GitHub Personal Access Token (i.e., sort of like a password you store):\n\nDescribe the token’s use case under Note, e.g., ae-03\nExtend expiration date to 90 days\nScroll down and click on Generate Token\n\nCopy the token by clicking on .\nGo back to Posit Cloud, to your Console, and run\n\ngitcreds::gitcreds_set()\n\nand paste the token you just copied.\n\n🎉 You’re now ready to work on your application exercise analyzing a dataset with R, in RStudio that you access via Posit Cloud, version controlled with Git, and hosted on GitHub. And that’s your data science toolkit! 🛠️"
-  },
-  {
-    "objectID": "lectures/03/03-grammar-graphics.html#next-time",
-    "href": "lectures/03/03-grammar-graphics.html#next-time",
-    "title": "Meet the toolkit 2 + Grammar of Graphics",
-    "section": "Next time",
-    "text": "Next time\n\nWe’ll continue to learn about visualizing various types of data and get practice with the data science workflow.\nWe’ll review questions you might have on the homework assignment.\n\n\n\n\n🔗 sta113-f23.github.io"
   },
   {
     "objectID": "lectures/01/01-welcome.html#teaching-team",
@@ -1265,5 +663,607 @@
     "title": "Welcome to STA 113FS",
     "section": "Next time",
     "text": "Next time\nMeet the computational tools for the course: R and RStudio\n\n\n\n🔗 sta113-f23.github.io"
+  },
+  {
+    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#reflection",
+    "href": "lectures/04/04-visualizing-various-types-of-data.html#reflection",
+    "title": "Visualizing various types of data",
+    "section": "Reflection",
+    "text": "Reflection\n\n What is one thing you learned from your reading or videos that was “new” to you? And what is one question you have from the reading, videos, or material we’ve covered so far, including the previous application exercise?"
+  },
+  {
+    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#announcements",
+    "href": "lectures/04/04-visualizing-various-types-of-data.html#announcements",
+    "title": "Visualizing various types of data",
+    "section": "Announcements",
+    "text": "Announcements\n\nHW 1 due next Tuesday at 1 pm\nOffice hours – move to in person?"
+  },
+  {
+    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#identifying-variable-types",
+    "href": "lectures/04/04-visualizing-various-types-of-data.html#identifying-variable-types",
+    "title": "Visualizing various types of data",
+    "section": "Identifying variable types",
+    "text": "Identifying variable types\n\n Identify the type of each of the following variables.\n\nFavorite food\nNumber of classes you’re taking this semester\nZip code\nFull name\nAge"
+  },
+  {
+    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#the-way-data-is-displayed-matters",
+    "href": "lectures/04/04-visualizing-various-types-of-data.html#the-way-data-is-displayed-matters",
+    "title": "Visualizing various types of data",
+    "section": "The way data is displayed matters",
+    "text": "The way data is displayed matters\n\n What do these three plots show?\n\n\nSource: #barbarplots"
+  },
+  {
+    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#ae-04",
+    "href": "lectures/04/04-visualizing-various-types-of-data.html#ae-04",
+    "title": "Visualizing various types of data",
+    "section": "ae-04",
+    "text": "ae-04\n\n\n\nGo to the course GitHub org and find your ae-04-sat (repo name will be suffixed with your GitHub name).\nClone the repo in Posit Cloud, open the Quarto document in the repo, set up a new PAT, and follow along and complete the exercises.\nRender, commit, and push your edits as you work through it"
+  },
+  {
+    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#recap-of-ae",
+    "href": "lectures/04/04-visualizing-various-types-of-data.html#recap-of-ae",
+    "title": "Visualizing various types of data",
+    "section": "Recap of AE",
+    "text": "Recap of AE\n\nPick geoms based on data types.\nSet appropriate binwidths for histograms.\nTurn off legends when they provide redundant information with show.legend = FALSE.\nCreate plots with multiple geoms, and pay attention to order.\n\n\n\n\n🔗 sta113-f23.github.io"
+  },
+  {
+    "objectID": "lectures/03/03-grammar-graphics.html#before-we-get-started",
+    "href": "lectures/03/03-grammar-graphics.html#before-we-get-started",
+    "title": "Meet the toolkit 2 + Grammar of Graphics",
+    "section": "Before we get started",
+    "text": "Before we get started\n\n Check your email and accept the invitations to the course GitHub organization!"
+  },
+  {
+    "objectID": "lectures/03/03-grammar-graphics.html#reflection",
+    "href": "lectures/03/03-grammar-graphics.html#reflection",
+    "title": "Meet the toolkit 2 + Grammar of Graphics",
+    "section": "Reflection",
+    "text": "Reflection\n\n What is one thing you learned from your reading that was “new” to you? And what is one question you have from the reading?"
+  },
+  {
+    "objectID": "lectures/03/03-grammar-graphics.html#announcements",
+    "href": "lectures/03/03-grammar-graphics.html#announcements",
+    "title": "Meet the toolkit 2 + Grammar of Graphics",
+    "section": "Announcements",
+    "text": "Announcements\n\nHW 1 is posted, due next Tuesday at 1 pm"
+  },
+  {
+    "objectID": "lectures/03/03-grammar-graphics.html#git-and-github",
+    "href": "lectures/03/03-grammar-graphics.html#git-and-github",
+    "title": "Meet the toolkit 2 + Grammar of Graphics",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\n\n\n\n\n\n\n\nGit is a version control system, like “Track Changes” features from Microsoft Word but more powerful.\n\n\n\n\n\n\nGitHub is the home for your Git-based projects on the internet, like DropBox but much better."
+  },
+  {
+    "objectID": "lectures/03/03-grammar-graphics.html#connecting-your-posit-cloud-and-github-accounts",
+    "href": "lectures/03/03-grammar-graphics.html#connecting-your-posit-cloud-and-github-accounts",
+    "title": "Meet the toolkit 2 + Grammar of Graphics",
+    "section": "Connecting your Posit Cloud and GitHub accounts",
+    "text": "Connecting your Posit Cloud and GitHub accounts\nYou should only need to do the following once:\n\nGo to Posit Cloud and log in.\nClick on your profile avatar (top right) and then click on “Authentication”.\nUnder Login Options, check the box for “Enabled”. This will open another window where you should click on “Authorize rstudio”.\nThen, go back to the Posit Cloud authentication page, and check the box for “Private repo access also enabled”."
+  },
+  {
+    "objectID": "lectures/03/03-grammar-graphics.html#application-exercise-flint",
+    "href": "lectures/03/03-grammar-graphics.html#application-exercise-flint",
+    "title": "Meet the toolkit 2 + Grammar of Graphics",
+    "section": "Application exercise: Flint",
+    "text": "Application exercise: Flint\n\n\n\nGo to the course GitHub Organization and locate your own ae-03-flint repository. This repository will be called ae-03-flint-YOUR_GITHUB_NAME.\nClick on the green Code button, make sure HTTPS is selected, and copy the URL (by clicking on ).\nGo to Posit Cloud. Make sure you’re in the course space – it should say STA 113 - F23 on the top left.\nClick on the blue New Project button, and then New Project from Git Repository. Paste the URL you copied from your GitHub repository here. Make sure Add packages from the base project is checked.\n\ncontinue on next slide"
+  },
+  {
+    "objectID": "lectures/03/03-grammar-graphics.html#application-exercise-flint-1",
+    "href": "lectures/03/03-grammar-graphics.html#application-exercise-flint-1",
+    "title": "Meet the toolkit 2 + Grammar of Graphics",
+    "section": "Application exercise: Flint",
+    "text": "Application exercise: Flint\n\n\nOnce you’re in the project, go to the Console and run\n\nusethis::create_github_token()\n\nOn the page that pops open in your browser, create a new GitHub Personal Access Token (i.e., sort of like a password you store):\n\nDescribe the token’s use case under Note, e.g., ae-03\nExtend expiration date to 90 days\nScroll down and click on Generate Token\n\nCopy the token by clicking on .\nGo back to Posit Cloud, to your Console, and run\n\ngitcreds::gitcreds_set()\n\nand paste the token you just copied.\n\n🎉 You’re now ready to work on your application exercise analyzing a dataset with R, in RStudio that you access via Posit Cloud, version controlled with Git, and hosted on GitHub. And that’s your data science toolkit! 🛠️"
+  },
+  {
+    "objectID": "lectures/03/03-grammar-graphics.html#next-time",
+    "href": "lectures/03/03-grammar-graphics.html#next-time",
+    "title": "Meet the toolkit 2 + Grammar of Graphics",
+    "section": "Next time",
+    "text": "Next time\n\nWe’ll continue to learn about visualizing various types of data and get practice with the data science workflow.\nWe’ll review questions you might have on the homework assignment.\n\n\n\n\n🔗 sta113-f23.github.io"
+  },
+  {
+    "objectID": "project/project-2.html",
+    "href": "project/project-2.html",
+    "title": "Project 2",
+    "section": "",
+    "text": "More info to be posted."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 113: Visualizing Data",
+    "section": "",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n  \n    \n    \n    \n    \n    \n    \n  \n  \n    \n    \n      WEEK\n      DATE\n      TOPIC\n      PREPARE\n      MATERIALS\n      DUE AT 1 PM\n    \n  \n  \n    1\nTue, Aug 29\nWelcome to STA 113FS!\n\n\n🖥️ slides\n\n\n    \nThu, Aug 31\nMeet the toolkit (R + RStudio)\n\n📖 socviz: Chp 1\n\n🖥️ slides \n⌨️ ae-01 \n⌨️ ae-02\n\nGetting to know you survey \nGitHub usernames\n\n    2\nTue, Sep 5\nMeet the toolkit (Git + GitHub) + \nGrammar of graphics\n\n📖 r4ds: Chp 2.1 - 2.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-03\n\n\n    \nThu, Sep 7\nVisualizing various types of data\n\n📖 r4ds: Chp 2.5 - 2.8 \n📖 r4ds: Chp 3 \n🎥 video\n\n🖥️ slides \n⌨️ ae-04\n\n\n    3\nTue, Sep 12\nClass cancelled\n\n\n\n\n    \nThu, Sep 14\nGrammar of data wrangling\n\n📖 r4ds: Chp 4.1 - 4.5 \n🎥 video\n\n🖥️ slides) \n⌨️ ae-05\n\n📄 HW 1\n\n    4\nTue, Sep 19\nProject 1 workday\n\n📖 r4ds: Chp 4.5 - 4.7 \n🎥 video\n\n\n\n    \nThu, Sep 21\nRubenstein Library Visit (Rubenstein Room 150)\n\n📖 r4ds: Chp 5\n\n\n📄 HW 2\n\n    5\nTue, Sep 26\nWorking with multiple data frames\n\n\n\n\n    \nThu, Sep 28\nTidying data\n\n\n\nProject 1 proposal\n\n    6\nTue, Oct 3\nExam 1 - In class\n\n\n\n\n    \nThu, Oct 5\nData types and classes\n\n\n\nExam 1 - Take home\n\n    7\nTue, Oct 10\nPresentation ready plots\n\n\n\nProject 1 peer review\n\n    \nThu, Oct 12\nProject 1 presentations\n\n\n\nProject 1\n\n    8\nTue, Oct 17\nFall Break - No lecture\n\n\n\n\n    \nThu, Oct 19\n\n\n\n\n    9\nTue, Oct 24\n\n\n\n📄 HW 3\n\n    \nThu, Oct 26\nProject 2 workday\n\n\n\n\n    10\nTue, Oct 31\n\n\n\n📄 HW 4\n\n    \nThu, Nov 2\n\n\n\nProject 2 proposal\n\n    11\nTue, Nov 7\n\n\n\n📄 HW 5\n\n    \nThu, Nov 9\n\n\n\n\n    12\nTue, Nov 14\nExam 2 - In class\n\n\n\n\n    \nThu, Nov 16\n\n\n\nExam 2 - Take home\n\n    13\nTue, Nov 21\n\n\n\n\n    \nThu, Nov 23\nThanksgiving Break - No lecture\n\n\n\n\n    14\nTue, Nov 28\n\n\n\n📄 HW 6\n\n    \nThu, Nov 30\n\n\n\nProject 2 peer review\n\n    15\nTue, Dec 5\n\n\n\n\n    \nThu, Dec 7\nProject 2 presentations\n\n\n\nProject 2 at 1 pm"
+  },
+  {
+    "objectID": "project/project-1.html",
+    "href": "project/project-1.html",
+    "title": "Project 1",
+    "section": "",
+    "text": "More info to be posted…"
+  },
+  {
+    "objectID": "project/project-tips-resources.html",
+    "href": "project/project-tips-resources.html",
+    "title": "Project tips + resources",
+    "section": "",
+    "text": "To be posted."
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#reflection",
+    "href": "lectures/02/02-meet-toolkit.html#reflection",
+    "title": "Meet the toolkit",
+    "section": "Reflection",
+    "text": "Reflection\n\nWhat is one thing you learned from your reading that was “new” to you? And what is one question you have from the reading?"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#announcements",
+    "href": "lectures/02/02-meet-toolkit.html#announcements",
+    "title": "Meet the toolkit",
+    "section": "Announcements",
+    "text": "Announcements\n\nMy office hours: Thursdays 10-11am on Zoom (link to be posted!)\nCourse webpage updated with tentative schedule for due dates"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#application-exercise-un-votes",
+    "href": "lectures/02/02-meet-toolkit.html#application-exercise-un-votes",
+    "title": "Meet the toolkit",
+    "section": "Application exercise: UN Votes",
+    "text": "Application exercise: UN Votes\n\nGo to Posit Cloud and start the project called ae-01-un-votes. Render the document titled unvotes.qmd. Review the narrative and the data visualization you just created. Then, change “Turkey” to another country of your choice. Re-render the document. Show the plot you created to your neighbor and discuss (1) why you chose that country and (2) how this new visualization is different than the original (and what that says about country politics, if anything)."
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#learning-goals",
+    "href": "lectures/02/02-meet-toolkit.html#learning-goals",
+    "title": "Meet the toolkit",
+    "section": "Learning goals",
+    "text": "Learning goals\nBy the end of the course, you will be able to…\n\n\ngain insight from data\ngain insight from data, reproducibly\ngain insight from data, reproducibly, using modern programming tools and techniques\ngain insight from data, reproducibly and collaboratively, using modern programming tools and techniques\ngain insight from data, reproducibly (with literate programming and version control) and collaboratively, using modern programming tools and techniques"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#reproducibility-checklist",
+    "href": "lectures/02/02-meet-toolkit.html#reproducibility-checklist",
+    "title": "Meet the toolkit",
+    "section": "Reproducibility checklist",
+    "text": "Reproducibility checklist\n\nWhat does it mean for a data analysis to be “reproducible”?\n\n\nNear-term goals:\n\nAre the tables and figures reproducible from the code and data?\nDoes the code actually do what you think it does?\nIn addition to what was done, is it clear why it was done?\n\n\n\nLong-term goals:\n\nCan the code be used for other data?\nCan you extend the code to do other things?"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#toolkit-for-reproducibility",
+    "href": "lectures/02/02-meet-toolkit.html#toolkit-for-reproducibility",
+    "title": "Meet the toolkit",
+    "section": "Toolkit for reproducibility",
+    "text": "Toolkit for reproducibility\n\nScriptability \\(\\rightarrow\\) R\nLiterate programming (code, narrative, output in one place) \\(\\rightarrow\\) Quarto\nVersion control \\(\\rightarrow\\) Git / GitHub"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#r-and-rstudio-1",
+    "href": "lectures/02/02-meet-toolkit.html#r-and-rstudio-1",
+    "title": "Meet the toolkit",
+    "section": "R and RStudio",
+    "text": "R and RStudio\n\n\n\n\n\n\n\n\nR is an open-source statistical programming language\nR is also an environment for statistical computing and graphics\nIt’s easily extensible with packages\n\n\n\n\nRStudio is a convenient interface for R called an IDE (integrated development environment), e.g. “I write R code in the RStudio IDE”\nRStudio is not a requirement for programming with R, but it’s very commonly used by R programmers and data scientists"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#r-vs.-rstudio",
+    "href": "lectures/02/02-meet-toolkit.html#r-vs.-rstudio",
+    "title": "Meet the toolkit",
+    "section": "R vs. RStudio",
+    "text": "R vs. RStudio\n\n\n\n\n\n\n\nSource: Modern Dive."
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#r-packages",
+    "href": "lectures/02/02-meet-toolkit.html#r-packages",
+    "title": "Meet the toolkit",
+    "section": "R packages",
+    "text": "R packages\n\n\nPackages: Fundamental units of reproducible R code, including reusable R functions, the documentation that describes how to use them, and sample data1\nAs of September 2022, there are over 18,000 R packages available on CRAN (the Comprehensive R Archive Network)2\nWe’re going to work with a small (but important) subset of these!\n\n\n\n\n1 Wickham and Bryan, R Packages.\n2 CRAN contributed packages."
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#tour-r-and-rstudio",
+    "href": "lectures/02/02-meet-toolkit.html#tour-r-and-rstudio",
+    "title": "Meet the toolkit",
+    "section": "Tour: R and RStudio",
+    "text": "Tour: R and RStudio"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#a-short-list-for-now-of-r-essentials",
+    "href": "lectures/02/02-meet-toolkit.html#a-short-list-for-now-of-r-essentials",
+    "title": "Meet the toolkit",
+    "section": "A short list (for now) of R essentials",
+    "text": "A short list (for now) of R essentials\n\nFunctions are (most often) verbs, followed by what they will be applied to in parentheses:\n\n\ndo_this(to_this)\ndo_that(to_this, to_that, with_those)\n\n\n\nPackages are installed with the install.packages() function and loaded with the library function, once per session:\n\n\ninstall.packages(\"package_name\")\nlibrary(package_name)"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#r-essentials-continued",
+    "href": "lectures/02/02-meet-toolkit.html#r-essentials-continued",
+    "title": "Meet the toolkit",
+    "section": "R essentials (continued)",
+    "text": "R essentials (continued)\n\nColumns (variables) in data frames are accessed with $:\n\n\ndataframe$var_name\n\n\n\nObject documentation can be accessed with ?\n\n\n?mean"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#tidyverse",
+    "href": "lectures/02/02-meet-toolkit.html#tidyverse",
+    "title": "Meet the toolkit",
+    "section": "tidyverse",
+    "text": "tidyverse\n\n\n\n\n\n\n\n\ntidyverse.org\n\nThe tidyverse is an opinionated collection of R packages designed for data science\nAll packages share an underlying philosophy and a common grammar"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#quarto-1",
+    "href": "lectures/02/02-meet-toolkit.html#quarto-1",
+    "title": "Meet the toolkit",
+    "section": "Quarto",
+    "text": "Quarto\n\n\nFully reproducible reports – each time you render the analysis is ran from the beginning\nCode goes in chunks narrative goes outside of chunks\nA visual editor for a familiar / Google docs-like editing experience"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#tour-quarto",
+    "href": "lectures/02/02-meet-toolkit.html#tour-quarto",
+    "title": "Meet the toolkit",
+    "section": "Tour: Quarto",
+    "text": "Tour: Quarto"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#how-will-we-use-quarto",
+    "href": "lectures/02/02-meet-toolkit.html#how-will-we-use-quarto",
+    "title": "Meet the toolkit",
+    "section": "How will we use Quarto?",
+    "text": "How will we use Quarto?\n\nEvery assignment / report / project / etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#application-exercise-flint",
+    "href": "lectures/02/02-meet-toolkit.html#application-exercise-flint",
+    "title": "Meet the toolkit",
+    "section": "Application exercise: Flint",
+    "text": "Application exercise: Flint\n\nGo to Posit Cloud and start the project called ae-02-flint. Open the document titled flint.qmd."
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#next-time",
+    "href": "lectures/02/02-meet-toolkit.html#next-time",
+    "title": "Meet the toolkit",
+    "section": "Next time",
+    "text": "Next time\n\nWe’ll continue out “Meet the toolkit” journey, focusing on version control tools, Git and GitHub, the last piece of the puzzle\nWe’ll then move on to the nuts and bolts of data visualization in R with ggplot2\n\n\n\n\n🔗 sta113-f23.github.io"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#reflection",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#reflection",
+    "title": "Grammar of data wrangling",
+    "section": "Reflection",
+    "text": "Reflection\n\n What is one thing you learned from your reading or videos that was “new” to you? And what is one question you have from the reading, videos, or material we’ve covered so far, including the previous application exercise?"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#announcements",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#announcements",
+    "title": "Grammar of data wrangling",
+    "section": "Announcements",
+    "text": "Announcements\n\nHW 1 due today at 5 pm\nSubsequent HW deadlines adjusted accordingly for the first part of the semester\nNext week:\n\nTuesday: Project 1 workday\nThursday: Rubenstein Library rare collections visit"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#packages",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#packages",
+    "title": "Grammar of data wrangling",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(scales)"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#data-hotel-bookings",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#data-hotel-bookings",
+    "title": "Grammar of data wrangling",
+    "section": "Data: Hotel bookings",
+    "text": "Data: Hotel bookings\n\nData from two hotels: one resort and one city hotel\nObservations: Each row represents a hotel booking\n\n\nhotels &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv\")"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#variables",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#variables",
+    "title": "Grammar of data wrangling",
+    "section": "Variables",
+    "text": "Variables\n\nnames(hotels)\n\n [1] \"hotel\"                          \"is_canceled\"                   \n [3] \"lead_time\"                      \"arrival_date_year\"             \n [5] \"arrival_date_month\"             \"arrival_date_week_number\"      \n [7] \"arrival_date_day_of_month\"      \"stays_in_weekend_nights\"       \n [9] \"stays_in_week_nights\"           \"adults\"                        \n[11] \"children\"                       \"babies\"                        \n[13] \"meal\"                           \"country\"                       \n[15] \"market_segment\"                 \"distribution_channel\"          \n[17] \"is_repeated_guest\"              \"previous_cancellations\"        \n[19] \"previous_bookings_not_canceled\" \"reserved_room_type\"            \n[21] \"assigned_room_type\"             \"booking_changes\"               \n[23] \"deposit_type\"                   \"agent\"                         \n[25] \"company\"                        \"days_in_waiting_list\"          \n[27] \"customer_type\"                  \"adr\"                           \n[29] \"required_car_parking_spaces\"    \"total_of_special_requests\"     \n[31] \"reservation_status\"             \"reservation_status_date\""
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#glimpse",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#glimpse",
+    "title": "Grammar of data wrangling",
+    "section": "glimpse()",
+    "text": "glimpse()\n\nglimpse(hotels)\n\nRows: 119,390\nColumns: 32\n$ hotel                          &lt;chr&gt; \"Resort Hotel\", \"Resort Hotel\", \"Resort…\n$ is_canceled                    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, …\n$ lead_time                      &lt;dbl&gt; 342, 737, 7, 13, 14, 14, 0, 9, 85, 75, …\n$ arrival_date_year              &lt;dbl&gt; 2015, 2015, 2015, 2015, 2015, 2015, 201…\n$ arrival_date_month             &lt;chr&gt; \"July\", \"July\", \"July\", \"July\", \"July\",…\n$ arrival_date_week_number       &lt;dbl&gt; 27, 27, 27, 27, 27, 27, 27, 27, 27, 27,…\n$ arrival_date_day_of_month      &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ stays_in_weekend_nights        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ stays_in_week_nights           &lt;dbl&gt; 0, 0, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4, 4, …\n$ adults                         &lt;dbl&gt; 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, …\n$ children                       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ babies                         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ meal                           &lt;chr&gt; \"BB\", \"BB\", \"BB\", \"BB\", \"BB\", \"BB\", \"BB…\n$ country                        &lt;chr&gt; \"PRT\", \"PRT\", \"GBR\", \"GBR\", \"GBR\", \"GBR…\n$ market_segment                 &lt;chr&gt; \"Direct\", \"Direct\", \"Direct\", \"Corporat…\n$ distribution_channel           &lt;chr&gt; \"Direct\", \"Direct\", \"Direct\", \"Corporat…\n$ is_repeated_guest              &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ previous_cancellations         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ previous_bookings_not_canceled &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ reserved_room_type             &lt;chr&gt; \"C\", \"C\", \"A\", \"A\", \"A\", \"A\", \"C\", \"C\",…\n$ assigned_room_type             &lt;chr&gt; \"C\", \"C\", \"C\", \"A\", \"A\", \"A\", \"C\", \"C\",…\n$ booking_changes                &lt;dbl&gt; 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ deposit_type                   &lt;chr&gt; \"No Deposit\", \"No Deposit\", \"No Deposit…\n$ agent                          &lt;chr&gt; \"NULL\", \"NULL\", \"NULL\", \"304\", \"240\", \"…\n$ company                        &lt;chr&gt; \"NULL\", \"NULL\", \"NULL\", \"NULL\", \"NULL\",…\n$ days_in_waiting_list           &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ customer_type                  &lt;chr&gt; \"Transient\", \"Transient\", \"Transient\", …\n$ adr                            &lt;dbl&gt; 0.00, 0.00, 75.00, 75.00, 98.00, 98.00,…\n$ required_car_parking_spaces    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ total_of_special_requests      &lt;dbl&gt; 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 3, …\n$ reservation_status             &lt;chr&gt; \"Check-Out\", \"Check-Out\", \"Check-Out\", …\n$ reservation_status_date        &lt;date&gt; 2015-07-01, 2015-07-01, 2015-07-02, 20…"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#plan",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#plan",
+    "title": "Grammar of data wrangling",
+    "section": "Plan",
+    "text": "Plan\nWe…\nhave a single data frame\nwant to slice it, and dice it, and juice it, and process it, so we can plot it"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#grammar-of-data-wrangling-1",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#grammar-of-data-wrangling-1",
+    "title": "Grammar of data wrangling",
+    "section": "Grammar of data wrangling",
+    "text": "Grammar of data wrangling\n\n\n\nStart with a data frame\nAnd then (|&gt;)\nTransform it with a function\nResult in a data frame\n\n\n\ndf |&gt;\n  function(...)"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#commonly-used-data-wrangling-functions",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#commonly-used-data-wrangling-functions",
+    "title": "Grammar of data wrangling",
+    "section": "Commonly used data wrangling functions",
+    "text": "Commonly used data wrangling functions\n\ndistinct()\nselect(), relocate()\narrange(), arrange(desc())\nslice(), slice_head(), slice_tail(), slice_sample()\nfilter()\nmutate()\nsummarize(), count()"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#distcint",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#distcint",
+    "title": "Grammar of data wrangling",
+    "section": "distcint",
+    "text": "distcint\n\n\n\nhotels |&gt; \n  distinct(hotel)\n\n# A tibble: 2 × 1\n  hotel       \n  &lt;chr&gt;       \n1 Resort Hotel\n2 City Hotel  \n\n\n\n\nhotels |&gt; \n  distinct(is_canceled)\n\n# A tibble: 2 × 1\n  is_canceled\n        &lt;dbl&gt;\n1           0\n2           1"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#select-relocate",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#select-relocate",
+    "title": "Grammar of data wrangling",
+    "section": "select / relocate()",
+    "text": "select / relocate()\n\n\n\nhotels |&gt; \n  select(hotel)\n\n# A tibble: 119,390 × 1\n   hotel       \n   &lt;chr&gt;       \n 1 Resort Hotel\n 2 Resort Hotel\n 3 Resort Hotel\n 4 Resort Hotel\n 5 Resort Hotel\n 6 Resort Hotel\n 7 Resort Hotel\n 8 Resort Hotel\n 9 Resort Hotel\n10 Resort Hotel\n# ℹ 119,380 more rows\n\n\n\n\nhotels |&gt; \n  relocate(is_canceled)\n\n# A tibble: 119,390 × 32\n   is_canceled hotel        lead_time arrival_date_year arrival_date_month\n         &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n 1           0 Resort Hotel       342              2015 July              \n 2           0 Resort Hotel       737              2015 July              \n 3           0 Resort Hotel         7              2015 July              \n 4           0 Resort Hotel        13              2015 July              \n 5           0 Resort Hotel        14              2015 July              \n 6           0 Resort Hotel        14              2015 July              \n 7           0 Resort Hotel         0              2015 July              \n 8           0 Resort Hotel         9              2015 July              \n 9           1 Resort Hotel        85              2015 July              \n10           1 Resort Hotel        75              2015 July              \n# ℹ 119,380 more rows\n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;, …"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#arrange-arrangedesc",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#arrange-arrangedesc",
+    "title": "Grammar of data wrangling",
+    "section": "arrange() / arrange(desc())",
+    "text": "arrange() / arrange(desc())\n\n\n\nhotels |&gt; \n  arrange(adr)\n\n# A tibble: 119,390 × 32\n   hotel        is_canceled lead_time arrival_date_year arrival_date_month\n   &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n 1 Resort Hotel           0       195              2017 March             \n 2 Resort Hotel           0       342              2015 July              \n 3 Resort Hotel           0       737              2015 July              \n 4 Resort Hotel           0        32              2015 July              \n 5 Resort Hotel           0       111              2015 July              \n 6 Resort Hotel           0         0              2015 July              \n 7 Resort Hotel           0         8              2015 July              \n 8 Resort Hotel           0         8              2015 July              \n 9 Resort Hotel           1        57              2015 July              \n10 Resort Hotel           0        57              2015 July              \n# ℹ 119,380 more rows\n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;, …\n\n\n\n\nhotels |&gt; \n  arrange(desc(adr))\n\n# A tibble: 119,390 × 32\n   hotel        is_canceled lead_time arrival_date_year arrival_date_month\n   &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n 1 City Hotel             1        35              2016 March             \n 2 City Hotel             0         0              2017 May               \n 3 Resort Hotel           0         1              2015 July              \n 4 City Hotel             0        81              2016 December          \n 5 Resort Hotel           1       378              2017 August            \n 6 Resort Hotel           1        59              2017 August            \n 7 Resort Hotel           0        31              2017 August            \n 8 Resort Hotel           0       104              2017 August            \n 9 Resort Hotel           0        26              2017 July              \n10 Resort Hotel           1       116              2017 August            \n# ℹ 119,380 more rows\n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;, …"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#slice",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#slice",
+    "title": "Grammar of data wrangling",
+    "section": "slice()",
+    "text": "slice()\n\nhotels |&gt;\n  slice(1:4)\n\n# A tibble: 4 × 32\n  hotel        is_canceled lead_time arrival_date_year arrival_date_month\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n1 Resort Hotel           0       342              2015 July              \n2 Resort Hotel           0       737              2015 July              \n3 Resort Hotel           0         7              2015 July              \n4 Resort Hotel           0        13              2015 July              \n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,\n#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#slice_head-slice_tail",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#slice_head-slice_tail",
+    "title": "Grammar of data wrangling",
+    "section": "slice_head() / slice_tail()",
+    "text": "slice_head() / slice_tail()\n\n\n\nhotels |&gt; \n  slice_head(n = 5)\n\n# A tibble: 5 × 32\n  hotel        is_canceled lead_time arrival_date_year arrival_date_month\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n1 Resort Hotel           0       342              2015 July              \n2 Resort Hotel           0       737              2015 July              \n3 Resort Hotel           0         7              2015 July              \n4 Resort Hotel           0        13              2015 July              \n5 Resort Hotel           0        14              2015 July              \n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,\n#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …\n\n\n\n\nhotels |&gt; \n  slice_tail(n = 5)\n\n# A tibble: 5 × 32\n  hotel      is_canceled lead_time arrival_date_year arrival_date_month\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n1 City Hotel           0        23              2017 August            \n2 City Hotel           0       102              2017 August            \n3 City Hotel           0        34              2017 August            \n4 City Hotel           0       109              2017 August            \n5 City Hotel           0       205              2017 August            \n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,\n#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#slice_sample",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#slice_sample",
+    "title": "Grammar of data wrangling",
+    "section": "slice_sample()",
+    "text": "slice_sample()\n\nhotels |&gt; \n  slice_sample(n = 5)\n\n# A tibble: 5 × 32\n  hotel        is_canceled lead_time arrival_date_year arrival_date_month\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n1 City Hotel             1        85              2017 May               \n2 Resort Hotel           0        32              2016 January           \n3 City Hotel             0        12              2016 August            \n4 City Hotel             1       105              2015 October           \n5 Resort Hotel           0       187              2016 December          \n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,\n#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#filter",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#filter",
+    "title": "Grammar of data wrangling",
+    "section": "filter()",
+    "text": "filter()\n\n\n\nhotels |&gt;\n  filter(adr &gt; 1000) |&gt;\n  select(adr, hotel)\n\n# A tibble: 1 × 2\n    adr hotel     \n  &lt;dbl&gt; &lt;chr&gt;     \n1  5400 City Hotel\n\n\n\n\nhotels |&gt; \n  filter(babies &gt; 5) |&gt;\n  select(adults, babies)\n\n# A tibble: 2 × 2\n  adults babies\n   &lt;dbl&gt;  &lt;dbl&gt;\n1      2     10\n2      1      9"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#mutate",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#mutate",
+    "title": "Grammar of data wrangling",
+    "section": "mutate()",
+    "text": "mutate()\n\nhotels |&gt;\n  mutate(people = adults + babies + children) |&gt;\n  relocate(people) |&gt;\n  arrange(desc(people))\n\n# A tibble: 119,390 × 33\n   people hotel       is_canceled lead_time arrival_date_year arrival_date_month\n    &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n 1     55 Resort Hot…           1       338              2015 October           \n 2     50 Resort Hot…           1       336              2015 September         \n 3     40 Resort Hot…           1       304              2015 September         \n 4     27 Resort Hot…           1       349              2015 September         \n 5     27 Resort Hot…           1       352              2015 September         \n 6     26 Resort Hot…           1       333              2015 September         \n 7     26 Resort Hot…           1       340              2015 September         \n 8     26 Resort Hot…           1       347              2015 September         \n 9     26 Resort Hot…           1       354              2015 September         \n10     26 Resort Hot…           1       361              2015 October           \n# ℹ 119,380 more rows\n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;, …"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#summarize",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#summarize",
+    "title": "Grammar of data wrangling",
+    "section": "summarize()",
+    "text": "summarize()\n\n\n\nhotels |&gt;\n  summarize(mean_adr = mean(adr))\n\n# A tibble: 1 × 1\n  mean_adr\n     &lt;dbl&gt;\n1     102.\n\n\n\n\nhotels |&gt;\n  group_by(hotel) |&gt;\n  summarize(mean_adr = mean(adr))\n\n# A tibble: 2 × 2\n  hotel        mean_adr\n  &lt;chr&gt;           &lt;dbl&gt;\n1 City Hotel      105. \n2 Resort Hotel     95.0"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#count",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#count",
+    "title": "Grammar of data wrangling",
+    "section": "count()",
+    "text": "count()\n\nhotels |&gt;\n  count(hotel)\n\n# A tibble: 2 × 2\n  hotel            n\n  &lt;chr&gt;        &lt;int&gt;\n1 City Hotel   79330\n2 Resort Hotel 40060"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#average-cost-of-daily-stay",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#average-cost-of-daily-stay",
+    "title": "Grammar of data wrangling",
+    "section": "Average cost of daily stay",
+    "text": "Average cost of daily stay\n\nWhat are the variables represented in this visualization?"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#ae-05",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#ae-05",
+    "title": "Grammar of data wrangling",
+    "section": "ae-05",
+    "text": "ae-05\n\n\n\nGo to the course GitHub org and find your ae-05-hotels (repo name will be suffixed with your GitHub name).\nClone the repo in Posit Cloud, and set up your PAT:\n\nIn the Console, run usethis::create_github_token() to create a new PAT or grab the one you created previously from a space you might have safely stored it (e.g., 1Password or similar)\nIn the Console, run gitcreds::gitcreds_set() and paste your PAT when prompted.\nIn the Terminal, run git config credential.helper store to make sure your PAT persists throughout the whole time you’re working on this assignment / Cloud project.\n\nOpen the Quarto document (.qmd) and follow along and complete the exercises.\nRender, commit, and push your edits as you work through it\n\n\n\n\n\n🔗 sta113-f23.github.io"
+  },
+  {
+    "objectID": "course-team.html",
+    "href": "course-team.html",
+    "title": "Teaching team",
+    "section": "",
+    "text": "Dr. Mine Çetinkaya-Rundel (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University and an affiliated faculty in the Computational Media, Arts, and Cultures. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education as well as pedagogical approaches for enhancing retention of women and under-represented minorities in STEM.\n\n\n\nOffice hours\nLocation\n\n\n\n\nThursdays 10 - 11 am\nZoom"
+  },
+  {
+    "objectID": "course-team.html#instructor",
+    "href": "course-team.html#instructor",
+    "title": "Teaching team",
+    "section": "",
+    "text": "Dr. Mine Çetinkaya-Rundel (she/her) is Professor of the Practice and Director of Undergraduate Studies at the Department of Statistical Science at Duke University and an affiliated faculty in the Computational Media, Arts, and Cultures. Mine’s work focuses on innovation in statistics and data science pedagogy, with an emphasis on computing, reproducible research, student-centered learning, and open-source education as well as pedagogical approaches for enhancing retention of women and under-represented minorities in STEM.\n\n\n\nOffice hours\nLocation\n\n\n\n\nThursdays 10 - 11 am\nZoom"
+  },
+  {
+    "objectID": "course-team.html#teaching-assistant",
+    "href": "course-team.html#teaching-assistant",
+    "title": "Teaching team",
+    "section": "Teaching assistant",
+    "text": "Teaching assistant\n\nShelby Tisdale is our teaching assistant. Shelby is a Statistical Science major and she is also pursuing secondary teacher certification in mathematics and a certificate in Child Policy Research.\n\n\n\nOffice hours\nLocation\n\n\n\n\nThu 3 - 4 pm\nOld Chem 025\n\n\nSun 7 - 8 pm\nZoom"
+  },
+  {
+    "objectID": "ae/ae-05-hotels.html",
+    "href": "ae/ae-05-hotels.html",
+    "title": "Grammar of data wrangling",
+    "section": "",
+    "text": "Go to the course GitHub organization to get started.\n\n\n\n\nlibrary(tidyverse)\nlibrary(scales)\n\nhotels &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv\")\n\nRecreate the visualization from the slides.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-04-sat-sa.html",
+    "href": "ae/ae-04-sat-sa.html",
+    "title": "Visualizing data and investigating relationships",
+    "section": "",
+    "text": "The main question we’ll explore today is “How are SAT scores and teacher salaries associated?” What do you think?\nAlong the way we will:\n\ncreate data visualizations and calculating summary statistics for comparing trends across groups\ndistinguish observational studies and experiments\nidentify confounding variables and Simpson’s paradox"
+  },
+  {
+    "objectID": "ae/ae-04-sat-sa.html#single-variable",
+    "href": "ae/ae-04-sat-sa.html#single-variable",
+    "title": "Visualizing data and investigating relationships",
+    "section": "Single variable",
+    "text": "Single variable\nAnalyzing the a single variable is called univariate analysis.\nCreate visualizations of the distribution of average SAT scores, total.\n\nMake a histogram. Set an appropriate binwidth.\n\n\nggplot(SAT_2010, aes(x = total)) +\n  geom_histogram(binwidth = 40)\n\n\n\n\n\nMake a boxplot.\n\n\nggplot(SAT_2010, aes(x = total)) +\n  geom_boxplot()\n\n\n\n\n\nMake a density plot.\n\n\nggplot(SAT_2010, aes(x = total)) +\n  geom_density(fill = \"gray\")\n\n\n\n\n\nBased on these, determine if each of the following statements about the shape of the distribution is true or false.\n\nThe distribution of average SAT scores in 2010 is right skewed. ___\nThe distribution of average SAT scores in 2010 is unimodal. ___"
+  },
+  {
+    "objectID": "ae/ae-04-sat-sa.html#two-variables",
+    "href": "ae/ae-04-sat-sa.html#two-variables",
+    "title": "Visualizing data and investigating relationships",
+    "section": "Two variables",
+    "text": "Two variables\nAnalyzing the relationship between two variables is called bivariate analysis.\n\nWhat would you expect the relationship between average SAT scores (total) and average teacher salaries (salary) to look like? What type of plot would you use to visualize this relationship? Create the plot below.\n\nAdd your answer here.\n\nggplot(SAT_2010, aes(x = salary, y = total)) + \n  geom_point() + \n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\nLurking in the background, however, is another important factor. The percentage of students who take the SAT in each state varies dramatically between states. First, let’s visualize the distribution of this variable, sat_pct.\n\nAdd your response here.\n\nggplot(SAT_2010, aes(x = sat_pct)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\nLet’s label states with low SAT participation \"Low\" and the others \"High\". For the cutoff point, let’s use the median participation level.\n\nAdd your response here.\n\nSAT_2010 |&gt;\n  summarize(med = median(sat_pct))\n\n  med\n1  27\n\nSAT_2010 &lt;- SAT_2010 |&gt;\n  mutate(sat_pct_grp = ifelse(sat_pct &lt;= 27, \"Low\", \"High\"))"
+  },
+  {
+    "objectID": "ae/ae-04-sat-sa.html#multiple-variables",
+    "href": "ae/ae-04-sat-sa.html#multiple-variables",
+    "title": "Visualizing data and investigating relationships",
+    "section": "Multiple variables",
+    "text": "Multiple variables\n\nRecreate the scatterplot of average SAT scores, this time coloring each state based on whether they had low or high participation in the SAT. Describe the relationship between SAT scores and teacher salaries, when conditioning on SAT participation.\n\n\nggplot(SAT_2010, aes(x = salary, y = total, color = sat_pct_grp)) + \n  geom_point() + \n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\nFill in the blanks below.\n\nAmong all states, salaries and SAT scores are ___ associated.\nAmong states with a low percentage taking the SAT, teacher salaries and SAT scores are ___ associated.\nAmong states with a high percentage taking the SAT, teacher salaries and SAT scores are ___ associated.\n\n\nThis phenomenon is called Simpson’s paradox – a trend appears in subsets of the data, but disappears or reverses when the subsets are combined. The paradox can be resolved when confounding variables and causal relations are appropriately addressed in the analysis. In the above example, the confounding variable is SAT participation rate.\n\nImprove the visual display of the plot you just created.\n\n\nggplot(SAT_2010, aes(x = salary, y = total, color = sat_pct_grp)) + \n  geom_point() + \n  geom_smooth(method = \"lm\") +\n  labs(\n    x = \"Average teacher salary ((in 2010 US $)\",\n    y = \"Average total score on the SAT\",\n    color = \"SAT participation rate\",\n    title = \"Average SAT scores and teacher salaries in US States\"\n  ) +\n  scale_color_colorblind(labels = c(\"Low (27%)\", \"High (&gt;27%)\")) +\n  scale_x_continuous(labels = label_dollar(scale = 1/1000, suffix = \"K\")) +\n  theme_minimal() +\n  theme(legend.position = \"bottom\")\n\n`geom_smooth()` using formula = 'y ~ x'"
+  },
+  {
+    "objectID": "ae/ae-03-flint.html",
+    "href": "ae/ae-03-flint.html",
+    "title": "Exploring Flint’s water data",
+    "section": "",
+    "text": "Go to the course GitHub organization to get started.\nThis is an updated version of the previous application exercise. The data analysis exercises R the same, but workflow steps have been updated for a Git and GitHub based workflow."
+  },
+  {
+    "objectID": "ae/ae-03-flint.html#load-packages",
+    "href": "ae/ae-03-flint.html#load-packages",
+    "title": "Exploring Flint’s water data",
+    "section": "Load packages",
+    "text": "Load packages\nWe’ll use the tidyverse package for analysis, which offers functionality for data import, wrangling, visualization, and more.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nLoading this package prints out a message. What does this message mean? How can we suppress the message from the output?"
+  },
+  {
+    "objectID": "ae/ae-03-flint.html#load-data",
+    "href": "ae/ae-03-flint.html#load-data",
+    "title": "Exploring Flint’s water data",
+    "section": "Load data",
+    "text": "Load data\nThe read_csv() function can be used for reading CSV (comma separated values) files. The file we’re reading is called flint with the suffix (.csv) which indicates its file type. The file is in the data folder.\nBefore reading in the file, go to the data folder in the Files pane to confirm that it is, indeed, there. Then, read the file by running the code chunk below by clicking on the green triangle icon on the code chunk.\n\nflint &lt;- read_csv(\"data/flint.csv\")\n\nRows: 813 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): draw\ndbl (4): id, zip, ward, lead\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nOne of two things may have happened:\n\nThe file was read successfully and you now see a dataset called flint in your Environment pane.\nThe file was not read successfully and you see an error Error in read_csv(\"data/flint.csv\") : could not find function \"read_csv\".\n\nIf (1) happened, great!\nIf (2) happened, let’s troubleshoot first before continuing."
+  },
+  {
+    "objectID": "ae/ae-03-flint.html#data-dictionary",
+    "href": "ae/ae-03-flint.html#data-dictionary",
+    "title": "Exploring Flint’s water data",
+    "section": "Data dictionary",
+    "text": "Data dictionary\nThe following variables are in the flint data frame:\n\nid: sample ID number (identifies the home)\nzip: ZIP code in Flint of the sample’s location\nward: ward in Flint of the sample’s location\ndraw: which time point the water was sampled from\nlead: lead content in parts per billion (ppb)"
+  },
+  {
+    "objectID": "ae/ae-03-flint.html#populations-and-samples",
+    "href": "ae/ae-03-flint.html#populations-and-samples",
+    "title": "Exploring Flint’s water data",
+    "section": "Populations and samples",
+    "text": "Populations and samples\nWe want to learn about the population using a sample.\nIn the case we want to learn about the lead content in all of Flint, MI homes but only have available water readings from a sample of homes (our data set).\nExercise 1: Look at the data, how many observations are there? How many variables?\n\n# add code here\n\n\nRender, commit, and push, with an appropriate commit message like “Finished Exercise 1”. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "ae/ae-03-flint.html#frequencies",
+    "href": "ae/ae-03-flint.html#frequencies",
+    "title": "Exploring Flint’s water data",
+    "section": "Frequencies",
+    "text": "Frequencies\nLet’s count() to find the number of different time points water was sampled with the count() function.\n\nThe first argument is flint: the data frame\nThe second argument is draw: the variable\n\n\ncount(flint, draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can achieve the same result with the following “piped” operation as well.\n\nThe first line is flint: the data frame\nThen the pipe operator, read as “and then”, which places what comes before it as the first argument of what comes after it\nThe second line is count(draw)\n\n\nflint |&gt;\n  count(draw)\n\n# A tibble: 3 × 2\n  draw       n\n  &lt;chr&gt;  &lt;int&gt;\n1 first    271\n2 second   271\n3 third    271\n\n\nWe can use a similar approach to fund out how many unique homes are in the data set:\n\nflint |&gt;\n  count(id)\n\n# A tibble: 269 × 2\n      id     n\n   &lt;dbl&gt; &lt;int&gt;\n 1     1     3\n 2     2     3\n 3     4     3\n 4     5     3\n 5     6     3\n 6     7     3\n 7     8     3\n 8     9     3\n 9    12     3\n10    13     3\n# ℹ 259 more rows\n\n\nExercise 2: How many samples were taken from each zip code?\n\n# add code here\n\nExercise 3: Which ZIP code had the most samples drawn? Hint: See the help for count.\n\n# add code here\n\n\nRender, commit, and push, with an appropriate commit message like “Finished exercises 2 and 3”. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "ae/ae-03-flint.html#measures-of-central-tendency",
+    "href": "ae/ae-03-flint.html#measures-of-central-tendency",
+    "title": "Exploring Flint’s water data",
+    "section": "Measures of central tendency",
+    "text": "Measures of central tendency\n\nmean\nmedian\nmode"
+  },
+  {
+    "objectID": "ae/ae-03-flint.html#measures-of-spread",
+    "href": "ae/ae-03-flint.html#measures-of-spread",
+    "title": "Exploring Flint’s water data",
+    "section": "Measures of spread",
+    "text": "Measures of spread\n\nvariance\nstandard deviation\nrange\nquartiles\ninter-quartile range (IQR)"
+  },
+  {
+    "objectID": "ae/ae-03-flint.html#order-statistics",
+    "href": "ae/ae-03-flint.html#order-statistics",
+    "title": "Exploring Flint’s water data",
+    "section": "Order statistics",
+    "text": "Order statistics\n\nquantiles\nminimum (0 percentile)\nmedian (50th percentile)\nmaximum (100 percentile)\n\n… and any other arbitrary function of the data you can come up with!\nExercise 4: Compute each of these statistics for lead ppb.\n\n# add code here\n\n\nRender, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "ae/ae-03-flint.html#histograms",
+    "href": "ae/ae-03-flint.html#histograms",
+    "title": "Exploring Flint’s water data",
+    "section": "Histograms",
+    "text": "Histograms\nLet’s take a look at the distribution of lead content in homes in Flint, MI.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nWe can make this plot look nicer/more useful by adjusting the number of bins and zooming into the x-axis.\n\nggplot(flint, aes(x = lead)) +\n  geom_histogram(bins = 50) +\n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\nLet’s visualize some of our summary statistics on the plot.\nExercise 5: Add a new layer, geom_vline(xintercept = __, color = \"red\"), to the histogram below, filling in the blank with the mean.\n\nggplot(flint, aes(x = lead)) + \n  geom_histogram(bins = 50) + \n  coord_cartesian(xlim = c(0, 100))\n\n\n\n\nExercise 6: Add one more layer which overlays the median, in a different color.\n\n# add code here"
+  },
+  {
+    "objectID": "ae/ae-03-flint.html#box-plots",
+    "href": "ae/ae-03-flint.html#box-plots",
+    "title": "Exploring Flint’s water data",
+    "section": "Box plots",
+    "text": "Box plots\nNext, let’s narrow our focus to the zip codes 48503, 48504, 48505, 48506, and 48507 and observations with lead values less than 1,000 ppb.\n\nflint_focus &lt;- flint |&gt;\n  filter(zip %in% 48503:48507 & lead &lt; 1000)\n\nExercise 7: Below are side-by-side box plots for the three flushing times in each of the five zip codes we considered. Add x and y labels; add a title by inserting title = \"title_name\" inside the labs() function.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) +\n  labs(x = \"___\", y = \"___\", fill = \"Flushing time\") +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  )\n\n\n\n\n\nRender, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.\n\nExercise 8: Add labels for x, y, a title, and subtitle to the code below to update the corresponding plot.\n\nggplot(data = flint_focus, aes(y = factor(zip), x = lead)) +\n  geom_boxplot(aes(fill = factor(draw))) + \n  labs(\n    x = \"___\", y = \"___\", fill = \"Flushing time\",\n    title = \"___\",\n    subtitle = \"___\"\n    ) +\n  scale_fill_discrete(\n    breaks = c(\"first\", \"second\", \"third\"),\n    labels = c(\"0 (sec)\", \"45 (sec)\", \"120 (sec)\")\n  ) +\n  coord_cartesian(xlim = c(0, 50)) +\n  theme_bw()\n\n\n\n\nExercise 9: What is the difference between the two plots? What are the advantages and disadvantages to each plot?\n[Add your answer here]\n\nRender, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding. Confirm that your output looks as expected on your GitHub repository."
+  },
+  {
+    "objectID": "course-overview.html",
+    "href": "course-overview.html",
+    "title": "Course overview",
+    "section": "",
+    "text": "This is the homepage for STA 113FS - Visualizing Data taught by Dr. Mine Çetinkaya-Rundel in Fall 2023 at Duke University. All course materials will be posted on this site.\nYou can find the course syllabus here and the course schedule here."
+  },
+  {
+    "objectID": "course-overview.html#class-meetings",
+    "href": "course-overview.html#class-meetings",
+    "title": "Course overview",
+    "section": "Class meetings",
+    "text": "Class meetings\n\n\n\nMeeting\nLocation\nTime\n\n\n\n\nLectures\nPerkins LINK 070 (Seminar 4)\nTue & Thu 1:25 - 2:40 pm"
+  },
+  {
+    "objectID": "course-overview.html#license",
+    "href": "course-overview.html#license",
+    "title": "Course overview",
+    "section": "License",
+    "text": "License\n\nThis online work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International. Visit here for more information about the license."
+  },
+  {
+    "objectID": "hw/hw-3.html",
+    "href": "hw/hw-3.html",
+    "title": "HW 3",
+    "section": "",
+    "text": "To be posted…"
+  },
+  {
+    "objectID": "hw/hw-5.html",
+    "href": "hw/hw-5.html",
+    "title": "HW 5",
+    "section": "",
+    "text": "To be posted…"
+  },
+  {
+    "objectID": "hw/hw-7.html",
+    "href": "hw/hw-7.html",
+    "title": "HW 7",
+    "section": "",
+    "text": "To be posted…"
+  },
+  {
+    "objectID": "hw/hw-6.html",
+    "href": "hw/hw-6.html",
+    "title": "HW 6",
+    "section": "",
+    "text": "To be posted…"
+  },
+  {
+    "objectID": "course-links.html",
+    "href": "course-links.html",
+    "title": "Useful links",
+    "section": "",
+    "text": "Posit Cloud\n🔗 Posit Cloud\n\n\nLecture recordings\n🔗 Panopto\n\n\nSlack\n🔗 Slack\n\n\nGradebook\n🔗 on Canvas\n\n\nAnnouncements\n🔗 on Canvas\n\n\nTutorial submission\n🔗 on Canvas\n\n\nTextbooks\n🔗 R for Data Science, 2nd Edition\n🔗 Data Visualization: A Practical Introduction\n🔗 Introduction to Modern Statistics, 2nd Edition\n\n\nPackage documentation\n🔗 tidyverse: tidyverse.org\n🔗 tidymodels: tidymodels.org"
+  },
+  {
+    "objectID": "computing/computing-access.html",
+    "href": "computing/computing-access.html",
+    "title": "Computing access",
+    "section": "",
+    "text": "To access RStudio in the browser, go to the Posit Cloud space for this course.\nAt the beginning of the semester you should have received a link to join this space. If you haven’t yet joined, you can find the link in Canvas Announcements or ask for it on the course Slack."
+  },
+  {
+    "objectID": "computing/computing-troubleshooting.html",
+    "href": "computing/computing-troubleshooting.html",
+    "title": "Computing troubleshooting",
+    "section": "",
+    "text": "If you’re having difficulty launching an RStudio session from Posit Cloud, go to status.posit.co and check under Posit Cloud.\n\nIf it shows “Operational”, this means the system is expected to be working. Check your internet connection, if need be, restart your computer to ensure a fresh new connection. If your issue persists, post on the course Slack with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).\nIf it shows “Partial Outage” or “Outage” (or anything other than “Operational”), this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the course Slack to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!s"
   }
 ]
