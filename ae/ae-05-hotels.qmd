@@ -1,0 +1,27 @@
+---
+title: "Grammar of data wrangling"
+categories: 
+  - Application exercise
+---
+
+::: {.callout-note appearance="minimal" icon="false"}
+{{< fa brands github size=xl >}} Go to the course [GitHub organization](https://github.com/sta113-f23) to get started.
+:::
+
+```{r}
+#| label: load-packages-data
+#| message: false
+
+library(tidyverse)
+library(scales)
+
+hotels <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv")
+```
+
+Recreate the visualization from the slides.
+
+```{r}
+#| label: plot
+
+# add code here
+```

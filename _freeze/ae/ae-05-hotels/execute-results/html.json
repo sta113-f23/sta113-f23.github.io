@@ -1,0 +1,14 @@
+{
+  "hash": "2c853744b3c84eaa98095f7e9dd3b843",
+  "result": {
+    "markdown": "---\ntitle: \"Grammar of data wrangling\"\ncategories: \n  - Application exercise\n---\n\n\n::: {.callout-note appearance=\"minimal\" icon=\"false\"}\n{{< fa brands github size=xl >}} Go to the course [GitHub organization](https://github.com/sta113-f23) to get started.\n:::\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\nlibrary(scales)\n\nhotels <- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv\")\n```\n:::\n\n\nRecreate the visualization from the slides.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

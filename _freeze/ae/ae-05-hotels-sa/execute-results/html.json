@@ -1,0 +1,16 @@
+{
+  "hash": "64a76372bfc6fed451517e28e1cb6785",
+  "result": {
+    "markdown": "---\ntitle: \"Grammar of data wrangling\"\ncategories: \n  - Application exercise\n---\n\n\n::: {.callout-note appearance=\"minimal\" icon=\"false\"}\n{{< fa brands github size=xl >}} Go to the course [GitHub organization](https://github.com/sta113-f23) to get started.\n:::\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\nlibrary(scales)\n\nhotels <- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv\")\n```\n:::\n\n\nRecreate the visualization from the slides.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nhotels |>\n  mutate(\n    arrival_date = glue::glue(\"{arrival_date_year}-{arrival_date_month}-{arrival_date_day_of_month}\"),\n    arrival_date = ymd(arrival_date)\n    ) |>\n  group_by(hotel, arrival_date) |>\n  summarise(mean_adr = mean(adr), .groups = \"drop\") |>\n  ggplot(aes(x = arrival_date, y = mean_adr, group = hotel, color = hotel)) +\n  geom_line() +\n  scale_color_manual(values = c(\"cornsilk4\", \"deepskyblue3\")) +\n  scale_y_continuous(labels = label_dollar()) +\n  labs(\n    x = \"Arrival date\",\n    y = \"Mean average\\ndaily rate (USD)\",\n    color = NULL,\n    title = \"Cost of daily hotel stay\",\n    subtitle = \"July 2015 to August 2017\",\n    caption = \"Source: Antonio, Almeida and Nunes (2019) | TidyTuesday\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = c(0.15, 0.9))\n```\n\n::: {.cell-output-display}\n![](ae-05-hotels-sa_files/figure-html/plot-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "ae-05-hotels-sa_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

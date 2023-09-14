@@ -1,0 +1,280 @@
+---
+title: Grammar of data wrangling
+subtitle: Lecture 4
+format: revealjs
+---
+
+# Warm up
+
+## Reflection
+
+::: question
+{{< fa users >}} What is one thing you learned from your reading or videos that was "new" to you? And what is one question you have from the reading, videos, or material we've covered so far, including the previous application exercise?
+:::
+
+## Announcements
+
+-   HW 1 due next today at 5 pm
+-   Subsequent HW deadlines adjusted accordingly
+-   Next week:
+    -   Tuesday: Project 1 workday
+    -   Thursday: Rubenstein Lubrary rare collections visit
+
+# Grammar of data wrangling
+
+## Packages
+
+```{r}
+#| message: false
+
+library(tidyverse)
+library(scales)
+```
+
+## Data: Hotel bookings
+
+-   Data from two hotels: one resort and one city hotel
+
+-   Observations: Each row represents a hotel booking
+
+```{r}
+hotels <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv")
+```
+
+## Variables {.smaller}
+
+```{r}
+names(hotels)
+```
+
+## `glimpse()` {.smaller}
+
+```{r}
+glimpse(hotels)
+```
+
+## Plan
+
+We...
+
+have a single data frame
+
+want to slice it, and dice it, and juice it, and process it, so we can plot it
+
+## Grammar of data wrangling
+
+::: columns
+::: {.column width="50%"}
+- Start with a data frame
+- And then (`|>`)
+- Transform it with a function
+- Result in a data frame
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+
+df |>
+  function(...)
+```
+:::
+:::
+
+## Commonly used data wrangling functions
+
+- `distinct()`
+- `select()`, `relocate()`
+- `arrange()`, `arrange(desc())`
+- `slice()`, `slice_head()`, `slice_tail()`, `slice_sample()`
+- `filter()`
+- `mutate()`
+- `summarize()`, `count()`
+
+## `distcint`
+
+::: columns
+::: {.column width="50%"}
+```{r}
+hotels |> 
+  distinct(hotel)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+hotels |> 
+  distinct(is_canceled)
+```
+:::
+:::
+
+## `select` / `relocate()` {.smaller}
+
+::: columns
+::: {.column width="50%"}
+```{r}
+hotels |> 
+  select(hotel)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+hotels |> 
+  relocate(is_canceled)
+```
+:::
+:::
+
+## `arrange()` / `arrange(desc())` {.smaller}
+
+::: columns
+::: {.column width="50%"}
+```{r}
+hotels |> 
+  arrange(adr)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+hotels |> 
+  arrange(desc(adr))
+```
+:::
+:::
+
+## `slice()`
+
+```{r}
+hotels |>
+  slice(1:4)
+```
+
+## `slice_head()` / `slice_tail()` {.smaller}
+
+::: columns
+::: {.column width="50%"}
+```{r}
+hotels |> 
+  slice_head(n = 5)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+hotels |> 
+  slice_tail(n = 5)
+```
+:::
+:::
+
+## `slice_sample()` {.smaller}
+
+```{r}
+hotels |> 
+  slice_sample(n = 5)
+```
+
+## `filter()` {.smaller}
+
+::: columns
+::: {.column width="50%"}
+```{r}
+hotels |>
+  filter(adr > 1000) |>
+  select(adr, hotel)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+hotels |> 
+  filter(babies > 5) |>
+  select(adults, babies)
+```
+:::
+:::
+
+## `mutate()` {.smaller}
+
+```{r}
+hotels |>
+  mutate(people = adults + babies + children) |>
+  relocate(people) |>
+  arrange(desc(people))
+```
+
+## `summarize()` {.smaller}
+
+::: columns
+::: {.column width="50%"}
+```{r}
+hotels |>
+  summarize(mean_adr = mean(adr))
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+hotels |>
+  group_by(hotel) |>
+  summarize(mean_adr = mean(adr))
+```
+:::
+:::
+
+## `count()` {.smaller}
+
+```{r}
+hotels |>
+  count(hotel)
+```
+
+## Average cost of daily stay
+
+::: task
+What are the variables represented in this visualization?
+:::
+
+```{r}
+#| label: daily-stay-cost
+#| fig-asp: 0.5
+#| echo: false
+
+hotels |>
+  mutate(
+    arrival_date = glue::glue("{arrival_date_year}-{arrival_date_month}-{arrival_date_day_of_month}"),
+    arrival_date = ymd(arrival_date)
+    ) |>
+  group_by(hotel, arrival_date) |>
+  summarise(mean_adr = mean(adr), .groups = "drop") |>
+  ggplot(aes(x = arrival_date, y = mean_adr, group = hotel, color = hotel)) +
+  geom_line() +
+  scale_color_manual(values = c("cornsilk4", "deepskyblue3")) +
+  scale_y_continuous(labels = label_dollar()) +
+  labs(
+    x = "Arrival date",
+    y = "Mean average\ndaily rate (USD)",
+    color = NULL,
+    title = "Cost of daily hotel stay",
+    subtitle = "July 2015 to August 2017",
+    caption = "Source: Antonio, Almeida and Nunes (2019) | TidyTuesday"
+  ) +
+  theme_minimal() +
+  theme(legend.position = c(0.15, 0.9))
+```
+
+# Application exercise
+
+## `ae-05`
+
+::: task
+{{< fa user >}}
+
+-   Go to the course [GitHub org](https://github.com/sta113-f23) and find your `ae-05-hotels` (repo name will be suffixed with your GitHub name).
+-   Clone the repo in Posit Cloud, open the Quarto document in the repo, set up a new PAT, and then run `git config credential.helper store` in the Terminal.
+-   Follow along and complete the exercises.
+-   Render, commit, and push your edits as you work through it
+:::

@@ -1,0 +1,47 @@
+---
+title: "Grammar of data wrangling"
+categories: 
+  - Application exercise
+---
+
+::: {.callout-note appearance="minimal" icon="false"}
+{{< fa brands github size=xl >}} Go to the course [GitHub organization](https://github.com/sta113-f23) to get started.
+:::
+
+```{r}
+#| label: load-packages-data
+#| message: false
+
+library(tidyverse)
+library(scales)
+
+hotels <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv")
+```
+
+Recreate the visualization from the slides.
+
+```{r}
+#| label: plot
+
+hotels |>
+  mutate(
+    arrival_date = glue::glue("{arrival_date_year}-{arrival_date_month}-{arrival_date_day_of_month}"),
+    arrival_date = ymd(arrival_date)
+    ) |>
+  group_by(hotel, arrival_date) |>
+  summarise(mean_adr = mean(adr), .groups = "drop") |>
+  ggplot(aes(x = arrival_date, y = mean_adr, group = hotel, color = hotel)) +
+  geom_line() +
+  scale_color_manual(values = c("cornsilk4", "deepskyblue3")) +
+  scale_y_continuous(labels = label_dollar()) +
+  labs(
+    x = "Arrival date",
+    y = "Mean average\ndaily rate (USD)",
+    color = NULL,
+    title = "Cost of daily hotel stay",
+    subtitle = "July 2015 to August 2017",
+    caption = "Source: Antonio, Almeida and Nunes (2019) | TidyTuesday"
+  ) +
+  theme_minimal() +
+  theme(legend.position = c(0.15, 0.9))
+```
