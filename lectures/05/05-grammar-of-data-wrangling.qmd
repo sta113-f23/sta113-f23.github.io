@@ -178,7 +178,7 @@ hotels |>
   slice(1:4)
 ```
 
-## `slice_head()` / `slice_tail()`  {.smaller}
+## `slice_head()` / `slice_tail()` {.smaller}
 
 ```{r}
 #| include: false
