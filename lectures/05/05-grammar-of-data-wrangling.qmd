@@ -17,8 +17,8 @@ format: revealjs
 -   HW 1 due today at 5 pm
 -   Subsequent HW deadlines adjusted accordingly for the first part of the semester
 -   Next week:
-    -   Tuesday: Project 1 workday
-    -   Thursday: Rubenstein Library rare collections visit
+    -   **Tuesday:** Project 1 workday
+    -   **Thursday:** Rubenstein Library rare collections visit
 
 # Grammar of data wrangling
 
