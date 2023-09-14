@@ -5,7 +5,7 @@ editor: visual
 ---
 
 ::: callout-important
-This homework is due Tuesday, Sep 12 at 1:00 pm ET.
+This homework is due Thursday, Sep 14 at 5:00 pm ET.
 :::
 
 # Getting Started
@@ -64,7 +64,7 @@ The data we will analyze contains monetary contributions from January 2019 to Ma
 [^2]: For a more recent list of such bills, see <https://www.aclu.org/legislative-attacks-on-lgbtq-rights>.
 
 |           |                                                                                                       |                                                  |
-|-----------|-------------------------------------------------------------------------------------------------------|--------------------------------------------------|
+|--------------|----------------------------------------|------------------|
 | **State** | **Bill Number**                                                                                       | **Purpose**                                      |
 | FL        | [CS/CS/HB 1557](https://www.flsenate.gov/Session/Bill/2022/1557/?Tab=BillText)                        | Silence discussion of queer identities in school |
 | AZ        | [SB.1138](https://apps.azleg.gov/BillStatus/BillOverview/76466)                                       | Restrict access to gender affirming healthcare   |
@@ -89,7 +89,7 @@ The companies included in this dataset are corporations who are either Fortune 5
 Description of variables is given in @tbl-codebook.
 
 | Variable              | Description                                                                                                                                            |
-|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+|---------------|---------------------------------------------------------|
 | `company`             | Name of company                                                                                                                                        |
 | `pride_sponsor`       | Whether the company sponsored a Pride event in SF, NYC, Seattle, LA, Chicago, Houston, Atlanta, or Miami                                               |
 | `hrc_pledge`          | Whether the company took the [Human Rights Campaign Business Pledge](https://www.hrc.org/resources/business-statement-on-anti-lgbtq-state-legislation) |

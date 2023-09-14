@@ -17,8 +17,14 @@ format: revealjs
 -   HW 1 due today at 5 pm
 -   Subsequent HW deadlines adjusted accordingly for the first part of the semester
 -   Next week:
-    -   **Tuesday:** Project 1 workday
-    -   **Thursday:** Rubenstein Library rare collections visit
+    -   Tuesday: Project 1 workday
+    -   Thursday: Rubenstein Library rare collections visit
+
+## GitHub PATs on Posit Cloud
+
+-   In the Console, run `usethis::create_github_token()` to create a new PAT or grab the one you created previously from a space you might have safely stored it (e.g., 1Password or similar)
+-   In the Console, run `gitcreds::gitcreds_set()` and paste your PAT when prompted.
+-   In the Terminal, run `git config credential.helper store` to make sure your PAT persists throughout the whole time you're working on this assignment / Cloud project.
 
 # Grammar of data wrangling
 

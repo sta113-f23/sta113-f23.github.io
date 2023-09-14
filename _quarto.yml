@@ -74,10 +74,6 @@ website:
             text: HW 5
           - href: hw/hw-6.qmd
             text: HW 6
-          - href: hw/hw-7.qmd
-            text: HW 7
-          - href: hw/hw-8.qmd
-            text: HW 8
       - section: "Projects"
         contents:
           - href: project/project-1.qmd
