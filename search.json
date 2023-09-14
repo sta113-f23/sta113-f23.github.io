@@ -165,14 +165,112 @@
     "href": "hw/hw-2.html",
     "title": "HW 2",
     "section": "",
-    "text": "To be posted…"
+    "text": "Important\n\n\n\nThis homework is due Thursday, Sep 21 at 5:00 pm ET."
   },
   {
-    "objectID": "hw/hw-8.html",
-    "href": "hw/hw-8.html",
-    "title": "HW 8",
-    "section": "",
-    "text": "To be posted…"
+    "objectID": "hw/hw-2.html#packages",
+    "href": "hw/hw-2.html#packages",
+    "title": "HW 2",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(nycflights13)"
+  },
+  {
+    "objectID": "hw/hw-2.html#sec-guidelines-tips",
+    "href": "hw/hw-2.html#sec-guidelines-tips",
+    "title": "HW 2",
+    "section": "Guidelines + tips",
+    "text": "Guidelines + tips\nAs we’ve discussed in lecture, your plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.\nRemember that continuing to develop a sound workflow for reproducible data analysis is important as you complete this homework and other assignments in this course. There will be periodic reminders in this assignment to remind you to knit, commit, and push your changes to GithHub. You should have at least 3 commits with meaningful commit messages by the end of the assignment.\n\n\n\n\n\n\nNote\n\n\n\nNote: Do not let R output answer the question for you unless the question specifically asks for just a plot. For example, if the question asks for the number of columns in the data set, please type out the number of columns. You are subject to lose points if you do not."
+  },
+  {
+    "objectID": "hw/hw-2.html#workflow-formatting",
+    "href": "hw/hw-2.html#workflow-formatting",
+    "title": "HW 2",
+    "section": "Workflow + formatting",
+    "text": "Workflow + formatting\nMake sure to\n\nUpdate author name on your document.\nLabel all code chunks informatively and concisely.\nFollow the Tidyverse code style guidelines.\nMake at least 3 commits.\nResize figures where needed, avoid tiny or huge plots.\nUse informative title and axis labels.\nTurn in an organized, well formatted document."
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-1",
+    "href": "hw/hw-2.html#exercise-1",
+    "title": "HW 2",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nUsing inline code to generate the number of rows and columns and include them in a sentence, answer the following questions:\n\nHow many rows are in the anti_lgbtq dataset? What does each row represent?\nHow many columns are in the anti_lgbtq dataset? Indicate the type of each variable (categorical or numerical).\n\n\nNow is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding. You can use a commit message like “Finished Exercise 1”."
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-2",
+    "href": "hw/hw-2.html#exercise-2",
+    "title": "HW 2",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nVisualize the distribution of contribution amounts using a histogram. Based on the shape, calculate the appropriate summary statistics for the center and spread of the distribution. Using the visualization and the summary statistics you calculated, describe the distribution of contribution amounts to politicians sponsoring anti-LGBTQ+ legislation and/or government policy in the 2021-2022 legislative session.\n\nNow is again a good time to render, commit, and push, with a commit message line “Finished Exercise 2”. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-3",
+    "href": "hw/hw-2.html#exercise-3",
+    "title": "HW 2",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nFor this exercise, make two visualizations that display the distribution of Pride sponsors based on whether the company is a Fortune 500 company.\n\nThe first distribution should allow you to compare the numbers of Pride sponsors who are and are not Fortune 500 companies.\nThe second visualization should allow you to compare the proportions instead.\n\nWhat information about these two variables can you\n\nget from both visualizations?\nget from from the first visualization, but not the second?\nget from from the second visualization, but not the first?\nget from neither visualization?\n\n\nRender, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-4",
+    "href": "hw/hw-2.html#exercise-4",
+    "title": "HW 2",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nFirst, make a bar plot of hrc_pledge and take note of the number of companies who have take the HRC pledge. Then, visualize the distribution of pride sponsors based on whether the company has made an HRC pledge. Make sure that your visualization allows you to make statements about the proportion of pride sponsors who have and have not made the HRC pledge. Describe the relationship, if any, between these two variables using features of your visualization as justification for your conclusions.\n\nRender, commit, and push, with an appropriate commit message. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-5",
+    "href": "hw/hw-2.html#exercise-5",
+    "title": "HW 2",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nSuppose you’re helping a friend who is writing a piece for The Chronicle about companies that both contribute to anti-LGBTQ+ politicians and sponsor Pride events. Your friend wonders: Does sponsoring a Pride event make a difference?\nLuckily, you can help them answer this question with data visualization!\n\nMake side-by-side box plots of contribution amounts based on whether the company sponsored a Pride.\nInclude informative title and axis labels.\nFinally, write a brief narrative comparing the distributions of anti-LGBTQ+ contribution amounts from companies that did and did not sponsor Pride events. Your narrative should touch on whether having sponsored a Pride event “makes a difference” in terms of the contribution amount.\n\n\nRender, commit, and push, with an appropriate commit message. Before proceeding, check that you’ve committed and pushed all changed documents and your Git pane is completely empty."
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-6",
+    "href": "hw/hw-2.html#exercise-6",
+    "title": "HW 2",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nNext, your friend is curious if about the relationship between contribution amounts and number of politicians companies contribute to. They wonder: Does the contribution amount go up as the number of politicians contributed to increases?\nOnce again, data visualization to the rescue!\n\nVisualize the relationship between the number of politicians (on the x-axis) and the contribution amount (on the y-axis) and describe the relationship between these two variables.\nIdentify any extreme outliers – you will need to dive into the data to figure out which companies these are. (Hint: There are two extreme outliers that are visibly very far away from the rest of the data.)\nRe-create the visualization without these two outliers and comment on whether the relationship is different without them.\n\nYour narrative should touch on whether the contribution amount goes up as the number of politicians contributed to increases.\n\nRender, commit, and push, with an appropriate commit message. Before proceeding, check that you’ve committed and pushed all changed documents and your Git pane is completely empty."
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-7",
+    "href": "hw/hw-2.html#exercise-7",
+    "title": "HW 2",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nCreate a data visualization of interest to you based on these data. You can use the entire dataset, a subset based on a variable, or just a few companies of particular interest to you. Write a brief (2-3 sentence) narrative on why you chose this visualization and what the visualization displays/reveals.\n\nRender, commit, and push, with an appropriate commit message. Before proceeding, check that you’ve committed and pushed all changed documents and your Git pane is completely empty.\n\n\n\n\n\n\n\nNote\n\n\n\nThe following exercises are conceptual and do not require a dataset or writing original code, however you may need to refer to code documentation to answer them."
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-8",
+    "href": "hw/hw-2.html#exercise-8",
+    "title": "HW 2",
+    "section": "Exercise 8",
+    "text": "Exercise 8\n\nDescribe the following terms in your own words:\n\nData-to-ink ratio\nSnake case\nWhisker (of a box plot)\n\nRead ?facet_wrap. What does nrow do? What does ncol do? What other options control the layout of the individual panels? Why doesn’t facet_grid() have nrow and ncol arguments?\n\n\nYou know the drill: render, commit, and push!"
+  },
+  {
+    "objectID": "hw/hw-2.html#exercise-9",
+    "href": "hw/hw-2.html#exercise-9",
+    "title": "HW 2",
+    "section": "Exercise 9",
+    "text": "Exercise 9\n\nRead the docs:\n\nRun the following code. What does it do? Or, another way to ask this question is, what does the result tell you?\n\n\nflights |&gt; \n  distinct(origin, dest)\n\n# A tibble: 224 × 2\n   origin dest \n   &lt;chr&gt;  &lt;chr&gt;\n 1 EWR    IAH  \n 2 LGA    IAH  \n 3 JFK    MIA  \n 4 JFK    BQN  \n 5 LGA    ATL  \n 6 EWR    ORD  \n 7 EWR    FLL  \n 8 LGA    IAD  \n 9 JFK    MCO  \n10 LGA    ORD  \n# ℹ 214 more rows\n\n\n\nNow run the following code. How is the output different? Hint: You may need to “read the docs”, i.e., read the help documentation for distinct() to find out what setting the .keep_all argument to TRUE does.\n\n\nflights |&gt; \n  distinct(origin, dest, .keep_all = TRUE)\n\n# A tibble: 224 × 19\n    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time\n   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;\n 1  2013     1     1      517            515         2      830            819\n 2  2013     1     1      533            529         4      850            830\n 3  2013     1     1      542            540         2      923            850\n 4  2013     1     1      544            545        -1     1004           1022\n 5  2013     1     1      554            600        -6      812            837\n 6  2013     1     1      554            558        -4      740            728\n 7  2013     1     1      555            600        -5      913            854\n 8  2013     1     1      557            600        -3      709            723\n 9  2013     1     1      557            600        -3      838            846\n10  2013     1     1      558            600        -2      753            745\n# ℹ 214 more rows\n# ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,\n#   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,\n#   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;\n\n\nCode style: Fix up the code style by spaces and line breaks where needed. Briefly describe your fixes. (Hint: You can refer to the Tidyverse style guide.)\n\n\nflights|&gt;group_by(dest)|&gt;summarize(MEAN.Arrival_delay=mean(arr_delay, na.rm = TRUE))|&gt;arrange(desc(MEAN.Arrival_delay))\n\n\nRender, commit, and push one last time.\nMake sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "hw/hw-2.html#review",
+    "href": "hw/hw-2.html#review",
+    "title": "HW 2",
+    "section": "Review",
+    "text": "Review\nBefore you call it “done”,\n\nmake sure you’ve answered all questions (or, at least, have not skipped any accidentally) and\nreview the Section 1.2 section and make any edits/corrections needed.\n\nYou can change answers to exercises you’ve “completed” and commit and push again. We will only grade the final version of your assignment. You can commit and push as many times as you like until the deadline."
+  },
+  {
+    "objectID": "hw/hw-2.html#submission",
+    "href": "hw/hw-2.html#submission",
+    "title": "HW 2",
+    "section": "Submission",
+    "text": "Submission\nYou do not have to do anything special to “submit” your assignment. We will close the repos to further pushes at the deadline, and will take your work as of that time point as your submission.\nIf you need to submit late for any reason, contact the professor."
+  },
+  {
+    "objectID": "hw/hw-2.html#grading",
+    "href": "hw/hw-2.html#grading",
+    "title": "HW 2",
+    "section": "Grading",
+    "text": "Grading\n\nExercise 1-9: 10 points each\nWorkflow + formatting: 10 points\nTotal: 100 points"
   },
   {
     "objectID": "hw/hw-4.html",
@@ -186,7 +284,7 @@
     "href": "hw/hw-1.html",
     "title": "HW 1 - Anti-LGBTQ+ contributions",
     "section": "",
-    "text": "Important\n\n\n\nThis homework is due Tuesday, Sep 12 at 1:00 pm ET."
+    "text": "Important\n\n\n\nThis homework is due Thursday, Sep 14 at 5:00 pm ET."
   },
   {
     "objectID": "hw/hw-1.html#packages",
@@ -931,6 +1029,13 @@
     "text": "Announcements\n\nHW 1 due today at 5 pm\nSubsequent HW deadlines adjusted accordingly for the first part of the semester\nNext week:\n\nTuesday: Project 1 workday\nThursday: Rubenstein Library rare collections visit"
   },
   {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#github-pats-on-posit-cloud",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#github-pats-on-posit-cloud",
+    "title": "Grammar of data wrangling",
+    "section": "GitHub PATs on Posit Cloud",
+    "text": "GitHub PATs on Posit Cloud\n\nIn the Console, run usethis::create_github_token() to create a new PAT or grab the one you created previously from a space you might have safely stored it (e.g., 1Password or similar)\nIn the Console, run gitcreds::gitcreds_set() and paste your PAT when prompted.\nIn the Terminal, run git config credential.helper store to make sure your PAT persists throughout the whole time you’re working on this assignment / Cloud project."
+  },
+  {
     "objectID": "lectures/05/05-grammar-of-data-wrangling.html#packages",
     "href": "lectures/05/05-grammar-of-data-wrangling.html#packages",
     "title": "Grammar of data wrangling",
@@ -1019,7 +1124,7 @@
     "href": "lectures/05/05-grammar-of-data-wrangling.html#slice_sample",
     "title": "Grammar of data wrangling",
     "section": "slice_sample()",
-    "text": "slice_sample()\n\nhotels |&gt; \n  slice_sample(n = 5)\n\n# A tibble: 5 × 32\n  hotel        is_canceled lead_time arrival_date_year arrival_date_month\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n1 City Hotel             0        31              2017 March             \n2 City Hotel             1       213              2017 June              \n3 Resort Hotel           0         5              2016 February          \n4 City Hotel             0         6              2015 August            \n5 Resort Hotel           0        25              2015 September         \n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,\n#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …"
+    "text": "slice_sample()\n\nhotels |&gt; \n  slice_sample(n = 5)\n\n# A tibble: 5 × 32\n  hotel        is_canceled lead_time arrival_date_year arrival_date_month\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n1 Resort Hotel           0         6              2017 June              \n2 City Hotel             0         1              2017 March             \n3 City Hotel             0        74              2015 September         \n4 City Hotel             0       183              2016 October           \n5 City Hotel             0         6              2016 September         \n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,\n#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …"
   },
   {
     "objectID": "lectures/05/05-grammar-of-data-wrangling.html#filter",
@@ -1228,13 +1333,6 @@
     "objectID": "hw/hw-5.html",
     "href": "hw/hw-5.html",
     "title": "HW 5",
-    "section": "",
-    "text": "To be posted…"
-  },
-  {
-    "objectID": "hw/hw-7.html",
-    "href": "hw/hw-7.html",
-    "title": "HW 7",
     "section": "",
     "text": "To be posted…"
   },
