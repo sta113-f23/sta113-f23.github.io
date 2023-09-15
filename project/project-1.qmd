@@ -26,7 +26,7 @@ Your proposal should include:
 
 -   A brief description of your dataset including its provenance, dimensions, etc. (Make sure to load the data and use inline code for some of this information.)
 -   The question you want to answer.
--   A plan for answering the question, including the variables involved, variables to be created (if any), external data to be merged in (if any).
+-   A plan for answering the question, including the variables involved, variables to be created (if any), external data to be merged in (if any) as well as the types of plots you're planning to make.
 
 ### Peer review
 
@@ -64,23 +64,27 @@ We encourage you to be concise. A paragraph should typically not be longer than 
 
 ### Presentation
 
-Your presentation should generally follow the same structure as your write-up. Each team will have 8 minutes for their presentation, and each team member must speak (roughly equally) during this time. Your presentation will be created using Quarto, which allows you to write slides using the same Quarto structure you're used to. There is a sample Quarto slide template in your repo you can edit to your heart's desire to create your presentation. Roughly I recommend 1-2 slides for introduction, one slide for each of the visualizations you create, and 1 slide for discussion. You can imagine spending roughly one minute on each slide. You should feel free to have more (or fewer) slides. Your evaluation will be based on your content, professionalism (including sticking to time), and your performance during the Q&A (question and answer). We don't care how many slides you use to do this.
+Your presentation should generally follow the same structure as your write-up. Each team will have 8 minutes for their presentation, and each team member must speak (roughly equally) during this time. You can create your presentation with any software you like, just make sure to place a PDF of your presentation, titled `presentation.pdf`, in your repo, replacing the placeholder PDF in your repo.
+
+Roughly I recommend 1-2 slides for introduction, one slide for each of the visualizations you create, and 1 slide for discussion. You can imagine spending roughly one minute on each slide. You should feel free to have more (or fewer) slides. Your evaluation will be based on your content, professionalism (including sticking to time), and your performance during the Q&A (question and answer). We don't care how many slides you use to do this.
 
 ## Repo organization
 
 The following folders and files in your project repository:
 
--   `/data/*`: Your dataset
+-   `about.qmd`: Information about your team members
 
-    -   `/data/*.csv`: Your dataset in CSV format
+-   `data/`:
 
-    -   `/data/README.md`: Codebook of your dataset
+    -   `data/pell.csv`: Your dataset in CSV format
+
+    -   `data/README.md`: Codebook of your dataset
 
 -   `index.qmd`: Your project write-up
 
--   `proposal.qmd`: Your project proposal
+-   `presentation.pdf`: Your project presentation
 
--   `presentation.qmd`: Your project presentation
+-   `proposal.qmd`: Your project proposal
 
 ## Grading
 
@@ -152,7 +156,7 @@ Some of the components are further detailed below.
 ### Reproducibility, style, and organization (10 points)
 
 -   All required files are provided. Quarto files render without issues and reproduce the necessary outputs.
--   Data is in the data folder, with a codebook in the README, and is loaded from this folder in presentation and writeup.
+-   Data is in the data folder and is loaded from this folder in your writeup.
 -   Documents are well structured and easy to follow. No extraneous materials.
 -   All issues are closed, mostly with specific commits addressing them.
 
@@ -174,9 +178,9 @@ All results presented must have corresponding code. If you do calculations by ha
 
 -   Code:
 
-    -   In your write-up and your presentation your code should be hidden (`echo: false`) so that your slides are neat and easy to read and your write-up is about your narrative and results only. However your document should include all your code such that if I re-render your Quarto file I should be able to obtain the results you presented. **Exception:** If you want to highlight something specific about a piece of code, you're welcomed to show that portion.
+    -   In the output of your write-up, your code should be hidden (`echo: false`) so that your slides are neat and easy to read and your write-up is about your narrative and results only. However your document should include all your code such that if I re-render your Quarto file I should be able to obtain the results you presented. **Exception:** If you want to highlight something specific about a piece of code, you're welcomed to show that portion.
 
-    -   Even though your code is hidden, it should still confirm to good coding practice, style, etc. You will be evaluated on code quality as well, which we will check by explicitly reviewing your Quarto documents (not just the rendered output).
+    -   Even though your code is hidden, it should still conform to good coding practice, style, etc. You will be evaluated on code quality as well, which we will check by explicitly reviewing your Quarto documents (not just the rendered output).
 
 -   Teamwork: You are to complete the assignment as a team. All team members are expected to contribute equally to the completion of this assignment and team evaluations will be given at its completion - anyone judged to not have sufficiently contributed to the final product will have their grade penalized. While different team members may have different backgrounds and abilities, it is the responsibility of every team member to understand how and why all code and approaches in the assignment work.
 
