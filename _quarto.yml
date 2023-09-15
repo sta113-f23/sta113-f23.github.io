@@ -78,8 +78,6 @@ website:
         contents:
           - href: project/project-1.qmd
           - href: project/project-2.qmd
-          - href: project/project-tips-resources.qmd
-            text: Tips + resources
       - section: "Computing"
         contents:
           - href: computing/computing-access.qmd
