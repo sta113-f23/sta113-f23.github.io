@@ -294,7 +294,32 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link active" data-scroll-target="#dataset">Dataset</a></li>
+  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">Question</a></li>
+  <li><a href="#due-dates" id="toc-due-dates" class="nav-link" data-scroll-target="#due-dates">Due dates</a></li>
+  <li><a href="#deliverables" id="toc-deliverables" class="nav-link" data-scroll-target="#deliverables">Deliverables</a>
+  <ul class="collapse">
+  <li><a href="#proposal" id="toc-proposal" class="nav-link" data-scroll-target="#proposal">Proposal</a></li>
+  <li><a href="#peer-review" id="toc-peer-review" class="nav-link" data-scroll-target="#peer-review">Peer review</a></li>
+  <li><a href="#write-up" id="toc-write-up" class="nav-link" data-scroll-target="#write-up">Write-up</a></li>
+  <li><a href="#presentation" id="toc-presentation" class="nav-link" data-scroll-target="#presentation">Presentation</a></li>
+  </ul></li>
+  <li><a href="#repo-organization" id="toc-repo-organization" class="nav-link" data-scroll-target="#repo-organization">Repo organization</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a>
+  <ul class="collapse">
+  <li><a href="#proposal-10-points" id="toc-proposal-10-points" class="nav-link" data-scroll-target="#proposal-10-points">Proposal (10 points)</a></li>
+  <li><a href="#presentation-30-points" id="toc-presentation-30-points" class="nav-link" data-scroll-target="#presentation-30-points">Presentation (30 points)</a></li>
+  <li><a href="#write-up-30-points" id="toc-write-up-30-points" class="nav-link" data-scroll-target="#write-up-30-points">Write-up (30 points)</a></li>
+  <li><a href="#reproducibility-style-and-organization-10-points" id="toc-reproducibility-style-and-organization-10-points" class="nav-link" data-scroll-target="#reproducibility-style-and-organization-10-points">Reproducibility, style, and organization (10 points)</a></li>
+  </ul></li>
+  <li><a href="#guidelines" id="toc-guidelines" class="nav-link" data-scroll-target="#guidelines">Guidelines</a></li>
+  <li><a href="#tips" id="toc-tips" class="nav-link" data-scroll-target="#tips">Tips</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/edit/main/project/project-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -317,11 +342,218 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>More info to be posted…</p>
+<p>For this project, you will be use the Pell Grants dataset from the TidyTuesday project. Your task for the project is to come up with one questions to answer, answer it with data visualizations, and write-up and present your method and findings. You will also get to peer review others’ projects.</p>
+<section id="dataset" class="level2">
+<h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
+<p>To learn more about the dataset, visit <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-08-30/readme.md" class="uri">https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-08-30/readme.md</a>.</p>
+</section>
+<section id="question" class="level2">
+<h2 class="anchored" data-anchor-id="question">Question</h2>
+<p>The questions you come up with should involve more than two variables two answer.</p>
+</section>
+<section id="due-dates" class="level2">
+<h2 class="anchored" data-anchor-id="due-dates">Due dates</h2>
+<ul>
+<li>Proposal: Thu, Sep 28</li>
+<li>Peer review: Tue, Oct 10</li>
+<li>Write-up and presentation: Thu, Oct 12</li>
+</ul>
+</section>
+<section id="deliverables" class="level2">
+<h2 class="anchored" data-anchor-id="deliverables">Deliverables</h2>
+<section id="proposal" class="level3">
+<h3 class="anchored" data-anchor-id="proposal">Proposal</h3>
+<p>Your proposal should include:</p>
+<ul>
+<li>A brief description of your dataset including its provenance, dimensions, etc. (Make sure to load the data and use inline code for some of this information.)</li>
+<li>The question you want to answer.</li>
+<li>A plan for answering the question, including the variables involved, variables to be created (if any), external data to be merged in (if any).</li>
+</ul>
+</section>
+<section id="peer-review" class="level3">
+<h3 class="anchored" data-anchor-id="peer-review">Peer review</h3>
+<section id="reviewer-tasks" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="reviewer-tasks">Reviewer tasks</h4>
+<p>Each team will review the projects of two other teams. A few days before the peer review deadline, teams will have access to the project repos of the two teams whose work they’re reviewing. Reviews should start by cloning the team’s repo, re-rendering it locally to make sure you can reproduce their work, and then adding an issue to their repo with your peer review feedback.</p>
+<p>The reviewer / reviewee assignments can be found below:</p>
+<pre><code>TBA</code></pre>
+<p>Teams will develop the review together, with discussion among all team members, but only one team member will submit it as an issue on the project repo. To do so, go to the <em>Issues</em> tab, click on the green <em>New issue</em> button on the top right, and then click on the green <em>Get started</em> button for the issue template titled <em>Peer review</em>.</p>
+<p>This will start a new issue with a peer review form that you can fill out. Make sure to update the introductory paragraph with your team name and the names of the team members participating in the review. Then, answer each of the questions in the spaces provided underneath them. You’re expected to be thorough in your review, but this doesn’t necessarily require lengthy responses.</p>
+<p>Remember, your goal is to help the team whose project proposal you’re reviewing. The team will not lose points because of issues you point out, as long as they address them before I review their proposals. You should be critical, but respectful in your review. Also remember that you will be evaluated on the quality of your review. So that’s an additional incentive to do a good job.</p>
+</section>
+<section id="reviewee-tasks" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="reviewee-tasks">Reviewee tasks</h4>
+<p>Once you receive feedback from your peers, you should address them. You should do this by directly updating your proposal or making any other updates to your repo as needed. You can do these updates all in one commit or you can spread it across multiple commits. Regardless, in the last commit that addresses the peer review comments, you should use a keyword in your commit message that will close the peer review issues. These words are close, closes, closed, fix, fixes, fixed, resolve, resolves, and resolved and they need to be followed by the issue number (which you can find next to the issue title). So, your commit message can say something like <em>“Finished updates based on peer review, fixes #1”</em>.</p>
+</section>
+</section>
+<section id="write-up" class="level3">
+<h3 class="anchored" data-anchor-id="write-up">Write-up</h3>
+<p>Your write-up should consist of three parts:</p>
+<ol type="1">
+<li><p><strong>Introduction</strong> (1-2 paragraphs): Brief introduction to the dataset. You may repeat some of the information about the dataset provided in the introduction to the dataset on the TidyTuesday repository, paraphrasing on your own terms, but you should rephrase it. Imagine that your project is a standalone document and the grader has no prior knowledge of the dataset. The introduction should also introduce the question you’re answering in our project.</p></li>
+<li><p><strong>Analysis</strong> (2-3 code blocks, 2 figures, text/code comments as needed): In this section, provide the code that generates your plots. Use scale functions to provide nice axis labels and guides. You are welcome to use theme functions to customize the appearance of your plot, but you are not required to do so. All plots must be made with <strong>ggplot2</strong>. Do not use base R or lattice plotting functions.</p></li>
+<li><p><strong>Discussion</strong> (1-3 paragraphs): In the Discussion section, interpret the results of your analysis. Identify any trends revealed (or not revealed) by the plots. Speculate about why the visualizations look the way they do.</p></li>
+</ol>
+<p>We encourage you to be concise. A paragraph should typically not be longer than 5 sentences.</p>
+</section>
+<section id="presentation" class="level3">
+<h3 class="anchored" data-anchor-id="presentation">Presentation</h3>
+<p>Your presentation should generally follow the same structure as your write-up. Each team will have 8 minutes for their presentation, and each team member must speak (roughly equally) during this time. Your presentation will be created using Quarto, which allows you to write slides using the same Quarto structure you’re used to. There is a sample Quarto slide template in your repo you can edit to your heart’s desire to create your presentation. Roughly I recommend 1-2 slides for introduction, one slide for each of the visualizations you create, and 1 slide for discussion. You can imagine spending roughly one minute on each slide. You should feel free to have more (or fewer) slides. Your evaluation will be based on your content, professionalism (including sticking to time), and your performance during the Q&amp;A (question and answer). We don’t care how many slides you use to do this.</p>
+</section>
+</section>
+<section id="repo-organization" class="level2">
+<h2 class="anchored" data-anchor-id="repo-organization">Repo organization</h2>
+<p>The following folders and files in your project repository:</p>
+<ul>
+<li><p><code>/data/*</code>: Your dataset</p>
+<ul>
+<li><p><code>/data/*.csv</code>: Your dataset in CSV format</p></li>
+<li><p><code>/data/README.md</code>: Codebook of your dataset</p></li>
+</ul></li>
+<li><p><code>index.qmd</code>: Your project write-up</p></li>
+<li><p><code>proposal.qmd</code>: Your project proposal</p></li>
+<li><p><code>presentation.qmd</code>: Your project presentation</p></li>
+</ul>
+</section>
+<section id="grading" class="level2">
+<h2 class="anchored" data-anchor-id="grading">Grading</h2>
+<table class="table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Total</th>
+<th>100 pts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Proposal<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+<td>10 pts</td>
+</tr>
+<tr class="even">
+<td>Presentation</td>
+<td>30 pts</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>(25 pts from teaching team, 5 pts from audience)</td>
+</tr>
+<tr class="even">
+<td>Write-up</td>
+<td>30 pts</td>
+</tr>
+<tr class="odd">
+<td>Reproducibility, style, and organization<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
+<td>10 pts</td>
+</tr>
+<tr class="even">
+<td>Within team peer evaluation<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></td>
+<td>10 pts</td>
+</tr>
+<tr class="odd">
+<td>Between team peer evaluation<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></td>
+<td>10 pts</td>
+</tr>
+</tbody>
+</table>
+<p>Some of the components are further detailed below.</p>
+<section id="proposal-10-points" class="level3">
+<h3 class="anchored" data-anchor-id="proposal-10-points">Proposal (10 points)</h3>
+<ul>
+<li>Write-up - All required components included.</li>
+<li>Workflow - Peer review issues closed via commits.</li>
+<li>Teamwork - All team members must contribute to the repo via commits.</li>
+</ul>
+</section>
+<section id="presentation-30-points" class="level3">
+<h3 class="anchored" data-anchor-id="presentation-30-points">Presentation (30 points)</h3>
+<section id="teaching-team-25-points" class="level4">
+<h4 class="anchored" data-anchor-id="teaching-team-25-points">Teaching team (25 points)</h4>
+<ul>
+<li><p>Time management: Did the team divide the time well amongst themselves or got cut off going over time?</p></li>
+<li><p>Professionalism: How well did the team present? Does the presentation appear to be well practiced? Did everyone get a chance to say something meaningful about the project?</p></li>
+<li><p>Teamwork: Did the team present a unified story, or did it seem like independent pieces of work patched together?</p></li>
+<li><p>Slides: Are the slides well organized, readable, not full of text, featuring figures with legible labels, legends, etc.?</p></li>
+<li><p>Creativity Critical Thought: Is the project carefully thought out? Does it appear that time and effort went into the planning and implementation of the project?</p></li>
+<li><p>Content:</p>
+<ul>
+<li>Is the question well articulated in the presentation?</li>
+<li>Can the question be answered with the data?</li>
+<li>Do(es) the data visualization(s) answer the question?</li>
+<li>Do(es) the data visualization(s) follow good visualization practices?</li>
+<li>Is/are the conclusion(s) made based on the visualization(s) justifiable?</li>
+<li>Are the limitations carefully considered and articulated?</li>
+</ul></li>
+</ul>
+</section>
+<section id="peers-5-points" class="level4">
+<h4 class="anchored" data-anchor-id="peers-5-points">Peers (5 points)</h4>
+<ul>
+<li>Content: Is the research question well designed and is the data being used relevant to the research question?</li>
+<li>Content: Did the team use appropriate visualizations and did they interpret them accurately?</li>
+<li>Creativity and Critical Thought: Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?</li>
+<li>Slides: Are the slides well organized, readable, not full of text, featuring figures with legible labels, legends, etc.?</li>
+<li>Professionalism: How well did the team present? Does the presentation appear to be well practiced? Are they reading off of a script? Did everyone get a chance to say something meaningful about the project?</li>
+</ul>
+</section>
+</section>
+<section id="write-up-30-points" class="level3">
+<h3 class="anchored" data-anchor-id="write-up-30-points">Write-up (30 points)</h3>
+<ul>
+<li>Introduction: The introduction provides a clear explanation of the question and the dataset used to answer the question, including a description of all relevant variables in the dataset.</li>
+<li>Justification of approach: The chosen analysis approach and visualizations are clearly explained and justified.</li>
+<li>Code: Code is correct, easy to read, properly formatted, and properly documented.</li>
+<li>Visualization: The visualizations are appropriate, easy to read, and properly labeled.</li>
+<li>Discussion: Discussion of results is clear and correct, and it has some depth without begin excessively long.</li>
+</ul>
+</section>
+<section id="reproducibility-style-and-organization-10-points" class="level3">
+<h3 class="anchored" data-anchor-id="reproducibility-style-and-organization-10-points">Reproducibility, style, and organization (10 points)</h3>
+<ul>
+<li>All required files are provided. Quarto files render without issues and reproduce the necessary outputs.</li>
+<li>Data is in the data folder, with a codebook in the README, and is loaded from this folder in presentation and writeup.</li>
+<li>Documents are well structured and easy to follow. No extraneous materials.</li>
+<li>All issues are closed, mostly with specific commits addressing them.</li>
+</ul>
+</section>
+</section>
+<section id="guidelines" class="level2">
+<h2 class="anchored" data-anchor-id="guidelines">Guidelines</h2>
+<p>Please use the project repository that has been created for your team to complete your project. This means putting all of the content in the Quarto files provided, rendering them to obtain the output, and committing and pushing all files to your repository by the indicated deadlines. Your Quarto files (<code>.qmd</code>) and the resulting html files (<code>.html</code>) will be graded jointly, so they must be consistent (as in, don’t change the Quarto file without also updating the rendered document!).</p>
+<p>All results presented must have corresponding code. If you do calculations by hand instead of using R and then report the results from the calculations, you will not receive credit for those calculations. Any answers/results given without the corresponding R code that generated the result will not be considered. For example, if you’re reporting the number of observations in your dataset, don’t just write the number manually, use inline R code to calculate the number. All code reported in your final project document should work properly. Please do not include any extraneous code or code which produces error messages. Code which produces certain warnings and messages is acceptable, as long as you understand what the warnings mean. In such cases you can add <code>warning: false</code> and <code>message: false</code> in the relevant R chunks. Warnings that signal lifecycle changes (e.g., a function is deprecated and there’s a newer/better function out there) should generally be addressed by updating your code, not just by hiding the warning.</p>
+</section>
+<section id="tips" class="level2">
+<h2 class="anchored" data-anchor-id="tips">Tips</h2>
+<ul>
+<li><p>You’re working in the same repo as your teammates now, so merge conflicts will happen, issues will arise, and that’s fine! Commit and push often, and ask questions when stuck.</p></li>
+<li><p>Review the marking guidelines below and ask questions if any of the expectations are unclear.</p></li>
+<li><p>Make sure each team member is contributing, both in terms of quality and quantity of contribution (we will be reviewing commits from different team members).</p></li>
+<li><p>Set aside time to work together and apart (physically).</p></li>
+<li><p>Code:</p>
+<ul>
+<li><p>In your write-up and your presentation your code should be hidden (<code>echo: false</code>) so that your slides are neat and easy to read and your write-up is about your narrative and results only. However your document should include all your code such that if I re-render your Quarto file I should be able to obtain the results you presented. <strong>Exception:</strong> If you want to highlight something specific about a piece of code, you’re welcomed to show that portion.</p></li>
+<li><p>Even though your code is hidden, it should still confirm to good coding practice, style, etc. You will be evaluated on code quality as well, which we will check by explicitly reviewing your Quarto documents (not just the rendered output).</p></li>
+</ul></li>
+<li><p>Teamwork: You are to complete the assignment as a team. All team members are expected to contribute equally to the completion of this assignment and team evaluations will be given at its completion - anyone judged to not have sufficiently contributed to the final product will have their grade penalized. While different team members may have different backgrounds and abilities, it is the responsibility of every team member to understand how and why all code and approaches in the assignment work.</p></li>
+<li><p>When you’re done, review the documents on GitHub to make sure you’re happy with the final state of your work. Then go get some rest!</p></li>
+</ul>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Your proposal score will also take into consideration how much you’ve improved your proposal based on peer feedback.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Style and format does count for this assignment, so please take the time to make sure everything looks good and your data and code are properly formatted.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>This relates to your contribution to the teamwork and how your team members evaluate this contribution. Scores for each teammate will be different for this component of the project grade.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>This relates to the quality and quantity of the peer review you provide for other teams.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -830,7 +1062,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/edit/main/project/project-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    </div>
     <div class="nav-footer-right">
 <p>This page is built with 🤍 and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
