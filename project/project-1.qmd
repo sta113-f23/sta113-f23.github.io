@@ -2,7 +2,7 @@
 title: "Project 1"
 ---
 
-For this project, you will be use the Pell Grants dataset from the TidyTuesday project. Your task for the project is to come up with **one** questions to answer, answer it with **two** data visualizations, and write-up and present your analysis and findings. You will also get to peer review others' projects.
+For this project, you will be use the Pell Grants dataset from the [TidyTuesday project](https://github.com/rfordatascience/tidytuesday). Your task for the project is to come up with **one** questions to answer, answer it with **two** data visualizations, and write-up and present your analysis and findings. You will also get to peer review others' projects.
 
 ## Dataset
 
