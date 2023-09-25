@@ -10,7 +10,7 @@ To learn more about the dataset, visit <https://github.com/rfordatascience/tidyt
 
 ## Question
 
-The questions you come up with should involve more than two variables two answer.
+The questions you come up with should involve **more than two variables** two answer.
 
 ## Due dates
 
