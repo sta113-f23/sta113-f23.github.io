@@ -5,12 +5,6 @@ categories:
 editor: visual
 ---
 
-::: callout-important
-Go to the [course GitHub organization](https://github.com/sta199-f22-1) and locate the repo titled `ae-04-YOUR_GITHUB_USERNAME` to get started.
-
-This AE is due Sunday, Sep 18 at 11:59pm.
-:::
-
 ```{r}
 #| label: load-packages-data
 
@@ -23,11 +17,9 @@ continents <- read_csv("data/continents.csv")
 
 ## Working with multiple data frames
 
-Often instead of being provided the data you need for your analysis in a single data frame, you will need to bring information from multiple datasets together into a data frame yourself.
-These datasets will be linked to each other via a column (usually an identifier, something that links the two datasets together) that you can use to join them together.
+Often instead of being provided the data you need for your analysis in a single data frame, you will need to bring information from multiple datasets together into a data frame yourself. These datasets will be linked to each other via a column (usually an identifier, something that links the two datasets together) that you can use to join them together.
 
-There are many possible types of joins.
-All have the format `something_join(x, y)`.
+There are many possible types of joins. All have the format `something_join(x, y)`.
 
 ```{r}
 #| label: test-joins
@@ -119,8 +111,7 @@ Let's start by looking at the `fisheries` data frame.
 glimpse(fisheries)
 ```
 
-We have the countries, but our goal is to make a visualization by continent.
-Let's take a look at the continents data frame.
+We have the countries, but our goal is to make a visualization by continent. Let's take a look at the continents data frame.
 
 ```{r}
 #| label: glimpse-continents
