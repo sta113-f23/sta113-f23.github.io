@@ -1,0 +1,206 @@
+---
+title: "AE 04: Joining fisheries"
+categories: 
+  - Application exercise
+editor: visual
+---
+
+::: callout-important
+Go to the [course GitHub organization](https://github.com/sta199-f22-1) and locate the repo titled `ae-04-YOUR_GITHUB_USERNAME` to get started.
+
+This AE is due Sunday, Sep 18 at 11:59pm.
+:::
+
+```{r}
+#| label: load-packages-data
+
+library(tidyverse)
+library(scales)
+
+fisheries <- read_csv("data/fisheries.csv")
+continents <- read_csv("data/continents.csv")
+```
+
+## Working with multiple data frames
+
+Often instead of being provided the data you need for your analysis in a single data frame, you will need to bring information from multiple datasets together into a data frame yourself.
+These datasets will be linked to each other via a column (usually an identifier, something that links the two datasets together) that you can use to join them together.
+
+There are many possible types of joins.
+All have the format `something_join(x, y)`.
+
+```{r}
+#| label: test-joins
+
+x <- tibble(
+  value = c(1, 2, 3),
+  xcol = c("x1", "x2", "x3")
+  )
+
+y <- tibble(
+  value = c(1, 2, 4),
+  ycol = c("y1", "y2", "y4")
+  )
+
+x
+y
+```
+
+We will demonstrate each of the joins on these small, toy datasets.
+
+### `inner_join()`: join all rows from `x` where there are matching values in `y`
+
+```{r}
+#| label: inner-join
+
+inner_join(x, y)
+```
+
+### `left_join()`: include all rows from `x`
+
+```{r}
+#| label: left-join
+
+left_join(x, y)
+```
+
+### `right_join()`: include all rows from `y`
+
+```{r}
+#| label: right-join
+
+right_join(x, y)
+```
+
+### `full_join()`: include all rows in `x` or `y` (use this one sparingly!!)
+
+```{r}
+#| label: full-join
+
+full_join(x, y)
+```
+
+### `semi_join()`: return all rows from `x` with match in `y`
+
+```{r}
+#| label: semi-join
+
+semi_join(x, y)
+```
+
+### `anti_join()`: return all rows from `x` without a match in `y`
+
+```{r}
+#| label: anti-join
+
+anti_join(x, y)
+```
+
+**Question: How do the join functions above know to join `x` and `y` by `value`? *Hint: Examine the column names to find out.***
+
+```{r}
+#| label: anti-names
+
+names(x)
+names(y)
+```
+
+## Global aquaculture production
+
+The Fisheries and Aquaculture Department of the Food and Agriculture Organization of the United Nations collects data on fisheries production of countries.
+
+Our goal is to create a visualization of the mean share of aquaculture by continent.
+
+Let's start by looking at the `fisheries` data frame.
+
+```{r}
+#| label: glimpse-fisheries
+
+glimpse(fisheries)
+```
+
+We have the countries, but our goal is to make a visualization by continent.
+Let's take a look at the continents data frame.
+
+```{r}
+#| label: glimpse-continents
+
+glimpse(continents)
+```
+
+-   **Your turn (2 minutes):**
+    -   Which variable(s) will we use to join the `fisheries` and `continents` data frames?
+    -   We want to keep all rows and columns from `fisheries` and add a column for corresponding continents. Which join function should we use?
+-   **Demo:** Join the two data frames and name assign the joined data frame back to `fisheries`.
+
+```{r}
+#| label: join-fisheries-continents
+
+# add code here
+```
+
+-   **Demo:** Take a look at the updated `fisheries` data frame. There are some countries that were not in `continents`. First, identify which countries these are (they will have `NA` values for `continent`). Then, manually update the `continent` information for these countries using the `case_when` function. Finally, check that these updates have been made as intended and no countries are left without continent information.
+
+```{r}
+#| label: data-clean
+
+# add code here
+```
+
+-   **Demo:** Add a new column to the `fisheries` data frame called `aq_prop`. We will calculate it as `aquaculture / total`. Save the resulting frame as `fisheries`.
+
+```{r add-aq-prop}
+#| label: add-aq-prop
+
+# add code here
+```
+
+-   **Demo:** Calculate the mean aquaculture proportion (we'll call it `mean_aq_prop`) for continents in the fisheries data using the `summarize()` function in dplyr. Note that the function for calculating the mean is `mean()` in R.
+
+```{r}
+#| label: fisheries-mean
+
+# add code here
+```
+
+-   **Your turn (5 minutes):** Now expand your calculations to also calculate the minimum and maximum aquaculture proportion for continents in the fisheries data. Note that the functions for calculating minimum and maximum in R are `min()` and `max()` respectively.
+
+```{r}
+#| label: fisheries-summary-display
+
+# add code here 
+```
+
+-   **Demo:** Create a new data frame called `fisheries_summary` that calculates minimum, mean, and maximum aquaculture proportion for each continent in the fisheries data. Then, determine which continent has the largest value of `max_ap`?
+
+```{r}
+#| label: fisheries-summary-save
+
+# add code here
+```
+
+-   **Demo:** Take the `fisheries_summary` data frame and order the results in descending order of mean aquaculture proportion.
+
+```{r}
+#| label: fisheries-summary-sorted
+
+# add code here
+```
+
+-   **Demo:** Recreate the following plot using the data frame you have developed so far.
+
+![](images/aquaculture-production-by-continent.png){fig-align="center"}
+
+```{r}
+#| label: fisheries-summary-plot
+
+# add code here
+```
+
+-   **Your turn (time permitting):** Change the [theme](https://ggplot2.tidyverse.org/reference/ggtheme.html) of the plot and make any other changes you would like to improve it.
+
+```{r}
+#| label: plot-improve
+
+# add your code here
+```
