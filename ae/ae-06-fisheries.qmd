@@ -1,19 +1,9 @@
 ---
-title: "AE 04: Joining fisheries"
+title: "Joining fisheries"
 categories: 
   - Application exercise
 editor: visual
 ---
-
-```{r}
-#| label: load-packages-data
-
-library(tidyverse)
-library(scales)
-
-fisheries <- read_csv("data/fisheries.csv")
-continents <- read_csv("data/continents.csv")
-```
 
 ## Working with multiple data frames
 
@@ -23,6 +13,8 @@ There are many possible types of joins. All have the format `something_join(x, y
 
 ```{r}
 #| label: test-joins
+
+library(tidyverse)
 
 x <- tibble(
   value = c(1, 2, 3),
@@ -102,6 +94,15 @@ names(y)
 The Fisheries and Aquaculture Department of the Food and Agriculture Organization of the United Nations collects data on fisheries production of countries.
 
 Our goal is to create a visualization of the mean share of aquaculture by continent.
+
+```{r}
+#| label: load-packages-data
+
+library(scales)
+
+fisheries <- read_csv("data/fisheries.csv")
+continents <- read_csv("data/continents.csv")
+```
 
 Let's start by looking at the `fisheries` data frame.
 
