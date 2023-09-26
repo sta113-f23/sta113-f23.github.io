@@ -1,6 +1,6 @@
 ---
 title: Grammar of data wrangling
-subtitle: Lecture 5
+subtitle: Lecture 6
 format: revealjs
 ---
 
