@@ -1,0 +1,51 @@
+---
+title: Tidying data
+subtitle: Lecture 7
+format: revealjs
+---
+
+# Warm up
+
+## Reflection
+
+::: question
+{{< fa users >}} What is one thing you learned from your reading or videos that was "new" to you? And what is one question you have from the reading, videos, or material we've covered so far, including the previous application exercise?
+:::
+
+## Announcements
+
+-   Project 1 proposal due today at 5 pm
+-   Next week:
+    -   Tuesday: Exam 1 - in class
+    -   Thursday: Exam 1 - take home due
+    -   Info on exams at <https://sta113-f23.github.io/course-syllabus.html#exams>
+
+# Tidying datasets
+
+## Tidy data
+
+::: task
+What makes a dataset "tidy"?
+:::
+
+## Pivoting data
+
+-   Data sets can't be labeled as wide or long but they can be made *wider* or *longer* for a certain analysis that requires a certain format
+-   Often, to visualize data, we pivot longer to collect information that is spread across column headings in a single column.
+-   And often, to display data in a table, we pivot wider to spread levels of a categorical variable across columns.
+
+# Application exercise
+
+## `ae-07` {.smaller}
+
+::: task
+{{< fa user >}}
+
+-   Go to the course [GitHub org](https://github.com/sta113-f23) and find your `ae-07-majors` (repo name will be suffixed with your GitHub name).
+-   Clone the repo in Posit Cloud, and set up your PAT:
+    -   In the Console, run `usethis::create_github_token()` to create a new PAT or grab the one you created previously from a space you might have safely stored it (e.g., 1Password or similar)
+    -   In the Console, run `gitcreds::gitcreds_set()` and paste your PAT when prompted.
+    -   In the Terminal, run `git config credential.helper store` to make sure your PAT persists throughout the whole time you're working on this assignment / Cloud project.
+-   Open the Quarto document (`.qmd`) and follow along and complete the exercises.
+-   Render, commit, and push your edits as you work through it
+:::

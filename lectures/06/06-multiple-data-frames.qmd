@@ -1,5 +1,5 @@
 ---
-title: Grammar of data wrangling
+title: Working with multiple data frames
 subtitle: Lecture 6
 format: revealjs
 ---
