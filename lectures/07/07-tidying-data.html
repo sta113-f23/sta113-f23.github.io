@@ -13,7 +13,7 @@
   <meta name="generator" content="quarto-1.4.330">
 
   <meta name="author" content="Dr.&nbsp;Mine Çetinkaya-Rundel">
-  <title>STA 113FS - F23 - Working with multiple data frames</title>
+  <title>STA 113FS - F23 - Tidying data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -324,8 +324,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="STA 113FS - F23 - Working with multiple data frames">
-<meta property="og:description" content="Lecture 6">
+<meta property="og:title" content="STA 113FS - F23 - Tidying data">
+<meta property="og:description" content="Lecture 7">
 <meta property="og:site_name" content="STA 113FS - F23">
 </head>
 <body class="quarto-light">
@@ -333,8 +333,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Working with multiple data frames</h1>
-  <p class="subtitle">Lecture 6</p>
+  <h1 class="title">Tidying data</h1>
+  <p class="subtitle">Lecture 7</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -362,68 +362,45 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 <ul>
-<li>Project 1 proposal due Thursday at 5 pm</li>
+<li>Project 1 proposal due today at 5 pm</li>
 <li>Next week:
 <ul>
 <li>Tuesday: Exam 1 - in class</li>
 <li>Thursday: Exam 1 - take home due</li>
-</ul></li>
-</ul>
-</section>
-<section id="asking-questions" class="slide level2">
-<h2>Asking questions</h2>
-<ul>
-<li><p>Asking code related questions on Slack</p>
-<ul>
-<li>Ideally: Code formatted text, not screenshots</li>
-<li>If need be: Screenshots, not photos of screens</li>
-<li>Always include code along with the error</li>
-</ul></li>
-<li><p>Troubleshooting 101: Read your error messages in full, out loud if need be</p></li>
-<li><p>Code formatting 101:</p>
-<ul>
-<li><p>Always line breaks after <code>+</code> and <code>|&gt;</code></p></li>
-<li><p>Add line breaks as needed after <code>,</code> to help fit code on rendered PDF</p></li>
-<li><p>Think poetry (short lines), not novellas (long sentences)</p></li>
+<li>Info on exams at <a href="https://sta113-f23.github.io/course-syllabus.html#exams" class="uri">https://sta113-f23.github.io/course-syllabus.html#exams</a></li>
 </ul></li>
 </ul>
 </section></section>
 <section>
-<section id="joining-datasets" class="title-slide slide level1 center">
-<h1>Joining datasets</h1>
+<section id="tidying-datasets" class="title-slide slide level1 center">
+<h1>Tidying datasets</h1>
 
 </section>
-<section id="joining-student-data" class="slide level2">
-<h2>Joining student data</h2>
+<section id="tidy-data" class="slide level2">
+<h2>Tidy data</h2>
 <div class="task">
-<p>Describe a scenario where two datasets that contain information about students from this class may need to be joined. What might the analysis be about? What column (information) could be used to join the datasets?</p>
+<p>What makes a dataset “tidy”?</p>
 </div>
 </section>
-<section id="data-fisheries-of-the-world" class="slide level2">
-<h2>Data: Fisheries of the world</h2>
+<section id="pivoting-data" class="slide level2">
+<h2>Pivoting data</h2>
 <ul>
-<li><p>Dataset 1: Data from various countries on fishing harvest</p></li>
-<li><p>Dataset 2: Countries and continents</p></li>
-<li><p>Observations: Each row represents a country</p></li>
+<li>Data sets can’t be labeled as wide or long but they can be made <em>wider</em> or <em>longer</em> for a certain analysis that requires a certain format</li>
+<li>Often, to visualize data, we pivot longer to collect information that is spread across column headings in a single column.</li>
+<li>And often, to display data in a table, we pivot wider to spread levels of a categorical variable across columns.</li>
 </ul>
-</section>
-<section id="plan" class="slide level2">
-<h2>Plan</h2>
-<p>We…</p>
-<p>have two data frames</p>
-<p>want to join them, slice them, dice them, juice them, and process them, so we can plot them</p>
 </section></section>
 <section>
 <section id="application-exercise" class="title-slide slide level1 center">
 <h1>Application exercise</h1>
 
 </section>
-<section id="ae-06" class="slide level2 smaller">
-<h2><code>ae-06</code></h2>
+<section id="ae-07" class="slide level2 smaller">
+<h2><code>ae-07</code></h2>
 <div class="task">
 <p><i class="fa-solid fa-user" aria-hidden="true"></i></p>
 <ul>
-<li>Go to the course <a href="https://github.com/sta113-f23">GitHub org</a> and find your <code>ae-06-fisheries</code> (repo name will be suffixed with your GitHub name).</li>
+<li>Go to the course <a href="https://github.com/sta113-f23">GitHub org</a> and find your <code>ae-07-majors</code> (repo name will be suffixed with your GitHub name).</li>
 <li>Clone the repo in Posit Cloud, and set up your PAT:
 <ul>
 <li>In the Console, run <code>usethis::create_github_token()</code> to create a new PAT or grab the one you created previously from a space you might have safely stored it (e.g., 1Password or similar)</li>
