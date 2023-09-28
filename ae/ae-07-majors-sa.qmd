@@ -11,15 +11,13 @@ Our ultimate goal in this application exercise is to make the following data vis
 
 ![](images/statsci-plot.png){fig-alt="Line plot of numbers of Statistical Science majors over the years (2011 - 2021). Degree types represented are BS, BS2, AB, AB2. There is an increasing trend in BS degrees and somewhat steady trend in AB degrees." fig-align="center"}
 
-- **Your turn (3 minutes):** Take a close look at the plot and describe what it shows in 2-3 sentences.
+-   **Your turn (3 minutes):** Take a close look at the plot and describe what it shows in 2-3 sentences.
 
 *Add your response here.*
 
 ## Data
 
-The data come from the [Office of the University Registrar](https://registrar.duke.edu/registration/enrollment-statistics).
-They make the data available as a table that you can download as a PDF, but I've put the data exported in a CSV file for you.
-Let's load that in.
+The data come from the [Office of the University Registrar](https://registrar.duke.edu/registration/enrollment-statistics). They make the data available as a table that you can download as a PDF, but I've put the data exported in a CSV file for you. Let's load that in.
 
 ```{r}
 #| label: load-packages-data
@@ -36,9 +34,7 @@ And let's take a look at the data.
 statsci
 ```
 
-The dataset has `r nrow(statsci)` rows and `r ncol(statsci)` columns.
-The first column (variable) is the `degree`, and there are 4 possible degrees: BS (Bachelor of Science), BS2 (Bachelor of Science, 2nd major), AB (Bachelor of Arts), AB2 (Bachelor of Arts, 2nd major).
-The remaining columns show the number of students graduating with that major in a given academic year from 2011 to 2021.
+The dataset has `r nrow(statsci)` rows and `r ncol(statsci)` columns. The first column (variable) is the `degree`, and there are 4 possible degrees: BS (Bachelor of Science), BS2 (Bachelor of Science, 2nd major), AB (Bachelor of Arts), AB2 (Bachelor of Arts, 2nd major). The remaining columns show the number of students graduating with that major in a given academic year from 2011 to 2021.
 
 -   **Your turn (4 minutes):** Take a look at the plot we aim to make and sketch the data frame we need to make the plot. Determine what each row and each column of the data frame should be. *Hint:* We need data to be in columns to map to `aes`thetic elements of the plot.
     -   Columns: `year`, `n` , `degree_type`
@@ -60,8 +56,7 @@ statsci |>
 
 -   **Question:** What is the type of the `year` variable? Why? What should it be?
 
-It's a character (`chr`) variable since the information came from the columns of the original data frame and R cannot know that these character strings represent years.
-The variable type should be numeric.
+It's a character (`chr`) variable since the information came from the columns of the original data frame and R cannot know that these character strings represent years. The variable type should be numeric.
 
 -   **Demo:** Start over with pivoting, and this time also make sure `year` is a numerical variable in the resulting data frame.
 
