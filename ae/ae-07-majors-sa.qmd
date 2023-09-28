@@ -2,6 +2,7 @@
 title: "Pivoting StatSci Majors"
 categories: 
   - Application exercise
+  - Sugested answers
 editor: visual
 ---
 

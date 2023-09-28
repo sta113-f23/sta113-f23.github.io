@@ -2,6 +2,7 @@
 title: "Visualizing data and investigating relationships"
 categories: 
   - Application exercise
+  - Sugested answers
 editor: visual
 editor_options: 
   chunk_output_type: console

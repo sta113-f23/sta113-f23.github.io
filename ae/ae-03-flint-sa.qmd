@@ -1,6 +1,8 @@
 ---
 title: "Exploring Flint's water data"
-categories: "Application Exercise"
+categories: 
+  - Application exercise
+  - Sugested answers
 editor: visual
 ---
 

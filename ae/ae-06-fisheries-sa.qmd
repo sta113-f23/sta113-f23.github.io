@@ -1,11 +1,14 @@
 ---
-title: "AE 04: Joining fisheries"
-subtitle: "Suggested answers"
+title: "Joining fisheries"
 categories: 
   - Application exercise
-  - Answers
+  - Sugested answers
 editor: visual
 ---
+
+::: {.callout-important appearance="minimal" icon="false"}
+These are suggested answers to the application exercise. They may differ slightly from the code we developed in class and may not be complete. They're provided after class to help review the application activity, but are not an alternative to working on the exercise and actively participating in class.
+:::
 
 ```{r}
 #| label: load-packages-data
