@@ -9,7 +9,7 @@ format: revealjs
 ## While you wait
 
 ::: question
-{{< fa user >}} Check your email for an email from TEAMMATES. Provide peer feedback to your teammates (and to yourself). Be constructive and encouraging.
+{{< fa user >}} Check your email for an email from TEAMMATES. Provide peer feedback to your teammates (and to yourself). Be constructive and encouraging!
 :::
 
 ## Course content
