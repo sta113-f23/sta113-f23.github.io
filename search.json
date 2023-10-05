@@ -742,11 +742,11 @@
     "text": "Tips\n\nYou’re working in the same repo as your teammates now, so merge conflicts will happen, issues will arise, and that’s fine! Commit and push often, and ask questions when stuck.\nReview the marking guidelines below and ask questions if any of the expectations are unclear.\nMake sure each team member is contributing, both in terms of quality and quantity of contribution (we will be reviewing commits from different team members).\nSet aside time to work together and apart (physically).\nCode:\n\nIn the output of your write-up, your code should be hidden (echo: false) so that your slides are neat and easy to read and your write-up is about your narrative and results only. However your document should include all your code such that if I re-render your Quarto file I should be able to obtain the results you presented. Exception: If you want to highlight something specific about a piece of code, you’re welcomed to show that portion.\nEven though your code is hidden, it should still conform to good coding practice, style, etc. You will be evaluated on code quality as well, which we will check by explicitly reviewing your Quarto documents (not just the rendered output).\n\nTeamwork: You are to complete the assignment as a team. All team members are expected to contribute equally to the completion of this assignment and team evaluations will be given at its completion - anyone judged to not have sufficiently contributed to the final product will have their grade penalized. While different team members may have different backgrounds and abilities, it is the responsibility of every team member to understand how and why all code and approaches in the assignment work.\nWhen you’re done, review the documents on GitHub to make sure you’re happy with the final state of your work. Then go get some rest!"
   },
   {
-    "objectID": "lectures/08/08-data-types-classes.html#reflection",
-    "href": "lectures/08/08-data-types-classes.html#reflection",
+    "objectID": "lectures/08/08-data-types-classes.html#while-you-wait",
+    "href": "lectures/08/08-data-types-classes.html#while-you-wait",
     "title": "Data types of classes",
-    "section": "Reflection",
-    "text": "Reflection\n\n What is one thing you learned from working on your exam? And what is one question you have from it?"
+    "section": "While you wait",
+    "text": "While you wait\n\n Check your email for an email from TEAMMATES. Provide peer feedback to your teammates (and to yourself). Be constructive and encouraging."
   },
   {
     "objectID": "lectures/08/08-data-types-classes.html#course-content",
