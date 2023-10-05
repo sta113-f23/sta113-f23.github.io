@@ -3,6 +3,8 @@ title: "Hotels, types, classes"
 categories: 
   - Application exercise
 editor: visual
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## Packages
