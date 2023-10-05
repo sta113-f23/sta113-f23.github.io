@@ -6,10 +6,10 @@ format: revealjs
 
 # Warm up
 
-## Reflection
+## While you wait
 
 ::: question
-{{< fa users >}} What is one thing you learned from working on your exam? And what is one question you have from it?
+{{< fa user >}} Check your email for an email from TEAMMATES. Provide peer feedback to your teammates (and to yourself). Be constructive and encouraging.
 :::
 
 ## Course content
