@@ -746,21 +746,49 @@
     "href": "lectures/08/08-data-types-classes.html#reflection",
     "title": "Data types of classes",
     "section": "Reflection",
-    "text": "Reflection\n\n What is one thing you learned from your reading or videos that was “new” to you? And what is one question you have from the reading, videos, or material we’ve covered so far, including the previous application exercise?"
+    "text": "Reflection\n\n What is one thing you learned from working on your exam? And what is one question you have from it?"
   },
   {
-    "objectID": "lectures/08/08-data-types-classes.html#announcements",
-    "href": "lectures/08/08-data-types-classes.html#announcements",
+    "objectID": "lectures/08/08-data-types-classes.html#course-content",
+    "href": "lectures/08/08-data-types-classes.html#course-content",
     "title": "Data types of classes",
-    "section": "Announcements",
-    "text": "Announcements\n…"
+    "section": "Course content",
+    "text": "Course content\n\nToday: Last day of “welcome to R” content\nRemainder of class: Greater emphasis on “data visualization with R”"
+  },
+  {
+    "objectID": "lectures/08/08-data-types-classes.html#project-1",
+    "href": "lectures/08/08-data-types-classes.html#project-1",
+    "title": "Data types of classes",
+    "section": "Project 1",
+    "text": "Project 1\n\nProposals have been reviewed and each team has a number of issues on their repos with my feedback\nBetween today and next Tuesday: Review proposal feedback, improve your proposals by closing issues with specific commits (more on this in a few), move on from working on your proposal to your project and make progress, particularly working on your visualizations\nNext Tuesday: Start with peer review, then learn about polishing your plots\nNext Tuesday - Thursday: Improve your projects by closing peer review issue with specific commits, finalize your presentation and your writeup\nNext Thursday: Project presentations"
+  },
+  {
+    "objectID": "lectures/08/08-data-types-classes.html#project-webpages",
+    "href": "lectures/08/08-data-types-classes.html#project-webpages",
+    "title": "Data types of classes",
+    "section": "Project webpages",
+    "text": "Project webpages\n\n\n\n\nEach of you now have a webpage for your projects!\nThis was achieved by adding a _quarto.yml file to each of your repos.\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe first thing you should do is go to your Posit Cloud project and, in the Git tab, pull my changes from your repo.\nThen, relaunch your project – three dots on top right &gt; Relaunch.\nGoing forward, when you want to see the output of what you’re working on, click on Render Project in the Build tab."
+  },
+  {
+    "objectID": "lectures/08/08-data-types-classes.html#addressing-proposal-feedback",
+    "href": "lectures/08/08-data-types-classes.html#addressing-proposal-feedback",
+    "title": "Data types of classes",
+    "section": "Addressing proposal feedback",
+    "text": "Addressing proposal feedback\n\nEach piece of feedback is noted as an issue\n\n\n\n\nReview each issue and address them – that means make a correction to your project that specifically addresses that issue, commit with a message like\n\nMoved dataset into the data folder, closes #1.\n\nwhere #1 refers to the issue number, and push. This will close the issue and associate the commit that addressed it with the issue."
+  },
+  {
+    "objectID": "lectures/08/08-data-types-classes.html#project-questions",
+    "href": "lectures/08/08-data-types-classes.html#project-questions",
+    "title": "Data types of classes",
+    "section": "Project questions?",
+    "text": "Project questions?\nbefore we get back to our regularly scheduled programming…"
   },
   {
     "objectID": "lectures/08/08-data-types-classes.html#types-and-classes-1",
     "href": "lectures/08/08-data-types-classes.html#types-and-classes-1",
     "title": "Data types of classes",
     "section": "Types and classes",
-    "text": "Types and classes\n\nType is how an object is stored in memory, e.g.,\n\ndouble: a real number stored in double-precision floatint point format.\ninteger: an integer (positive or negative)\n\n\n– Class is metadata about the object that can determine how common functions operate on that object, e.g.,\n\nfactor"
+    "text": "Types and classes\n\nType is how an object is stored in memory, e.g.,\n\ndouble: a real number stored in double-precision floating point format.\ninteger: an integer (positive or negative)\n\nClass is metadata about the object that can determine how common functions operate on that object, e.g.,\nfactor"
   },
   {
     "objectID": "lectures/08/08-data-types-classes.html#types-of-vectors",
@@ -789,6 +817,13 @@
     "title": "Data types of classes",
     "section": "Other classes",
     "text": "Other classes\nJust a couple of examples…\n\n\nDate:\n\ntoday &lt;- Sys.Date()\ntoday\n\n[1] \"2023-10-05\"\n\ntypeof(today)\n\n[1] \"double\"\n\nattributes(today)\n\n$class\n[1] \"Date\"\n\n\n\nDate-time:\n\nnow &lt;- as.POSIXct(\"2022-09-22 10:15\", tz = \"EST\")\nnow\n\n[1] \"2022-09-22 10:15:00 EST\"\n\ntypeof(now)\n\n[1] \"double\"\n\nattributes(now)\n\n$class\n[1] \"POSIXct\" \"POSIXt\" \n\n$tzone\n[1] \"EST\""
+  },
+  {
+    "objectID": "lectures/08/08-data-types-classes.html#ae-08",
+    "href": "lectures/08/08-data-types-classes.html#ae-08",
+    "title": "Data types of classes",
+    "section": "ae-08",
+    "text": "ae-08\n\n\n\nGo to the course GitHub org and find your ae-08-hotels (repo name will be suffixed with your GitHub name).\nClone the repo in Posit Cloud, open the Quarto document in the repo, set up a new PAT, and follow along and complete the exercises.\nRender, commit, and push your edits as you work through it\n\n\n\n\n\n🔗 sta113-f23.github.io"
   },
   {
     "objectID": "lectures/07/07-tidying-data.html#reflection",
