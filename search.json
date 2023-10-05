@@ -742,85 +742,85 @@
     "text": "Tips\n\nYou’re working in the same repo as your teammates now, so merge conflicts will happen, issues will arise, and that’s fine! Commit and push often, and ask questions when stuck.\nReview the marking guidelines below and ask questions if any of the expectations are unclear.\nMake sure each team member is contributing, both in terms of quality and quantity of contribution (we will be reviewing commits from different team members).\nSet aside time to work together and apart (physically).\nCode:\n\nIn the output of your write-up, your code should be hidden (echo: false) so that your slides are neat and easy to read and your write-up is about your narrative and results only. However your document should include all your code such that if I re-render your Quarto file I should be able to obtain the results you presented. Exception: If you want to highlight something specific about a piece of code, you’re welcomed to show that portion.\nEven though your code is hidden, it should still conform to good coding practice, style, etc. You will be evaluated on code quality as well, which we will check by explicitly reviewing your Quarto documents (not just the rendered output).\n\nTeamwork: You are to complete the assignment as a team. All team members are expected to contribute equally to the completion of this assignment and team evaluations will be given at its completion - anyone judged to not have sufficiently contributed to the final product will have their grade penalized. While different team members may have different backgrounds and abilities, it is the responsibility of every team member to understand how and why all code and approaches in the assignment work.\nWhen you’re done, review the documents on GitHub to make sure you’re happy with the final state of your work. Then go get some rest!"
   },
   {
-    "objectID": "lectures/08/08-data-types-classes.html#while-you-wait",
-    "href": "lectures/08/08-data-types-classes.html#while-you-wait",
+    "objectID": "lectures/08/08-types-classes.html#while-you-wait",
+    "href": "lectures/08/08-types-classes.html#while-you-wait",
     "title": "Data types of classes",
     "section": "While you wait",
     "text": "While you wait\n\n Check your email for an email from TEAMMATES. Provide peer feedback to your teammates (and to yourself). Be constructive and encouraging."
   },
   {
-    "objectID": "lectures/08/08-data-types-classes.html#course-content",
-    "href": "lectures/08/08-data-types-classes.html#course-content",
+    "objectID": "lectures/08/08-types-classes.html#course-content",
+    "href": "lectures/08/08-types-classes.html#course-content",
     "title": "Data types of classes",
     "section": "Course content",
     "text": "Course content\n\nToday: Last day of “welcome to R” content\nRemainder of class: Greater emphasis on “data visualization with R”"
   },
   {
-    "objectID": "lectures/08/08-data-types-classes.html#project-1",
-    "href": "lectures/08/08-data-types-classes.html#project-1",
+    "objectID": "lectures/08/08-types-classes.html#project-1",
+    "href": "lectures/08/08-types-classes.html#project-1",
     "title": "Data types of classes",
     "section": "Project 1",
     "text": "Project 1\n\nProposals have been reviewed and each team has a number of issues on their repos with my feedback\nBetween today and next Tuesday: Review proposal feedback, improve your proposals by closing issues with specific commits (more on this in a few), move on from working on your proposal to your project and make progress, particularly working on your visualizations\nNext Tuesday: Start with peer review, then learn about polishing your plots\nNext Tuesday - Thursday: Improve your projects by closing peer review issue with specific commits, finalize your presentation and your writeup\nNext Thursday: Project presentations"
   },
   {
-    "objectID": "lectures/08/08-data-types-classes.html#project-webpages",
-    "href": "lectures/08/08-data-types-classes.html#project-webpages",
+    "objectID": "lectures/08/08-types-classes.html#project-webpages",
+    "href": "lectures/08/08-types-classes.html#project-webpages",
     "title": "Data types of classes",
     "section": "Project webpages",
     "text": "Project webpages\n\n\n\n\nEach of you now have a webpage for your projects!\nThis was achieved by adding a _quarto.yml file to each of your repos.\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe first thing you should do is go to your Posit Cloud project and, in the Git tab, pull my changes from your repo.\nThen, relaunch your project – three dots on top right &gt; Relaunch.\nGoing forward, when you want to see the output of what you’re working on, click on Render Project in the Build tab."
   },
   {
-    "objectID": "lectures/08/08-data-types-classes.html#addressing-proposal-feedback",
-    "href": "lectures/08/08-data-types-classes.html#addressing-proposal-feedback",
+    "objectID": "lectures/08/08-types-classes.html#addressing-proposal-feedback",
+    "href": "lectures/08/08-types-classes.html#addressing-proposal-feedback",
     "title": "Data types of classes",
     "section": "Addressing proposal feedback",
     "text": "Addressing proposal feedback\n\nEach piece of feedback is noted as an issue\n\n\n\n\nReview each issue and address them – that means make a correction to your project that specifically addresses that issue, commit with a message like\n\nMoved dataset into the data folder, closes #1.\n\nwhere #1 refers to the issue number, and push. This will close the issue and associate the commit that addressed it with the issue."
   },
   {
-    "objectID": "lectures/08/08-data-types-classes.html#project-questions",
-    "href": "lectures/08/08-data-types-classes.html#project-questions",
+    "objectID": "lectures/08/08-types-classes.html#project-questions",
+    "href": "lectures/08/08-types-classes.html#project-questions",
     "title": "Data types of classes",
     "section": "Project questions?",
     "text": "Project questions?\nbefore we get back to our regularly scheduled programming…"
   },
   {
-    "objectID": "lectures/08/08-data-types-classes.html#types-and-classes-1",
-    "href": "lectures/08/08-data-types-classes.html#types-and-classes-1",
+    "objectID": "lectures/08/08-types-classes.html#types-and-classes-1",
+    "href": "lectures/08/08-types-classes.html#types-and-classes-1",
     "title": "Data types of classes",
     "section": "Types and classes",
     "text": "Types and classes\n\nType is how an object is stored in memory, e.g.,\n\ndouble: a real number stored in double-precision floating point format.\ninteger: an integer (positive or negative)\n\nClass is metadata about the object that can determine how common functions operate on that object, e.g.,\nfactor"
   },
   {
-    "objectID": "lectures/08/08-data-types-classes.html#types-of-vectors",
-    "href": "lectures/08/08-data-types-classes.html#types-of-vectors",
+    "objectID": "lectures/08/08-types-classes.html#types-of-vectors",
+    "href": "lectures/08/08-types-classes.html#types-of-vectors",
     "title": "Data types of classes",
     "section": "Types of vectors",
     "text": "Types of vectors\n\n\nYou’ll commonly encounter:\n\nlogical\ninteger\ndouble\ncharacter\n\n\nYou’ll less commonly encounter:\n\nlist\nNULL\ncomplex\nraw"
   },
   {
-    "objectID": "lectures/08/08-data-types-classes.html#types-of-functions",
-    "href": "lectures/08/08-data-types-classes.html#types-of-functions",
+    "objectID": "lectures/08/08-types-classes.html#types-of-functions",
+    "href": "lectures/08/08-types-classes.html#types-of-functions",
     "title": "Data types of classes",
     "section": "Types of functions",
     "text": "Types of functions\nYes, functions have types too, but you don’t need to worry about the differences in the context of doing data science.\n\ntypeof(mean) # regular function\n\n[1] \"closure\"\n\ntypeof(`$`) # internal function\n\n[1] \"special\"\n\ntypeof(sum) # primitive function\n\n[1] \"builtin\""
   },
   {
-    "objectID": "lectures/08/08-data-types-classes.html#factors",
-    "href": "lectures/08/08-data-types-classes.html#factors",
+    "objectID": "lectures/08/08-types-classes.html#factors",
+    "href": "lectures/08/08-types-classes.html#factors",
     "title": "Data types of classes",
     "section": "Factors",
     "text": "Factors\nA factor is a vector that can contain only predefined values. It is used to store categorical data.\n\n\n\nx &lt;- factor(c(\"a\", \"b\", \"b\", \"a\"))\nx\n\n[1] a b b a\nLevels: a b\n\ntypeof(x)\n\n[1] \"integer\"\n\nattributes(x)\n\n$levels\n[1] \"a\" \"b\"\n\n$class\n[1] \"factor\""
   },
   {
-    "objectID": "lectures/08/08-data-types-classes.html#other-classes",
-    "href": "lectures/08/08-data-types-classes.html#other-classes",
+    "objectID": "lectures/08/08-types-classes.html#other-classes",
+    "href": "lectures/08/08-types-classes.html#other-classes",
     "title": "Data types of classes",
     "section": "Other classes",
     "text": "Other classes\nJust a couple of examples…\n\n\nDate:\n\ntoday &lt;- Sys.Date()\ntoday\n\n[1] \"2023-10-05\"\n\ntypeof(today)\n\n[1] \"double\"\n\nattributes(today)\n\n$class\n[1] \"Date\"\n\n\n\nDate-time:\n\nnow &lt;- as.POSIXct(\"2022-09-22 10:15\", tz = \"EST\")\nnow\n\n[1] \"2022-09-22 10:15:00 EST\"\n\ntypeof(now)\n\n[1] \"double\"\n\nattributes(now)\n\n$class\n[1] \"POSIXct\" \"POSIXt\" \n\n$tzone\n[1] \"EST\""
   },
   {
-    "objectID": "lectures/08/08-data-types-classes.html#ae-08",
-    "href": "lectures/08/08-data-types-classes.html#ae-08",
+    "objectID": "lectures/08/08-types-classes.html#ae-08",
+    "href": "lectures/08/08-types-classes.html#ae-08",
     "title": "Data types of classes",
     "section": "ae-08",
     "text": "ae-08\n\n\n\nGo to the course GitHub org and find your ae-08-hotels (repo name will be suffixed with your GitHub name).\nClone the repo in Posit Cloud, open the Quarto document in the repo, set up a new PAT, and follow along and complete the exercises.\nRender, commit, and push your edits as you work through it\n\n\n\n\n\n🔗 sta113-f23.github.io"
@@ -1768,7 +1768,7 @@
     "href": "index.html",
     "title": "STA 113: Visualizing Data",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n  \n    \n    \n    \n    \n    \n    \n  \n  \n    \n    \n      WEEK\n      DATE\n      TOPIC\n      PREPARE\n      MATERIALS\n      DUE AT 1 PM\n    \n  \n  \n    1\nTue, Aug 29\nWelcome to STA 113FS!\n\n\n🖥️ slides\n\n\n    \nThu, Aug 31\nMeet the toolkit (R + RStudio)\n\n📖 socviz: Chp 1\n\n🖥️ slides \n⌨️ ae-01 \n⌨️ ae-02 \n🗝️ ae-02-sa\n\nGetting to know you survey \nGitHub usernames\n\n    2\nTue, Sep 5\nMeet the toolkit (Git + GitHub) + \nGrammar of graphics\n\n📖 r4ds: Chp 2.1 - 2.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-03 \n🗝️ ae-03-sa\n\n\n    \nThu, Sep 7\nVisualizing various types of data\n\n📖 r4ds: Chp 2.5 - 2.8 \n📖 r4ds: Chp 3 \n🎥 video\n\n🖥️ slides \n⌨️ ae-04 \n🗝️ ae-04-sa\n\n\n    3\nTue, Sep 12\n🦠 Class cancelled\n\n\n\n\n    \nThu, Sep 14\nGrammar of data wrangling\n\n📖 r4ds: Chp 4.1 - 4.5 \n🎥 video\n\n🖥️ slides \n⌨️ ae-05 \n🗝️ ae-05-sa\n\n📄 HW 1\n\n    4\nTue, Sep 19\n📊 Project 1 workday\n\n📖 r4ds: Chp 4.5 - 4.7 \n🎥 video\n\n\n\n    \nThu, Sep 21\nRubenstein Library Visit (Rubenstein Room 150)\n\n🎧 podcast \n📖 r4ds: Chp 5\n\n\n📄 HW 2\n\n    5\nTue, Sep 26\nWorking with multiple data frames\n\n📖 r4ds: Chp 20.1 - 20.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-06 \n🗝️ ae-06-sa\n\n\n    \nThu, Sep 28\nTidying data\n\n📖 r4ds: Chp 6 \n🎥 video\n\n🖥️ slides \n⌨️ ae-07 \n🗝️ ae-07-sa\n\n📊 Project 1 proposal\n\n    6\nTue, Oct 3\n✅ Exam 1 - In class\n\n\n\n\n    \nThu, Oct 5\nData types and classes\n\n📖 r4ds: Chp 17 \n🎥 video \n🎥 video\n\n🖥️ slides \n⌨️ ae-07\n\n✅ Exam 1 - Take home\n\n    7\nTue, Oct 10\nPresentation ready plots\n\n\n\n📊 Project 1 peer review\n\n    \nThu, Oct 12\n📊 Project 1 presentation\n\n\n\n📊 Project 1\n\n    8\nTue, Oct 17\n🍂 Fall Break - No lecture\n\n\n\n\n    \nThu, Oct 19\n\n\n\n\n    9\nTue, Oct 24\n\n\n\n📄 HW 3\n\n    \nThu, Oct 26\n📊 Project 2 workday\n\n\n\n\n    10\nTue, Oct 31\n\n\n\n📄 HW 4\n\n    \nThu, Nov 2\n\n\n\n📊 Project 2 proposal\n\n    11\nTue, Nov 7\n\n\n\n📄 HW 5\n\n    \nThu, Nov 9\n\n\n\n\n    12\nTue, Nov 14\n✅ Exam 2 - In class\n\n\n\n\n    \nThu, Nov 16\n\n\n\n✅ Exam 2 - Take home\n\n    13\nTue, Nov 21\n\n\n\n\n    \nThu, Nov 23\n🦃 Thanksgiving Break - No lecture\n\n\n\n\n    14\nTue, Nov 28\n\n\n\n📄 HW 6\n\n    \nThu, Nov 30\n\n\n\n📊 Project 2 peer review\n\n    15\nTue, Dec 5\n\n\n\n\n    \nThu, Dec 7\n📊 Project 2 presentation\n\n\n\n📊 Project 2"
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n  \n    \n    \n    \n    \n    \n    \n  \n  \n    \n    \n      WEEK\n      DATE\n      TOPIC\n      PREPARE\n      MATERIALS\n      DUE AT 1 PM\n    \n  \n  \n    1\nTue, Aug 29\nWelcome to STA 113FS!\n\n\n🖥️ slides\n\n\n    \nThu, Aug 31\nMeet the toolkit (R + RStudio)\n\n📖 socviz: Chp 1\n\n🖥️ slides \n⌨️ ae-01 \n⌨️ ae-02 \n🗝️ ae-02-sa\n\nGetting to know you survey \nGitHub usernames\n\n    2\nTue, Sep 5\nMeet the toolkit (Git + GitHub) + \nGrammar of graphics\n\n📖 r4ds: Chp 2.1 - 2.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-03 \n🗝️ ae-03-sa\n\n\n    \nThu, Sep 7\nVisualizing various types of data\n\n📖 r4ds: Chp 2.5 - 2.8 \n📖 r4ds: Chp 3 \n🎥 video\n\n🖥️ slides \n⌨️ ae-04 \n🗝️ ae-04-sa\n\n\n    3\nTue, Sep 12\n🦠 Class cancelled\n\n\n\n\n    \nThu, Sep 14\nGrammar of data wrangling\n\n📖 r4ds: Chp 4.1 - 4.5 \n🎥 video\n\n🖥️ slides \n⌨️ ae-05 \n🗝️ ae-05-sa\n\n📄 HW 1\n\n    4\nTue, Sep 19\n📊 Project 1 workday\n\n📖 r4ds: Chp 4.5 - 4.7 \n🎥 video\n\n\n\n    \nThu, Sep 21\nRubenstein Library Visit (Rubenstein Room 150)\n\n🎧 podcast \n📖 r4ds: Chp 5\n\n\n📄 HW 2\n\n    5\nTue, Sep 26\nWorking with multiple data frames\n\n📖 r4ds: Chp 20.1 - 20.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-06 \n🗝️ ae-06-sa\n\n\n    \nThu, Sep 28\nTidying data\n\n📖 r4ds: Chp 6 \n🎥 video\n\n🖥️ slides \n⌨️ ae-07 \n🗝️ ae-07-sa\n\n📊 Project 1 proposal\n\n    6\nTue, Oct 3\n✅ Exam 1 - In class\n\n\n\n\n    \nThu, Oct 5\nData types and classes\n\n📖 r4ds: Chp 17 \n🎥 video \n🎥 video\n\n🖥️ slides \n⌨️ ae-08\n\n✅ Exam 1 - Take home\n\n    7\nTue, Oct 10\nPresentation ready plots\n\n\n\n📊 Project 1 peer review\n\n    \nThu, Oct 12\n📊 Project 1 presentation\n\n\n\n📊 Project 1\n\n    8\nTue, Oct 17\n🍂 Fall Break - No lecture\n\n\n\n\n    \nThu, Oct 19\n\n\n\n\n    9\nTue, Oct 24\n\n\n\n📄 HW 3\n\n    \nThu, Oct 26\n📊 Project 2 workday\n\n\n\n\n    10\nTue, Oct 31\n\n\n\n📄 HW 4\n\n    \nThu, Nov 2\n\n\n\n📊 Project 2 proposal\n\n    11\nTue, Nov 7\n\n\n\n📄 HW 5\n\n    \nThu, Nov 9\n\n\n\n\n    12\nTue, Nov 14\n✅ Exam 2 - In class\n\n\n\n\n    \nThu, Nov 16\n\n\n\n✅ Exam 2 - Take home\n\n    13\nTue, Nov 21\n\n\n\n\n    \nThu, Nov 23\n🦃 Thanksgiving Break - No lecture\n\n\n\n\n    14\nTue, Nov 28\n\n\n\n📄 HW 6\n\n    \nThu, Nov 30\n\n\n\n📊 Project 2 peer review\n\n    15\nTue, Dec 5\n\n\n\n\n    \nThu, Dec 7\n📊 Project 2 presentation\n\n\n\n📊 Project 2"
   },
   {
     "objectID": "hw/hw-2.html",
