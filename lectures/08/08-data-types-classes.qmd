@@ -1,0 +1,125 @@
+---
+title: Data types of classes
+subtitle: Lecture 8
+format: revealjs
+---
+
+# Warm up
+
+## Reflection
+
+::: question
+{{< fa users >}} What is one thing you learned from your reading or videos that was "new" to you? And what is one question you have from the reading, videos, or material we've covered so far, including the previous application exercise?
+:::
+
+## Announcements
+
+...
+
+# Types and classes
+
+## Types and classes
+
+-   Type is how an object is stored in memory, e.g.,
+
+    -   `double`: a real number stored in double-precision floatint point format.
+    -   `integer`: an integer (positive or negative)
+
+-- Class is metadata about the object that can determine how common functions operate on that object, e.g.,
+
+-   `factor`
+
+## Types of vectors
+
+::: columns
+::: {.column width="50%"}
+You'll commonly encounter:
+
+-   `logical`
+-   `integer`
+-   `double`
+-   `character`
+:::
+
+::: {.column width="50%"}
+You'll less commonly encounter:
+
+-   `list`
+-   `NULL`
+-   `complex`
+-   `raw`
+:::
+:::
+
+## Types of functions
+
+Yes, functions have types too, but you don't need to worry about the differences in the context of doing data science.
+
+```{r}
+typeof(mean) # regular function
+
+typeof(`$`) # internal function
+
+typeof(sum) # primitive function
+```
+
+## Factors
+
+A `factor` is a vector that can contain only predefined values. It is used to store categorical data.
+
+::: columns
+::: {.column width="50%"}
+```{r}
+x <- factor(c("a", "b", "b", "a"))
+x
+
+typeof(x)
+
+attributes(x)
+```
+:::
+
+::: {.column width="50%"}
+![](images/08/factor.png){fig-align="center" width="400"}
+:::
+:::
+
+## Other classes
+
+Just a couple of examples...
+
+::: columns
+::: {.column width="50%"}
+Date:
+
+```{r}
+today <- Sys.Date()
+today
+
+typeof(today)
+
+attributes(today)
+```
+:::
+
+::: {.column width="50%"}
+Date-time:
+
+```{r}
+now <- as.POSIXct("2022-09-22 10:15", tz = "EST")
+now
+
+typeof(now)
+
+attributes(now)
+```
+:::
+:::
+
+# Application exercise
+
+::: appex
+-   Go to the course [GitHub org](https://github.com/sta199-f22-1) and find your `ae-08` (repo name will be suffixed with your GitHub name).
+-   Clone the repo in your container, open the Quarto document in the repo, and follow along and complete the exercises.
+-   Render, commit, and push your edits by the AE deadline -- 3 days from today.
+:::

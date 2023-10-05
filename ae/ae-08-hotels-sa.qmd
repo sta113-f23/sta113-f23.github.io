@@ -1,0 +1,224 @@
+---
+title: "Hotels, types, classes"
+categories: 
+  - Application exercise
+  - Sugested answers
+editor: visual
+---
+
+## Packages
+
+We will use the following two packages in this application exercise.
+
+-   **tidyverse**: For data import, wrangling, and visualization.
+-   **skimr**: For summarizing the entire data frame at once.
+-   **scales**: For better axis labels.
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(tidyverse)
+library(skimr)
+library(scales)
+```
+
+## Type coercion
+
+-   **Demo:** Determine the type of the following vector. And then, change the type to numeric.
+
+    ```{r}
+    #| label: typeof-x
+
+    x <- c("1", "2", "3")
+    typeof(x)
+
+    as.numeric(x)
+    ```
+
+-   **Demo:** Once again, determine the type of the following vector. And then, change the type to numeric. What's different than the previous exercise?
+
+    ```{r}
+    #| label: typeof-y
+
+    y <- c("a", "b", "c")
+    typeof(y)
+
+    as.numeric(y)
+    ```
+
+-   **Demo:** Once again, determine the type of the following vector. And then, change the type to numeric. What's different than the previous exercise?
+
+    ```{r}
+    #| label: typeof-z
+
+    z <- c("1", "2", "three")
+    typeof(z)
+
+    as.numeric(z)
+    ```
+
+-   **Demo:** Suppose you conducted a survey where you asked people how many cars their household owns collectively. And the answers are as follows:
+
+    ```{r}
+    #| label: survey-results
+
+    survey_results <- tibble(cars = c(1, 2, "three"))
+    survey_results
+    ```
+
+    This is annoying because of that third survey taker who just had to go and type out the number instead of providing as a numeric value. So now you need to update the `cars` variable to be numeric. You do the following
+
+    ```{r}
+    #| label: survey-results-mutate-1
+
+    survey_results |>
+      mutate(cars = as.numeric(cars))
+    ```
+
+    And now things are even more annoying because you get a warning `NAs introduced by coercion` that happened while computing `cars = as.numeric(cars)` and the response from the third survey taker is now an `NA` (you lost their data). Fix your `mutate()` call to avoid this warning.
+
+    ```{r}
+    #| label: survey-results-mutate-2
+
+    survey_results |>
+      mutate(
+        cars = if_else(cars == "three", "3", cars),
+        cars = as.numeric(cars)
+        )
+    ```
+
+-   **Your turn:** First, guess the type of the vector. Then, check if you guessed right. I've done the first one for you, you'll see that it's helpful to check the type of each element of the vector first.
+
+    -   `c(1, 1L, "C")`
+
+        ```{r}
+        v1 <- c(1, 1L, "C")
+
+        # to help you guess
+        typeof(1)
+        typeof(1L)
+        typeof("C")
+
+        # to check after you guess
+        typeof(v1)
+        ```
+
+    -   `c(1L / 0, "A")`
+
+        ```{r}
+        v2 <- c(1L / 0, "A")
+
+        # to help you guess
+        typeof(1L)
+        typeof(0)
+        typeof(1L / 0)
+        typeof("A")
+
+        # to check after you guess
+        typeof(v2)
+        ```
+
+    -   `c(1:3, 5)`
+
+        ```{r}
+        v3 <- c(1:3, 5)
+
+        # to help you guess
+        typeof(1:3)
+        typeof(5)
+
+        # to check after you guess
+        typeof(v3)
+        ```
+
+    -   `c(3, "3+")`
+
+        ```{r}
+        v4 <- c(3, "3+")
+
+        # to help you guess
+        typeof(3)
+        typeof("3+")
+
+        # to check after you guess
+        typeof(v4)
+        ```
+
+    -   `c(NA, TRUE)`
+
+        ```{r}
+        v5 <- c(NA, TRUE)
+
+        # to help you guess
+        typeof(NA)
+        typeof(TRUE)
+
+        # to check after you guess
+        typeof(v5)
+        ```
+
+## Hotel bookings
+
+```{r}
+#| label: load-data
+#| message: false
+# From TidyTuesday: https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11/readme.md
+
+hotels <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv")
+```
+
+**Question:** Take a look at the the following visualization. How are the months ordered? What would be a better order?
+
+![](images/hotel-prices-months.png){fig-align="center"}
+
+**Demo:** Reorder the months on the x-axis (levels of `arrival_date_month`) in a way that makes more sense. You will want to use a function from the **forcats** package, see <https://forcats.tidyverse.org/reference/index.html> for inspiration and help.
+
+```{r}
+#| label: hotels-plot
+
+hotels |>
+  group_by(hotel, arrival_date_month) |>   # group by hotel type and arrival month
+  summarise(mean_adr = mean(adr), .groups = "drop") |>       # calculate mean adr for each group
+  ggplot(aes(
+    x = arrival_date_month,                 # x-axis = arrival_date_month
+    y = mean_adr,                           # y-axis = mean_adr calculated above
+    group = hotel,                          # group lines by hotel type
+    color = hotel)                          # and color by hotel type
+  ) +
+  geom_line() +                             # use lines to represent data
+  theme_minimal() +                         # use a minimal theme
+  labs(
+    x = "Arrival month",                 # customize labels
+    y = "Mean ADR (average daily rate)",
+    title = "Comparison of resort and city hotel prices across months",
+    subtitle = "Resort hotel prices soar in the summer while ciry hotel prices remain relatively constant throughout the year",
+    color = "Hotel type"
+  )
+```
+
+**Stretch goal:** If you finish the above task before time is up, change the y-axis label so the values are shown with dollar signs, e.g. \$80 instead of 80. You will want to use a function from the **scales** package, see <https://scales.r-lib.org/reference/index.html> for inspiration and help.
+
+```{r}
+#| label: hotels-plot-improve
+
+hotels |>
+  group_by(hotel, arrival_date_month) |>   # group by hotel type and arrival month
+  summarise(mean_adr = mean(adr), .groups = "drop") |>       # calculate mean adr for each group
+  ggplot(aes(
+    x = arrival_date_month,                 # x-axis = arrival_date_month
+    y = mean_adr,                           # y-axis = mean_adr calculated above
+    group = hotel,                          # group lines by hotel type
+    color = hotel)                          # and color by hotel type
+  ) +
+  geom_line() +                             # use lines to represent data
+  theme_minimal() +                         # use a minimal theme
+  labs(
+    x = "Arrival month",                 # customize labels
+    y = "Mean ADR (average daily rate)",
+    title = "Comparison of resort and city hotel prices across months",
+    subtitle = "Resort hotel prices soar in the summer while ciry hotel prices remain relatively constant throughout the year",
+    color = "Hotel type"
+  ) +
+  scale_y_continuous(labels = label_dollar())
+```
