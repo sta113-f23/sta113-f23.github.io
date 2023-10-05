@@ -9,12 +9,68 @@ format: revealjs
 ## Reflection
 
 ::: question
-{{< fa users >}} What is one thing you learned from your reading or videos that was "new" to you? And what is one question you have from the reading, videos, or material we've covered so far, including the previous application exercise?
+{{< fa users >}} What is one thing you learned from working on your exam? And what is one question you have from it?
 :::
 
-## Announcements
+## Course content
 
-...
+-   Today: Last day of "welcome to R" content
+
+-   Remainder of class: Greater emphasis on "data visualization with R"
+
+## Project 1 {.smaller}
+
+-   Proposals have been reviewed and each team has a number of issues on their repos with my feedback
+
+-   Between today and next Tuesday: Review proposal feedback, improve your proposals by closing issues with specific commits (more on this in a few), move on from working on your proposal to your project and make progress, particularly working on your visualizations
+
+-   Next Tuesday: Start with peer review, then learn about polishing your plots
+
+-   Next Tuesday - Thursday: Improve your projects by closing peer review issue with specific commits, finalize your presentation and your writeup
+
+-   Next Thursday: Project presentations
+
+## Project webpages
+
+::: columns
+::: {.column width="70%"}
+::: incremental
+-   Each of you now have a webpage for your projects!
+
+-   This was achieved by adding a `_quarto.yml` file to each of your repos.
+:::
+:::
+
+::: {.column width="30%"}
+![](images/url.png){fig-align="right" width="300"}
+:::
+:::
+
+. . .
+
+::: incremental
+-   The first thing you should do is go to your Posit Cloud project and, in the Git tab, **pull** my changes from your repo.
+-   Then, relaunch your project -- three dots on top right \> Relaunch.
+-   Going forward, when you want to see the output of what you're working on, click on **Render Project** in the **Build** tab.
+:::
+
+## Addressing proposal feedback
+
+-   Each piece of feedback is noted as an **issue**
+
+![](images/issues.png){fig-align="center"}
+
+. . .
+
+-   Review each issue and address them -- that means make a correction to your project that specifically addresses that issue, commit with a message like
+
+    > Moved dataset into the data folder, closes #1.
+
+    where `#1` refers to the issue number, and push. This will close the issue and associate the commit that addressed it with the issue.
+
+## Project questions?
+
+before we get back to our regularly scheduled programming...
 
 # Types and classes
 
@@ -22,10 +78,10 @@ format: revealjs
 
 -   Type is how an object is stored in memory, e.g.,
 
-    -   `double`: a real number stored in double-precision floatint point format.
+    -   `double`: a real number stored in double-precision floating point format.
     -   `integer`: an integer (positive or negative)
 
--- Class is metadata about the object that can determine how common functions operate on that object, e.g.,
+-   Class is metadata about the object that can determine how common functions operate on that object, e.g.,
 
 -   `factor`
 
@@ -80,7 +136,7 @@ attributes(x)
 :::
 
 ::: {.column width="50%"}
-![](images/08/factor.png){fig-align="center" width="400"}
+![](images/factor.png){fig-align="center" width="400"}
 :::
 :::
 
@@ -116,10 +172,12 @@ attributes(now)
 :::
 :::
 
-# Application exercise
+## `ae-08`
 
-::: appex
--   Go to the course [GitHub org](https://github.com/sta199-f22-1) and find your `ae-08` (repo name will be suffixed with your GitHub name).
--   Clone the repo in your container, open the Quarto document in the repo, and follow along and complete the exercises.
--   Render, commit, and push your edits by the AE deadline -- 3 days from today.
+::: task
+{{< fa user >}}
+
+-   Go to the course [GitHub org](https://github.com/sta113-f23) and find your `ae-08-hotels` (repo name will be suffixed with your GitHub name).
+-   Clone the repo in Posit Cloud, open the Quarto document in the repo, set up a new PAT, and follow along and complete the exercises.
+-   Render, commit, and push your edits as you work through it
 :::
