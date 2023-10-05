@@ -32,13 +32,13 @@ Your proposal should include:
 
 #### Reviewer tasks {.unnumbered}
 
-Each team will review the projects of two other teams. A few days before the peer review deadline, teams will have access to the project repos of the two teams whose work they're reviewing. Reviews should start by cloning the team's repo, re-rendering it locally to make sure you can reproduce their work, and then adding an issue to their repo with your peer review feedback.
+Each team will review the project of one other team. A few days before the peer review deadline, teams will have access to the project repo of the team whose work they're reviewing. Reviews should start by cloning the team's repo, re-rendering it locally to make sure you can reproduce their work, and then adding an issue to their repo with your peer review feedback.
 
 The reviewer / reviewee assignments can be found below:
 
-```         
-TBA
-```
+- Coding Clowns will review Just Make Some Noise
+- Just Make Some Noise will review Stats Slayers
+- Stats Slayers will review Coding Clowns
 
 Teams will develop the review together, with discussion among all team members, but only one team member will submit it as an issue on the project repo. To do so, go to the *Issues* tab, click on the green *New issue* button on the top right, and then click on the green *Get started* button for the issue template titled *Peer review*.
 
@@ -90,28 +90,26 @@ The following folders and files in your project repository:
 
 | Total                                        | 100 pts                                          |
 |-----------------------------------|-------------------------------------|
-| Proposal[^1]                                 | 10 pts                                           |
+| Proposal                                     | 10 pts                                           |
 | Presentation                                 | 30 pts                                           |
 |                                              | (25 pts from teaching team, 5 pts from audience) |
 | Write-up                                     | 30 pts                                           |
-| Reproducibility, style, and organization[^2] | 10 pts                                           |
-| Within team peer evaluation[^3]              | 10 pts                                           |
-| Between team peer evaluation[^4]             | 10 pts                                           |
+| Reproducibility, style, and organization[^1] | 10 pts                                           |
+| Within team peer evaluation[^2]              | 10 pts                                           |
+| Between team peer evaluation[^3]             | 10 pts                                           |
 
-[^1]: Your proposal score will also take into consideration how much you've improved your proposal based on peer feedback.
+[^1]: Style and format does count for this assignment, so please take the time to make sure everything looks good and your data and code are properly formatted.
 
-[^2]: Style and format does count for this assignment, so please take the time to make sure everything looks good and your data and code are properly formatted.
+[^2]: This relates to your contribution to the teamwork and how your team members evaluate this contribution. Scores for each teammate will be different for this component of the project grade.
 
-[^3]: This relates to your contribution to the teamwork and how your team members evaluate this contribution. Scores for each teammate will be different for this component of the project grade.
-
-[^4]: This relates to the quality and quantity of the peer review you provide for other teams.
+[^3]: This relates to the quality and quantity of the peer review you provide for other teams.
 
 Some of the components are further detailed below.
 
 ### Proposal (10 points)
 
 -   Write-up - All required components included.
--   Workflow - Peer review issues closed via commits.
+-   Workflow - A reasonable number of commits.
 -   Teamwork - All team members must contribute to the repo via commits.
 
 ### Presentation (30 points)
