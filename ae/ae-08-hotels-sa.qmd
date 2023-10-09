@@ -214,7 +214,7 @@ hotels |>
   geom_line() +                             # use lines to represent data
   theme_minimal() +                         # use a minimal theme
   labs(
-    x = "Arrival month",                 # customize labels
+    x = "Arrival month",                    # customize labels
     y = "Mean ADR (average daily rate)",
     title = "Comparison of resort and city hotel prices across months",
     subtitle = "Resort hotel prices soar in the summer while ciry hotel prices remain relatively constant throughout the year",
