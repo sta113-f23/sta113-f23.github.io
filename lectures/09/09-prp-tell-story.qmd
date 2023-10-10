@@ -388,7 +388,7 @@ First, ask yourself, must you include multiple plots on a slide? For example, is
 
 ## Take home exam redo (optional)
 
--   **Due:** Friday, Oct 13 at 4 pm
+-   **Due:** Friday, Oct 13 at 1 pm
 -   Must request opening your exam repo back up for resubmission by end of class on Thursday by messaging me on Slack
 -   Work in `exam-1-redo.qmd`, this is a copy of your exam submission, without any changes I might have implemented to get it to render -- do not overwrite `exam-1.qmd`.
 -   Improve your answers [**working on your own**]{.underline}. The same rules as the exam applies.
