@@ -2,7 +2,7 @@
 title: "Project 1"
 ---
 
-For this project, you will be use the Pell Grants dataset from the [TidyTuesday project](https://github.com/rfordatascience/tidytuesday). Your task for the project is to come up with **one** questions to answer, answer it with **two** data visualizations, and write-up and present your analysis and findings. You will also get to peer review others' projects.
+For this project, you will be use the Pell Grants dataset from the [TidyTuesday project](https://github.com/rfordatascience/tidytuesday). Your task for the project is to come up with **one** question to answer, answer it with **two** data visualizations, and write-up and present your analysis and findings. You will also get to peer review others' projects.
 
 ## Dataset
 
@@ -10,7 +10,7 @@ To learn more about the dataset, visit <https://github.com/rfordatascience/tidyt
 
 ## Question
 
-The questions you come up with should involve **more than two variables** two answer.
+The question you come up with should involve **more than two variables** two answer.
 
 ## Due dates
 
@@ -36,9 +36,9 @@ Each team will review the project of one other team. A few days before the peer 
 
 The reviewer / reviewee assignments can be found below:
 
-- Coding Clowns will review Just Make Some Noise
-- Just Make Some Noise will review Stats Slayers
-- Stats Slayers will review Coding Clowns
+-   Coding Clowns will review Just Make Some Noise
+-   Just Make Some Noise will review Stats Slayers
+-   Stats Slayers will review Coding Clowns
 
 Teams will develop the review together, with discussion among all team members, but only one team member will submit it as an issue on the project repo. To do so, go to the *Issues* tab, click on the green *New issue* button on the top right, and then click on the green *Get started* button for the issue template titled *Peer review*.
 
