@@ -1,0 +1,373 @@
+---
+title: "Presentation ready<br>plots I:<br>Telling a story"
+subtitle: Lecture 9
+format: revealjs
+editor_options: 
+  chunk_output_type: console
+---
+
+# Warm up
+
+## Peer review
+
+| Reviewer             | Reviewee             |
+|----------------------|----------------------|
+| Coding Clowns        | Just Make Some Noise |
+| Just Make Some Noise | Stats Slayers        |
+| Stats Slayers        | Coding Clowns        |
+
+-   Go to the team's repo and view their website
+
+-   Clone the team's repo and render project -- note any challenges with reproducing
+
+-   Fill out the questions in the peer review template issue
+
+-   Detailed instructions at <https://sta113-f23.github.io/project/project-1.html#reviewer-tasks>
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 30)
+```
+
+# Telling a story
+
+## Multiple ways of telling a story
+
+-   Sequential plots: Motivation, then resolution
+
+-   A single plot: Resolution, and hidden in it motivation
+
+::: {.callout-note appearance="minimal"}
+**Project note:** you're asked to create two plots for your question. One possible approach: Start with a plot showing the raw data, and show derived quantities (e.g. percent increases, averages, coefficients of fitted models) in the subsequent plot.
+:::
+
+## Simplicity vs. complexity {.smaller}
+
+> When you're trying to show too much data at once you may end up not showing anything.
+
+-   Never assume your audience can rapidly process complex visual displays
+
+-   Don't add variables to your plot that are tangential to your story
+
+-   Don't jump straight to a highly complex figure; first show an easily digestible subset (e.g., show one facet first)
+
+-   Aim for memorable, but clear
+
+::: {.callout-note appearance="minimal"}
+**Project note:** Make sure to leave time to iterate on your plots after you practice your presentation. If certain plots are getting too wordy to explain, take time to simplify them!
+:::
+
+## Consistency vs. repetitiveness
+
+> Be consistent but don't be repetitive.
+
+-   Use consistent features throughout plots (e.g., same color represents same level on all plots)
+
+-   Aim to use a different type of visualization for each distinct analysis
+
+::: {.callout-note appearance="minimal"}
+**Project note:** If possible, ask a friend who is not in the class to listen to your presentation and then ask them what they remember. Then, ask yourself: is that what you wanted them to remember?
+:::
+
+# Designing effective visualizations
+
+## Packages and data {.smaller}
+
+```{r}
+library(tidyverse)
+library(ggrepel)
+library(ggthemes)
+```
+
+```{r}
+#| output-location: column
+
+d <- tribble(
+  ~category,                     ~value,
+  "Cutting tools"                , 0.03,
+  "Buildings and administration" , 0.22,
+  "Labor"                        , 0.31,
+  "Machinery"                    , 0.27,
+  "Workplace materials"          , 0.17
+)
+d
+```
+
+## Keep it simple
+
+::: columns
+::: {.column width="40%"}
+![](images/pie.jpg)
+:::
+
+::: {.column width="60%"}
+```{r}
+#| echo: false
+#| out-width: "100%"
+#| fig-width: 4
+#| fig-asp: 0.5
+
+ggplot(d, aes(y = fct_reorder(category, value), x = value)) +
+  geom_col() +
+  labs(x = NULL, y = NULL)
+```
+:::
+:::
+
+## Judging relative area
+
+![](images/pie-areas.png){fig-align="center" width="800"}
+
+. . .
+
+![](images/bar-areas.png){fig-align="center" width="800"}
+
+::: aside
+From Data to Viz caveat collection - [The issue with pie chart](https://www.data-to-viz.com/caveat/pie.html)
+:::
+
+## Use color to draw attention
+
+<br/> <br/>
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| out-width: "100%"
+#| fig-width: 4
+#| fig-asp: 0.5
+
+ggplot(d, aes(x = category, y = value, fill = category)) +
+  geom_col(show.legend = FALSE) +
+  labs(x = NULL, y = NULL) +
+  scale_x_discrete(labels = label_wrap_gen(width = 20))
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| out-width: "100%"
+#| fig-width: 4
+#| fig-asp: 0.5
+
+p <- ggplot(d, aes(y = fct_reorder(category, value), x = value, fill = category)) +
+  geom_col(show.legend = FALSE) +
+  labs(x = NULL, y = NULL) +
+  scale_fill_manual(values = c("red", rep("gray", 4)))
+
+p
+```
+:::
+:::
+
+## Play with themes for a non-standard look {.smaller}
+
+```{r}
+#| out-width: "100%"
+#| fig-width: 4
+#| fig-asp: 0.5
+#| layout-ncol: 2
+#| echo: false
+
+p + theme_bw() + labs(title = "theme_bw()")
+p + theme_linedraw() + labs(title = "theme_linedraw()")
+p + theme_minimal() + labs(title = "theme_minimal()")
+p + theme_dark() + labs(title = "theme_dark()")
+```
+
+## Go beyond ggplot2 themes -- ggthemes {.smaller}
+
+```{r}
+#| out-width: "100%"
+#| fig-width: 5
+#| fig-asp: 0.5
+#| layout-ncol: 2
+#| echo: false
+
+p + theme_economist() + labs(title = "theme_economist()")
+p + theme_fivethirtyeight() + labs(title = "theme_fivethirtyeight()")
+p + theme_solarized() + labs(title = "theme_solarized()")
+p + theme_tufte() + labs(title = "theme_tufte()")
+```
+
+## Tell a story
+
+::: columns
+::: {.column width="50%"}
+![](images/duke-hires-1.png){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+![](images/duke-hires-2.png){fig-align="center"}
+:::
+:::
+
+::: aside
+*Credit*: Angela Zoss and Eric Monson, Duke DVS
+:::
+
+## Leave out non-story details
+
+::: columns
+::: {.column width="50%"}
+![](images/too-many-details.png){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+![](images/fewer-details.png){fig-align="center"}
+:::
+:::
+
+::: aside
+*Credit*: Angela Zoss and Eric Monson, Duke DVS
+:::
+
+## Order matters
+
+::: columns
+::: {.column width="50%"}
+![](images/unordered.png){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+![](images/ordered.png){fig-align="center"}
+:::
+:::
+
+::: aside
+*Credit*: Angela Zoss and Eric Monson, Duke DVS
+:::
+
+## Clearly indicate missing data
+
+![](images/missing-data.png){fig-align="center"}
+
+::: aside
+http://ivi.sagepub.com/content/10/4/271, Angela Zoss and Eric Monson, Duke DVS
+:::
+
+## Reduce cognitive load
+
+![](images/cognitive-load.png){fig-align="center"}
+
+::: aside
+http://www.storytellingwithdata.com/2012/09/some-finer-points-of-data-visualization.html
+:::
+
+## Use descriptive titles
+
+::: columns
+::: {.column width="50%"}
+![](images/title-non-descriptive.png){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+![](images/title-descriptive.png){fig-align="center"}
+:::
+:::
+
+::: aside
+*Credit*: Angela Zoss and Eric Monson, Duke DVS
+:::
+
+## Annotate figures
+
+![](images/annotate.png){fig-align="center"}
+
+::: aside
+https://bl.ocks.org/susielu/23dc3082669ee026c552b85081d90976
+:::
+
+# Plot sizing and layout
+
+## Sample plots
+
+```{r}
+#| fig-show: hide
+
+p_hist <- ggplot(mtcars, aes(x = mpg)) +
+  geom_histogram(binwidth = 2)
+
+p_text <- mtcars |>
+  rownames_to_column() |>
+  ggplot(aes(x = disp, y = mpg)) +
+  geom_text_repel(aes(label = rowname)) +
+  coord_cartesian(clip = "off")
+```
+
+## Small `fig-width`
+
+For a zoomed-in look
+
+```{r}
+#| echo: fenced
+#| fig-width: 3
+#| fig-asp: 0.618
+
+p_hist
+```
+
+## Large `fig-width`
+
+For a zoomed-out look
+
+```{r}
+#| echo: fenced
+#| fig-width: 10
+#| fig-asp: 0.618
+
+p_hist
+```
+
+## `fig-width` affects text size
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 5
+#| fig-asp: 0.618
+
+p_text +
+  labs(title = "fig.width = 5")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| fig-width: 10
+#| fig-asp: 0.618
+
+p_text +
+  labs(title = "fig.width = 10")
+```
+:::
+:::
+
+## Multiple plots on a slide
+
+::: {.callout-warning appearance="minimal"}
+First, ask yourself, must you include multiple plots on a slide? For example, is your narrative about comparing results from two plots?
+:::
+
+-   If no, then don't! Move the second plot to to the next slide!
+
+-   If yes, use columns and sequential reveal.
+
+# Project workflow overview
+
+## Demo
+
+-   Rendering individual documents
+-   Write-up:
+    -   Cross referencing
+    -   Citations
+-   Website:
+    -   Rendering site
+    -   Making sure your website reflects your latest changes
+    -   Customizing the look of your website (optional)
