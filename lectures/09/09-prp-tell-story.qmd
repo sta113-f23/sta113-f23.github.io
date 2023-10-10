@@ -27,7 +27,7 @@ editor_options:
 ```{r}
 #| echo: false
 
-countdown::countdown(minutes = 30)
+countdown::countdown(minutes = 25)
 ```
 
 # Telling a story
@@ -371,3 +371,26 @@ First, ask yourself, must you include multiple plots on a slide? For example, is
     -   Rendering site
     -   Making sure your website reflects your latest changes
     -   Customizing the look of your website (optional)
+
+# Exam 1
+
+## Take home exam common issues {.smaller}
+
+::: incremental
+-   Do not use absolute paths to load data, use relative paths, e.g. `"data/tv.csv"` not `"/cloud/project/data/tv.csv"`.
+-   The tidyverse packages already loads nine packages with it: ggplot2, dplyr, tidyr, readr, purrr, tibble, stringr, forcats, lubridate. No need to load these with `library()` after the tidyverse is loaded.
+-   Similarly, no need for `readr::read_csv()` after tidyverse is loaded, you can just do `read_csv()`.
+-   Pay attention to code style and indentation.
+-   Do not load data and packages for each question, once per document is sufficient.
+-   **D**o not **R**epeat **Y**ourself - DRY: If using the same data in further analysis (subsequent questions), prep the data (filter) once and save it and use that in subsequent analysis.
+-   If using `count()` to create a frequency table, the resulting `n` column is numeric, no need to convert it to numeric again.
+:::
+
+## Take home exam redo (optional)
+
+-   Due: Friday, Oct 13 at 5pm
+-   Must request opening your exam repo back up for resubmission by end of class on Thursday by messaging me on Slack
+-   Work in `exam-1-redo.qmd`, this is a copy of your exam submission, without any changes I might have implemented to get it to render -- do not overwrite `exam-1.qmd`.
+-   Improve your answers [**working on your own**]{.underline}. The same rules as the exam applies.
+-   You will be eligible to receive up to 50% of the points you missed on the take home portion of the exam.
+-   There is no in-class exam redo.
