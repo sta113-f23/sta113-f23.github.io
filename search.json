@@ -1523,7 +1523,7 @@
     "href": "lectures/09/09-prp-tell-story.html#peer-review",
     "title": "Presentation readyplots I:Telling a story",
     "section": "Peer review",
-    "text": "Peer review\n\n\n\nReviewer\nReviewee\n\n\n\n\nCoding Clowns\nJust Make Some Noise\n\n\nJust Make Some Noise\nStats Slayers\n\n\nStats Slayers\nCoding Clowns\n\n\n\n\nGo to the team’s repo and view their website\nClone the team’s repo and render project – note any challenges with reproducing\nFill out the questions in the peer review template issue\nDetailed instructions at https://sta113-f23.github.io/project/project-1.html#reviewer-tasks\n\n\n\n\n−+\n30:00"
+    "text": "Peer review\n\n\n\nReviewer\nReviewee\n\n\n\n\nCoding Clowns\nJust Make Some Noise\n\n\nJust Make Some Noise\nStats Slayers\n\n\nStats Slayers\nCoding Clowns\n\n\n\n\nGo to the team’s repo and view their website\nClone the team’s repo and render project – note any challenges with reproducing\nFill out the questions in the peer review template issue\nDetailed instructions at https://sta113-f23.github.io/project/project-1.html#reviewer-tasks\n\n\n\n\n−+\n25:00"
   },
   {
     "objectID": "lectures/09/09-prp-tell-story.html#multiple-ways-of-telling-a-story",
@@ -1677,7 +1677,21 @@
     "href": "lectures/09/09-prp-tell-story.html#demo",
     "title": "Presentation readyplots I:Telling a story",
     "section": "Demo",
-    "text": "Demo\n\nRendering individual documents\nWrite-up:\n\nCross referencing\nCitations\n\nWebsite:\n\nRendering site\nMaking sure your website reflects your latest changes\nCustomizing the look of your website (optional)\n\n\n\n\n\n🔗 sta113-f23.github.io"
+    "text": "Demo\n\nRendering individual documents\nWrite-up:\n\nCross referencing\nCitations\n\nWebsite:\n\nRendering site\nMaking sure your website reflects your latest changes\nCustomizing the look of your website (optional)"
+  },
+  {
+    "objectID": "lectures/09/09-prp-tell-story.html#take-home-exam-common-issues",
+    "href": "lectures/09/09-prp-tell-story.html#take-home-exam-common-issues",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Take home exam common issues",
+    "text": "Take home exam common issues\n\n\nDo not use absolute paths to load data, use relative paths, e.g. \"data/tv.csv\" not \"/cloud/project/data/tv.csv\".\nThe tidyverse packages already loads nine packages with it: ggplot2, dplyr, tidyr, readr, purrr, tibble, stringr, forcats, lubridate. No need to load these with library() after the tidyverse is loaded.\nSimilarly, no need for readr::read_csv() after tidyverse is loaded, you can just do read_csv().\nPay attention to code style and indentation.\nDo not load data and packages for each question, once per document is sufficient.\nDo not Repeat Yourself - DRY: If using the same data in further analysis (subsequent questions), prep the data (filter) once and save it and use that in subsequent analysis.\nIf using count() to create a frequency table, the resulting n column is numeric, no need to convert it to numeric again."
+  },
+  {
+    "objectID": "lectures/09/09-prp-tell-story.html#take-home-exam-redo-optional",
+    "href": "lectures/09/09-prp-tell-story.html#take-home-exam-redo-optional",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Take home exam redo (optional)",
+    "text": "Take home exam redo (optional)\n\nDue: Friday, Oct 13 at 5pm\nMust request opening your exam repo back up for resubmission by end of class on Thursday by messaging me on Slack\nWork in exam-1-redo.qmd, this is a copy of your exam submission, without any changes I might have implemented to get it to render – do not overwrite exam-1.qmd.\nImprove your answers working on your own. The same rules as the exam applies.\nYou will be eligible to receive up to 50% of the points you missed on the take home portion of the exam.\nThere is no in-class exam redo.\n\n\n\n\n🔗 sta113-f23.github.io"
   },
   {
     "objectID": "lectures/06/06-multiple-data-frames.html#reflection",

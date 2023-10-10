@@ -450,9 +450,9 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_b74b555d" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_83137ab3" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">30</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">25</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -867,6 +867,36 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <li>Making sure your website reflects your latest changes</li>
 <li>Customizing the look of your website (optional)</li>
 </ul></li>
+</ul>
+</section></section>
+<section>
+<section id="exam-1" class="title-slide slide level1 center">
+<h1>Exam 1</h1>
+
+</section>
+<section id="take-home-exam-common-issues" class="slide level2 smaller">
+<h2>Take home exam common issues</h2>
+<div>
+<ul>
+<li class="fragment">Do not use absolute paths to load data, use relative paths, e.g.&nbsp;<code>"data/tv.csv"</code> not <code>"/cloud/project/data/tv.csv"</code>.</li>
+<li class="fragment">The tidyverse packages already loads nine packages with it: ggplot2, dplyr, tidyr, readr, purrr, tibble, stringr, forcats, lubridate. No need to load these with <code>library()</code> after the tidyverse is loaded.</li>
+<li class="fragment">Similarly, no need for <code>readr::read_csv()</code> after tidyverse is loaded, you can just do <code>read_csv()</code>.</li>
+<li class="fragment">Pay attention to code style and indentation.</li>
+<li class="fragment">Do not load data and packages for each question, once per document is sufficient.</li>
+<li class="fragment"><strong>D</strong>o not <strong>R</strong>epeat <strong>Y</strong>ourself - DRY: If using the same data in further analysis (subsequent questions), prep the data (filter) once and save it and use that in subsequent analysis.</li>
+<li class="fragment">If using <code>count()</code> to create a frequency table, the resulting <code>n</code> column is numeric, no need to convert it to numeric again.</li>
+</ul>
+</div>
+</section>
+<section id="take-home-exam-redo-optional" class="slide level2">
+<h2>Take home exam redo (optional)</h2>
+<ul>
+<li>Due: Friday, Oct 13 at 5pm</li>
+<li>Must request opening your exam repo back up for resubmission by end of class on Thursday by messaging me on Slack</li>
+<li>Work in <code>exam-1-redo.qmd</code>, this is a copy of your exam submission, without any changes I might have implemented to get it to render – do not overwrite <code>exam-1.qmd</code>.</li>
+<li>Improve your answers <u><strong>working on your own</strong></u>. The same rules as the exam applies.</li>
+<li>You will be eligible to receive up to 50% of the points you missed on the take home portion of the exam.</li>
+<li>There is no in-class exam redo.</li>
 </ul>
 
 
