@@ -861,6 +861,475 @@
     "text": "ae-07\n\n\n\nGo to the course GitHub org and find your ae-07-majors (repo name will be suffixed with your GitHub name).\nClone the repo in Posit Cloud, and set up your PAT:\n\nIn the Console, run usethis::create_github_token() to create a new PAT or grab the one you created previously from a space you might have safely stored it (e.g., 1Password or similar)\nIn the Console, run gitcreds::gitcreds_set() and paste your PAT when prompted.\nIn the Terminal, run git config credential.helper store to make sure your PAT persists throughout the whole time you’re working on this assignment / Cloud project.\n\nOpen the Quarto document (.qmd) and follow along and complete the exercises.\nRender, commit, and push your edits as you work through it\n\n\n\n\n\n🔗 sta113-f23.github.io"
   },
   {
+    "objectID": "lectures/03/03-grammar-graphics.html#before-we-get-started",
+    "href": "lectures/03/03-grammar-graphics.html#before-we-get-started",
+    "title": "Meet the toolkit 2 + Grammar of Graphics",
+    "section": "Before we get started",
+    "text": "Before we get started\n\n Check your email and accept the invitations to the course GitHub organization!"
+  },
+  {
+    "objectID": "lectures/03/03-grammar-graphics.html#reflection",
+    "href": "lectures/03/03-grammar-graphics.html#reflection",
+    "title": "Meet the toolkit 2 + Grammar of Graphics",
+    "section": "Reflection",
+    "text": "Reflection\n\n What is one thing you learned from your reading that was “new” to you? And what is one question you have from the reading?"
+  },
+  {
+    "objectID": "lectures/03/03-grammar-graphics.html#announcements",
+    "href": "lectures/03/03-grammar-graphics.html#announcements",
+    "title": "Meet the toolkit 2 + Grammar of Graphics",
+    "section": "Announcements",
+    "text": "Announcements\n\nHW 1 is posted, due next Tuesday at 1 pm"
+  },
+  {
+    "objectID": "lectures/03/03-grammar-graphics.html#git-and-github",
+    "href": "lectures/03/03-grammar-graphics.html#git-and-github",
+    "title": "Meet the toolkit 2 + Grammar of Graphics",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\n\n\n\n\n\n\n\nGit is a version control system, like “Track Changes” features from Microsoft Word but more powerful.\n\n\n\n\n\n\nGitHub is the home for your Git-based projects on the internet, like DropBox but much better."
+  },
+  {
+    "objectID": "lectures/03/03-grammar-graphics.html#connecting-your-posit-cloud-and-github-accounts",
+    "href": "lectures/03/03-grammar-graphics.html#connecting-your-posit-cloud-and-github-accounts",
+    "title": "Meet the toolkit 2 + Grammar of Graphics",
+    "section": "Connecting your Posit Cloud and GitHub accounts",
+    "text": "Connecting your Posit Cloud and GitHub accounts\nYou should only need to do the following once:\n\nGo to Posit Cloud and log in.\nClick on your profile avatar (top right) and then click on “Authentication”.\nUnder Login Options, check the box for “Enabled”. This will open another window where you should click on “Authorize rstudio”.\nThen, go back to the Posit Cloud authentication page, and check the box for “Private repo access also enabled”."
+  },
+  {
+    "objectID": "lectures/03/03-grammar-graphics.html#application-exercise-flint",
+    "href": "lectures/03/03-grammar-graphics.html#application-exercise-flint",
+    "title": "Meet the toolkit 2 + Grammar of Graphics",
+    "section": "Application exercise: Flint",
+    "text": "Application exercise: Flint\n\n\n\nGo to the course GitHub Organization and locate your own ae-03-flint repository. This repository will be called ae-03-flint-YOUR_GITHUB_NAME.\nClick on the green Code button, make sure HTTPS is selected, and copy the URL (by clicking on ).\nGo to Posit Cloud. Make sure you’re in the course space – it should say STA 113 - F23 on the top left.\nClick on the blue New Project button, and then New Project from Git Repository. Paste the URL you copied from your GitHub repository here. Make sure Add packages from the base project is checked.\n\ncontinue on next slide"
+  },
+  {
+    "objectID": "lectures/03/03-grammar-graphics.html#application-exercise-flint-1",
+    "href": "lectures/03/03-grammar-graphics.html#application-exercise-flint-1",
+    "title": "Meet the toolkit 2 + Grammar of Graphics",
+    "section": "Application exercise: Flint",
+    "text": "Application exercise: Flint\n\n\nOnce you’re in the project, go to the Console and run\n\nusethis::create_github_token()\n\nOn the page that pops open in your browser, create a new GitHub Personal Access Token (i.e., sort of like a password you store):\n\nDescribe the token’s use case under Note, e.g., ae-03\nExtend expiration date to 90 days\nScroll down and click on Generate Token\n\nCopy the token by clicking on .\nGo back to Posit Cloud, to your Console, and run\n\ngitcreds::gitcreds_set()\n\nand paste the token you just copied.\n\n🎉 You’re now ready to work on your application exercise analyzing a dataset with R, in RStudio that you access via Posit Cloud, version controlled with Git, and hosted on GitHub. And that’s your data science toolkit! 🛠️"
+  },
+  {
+    "objectID": "lectures/03/03-grammar-graphics.html#next-time",
+    "href": "lectures/03/03-grammar-graphics.html#next-time",
+    "title": "Meet the toolkit 2 + Grammar of Graphics",
+    "section": "Next time",
+    "text": "Next time\n\nWe’ll continue to learn about visualizing various types of data and get practice with the data science workflow.\nWe’ll review questions you might have on the homework assignment.\n\n\n\n\n🔗 sta113-f23.github.io"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#reflection",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#reflection",
+    "title": "Grammar of data wrangling",
+    "section": "Reflection",
+    "text": "Reflection\n\n What is one thing you learned from your reading or videos that was “new” to you? And what is one question you have from the reading, videos, or material we’ve covered so far, including the previous application exercise?"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#announcements",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#announcements",
+    "title": "Grammar of data wrangling",
+    "section": "Announcements",
+    "text": "Announcements\n\nHW 1 due today at 5 pm\nSubsequent HW deadlines adjusted accordingly for the first part of the semester\nNext week:\n\nTuesday: Project 1 workday\nThursday: Rubenstein Library rare collections visit"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#github-pats-on-posit-cloud",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#github-pats-on-posit-cloud",
+    "title": "Grammar of data wrangling",
+    "section": "GitHub PATs on Posit Cloud",
+    "text": "GitHub PATs on Posit Cloud\n\nIn the Console, run usethis::create_github_token() to create a new PAT or grab the one you created previously from a space you might have safely stored it (e.g., 1Password or similar)\nIn the Console, run gitcreds::gitcreds_set() and paste your PAT when prompted.\nIn the Terminal, run git config credential.helper store to make sure your PAT persists throughout the whole time you’re working on this assignment / Cloud project."
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#packages",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#packages",
+    "title": "Grammar of data wrangling",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(scales)"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#data-hotel-bookings",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#data-hotel-bookings",
+    "title": "Grammar of data wrangling",
+    "section": "Data: Hotel bookings",
+    "text": "Data: Hotel bookings\n\nData from two hotels: one resort and one city hotel\nObservations: Each row represents a hotel booking\n\n\nhotels &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv\")\n\nRows: 119390 Columns: 32\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (13): hotel, arrival_date_month, meal, country, market_segment, distrib...\ndbl  (18): is_canceled, lead_time, arrival_date_year, arrival_date_week_numb...\ndate  (1): reservation_status_date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#variables",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#variables",
+    "title": "Grammar of data wrangling",
+    "section": "Variables",
+    "text": "Variables\n\nnames(hotels)\n\n [1] \"hotel\"                          \"is_canceled\"                   \n [3] \"lead_time\"                      \"arrival_date_year\"             \n [5] \"arrival_date_month\"             \"arrival_date_week_number\"      \n [7] \"arrival_date_day_of_month\"      \"stays_in_weekend_nights\"       \n [9] \"stays_in_week_nights\"           \"adults\"                        \n[11] \"children\"                       \"babies\"                        \n[13] \"meal\"                           \"country\"                       \n[15] \"market_segment\"                 \"distribution_channel\"          \n[17] \"is_repeated_guest\"              \"previous_cancellations\"        \n[19] \"previous_bookings_not_canceled\" \"reserved_room_type\"            \n[21] \"assigned_room_type\"             \"booking_changes\"               \n[23] \"deposit_type\"                   \"agent\"                         \n[25] \"company\"                        \"days_in_waiting_list\"          \n[27] \"customer_type\"                  \"adr\"                           \n[29] \"required_car_parking_spaces\"    \"total_of_special_requests\"     \n[31] \"reservation_status\"             \"reservation_status_date\""
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#glimpse",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#glimpse",
+    "title": "Grammar of data wrangling",
+    "section": "glimpse()",
+    "text": "glimpse()\n\nglimpse(hotels)\n\nRows: 119,390\nColumns: 32\n$ hotel                          &lt;chr&gt; \"Resort Hotel\", \"Resort Hotel\", \"Resort…\n$ is_canceled                    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, …\n$ lead_time                      &lt;dbl&gt; 342, 737, 7, 13, 14, 14, 0, 9, 85, 75, …\n$ arrival_date_year              &lt;dbl&gt; 2015, 2015, 2015, 2015, 2015, 2015, 201…\n$ arrival_date_month             &lt;chr&gt; \"July\", \"July\", \"July\", \"July\", \"July\",…\n$ arrival_date_week_number       &lt;dbl&gt; 27, 27, 27, 27, 27, 27, 27, 27, 27, 27,…\n$ arrival_date_day_of_month      &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ stays_in_weekend_nights        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ stays_in_week_nights           &lt;dbl&gt; 0, 0, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4, 4, …\n$ adults                         &lt;dbl&gt; 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, …\n$ children                       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ babies                         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ meal                           &lt;chr&gt; \"BB\", \"BB\", \"BB\", \"BB\", \"BB\", \"BB\", \"BB…\n$ country                        &lt;chr&gt; \"PRT\", \"PRT\", \"GBR\", \"GBR\", \"GBR\", \"GBR…\n$ market_segment                 &lt;chr&gt; \"Direct\", \"Direct\", \"Direct\", \"Corporat…\n$ distribution_channel           &lt;chr&gt; \"Direct\", \"Direct\", \"Direct\", \"Corporat…\n$ is_repeated_guest              &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ previous_cancellations         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ previous_bookings_not_canceled &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ reserved_room_type             &lt;chr&gt; \"C\", \"C\", \"A\", \"A\", \"A\", \"A\", \"C\", \"C\",…\n$ assigned_room_type             &lt;chr&gt; \"C\", \"C\", \"C\", \"A\", \"A\", \"A\", \"C\", \"C\",…\n$ booking_changes                &lt;dbl&gt; 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ deposit_type                   &lt;chr&gt; \"No Deposit\", \"No Deposit\", \"No Deposit…\n$ agent                          &lt;chr&gt; \"NULL\", \"NULL\", \"NULL\", \"304\", \"240\", \"…\n$ company                        &lt;chr&gt; \"NULL\", \"NULL\", \"NULL\", \"NULL\", \"NULL\",…\n$ days_in_waiting_list           &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ customer_type                  &lt;chr&gt; \"Transient\", \"Transient\", \"Transient\", …\n$ adr                            &lt;dbl&gt; 0.00, 0.00, 75.00, 75.00, 98.00, 98.00,…\n$ required_car_parking_spaces    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ total_of_special_requests      &lt;dbl&gt; 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 3, …\n$ reservation_status             &lt;chr&gt; \"Check-Out\", \"Check-Out\", \"Check-Out\", …\n$ reservation_status_date        &lt;date&gt; 2015-07-01, 2015-07-01, 2015-07-02, 20…"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#plan",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#plan",
+    "title": "Grammar of data wrangling",
+    "section": "Plan",
+    "text": "Plan\nWe…\nhave a single data frame\nwant to slice it, and dice it, and juice it, and process it, so we can plot it"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#grammar-of-data-wrangling-1",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#grammar-of-data-wrangling-1",
+    "title": "Grammar of data wrangling",
+    "section": "Grammar of data wrangling",
+    "text": "Grammar of data wrangling\n\n\n\nStart with a data frame\nAnd then (|&gt;)\nTransform it with a function\nResult in a data frame\n\n\n\ndf |&gt;\n  function(...)"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#commonly-used-data-wrangling-functions",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#commonly-used-data-wrangling-functions",
+    "title": "Grammar of data wrangling",
+    "section": "Commonly used data wrangling functions",
+    "text": "Commonly used data wrangling functions\n\ndistinct()\nselect(), relocate()\narrange(), arrange(desc())\nslice(), slice_head(), slice_tail(), slice_sample()\nfilter()\nmutate()\nsummarize(), count()"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#distcint",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#distcint",
+    "title": "Grammar of data wrangling",
+    "section": "distcint()",
+    "text": "distcint()\n\n\n\nhotels |&gt; \n  distinct(hotel)\n\n# A tibble: 2 × 1\n  hotel       \n  &lt;chr&gt;       \n1 Resort Hotel\n2 City Hotel  \n\n\n\n\nhotels |&gt; \n  distinct(is_canceled)\n\n# A tibble: 2 × 1\n  is_canceled\n        &lt;dbl&gt;\n1           0\n2           1"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#select-relocate",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#select-relocate",
+    "title": "Grammar of data wrangling",
+    "section": "select() / relocate()",
+    "text": "select() / relocate()\n\n\n\nhotels |&gt; \n  select(hotel)\n\n# A tibble: 119,390 × 1\n   hotel       \n   &lt;chr&gt;       \n 1 Resort Hotel\n 2 Resort Hotel\n 3 Resort Hotel\n 4 Resort Hotel\n 5 Resort Hotel\n 6 Resort Hotel\n 7 Resort Hotel\n 8 Resort Hotel\n 9 Resort Hotel\n10 Resort Hotel\n# ℹ 119,380 more rows\n\n\n\n\nhotels |&gt; \n  relocate(is_canceled)\n\n# A tibble: 119,390 × 32\n   is_canceled hotel        lead_time\n         &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;\n 1           0 Resort Hotel       342\n 2           0 Resort Hotel       737\n 3           0 Resort Hotel         7\n 4           0 Resort Hotel        13\n 5           0 Resort Hotel        14\n 6           0 Resort Hotel        14\n 7           0 Resort Hotel         0\n 8           0 Resort Hotel         9\n 9           1 Resort Hotel        85\n10           1 Resort Hotel        75\n# ℹ 119,380 more rows\n# ℹ 29 more variables:\n#   arrival_date_year &lt;dbl&gt;,\n#   arrival_date_month &lt;chr&gt;,\n#   arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;,\n#   stays_in_weekend_nights &lt;dbl&gt;, …"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#arrange-arrangedesc",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#arrange-arrangedesc",
+    "title": "Grammar of data wrangling",
+    "section": "arrange() / arrange(desc())",
+    "text": "arrange() / arrange(desc())\n\n\n\nhotels |&gt; \n  arrange(adr) |&gt;\n  relocate(adr)\n\n# A tibble: 119,390 × 32\n     adr hotel     is_canceled lead_time\n   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;\n 1 -6.38 Resort H…           0       195\n 2  0    Resort H…           0       342\n 3  0    Resort H…           0       737\n 4  0    Resort H…           0        32\n 5  0    Resort H…           0       111\n 6  0    Resort H…           0         0\n 7  0    Resort H…           0         8\n 8  0    Resort H…           0         8\n 9  0    Resort H…           1        57\n10  0    Resort H…           0        57\n# ℹ 119,380 more rows\n# ℹ 28 more variables:\n#   arrival_date_year &lt;dbl&gt;,\n#   arrival_date_month &lt;chr&gt;,\n#   arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;,\n#   stays_in_weekend_nights &lt;dbl&gt;, …\n\n\n\n\nhotels |&gt; \n  arrange(desc(adr)) |&gt;\n  relocate(adr)\n\n# A tibble: 119,390 × 32\n     adr hotel     is_canceled lead_time\n   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;\n 1 5400  City Hot…           1        35\n 2  510  City Hot…           0         0\n 3  508  Resort H…           0         1\n 4  452. City Hot…           0        81\n 5  450  Resort H…           1       378\n 6  437  Resort H…           1        59\n 7  426. Resort H…           0        31\n 8  402  Resort H…           0       104\n 9  397. Resort H…           0        26\n10  392  Resort H…           1       116\n# ℹ 119,380 more rows\n# ℹ 28 more variables:\n#   arrival_date_year &lt;dbl&gt;,\n#   arrival_date_month &lt;chr&gt;,\n#   arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;,\n#   stays_in_weekend_nights &lt;dbl&gt;, …"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#slice",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#slice",
+    "title": "Grammar of data wrangling",
+    "section": "slice()",
+    "text": "slice()\n\nhotels |&gt;\n  slice(1:4)\n\n# A tibble: 4 × 32\n  hotel        is_canceled lead_time arrival_date_year arrival_date_month\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n1 Resort Hotel           0       342              2015 July              \n2 Resort Hotel           0       737              2015 July              \n3 Resort Hotel           0         7              2015 July              \n4 Resort Hotel           0        13              2015 July              \n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,\n#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#slice_head-slice_tail",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#slice_head-slice_tail",
+    "title": "Grammar of data wrangling",
+    "section": "slice_head() / slice_tail()",
+    "text": "slice_head() / slice_tail()\n\n\n\nhotels |&gt; \n  slice_head(n = 5)\n\n# A tibble: 5 × 32\n  hotel        is_canceled lead_time\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;\n1 Resort Hotel           0       342\n2 Resort Hotel           0       737\n3 Resort Hotel           0         7\n4 Resort Hotel           0        13\n5 Resort Hotel           0        14\n# ℹ 29 more variables:\n#   arrival_date_year &lt;dbl&gt;,\n#   arrival_date_month &lt;chr&gt;,\n#   arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;,\n#   stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, …\n\n\n\n\nhotels |&gt; \n  slice_tail(n = 5)\n\n# A tibble: 5 × 32\n  hotel      is_canceled lead_time\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;\n1 City Hotel           0        23\n2 City Hotel           0       102\n3 City Hotel           0        34\n4 City Hotel           0       109\n5 City Hotel           0       205\n# ℹ 29 more variables:\n#   arrival_date_year &lt;dbl&gt;,\n#   arrival_date_month &lt;chr&gt;,\n#   arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;,\n#   stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, …"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#slice_sample",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#slice_sample",
+    "title": "Grammar of data wrangling",
+    "section": "slice_sample()",
+    "text": "slice_sample()\n\nhotels |&gt; \n  slice_sample(n = 5)\n\n# A tibble: 5 × 32\n  hotel        is_canceled lead_time arrival_date_year arrival_date_month\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n1 Resort Hotel           1        84              2017 August            \n2 City Hotel             1       181              2016 May               \n3 City Hotel             0         0              2015 September         \n4 City Hotel             1       433              2016 September         \n5 Resort Hotel           0         0              2016 February          \n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,\n#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#filter",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#filter",
+    "title": "Grammar of data wrangling",
+    "section": "filter()",
+    "text": "filter()\n\n\n\nhotels |&gt;\n  filter(adr &gt; 1000) |&gt;\n  select(adr, hotel)\n\n# A tibble: 1 × 2\n    adr hotel     \n  &lt;dbl&gt; &lt;chr&gt;     \n1  5400 City Hotel\n\n\n\n\nhotels |&gt; \n  filter(babies &gt; 5) |&gt;\n  select(adults, babies)\n\n# A tibble: 2 × 2\n  adults babies\n   &lt;dbl&gt;  &lt;dbl&gt;\n1      2     10\n2      1      9"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#mutate",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#mutate",
+    "title": "Grammar of data wrangling",
+    "section": "mutate()",
+    "text": "mutate()\n\nhotels |&gt;\n  mutate(people = adults + babies + children) |&gt;\n  relocate(people) |&gt;\n  arrange(desc(people))\n\n# A tibble: 119,390 × 33\n   people hotel       is_canceled lead_time arrival_date_year arrival_date_month\n    &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n 1     55 Resort Hot…           1       338              2015 October           \n 2     50 Resort Hot…           1       336              2015 September         \n 3     40 Resort Hot…           1       304              2015 September         \n 4     27 Resort Hot…           1       349              2015 September         \n 5     27 Resort Hot…           1       352              2015 September         \n 6     26 Resort Hot…           1       333              2015 September         \n 7     26 Resort Hot…           1       340              2015 September         \n 8     26 Resort Hot…           1       347              2015 September         \n 9     26 Resort Hot…           1       354              2015 September         \n10     26 Resort Hot…           1       361              2015 October           \n# ℹ 119,380 more rows\n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;, …"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#summarize",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#summarize",
+    "title": "Grammar of data wrangling",
+    "section": "summarize()",
+    "text": "summarize()\n\n\n\nhotels |&gt;\n  summarize(mean_adr = mean(adr))\n\n# A tibble: 1 × 1\n  mean_adr\n     &lt;dbl&gt;\n1     102.\n\n\n\n\nhotels |&gt;\n  group_by(hotel) |&gt;\n  summarize(mean_adr = mean(adr))\n\n# A tibble: 2 × 2\n  hotel        mean_adr\n  &lt;chr&gt;           &lt;dbl&gt;\n1 City Hotel      105. \n2 Resort Hotel     95.0"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#count",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#count",
+    "title": "Grammar of data wrangling",
+    "section": "count()",
+    "text": "count()\n\nhotels |&gt;\n  count(hotel)\n\n# A tibble: 2 × 2\n  hotel            n\n  &lt;chr&gt;        &lt;int&gt;\n1 City Hotel   79330\n2 Resort Hotel 40060"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#average-cost-of-daily-stay",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#average-cost-of-daily-stay",
+    "title": "Grammar of data wrangling",
+    "section": "Average cost of daily stay",
+    "text": "Average cost of daily stay\n\nWhat are the variables represented in this visualization?"
+  },
+  {
+    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#ae-05",
+    "href": "lectures/05/05-grammar-of-data-wrangling.html#ae-05",
+    "title": "Grammar of data wrangling",
+    "section": "ae-05",
+    "text": "ae-05\n\n\n\nGo to the course GitHub org and find your ae-05-hotels (repo name will be suffixed with your GitHub name).\nClone the repo in Posit Cloud, and set up your PAT:\n\nIn the Console, run usethis::create_github_token() to create a new PAT or grab the one you created previously from a space you might have safely stored it (e.g., 1Password or similar)\nIn the Console, run gitcreds::gitcreds_set() and paste your PAT when prompted.\nIn the Terminal, run git config credential.helper store to make sure your PAT persists throughout the whole time you’re working on this assignment / Cloud project.\n\nOpen the Quarto document (.qmd) and follow along and complete the exercises.\nRender, commit, and push your edits as you work through it\n\n\n\n\n\n🔗 sta113-f23.github.io"
+  },
+  {
+    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#reflection",
+    "href": "lectures/04/04-visualizing-various-types-of-data.html#reflection",
+    "title": "Visualizing various types of data",
+    "section": "Reflection",
+    "text": "Reflection\n\n What is one thing you learned from your reading or videos that was “new” to you? And what is one question you have from the reading, videos, or material we’ve covered so far, including the previous application exercise?"
+  },
+  {
+    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#announcements",
+    "href": "lectures/04/04-visualizing-various-types-of-data.html#announcements",
+    "title": "Visualizing various types of data",
+    "section": "Announcements",
+    "text": "Announcements\n\nHW 1 due next Tuesday at 1 pm\nOffice hours – move to in person?"
+  },
+  {
+    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#identifying-variable-types",
+    "href": "lectures/04/04-visualizing-various-types-of-data.html#identifying-variable-types",
+    "title": "Visualizing various types of data",
+    "section": "Identifying variable types",
+    "text": "Identifying variable types\n\n Identify the type of each of the following variables.\n\nFavorite food\nNumber of classes you’re taking this semester\nZip code\nFull name\nAge"
+  },
+  {
+    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#the-way-data-is-displayed-matters",
+    "href": "lectures/04/04-visualizing-various-types-of-data.html#the-way-data-is-displayed-matters",
+    "title": "Visualizing various types of data",
+    "section": "The way data is displayed matters",
+    "text": "The way data is displayed matters\n\n What do these three plots show?\n\n\nSource: #barbarplots"
+  },
+  {
+    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#ae-04",
+    "href": "lectures/04/04-visualizing-various-types-of-data.html#ae-04",
+    "title": "Visualizing various types of data",
+    "section": "ae-04",
+    "text": "ae-04\n\n\n\nGo to the course GitHub org and find your ae-04-sat (repo name will be suffixed with your GitHub name).\nClone the repo in Posit Cloud, open the Quarto document in the repo, set up a new PAT, and follow along and complete the exercises.\nRender, commit, and push your edits as you work through it"
+  },
+  {
+    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#recap-of-ae",
+    "href": "lectures/04/04-visualizing-various-types-of-data.html#recap-of-ae",
+    "title": "Visualizing various types of data",
+    "section": "Recap of AE",
+    "text": "Recap of AE\n\nPick geoms based on data types.\nSet appropriate binwidths for histograms.\nTurn off legends when they provide redundant information with show.legend = FALSE.\nCreate plots with multiple geoms, and pay attention to order.\n\n\n\n\n🔗 sta113-f23.github.io"
+  },
+  {
+    "objectID": "course-syllabus.html",
+    "href": "course-syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This course will teach you how to use modern data science tools to visualize data and, through the lens of visualization, it will introduce you to programming and data science concepts and workflows. Working with data on issues of local, national, and global societal importance, we will learn to create elegant, insightful, and impactful data visualizations through iterative and reproducible processes. We will also discuss the role of visualization in exploratory data analyses as well as in communicating the results of statistical inference and modeling.\nThe main goal of the course is to empower students with a toolkit to explore topics of interest to them via visualizations they create while also learning programming and data science concepts.\nStudents will first learn the basics of the R statistical programming language as well as modern data science toolkit including RStudio for an integrated development environment, Quarto for reproducible computational documents, and Git and GitHub for version control and collaboration.\nBuilding on this foundation, students will continue to hone their visualization skills through the analysis of increasingly complex datasets throughout the semester. These datasets will be selected to reflect current issues of societal importance at the local (Duke/Durham), national, and global levels."
+  },
+  {
+    "objectID": "course-syllabus.html#course-description",
+    "href": "course-syllabus.html#course-description",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This course will teach you how to use modern data science tools to visualize data and, through the lens of visualization, it will introduce you to programming and data science concepts and workflows. Working with data on issues of local, national, and global societal importance, we will learn to create elegant, insightful, and impactful data visualizations through iterative and reproducible processes. We will also discuss the role of visualization in exploratory data analyses as well as in communicating the results of statistical inference and modeling.\nThe main goal of the course is to empower students with a toolkit to explore topics of interest to them via visualizations they create while also learning programming and data science concepts.\nStudents will first learn the basics of the R statistical programming language as well as modern data science toolkit including RStudio for an integrated development environment, Quarto for reproducible computational documents, and Git and GitHub for version control and collaboration.\nBuilding on this foundation, students will continue to hone their visualization skills through the analysis of increasingly complex datasets throughout the semester. These datasets will be selected to reflect current issues of societal importance at the local (Duke/Durham), national, and global levels."
+  },
+  {
+    "objectID": "course-syllabus.html#learning-objectives",
+    "href": "course-syllabus.html#learning-objectives",
+    "title": "Syllabus",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nLearn a modern toolkit commonly used in data science research and careers (R, RStudio, Quarto, Git, GitHub).\nIntroduce students to the ideas and methods of data visualization in a comprehensible reproducible way using this toolkit.\nUnderstand the principles of designing and creating data visualizations.\nEvaluate, critique, and improve upon one’s own and others’ data visualizations through an iterative process.\nUse data visualization to look for and answer questions of societal importance and of interest to students."
+  },
+  {
+    "objectID": "course-syllabus.html#prerequisites",
+    "href": "course-syllabus.html#prerequisites",
+    "title": "Syllabus",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nThis course has no pre-requisites."
+  },
+  {
+    "objectID": "course-syllabus.html#workload",
+    "href": "course-syllabus.html#workload",
+    "title": "Syllabus",
+    "section": "Workload",
+    "text": "Workload\nYou are expected to put in ~6 hours of work / week outside of class. Some of you will do well with less time than this, and some of you will need more."
+  },
+  {
+    "objectID": "course-syllabus.html#tips-for-success",
+    "href": "course-syllabus.html#tips-for-success",
+    "title": "Syllabus",
+    "section": "Tips for success",
+    "text": "Tips for success\n\nComplete the readings before each class.\nBe an active participant during lectures.\nAsk questions - during class or office hours, or by email. Ask me, your TAs, and your classmates.\nDo the homework assignments - start early and make sure you attempt and understand all questions.\nStart your project early and and allow adequate time to complete it.\nGive yourself plenty of time time to prepare a good cheat sheet for exams. This requires going through the material and taking the time to review the concepts that you’re not comfortable with.\nDo not procrastinate - don’t let a unit go by with unanswered questions as it will just make the following unit’s material even more difficult to follow."
+  },
+  {
+    "objectID": "course-syllabus.html#textbooks",
+    "href": "course-syllabus.html#textbooks",
+    "title": "Syllabus",
+    "section": "Textbooks",
+    "text": "Textbooks\nReadings for the course will come from the following textbooks. They are freely available online and you do not need to purchase a physical copy of either book to succeed in this class.\n\n[r4ds]: Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. R for Data Science. 2nd edition. O’Reilly, 2022.\n[socviz] Kieran Healy. Data Visualization: A Practical Introduction. Princeton University Press, 2018.\n[ims]: Mine Çetinkaya-Rundel and Jo Hardin. Introduction to Modern Statistics. (in progress) 2nd edition. OpenIntro, 2023."
+  },
+  {
+    "objectID": "course-syllabus.html#course-community",
+    "href": "course-syllabus.html#course-community",
+    "title": "Syllabus",
+    "section": "Course community",
+    "text": "Course community\n\nDuke Community Standard\nAll students must adhere to the Duke Community Standard (DCS): Duke University is a community dedicated to scholarship, leadership, and service and to the principles of honesty, fairness, and accountability. Citizens of this community commit to reflect upon these principles in all academic and non-academic endeavors, and to protect and promote a culture of integrity.\nTo uphold the Duke Community Standard, students agree:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\n\n\n\n\nInclusive community\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent to present materials and activities that are respectful of diversity and in alignment with Duke’s Commitment to Diversity and Inclusion. Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.\nFurthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives and experiences, and honors your identities. To help accomplish this:\n\nIf you have a name that differs from those that appear in your official Duke records, please let me know! You’ll be able to note this in the Getting to know you survey.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please let me or a member of the teaching team know.\n\n\n\nPronouns\nPronouns are meaningful tools to communicate identities and experiences, and using pronouns supports a campus environment where all community members can thrive.\nPlease update your gender pronouns in Duke Hub. You can learn more at the Center for Sexual and Gender Diversity’s website.\n\n\nAccessibility\nIf there is any portion of the course that is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments. Students should be in touch with the Student Disability Access Office to request or update accommodations under these circumstances.\n\n\nCommunication\nAll lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website: sta101-f23.github.io.\nI will regularly send course announcements via email and Canvas, make sure to check one or the other of these regularly. If an announcement is sent Monday through Thursday, I will assume that you have read the announcement by the next day. If an announcement is sent on a Friday or over the weekend, I will assume that you have read it by Monday.\n\n\nWhere to get help\n\nIf you have a question during lectures, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!\nOutside of class and office hours, any general questions about course content or assignments should be posted on the course Slack. There is a chance another student has already asked a similar question, so please check the other posts on Slack before adding a new question. If you know the answer to a question posted on Slack, I encourage you to respond!\n\nCheck out the Support page for more resources.\nI want to make sure that you learn everything you were hoping to learn from this class. If this requires flexibility, please don’t hesitate to ask.\n\nYou never owe me personal information about your health (mental or physical) but you’re always welcome to talk to me. If I can’t help, I likely know someone who can.\nI want you to learn lots of things from this class, but I primarily want you to stay healthy, balanced, and grounded during this crisis."
+  },
+  {
+    "objectID": "course-syllabus.html#lectures",
+    "href": "course-syllabus.html#lectures",
+    "title": "Syllabus",
+    "section": "Lectures",
+    "text": "Lectures\nThe goal of the lectures is for them to be as interactive as possible. My role as instructor is to introduce you new tools and techniques, but it is up to you to take them and make use of them. A lot of what you do in this course will involve writing code, and coding is a skill that is best learned by doing. Therefore, as much as possible, you will be working on a variety of tasks and activities throughout each lecture. Attendance will not be taken during class but you are expected to attend all lecture sessions and meaningfully contribute to in-class exercises and discussion.\nYou are expected to bring a laptop to each class so that you can take part in the in-class exercises. Please make sure your laptop is fully charged before you come to class as the number of outlets in the classroom will not be sufficient to accommodate everyone. See Duke LIFE loaner laptop program if you need a loaner laptop."
+  },
+  {
+    "objectID": "course-syllabus.html#assessments-and-grading",
+    "href": "course-syllabus.html#assessments-and-grading",
+    "title": "Syllabus",
+    "section": "Assessments and grading",
+    "text": "Assessments and grading\nThe final course grade will be calculated as follows:\n\n\n\nCategory\nPercentage\n\n\n\n\nAttendance and participation\n10%\n\n\nHomework\n25%\n\n\nExam 1\n15%\n\n\nExam 2\n15%\n\n\nProject 1\n15%\n\n\nProject 2\n20%\n\n\n\nThe final letter grade will be determined based on the following thresholds:\n\n\n\nLetter Grade\nFinal Course Grade\n\n\n\n\nA\n&gt;= 93\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n73 - 76.99\n\n\nC-\n70 - 72.99\n\n\nD+\n67 - 69.99\n\n\nD\n63 - 66.99\n\n\nD-\n60 - 62.99\n\n\nF\n&lt; 60\n\n\n\nThese are upper bounds for grade cutoffs, depending on the class performance the cutoffs may be lowered but they won’t be increased.\nAll work is expected to be submitted by the deadline and there are no make ups for any missed assessments. See Section 10.2 for policies on late work.\n\nAttendance and participation\nYou are expected to be present at class meeting and actively participate in the discussion. Your attendance and participation during class, as well as your activity on the course Slack will make up a non-insignificant portion of your grade in this class. While I might sometimes call on you during the class discussion, it is your responsibility to be an active participant without being called on.\nIf you attend at least 80% of the classes, you’ll get all available points for this component.\n\n\nHomework\nIn homework assignments, you will apply the concepts discussed in lecture to various data analysis scenarios. Homework assignments will focus on both computation and conceptualization. They will be completed using Quarto and submitted in GitHub repositories. While you may collaborate with others on homework assignments, your final solution should be your own.\nLowest homework score will be dropped.\n\n\nExams\nThere will be two exams. Each exam will be comprised of two components:\n\nIn class: 75 minute in-class exam. This exam is closed book, however you are allowed to use one sheet of notes (“cheat sheet”) to the midterm and the final. This sheet must be no larger than 8 1/2 x 11, and must be prepared by you. You may use both sides of the sheet. (70% of the grade)\nTake home: Following the in class exam, you’ll have 48 hours to complete the take home portion of your exam. The take home portion will follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam. (30% of the grade)\n\nThrough these exams you have the opportunity to demonstrate what you’ve learned in the course thus far. Each exam will include small analyses and computational tasks related to the content in application exercises. More details about the content and structure of the exams will be discussed during the semester.\nSee Section 12 for dates and times of the exams. Exam dates cannot be changed and no make-up exams will be given. If you can’t take the exams on these dates, you should drop this class.\n\n\nProjects\nYou will work on two projects that consist of analyses of datasets of students’ own choosing. The data set may already exist, or students may collect their own data using a survey or by conducting an experiment. The goal of the projects is for you to demonstrate proficiency in the techniques we have covered in this class (and beyond, if preferred) and apply them to a novel data set in a meaningful way.\nThe mid-semester project will be on visualizing a dataset given to you and the final project will be on visualizing a dataset of your own choice. More details about the projects will be provided during the semester. Projects will be completed in teams.\nYou will be assigned to a different team for each of your two projects. You are encouraged to sit with your teammates in lectures. All team members are expected to contribute equally to the completion of each project and you will be asked to evaluate your team members after each assignment is due. Failure to adequately contribute to an assignment will result in a penalty to your mark relative to the team’s overall mark.\nSee Section 12 for dates and times of project deadlines. Project deadlines cannot be changed. If you can’t be in class for the final project presentation, you should drop this class."
+  },
+  {
+    "objectID": "course-syllabus.html#course-policies",
+    "href": "course-syllabus.html#course-policies",
+    "title": "Syllabus",
+    "section": "Course policies",
+    "text": "Course policies\n\nAcademic honesty\nTL;DR: Don’t cheat!\nPlease abide by the following as you work on assignments in this course:\n\nCollaboration: Only work that is clearly assigned as team work should be completed collaboratively.\n\nThe homework assignments must also be completed individually and you are welcomed to discuss the assignment with classmates at a high level (e.g., discuss what’s the best way for approaching a problem, what functions are useful for accomplishing a particular task, etc.). However you may not directly share answers to homework questions (including any code) with anyone other than myself and the teaching assistants.\nFor the projects, collaboration within teams is not only allowed, but expected. Communication between teams at a high level is also allowed however you may not share code or components of the project across teams.\nOn individual assignments you may not directly share code with another student in this class, and on team assignments you may not directly share code with another team in this class.\n\nOnline resources: I am well aware that a huge volume of code is available on the web to solve any number of problems. Unless I explicitly tell you not to use something, the course’s policy is that you may make use of any online resources (e.g., StackOverflow) but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.\nUse of generative artificial intelligence (AI): You should treat generative AI, such as ChatGPT, the same as other online resources. There are two guiding principles that govern how you can use AI in this course:1 (1) Cognitive dimension: Working with AI should not reduce your ability to think clearly. We will practice using AI to facilitate—rather than hinder—learning. (2) Ethical dimension: Students using AI should be transparent about their use and make sure it aligns with academic integrity.\n\n✅ AI tools for code: You may make use of the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. You may use these guidelines for citing AI-generated content.\n❌ AI tools for narrative: Unless instructed otherwise, you may not use generative AI to write narrative on assignments. In general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect your understanding of the course content.\n\n\nRegardless of course delivery format, it is the responsibility of all students to understand and follow all Duke policies, including academic integrity (e.g., completing one’s own work, following proper citation of sources, adhering to guidance around group work projects, and more). Ignoring these requirements is a violation of the Duke Community Standard. Any questions and/or concerns regarding academic integrity can be directed to the Office of Student Conduct and Community Standards at conduct@duke.edu.\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will\n\nautomatically result in a 0 for the assignment,\ncan further impact your overall course grade, and\nwill be reported to the Office of Student Conduct for further action.\n\n\n\nLate work & extensions\nThe due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback within a timely manner. We understand that things come up periodically that could make it difficult to submit an assignment by the deadline.\nPolicy on late work depends on the particular course component:\n\nHomework assignments:\n\nLate, but within 24 hours of deadline: -20% of available points.\nAny later: No credit, and we will not provide written feedback.\nNote that lowest homework score will be dropped, even if that score is a 0.\n\nExams:\n\nIn class portions of the exams can obviously not be turned in late.\nLate exams are not accepted.\n\nProjects: The following three components contribute to your project score.\n\nPresentation: Late presentations are not accepted and there are no make ups for missed presentations.\nWrite up: GitHub repositories will be closed to contributions at the deadline. If you need to submit your work late, Slack/email me to reopen your repository.\n\nLate, but within 24 hours of deadline: -20% of available points.\nAny later: No credit, and we will not provide written feedback.\n\nPeer evaluation: Late peer evaluations are not accepted. If you do not turn in your peer evaluation, you get 0 points for your own peer score as well, regardless of how your teammates have evaluated you.\n\n\n\n\nWaiver for extenuating circumstances\nIf there are circumstances that prevent you from completing a homework assignment by the stated due date, you may email the Head TA (Shuo Wang, shuo.wang717@duke.edu) before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide explanation. This waiver may only be used for once in the semester, so only use it for a truly extenuating circumstance.\nIf there are circumstances that are having a longer-term impact on your academic performance, please let your academic dean know, as they can be a resource. Please let me know if you need help contacting your academic dean.\n\n\nRegrade requests\nEvery effort will be made to mark your work accurately. We are on your side, and want you to receive every point you have worked to earn. However, sometimes grading mistakes happen. If you believe that an error has been made, return the paper to the instructor within four days, stating your claim in writing.\nThe following claims will be considered for re-grading:\n\npoints are not totaled correctly;\nthe grader did not see a correct answer that is on your paper;\nyour answer is the same as the correct answer, but in a different form (e.g., you wrote a correct answer as 1/3 and the grader was looking for 0.333);\nyour answer to a free response question is essentially correct but stated slightly differently than the grader’s expectation.\n\nThe following claims will not be considered for re-grading:\n\narguments about the number of points lost;\narguments about question wording.\n\nConsidering re-grades consumes time and resources that TAs and the instructor would rather spend helping you understand material. Please bring only claims of type 1-4 to our attention.\nNote that during the regrade process your score could go up or go down or not change.\n\n\n\n\n\n\nWarning\n\n\n\nNo grades will be changed after the project presentations.\n\n\n\n\nAttendance policy\nResponsibility for class attendance rests with individual students. Since regular and punctual class attendance is expected, students must accept the consequences of failure to attend. More details on Trinity attendance policies are available here.\nHowever, there may be many reasons why you cannot be in class on a given day, particularly with possible extra personal and academic stress and health concerns this semester. All course lectures will be recorded and available to enrolled students after class. If you miss a lecture, make sure to watch the recording and review the material before the next class session. Given the technologies we use in the course, this is straightforward to do asynchronously. Overall these policies are put in place to ensure communication between team members, respect for each others’ time, and also to give you a safety net in the case of illness or other reasons that keep you away from attending class.\nNote that attendance and participation is part of your grade as well.\n\n\nAttendance policy related to COVID symptoms, exposure, or infection\nStudent health, safety, and well-being are the university’s top priorities. To help ensure your well-being and the well-being of those around you, please do not come to class if you have tested positive for COVID-19 or have possible symptoms and have not yet been tested. If any of these situations apply to you, you must follow university guidance related to the ongoing COVID-19 pandemic and current health and safety protocols. If you are experiencing any COVID-19 symptoms, contact student health (dshcheckin@duke.edu, 919- 681-9355). Learn more about current university policy related to COVID-19 at https://coronavirus.duke.edu. To keep the university community as safe and healthy as possible, you will be expected to follow these guidelines. Please reach out to me and your academic dean as soon as possible if you need to quarantine or isolate so that we can discuss arrangements for your continued participation in class.\n\n\nInclement weather policy\nIn the event of inclement weather or other connectivity-related events that prohibit class attendance, I will notify you how we will make up missed course content and work. This might entail holding the class on Zoom synchronously, we may rely on Duke’s designated make-up days, or you may be asked to watch a recording of the class.\n\n\nPolicy on video recording course content\nAll lectures will be recorded and available on Panopto, so students should not need to create their own recordings of lectures. If you feel that you need record the lectures yourself, you must get permission from me ahead of time and these recordings should be used for personal study only, no for distribution. The full policy on recording of lectures falls under the Duke University Policy on Intellectual Property Rights, available at https://policies.provost.duke.edu/docs/faculty-handbook-appendix-m-intellectual-property. Unauthorized distribution is a cause for disciplinary action by the Judicial Board."
+  },
+  {
+    "objectID": "course-syllabus.html#accommodations",
+    "href": "course-syllabus.html#accommodations",
+    "title": "Syllabus",
+    "section": "Accommodations",
+    "text": "Accommodations\n\nAcademic accommodations\nIf you are a student with a disability and need accommodations for this class, it is your responsibility to register with the Student Disability Access Office (SDAO) and provide them with documentation of your disability. SDAO will work with you to determine what accommodations are appropriate for your situation. Please note that accommodations are not retroactive and disability accommodations cannot be provided until a Faculty Accommodation Letter has been given to me. Please contact SDAO for more information: sdao@duke.edu or access.duke.edu.\n\n\nReligious accommodations\nStudents are permitted by university policy to be absent from class to observe a religious holiday. Accordingly, Trinity College of Arts & Sciences and the Pratt School of Engineering have established procedures to be followed by students for notifying their instructors of an absence necessitated by the observance of a religious holiday. Please submit requests for religious accommodations at the beginning of the semester so that we can work to make suitable arrangements well ahead of time. You can find the policy and relevant notification form here: https://trinity.duke.edu/undergraduate/academic-policies/religious-holidays.\nNote: If you’ve read this far in the syllabus, email me a picture of your pet if you have one or your favorite meme!"
+  },
+  {
+    "objectID": "course-syllabus.html#sec-important-dates",
+    "href": "course-syllabus.html#sec-important-dates",
+    "title": "Syllabus",
+    "section": "Important dates",
+    "text": "Important dates\n\nMonday, August 28: Classes begin\nFriday, September 8: Drop/add ends\nTuesday, October 3: Exam 1 - In class\nThursday, October 5: Exam 1 - Take home due\nThursday, October 12: Project 1 due + presentations\nFriday, October 13: Mid-semester grades reported\nTuesday, October 17: Fall Break - No lecture\nFriday, November 10: Last day to withdraw with W\nTuesday, November 14: Exam 2 - In class\nThursday, November 16: Exam 2 - Take home due\nThursday, November 23: Thanksgiving Break - No lecture\nThursday, December 7: Project 2 due + presentations\n\nFor more important dates, see the full Duke Academic Calendar."
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#reflection",
+    "href": "lectures/02/02-meet-toolkit.html#reflection",
+    "title": "Meet the toolkit",
+    "section": "Reflection",
+    "text": "Reflection\n\nWhat is one thing you learned from your reading that was “new” to you? And what is one question you have from the reading?"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#announcements",
+    "href": "lectures/02/02-meet-toolkit.html#announcements",
+    "title": "Meet the toolkit",
+    "section": "Announcements",
+    "text": "Announcements\n\nMy office hours: Thursdays 10-11am on Zoom (link to be posted!)\nCourse webpage updated with tentative schedule for due dates"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#application-exercise-un-votes",
+    "href": "lectures/02/02-meet-toolkit.html#application-exercise-un-votes",
+    "title": "Meet the toolkit",
+    "section": "Application exercise: UN Votes",
+    "text": "Application exercise: UN Votes\n\nGo to Posit Cloud and start the project called ae-01-un-votes. Render the document titled unvotes.qmd. Review the narrative and the data visualization you just created. Then, change “Turkey” to another country of your choice. Re-render the document. Show the plot you created to your neighbor and discuss (1) why you chose that country and (2) how this new visualization is different than the original (and what that says about country politics, if anything)."
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#learning-goals",
+    "href": "lectures/02/02-meet-toolkit.html#learning-goals",
+    "title": "Meet the toolkit",
+    "section": "Learning goals",
+    "text": "Learning goals\nBy the end of the course, you will be able to…\n\n\ngain insight from data\ngain insight from data, reproducibly\ngain insight from data, reproducibly, using modern programming tools and techniques\ngain insight from data, reproducibly and collaboratively, using modern programming tools and techniques\ngain insight from data, reproducibly (with literate programming and version control) and collaboratively, using modern programming tools and techniques"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#reproducibility-checklist",
+    "href": "lectures/02/02-meet-toolkit.html#reproducibility-checklist",
+    "title": "Meet the toolkit",
+    "section": "Reproducibility checklist",
+    "text": "Reproducibility checklist\n\nWhat does it mean for a data analysis to be “reproducible”?\n\n\nNear-term goals:\n\nAre the tables and figures reproducible from the code and data?\nDoes the code actually do what you think it does?\nIn addition to what was done, is it clear why it was done?\n\n\n\nLong-term goals:\n\nCan the code be used for other data?\nCan you extend the code to do other things?"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#toolkit-for-reproducibility",
+    "href": "lectures/02/02-meet-toolkit.html#toolkit-for-reproducibility",
+    "title": "Meet the toolkit",
+    "section": "Toolkit for reproducibility",
+    "text": "Toolkit for reproducibility\n\nScriptability \\(\\rightarrow\\) R\nLiterate programming (code, narrative, output in one place) \\(\\rightarrow\\) Quarto\nVersion control \\(\\rightarrow\\) Git / GitHub"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#r-and-rstudio-1",
+    "href": "lectures/02/02-meet-toolkit.html#r-and-rstudio-1",
+    "title": "Meet the toolkit",
+    "section": "R and RStudio",
+    "text": "R and RStudio\n\n\n\n\n\n\n\n\nR is an open-source statistical programming language\nR is also an environment for statistical computing and graphics\nIt’s easily extensible with packages\n\n\n\n\nRStudio is a convenient interface for R called an IDE (integrated development environment), e.g. “I write R code in the RStudio IDE”\nRStudio is not a requirement for programming with R, but it’s very commonly used by R programmers and data scientists"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#r-vs.-rstudio",
+    "href": "lectures/02/02-meet-toolkit.html#r-vs.-rstudio",
+    "title": "Meet the toolkit",
+    "section": "R vs. RStudio",
+    "text": "R vs. RStudio\n\n\n\n\n\n\n\nSource: Modern Dive."
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#r-packages",
+    "href": "lectures/02/02-meet-toolkit.html#r-packages",
+    "title": "Meet the toolkit",
+    "section": "R packages",
+    "text": "R packages\n\n\nPackages: Fundamental units of reproducible R code, including reusable R functions, the documentation that describes how to use them, and sample data1\nAs of September 2022, there are over 18,000 R packages available on CRAN (the Comprehensive R Archive Network)2\nWe’re going to work with a small (but important) subset of these!\n\n\n\n\n1 Wickham and Bryan, R Packages.\n2 CRAN contributed packages."
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#tour-r-and-rstudio",
+    "href": "lectures/02/02-meet-toolkit.html#tour-r-and-rstudio",
+    "title": "Meet the toolkit",
+    "section": "Tour: R and RStudio",
+    "text": "Tour: R and RStudio"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#a-short-list-for-now-of-r-essentials",
+    "href": "lectures/02/02-meet-toolkit.html#a-short-list-for-now-of-r-essentials",
+    "title": "Meet the toolkit",
+    "section": "A short list (for now) of R essentials",
+    "text": "A short list (for now) of R essentials\n\nFunctions are (most often) verbs, followed by what they will be applied to in parentheses:\n\n\ndo_this(to_this)\ndo_that(to_this, to_that, with_those)\n\n\n\nPackages are installed with the install.packages() function and loaded with the library function, once per session:\n\n\ninstall.packages(\"package_name\")\nlibrary(package_name)"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#r-essentials-continued",
+    "href": "lectures/02/02-meet-toolkit.html#r-essentials-continued",
+    "title": "Meet the toolkit",
+    "section": "R essentials (continued)",
+    "text": "R essentials (continued)\n\nColumns (variables) in data frames are accessed with $:\n\n\ndataframe$var_name\n\n\n\nObject documentation can be accessed with ?\n\n\n?mean"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#tidyverse",
+    "href": "lectures/02/02-meet-toolkit.html#tidyverse",
+    "title": "Meet the toolkit",
+    "section": "tidyverse",
+    "text": "tidyverse\n\n\n\n\n\n\n\n\ntidyverse.org\n\nThe tidyverse is an opinionated collection of R packages designed for data science\nAll packages share an underlying philosophy and a common grammar"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#quarto-1",
+    "href": "lectures/02/02-meet-toolkit.html#quarto-1",
+    "title": "Meet the toolkit",
+    "section": "Quarto",
+    "text": "Quarto\n\n\nFully reproducible reports – each time you render the analysis is ran from the beginning\nCode goes in chunks narrative goes outside of chunks\nA visual editor for a familiar / Google docs-like editing experience"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#tour-quarto",
+    "href": "lectures/02/02-meet-toolkit.html#tour-quarto",
+    "title": "Meet the toolkit",
+    "section": "Tour: Quarto",
+    "text": "Tour: Quarto"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#how-will-we-use-quarto",
+    "href": "lectures/02/02-meet-toolkit.html#how-will-we-use-quarto",
+    "title": "Meet the toolkit",
+    "section": "How will we use Quarto?",
+    "text": "How will we use Quarto?\n\nEvery assignment / report / project / etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#application-exercise-flint",
+    "href": "lectures/02/02-meet-toolkit.html#application-exercise-flint",
+    "title": "Meet the toolkit",
+    "section": "Application exercise: Flint",
+    "text": "Application exercise: Flint\n\nGo to Posit Cloud and start the project called ae-02-flint. Open the document titled flint.qmd."
+  },
+  {
+    "objectID": "lectures/02/02-meet-toolkit.html#next-time",
+    "href": "lectures/02/02-meet-toolkit.html#next-time",
+    "title": "Meet the toolkit",
+    "section": "Next time",
+    "text": "Next time\n\nWe’ll continue out “Meet the toolkit” journey, focusing on version control tools, Git and GitHub, the last piece of the puzzle\nWe’ll then move on to the nuts and bolts of data visualization in R with ggplot2\n\n\n\n\n🔗 sta113-f23.github.io"
+  },
+  {
     "objectID": "lectures/01/01-welcome.html#teaching-team",
     "href": "lectures/01/01-welcome.html#teaching-team",
     "title": "Welcome to STA 113FS",
@@ -1050,473 +1519,165 @@
     "text": "Next time\nMeet the computational tools for the course: R and RStudio\n\n\n\n🔗 sta113-f23.github.io"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#reflection",
-    "href": "lectures/02/02-meet-toolkit.html#reflection",
-    "title": "Meet the toolkit",
-    "section": "Reflection",
-    "text": "Reflection\n\nWhat is one thing you learned from your reading that was “new” to you? And what is one question you have from the reading?"
+    "objectID": "lectures/09/09-prp-tell-story.html#peer-review",
+    "href": "lectures/09/09-prp-tell-story.html#peer-review",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Peer review",
+    "text": "Peer review\n\n\n\nReviewer\nReviewee\n\n\n\n\nCoding Clowns\nJust Make Some Noise\n\n\nJust Make Some Noise\nStats Slayers\n\n\nStats Slayers\nCoding Clowns\n\n\n\n\nGo to the team’s repo and view their website\nClone the team’s repo and render project – note any challenges with reproducing\nFill out the questions in the peer review template issue\nDetailed instructions at https://sta113-f23.github.io/project/project-1.html#reviewer-tasks\n\n\n\n\n−+\n30:00"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#announcements",
-    "href": "lectures/02/02-meet-toolkit.html#announcements",
-    "title": "Meet the toolkit",
-    "section": "Announcements",
-    "text": "Announcements\n\nMy office hours: Thursdays 10-11am on Zoom (link to be posted!)\nCourse webpage updated with tentative schedule for due dates"
+    "objectID": "lectures/09/09-prp-tell-story.html#multiple-ways-of-telling-a-story",
+    "href": "lectures/09/09-prp-tell-story.html#multiple-ways-of-telling-a-story",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Multiple ways of telling a story",
+    "text": "Multiple ways of telling a story\n\nSequential plots: Motivation, then resolution\nA single plot: Resolution, and hidden in it motivation\n\n\n\n\n\n\n\nProject note: you’re asked to create two plots for your question. One possible approach: Start with a plot showing the raw data, and show derived quantities (e.g. percent increases, averages, coefficients of fitted models) in the subsequent plot."
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#application-exercise-un-votes",
-    "href": "lectures/02/02-meet-toolkit.html#application-exercise-un-votes",
-    "title": "Meet the toolkit",
-    "section": "Application exercise: UN Votes",
-    "text": "Application exercise: UN Votes\n\nGo to Posit Cloud and start the project called ae-01-un-votes. Render the document titled unvotes.qmd. Review the narrative and the data visualization you just created. Then, change “Turkey” to another country of your choice. Re-render the document. Show the plot you created to your neighbor and discuss (1) why you chose that country and (2) how this new visualization is different than the original (and what that says about country politics, if anything)."
+    "objectID": "lectures/09/09-prp-tell-story.html#simplicity-vs.-complexity",
+    "href": "lectures/09/09-prp-tell-story.html#simplicity-vs.-complexity",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Simplicity vs. complexity",
+    "text": "Simplicity vs. complexity\n\nWhen you’re trying to show too much data at once you may end up not showing anything.\n\n\nNever assume your audience can rapidly process complex visual displays\nDon’t add variables to your plot that are tangential to your story\nDon’t jump straight to a highly complex figure; first show an easily digestible subset (e.g., show one facet first)\nAim for memorable, but clear\n\n\n\n\n\n\n\nProject note: Make sure to leave time to iterate on your plots after you practice your presentation. If certain plots are getting too wordy to explain, take time to simplify them!"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#learning-goals",
-    "href": "lectures/02/02-meet-toolkit.html#learning-goals",
-    "title": "Meet the toolkit",
-    "section": "Learning goals",
-    "text": "Learning goals\nBy the end of the course, you will be able to…\n\n\ngain insight from data\ngain insight from data, reproducibly\ngain insight from data, reproducibly, using modern programming tools and techniques\ngain insight from data, reproducibly and collaboratively, using modern programming tools and techniques\ngain insight from data, reproducibly (with literate programming and version control) and collaboratively, using modern programming tools and techniques"
+    "objectID": "lectures/09/09-prp-tell-story.html#consistency-vs.-repetitiveness",
+    "href": "lectures/09/09-prp-tell-story.html#consistency-vs.-repetitiveness",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Consistency vs. repetitiveness",
+    "text": "Consistency vs. repetitiveness\n\nBe consistent but don’t be repetitive.\n\n\nUse consistent features throughout plots (e.g., same color represents same level on all plots)\nAim to use a different type of visualization for each distinct analysis\n\n\n\n\n\n\n\nProject note: If possible, ask a friend who is not in the class to listen to your presentation and then ask them what they remember. Then, ask yourself: is that what you wanted them to remember?"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#reproducibility-checklist",
-    "href": "lectures/02/02-meet-toolkit.html#reproducibility-checklist",
-    "title": "Meet the toolkit",
-    "section": "Reproducibility checklist",
-    "text": "Reproducibility checklist\n\nWhat does it mean for a data analysis to be “reproducible”?\n\n\nNear-term goals:\n\nAre the tables and figures reproducible from the code and data?\nDoes the code actually do what you think it does?\nIn addition to what was done, is it clear why it was done?\n\n\n\nLong-term goals:\n\nCan the code be used for other data?\nCan you extend the code to do other things?"
+    "objectID": "lectures/09/09-prp-tell-story.html#packages-and-data",
+    "href": "lectures/09/09-prp-tell-story.html#packages-and-data",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Packages and data",
+    "text": "Packages and data\n\nlibrary(tidyverse)\nlibrary(ggrepel)\nlibrary(ggthemes)\n\n\n\nd &lt;- tribble(\n  ~category,                     ~value,\n  \"Cutting tools\"                , 0.03,\n  \"Buildings and administration\" , 0.22,\n  \"Labor\"                        , 0.31,\n  \"Machinery\"                    , 0.27,\n  \"Workplace materials\"          , 0.17\n)\nd\n\n\n# A tibble: 5 × 2\n  category                     value\n  &lt;chr&gt;                        &lt;dbl&gt;\n1 Cutting tools                 0.03\n2 Buildings and administration  0.22\n3 Labor                         0.31\n4 Machinery                     0.27\n5 Workplace materials           0.17"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#toolkit-for-reproducibility",
-    "href": "lectures/02/02-meet-toolkit.html#toolkit-for-reproducibility",
-    "title": "Meet the toolkit",
-    "section": "Toolkit for reproducibility",
-    "text": "Toolkit for reproducibility\n\nScriptability \\(\\rightarrow\\) R\nLiterate programming (code, narrative, output in one place) \\(\\rightarrow\\) Quarto\nVersion control \\(\\rightarrow\\) Git / GitHub"
+    "objectID": "lectures/09/09-prp-tell-story.html#keep-it-simple",
+    "href": "lectures/09/09-prp-tell-story.html#keep-it-simple",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Keep it simple",
+    "text": "Keep it simple"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#r-and-rstudio-1",
-    "href": "lectures/02/02-meet-toolkit.html#r-and-rstudio-1",
-    "title": "Meet the toolkit",
-    "section": "R and RStudio",
-    "text": "R and RStudio\n\n\n\n\n\n\n\n\nR is an open-source statistical programming language\nR is also an environment for statistical computing and graphics\nIt’s easily extensible with packages\n\n\n\n\nRStudio is a convenient interface for R called an IDE (integrated development environment), e.g. “I write R code in the RStudio IDE”\nRStudio is not a requirement for programming with R, but it’s very commonly used by R programmers and data scientists"
+    "objectID": "lectures/09/09-prp-tell-story.html#judging-relative-area",
+    "href": "lectures/09/09-prp-tell-story.html#judging-relative-area",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Judging relative area",
+    "text": "Judging relative area\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Data to Viz caveat collection - The issue with pie chart"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#r-vs.-rstudio",
-    "href": "lectures/02/02-meet-toolkit.html#r-vs.-rstudio",
-    "title": "Meet the toolkit",
-    "section": "R vs. RStudio",
-    "text": "R vs. RStudio\n\n\n\n\n\n\n\nSource: Modern Dive."
+    "objectID": "lectures/09/09-prp-tell-story.html#use-color-to-draw-attention",
+    "href": "lectures/09/09-prp-tell-story.html#use-color-to-draw-attention",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Use color to draw attention",
+    "text": "Use color to draw attention"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#r-packages",
-    "href": "lectures/02/02-meet-toolkit.html#r-packages",
-    "title": "Meet the toolkit",
-    "section": "R packages",
-    "text": "R packages\n\n\nPackages: Fundamental units of reproducible R code, including reusable R functions, the documentation that describes how to use them, and sample data1\nAs of September 2022, there are over 18,000 R packages available on CRAN (the Comprehensive R Archive Network)2\nWe’re going to work with a small (but important) subset of these!\n\n\n\n\n1 Wickham and Bryan, R Packages.\n2 CRAN contributed packages."
+    "objectID": "lectures/09/09-prp-tell-story.html#play-with-themes-for-a-non-standard-look",
+    "href": "lectures/09/09-prp-tell-story.html#play-with-themes-for-a-non-standard-look",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Play with themes for a non-standard look",
+    "text": "Play with themes for a non-standard look"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#tour-r-and-rstudio",
-    "href": "lectures/02/02-meet-toolkit.html#tour-r-and-rstudio",
-    "title": "Meet the toolkit",
-    "section": "Tour: R and RStudio",
-    "text": "Tour: R and RStudio"
+    "objectID": "lectures/09/09-prp-tell-story.html#go-beyond-ggplot2-themes-ggthemes",
+    "href": "lectures/09/09-prp-tell-story.html#go-beyond-ggplot2-themes-ggthemes",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Go beyond ggplot2 themes – ggthemes",
+    "text": "Go beyond ggplot2 themes – ggthemes"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#a-short-list-for-now-of-r-essentials",
-    "href": "lectures/02/02-meet-toolkit.html#a-short-list-for-now-of-r-essentials",
-    "title": "Meet the toolkit",
-    "section": "A short list (for now) of R essentials",
-    "text": "A short list (for now) of R essentials\n\nFunctions are (most often) verbs, followed by what they will be applied to in parentheses:\n\n\ndo_this(to_this)\ndo_that(to_this, to_that, with_those)\n\n\n\nPackages are installed with the install.packages() function and loaded with the library function, once per session:\n\n\ninstall.packages(\"package_name\")\nlibrary(package_name)"
+    "objectID": "lectures/09/09-prp-tell-story.html#tell-a-story",
+    "href": "lectures/09/09-prp-tell-story.html#tell-a-story",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Tell a story",
+    "text": "Tell a story\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#r-essentials-continued",
-    "href": "lectures/02/02-meet-toolkit.html#r-essentials-continued",
-    "title": "Meet the toolkit",
-    "section": "R essentials (continued)",
-    "text": "R essentials (continued)\n\nColumns (variables) in data frames are accessed with $:\n\n\ndataframe$var_name\n\n\n\nObject documentation can be accessed with ?\n\n\n?mean"
+    "objectID": "lectures/09/09-prp-tell-story.html#leave-out-non-story-details",
+    "href": "lectures/09/09-prp-tell-story.html#leave-out-non-story-details",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Leave out non-story details",
+    "text": "Leave out non-story details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#tidyverse",
-    "href": "lectures/02/02-meet-toolkit.html#tidyverse",
-    "title": "Meet the toolkit",
-    "section": "tidyverse",
-    "text": "tidyverse\n\n\n\n\n\n\n\n\ntidyverse.org\n\nThe tidyverse is an opinionated collection of R packages designed for data science\nAll packages share an underlying philosophy and a common grammar"
+    "objectID": "lectures/09/09-prp-tell-story.html#order-matters",
+    "href": "lectures/09/09-prp-tell-story.html#order-matters",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Order matters",
+    "text": "Order matters\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#quarto-1",
-    "href": "lectures/02/02-meet-toolkit.html#quarto-1",
-    "title": "Meet the toolkit",
-    "section": "Quarto",
-    "text": "Quarto\n\n\nFully reproducible reports – each time you render the analysis is ran from the beginning\nCode goes in chunks narrative goes outside of chunks\nA visual editor for a familiar / Google docs-like editing experience"
+    "objectID": "lectures/09/09-prp-tell-story.html#clearly-indicate-missing-data",
+    "href": "lectures/09/09-prp-tell-story.html#clearly-indicate-missing-data",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Clearly indicate missing data",
+    "text": "Clearly indicate missing data\n\n\n\n\n\n\n\nhttp://ivi.sagepub.com/content/10/4/271, Angela Zoss and Eric Monson, Duke DVS"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#tour-quarto",
-    "href": "lectures/02/02-meet-toolkit.html#tour-quarto",
-    "title": "Meet the toolkit",
-    "section": "Tour: Quarto",
-    "text": "Tour: Quarto"
+    "objectID": "lectures/09/09-prp-tell-story.html#reduce-cognitive-load",
+    "href": "lectures/09/09-prp-tell-story.html#reduce-cognitive-load",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Reduce cognitive load",
+    "text": "Reduce cognitive load\n\n\n\n\n\n\n\nhttp://www.storytellingwithdata.com/2012/09/some-finer-points-of-data-visualization.html"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#how-will-we-use-quarto",
-    "href": "lectures/02/02-meet-toolkit.html#how-will-we-use-quarto",
-    "title": "Meet the toolkit",
-    "section": "How will we use Quarto?",
-    "text": "How will we use Quarto?\n\nEvery assignment / report / project / etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
+    "objectID": "lectures/09/09-prp-tell-story.html#use-descriptive-titles",
+    "href": "lectures/09/09-prp-tell-story.html#use-descriptive-titles",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Use descriptive titles",
+    "text": "Use descriptive titles\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit: Angela Zoss and Eric Monson, Duke DVS"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#application-exercise-flint",
-    "href": "lectures/02/02-meet-toolkit.html#application-exercise-flint",
-    "title": "Meet the toolkit",
-    "section": "Application exercise: Flint",
-    "text": "Application exercise: Flint\n\nGo to Posit Cloud and start the project called ae-02-flint. Open the document titled flint.qmd."
+    "objectID": "lectures/09/09-prp-tell-story.html#annotate-figures",
+    "href": "lectures/09/09-prp-tell-story.html#annotate-figures",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Annotate figures",
+    "text": "Annotate figures\n\n\n\n\n\n\n\nhttps://bl.ocks.org/susielu/23dc3082669ee026c552b85081d90976"
   },
   {
-    "objectID": "lectures/02/02-meet-toolkit.html#next-time",
-    "href": "lectures/02/02-meet-toolkit.html#next-time",
-    "title": "Meet the toolkit",
-    "section": "Next time",
-    "text": "Next time\n\nWe’ll continue out “Meet the toolkit” journey, focusing on version control tools, Git and GitHub, the last piece of the puzzle\nWe’ll then move on to the nuts and bolts of data visualization in R with ggplot2\n\n\n\n\n🔗 sta113-f23.github.io"
+    "objectID": "lectures/09/09-prp-tell-story.html#sample-plots",
+    "href": "lectures/09/09-prp-tell-story.html#sample-plots",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Sample plots",
+    "text": "Sample plots\n\np_hist &lt;- ggplot(mtcars, aes(x = mpg)) +\n  geom_histogram(binwidth = 2)\n\np_text &lt;- mtcars |&gt;\n  rownames_to_column() |&gt;\n  ggplot(aes(x = disp, y = mpg)) +\n  geom_text_repel(aes(label = rowname)) +\n  coord_cartesian(clip = \"off\")"
   },
   {
-    "objectID": "course-syllabus.html",
-    "href": "course-syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "This course will teach you how to use modern data science tools to visualize data and, through the lens of visualization, it will introduce you to programming and data science concepts and workflows. Working with data on issues of local, national, and global societal importance, we will learn to create elegant, insightful, and impactful data visualizations through iterative and reproducible processes. We will also discuss the role of visualization in exploratory data analyses as well as in communicating the results of statistical inference and modeling.\nThe main goal of the course is to empower students with a toolkit to explore topics of interest to them via visualizations they create while also learning programming and data science concepts.\nStudents will first learn the basics of the R statistical programming language as well as modern data science toolkit including RStudio for an integrated development environment, Quarto for reproducible computational documents, and Git and GitHub for version control and collaboration.\nBuilding on this foundation, students will continue to hone their visualization skills through the analysis of increasingly complex datasets throughout the semester. These datasets will be selected to reflect current issues of societal importance at the local (Duke/Durham), national, and global levels."
+    "objectID": "lectures/09/09-prp-tell-story.html#small-fig-width",
+    "href": "lectures/09/09-prp-tell-story.html#small-fig-width",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Small fig-width",
+    "text": "Small fig-width\nFor a zoomed-in look\n\n```{r}\n#| fig-width: 3\n#| fig-asp: 0.618\n\np_hist\n```"
   },
   {
-    "objectID": "course-syllabus.html#course-description",
-    "href": "course-syllabus.html#course-description",
-    "title": "Syllabus",
-    "section": "",
-    "text": "This course will teach you how to use modern data science tools to visualize data and, through the lens of visualization, it will introduce you to programming and data science concepts and workflows. Working with data on issues of local, national, and global societal importance, we will learn to create elegant, insightful, and impactful data visualizations through iterative and reproducible processes. We will also discuss the role of visualization in exploratory data analyses as well as in communicating the results of statistical inference and modeling.\nThe main goal of the course is to empower students with a toolkit to explore topics of interest to them via visualizations they create while also learning programming and data science concepts.\nStudents will first learn the basics of the R statistical programming language as well as modern data science toolkit including RStudio for an integrated development environment, Quarto for reproducible computational documents, and Git and GitHub for version control and collaboration.\nBuilding on this foundation, students will continue to hone their visualization skills through the analysis of increasingly complex datasets throughout the semester. These datasets will be selected to reflect current issues of societal importance at the local (Duke/Durham), national, and global levels."
+    "objectID": "lectures/09/09-prp-tell-story.html#large-fig-width",
+    "href": "lectures/09/09-prp-tell-story.html#large-fig-width",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Large fig-width",
+    "text": "Large fig-width\nFor a zoomed-out look\n\n```{r}\n#| fig-width: 10\n#| fig-asp: 0.618\n\np_hist\n```"
   },
   {
-    "objectID": "course-syllabus.html#learning-objectives",
-    "href": "course-syllabus.html#learning-objectives",
-    "title": "Syllabus",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\nLearn a modern toolkit commonly used in data science research and careers (R, RStudio, Quarto, Git, GitHub).\nIntroduce students to the ideas and methods of data visualization in a comprehensible reproducible way using this toolkit.\nUnderstand the principles of designing and creating data visualizations.\nEvaluate, critique, and improve upon one’s own and others’ data visualizations through an iterative process.\nUse data visualization to look for and answer questions of societal importance and of interest to students."
+    "objectID": "lectures/09/09-prp-tell-story.html#fig-width-affects-text-size",
+    "href": "lectures/09/09-prp-tell-story.html#fig-width-affects-text-size",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "fig-width affects text size",
+    "text": "fig-width affects text size"
   },
   {
-    "objectID": "course-syllabus.html#prerequisites",
-    "href": "course-syllabus.html#prerequisites",
-    "title": "Syllabus",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nThis course has no pre-requisites."
+    "objectID": "lectures/09/09-prp-tell-story.html#multiple-plots-on-a-slide",
+    "href": "lectures/09/09-prp-tell-story.html#multiple-plots-on-a-slide",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Multiple plots on a slide",
+    "text": "Multiple plots on a slide\n\n\n\n\n\n\nFirst, ask yourself, must you include multiple plots on a slide? For example, is your narrative about comparing results from two plots?\n\n\n\n\nIf no, then don’t! Move the second plot to to the next slide!\nIf yes, use columns and sequential reveal."
   },
   {
-    "objectID": "course-syllabus.html#workload",
-    "href": "course-syllabus.html#workload",
-    "title": "Syllabus",
-    "section": "Workload",
-    "text": "Workload\nYou are expected to put in ~6 hours of work / week outside of class. Some of you will do well with less time than this, and some of you will need more."
-  },
-  {
-    "objectID": "course-syllabus.html#tips-for-success",
-    "href": "course-syllabus.html#tips-for-success",
-    "title": "Syllabus",
-    "section": "Tips for success",
-    "text": "Tips for success\n\nComplete the readings before each class.\nBe an active participant during lectures.\nAsk questions - during class or office hours, or by email. Ask me, your TAs, and your classmates.\nDo the homework assignments - start early and make sure you attempt and understand all questions.\nStart your project early and and allow adequate time to complete it.\nGive yourself plenty of time time to prepare a good cheat sheet for exams. This requires going through the material and taking the time to review the concepts that you’re not comfortable with.\nDo not procrastinate - don’t let a unit go by with unanswered questions as it will just make the following unit’s material even more difficult to follow."
-  },
-  {
-    "objectID": "course-syllabus.html#textbooks",
-    "href": "course-syllabus.html#textbooks",
-    "title": "Syllabus",
-    "section": "Textbooks",
-    "text": "Textbooks\nReadings for the course will come from the following textbooks. They are freely available online and you do not need to purchase a physical copy of either book to succeed in this class.\n\n[r4ds]: Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. R for Data Science. 2nd edition. O’Reilly, 2022.\n[socviz] Kieran Healy. Data Visualization: A Practical Introduction. Princeton University Press, 2018.\n[ims]: Mine Çetinkaya-Rundel and Jo Hardin. Introduction to Modern Statistics. (in progress) 2nd edition. OpenIntro, 2023."
-  },
-  {
-    "objectID": "course-syllabus.html#course-community",
-    "href": "course-syllabus.html#course-community",
-    "title": "Syllabus",
-    "section": "Course community",
-    "text": "Course community\n\nDuke Community Standard\nAll students must adhere to the Duke Community Standard (DCS): Duke University is a community dedicated to scholarship, leadership, and service and to the principles of honesty, fairness, and accountability. Citizens of this community commit to reflect upon these principles in all academic and non-academic endeavors, and to protect and promote a culture of integrity.\nTo uphold the Duke Community Standard, students agree:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\n\n\n\n\nInclusive community\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent to present materials and activities that are respectful of diversity and in alignment with Duke’s Commitment to Diversity and Inclusion. Your suggestions are encouraged and appreciated. Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.\nFurthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives and experiences, and honors your identities. To help accomplish this:\n\nIf you have a name that differs from those that appear in your official Duke records, please let me know! You’ll be able to note this in the Getting to know you survey.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please let me or a member of the teaching team know.\n\n\n\nPronouns\nPronouns are meaningful tools to communicate identities and experiences, and using pronouns supports a campus environment where all community members can thrive.\nPlease update your gender pronouns in Duke Hub. You can learn more at the Center for Sexual and Gender Diversity’s website.\n\n\nAccessibility\nIf there is any portion of the course that is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments. Students should be in touch with the Student Disability Access Office to request or update accommodations under these circumstances.\n\n\nCommunication\nAll lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website: sta101-f23.github.io.\nI will regularly send course announcements via email and Canvas, make sure to check one or the other of these regularly. If an announcement is sent Monday through Thursday, I will assume that you have read the announcement by the next day. If an announcement is sent on a Friday or over the weekend, I will assume that you have read it by Monday.\n\n\nWhere to get help\n\nIf you have a question during lectures, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!\nOutside of class and office hours, any general questions about course content or assignments should be posted on the course Slack. There is a chance another student has already asked a similar question, so please check the other posts on Slack before adding a new question. If you know the answer to a question posted on Slack, I encourage you to respond!\n\nCheck out the Support page for more resources.\nI want to make sure that you learn everything you were hoping to learn from this class. If this requires flexibility, please don’t hesitate to ask.\n\nYou never owe me personal information about your health (mental or physical) but you’re always welcome to talk to me. If I can’t help, I likely know someone who can.\nI want you to learn lots of things from this class, but I primarily want you to stay healthy, balanced, and grounded during this crisis."
-  },
-  {
-    "objectID": "course-syllabus.html#lectures",
-    "href": "course-syllabus.html#lectures",
-    "title": "Syllabus",
-    "section": "Lectures",
-    "text": "Lectures\nThe goal of the lectures is for them to be as interactive as possible. My role as instructor is to introduce you new tools and techniques, but it is up to you to take them and make use of them. A lot of what you do in this course will involve writing code, and coding is a skill that is best learned by doing. Therefore, as much as possible, you will be working on a variety of tasks and activities throughout each lecture. Attendance will not be taken during class but you are expected to attend all lecture sessions and meaningfully contribute to in-class exercises and discussion.\nYou are expected to bring a laptop to each class so that you can take part in the in-class exercises. Please make sure your laptop is fully charged before you come to class as the number of outlets in the classroom will not be sufficient to accommodate everyone. See Duke LIFE loaner laptop program if you need a loaner laptop."
-  },
-  {
-    "objectID": "course-syllabus.html#assessments-and-grading",
-    "href": "course-syllabus.html#assessments-and-grading",
-    "title": "Syllabus",
-    "section": "Assessments and grading",
-    "text": "Assessments and grading\nThe final course grade will be calculated as follows:\n\n\n\nCategory\nPercentage\n\n\n\n\nAttendance and participation\n10%\n\n\nHomework\n25%\n\n\nExam 1\n15%\n\n\nExam 2\n15%\n\n\nProject 1\n15%\n\n\nProject 2\n20%\n\n\n\nThe final letter grade will be determined based on the following thresholds:\n\n\n\nLetter Grade\nFinal Course Grade\n\n\n\n\nA\n&gt;= 93\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n73 - 76.99\n\n\nC-\n70 - 72.99\n\n\nD+\n67 - 69.99\n\n\nD\n63 - 66.99\n\n\nD-\n60 - 62.99\n\n\nF\n&lt; 60\n\n\n\nThese are upper bounds for grade cutoffs, depending on the class performance the cutoffs may be lowered but they won’t be increased.\nAll work is expected to be submitted by the deadline and there are no make ups for any missed assessments. See Section 10.2 for policies on late work.\n\nAttendance and participation\nYou are expected to be present at class meeting and actively participate in the discussion. Your attendance and participation during class, as well as your activity on the course Slack will make up a non-insignificant portion of your grade in this class. While I might sometimes call on you during the class discussion, it is your responsibility to be an active participant without being called on.\nIf you attend at least 80% of the classes, you’ll get all available points for this component.\n\n\nHomework\nIn homework assignments, you will apply the concepts discussed in lecture to various data analysis scenarios. Homework assignments will focus on both computation and conceptualization. They will be completed using Quarto and submitted in GitHub repositories. While you may collaborate with others on homework assignments, your final solution should be your own.\nLowest homework score will be dropped.\n\n\nExams\nThere will be two exams. Each exam will be comprised of two components:\n\nIn class: 75 minute in-class exam. This exam is closed book, however you are allowed to use one sheet of notes (“cheat sheet”) to the midterm and the final. This sheet must be no larger than 8 1/2 x 11, and must be prepared by you. You may use both sides of the sheet. (70% of the grade)\nTake home: Following the in class exam, you’ll have 48 hours to complete the take home portion of your exam. The take home portion will follow from the in class exam and focus on the analysis of a dataset introduced in the take home exam. (30% of the grade)\n\nThrough these exams you have the opportunity to demonstrate what you’ve learned in the course thus far. Each exam will include small analyses and computational tasks related to the content in application exercises. More details about the content and structure of the exams will be discussed during the semester.\nSee Section 12 for dates and times of the exams. Exam dates cannot be changed and no make-up exams will be given. If you can’t take the exams on these dates, you should drop this class.\n\n\nProjects\nYou will work on two projects that consist of analyses of datasets of students’ own choosing. The data set may already exist, or students may collect their own data using a survey or by conducting an experiment. The goal of the projects is for you to demonstrate proficiency in the techniques we have covered in this class (and beyond, if preferred) and apply them to a novel data set in a meaningful way.\nThe mid-semester project will be on visualizing a dataset given to you and the final project will be on visualizing a dataset of your own choice. More details about the projects will be provided during the semester. Projects will be completed in teams.\nYou will be assigned to a different team for each of your two projects. You are encouraged to sit with your teammates in lectures. All team members are expected to contribute equally to the completion of each project and you will be asked to evaluate your team members after each assignment is due. Failure to adequately contribute to an assignment will result in a penalty to your mark relative to the team’s overall mark.\nSee Section 12 for dates and times of project deadlines. Project deadlines cannot be changed. If you can’t be in class for the final project presentation, you should drop this class."
-  },
-  {
-    "objectID": "course-syllabus.html#course-policies",
-    "href": "course-syllabus.html#course-policies",
-    "title": "Syllabus",
-    "section": "Course policies",
-    "text": "Course policies\n\nAcademic honesty\nTL;DR: Don’t cheat!\nPlease abide by the following as you work on assignments in this course:\n\nCollaboration: Only work that is clearly assigned as team work should be completed collaboratively.\n\nThe homework assignments must also be completed individually and you are welcomed to discuss the assignment with classmates at a high level (e.g., discuss what’s the best way for approaching a problem, what functions are useful for accomplishing a particular task, etc.). However you may not directly share answers to homework questions (including any code) with anyone other than myself and the teaching assistants.\nFor the projects, collaboration within teams is not only allowed, but expected. Communication between teams at a high level is also allowed however you may not share code or components of the project across teams.\nOn individual assignments you may not directly share code with another student in this class, and on team assignments you may not directly share code with another team in this class.\n\nOnline resources: I am well aware that a huge volume of code is available on the web to solve any number of problems. Unless I explicitly tell you not to use something, the course’s policy is that you may make use of any online resources (e.g., StackOverflow) but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.\nUse of generative artificial intelligence (AI): You should treat generative AI, such as ChatGPT, the same as other online resources. There are two guiding principles that govern how you can use AI in this course:1 (1) Cognitive dimension: Working with AI should not reduce your ability to think clearly. We will practice using AI to facilitate—rather than hinder—learning. (2) Ethical dimension: Students using AI should be transparent about their use and make sure it aligns with academic integrity.\n\n✅ AI tools for code: You may make use of the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. You may use these guidelines for citing AI-generated content.\n❌ AI tools for narrative: Unless instructed otherwise, you may not use generative AI to write narrative on assignments. In general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect your understanding of the course content.\n\n\nRegardless of course delivery format, it is the responsibility of all students to understand and follow all Duke policies, including academic integrity (e.g., completing one’s own work, following proper citation of sources, adhering to guidance around group work projects, and more). Ignoring these requirements is a violation of the Duke Community Standard. Any questions and/or concerns regarding academic integrity can be directed to the Office of Student Conduct and Community Standards at conduct@duke.edu.\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will\n\nautomatically result in a 0 for the assignment,\ncan further impact your overall course grade, and\nwill be reported to the Office of Student Conduct for further action.\n\n\n\nLate work & extensions\nThe due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback within a timely manner. We understand that things come up periodically that could make it difficult to submit an assignment by the deadline.\nPolicy on late work depends on the particular course component:\n\nHomework assignments:\n\nLate, but within 24 hours of deadline: -20% of available points.\nAny later: No credit, and we will not provide written feedback.\nNote that lowest homework score will be dropped, even if that score is a 0.\n\nExams:\n\nIn class portions of the exams can obviously not be turned in late.\nLate exams are not accepted.\n\nProjects: The following three components contribute to your project score.\n\nPresentation: Late presentations are not accepted and there are no make ups for missed presentations.\nWrite up: GitHub repositories will be closed to contributions at the deadline. If you need to submit your work late, Slack/email me to reopen your repository.\n\nLate, but within 24 hours of deadline: -20% of available points.\nAny later: No credit, and we will not provide written feedback.\n\nPeer evaluation: Late peer evaluations are not accepted. If you do not turn in your peer evaluation, you get 0 points for your own peer score as well, regardless of how your teammates have evaluated you.\n\n\n\n\nWaiver for extenuating circumstances\nIf there are circumstances that prevent you from completing a homework assignment by the stated due date, you may email the Head TA (Shuo Wang, shuo.wang717@duke.edu) before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide explanation. This waiver may only be used for once in the semester, so only use it for a truly extenuating circumstance.\nIf there are circumstances that are having a longer-term impact on your academic performance, please let your academic dean know, as they can be a resource. Please let me know if you need help contacting your academic dean.\n\n\nRegrade requests\nEvery effort will be made to mark your work accurately. We are on your side, and want you to receive every point you have worked to earn. However, sometimes grading mistakes happen. If you believe that an error has been made, return the paper to the instructor within four days, stating your claim in writing.\nThe following claims will be considered for re-grading:\n\npoints are not totaled correctly;\nthe grader did not see a correct answer that is on your paper;\nyour answer is the same as the correct answer, but in a different form (e.g., you wrote a correct answer as 1/3 and the grader was looking for 0.333);\nyour answer to a free response question is essentially correct but stated slightly differently than the grader’s expectation.\n\nThe following claims will not be considered for re-grading:\n\narguments about the number of points lost;\narguments about question wording.\n\nConsidering re-grades consumes time and resources that TAs and the instructor would rather spend helping you understand material. Please bring only claims of type 1-4 to our attention.\nNote that during the regrade process your score could go up or go down or not change.\n\n\n\n\n\n\nWarning\n\n\n\nNo grades will be changed after the project presentations.\n\n\n\n\nAttendance policy\nResponsibility for class attendance rests with individual students. Since regular and punctual class attendance is expected, students must accept the consequences of failure to attend. More details on Trinity attendance policies are available here.\nHowever, there may be many reasons why you cannot be in class on a given day, particularly with possible extra personal and academic stress and health concerns this semester. All course lectures will be recorded and available to enrolled students after class. If you miss a lecture, make sure to watch the recording and review the material before the next class session. Given the technologies we use in the course, this is straightforward to do asynchronously. Overall these policies are put in place to ensure communication between team members, respect for each others’ time, and also to give you a safety net in the case of illness or other reasons that keep you away from attending class.\nNote that attendance and participation is part of your grade as well.\n\n\nAttendance policy related to COVID symptoms, exposure, or infection\nStudent health, safety, and well-being are the university’s top priorities. To help ensure your well-being and the well-being of those around you, please do not come to class if you have tested positive for COVID-19 or have possible symptoms and have not yet been tested. If any of these situations apply to you, you must follow university guidance related to the ongoing COVID-19 pandemic and current health and safety protocols. If you are experiencing any COVID-19 symptoms, contact student health (dshcheckin@duke.edu, 919- 681-9355). Learn more about current university policy related to COVID-19 at https://coronavirus.duke.edu. To keep the university community as safe and healthy as possible, you will be expected to follow these guidelines. Please reach out to me and your academic dean as soon as possible if you need to quarantine or isolate so that we can discuss arrangements for your continued participation in class.\n\n\nInclement weather policy\nIn the event of inclement weather or other connectivity-related events that prohibit class attendance, I will notify you how we will make up missed course content and work. This might entail holding the class on Zoom synchronously, we may rely on Duke’s designated make-up days, or you may be asked to watch a recording of the class.\n\n\nPolicy on video recording course content\nAll lectures will be recorded and available on Panopto, so students should not need to create their own recordings of lectures. If you feel that you need record the lectures yourself, you must get permission from me ahead of time and these recordings should be used for personal study only, no for distribution. The full policy on recording of lectures falls under the Duke University Policy on Intellectual Property Rights, available at https://policies.provost.duke.edu/docs/faculty-handbook-appendix-m-intellectual-property. Unauthorized distribution is a cause for disciplinary action by the Judicial Board."
-  },
-  {
-    "objectID": "course-syllabus.html#accommodations",
-    "href": "course-syllabus.html#accommodations",
-    "title": "Syllabus",
-    "section": "Accommodations",
-    "text": "Accommodations\n\nAcademic accommodations\nIf you are a student with a disability and need accommodations for this class, it is your responsibility to register with the Student Disability Access Office (SDAO) and provide them with documentation of your disability. SDAO will work with you to determine what accommodations are appropriate for your situation. Please note that accommodations are not retroactive and disability accommodations cannot be provided until a Faculty Accommodation Letter has been given to me. Please contact SDAO for more information: sdao@duke.edu or access.duke.edu.\n\n\nReligious accommodations\nStudents are permitted by university policy to be absent from class to observe a religious holiday. Accordingly, Trinity College of Arts & Sciences and the Pratt School of Engineering have established procedures to be followed by students for notifying their instructors of an absence necessitated by the observance of a religious holiday. Please submit requests for religious accommodations at the beginning of the semester so that we can work to make suitable arrangements well ahead of time. You can find the policy and relevant notification form here: https://trinity.duke.edu/undergraduate/academic-policies/religious-holidays.\nNote: If you’ve read this far in the syllabus, email me a picture of your pet if you have one or your favorite meme!"
-  },
-  {
-    "objectID": "course-syllabus.html#sec-important-dates",
-    "href": "course-syllabus.html#sec-important-dates",
-    "title": "Syllabus",
-    "section": "Important dates",
-    "text": "Important dates\n\nMonday, August 28: Classes begin\nFriday, September 8: Drop/add ends\nTuesday, October 3: Exam 1 - In class\nThursday, October 5: Exam 1 - Take home due\nThursday, October 12: Project 1 due + presentations\nFriday, October 13: Mid-semester grades reported\nTuesday, October 17: Fall Break - No lecture\nFriday, November 10: Last day to withdraw with W\nTuesday, November 14: Exam 2 - In class\nThursday, November 16: Exam 2 - Take home due\nThursday, November 23: Thanksgiving Break - No lecture\nThursday, December 7: Project 2 due + presentations\n\nFor more important dates, see the full Duke Academic Calendar."
-  },
-  {
-    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#reflection",
-    "href": "lectures/04/04-visualizing-various-types-of-data.html#reflection",
-    "title": "Visualizing various types of data",
-    "section": "Reflection",
-    "text": "Reflection\n\n What is one thing you learned from your reading or videos that was “new” to you? And what is one question you have from the reading, videos, or material we’ve covered so far, including the previous application exercise?"
-  },
-  {
-    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#announcements",
-    "href": "lectures/04/04-visualizing-various-types-of-data.html#announcements",
-    "title": "Visualizing various types of data",
-    "section": "Announcements",
-    "text": "Announcements\n\nHW 1 due next Tuesday at 1 pm\nOffice hours – move to in person?"
-  },
-  {
-    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#identifying-variable-types",
-    "href": "lectures/04/04-visualizing-various-types-of-data.html#identifying-variable-types",
-    "title": "Visualizing various types of data",
-    "section": "Identifying variable types",
-    "text": "Identifying variable types\n\n Identify the type of each of the following variables.\n\nFavorite food\nNumber of classes you’re taking this semester\nZip code\nFull name\nAge"
-  },
-  {
-    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#the-way-data-is-displayed-matters",
-    "href": "lectures/04/04-visualizing-various-types-of-data.html#the-way-data-is-displayed-matters",
-    "title": "Visualizing various types of data",
-    "section": "The way data is displayed matters",
-    "text": "The way data is displayed matters\n\n What do these three plots show?\n\n\nSource: #barbarplots"
-  },
-  {
-    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#ae-04",
-    "href": "lectures/04/04-visualizing-various-types-of-data.html#ae-04",
-    "title": "Visualizing various types of data",
-    "section": "ae-04",
-    "text": "ae-04\n\n\n\nGo to the course GitHub org and find your ae-04-sat (repo name will be suffixed with your GitHub name).\nClone the repo in Posit Cloud, open the Quarto document in the repo, set up a new PAT, and follow along and complete the exercises.\nRender, commit, and push your edits as you work through it"
-  },
-  {
-    "objectID": "lectures/04/04-visualizing-various-types-of-data.html#recap-of-ae",
-    "href": "lectures/04/04-visualizing-various-types-of-data.html#recap-of-ae",
-    "title": "Visualizing various types of data",
-    "section": "Recap of AE",
-    "text": "Recap of AE\n\nPick geoms based on data types.\nSet appropriate binwidths for histograms.\nTurn off legends when they provide redundant information with show.legend = FALSE.\nCreate plots with multiple geoms, and pay attention to order.\n\n\n\n\n🔗 sta113-f23.github.io"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#reflection",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#reflection",
-    "title": "Grammar of data wrangling",
-    "section": "Reflection",
-    "text": "Reflection\n\n What is one thing you learned from your reading or videos that was “new” to you? And what is one question you have from the reading, videos, or material we’ve covered so far, including the previous application exercise?"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#announcements",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#announcements",
-    "title": "Grammar of data wrangling",
-    "section": "Announcements",
-    "text": "Announcements\n\nHW 1 due today at 5 pm\nSubsequent HW deadlines adjusted accordingly for the first part of the semester\nNext week:\n\nTuesday: Project 1 workday\nThursday: Rubenstein Library rare collections visit"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#github-pats-on-posit-cloud",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#github-pats-on-posit-cloud",
-    "title": "Grammar of data wrangling",
-    "section": "GitHub PATs on Posit Cloud",
-    "text": "GitHub PATs on Posit Cloud\n\nIn the Console, run usethis::create_github_token() to create a new PAT or grab the one you created previously from a space you might have safely stored it (e.g., 1Password or similar)\nIn the Console, run gitcreds::gitcreds_set() and paste your PAT when prompted.\nIn the Terminal, run git config credential.helper store to make sure your PAT persists throughout the whole time you’re working on this assignment / Cloud project."
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#packages",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#packages",
-    "title": "Grammar of data wrangling",
-    "section": "Packages",
-    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(scales)"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#data-hotel-bookings",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#data-hotel-bookings",
-    "title": "Grammar of data wrangling",
-    "section": "Data: Hotel bookings",
-    "text": "Data: Hotel bookings\n\nData from two hotels: one resort and one city hotel\nObservations: Each row represents a hotel booking\n\n\nhotels &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv\")\n\nRows: 119390 Columns: 32\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (13): hotel, arrival_date_month, meal, country, market_segment, distrib...\ndbl  (18): is_canceled, lead_time, arrival_date_year, arrival_date_week_numb...\ndate  (1): reservation_status_date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#variables",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#variables",
-    "title": "Grammar of data wrangling",
-    "section": "Variables",
-    "text": "Variables\n\nnames(hotels)\n\n [1] \"hotel\"                          \"is_canceled\"                   \n [3] \"lead_time\"                      \"arrival_date_year\"             \n [5] \"arrival_date_month\"             \"arrival_date_week_number\"      \n [7] \"arrival_date_day_of_month\"      \"stays_in_weekend_nights\"       \n [9] \"stays_in_week_nights\"           \"adults\"                        \n[11] \"children\"                       \"babies\"                        \n[13] \"meal\"                           \"country\"                       \n[15] \"market_segment\"                 \"distribution_channel\"          \n[17] \"is_repeated_guest\"              \"previous_cancellations\"        \n[19] \"previous_bookings_not_canceled\" \"reserved_room_type\"            \n[21] \"assigned_room_type\"             \"booking_changes\"               \n[23] \"deposit_type\"                   \"agent\"                         \n[25] \"company\"                        \"days_in_waiting_list\"          \n[27] \"customer_type\"                  \"adr\"                           \n[29] \"required_car_parking_spaces\"    \"total_of_special_requests\"     \n[31] \"reservation_status\"             \"reservation_status_date\""
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#glimpse",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#glimpse",
-    "title": "Grammar of data wrangling",
-    "section": "glimpse()",
-    "text": "glimpse()\n\nglimpse(hotels)\n\nRows: 119,390\nColumns: 32\n$ hotel                          &lt;chr&gt; \"Resort Hotel\", \"Resort Hotel\", \"Resort…\n$ is_canceled                    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, …\n$ lead_time                      &lt;dbl&gt; 342, 737, 7, 13, 14, 14, 0, 9, 85, 75, …\n$ arrival_date_year              &lt;dbl&gt; 2015, 2015, 2015, 2015, 2015, 2015, 201…\n$ arrival_date_month             &lt;chr&gt; \"July\", \"July\", \"July\", \"July\", \"July\",…\n$ arrival_date_week_number       &lt;dbl&gt; 27, 27, 27, 27, 27, 27, 27, 27, 27, 27,…\n$ arrival_date_day_of_month      &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ stays_in_weekend_nights        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ stays_in_week_nights           &lt;dbl&gt; 0, 0, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4, 4, …\n$ adults                         &lt;dbl&gt; 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, …\n$ children                       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ babies                         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ meal                           &lt;chr&gt; \"BB\", \"BB\", \"BB\", \"BB\", \"BB\", \"BB\", \"BB…\n$ country                        &lt;chr&gt; \"PRT\", \"PRT\", \"GBR\", \"GBR\", \"GBR\", \"GBR…\n$ market_segment                 &lt;chr&gt; \"Direct\", \"Direct\", \"Direct\", \"Corporat…\n$ distribution_channel           &lt;chr&gt; \"Direct\", \"Direct\", \"Direct\", \"Corporat…\n$ is_repeated_guest              &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ previous_cancellations         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ previous_bookings_not_canceled &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ reserved_room_type             &lt;chr&gt; \"C\", \"C\", \"A\", \"A\", \"A\", \"A\", \"C\", \"C\",…\n$ assigned_room_type             &lt;chr&gt; \"C\", \"C\", \"C\", \"A\", \"A\", \"A\", \"C\", \"C\",…\n$ booking_changes                &lt;dbl&gt; 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ deposit_type                   &lt;chr&gt; \"No Deposit\", \"No Deposit\", \"No Deposit…\n$ agent                          &lt;chr&gt; \"NULL\", \"NULL\", \"NULL\", \"304\", \"240\", \"…\n$ company                        &lt;chr&gt; \"NULL\", \"NULL\", \"NULL\", \"NULL\", \"NULL\",…\n$ days_in_waiting_list           &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ customer_type                  &lt;chr&gt; \"Transient\", \"Transient\", \"Transient\", …\n$ adr                            &lt;dbl&gt; 0.00, 0.00, 75.00, 75.00, 98.00, 98.00,…\n$ required_car_parking_spaces    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ total_of_special_requests      &lt;dbl&gt; 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 3, …\n$ reservation_status             &lt;chr&gt; \"Check-Out\", \"Check-Out\", \"Check-Out\", …\n$ reservation_status_date        &lt;date&gt; 2015-07-01, 2015-07-01, 2015-07-02, 20…"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#plan",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#plan",
-    "title": "Grammar of data wrangling",
-    "section": "Plan",
-    "text": "Plan\nWe…\nhave a single data frame\nwant to slice it, and dice it, and juice it, and process it, so we can plot it"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#grammar-of-data-wrangling-1",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#grammar-of-data-wrangling-1",
-    "title": "Grammar of data wrangling",
-    "section": "Grammar of data wrangling",
-    "text": "Grammar of data wrangling\n\n\n\nStart with a data frame\nAnd then (|&gt;)\nTransform it with a function\nResult in a data frame\n\n\n\ndf |&gt;\n  function(...)"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#commonly-used-data-wrangling-functions",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#commonly-used-data-wrangling-functions",
-    "title": "Grammar of data wrangling",
-    "section": "Commonly used data wrangling functions",
-    "text": "Commonly used data wrangling functions\n\ndistinct()\nselect(), relocate()\narrange(), arrange(desc())\nslice(), slice_head(), slice_tail(), slice_sample()\nfilter()\nmutate()\nsummarize(), count()"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#distcint",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#distcint",
-    "title": "Grammar of data wrangling",
-    "section": "distcint()",
-    "text": "distcint()\n\n\n\nhotels |&gt; \n  distinct(hotel)\n\n# A tibble: 2 × 1\n  hotel       \n  &lt;chr&gt;       \n1 Resort Hotel\n2 City Hotel  \n\n\n\n\nhotels |&gt; \n  distinct(is_canceled)\n\n# A tibble: 2 × 1\n  is_canceled\n        &lt;dbl&gt;\n1           0\n2           1"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#select-relocate",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#select-relocate",
-    "title": "Grammar of data wrangling",
-    "section": "select() / relocate()",
-    "text": "select() / relocate()\n\n\n\nhotels |&gt; \n  select(hotel)\n\n# A tibble: 119,390 × 1\n   hotel       \n   &lt;chr&gt;       \n 1 Resort Hotel\n 2 Resort Hotel\n 3 Resort Hotel\n 4 Resort Hotel\n 5 Resort Hotel\n 6 Resort Hotel\n 7 Resort Hotel\n 8 Resort Hotel\n 9 Resort Hotel\n10 Resort Hotel\n# ℹ 119,380 more rows\n\n\n\n\nhotels |&gt; \n  relocate(is_canceled)\n\n# A tibble: 119,390 × 32\n   is_canceled hotel        lead_time\n         &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;\n 1           0 Resort Hotel       342\n 2           0 Resort Hotel       737\n 3           0 Resort Hotel         7\n 4           0 Resort Hotel        13\n 5           0 Resort Hotel        14\n 6           0 Resort Hotel        14\n 7           0 Resort Hotel         0\n 8           0 Resort Hotel         9\n 9           1 Resort Hotel        85\n10           1 Resort Hotel        75\n# ℹ 119,380 more rows\n# ℹ 29 more variables:\n#   arrival_date_year &lt;dbl&gt;,\n#   arrival_date_month &lt;chr&gt;,\n#   arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;,\n#   stays_in_weekend_nights &lt;dbl&gt;, …"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#arrange-arrangedesc",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#arrange-arrangedesc",
-    "title": "Grammar of data wrangling",
-    "section": "arrange() / arrange(desc())",
-    "text": "arrange() / arrange(desc())\n\n\n\nhotels |&gt; \n  arrange(adr) |&gt;\n  relocate(adr)\n\n# A tibble: 119,390 × 32\n     adr hotel     is_canceled lead_time\n   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;\n 1 -6.38 Resort H…           0       195\n 2  0    Resort H…           0       342\n 3  0    Resort H…           0       737\n 4  0    Resort H…           0        32\n 5  0    Resort H…           0       111\n 6  0    Resort H…           0         0\n 7  0    Resort H…           0         8\n 8  0    Resort H…           0         8\n 9  0    Resort H…           1        57\n10  0    Resort H…           0        57\n# ℹ 119,380 more rows\n# ℹ 28 more variables:\n#   arrival_date_year &lt;dbl&gt;,\n#   arrival_date_month &lt;chr&gt;,\n#   arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;,\n#   stays_in_weekend_nights &lt;dbl&gt;, …\n\n\n\n\nhotels |&gt; \n  arrange(desc(adr)) |&gt;\n  relocate(adr)\n\n# A tibble: 119,390 × 32\n     adr hotel     is_canceled lead_time\n   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;\n 1 5400  City Hot…           1        35\n 2  510  City Hot…           0         0\n 3  508  Resort H…           0         1\n 4  452. City Hot…           0        81\n 5  450  Resort H…           1       378\n 6  437  Resort H…           1        59\n 7  426. Resort H…           0        31\n 8  402  Resort H…           0       104\n 9  397. Resort H…           0        26\n10  392  Resort H…           1       116\n# ℹ 119,380 more rows\n# ℹ 28 more variables:\n#   arrival_date_year &lt;dbl&gt;,\n#   arrival_date_month &lt;chr&gt;,\n#   arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;,\n#   stays_in_weekend_nights &lt;dbl&gt;, …"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#slice",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#slice",
-    "title": "Grammar of data wrangling",
-    "section": "slice()",
-    "text": "slice()\n\nhotels |&gt;\n  slice(1:4)\n\n# A tibble: 4 × 32\n  hotel        is_canceled lead_time arrival_date_year arrival_date_month\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n1 Resort Hotel           0       342              2015 July              \n2 Resort Hotel           0       737              2015 July              \n3 Resort Hotel           0         7              2015 July              \n4 Resort Hotel           0        13              2015 July              \n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,\n#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#slice_head-slice_tail",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#slice_head-slice_tail",
-    "title": "Grammar of data wrangling",
-    "section": "slice_head() / slice_tail()",
-    "text": "slice_head() / slice_tail()\n\n\n\nhotels |&gt; \n  slice_head(n = 5)\n\n# A tibble: 5 × 32\n  hotel        is_canceled lead_time\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;\n1 Resort Hotel           0       342\n2 Resort Hotel           0       737\n3 Resort Hotel           0         7\n4 Resort Hotel           0        13\n5 Resort Hotel           0        14\n# ℹ 29 more variables:\n#   arrival_date_year &lt;dbl&gt;,\n#   arrival_date_month &lt;chr&gt;,\n#   arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;,\n#   stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, …\n\n\n\n\nhotels |&gt; \n  slice_tail(n = 5)\n\n# A tibble: 5 × 32\n  hotel      is_canceled lead_time\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;\n1 City Hotel           0        23\n2 City Hotel           0       102\n3 City Hotel           0        34\n4 City Hotel           0       109\n5 City Hotel           0       205\n# ℹ 29 more variables:\n#   arrival_date_year &lt;dbl&gt;,\n#   arrival_date_month &lt;chr&gt;,\n#   arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;,\n#   stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, …"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#slice_sample",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#slice_sample",
-    "title": "Grammar of data wrangling",
-    "section": "slice_sample()",
-    "text": "slice_sample()\n\nhotels |&gt; \n  slice_sample(n = 5)\n\n# A tibble: 5 × 32\n  hotel        is_canceled lead_time arrival_date_year arrival_date_month\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n1 Resort Hotel           1        84              2017 August            \n2 City Hotel             1       181              2016 May               \n3 City Hotel             0         0              2015 September         \n4 City Hotel             1       433              2016 September         \n5 Resort Hotel           0         0              2016 February          \n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,\n#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#filter",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#filter",
-    "title": "Grammar of data wrangling",
-    "section": "filter()",
-    "text": "filter()\n\n\n\nhotels |&gt;\n  filter(adr &gt; 1000) |&gt;\n  select(adr, hotel)\n\n# A tibble: 1 × 2\n    adr hotel     \n  &lt;dbl&gt; &lt;chr&gt;     \n1  5400 City Hotel\n\n\n\n\nhotels |&gt; \n  filter(babies &gt; 5) |&gt;\n  select(adults, babies)\n\n# A tibble: 2 × 2\n  adults babies\n   &lt;dbl&gt;  &lt;dbl&gt;\n1      2     10\n2      1      9"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#mutate",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#mutate",
-    "title": "Grammar of data wrangling",
-    "section": "mutate()",
-    "text": "mutate()\n\nhotels |&gt;\n  mutate(people = adults + babies + children) |&gt;\n  relocate(people) |&gt;\n  arrange(desc(people))\n\n# A tibble: 119,390 × 33\n   people hotel       is_canceled lead_time arrival_date_year arrival_date_month\n    &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n 1     55 Resort Hot…           1       338              2015 October           \n 2     50 Resort Hot…           1       336              2015 September         \n 3     40 Resort Hot…           1       304              2015 September         \n 4     27 Resort Hot…           1       349              2015 September         \n 5     27 Resort Hot…           1       352              2015 September         \n 6     26 Resort Hot…           1       333              2015 September         \n 7     26 Resort Hot…           1       340              2015 September         \n 8     26 Resort Hot…           1       347              2015 September         \n 9     26 Resort Hot…           1       354              2015 September         \n10     26 Resort Hot…           1       361              2015 October           \n# ℹ 119,380 more rows\n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;, …"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#summarize",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#summarize",
-    "title": "Grammar of data wrangling",
-    "section": "summarize()",
-    "text": "summarize()\n\n\n\nhotels |&gt;\n  summarize(mean_adr = mean(adr))\n\n# A tibble: 1 × 1\n  mean_adr\n     &lt;dbl&gt;\n1     102.\n\n\n\n\nhotels |&gt;\n  group_by(hotel) |&gt;\n  summarize(mean_adr = mean(adr))\n\n# A tibble: 2 × 2\n  hotel        mean_adr\n  &lt;chr&gt;           &lt;dbl&gt;\n1 City Hotel      105. \n2 Resort Hotel     95.0"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#count",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#count",
-    "title": "Grammar of data wrangling",
-    "section": "count()",
-    "text": "count()\n\nhotels |&gt;\n  count(hotel)\n\n# A tibble: 2 × 2\n  hotel            n\n  &lt;chr&gt;        &lt;int&gt;\n1 City Hotel   79330\n2 Resort Hotel 40060"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#average-cost-of-daily-stay",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#average-cost-of-daily-stay",
-    "title": "Grammar of data wrangling",
-    "section": "Average cost of daily stay",
-    "text": "Average cost of daily stay\n\nWhat are the variables represented in this visualization?"
-  },
-  {
-    "objectID": "lectures/05/05-grammar-of-data-wrangling.html#ae-05",
-    "href": "lectures/05/05-grammar-of-data-wrangling.html#ae-05",
-    "title": "Grammar of data wrangling",
-    "section": "ae-05",
-    "text": "ae-05\n\n\n\nGo to the course GitHub org and find your ae-05-hotels (repo name will be suffixed with your GitHub name).\nClone the repo in Posit Cloud, and set up your PAT:\n\nIn the Console, run usethis::create_github_token() to create a new PAT or grab the one you created previously from a space you might have safely stored it (e.g., 1Password or similar)\nIn the Console, run gitcreds::gitcreds_set() and paste your PAT when prompted.\nIn the Terminal, run git config credential.helper store to make sure your PAT persists throughout the whole time you’re working on this assignment / Cloud project.\n\nOpen the Quarto document (.qmd) and follow along and complete the exercises.\nRender, commit, and push your edits as you work through it\n\n\n\n\n\n🔗 sta113-f23.github.io"
-  },
-  {
-    "objectID": "lectures/03/03-grammar-graphics.html#before-we-get-started",
-    "href": "lectures/03/03-grammar-graphics.html#before-we-get-started",
-    "title": "Meet the toolkit 2 + Grammar of Graphics",
-    "section": "Before we get started",
-    "text": "Before we get started\n\n Check your email and accept the invitations to the course GitHub organization!"
-  },
-  {
-    "objectID": "lectures/03/03-grammar-graphics.html#reflection",
-    "href": "lectures/03/03-grammar-graphics.html#reflection",
-    "title": "Meet the toolkit 2 + Grammar of Graphics",
-    "section": "Reflection",
-    "text": "Reflection\n\n What is one thing you learned from your reading that was “new” to you? And what is one question you have from the reading?"
-  },
-  {
-    "objectID": "lectures/03/03-grammar-graphics.html#announcements",
-    "href": "lectures/03/03-grammar-graphics.html#announcements",
-    "title": "Meet the toolkit 2 + Grammar of Graphics",
-    "section": "Announcements",
-    "text": "Announcements\n\nHW 1 is posted, due next Tuesday at 1 pm"
-  },
-  {
-    "objectID": "lectures/03/03-grammar-graphics.html#git-and-github",
-    "href": "lectures/03/03-grammar-graphics.html#git-and-github",
-    "title": "Meet the toolkit 2 + Grammar of Graphics",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub\n\n\n\n\n\n\n\nGit is a version control system, like “Track Changes” features from Microsoft Word but more powerful.\n\n\n\n\n\n\nGitHub is the home for your Git-based projects on the internet, like DropBox but much better."
-  },
-  {
-    "objectID": "lectures/03/03-grammar-graphics.html#connecting-your-posit-cloud-and-github-accounts",
-    "href": "lectures/03/03-grammar-graphics.html#connecting-your-posit-cloud-and-github-accounts",
-    "title": "Meet the toolkit 2 + Grammar of Graphics",
-    "section": "Connecting your Posit Cloud and GitHub accounts",
-    "text": "Connecting your Posit Cloud and GitHub accounts\nYou should only need to do the following once:\n\nGo to Posit Cloud and log in.\nClick on your profile avatar (top right) and then click on “Authentication”.\nUnder Login Options, check the box for “Enabled”. This will open another window where you should click on “Authorize rstudio”.\nThen, go back to the Posit Cloud authentication page, and check the box for “Private repo access also enabled”."
-  },
-  {
-    "objectID": "lectures/03/03-grammar-graphics.html#application-exercise-flint",
-    "href": "lectures/03/03-grammar-graphics.html#application-exercise-flint",
-    "title": "Meet the toolkit 2 + Grammar of Graphics",
-    "section": "Application exercise: Flint",
-    "text": "Application exercise: Flint\n\n\n\nGo to the course GitHub Organization and locate your own ae-03-flint repository. This repository will be called ae-03-flint-YOUR_GITHUB_NAME.\nClick on the green Code button, make sure HTTPS is selected, and copy the URL (by clicking on ).\nGo to Posit Cloud. Make sure you’re in the course space – it should say STA 113 - F23 on the top left.\nClick on the blue New Project button, and then New Project from Git Repository. Paste the URL you copied from your GitHub repository here. Make sure Add packages from the base project is checked.\n\ncontinue on next slide"
-  },
-  {
-    "objectID": "lectures/03/03-grammar-graphics.html#application-exercise-flint-1",
-    "href": "lectures/03/03-grammar-graphics.html#application-exercise-flint-1",
-    "title": "Meet the toolkit 2 + Grammar of Graphics",
-    "section": "Application exercise: Flint",
-    "text": "Application exercise: Flint\n\n\nOnce you’re in the project, go to the Console and run\n\nusethis::create_github_token()\n\nOn the page that pops open in your browser, create a new GitHub Personal Access Token (i.e., sort of like a password you store):\n\nDescribe the token’s use case under Note, e.g., ae-03\nExtend expiration date to 90 days\nScroll down and click on Generate Token\n\nCopy the token by clicking on .\nGo back to Posit Cloud, to your Console, and run\n\ngitcreds::gitcreds_set()\n\nand paste the token you just copied.\n\n🎉 You’re now ready to work on your application exercise analyzing a dataset with R, in RStudio that you access via Posit Cloud, version controlled with Git, and hosted on GitHub. And that’s your data science toolkit! 🛠️"
-  },
-  {
-    "objectID": "lectures/03/03-grammar-graphics.html#next-time",
-    "href": "lectures/03/03-grammar-graphics.html#next-time",
-    "title": "Meet the toolkit 2 + Grammar of Graphics",
-    "section": "Next time",
-    "text": "Next time\n\nWe’ll continue to learn about visualizing various types of data and get practice with the data science workflow.\nWe’ll review questions you might have on the homework assignment.\n\n\n\n\n🔗 sta113-f23.github.io"
+    "objectID": "lectures/09/09-prp-tell-story.html#demo",
+    "href": "lectures/09/09-prp-tell-story.html#demo",
+    "title": "Presentation readyplots I:Telling a story",
+    "section": "Demo",
+    "text": "Demo\n\nRendering individual documents\nWrite-up:\n\nCross referencing\nCitations\n\nWebsite:\n\nRendering site\nMaking sure your website reflects your latest changes\nCustomizing the look of your website (optional)\n\n\n\n\n\n🔗 sta113-f23.github.io"
   },
   {
     "objectID": "lectures/06/06-multiple-data-frames.html#reflection",
@@ -1768,7 +1929,7 @@
     "href": "index.html",
     "title": "STA 113: Visualizing Data",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n  \n    \n    \n    \n    \n    \n    \n  \n  \n    \n    \n      WEEK\n      DATE\n      TOPIC\n      PREPARE\n      MATERIALS\n      DUE AT 1 PM\n    \n  \n  \n    1\nTue, Aug 29\nWelcome to STA 113FS!\n\n\n🖥️ slides\n\n\n    \nThu, Aug 31\nMeet the toolkit (R + RStudio)\n\n📖 socviz: Chp 1\n\n🖥️ slides \n⌨️ ae-01 \n⌨️ ae-02 \n🗝️ ae-02-sa\n\nGetting to know you survey \nGitHub usernames\n\n    2\nTue, Sep 5\nMeet the toolkit (Git + GitHub) + \nGrammar of graphics\n\n📖 r4ds: Chp 2.1 - 2.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-03 \n🗝️ ae-03-sa\n\n\n    \nThu, Sep 7\nVisualizing various types of data\n\n📖 r4ds: Chp 2.5 - 2.8 \n📖 r4ds: Chp 3 \n🎥 video\n\n🖥️ slides \n⌨️ ae-04 \n🗝️ ae-04-sa\n\n\n    3\nTue, Sep 12\n🦠 Class cancelled\n\n\n\n\n    \nThu, Sep 14\nGrammar of data wrangling\n\n📖 r4ds: Chp 4.1 - 4.5 \n🎥 video\n\n🖥️ slides \n⌨️ ae-05 \n🗝️ ae-05-sa\n\n📄 HW 1\n\n    4\nTue, Sep 19\n📊 Project 1 workday\n\n📖 r4ds: Chp 4.5 - 4.7 \n🎥 video\n\n\n\n    \nThu, Sep 21\nRubenstein Library Visit (Rubenstein Room 150)\n\n🎧 podcast \n📖 r4ds: Chp 5\n\n\n📄 HW 2\n\n    5\nTue, Sep 26\nWorking with multiple data frames\n\n📖 r4ds: Chp 20.1 - 20.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-06 \n🗝️ ae-06-sa\n\n\n    \nThu, Sep 28\nTidying data\n\n📖 r4ds: Chp 6 \n🎥 video\n\n🖥️ slides \n⌨️ ae-07 \n🗝️ ae-07-sa\n\n📊 Project 1 proposal\n\n    6\nTue, Oct 3\n✅ Exam 1 - In class\n\n\n\n\n    \nThu, Oct 5\nData types and classes\n\n📖 r4ds: Chp 17 \n🎥 video \n🎥 video\n\n🖥️ slides \n⌨️ ae-08 \n🗝️ ae-08-sa\n\n✅ Exam 1 - Take home\n\n    7\nTue, Oct 10\nPresentation ready plots I: Telling a story\n\n📖 fdv: Chp 29\n\n\n📊 Project 1 peer review\n\n    \nThu, Oct 12\n📊 Project 1 presentation\n\n\n\n📊 Project 1\n\n    8\nTue, Oct 17\n🍂 Fall Break - No lecture\n\n\n\n\n    \nThu, Oct 19\nVisualizing and modeling relationships I\n\n\n\n\n    9\nTue, Oct 24\nVisualizing and modeling relationships II\n\n\n\n📄 HW 3\n\n    \nThu, Oct 26\n📊 Project 2 workday\n\n\n\n\n    10\nTue, Oct 31\nVisualizing and modeling relationships III\n\n\n\n📄 HW 4\n\n    \nThu, Nov 2\nVisualizing uncertainty I\n\n\n\n📊 Project 2 proposal\n\n    11\nTue, Nov 7\nVisualizing uncertainty II\n\n\n\n📄 HW 5\n\n    \nThu, Nov 9\nVisualizing uncertainty III\n\n\n\n\n    12\nTue, Nov 14\n✅ Exam 2 - In class\n\n\n\n\n    \nThu, Nov 16\nVisual inference\n\n\n\n✅ Exam 2 - Take home\n\n    13\nTue, Nov 21\nGenerative art\n\n\n\n\n    \nThu, Nov 23\n🦃 Thanksgiving Break - No lecture\n\n\n\n\n    14\nTue, Nov 28\nColors\n\n\n\n📄 HW 6\n\n    \nThu, Nov 30\nAccessibility\n\n\n\n📊 Project 2 peer review\n\n    15\nTue, Dec 5\nPresentation ready plots II: Themes + Axes + Annotation\n\n\n\n\n    \nThu, Dec 7\n📊 Project 2 presentation\n\n\n\n📊 Project 2"
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n  \n    \n    \n    \n    \n    \n    \n  \n  \n    \n    \n      WEEK\n      DATE\n      TOPIC\n      PREPARE\n      MATERIALS\n      DUE AT 1 PM\n    \n  \n  \n    1\nTue, Aug 29\nWelcome to STA 113FS!\n\n\n🖥️ slides\n\n\n    \nThu, Aug 31\nMeet the toolkit (R + RStudio)\n\n📖 socviz: Chp 1\n\n🖥️ slides \n⌨️ ae-01 \n⌨️ ae-02 \n🗝️ ae-02-sa\n\nGetting to know you survey \nGitHub usernames\n\n    2\nTue, Sep 5\nMeet the toolkit (Git + GitHub) + \nGrammar of graphics\n\n📖 r4ds: Chp 2.1 - 2.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-03 \n🗝️ ae-03-sa\n\n\n    \nThu, Sep 7\nVisualizing various types of data\n\n📖 r4ds: Chp 2.5 - 2.8 \n📖 r4ds: Chp 3 \n🎥 video\n\n🖥️ slides \n⌨️ ae-04 \n🗝️ ae-04-sa\n\n\n    3\nTue, Sep 12\n🦠 Class cancelled\n\n\n\n\n    \nThu, Sep 14\nGrammar of data wrangling\n\n📖 r4ds: Chp 4.1 - 4.5 \n🎥 video\n\n🖥️ slides \n⌨️ ae-05 \n🗝️ ae-05-sa\n\n📄 HW 1\n\n    4\nTue, Sep 19\n📊 Project 1 workday\n\n📖 r4ds: Chp 4.5 - 4.7 \n🎥 video\n\n\n\n    \nThu, Sep 21\nRubenstein Library Visit (Rubenstein Room 150)\n\n🎧 podcast \n📖 r4ds: Chp 5\n\n\n📄 HW 2\n\n    5\nTue, Sep 26\nWorking with multiple data frames\n\n📖 r4ds: Chp 20.1 - 20.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-06 \n🗝️ ae-06-sa\n\n\n    \nThu, Sep 28\nTidying data\n\n📖 r4ds: Chp 6 \n🎥 video\n\n🖥️ slides \n⌨️ ae-07 \n🗝️ ae-07-sa\n\n📊 Project 1 proposal\n\n    6\nTue, Oct 3\n✅ Exam 1 - In class\n\n\n\n\n    \nThu, Oct 5\nData types and classes\n\n📖 r4ds: Chp 17 \n🎥 video \n🎥 video\n\n🖥️ slides \n⌨️ ae-08 \n🗝️ ae-08-sa\n\n✅ Exam 1 - Take home\n\n    7\nTue, Oct 10\nPresentation ready plots I: Telling a story\n\n📖 fdv: Chp 29\n\n🖥️ slides \n📊 Project 1 peer review\n\n\n    \nThu, Oct 12\n📊 Project 1 presentation\n\n\n\n📊 Project 1\n\n    8\nTue, Oct 17\n🍂 Fall Break - No lecture\n\n\n\n\n    \nThu, Oct 19\nVisualizing and modeling relationships I\n\n\n\n\n    9\nTue, Oct 24\nVisualizing and modeling relationships II\n\n\n\n📄 HW 3\n\n    \nThu, Oct 26\n📊 Project 2 workday\n\n\n\n\n    10\nTue, Oct 31\nVisualizing and modeling relationships III\n\n\n\n📄 HW 4\n\n    \nThu, Nov 2\nVisualizing uncertainty I\n\n\n\n📊 Project 2 proposal\n\n    11\nTue, Nov 7\nVisualizing uncertainty II\n\n\n\n📄 HW 5\n\n    \nThu, Nov 9\nVisualizing uncertainty III\n\n\n\n\n    12\nTue, Nov 14\n✅ Exam 2 - In class\n\n\n\n\n    \nThu, Nov 16\nVisual inference\n\n\n\n✅ Exam 2 - Take home\n\n    13\nTue, Nov 21\nGenerative art\n\n\n\n\n    \nThu, Nov 23\n🦃 Thanksgiving Break - No lecture\n\n\n\n\n    14\nTue, Nov 28\nColors\n\n\n\n📄 HW 6\n\n    \nThu, Nov 30\nAccessibility\n\n\n\n📊 Project 2 peer review\n\n    15\nTue, Dec 5\nPresentation ready plots II: Themes + Axes + Annotation\n\n\n\n\n    \nThu, Dec 7\n📊 Project 2 presentation\n\n\n\n📊 Project 2"
   },
   {
     "objectID": "hw/hw-2.html",
