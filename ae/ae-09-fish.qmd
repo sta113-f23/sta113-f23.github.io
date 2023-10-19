@@ -1,0 +1,202 @@
+---
+title: "Modelling credit balances"
+categories: 
+  - Application exercise
+editor: visual
+editor_options: 
+  chunk_output_type: console
+format: 
+  html:
+    fig-width: 6
+    fig-asp: 0.618
+---
+
+For this application exercise, we will work with data on fish. The dataset we will use, called `fish`, is on two common fish species in fish market sales. We're going to investigate the relationship between the weights and heights of fish, and later take into consider species as well.
+
+```{r}
+#| label: load-packages-data
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+
+fish <- read_csv("data/fish.csv")
+```
+
+The data dictionary is below:
+
+| **variable**      | **description**        |
+|-------------------|------------------------|
+| `species`         | Species name of fish   |
+| `weight`          | Weight, in grams       |
+| `length_vertical` | Vertical length, in cm |
+| `length_diagonal` | Diagonal length, in cm |
+| `length_cross`    | Cross length, in cm    |
+| `height`          | Height, in cm          |
+| `width`           | Diagonal width, in cm  |
+
+# Visualizing the relationship
+
+We're going to investigate the relationship between the weights and heights of fish.
+
+-   **Demo:** Create an appropriate plot to investigate this relationship. Add appropriate labels to the plot.
+
+```{r}
+#| label: plot-hw
+
+# add code here
+```
+
+# Correlation
+
+-   What is correlation? What are values correlation can take?
+
+*Add response here.*
+
+-   **Demo:** What is the correlation between heights and weights of fish?
+
+```{r}
+#| label: correlation
+
+# add code here
+```
+
+# Visualizing the model
+
+-   **Your turn:** Overlay the line of best fit on your scatterplot.
+
+```{r}
+#| label: plot-hw-lm
+
+# add code here
+```
+
+-   What types of questions can this plot help answer?
+
+*Add response here.*
+
+# Model fitting
+
+-   **Demo:** Fit a linear model to predict fish weights from their heights.
+
+```{r}
+#| label: fit-hw
+
+# add code here
+```
+
+# Model summary
+
+-   **Demo:** Display the model summary including estimates for the slope and intercept along with measurements of uncertainty around them. Show how you can extract the values of slope and intercept from the model output.
+
+```{r}
+#| label: model-summary
+
+# add code here
+```
+
+-   **Demo:** Write out your model using mathematical notation.
+
+$\widehat{weight} = 1.96 + 0.233 \times height$
+
+-   **Demo:** Interpret the slope and the intercept.
+
+*Add response here.*
+
+# Prediction
+
+-   We can use this line to make predictions. Predict what you think the weight of a fish would be with a height of 10 cm, 15 cm, and 20 cm. Which prediction is considered extrapolation?
+
+*Add response here.*
+
+-   **Your turn:** Predict what the weight of a fish would be with a height of 10 cm, 15 cm, and 20 cm using the model equation.
+
+```{r}
+#| label: predict-by-hand
+
+# add code here
+```
+
+-   **Demo:** Predict what the weight of a fish would be with a height of 10 cm, 15 cm, and 20 cm using the `predict()` function.
+
+```{r}
+#| label: predict-with-function
+
+# add code here
+```
+
+# Residuals
+
+-   What is a residual?
+
+*Add response here.*
+
+-   **Demo:** Calculate predicted weights for all fish in the data and visualize the residuals under this model.
+
+```{r}
+#| label: resid-display
+
+# add code here
+```
+
+-   **Demo:** If the model was a perfect fit, what would the value of the residuals be? Make a histogram of the residuals. Does it appear that the model is a good fit?
+
+*Add response here.*
+
+```{r}
+#| label: resid-hist-hw
+
+# add code here
+```
+
+-   **Demo:** Suppose you make a scatterplot of residuals vs. the predicted values. If the model is a good fit, what, if any, patterns would you expect to see in this plot? Now, make the plot. Does the model appear to be a good fit?
+
+*Add response here.*
+
+```{r}
+#| label: resid-pred-hw
+
+# add code here
+```
+
+-   **Demo:** Make the same plot, but this time using a 2D density as the geom. What does this plot tell you about the data?
+
+*Add response here.*
+
+```{r}
+#| label: resid-pred-density-hw
+
+# add code here
+```
+
+# Adding a second predictor
+
+-   **Demo:** Does the apparent relationship between heights and weights of fish change if we take into consideration species? Plot two separate straight lines for the Bream and Roach species.
+
+```{r}
+#| label: plot-hws-lm
+
+# add code here
+```
+
+-   **Demo:** Fit the model with height and species as predictors and then plot the residuals vs. predicted values as well as a histogram of residuals for this model. Comment on the fit of the model compared to the previous one.
+
+*Add response here.*
+
+```{r}
+#| label: fit-hws
+
+# add code here
+```
+
+# Fitting other models
+
+-   **Demo:** Plot weights vs. heights of fish and visualize the fit of a "loess" model. What is different from the plot created before?
+
+*Add response here.*
+
+```{r}
+#| label: plot-loess
+
+# add code here
+```

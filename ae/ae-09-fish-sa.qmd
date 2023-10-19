@@ -1,0 +1,309 @@
+---
+title: "Modelling credit balances"
+subtitle: "Suggested answers"
+categories: 
+  - Application exercise
+  - Answers
+editor: visual
+editor_options: 
+  chunk_output_type: console
+format: 
+  html:
+    fig-width: 6
+    fig-asp: 0.618
+---
+
+For this application exercise, we will work with data on fish. The dataset we will use, called `fish`, is on two common fish species in fish market sales. We're going to investigate the relationship between the weights and heights of fish, and later take into consider species as well.
+
+```{r}
+#| label: load-packages-data
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+
+fish <- read_csv("data/fish.csv")
+```
+
+The data dictionary is below:
+
+| **variable**      | **description**        |
+|-------------------|------------------------|
+| `species`         | Species name of fish   |
+| `weight`          | Weight, in grams       |
+| `length_vertical` | Vertical length, in cm |
+| `length_diagonal` | Diagonal length, in cm |
+| `length_cross`    | Cross length, in cm    |
+| `height`          | Height, in cm          |
+| `width`           | Diagonal width, in cm  |
+
+# Visualizing the relationship
+
+We're going to investigate the relationship between the weights and heights of fish.
+
+-   **Demo:** Create an appropriate plot to investigate this relationship. Add appropriate labels to the plot.
+
+```{r}
+#| label: plot-hw
+
+ggplot(fish, aes(x = height, y = weight)) +
+  geom_point() +
+  labs(
+    title = "Weights vs. heights of fish",
+    x = "Height (cm)",
+    y = "Weight (gr)"
+  )
+```
+
+# Correlation
+
+-   What is correlation? What are values correlation can take?
+
+*Strength and direction of a linear relationship. It's bounded by -1 and 1.*
+
+-   **Demo:** What is the correlation between heights and weights of fish?
+
+```{r}
+#| label: correlation
+
+fish |>
+  summarize(r = cor(height, weight))
+```
+
+# Visualizing the model
+
+-   **Your turn:** Overlay the line of best fit on your scatterplot.
+
+```{r}
+#| label: plot-hw-lm
+
+ggplot(fish, aes(x = height, y = weight)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Weights vs. lengths of fish",
+    x = "Head-to-tail lentgh (cm)",
+    y = "Weight of fish (grams)"
+  )
+```
+
+-   What types of questions can this plot help answer?
+
+*What is the relationship between fish heights and weights of fish?*
+
+# Model fitting
+
+-   **Demo:** Fit a linear model to predict fish weights from their heights.
+
+```{r}
+#| label: fit-hw
+
+fish_hw_fit <- linear_reg() |>
+  fit(weight ~ height, data = fish)
+
+fish_hw_fit
+```
+
+# Model summary
+
+-   **Demo:** Display the model summary including estimates for the slope and intercept along with measurements of uncertainty around them. Show how you can extract the values of slope and intercept from the model output.
+
+```{r}
+#| label: model-summary
+
+fish_hw_tidy <- tidy(fish_hw_fit)
+fish_hw_tidy
+
+# intercept
+fish_hw_tidy |>
+  filter(term == "(Intercept)") |>
+  pull(estimate)
+
+# slope
+fish_hw_tidy |>
+  filter(term == "height") |>
+  pull(estimate)
+```
+
+-   **Demo:** Write out your model using mathematical notation.
+
+$\widehat{weight} = 1.96 + 0.233 \times height$
+
+-   **Demo:** Interpret the slope and the intercept.
+
+*Intercept: The model predicts that fish who are 0 cm in height weigh roughly -288 grams. This doesn't make sense in context of the data.*
+
+*Slope: For each centimeter the fish are taller, we expect the weights of fish to be height, on average, by 61 grams.*
+
+# Prediction
+
+-   We can use this line to make predictions. Predict what you think the weight of a fish would be with a height of 10 cm, 15 cm, and 20 cm. Which prediction is considered extrapolation?
+
+*At 10 cm, we estimate a weight of 375 grams. At 15 cm, we estimate a weight of 600 grams At 20 cm, we estimate a weight of 975 grams. 20 cm would be considered extrapolation.*
+
+-   **Your turn:** Predict what the weight of a fish would be with a height of 10 cm, 15 cm, and 20 cm using the model equation.
+
+```{r}
+#| label: predict-by-hand
+
+x <- c(10, 15, 20)
+-288 + 60.92 * x
+```
+
+-   **Demo:** Predict what the weight of a fish would be with a height of 10 cm, 15 cm, and 20 cm using the `predict()` function.
+
+```{r}
+#| label: predict-with-function
+
+new_fish <- tibble(
+  height = c(10, 15, 20)
+)
+
+predict(fish_hw_fit, new_fish)
+```
+
+# Residuals
+
+-   What is a residual?
+
+*Difference between predicted and observed.*
+
+-   **Demo:** Calculate predicted weights for all fish in the data and visualize the residuals under this model.
+
+```{r}
+#| label: resid-display
+
+fish_hw_aug <- augment(fish_hw_fit, new_data = fish)
+
+ggplot(fish_hw_aug, aes(x = height, y = weight)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE, color = "lightgrey") +  
+  geom_segment(aes(xend = height, yend = .pred), color = "gray") +  
+  geom_point(aes(y = .pred), shape = "circle open") + 
+  theme_minimal() +
+  labs(
+    title = "Weights vs. heights of fish",
+    subtitle = "Residuals",
+    x = "Height (cm)",
+    y = "Weight (gr)"
+  )
+```
+
+-   **Demo:** If the model was a perfect fit, what would the value of the residuals be? Make a histogram of the residuals. Does it appear that the model is a good fit?
+
+*The residuals don't seem to be centered at 0, but it's hard to tell.*
+
+```{r}
+#| label: resid-hist-hw
+
+ggplot(fish_hw_aug, aes(x = .resid)) + 
+  geom_histogram(binwidth = 20)
+```
+
+-   **Demo:** Suppose you make a scatterplot of residuals vs. the predicted values. If the model is a good fit, what, if any, patterns would you expect to see in this plot? Now, make the plot. Does the model appear to be a good fit?
+
+*The residuals should be randomly scattered around 0. There should be no patterns. However we do see some patterns here, there seems to be two groups of data, suggesting that the model is not a good fit.*
+
+```{r}
+#| label: resid-pred-hw
+
+ggplot(fish_hw_aug, aes(x = .pred, y = .resid)) + 
+  geom_point() + 
+  geom_hline(yintercept = 0, linetype = "dashed", color = "gray") +
+  labs(
+    title = "Residuals vs. predicted values",
+    subtitle = "Residuals",
+    x = "Predicted weight (gr)"
+  )
+```
+
+-   **Demo:** Make the same plot, but this time using a 2D density as the geom. What does this plot tell you about the data?
+
+*The contour plot makes it even more obvious that there are two groups of data.*
+
+```{r}
+#| label: resid-pred-density-hw
+
+ggplot(fish_hw_aug, aes(x = .pred, y = .resid)) + 
+  geom_density_2d_filled() + 
+  geom_hline(yintercept = 0, linetype = "dashed", color = "gray") +
+  labs(
+    title = "Residuals vs. predicted values",
+    subtitle = "Residuals",
+    x = "Predicted weight (gr)"
+  )
+```
+
+# Adding a second predictor
+
+-   **Demo:** Does the apparent relationship between heights and weights of fish change if we take into consideration species? Plot two separate straight lines for the Bream and Roach species.
+
+```{r}
+#| label: plot-hws-lm
+
+ggplot(
+  fish, 
+  aes(x = height, y = weight, color = species)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Weights vs. heights of fish",
+    x = "Height (cm)",
+    y = "Weight (gr)"
+  )
+```
+
+-   **Demo:** Fit the model with height and species as predictors and then plot the residuals vs. predicted values as well as a histogram of residuals for this model. Comment on the fit of the model compared to the previous one.
+
+*There isn't grouping left in the residuals.*
+
+```{r}
+#| label: fit-hws
+
+fish_hws_fit <- linear_reg() |>
+  fit(weight ~ height + species, data = fish)
+
+fish_hws_aug <- augment(fish_hws_fit, new_data = fish)
+
+ggplot(fish_hws_aug, aes(x = .resid)) + 
+  geom_histogram(binwidth = 20)
+
+ggplot(fish_hws_aug, aes(x = .pred, y = .resid)) + 
+  geom_point() + 
+  geom_hline(yintercept = 0, linetype = "dashed", color = "gray") +
+  labs(
+    title = "Residuals vs. predicted values",
+    subtitle = "Weight ~ height + species model",
+    y = "Residuals",
+    x = "Predicted weight (gr)"
+  )
+
+ggplot(fish_hws_aug, aes(x = .pred, y = .resid)) + 
+  geom_density_2d_filled() + 
+  geom_hline(yintercept = 0, linetype = "dashed", color = "gray") +
+  labs(
+    title = "Residuals vs. predicted values",
+    subtitle = "Weight ~ height + species model",
+    y = "Residuals",
+    x = "Predicted weight (gr)"
+  )
+```
+
+# Fitting other models
+
+-   **Demo:** Plot weights vs. heights of fish and visualize the fit of a "loess" model. What is different from the plot created before?
+
+*This model is non-linear.*
+
+```{r}
+#| label: plot-loess
+
+ggplot(fish, aes(x = height, y = weight)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Weights vs. heights of fish",
+    x = "Height (cm)",
+    y = "Weight (gr)"
+  )
+```

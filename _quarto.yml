@@ -23,8 +23,8 @@ website:
         href: https://github.com/sta113-f23
         text: "GitHub"
       - icon: cloud
-        href: https://posit.cloud/spaces/406325/
-        text: "Posit Cloud"
+        href:  https://cmgr.oit.duke.edu/containers
+        text: "Duke Containers"
       - icon: slack
         href: https://sta113-f23.slack.com
         text: "Slack"
