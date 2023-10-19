@@ -70,10 +70,10 @@ ggplot(
   )
 ```
 
-## One categorical, one numeric variable
+## One categorical, one numerical variable
 
 ::: question
-What type of plot would you use to visualize the relationship between two categorical variables?
+What type of plot would you use to visualize the relationship between one numerical and one categorical variables?
 :::
 
 . . .
@@ -211,7 +211,7 @@ ggplot(mpg, aes(x = cty, y = hwy)) +
 
 ::: question
 -   What is the relationship between cars' city and highway mileage?
--   What is your best guess for a car's MPG that weighs 5000 pounds?
+-   What is your best guess for a car's highway MPG that gets 20 MPG in the city?
 :::
 
 ```{r}
