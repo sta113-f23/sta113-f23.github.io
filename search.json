@@ -179,7 +179,63 @@
     "href": "hw/hw-3.html",
     "title": "HW 3",
     "section": "",
-    "text": "To be posted…"
+    "text": "Important\n\n\n\nThis homework is due Thursday, Oct 26 at 5:00 pm ET."
+  },
+  {
+    "objectID": "hw/hw-3.html#packages",
+    "href": "hw/hw-3.html#packages",
+    "title": "HW 3",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)"
+  },
+  {
+    "objectID": "hw/hw-3.html#sec-guidelines-tips",
+    "href": "hw/hw-3.html#sec-guidelines-tips",
+    "title": "HW 3",
+    "section": "Guidelines + tips",
+    "text": "Guidelines + tips\nAYour plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.\nRemember that continuing to develop a sound workflow for reproducible data analysis is important as you complete this homework and other assignments in this course. There will be periodic reminders in this assignment to remind you to knit, commit, and push your changes to GithHub. You should have at least 3 commits with meaningful commit messages by the end of the assignment.\n\n\n\n\n\n\nNote\n\n\n\nNote: Do not let R output answer the question for you unless the question specifically asks for just a plot. For example, if the question asks for the number of columns in the data set, please type out the number of columns. You are subject to lose points if you do not."
+  },
+  {
+    "objectID": "hw/hw-3.html#workflow-formatting",
+    "href": "hw/hw-3.html#workflow-formatting",
+    "title": "HW 3",
+    "section": "Workflow + formatting",
+    "text": "Workflow + formatting\nMake sure to\n\nUpdate author name on your document.\nLabel all code chunks informatively and concisely.\nFollow the Tidyverse code style guidelines.\nMake at least 3 commits.\nResize figures where needed, avoid tiny or huge plots.\nUse informative title and axis labels.\nTurn in an organized, well formatted document."
+  },
+  {
+    "objectID": "hw/hw-3.html#credit-card-balances",
+    "href": "hw/hw-3.html#credit-card-balances",
+    "title": "HW 3",
+    "section": "Credit card balances",
+    "text": "Credit card balances\nThe data for Exercises 1-___ is on credit card balances. The variables of interest from the dataset, called credit, are as follows:\nThe dataset is in the data folder of your repository, and it’s called credit.csv. It contains the following variables:\n\nbalance: Credit card balance in $\nincome: Income in $1,000\nstudent: Whether the individual is a student (Yes) or not (No)\nmarried: Whether the individual is a married (Yes) or not (No)\nlimit: Credit limit\n\n\nExercise 1\nLoad the data from a relative path.\n\ncredit &lt;- read_csv(\"data/credit.csv\")\n\nRows: 400 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): student, married\ndbl (3): balance, income, limit\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\nExercise 2\nMake a scatterplot of balance vs. income and overlay the line of best fit, without the uncertainty band around it.\n\nggplot(credit, aes(x = income, y = balance)) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(method = \"lm\", se = FALSE)\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\nExercise 3\nFit the regression model for predicting balance from income, display a tidy output of the model, and interpret the slope and the intercept.\n\ncredit_fit &lt;- linear_reg() |&gt;\n  set_engine(\"lm\") |&gt;\n  fit(balance ~ income, data = credit)\n\ntidy(credit_fit)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)   247.      33.2        7.43 6.90e-13\n2 income          6.05     0.579     10.4  1.03e-22\n\n\n\n\nExercise 4\nPlot the residuals\n\ncredit_aug &lt;- augment(credit_fit, new_data = credit)\n\nggplot(credit_aug, aes(x = .pred, y = .resid)) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(method = \"lm\", se = TRUE)\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\nExercise 5\n\ncredit |&gt;\n  mutate(utilization = balance / limit) |&gt;\n  ggplot(aes(x = income, y = utilization, color = student, shape = student)) +\n  geom_point(alpha = 0.5, show.legend = FALSE) +\n  geom_smooth(method = \"lm\", se = FALSE, show.legend = FALSE) +\n  facet_grid(\n    student~married, \n    labeller = labeller(.rows = label_both, .cols = label_both)\n  ) +\n  scale_x_continuous(labels = label_dollar(scale = 1, suffix = \"K\")) +\n  scale_y_continuous(labels = label_percent()) +\n  scale_color_manual(values = c(\"steelblue\", \"brown3\")) +\n  labs(\n    x = \"Income\",\n    y = \"Credit utilization\",\n    color = \"Student\",\n    shape = \"Student\"\n  ) +\n  theme_bw()\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\nExercise 6\nBased on the visualization you created in Exercise 5, how, if at all, are the relationships between income and credit utilization different than the relationships between income and credit balance for individuals with various student and marriage status.\nFor non-students (married and unmarried) the relationship is still positive, but the slope is not as steep as the relationship between income and balance. For students who are married the relationship is basically nonexistent. For students who are not married, the relationship is negative\n\n\nExercise 7\n\nNow is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding. You can use a commit message like “Finished Part 1”."
+  },
+  {
+    "objectID": "hw/hw-3.html#miscellaneous",
+    "href": "hw/hw-3.html#miscellaneous",
+    "title": "HW 3",
+    "section": "Miscellaneous",
+    "text": "Miscellaneous\n\nExercise 8\nRead the docs:\n\nYou know the drill: render, commit, and push!\n\n\n\nExercise 9\n\nRender, commit, and push one last time.\nMake sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "hw/hw-3.html#review",
+    "href": "hw/hw-3.html#review",
+    "title": "HW 3",
+    "section": "Review",
+    "text": "Review\nBefore you call it “done”,\n\nmake sure you’ve answered all questions (or, at least, have not skipped any accidentally) and\nreview the Section 1.2 section and make any edits/corrections needed.\n\nYou can change answers to exercises you’ve “completed” and commit and push again. We will only grade the final version of your assignment. You can commit and push as many times as you like until the deadline."
+  },
+  {
+    "objectID": "hw/hw-3.html#submission",
+    "href": "hw/hw-3.html#submission",
+    "title": "HW 3",
+    "section": "Submission",
+    "text": "Submission\nYou do not have to do anything special to “submit” your assignment. We will close the repos to further pushes at the deadline, and will take your work as of that time point as your submission.\nIf you need to submit late for any reason, contact the professor."
+  },
+  {
+    "objectID": "hw/hw-3.html#grading",
+    "href": "hw/hw-3.html#grading",
+    "title": "HW 3",
+    "section": "Grading",
+    "text": "Grading\n\nExercise 1-9: 10 points each\nWorkflow + formatting: 10 points\nTotal: 100 points"
   },
   {
     "objectID": "hw/hw-2.html",
@@ -427,11 +483,18 @@
     "text": "Assistance with Canvas and Zoom\nFor technical help with Canvas or Zoom, contact the Duke OIT Service Desk at oit.duke.edu/help. You can also access the self-service help documentation for Zoom here and for Canvas here.\nNote that we will be making minimal use of Canvas in this course (primarily for announcements and grade book). All assignment submission will take place on GitHub and conversation on Slack.\nZoom will be used for online office hours as well as as a backup option should we need to hold the course online instead of in person."
   },
   {
-    "objectID": "lectures/10/10-vizualize-model-relationships-I.html#goals",
-    "href": "lectures/10/10-vizualize-model-relationships-I.html#goals",
+    "objectID": "lectures/10/10-vizualize-model-relationships-I.html#coming-up",
+    "href": "lectures/10/10-vizualize-model-relationships-I.html#coming-up",
     "title": "Visualizing and modeling relationships I",
-    "section": "Goals",
-    "text": "Goals\n\nWhat is a model?\nWhy do we model?\nWhat is correlation?"
+    "section": "Coming up",
+    "text": "Coming up\n\nHW 3 due next Thursday, to be posted later today\nDue dates for the rest of the semester posted\nPlans for next week\nAny questions before we dive into the rest of the semester?"
+  },
+  {
+    "objectID": "lectures/10/10-vizualize-model-relationships-I.html#todays-goals",
+    "href": "lectures/10/10-vizualize-model-relationships-I.html#todays-goals",
+    "title": "Visualizing and modeling relationships I",
+    "section": "Today’s goals",
+    "text": "Today’s goals\n\nWhat is a model?\nWhy do we model?\nWhat is correlation?\nHow can we leverage visualizations to better understand and evaluate models?"
   },
   {
     "objectID": "lectures/10/10-vizualize-model-relationships-I.html#setup",
@@ -623,11 +686,11 @@
     "text": "Configure Git\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\n  )\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Mine Çetinkaya-Rundel\", \n  user.email = \"cetinkaya.mine@gmail.com\"\n  )\n\nYou are now ready interact with GitHub via RStudio on the Duke Containers!"
   },
   {
-    "objectID": "lectures/10/10-vizualize-model-relationships-I.html#ae-08",
-    "href": "lectures/10/10-vizualize-model-relationships-I.html#ae-08",
+    "objectID": "lectures/10/10-vizualize-model-relationships-I.html#ae-09",
+    "href": "lectures/10/10-vizualize-model-relationships-I.html#ae-09",
     "title": "Visualizing and modeling relationships I",
-    "section": "ae-08",
-    "text": "ae-08\n\n\n\nGo to the course GitHub org and find your ae-09-credit (repo name will be suffixed with your GitHub name).\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you'll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick ae-09-credit.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.\n\n\n\n\n\n🔗 sta113-f23.github.io"
+    "section": "ae-09",
+    "text": "ae-09\n\n\n\nGo to the course GitHub org and find your ae-09-credit (repo name will be suffixed with your GitHub name).\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick ae-09-credit.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.\n\n\n\n\n\n🔗 sta113-f23.github.io"
   },
   {
     "objectID": "lectures/05/05-grammar-of-data-wrangling.html#reflection",
@@ -2258,6 +2321,6 @@
     "href": "index.html",
     "title": "STA 113: Visualizing Data",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n  \n    \n    \n    \n    \n    \n    \n  \n  \n    \n    \n      WEEK\n      DATE\n      TOPIC\n      PREPARE\n      MATERIALS\n      DUE AT 1 PM\n    \n  \n  \n    1\nTue, Aug 29\nWelcome to STA 113FS!\n\n\n🖥️ slides\n\n\n    \nThu, Aug 31\nMeet the toolkit (R + RStudio)\n\n📖 socviz: Chp 1\n\n🖥️ slides \n⌨️ ae-01 \n⌨️ ae-02 \n🗝️ ae-02-sa\n\nGetting to know you survey \nGitHub usernames\n\n    2\nTue, Sep 5\nMeet the toolkit (Git + GitHub) + \nGrammar of graphics\n\n📖 r4ds: Chp 2.1 - 2.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-03 \n🗝️ ae-03-sa\n\n\n    \nThu, Sep 7\nVisualizing various types of data\n\n📖 r4ds: Chp 2.5 - 2.8 \n📖 r4ds: Chp 3 \n🎥 video\n\n🖥️ slides \n⌨️ ae-04 \n🗝️ ae-04-sa\n\n\n    3\nTue, Sep 12\n🦠 Class cancelled\n\n\n\n\n    \nThu, Sep 14\nGrammar of data wrangling\n\n📖 r4ds: Chp 4.1 - 4.5 \n🎥 video\n\n🖥️ slides \n⌨️ ae-05 \n🗝️ ae-05-sa\n\n📄 HW 1\n\n    4\nTue, Sep 19\n📊 Project 1 workday\n\n📖 r4ds: Chp 4.5 - 4.7 \n🎥 video\n\n\n\n    \nThu, Sep 21\nRubenstein Library Visit (Rubenstein Room 150)\n\n🎧 podcast \n📖 r4ds: Chp 5\n\n\n📄 HW 2\n\n    5\nTue, Sep 26\nWorking with multiple data frames\n\n📖 r4ds: Chp 20.1 - 20.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-06 \n🗝️ ae-06-sa\n\n\n    \nThu, Sep 28\nTidying data\n\n📖 r4ds: Chp 6 \n🎥 video\n\n🖥️ slides \n⌨️ ae-07 \n🗝️ ae-07-sa\n\n📊 Project 1 proposal\n\n    6\nTue, Oct 3\n✅ Exam 1 - In class\n\n\n\n\n    \nThu, Oct 5\nData types and classes\n\n📖 r4ds: Chp 17 \n🎥 video \n🎥 video\n\n🖥️ slides \n⌨️ ae-08 \n🗝️ ae-08-sa\n\n✅ Exam 1 - Take home\n\n    7\nTue, Oct 10\nPresentation ready plots I: Telling a story\n\n📖 fdv: Chp 29\n\n🖥️ slides \n📊 Project 1 peer review\n\n\n    \nThu, Oct 12\n📊 Project 1 presentation\n\n\n\n📊 Project 1\n\n    \nFri, Oct 13\n\n\n\n✅ Exam 1 - Take home redo (optional)\n\n    8\nTue, Oct 17\n🍂 Fall Break - No lecture\n\n\n\n\n    \nThu, Oct 19\nVisualizing and modeling relationships I\n\n📖 ims2: Chp 7\n\n🖥️ slides \n⌨️ ae-09 \n🗝️ ae-09-sa\n\n\n    9\nTue, Oct 24\nVisualizing and modeling relationships II\n\n📖 ims2: Chp 8\n\n\n📄 HW 3\n\n    \nThu, Oct 26\n📊 Project 2 workday\n\n\n\n\n    10\nTue, Oct 31\nVisualizing and modeling relationships III\n\n📖 ims2: Chp 9\n\n\n📄 HW 4\n\n    \nThu, Nov 2\nZoom lecture: Visualizing uncertainty I\n\n\n\n📊 Project 2 proposal\n\n    11\nTue, Nov 7\nVisualizing uncertainty II\n\n\n\n📄 HW 5\n\n    \nThu, Nov 9\nVisualizing uncertainty III\n\n\n\n\n    12\nTue, Nov 14\n✅ Exam 2 - In class\n\n\n\n\n    \nThu, Nov 16\nVisual inference\n\n\n\n✅ Exam 2 - Take home\n\n    13\nTue, Nov 21\nGenerative art\n\n\n\n\n    \nThu, Nov 23\n🦃 Thanksgiving Break - No lecture\n\n\n\n\n    14\nTue, Nov 28\nColors\n\n\n\n📄 HW 6\n\n    \nThu, Nov 30\nAccessibility\n\n\n\n📊 Project 2 peer review\n\n    15\nTue, Dec 5\nPresentation ready plots II: Themes + Axes + Annotation\n\n\n\n\n    \nThu, Dec 7\n📊 Project 2 presentation\n\n\n\n📊 Project 2"
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n  \n    \n    \n    \n    \n    \n    \n  \n  \n    \n    \n      WEEK\n      DATE\n      TOPIC\n      PREPARE\n      MATERIALS\n      DUE\n    \n  \n  \n    1\nTue, Aug 29\nWelcome to STA 113FS!\n\n\n🖥️ slides\n\n\n    \nThu, Aug 31\nMeet the toolkit (R + RStudio)\n\n📖 socviz: Chp 1\n\n🖥️ slides \n⌨️ ae-01 \n⌨️ ae-02 \n🗝️ ae-02-sa\n\nGetting to know you survey \nGitHub usernames\n\n    2\nTue, Sep 5\nMeet the toolkit (Git + GitHub) + \nGrammar of graphics\n\n📖 r4ds: Chp 2.1 - 2.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-03 \n🗝️ ae-03-sa\n\n\n    \nThu, Sep 7\nVisualizing various types of data\n\n📖 r4ds: Chp 2.5 - 2.8 \n📖 r4ds: Chp 3 \n🎥 video\n\n🖥️ slides \n⌨️ ae-04 \n🗝️ ae-04-sa\n\n\n    3\nTue, Sep 12\n🦠 Class cancelled\n\n\n\n\n    \nThu, Sep 14\nGrammar of data wrangling\n\n📖 r4ds: Chp 4.1 - 4.5 \n🎥 video\n\n🖥️ slides \n⌨️ ae-05 \n🗝️ ae-05-sa\n\n📄 HW 1\n\n    4\nTue, Sep 19\n📊 Project 1 workday\n\n📖 r4ds: Chp 4.5 - 4.7 \n🎥 video\n\n\n\n    \nThu, Sep 21\nRubenstein Library Visit (Rubenstein Room 150)\n\n🎧 podcast \n📖 r4ds: Chp 5\n\n\n📄 HW 2\n\n    5\nTue, Sep 26\nWorking with multiple data frames\n\n📖 r4ds: Chp 20.1 - 20.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-06 \n🗝️ ae-06-sa\n\n\n    \nThu, Sep 28\nTidying data\n\n📖 r4ds: Chp 6 \n🎥 video\n\n🖥️ slides \n⌨️ ae-07 \n🗝️ ae-07-sa\n\n📊 Project 1 proposal\n\n    6\nTue, Oct 3\n✅ Exam 1 - In class\n\n\n\n\n    \nThu, Oct 5\nData types and classes\n\n📖 r4ds: Chp 17 \n🎥 video \n🎥 video\n\n🖥️ slides \n⌨️ ae-08 \n🗝️ ae-08-sa\n\n✅ Exam 1 - Take home\n\n    7\nTue, Oct 10\nPresentation ready plots I: Telling a story\n\n📖 fdv: Chp 29\n\n🖥️ slides \n📊 Project 1 peer review\n\n\n    \nThu, Oct 12\n📊 Project 1 presentation\n\n\n\n📊 Project 1\n\n    \nFri, Oct 13\n\n\n\n✅ Exam 1 - Take home redo (optional)\n\n    8\nTue, Oct 17\n🍂 Fall Break - No lecture\n\n\n\n\n    \nThu, Oct 19\nVisualizing and modeling relationships I\n\n📖 ims2: Chp 7\n\n🖥️ slides \n⌨️ ae-09\n\n\n    9\nTue, Oct 24\nVisualizing and modeling relationships II\n\n📖 ims2: Chp 8\n\n\n\n    \nThu, Oct 26\n📊 Project 2 workday\n\n\n\n📄 HW 3\n\n    10\nTue, Oct 31\nVisualizing and modeling relationships III\n\n📖 ims2: Chp 9\n\n\n\n    \nThu, Nov 2\nZoom lecture: Visualizing uncertainty I\n\n\n\n📄 HW 4\n\n    11\nTue, Nov 7\nVisualizing uncertainty II\n\n\n\n📊 Project 2 proposal\n\n    \nThu, Nov 9\nVisualizing uncertainty III\n\n\n\n📄 HW 5\n\n    12\nTue, Nov 14\n✅ Exam 2 - In class\n\n\n\n\n    \nThu, Nov 16\nVisual inference\n\n\n\n✅ Exam 2 - Take home\n\n    13\nTue, Nov 21\nGenerative art\n\n\n\n\n    \nThu, Nov 23\n🦃 Thanksgiving Break - No lecture\n\n\n\n\n    14\nTue, Nov 28\nColors\n\n\n\n\n    \nThu, Nov 30\nAccessibility\n\n\n\n📄 HW 6\n\n    15\nTue, Dec 5\nPresentation ready plots II: Themes + Axes + Annotation\n\n\n\n📊 Project 2 peer review\n\n    \nThu, Dec 7\n📊 Project 2 presentation\n\n\n\n📊 Project 2"
   }
 ]

@@ -414,16 +414,26 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 
 </section>
 <section>
-<section id="hello" class="title-slide slide level1 center">
-<h1>hello</h1>
+<section id="warm-up" class="title-slide slide level1 center">
+<h1>Warm-up</h1>
 
 </section>
-<section id="goals" class="slide level2">
-<h2>Goals</h2>
+<section id="coming-up" class="slide level2">
+<h2>Coming up</h2>
+<ul>
+<li><p>HW 3 due next Thursday, to be posted later today</p></li>
+<li><p>Due dates for the rest of the semester posted</p></li>
+<li><p>Plans for next week</p></li>
+<li><p>Any questions before we dive into the rest of the semester?</p></li>
+</ul>
+</section>
+<section id="todays-goals" class="slide level2">
+<h2>Today’s goals</h2>
 <ul>
 <li>What is a model?</li>
 <li>Why do we model?</li>
 <li>What is correlation?</li>
+<li>How can we leverage visualizations to better understand and evaluate models?</li>
 </ul>
 </section>
 <section id="setup" class="slide level2">
@@ -642,23 +652,23 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
 <div class="column" style="width:25%;">
 <div class="cell">
 <div class="cell-output-display">
-<div id="qdaghmykwr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qdaghmykwr table {
+<div id="kpdvxunvgj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kpdvxunvgj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qdaghmykwr thead, #qdaghmykwr tbody, #qdaghmykwr tfoot, #qdaghmykwr tr, #qdaghmykwr td, #qdaghmykwr th {
+#kpdvxunvgj thead, #kpdvxunvgj tbody, #kpdvxunvgj tfoot, #kpdvxunvgj tr, #kpdvxunvgj td, #kpdvxunvgj th {
   border-style: none;
 }
 
-#qdaghmykwr p {
+#kpdvxunvgj p {
   margin: 0;
   padding: 0;
 }
 
-#qdaghmykwr .gt_table {
+#kpdvxunvgj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -684,12 +694,12 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-left-color: #D3D3D3;
 }
 
-#qdaghmykwr .gt_caption {
+#kpdvxunvgj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qdaghmykwr .gt_title {
+#kpdvxunvgj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -701,7 +711,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-bottom-width: 0;
 }
 
-#qdaghmykwr .gt_subtitle {
+#kpdvxunvgj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -713,7 +723,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-top-width: 0;
 }
 
-#qdaghmykwr .gt_heading {
+#kpdvxunvgj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -725,13 +735,13 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-right-color: #D3D3D3;
 }
 
-#qdaghmykwr .gt_bottom_border {
+#kpdvxunvgj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qdaghmykwr .gt_col_headings {
+#kpdvxunvgj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -746,7 +756,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-right-color: #D3D3D3;
 }
 
-#qdaghmykwr .gt_col_heading {
+#kpdvxunvgj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -766,7 +776,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   overflow-x: hidden;
 }
 
-#qdaghmykwr .gt_column_spanner_outer {
+#kpdvxunvgj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -778,15 +788,15 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   padding-right: 4px;
 }
 
-#qdaghmykwr .gt_column_spanner_outer:first-child {
+#kpdvxunvgj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qdaghmykwr .gt_column_spanner_outer:last-child {
+#kpdvxunvgj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qdaghmykwr .gt_column_spanner {
+#kpdvxunvgj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -798,11 +808,11 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   width: 100%;
 }
 
-#qdaghmykwr .gt_spanner_row {
+#kpdvxunvgj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qdaghmykwr .gt_group_heading {
+#kpdvxunvgj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -828,7 +838,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   text-align: left;
 }
 
-#qdaghmykwr .gt_empty_group_heading {
+#kpdvxunvgj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -843,15 +853,15 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   vertical-align: middle;
 }
 
-#qdaghmykwr .gt_from_md > :first-child {
+#kpdvxunvgj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qdaghmykwr .gt_from_md > :last-child {
+#kpdvxunvgj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qdaghmykwr .gt_row {
+#kpdvxunvgj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -870,7 +880,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   overflow-x: hidden;
 }
 
-#qdaghmykwr .gt_stub {
+#kpdvxunvgj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -883,7 +893,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   padding-right: 5px;
 }
 
-#qdaghmykwr .gt_stub_row_group {
+#kpdvxunvgj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -897,15 +907,15 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   vertical-align: top;
 }
 
-#qdaghmykwr .gt_row_group_first td {
+#kpdvxunvgj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qdaghmykwr .gt_row_group_first th {
+#kpdvxunvgj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qdaghmykwr .gt_summary_row {
+#kpdvxunvgj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -915,16 +925,16 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   padding-right: 5px;
 }
 
-#qdaghmykwr .gt_first_summary_row {
+#kpdvxunvgj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qdaghmykwr .gt_first_summary_row.thick {
+#kpdvxunvgj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qdaghmykwr .gt_last_summary_row {
+#kpdvxunvgj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -934,7 +944,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-bottom-color: #D3D3D3;
 }
 
-#qdaghmykwr .gt_grand_summary_row {
+#kpdvxunvgj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -944,7 +954,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   padding-right: 5px;
 }
 
-#qdaghmykwr .gt_first_grand_summary_row {
+#kpdvxunvgj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -954,7 +964,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-top-color: #D3D3D3;
 }
 
-#qdaghmykwr .gt_last_grand_summary_row_top {
+#kpdvxunvgj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -964,11 +974,11 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-bottom-color: #D3D3D3;
 }
 
-#qdaghmykwr .gt_striped {
+#kpdvxunvgj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qdaghmykwr .gt_table_body {
+#kpdvxunvgj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -977,7 +987,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-bottom-color: #D3D3D3;
 }
 
-#qdaghmykwr .gt_footnotes {
+#kpdvxunvgj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -991,7 +1001,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-right-color: #D3D3D3;
 }
 
-#qdaghmykwr .gt_footnote {
+#kpdvxunvgj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1000,7 +1010,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   padding-right: 5px;
 }
 
-#qdaghmykwr .gt_sourcenotes {
+#kpdvxunvgj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1014,7 +1024,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-right-color: #D3D3D3;
 }
 
-#qdaghmykwr .gt_sourcenote {
+#kpdvxunvgj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1022,63 +1032,63 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   padding-right: 5px;
 }
 
-#qdaghmykwr .gt_left {
+#kpdvxunvgj .gt_left {
   text-align: left;
 }
 
-#qdaghmykwr .gt_center {
+#kpdvxunvgj .gt_center {
   text-align: center;
 }
 
-#qdaghmykwr .gt_right {
+#kpdvxunvgj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qdaghmykwr .gt_font_normal {
+#kpdvxunvgj .gt_font_normal {
   font-weight: normal;
 }
 
-#qdaghmykwr .gt_font_bold {
+#kpdvxunvgj .gt_font_bold {
   font-weight: bold;
 }
 
-#qdaghmykwr .gt_font_italic {
+#kpdvxunvgj .gt_font_italic {
   font-style: italic;
 }
 
-#qdaghmykwr .gt_super {
+#kpdvxunvgj .gt_super {
   font-size: 65%;
 }
 
-#qdaghmykwr .gt_footnote_marks {
+#kpdvxunvgj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qdaghmykwr .gt_asterisk {
+#kpdvxunvgj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qdaghmykwr .gt_indent_1 {
+#kpdvxunvgj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qdaghmykwr .gt_indent_2 {
+#kpdvxunvgj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qdaghmykwr .gt_indent_3 {
+#kpdvxunvgj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qdaghmykwr .gt_indent_4 {
+#kpdvxunvgj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qdaghmykwr .gt_indent_5 {
+#kpdvxunvgj .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1127,23 +1137,23 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
 <div class="column" style="width:25%;">
 <div class="cell">
 <div class="cell-output-display">
-<div id="ajmunephum" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ajmunephum table {
+<div id="picdyziyhu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#picdyziyhu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ajmunephum thead, #ajmunephum tbody, #ajmunephum tfoot, #ajmunephum tr, #ajmunephum td, #ajmunephum th {
+#picdyziyhu thead, #picdyziyhu tbody, #picdyziyhu tfoot, #picdyziyhu tr, #picdyziyhu td, #picdyziyhu th {
   border-style: none;
 }
 
-#ajmunephum p {
+#picdyziyhu p {
   margin: 0;
   padding: 0;
 }
 
-#ajmunephum .gt_table {
+#picdyziyhu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1169,12 +1179,12 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-left-color: #D3D3D3;
 }
 
-#ajmunephum .gt_caption {
+#picdyziyhu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ajmunephum .gt_title {
+#picdyziyhu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1186,7 +1196,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-bottom-width: 0;
 }
 
-#ajmunephum .gt_subtitle {
+#picdyziyhu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1198,7 +1208,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-top-width: 0;
 }
 
-#ajmunephum .gt_heading {
+#picdyziyhu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1210,13 +1220,13 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-right-color: #D3D3D3;
 }
 
-#ajmunephum .gt_bottom_border {
+#picdyziyhu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ajmunephum .gt_col_headings {
+#picdyziyhu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1231,7 +1241,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-right-color: #D3D3D3;
 }
 
-#ajmunephum .gt_col_heading {
+#picdyziyhu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1251,7 +1261,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   overflow-x: hidden;
 }
 
-#ajmunephum .gt_column_spanner_outer {
+#picdyziyhu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1263,15 +1273,15 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   padding-right: 4px;
 }
 
-#ajmunephum .gt_column_spanner_outer:first-child {
+#picdyziyhu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ajmunephum .gt_column_spanner_outer:last-child {
+#picdyziyhu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ajmunephum .gt_column_spanner {
+#picdyziyhu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1283,11 +1293,11 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   width: 100%;
 }
 
-#ajmunephum .gt_spanner_row {
+#picdyziyhu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ajmunephum .gt_group_heading {
+#picdyziyhu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1313,7 +1323,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   text-align: left;
 }
 
-#ajmunephum .gt_empty_group_heading {
+#picdyziyhu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1328,15 +1338,15 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   vertical-align: middle;
 }
 
-#ajmunephum .gt_from_md > :first-child {
+#picdyziyhu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ajmunephum .gt_from_md > :last-child {
+#picdyziyhu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ajmunephum .gt_row {
+#picdyziyhu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1355,7 +1365,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   overflow-x: hidden;
 }
 
-#ajmunephum .gt_stub {
+#picdyziyhu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1368,7 +1378,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   padding-right: 5px;
 }
 
-#ajmunephum .gt_stub_row_group {
+#picdyziyhu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1382,15 +1392,15 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   vertical-align: top;
 }
 
-#ajmunephum .gt_row_group_first td {
+#picdyziyhu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ajmunephum .gt_row_group_first th {
+#picdyziyhu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ajmunephum .gt_summary_row {
+#picdyziyhu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1400,16 +1410,16 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   padding-right: 5px;
 }
 
-#ajmunephum .gt_first_summary_row {
+#picdyziyhu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ajmunephum .gt_first_summary_row.thick {
+#picdyziyhu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ajmunephum .gt_last_summary_row {
+#picdyziyhu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1419,7 +1429,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-bottom-color: #D3D3D3;
 }
 
-#ajmunephum .gt_grand_summary_row {
+#picdyziyhu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1429,7 +1439,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   padding-right: 5px;
 }
 
-#ajmunephum .gt_first_grand_summary_row {
+#picdyziyhu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1439,7 +1449,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-top-color: #D3D3D3;
 }
 
-#ajmunephum .gt_last_grand_summary_row_top {
+#picdyziyhu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1449,11 +1459,11 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-bottom-color: #D3D3D3;
 }
 
-#ajmunephum .gt_striped {
+#picdyziyhu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ajmunephum .gt_table_body {
+#picdyziyhu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1462,7 +1472,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-bottom-color: #D3D3D3;
 }
 
-#ajmunephum .gt_footnotes {
+#picdyziyhu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1476,7 +1486,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-right-color: #D3D3D3;
 }
 
-#ajmunephum .gt_footnote {
+#picdyziyhu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1485,7 +1495,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   padding-right: 5px;
 }
 
-#ajmunephum .gt_sourcenotes {
+#picdyziyhu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1499,7 +1509,7 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   border-right-color: #D3D3D3;
 }
 
-#ajmunephum .gt_sourcenote {
+#picdyziyhu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1507,63 +1517,63 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
   padding-right: 5px;
 }
 
-#ajmunephum .gt_left {
+#picdyziyhu .gt_left {
   text-align: left;
 }
 
-#ajmunephum .gt_center {
+#picdyziyhu .gt_center {
   text-align: center;
 }
 
-#ajmunephum .gt_right {
+#picdyziyhu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ajmunephum .gt_font_normal {
+#picdyziyhu .gt_font_normal {
   font-weight: normal;
 }
 
-#ajmunephum .gt_font_bold {
+#picdyziyhu .gt_font_bold {
   font-weight: bold;
 }
 
-#ajmunephum .gt_font_italic {
+#picdyziyhu .gt_font_italic {
   font-style: italic;
 }
 
-#ajmunephum .gt_super {
+#picdyziyhu .gt_super {
   font-size: 65%;
 }
 
-#ajmunephum .gt_footnote_marks {
+#picdyziyhu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ajmunephum .gt_asterisk {
+#picdyziyhu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ajmunephum .gt_indent_1 {
+#picdyziyhu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ajmunephum .gt_indent_2 {
+#picdyziyhu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ajmunephum .gt_indent_3 {
+#picdyziyhu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ajmunephum .gt_indent_4 {
+#picdyziyhu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ajmunephum .gt_indent_5 {
+#picdyziyhu .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1694,13 +1704,13 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
 </div>
 <p>You are now ready interact with GitHub via RStudio on the Duke Containers!</p>
 </section>
-<section id="ae-08" class="slide level2 smaller">
-<h2><code>ae-08</code></h2>
+<section id="ae-09" class="slide level2 smaller">
+<h2><code>ae-09</code></h2>
 <div class="task">
 <p><i class="fa-solid fa-user" aria-hidden="true"></i></p>
 <ul>
 <li>Go to the course <a href="https://github.com/sta113-f23">GitHub org</a> and find your <code>ae-09-credit</code> (repo name will be suffixed with your GitHub name).</li>
-<li>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you'll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</li>
+<li>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</li>
 <li>In RStudio, go to <em>File</em> ➛ <em>New Project</em> ➛<em>Version Control</em> ➛ <em>Git</em>.</li>
 <li>Copy and paste the URL of your assignment repo into the dialog box <em>Repository URL</em>. Again, please make sure to have <em>SSH</em> highlighted under <em>Clone</em> when you copy the address.</li>
 <li>Click <em>Create Project</em>, and the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</li>
