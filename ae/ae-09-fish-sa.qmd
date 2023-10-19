@@ -1,5 +1,5 @@
 ---
-title: "Modelling credit balances"
+title: "Modelling fish weights"
 subtitle: "Suggested answers"
 categories: 
   - Application exercise
