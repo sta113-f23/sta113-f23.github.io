@@ -518,11 +518,11 @@
     "text": "Two categorical variables\n\nWhat type of plot would you use to visualize the relationship between two categorical variables?\n\n\n\n\nggplot(\n  mpg, \n  aes(x = class, fill = drv)\n  ) +\n  geom_bar(position = \"fill\") +\n  labs(\n    x = \"Class\",\n    y = \"Count\",\n    fill = \"Drive type\",\n    title = \"Drive type vs. class\"\n  )"
   },
   {
-    "objectID": "lectures/10/10-vizualize-model-relationships-I.html#one-categorical-one-numeric-variable",
-    "href": "lectures/10/10-vizualize-model-relationships-I.html#one-categorical-one-numeric-variable",
+    "objectID": "lectures/10/10-vizualize-model-relationships-I.html#one-categorical-one-numerical-variable",
+    "href": "lectures/10/10-vizualize-model-relationships-I.html#one-categorical-one-numerical-variable",
     "title": "Visualizing and modeling relationships I",
-    "section": "One categorical, one numeric variable",
-    "text": "One categorical, one numeric variable\n\nWhat type of plot would you use to visualize the relationship between two categorical variables?\n\n\n\n\nggplot(\n  mpg, \n  aes(x = class, y = cty)\n  ) +\n  geom_boxplot() +\n  labs(\n    x = \"Class\",\n    y = \"City mileage (MPG)\",\n    title = \"City mileage vs. class\"\n  )"
+    "section": "One categorical, one numerical variable",
+    "text": "One categorical, one numerical variable\n\nWhat type of plot would you use to visualize the relationship between one numerical and one categorical variables?\n\n\n\n\nggplot(\n  mpg, \n  aes(x = class, y = cty)\n  ) +\n  geom_boxplot() +\n  labs(\n    x = \"Class\",\n    y = \"City mileage (MPG)\",\n    title = \"City mileage vs. class\"\n  )"
   },
   {
     "objectID": "lectures/10/10-vizualize-model-relationships-I.html#two-numerical-variables",
@@ -592,7 +592,7 @@
     "href": "lectures/10/10-vizualize-model-relationships-I.html#modelling-cars",
     "title": "Visualizing and modeling relationships I",
     "section": "Modelling cars",
-    "text": "Modelling cars\n\n\nWhat is the relationship between cars’ city and highway mileage?\nWhat is your best guess for a car’s MPG that weighs 5000 pounds?"
+    "text": "Modelling cars\n\n\nWhat is the relationship between cars’ city and highway mileage?\nWhat is your best guess for a car’s highway MPG that gets 20 MPG in the city?"
   },
   {
     "objectID": "lectures/10/10-vizualize-model-relationships-I.html#modelling-1",
