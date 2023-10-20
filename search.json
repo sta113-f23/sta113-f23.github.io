@@ -186,7 +186,7 @@
     "href": "hw/hw-3.html#packages",
     "title": "HW 3",
     "section": "Packages",
-    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)"
+    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(scales)\nlibrary(openintro)"
   },
   {
     "objectID": "hw/hw-3.html#sec-guidelines-tips",
@@ -201,6 +201,41 @@
     "title": "HW 3",
     "section": "Workflow + formatting",
     "text": "Workflow + formatting\nMake sure to\n\nUpdate author name on your document.\nLabel all code chunks informatively and concisely.\nFollow the Tidyverse code style guidelines.\nMake at least 3 commits.\nResize figures where needed, avoid tiny or huge plots.\nUse informative title and axis labels.\nTurn in an organized, well formatted document."
+  },
+  {
+    "objectID": "hw/hw-3.html#credit-card-balances",
+    "href": "hw/hw-3.html#credit-card-balances",
+    "title": "HW 3",
+    "section": "Credit card balances",
+    "text": "Credit card balances\nThe data for Exercises 1-___ is on credit card balances. The variables of interest from the dataset, called credit, are as follows:\nThe dataset is in the data folder of your repository, and it’s called credit.csv. It contains the following variables:\n\nbalance: Credit card balance in $\nincome: Income in $1,000\nstudent: Whether the individual is a student (Yes) or not (No)\nmarried: Whether the individual is a married (Yes) or not (No)\nlimit: Credit limit\n\n\nExercise 1\nLoad the data and save it as credit. Then, make a scatterplot of balance vs. income and overlay the line of best fit, without the uncertainty band around it.\n\n\nExercise 2\nFit the regression model for predicting balance from income, display a tidy output of the model. Then, interpret the slope and the intercept in context of the data.\n\n\nExercise 3\nPlot the residuals vs. the predicted values. Does the plot indicate any problems with the model?\n\n\nExercise 4\nRecreate the following visualization. The only aspect you do not need to match are the colors, however you should use a pair of colors of your own choosing to indicate students and non-students. Choose colors that appear “distinct enough” from each other to you.\nThen, describe the relationship between income and credit card balance, touching on how/if the relationship varies based on whether the individual is a student or not or whether they’re married or not.\nHints:\n\nVisualize the relationship between x (income) and y (balance) for each student and married type.\nPay attention to formatting of the labels in x and y scales.\nNote that this visualization doesn’t have a legend.\nFor labels of facets that indicate the names of the variables along with their levels, see the labeller argument of your faceting function, and specifically review the documentation and examples for the labeller() function.\nThe theme of the plot is theme_bw().\n\n\n\n\nExercise 5\nBased on your answer to Exercise 4, do you think married and student might be useful predictors, in addition to income for predicting credit card balance? Explain your reasoning.\n\n\nExercise 6\nCredit utilization is defined as the proportion of credit balance to credit limit. Calculate credit utilization for all individuals in the credit data, and use it to recreate the following visualization.\nOnce again, the only aspect of the visualization you do not need to match are the colors, but you should use the same colors from the previous exercise.\n\n\n\nExercise 7\nBased on the plot from Exercise 6, how, if at all, are the relationships between income and credit utilization different than the relationships between income and credit balance for individuals with various student and marriage status.\n\nNow is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "hw/hw-3.html#us-counties",
+    "href": "hw/hw-3.html#us-counties",
+    "title": "HW 3",
+    "section": "US counties",
+    "text": "US counties\nExercises 8 and 9 use the county dataset in the openintro package. You can find out more about the dataset by inspecting its documentation with ?county and you can also find this information here.\n\nExercise 8\na. What does the following code do? Does it work? Does it make sense? Why/why not?\nCode is grammatically correct but the plot is meaningless, it combines levels from two variables on the x-axis.\n\nggplot(county) +\n  geom_point(aes(x = median_edu, y = median_hh_income)) +\n  geom_boxplot(aes(x = smoking_ban, y = pop2017))\n\nb. Which of the following two plots makes it easier to compare poverty levels (poverty) across people from different median education levels (median_edu)? What does this say about when to place a faceting variable across rows or columns?\n\nggplot(county |&gt; filter(!is.na(median_edu))) + \n  geom_point(aes(x = homeownership, y = poverty)) + \n  facet_wrap(~median_edu, nrow = 1)\nggplot(county |&gt; filter(!is.na(median_edu))) + \n  geom_point(aes(x = homeownership, y = poverty)) + \n  facet_wrap(~median_edu, ncol = 1)\n\n\n\n\n\n\n\n\n\n\n\n\nYou know the drill: render, commit, and push!\n\n\n\nExercise 9\nRecreate the R code necessary to generate the following graphs. Note that wherever a categorical variable is used in the plot, it’s metro. Lay them out in the same way using the chunk opton layout-ncol: 2.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRender, commit, and push one last time.\nMake sure that you commit and push all changed documents and your Git pane is completely empty before proceeding."
+  },
+  {
+    "objectID": "hw/hw-3.html#review",
+    "href": "hw/hw-3.html#review",
+    "title": "HW 3",
+    "section": "Review",
+    "text": "Review\nBefore you call it “done”,\n\nmake sure you’ve answered all questions (or, at least, have not skipped any accidentally) and\nreview the Section 1.2 section and make any edits/corrections needed.\n\nYou can change answers to exercises you’ve “completed” and commit and push again. We will only grade the final version of your assignment. You can commit and push as many times as you like until the deadline."
+  },
+  {
+    "objectID": "hw/hw-3.html#submission",
+    "href": "hw/hw-3.html#submission",
+    "title": "HW 3",
+    "section": "Submission",
+    "text": "Submission\nYou do not have to do anything special to “submit” your assignment. We will close the repos to further pushes at the deadline, and will take your work as of that time point as your submission.\nIf you need to submit late for any reason, contact the professor."
+  },
+  {
+    "objectID": "hw/hw-3.html#grading",
+    "href": "hw/hw-3.html#grading",
+    "title": "HW 3",
+    "section": "Grading",
+    "text": "Grading\n\nExercise 1-9: 10 points each\nWorkflow + formatting: 10 points\nTotal: 100 points"
   },
   {
     "objectID": "hw/hw-2.html",

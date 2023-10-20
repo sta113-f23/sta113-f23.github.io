@@ -331,6 +331,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sec-guidelines-tips" id="toc-sec-guidelines-tips" class="nav-link" data-scroll-target="#sec-guidelines-tips">Guidelines + tips</a></li>
   <li><a href="#workflow-formatting" id="toc-workflow-formatting" class="nav-link" data-scroll-target="#workflow-formatting">Workflow + formatting</a></li>
   </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#credit-card-balances" id="toc-credit-card-balances" class="nav-link" data-scroll-target="#credit-card-balances">Credit card balances</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
+  </ul></li>
+  <li><a href="#us-counties" id="toc-us-counties" class="nav-link" data-scroll-target="#us-counties">US counties</a>
+  <ul class="collapse">
+  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
+  <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap up</a>
+  <ul class="collapse">
+  <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review">Review</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/edit/main/hw/hw-3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -382,7 +406,9 @@ Important
 <h2 class="anchored" data-anchor-id="packages">Packages</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="sec-guidelines-tips" class="level2">
@@ -414,6 +440,167 @@ Note
 <li>Resize figures where needed, avoid tiny or huge plots.</li>
 <li>Use informative title and axis labels.</li>
 <li>Turn in an organized, well formatted document.</li>
+</ul>
+</section>
+</section>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
+<section id="credit-card-balances" class="level2">
+<h2 class="anchored" data-anchor-id="credit-card-balances">Credit card balances</h2>
+<p>The data for Exercises 1-___ is on credit card balances. The variables of interest from the dataset, called <code>credit</code>, are as follows:</p>
+<p>The dataset is in the <code>data</code> folder of your repository, and it’s called <code>credit.csv</code>. It contains the following variables:</p>
+<ul>
+<li><code>balance</code>: Credit card balance in $</li>
+<li><code>income</code>: Income in $1,000</li>
+<li><code>student</code>: Whether the individual is a student (<code>Yes</code>) or not (<code>No</code>)</li>
+<li><code>married</code>: Whether the individual is a married (<code>Yes</code>) or not (<code>No</code>)</li>
+<li><code>limit</code>: Credit limit</li>
+</ul>
+<section id="exercise-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
+<p>Load the data and save it as <code>credit</code>. Then, make a scatterplot of <code>balance</code> vs.&nbsp;<code>income</code> and overlay the line of best fit, without the uncertainty band around it.</p>
+</section>
+<section id="exercise-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
+<p>Fit the regression model for predicting balance from income, display a tidy output of the model. Then, interpret the slope and the intercept in context of the data.</p>
+</section>
+<section id="exercise-3" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
+<p>Plot the residuals vs.&nbsp;the predicted values. Does the plot indicate any problems with the model?</p>
+</section>
+<section id="exercise-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
+<p>Recreate the following visualization. The only aspect you do not need to match are the colors, however you should use a pair of colors of your own choosing to indicate students and non-students. Choose colors that appear “distinct enough” from each other to you.</p>
+<p>Then, describe the relationship between income and credit card balance, touching on how/if the relationship varies based on whether the individual is a student or not or whether they’re married or not.</p>
+<p><strong>Hints:</strong></p>
+<ul>
+<li>Visualize the relationship between x (<code>income</code>) and y (<code>balance</code>) for each <code>student</code> and <code>married</code> type.</li>
+<li>Pay attention to formatting of the labels in x and y scales.</li>
+<li>Note that this visualization doesn’t have a legend.</li>
+<li>For labels of facets that indicate the names of the variables along with their levels, see the <code>labeller</code> argument of your faceting function, and specifically review the documentation and examples for the <a href="https://ggplot2.tidyverse.org/reference/labeller.html"><code>labeller()</code> function</a>.</li>
+<li>The theme of the plot is <code>theme_bw()</code>.</li>
+</ul>
+<p><img src="images/hw-3/balance-income.png" class="img-fluid"></p>
+</section>
+<section id="exercise-5" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
+<p>Based on your answer to Exercise 4, do you think <code>married</code> and <code>student</code> might be useful predictors, in addition to <code>income</code> for predicting credit card balance? Explain your reasoning.</p>
+</section>
+<section id="exercise-6" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
+<p>Credit utilization is defined as the proportion of credit balance to credit limit. Calculate credit utilization for all individuals in the <code>credit</code> data, and use it to recreate the following visualization.</p>
+<p>Once again, the only aspect of the visualization you do not need to match are the colors, but you should use the same colors from the previous exercise.</p>
+<p><img src="images/hw-3/utilization-income.png" class="img-fluid"></p>
+</section>
+<section id="exercise-7" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-7">Exercise 7</h3>
+<p>Based on the plot from Exercise 6, how, if at all, are the relationships between income and credit utilization different than the relationships between income and credit balance for individuals with various student and marriage status.</p>
+<div class="render-commit-push">
+<p>Now is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
+</div>
+</section>
+</section>
+<section id="us-counties" class="level2">
+<h2 class="anchored" data-anchor-id="us-counties">US counties</h2>
+<p>Exercises 8 and 9 use the <code>county</code> dataset in the <strong>openintro</strong> package. You can find out more about the dataset by inspecting its documentation with <code>?county</code> and you can also find this information <a href="https://openintrostat.github.io/usdata/reference/county.html">here</a>.</p>
+<section id="exercise-8" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-8">Exercise 8</h3>
+<p>a. What does the following code do? Does it work? Does it make sense? Why/why not?</p>
+<p>Code is grammatically correct but the plot is meaningless, it combines levels from two variables on the x-axis.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(county) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> median_edu, <span class="at">y =</span> median_hh_income)) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> smoking_ban, <span class="at">y =</span> pop2017))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>b. Which of the following two plots makes it easier to compare poverty levels (<code>poverty</code>) across people from different median education levels (<code>median_edu</code>)? What does this say about when to place a faceting variable across rows or columns?</p>
+<div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(county <span class="sc">|&gt;</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(median_edu))) <span class="sc">+</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> homeownership, <span class="at">y =</span> poverty)) <span class="sc">+</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>median_edu, <span class="at">nrow =</span> <span class="dv">1</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(county <span class="sc">|&gt;</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(median_edu))) <span class="sc">+</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> homeownership, <span class="at">y =</span> poverty)) <span class="sc">+</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>median_edu, <span class="at">ncol =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hw-3_files/figure-html/county-facets-1.png" class="img-fluid" width="576"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hw-3_files/figure-html/county-facets-2.png" class="img-fluid" width="576"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="render-commit-push">
+<p>You know the drill: render, commit, and push!</p>
+</div>
+</section>
+<section id="exercise-9" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-9">Exercise 9</h3>
+<p>Recreate the R code necessary to generate the following graphs. Note that wherever a categorical variable is used in the plot, it’s <code>metro</code>. Lay them out in the same way using the chunk opton <code>layout-ncol: 2</code>.</p>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hw-3_files/figure-html/county-recreate-1.png" class="img-fluid" width="576"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hw-3_files/figure-html/county-recreate-2.png" class="img-fluid" width="576"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hw-3_files/figure-html/county-recreate-3.png" class="img-fluid" width="576"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hw-3_files/figure-html/county-recreate-4.png" class="img-fluid" width="576"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hw-3_files/figure-html/county-recreate-5.png" class="img-fluid" width="576"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hw-3_files/figure-html/county-recreate-6.png" class="img-fluid" width="576"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hw-3_files/figure-html/county-recreate-7.png" class="img-fluid" width="576"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hw-3_files/figure-html/county-recreate-8.png" class="img-fluid" width="576"></p>
+</div>
+</div>
+</div>
+<div class="render-commit-push">
+<p>Render, commit, and push one last time.</p>
+<p>Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="wrap-up" class="level1">
+<h1>Wrap up</h1>
+<section id="review" class="level2">
+<h2 class="anchored" data-anchor-id="review">Review</h2>
+<p>Before you call it “done”,</p>
+<ul>
+<li>make sure you’ve answered all questions (or, at least, have not skipped any accidentally) and</li>
+<li>review the <a href="#sec-guidelines-tips" class="quarto-xref">Section&nbsp;1.2</a> section and make any edits/corrections needed.</li>
+</ul>
+<p>You can change answers to exercises you’ve “completed” and commit and push again. We will only grade the final version of your assignment. You can commit and push as many times as you like until the deadline.</p>
+</section>
+<section id="submission" class="level2">
+<h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<p>You do not have to do anything special to “submit” your assignment. We will close the repos to further pushes at the deadline, and will take your work as of that time point as your submission.</p>
+<p>If you need to submit late for any reason, contact the professor.</p>
+</section>
+<section id="grading" class="level2">
+<h2 class="anchored" data-anchor-id="grading">Grading</h2>
+<ul>
+<li>Exercise 1-9: 10 points each</li>
+<li>Workflow + formatting: 10 points</li>
+<li>Total: 100 points</li>
 </ul>
 
 
