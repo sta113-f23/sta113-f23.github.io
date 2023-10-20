@@ -26,6 +26,8 @@ This homework is due Thursday, Oct 26 at 5:00 pm ET.
 
 library(tidyverse)
 library(tidymodels)
+library(scales)
+library(openintro)
 ```
 
 ## Guidelines + tips {#sec-guidelines-tips}
@@ -50,3 +52,193 @@ Make sure to
 -   Use informative title and axis labels.
 -   Turn in an organized, well formatted document.
 
+# Exercises
+
+## Credit card balances
+
+The data for Exercises 1-\_\_\_ is on credit card balances. The variables of interest from the dataset, called `credit`, are as follows:
+
+The dataset is in the `data` folder of your repository, and it's called `credit.csv`. It contains the following variables:
+
+-   `balance`: Credit card balance in \$
+-   `income`: Income in \$1,000
+-   `student`: Whether the individual is a student (`Yes`) or not (`No`)
+-   `married`: Whether the individual is a married (`Yes`) or not (`No`)
+-   `limit`: Credit limit
+
+### Exercise 1
+
+Load the data and save it as `credit`. Then, make a scatterplot of `balance` vs. `income` and overlay the line of best fit, without the uncertainty band around it.
+
+### Exercise 2
+
+Fit the regression model for predicting balance from income, display a tidy output of the model. Then, interpret the slope and the intercept in context of the data.
+
+### Exercise 3
+
+Plot the residuals vs. the predicted values. Does the plot indicate any problems with the model?
+
+### Exercise 4
+
+Recreate the following visualization. The only aspect you do not need to match are the colors, however you should use a pair of colors of your own choosing to indicate students and non-students. Choose colors that appear "distinct enough" from each other to you.
+
+Then, describe the relationship between income and credit card balance, touching on how/if the relationship varies based on whether the individual is a student or not or whether they're married or not.
+
+**Hints:**
+
+-   Visualize the relationship between x (`income`) and y (`balance`) for each `student` and `married` type.
+-   Pay attention to formatting of the labels in x and y scales.
+-   Note that this visualization doesn't have a legend.
+- For labels of facets that indicate the names of the variables along with their levels, see the `labeller` argument of your faceting function, and specifically review the documentation and examples for the [`labeller()` function](https://ggplot2.tidyverse.org/reference/labeller.html).
+-   The theme of the plot is `theme_bw()`.
+
+![](images/hw-3/balance-income.png)
+
+### Exercise 5
+
+Based on your answer to Exercise 4, do you think `married` and `student` might be useful predictors, in addition to `income` for predicting credit card balance? Explain your reasoning.
+
+### Exercise 6
+
+Credit utilization is defined as the proportion of credit balance to credit limit. Calculate credit utilization for all individuals in the `credit` data, and use it to recreate the following visualization.
+
+Once again, the only aspect of the visualization you do not need to match are the colors, but you should use the same colors from the previous exercise.
+
+![](images/hw-3/utilization-income.png)
+
+### Exercise 7
+
+Based on the plot from Exercise 6, how, if at all, are the relationships between income and credit utilization different than the relationships between income and credit balance for individuals with various student and marriage status.
+
+::: render-commit-push
+Now is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+:::
+
+## US counties
+
+Exercises 8 and 9 use the `county` dataset in the **openintro** package.
+    You can find out more about the dataset by inspecting its documentation with `?county` and you can also find this information [here](https://openintrostat.github.io/usdata/reference/county.html).
+
+### Exercise 8
+
+a\.
+What does the following code do?
+Does it work?
+Does it make sense?
+Why/why not?
+
+Code is grammatically correct but the plot is meaningless, it combines levels from two variables on the x-axis.
+
+```{r}
+#| eval: false
+    
+ggplot(county) +
+  geom_point(aes(x = median_edu, y = median_hh_income)) +
+  geom_boxplot(aes(x = smoking_ban, y = pop2017))
+```
+
+b\.
+Which of the following two plots makes it easier to compare poverty levels (`poverty`) across people from different median education levels (`median_edu`)?
+What does this say about when to place a faceting variable across rows or columns?
+
+```{r}
+#| label: county-facets
+#| layout-ncol: 2
+#| fig-asp: 0.8
+#| fig-width: 6
+  
+ggplot(county |> filter(!is.na(median_edu))) + 
+  geom_point(aes(x = homeownership, y = poverty)) + 
+  facet_wrap(~median_edu, nrow = 1)
+
+ggplot(county |> filter(!is.na(median_edu))) + 
+  geom_point(aes(x = homeownership, y = poverty)) + 
+  facet_wrap(~median_edu, ncol = 1)
+```
+
+::: render-commit-push
+You know the drill: render, commit, and push!
+:::
+
+### Exercise 9
+
+Recreate the R code necessary to generate the following graphs.
+Note that wherever a categorical variable is used in the plot, it's `metro`. Lay them out in the same way using the chunk opton `layout-ncol: 2`.
+
+```{r}
+#| label: county-recreate
+#| layout-ncol: 2
+#| message: false
+#| warning: false
+#| fig-asp: 0.618
+#| fig-width: 6
+#| echo: false
+    
+ggplot(county, aes(x = homeownership, y = poverty)) + 
+  geom_point() + 
+  labs(title = "Plot A")
+
+ggplot(county, aes(x = homeownership, y = poverty)) + 
+  geom_point() + 
+  geom_smooth(se = FALSE) +
+  labs(title = "Plot B")
+
+ggplot(county, aes(x = homeownership, y = poverty)) + 
+  geom_point() + 
+  geom_smooth(aes(group = metro), se = FALSE, color = "green") +
+  labs(title = "Plot C")
+
+ggplot(county, aes(x = homeownership, y = poverty)) + 
+  geom_smooth(aes(group = metro), se = FALSE) +
+  geom_point() +
+  labs(title = "Plot D")
+
+ggplot(county, aes(x = homeownership, y = poverty)) + 
+  geom_point(aes(color = metro)) +
+  geom_smooth(aes(linetype = metro), se = FALSE) +
+  labs(title = "Plot E")
+
+ggplot(county, aes(x = homeownership, y = poverty, color = metro)) + 
+  geom_point() + 
+  geom_smooth(se = FALSE) +
+  labs(title = "Plot F")
+
+ggplot(county, aes(x = homeownership, y = poverty)) + 
+  geom_point(aes(color = metro)) + 
+  geom_smooth(se = FALSE) +
+  labs(title = "Plot G")
+
+ggplot(county, aes(x = homeownership, y = poverty)) + 
+  geom_point(size = 2, colour = "white") + 
+  geom_point(aes(colour = metro)) +
+  labs(title = "Plot H")
+```
+
+::: render-commit-push
+Render, commit, and push one last time.
+
+Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+:::
+
+# Wrap up
+
+## Review
+
+Before you call it "done",
+
+-   make sure you've answered all questions (or, at least, have not skipped any accidentally) and
+-   review the @sec-guidelines-tips section and make any edits/corrections needed.
+
+You can change answers to exercises you've "completed" and commit and push again. We will only grade the final version of your assignment. You can commit and push as many times as you like until the deadline.
+
+## Submission
+
+You do not have to do anything special to "submit" your assignment. We will close the repos to further pushes at the deadline, and will take your work as of that time point as your submission.
+
+If you need to submit late for any reason, contact the professor.
+
+## Grading
+
+-   Exercise 1-9: 10 points each
+-   Workflow + formatting: 10 points
+-   Total: 100 points
