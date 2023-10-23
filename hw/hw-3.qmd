@@ -89,7 +89,7 @@ Then, describe the relationship between income and credit card balance, touching
 -   Visualize the relationship between x (`income`) and y (`balance`) for each `student` and `married` type.
 -   Pay attention to formatting of the labels in x and y scales.
 -   Note that this visualization doesn't have a legend.
-- For labels of facets that indicate the names of the variables along with their levels, see the `labeller` argument of your faceting function, and specifically review the documentation and examples for the [`labeller()` function](https://ggplot2.tidyverse.org/reference/labeller.html).
+-   For labels of facets that indicate the names of the variables along with their levels, see the `labeller` argument of your faceting function, and specifically review the documentation and examples for the [`labeller()` function](https://ggplot2.tidyverse.org/reference/labeller.html).
 -   The theme of the plot is `theme_bw()`.
 
 ![](images/hw-3/balance-income.png)
@@ -116,16 +116,11 @@ Now is a good time to render, commit, and push. Make sure that you commit and pu
 
 ## US counties
 
-Exercises 8 and 9 use the `county` dataset in the **openintro** package.
-    You can find out more about the dataset by inspecting its documentation with `?county` and you can also find this information [here](https://openintrostat.github.io/usdata/reference/county.html).
+Exercises 8 and 9 use the `county` dataset in the **openintro** package. You can find out more about the dataset by inspecting its documentation with `?county` and you can also find this information [here](https://openintrostat.github.io/usdata/reference/county.html).
 
 ### Exercise 8
 
-a\.
-What does the following code do?
-Does it work?
-Does it make sense?
-Why/why not?
+a\. What does the following code do? Does it work? Does it make sense? Why/why not?
 
 Code is grammatically correct but the plot is meaningless, it combines levels from two variables on the x-axis.
 
@@ -137,9 +132,7 @@ ggplot(county) +
   geom_boxplot(aes(x = smoking_ban, y = pop2017))
 ```
 
-b\.
-Which of the following two plots makes it easier to compare poverty levels (`poverty`) across people from different median education levels (`median_edu`)?
-What does this say about when to place a faceting variable across rows or columns?
+b\. Which of the following two plots makes it easier to compare poverty levels (`poverty`) across people from different median education levels (`median_edu`)? What does this say about when to place a faceting variable across rows or columns?
 
 ```{r}
 #| label: county-facets
@@ -162,8 +155,7 @@ You know the drill: render, commit, and push!
 
 ### Exercise 9
 
-Recreate the R code necessary to generate the following graphs.
-Note that wherever a categorical variable is used in the plot, it's `metro`. Lay them out in the same way using the chunk opton `layout-ncol: 2`.
+Recreate the R code necessary to generate the following graphs. Note that wherever a categorical variable is used in the plot, it's `metro`. You do not need to lay them out in a 2-column format.
 
 ```{r}
 #| label: county-recreate
