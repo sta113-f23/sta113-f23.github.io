@@ -67,14 +67,14 @@
     },
     "KernSmooth": {
       "Package": "KernSmooth",
-      "Version": "2.23-22",
+      "Version": "2.23-21",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R",
         "stats"
       ],
-      "Hash": "2fecebc3047322fa5930f74fae5de70f"
+      "Hash": "6314fc110e09548ba889491db6ae67fb"
     },
     "MASS": {
       "Package": "MASS",
@@ -180,6 +180,16 @@
         "utils"
       ],
       "Hash": "20d81ec18bde233d8cc3265761fe8c93"
+    },
+    "airports": {
+      "Package": "airports",
+      "Version": "0.1.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "14e997c91e0cdca32231b04143e0904c"
     },
     "askpass": {
       "Package": "askpass",
@@ -351,6 +361,16 @@
         "tibble"
       ],
       "Hash": "f61dbaec772ccd2e17705c1e872e9e7c"
+    },
+    "cherryblossom": {
+      "Package": "cherryblossom",
+      "Version": "0.1.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "ef936debf27cd40d667339a6ad89cd75"
     },
     "chromote": {
       "Package": "chromote",
@@ -1670,6 +1690,24 @@
       ],
       "Hash": "61eb941328b49a62d7f9816dfed7d959"
     },
+    "openintro": {
+      "Package": "openintro",
+      "Version": "2.4.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "airports",
+        "cherryblossom",
+        "ggplot2",
+        "graphics",
+        "readr",
+        "rmarkdown",
+        "tibble",
+        "usdata"
+      ],
+      "Hash": "b392256e8a002162618cd58dc0381b67"
+    },
     "openssl": {
       "Package": "openssl",
       "Version": "2.1.0",
@@ -2324,7 +2362,7 @@
     },
     "survival": {
       "Package": "survival",
-      "Version": "3.5-7",
+      "Version": "3.5-5",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -2336,7 +2374,7 @@
         "stats",
         "utils"
       ],
-      "Hash": "b8e943d262c3da0b0febd3e04517c197"
+      "Hash": "d683341b1fa2e8d817efde27d6e6d35b"
     },
     "svglite": {
       "Package": "svglite",
@@ -2596,6 +2634,17 @@
         "R"
       ],
       "Hash": "71608579c8b607fb79c7468c1cf090b3"
+    },
+    "usdata": {
+      "Package": "usdata",
+      "Version": "0.2.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "tibble"
+      ],
+      "Hash": "9cc31e3592089bfd82c69a65260f1e37"
     },
     "utf8": {
       "Package": "utf8",
