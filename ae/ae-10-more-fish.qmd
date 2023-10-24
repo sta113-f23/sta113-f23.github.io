@@ -1,0 +1,96 @@
+---
+title: "Modelling fish weights with multiple predictors"
+categories: 
+  - Application exercise
+editor: visual
+editor_options: 
+  chunk_output_type: console
+format: 
+  html:
+    fig-width: 6
+    fig-asp: 0.618
+---
+
+For this application exercise, we will continue to work with data on fish. The dataset we will use, called `fish`, is on two common fish species in fish market sales. We're going to investigate the relationship between the weights and heights of fish, and later take into consider species as well.
+
+```{r}
+#| label: load-packages-data
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+
+fish <- read_csv("data/fish.csv")
+```
+
+The data dictionary is below:
+
+| **variable**      | **description**        |
+|-------------------|------------------------|
+| `species`         | Species name of fish   |
+| `weight`          | Weight, in grams       |
+| `length_vertical` | Vertical length, in cm |
+| `length_diagonal` | Diagonal length, in cm |
+| `length_cross`    | Cross length, in cm    |
+| `height`          | Height, in cm          |
+| `width`           | Diagonal width, in cm  |
+
+# Interpreting multiple regression models
+
+In the previous application exercise you saw that the model predicting weight from height and species was a better fit. In this section we will interpret the coefficients of this model.
+
+```{r}
+#| label: fit-hws
+
+# add code here
+```
+
+-   What does each row in the model output represent?
+
+*Add response here.*
+
+-   Interpret the intercept and the slopes.
+
+*Add response here.*
+
+-   Write the model.
+
+*Add response here.*
+
+# Additive vs. interaction models
+
+-   Run the two code chunks below and create two separate plots. How are the two plots different than each other? Which plot does the model we fit above represent?
+
+```{r}
+#| label: model-a
+
+# add code here
+```
+
+```{r}
+#| label: model-b
+
+# add code here
+```
+
+-   Look back at Plot B. What assumption does the additive model make about the slopes between flipper length and body mass for each of the three islands?
+
+*Add response here.*
+
+# Choosing models
+
+Rule of thumb: **Occam's Razor** - Don't overcomplicate the situation! We prefer the *simplest* best model.
+
+-   Choose a model using this principle.
+
+```{r}
+#| label: model-selection
+
+# add code here
+```
+
+*Add response here.*
+
+-   What is R-squared? What is adjusted R-squared?
+
+*Add response here.*

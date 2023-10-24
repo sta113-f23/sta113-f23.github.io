@@ -1,0 +1,15 @@
+{
+  "hash": "be7de9e1edee83391f8ab5e842cb46f8",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Modelling fish weights with multiple predictors\"\ncategories: \n  - Application exercise\neditor: visual\neditor_options: \n  chunk_output_type: console\nformat: \n  html:\n    fig-width: 6\n    fig-asp: 0.618\n---\n\n\nFor this application exercise, we will continue to work with data on fish. The dataset we will use, called `fish`, is on two common fish species in fish market sales. We're going to investigate the relationship between the weights and heights of fish, and later take into consider species as well.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\nlibrary(tidymodels)\n\nfish <- read_csv(\"data/fish.csv\")\n```\n:::\n\n\nThe data dictionary is below:\n\n| **variable**      | **description**        |\n|-------------------|------------------------|\n| `species`         | Species name of fish   |\n| `weight`          | Weight, in grams       |\n| `length_vertical` | Vertical length, in cm |\n| `length_diagonal` | Diagonal length, in cm |\n| `length_cross`    | Cross length, in cm    |\n| `height`          | Height, in cm          |\n| `width`           | Diagonal width, in cm  |\n\n# Interpreting multiple regression models\n\nIn the previous application exercise you saw that the model predicting weight from height and species was a better fit. In this section we will interpret the coefficients of this model.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n-   What does each row in the model output represent?\n\n*Add response here.*\n\n-   Interpret the intercept and the slopes.\n\n*Add response here.*\n\n-   Write the model.\n\n*Add response here.*\n\n# Additive vs. interaction models\n\n-   Run the two code chunks below and create two separate plots. How are the two plots different than each other? Which plot does the model we fit above represent?\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n-   Look back at Plot B. What assumption does the additive model make about the slopes between flipper length and body mass for each of the three islands?\n\n*Add response here.*\n\n# Choosing models\n\nRule of thumb: **Occam's Razor** - Don't overcomplicate the situation! We prefer the *simplest* best model.\n\n-   Choose a model using this principle.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n*Add response here.*\n\n-   What is R-squared? What is adjusted R-squared?\n\n*Add response here.*\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -459,10 +459,10 @@ You are now ready interact with GitHub via RStudio on the Duke Containers!
 ::: task
 {{< fa user >}}
 
--   Go to the course [GitHub org](https://github.com/sta113-f23) and find your `ae-09-credit` (repo name will be suffixed with your GitHub name).
+-   Go to the course [GitHub org](https://github.com/sta113-f23) and find your `ae-09-fish` (repo name will be suffixed with your GitHub name).
 -   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**). Click on the clipboard icon to copy the repo URL.
 -   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
 -   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
 -   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
--   Click *ae-09-credit.qmd* to open the template Quarto file. This is where you will write up your code and narrative for the lab.
+-   Click *ae-09-fish.qmd* to open the template Quarto file. This is where you will write up your code and narrative for the lab.
 :::

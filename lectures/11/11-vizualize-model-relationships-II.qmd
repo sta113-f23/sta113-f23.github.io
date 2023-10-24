@@ -1,0 +1,59 @@
+---
+title: "Visualizing and modeling relationships II"
+subtitle: Lecture 11
+format: 
+  revealjs:
+    fig-align: center
+    fig-width: 5
+    fig-asp: 0.618
+---
+
+# Warm-up
+
+## Coming up
+
+-   HW 3 due Thursday
+
+## Today's goals
+
+-   Recap modeling with a single predictor
+
+-   Fit and interpret models with multiple predictors
+
+-   Distinguish between additive and interaction models
+
+## Setup
+
+```{r}
+#| label: load-pkg
+
+library(tidyverse)
+library(gt)
+```
+
+# From last time
+
+## `ae-09`
+
+::: task
+{{< fa user >}}
+
+-   This application exercise was about predicting weights from heights of fish.
+-   Go to your container and switch to the `ae-09` project in RStudio.
+-   Continue working on it starting with the *Model summary* section.
+:::
+
+# Visualizing and modelin with multiple predictors
+
+## `ae-10` {.smaller}
+
+::: task
+{{< fa user >}}
+
+-   Go to the course [GitHub org](https://github.com/sta113-f23) and find your `ae-10-more-fish` (repo name will be suffixed with your GitHub name).
+-   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**). Click on the clipboard icon to copy the repo URL.
+-   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
+-   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+-   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+-   Click *ae-10-more-fish.qmd* to open the template Quarto file. This is where you will write up your code and narrative for the lab.
+:::

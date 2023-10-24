@@ -1,9 +1,8 @@
 ---
 title: "Modelling fish weights"
-subtitle: "Suggested answers"
 categories: 
   - Application exercise
-  - Answers
+  - Sugested answers
 editor: visual
 editor_options: 
   chunk_output_type: console
