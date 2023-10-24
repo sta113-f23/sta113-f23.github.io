@@ -40,9 +40,12 @@ The data dictionary is below:
 In the previous application exercise you saw that the model predicting weight from height and species was a better fit. In this section we will interpret the coefficients of this model.
 
 ```{r}
-#| label: fit-hws
+#| label: fit-whs
 
-# add code here
+fish_whs_fit <- linear_reg() |>
+  fit(weight ~ height + species, data = fish)
+
+tidy(fish_whs_fit)
 ```
 
 -   What does each row in the model output represent?
@@ -64,13 +67,24 @@ In the previous application exercise you saw that the model predicting weight fr
 ```{r}
 #| label: model-a
 
-# add code here
+ggplot(fish, aes(x = height, y = weight, color = species)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Plot A - Interaction model")
 ```
 
 ```{r}
 #| label: model-b
 
-# add code here
+fish_whs_aug <- augment(fish_whs_fit, new_data = fish)
+
+ggplot(
+  fish_whs_aug, 
+  aes(x = height, y = weight, color = species)
+  ) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(aes(y = .pred), method = "lm", se = FALSE) +
+  labs(title = "Plot B - Additive model")
 ```
 
 -   Look back at Plot B. What assumption does the additive model make about the slopes between flipper length and body mass for each of the three islands?

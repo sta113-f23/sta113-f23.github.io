@@ -43,7 +43,7 @@ library(gt)
 -   Continue working on it starting with the *Model summary* section.
 :::
 
-# Visualizing and modelin with multiple predictors
+# Visualizing and modeling with multiple predictors
 
 ## `ae-10` {.smaller}
 

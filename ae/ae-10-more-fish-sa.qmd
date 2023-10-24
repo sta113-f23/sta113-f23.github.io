@@ -41,12 +41,12 @@ The data dictionary is below:
 In the previous application exercise you saw that the model predicting weight from height and species was a better fit. In this section we will interpret the coefficients of this model.
 
 ```{r}
-#| label: fit-hws
+#| label: fit-whs
 
-fish_hws_fit <- linear_reg() |>
+fish_whs_fit <- linear_reg() |>
   fit(weight ~ height + species, data = fish)
 
-tidy(fish_hws_fit)
+tidy(fish_whs_fit)
 ```
 
 -   What does each row in the model output represent?
@@ -83,9 +83,10 @@ ggplot(fish, aes(x = height, y = weight, color = species)) +
 ```{r}
 #| label: model-b
 
-fish_hws_aug <- augment(fish_hws_fit, new_data = fish)
+fish_whs_aug <- augment(fish_whs_fit, new_data = fish)
+
 ggplot(
-  fish_hws_aug, 
+  fish_whs_aug, 
   aes(x = height, y = weight, color = species)
   ) +
   geom_point(alpha = 0.5) +
@@ -95,23 +96,34 @@ ggplot(
 
 -   Look back at Plot B. What assumption does the additive model make about the slopes between flipper length and body mass for each of the three islands?
 
-*The additive model assumes the same slope between body mass and flipper length for all three islands.*
+*The additive model assumes the same slope between height and weight of fish for the two species.*
 
 # Choosing models
 
-Rule of thumb: **Occam\'s Razor** - Don\'t overcomplicate the situation! We prefer the *simplest* best model.
+Rule of thumb: **Occam's Razor** - Don't overcomplicate the situation! We prefer the *simplest* best model.
 
 -   Choose a model using this principle.
 
 ```{r}
 #| label: model-selection
 
-glance(fish_hws_fit)
+# interaction
 
-fish_hws_int_fit <- linear_reg() |>
+fish_whs_int_fit <- linear_reg() |>
   fit(weight ~ height * species, data = fish)
 
-glance(fish_hws_int_fit)
+tidy(fish_whs_int_fit)
+
+glance(fish_whs_int_fit)
+
+# additive
+
+fish_whs_fit <- linear_reg() |>
+  fit(weight ~ height + species, data = fish)
+
+tidy(fish_whs_fit)
+
+glance(fish_whs_fit)
 ```
 
 *Choose the interaction model since it has a higher adjusted R-squared.*
