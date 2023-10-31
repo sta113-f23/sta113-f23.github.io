@@ -1,0 +1,330 @@
+---
+title: "Spam email"
+categories: 
+  - Application exercise
+  - Suggested answers
+editor: visual
+editor_options: 
+  chunk_output_type: console
+fig-width: 6
+fig-asp: 0.618
+---
+
+In this application exercise, we'll build a spam filter. Or, at least, learn a bit about how spam filters are built by building a very simple (likely not very effective) one.
+
+# Goals
+
+-   Understand logistic regression as a linear model of binary outcomes
+
+-   Fit and interpret logistic regression models in R
+
+# Packages and data
+
+```{r}
+#| label: load-packages-data
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+library(ggthemes)
+
+hp_spam <- read_csv("data/hp-spam.csv")
+```
+
+To illustrate logistic regression, we will build a spam filter from email data. Today's data consists of `r nrow(hp_spam)` emails that are classified as spam or non-spam.
+
+-   `type = 1` is spam
+-   `type = 0` is non-spam
+
+The data was collected at Hewlett-Packard labs and contains `r nrow(hp_spam)` variables. The first 48 variables are specific keywords and each observation is the percentage of appearance of that word in the message. Click [here](https://rdrr.io/cran/kernlab/man/spam.html) to read more.
+
+```{r}
+#| label: glimpse-data
+
+glimpse(hp_spam)
+```
+
+The basic logic of our model is that the frequency of certain words can help us determine whether or not an email is spam.
+
+For example, these emails came from George's inbox. If the word "george" (`george`) is not present in the message and the dollar symbol (`charDollar`) is, you might expect the email to be spam.
+
+Using this data, we want to build a model that **predicts** whether a new email is spam or not. How do we build a model that can do this?
+
+# Setting default theme
+
+You can apply the same theme for your ggplots throughout your document.
+
+```{r}
+#| label: theme-set
+
+theme_set(theme_minimal())
+```
+
+# Building intuition
+
+## Exercise 1
+
+One predictor model: Visualize a **linear model** where the outcome is `type` (spam or not) and `george` is the only predictor. Then, discuss your visualization with your neighbor. Is this a good model? Why or why not?
+
+*Doesn't make sense to draw a line and predict values between 0 and 1.*
+
+```{r}
+#| label: one-predictor-plot
+
+ggplot(hp_spam, aes(x = george, y = type)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+## Exercise 2
+
+What type of data is `type`, our outcome variable? What type should it be? Make any adjustments necessary and recreate the visualization from Exercise 1. Does this model look better? Why or why not?
+
+```{r}
+#| label: recode-type
+
+hp_spam <- hp_spam |>
+  mutate(type = as.factor(type))
+
+ggplot(hp_spam, aes(x = george, y = type)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+Moral of the story so far: A linear model is not a good model for binary outcomes.
+
+# Spending your data
+
+Our ultimate goal is to do prediction (or classification) on new data -- a new email. 
+Therefore, we should build a model using some of the data and then test it on the rest of the data.
+
+Let's divide the data into a training set and testing set.
+
+```{r}
+#| label: initial-split
+
+set.seed(109)
+hp_spam_split <- initial_split(hp_spam)
+hp_spam_train <- training(hp_spam_split)
+hp_spam_test <- testing(hp_spam_split)
+```
+
+## Exercise 3
+
+Inspect `hp_spam_split`. How many emails are in `hp_spam_train`, how many are in `hp_spam_test`. Check out the documentation for the `initial_split()` function, what ratio does it use for splitting the dataset into training and testing samples?
+
+*25% in test, 75% in train.*
+
+## Exercise 4
+
+Two predictor model: In this exercise focus on two predictors: `you` and `capitalTotal`.
+
+-   Create a visualization with `you` on the x-axis and `capitalTotal` on the y-axis. Color data points by whether or not they are spam (`type`). Make sure that `type` is being used as a categorical variable (factor).
+
+```{r}
+#| label: two-predictor-plot
+
+ggplot(hp_spam_train, aes(x = you, y = capitalTotal, color = type)) +
+  geom_point(alpha = 0.2)
+```
+
+-   Fit the model predicting `type` from `you` and `capitalTotal`. Comment on how the code differs from code used in previous models we fit. Also comment on how it's similar.
+
+```{r}
+#| label: spam-fit
+
+spam_fit <- logistic_reg() |>
+  fit(type ~ you + capitalTotal, data = hp_spam_train)
+  
+tidy(spam_fit)
+```
+
+## Exercise 5
+
+Write the model equation.
+
+$$
+logit(\hat{p}) = -1.50 + 0.361 \times you + 0.00173 \times capitalTotal
+$$
+
+$$
+log(\frac{\hat{p}}{1 - \hat{p}}) = -1.50 + 0.361 \times you + 0.00173 \times capitalTotal
+$$
+
+## Exercise 6
+
+What is the probability the email is spam if the frequency of `you` is 5% in the email and there are 2500 capital letters.
+
+-   First, do this "by hand" (using R as a calculator) and the model you wrote in the previous exercise.
+
+```{r}
+#| label: predict-manual
+
+logit_phat <- -1.50 + 0.361*5 + 0.00173*2500
+phat <- exp(logit_phat) / (1 + exp(logit_phat))
+phat
+```
+
+-   Then, do it using R functions designed for prediction.
+
+```{r}
+#| label: predict-function
+
+new_email <- tibble(
+  you = 5,
+  capitalTotal = 2500
+)
+
+predict(spam_fit, new_data = new_email)
+predict(spam_fit, new_data = new_email, type = "prob")
+predict(spam_fit, new_data = new_email, type = "class")
+```
+
+# Classify a new email
+
+Read a new email and figure out values of `you` and `capitalTotal` and store these in a new tibble called `new_email`.
+
+```{r}
+#| label: read-new-email
+
+email_text <- read_lines("data/email-text.txt")
+email_text
+
+totalWord <- sum(str_count(email_text, " "))
+totalYou <- sum(str_count(tolower(email_text), "you"))
+you <- 100 * totalYou / totalWord
+capitalTotal <- sum(str_count(email_text, "[A-Z]"))
+
+new_email <- tibble(
+  you = you,
+  capitalTotal = capitalTotal
+)
+```
+
+## Exercise 8
+
+Using your model, predict whether this email will be classified as spam or not. What does the model predict for the **probability** that this email is spam? With a decision boundary of 0.5, how does the model classify thie email? Do you believe this classification? Why or why not?
+
+```{r}
+#| label: predict-new-email
+
+predict(spam_fit, new_data = new_email)
+predict(spam_fit, new_data = new_email, type = "prob")
+```
+
+*The model predicts 0.973 probability that this new email is spam. This seems reasonable based on the new email text.*
+
+# Assessing predictive ability
+
+First, let's start over with a new model.
+
+## Exercise 9
+
+Train your model on the training set. Build a predictive model using any combination of predictors to predict `type`. Save your fitted model as `my_model_fit` and display its tidy summary.
+
+```{r}
+#| label: my-model-fit
+
+my_model_fit <- logistic_reg() |>
+  fit(type ~ you + free + credit + charExclamation, data = hp_spam_train)
+
+tidy(my_model_fit)
+```
+
+## Exercise 10
+
+Make predictions for your testing set and augment your testing set with these predictions.
+
+```{r}
+#| label: my-model-test
+
+my_model_aug <- augment(my_model_fit, hp_spam_test) |>
+  select(contains("pred"), type, you, address)
+```
+
+## Exercise 11
+
+What are the false positive and false negative rates of this model?
+
+```{r}
+#| label: false-positive-negative
+
+my_model_aug |>
+  count(type, .pred_class) |>
+  group_by(type) |>
+  mutate(prop = n / sum(n))
+```
+
+# Visualizing logistic regression
+
+Just because there's greater than 50% probability an email is spam doesn't mean we have to label it as such. We can adjust our **threshold** or **critical probability**, a.k.a. **decision boundary** to be more or less sensitive to spam emails.
+
+```{r}
+#| label: decision-boundary
+#| eval: false
+#| fig-width: 10
+#| fig-asp: 0.5
+
+my_model_aug <- augment(my_model_fit, new_data = hp_spam_test)
+decision_boundary <- 0.5
+
+ggplot(my_model_aug, aes(x = .pred_1, y = type)) +
+  geom_jitter(alpha = 0.5, color = "darkgray", height = 0.2) +
+  geom_vline(xintercept = decision_boundary, color = "red", linetype = "dashed")
+```
+
+In other words, we get to select a number $p^*$ such that if $p > p^*$, then label the email as spam.
+
+## Exercise 12
+
+-   What would you set your decision boundary to and why?
+
+-   Change `decision_boundary` in the code above to 0.01 and 0.999999. Do the results surprise you? Why or why not?
+
+*Answers may vary.*
+
+## Exercise 13
+
+If you set a lower decision boundary, do you label fewer or more emails as spam? What happens if you set 0 as your boundary? What about 1 as your boundary? If you very much dislike spam, should you set a high or low boundary?
+
+*Lower boundary means that we label more emails as spam, high boundary means fewer emails as spam. We can adjust the boundary depending on how much we value receiving important emails vs how much we dislike spam.*
+
+*0 means all emails are spam, 1 means no emails are spam. Note you cannot set decision boundary to 0 or 1 because of logit function (would evaluate to inf or negative inf)*
+
+## Exercise 14
+
+Recreate the jittered scatterplot from earlier, this time using color to indicate the following four decision regions and label them on the plot. Make `decision_boundary` a value you can update and re-run the code to see how the decision regions change.
+
+```{r}
+#| label: decision-regions
+#| fig-width: 10
+#| fig-asp: 0.5
+
+decision_boundary <- 0.5
+
+my_model_aug |>
+  mutate(
+    .pred_class = if_else(.pred_1 >= decision_boundary, 1, 0),
+    decision_region = case_when(
+      .pred_class == 0 & type == 0 ~ "True negative",
+      .pred_class == 0 & type == 1 ~ "False positive",
+      .pred_class == 1 & type == 0 ~ "False negative",
+      .pred_class == 1 & type == 1 ~ "True positive",
+    )
+  ) |>
+  ggplot(aes(x = .pred_1, y = type, color = decision_region)) +
+  geom_jitter(alpha = 0.5, height = 0.2, show.legend = FALSE) +
+  geom_vline(xintercept = decision_boundary, color = "coral3", linetype = "dashed", linewidth = 1) +
+  annotate(geom = "text", x = decision_boundary+0.025, y = 1.5, label = "Decision\nboundary", fontface = "bold", color = "coral3", hjust = 0) +
+  annotate(geom = "label", x = 0.1, y = 2, label = "False\nnegative", alpha = 0.8) +
+  annotate(geom = "label", x = 0.8, y = 2, label = "True\npositive", alpha = 0.8) +
+  annotate(geom = "label", x = 0.1, y = 1, label = "True\nnegative", alpha = 0.8) +
+  annotate(geom = "label", x = 0.8, y = 1, label = "False\npositive", alpha = 0.8) +
+  labs(
+    x = "Predicted probability of email being spam",
+    y = "Actual"
+  ) +
+  scale_y_discrete(labels = c("Not spam", "Spam")) +
+  scale_x_continuous(limits = c(0, 1)) +
+  scale_color_colorblind()
+```
