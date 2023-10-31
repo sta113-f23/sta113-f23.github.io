@@ -54,7 +54,7 @@ Due dates related to Project 2 are on the course schedule page.
 
 Your proposal should include:
 
--   A one sentence description of your high-level goal (such as the ones listed under [Ideas] above.
+-   A one sentence description of your high-level goal, such as the ones listed under [Ideas] above.
 
 -   A one to two paragraph description of your goals, including your motivation. Depending on the focus of your project, the following might go in here.
 
