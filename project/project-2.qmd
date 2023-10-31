@@ -110,14 +110,22 @@ At a minimum each project should have an `index.qmd`. If your project is analyzi
 
 ## Grading
 
-| Total                                                                            | 100 pts |
-|----------------------------------|-------------------------------------|
-| Proposal \| 10 pts \|                                                            |         |
-| Presentation \| 30 pts \| \| \| (25 pts from teaching team, 5 pts from audience) |         |
-| Write-up \| 30 pts \|                                                            |         |
-| Reproducibility, style, and organization[^1]                                     | 10 pts  |
-| Within team peer evaluation[^2]                                                  | 10 pts  |
-| Between team peer evaluation[^3]                                                 | 10 pts  |
++----------------------------------------------+--------------------------------------------------+
+| Total                                        | 100 pts                                          |
++==============================================+==================================================+
+| Proposal                                     | 10 pts                                           |
++----------------------------------------------+--------------------------------------------------+
+| Presentation                                 | 30 pts\                                          |
+|                                              | (25 pts from teaching team, 5 pts from audience) |
++----------------------------------------------+--------------------------------------------------+
+| Write-up                                     | 30 pts                                           |
++----------------------------------------------+--------------------------------------------------+
+| Reproducibility, style, and organization[^1] | 10 pts                                           |
++----------------------------------------------+--------------------------------------------------+
+| Within team peer evaluation[^2]              | 10 pts                                           |
++----------------------------------------------+--------------------------------------------------+
+| Between team peer evaluation[^3]             | 10 pts                                           |
++----------------------------------------------+--------------------------------------------------+
 
 [^1]: Style and format does count for this assignment, so please take the time to make sure everything looks good and your data and code are properly formatted.
 
