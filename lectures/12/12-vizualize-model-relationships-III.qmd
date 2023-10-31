@@ -35,7 +35,7 @@ format:
 
 -   Outcome: Categorical with only two levels, Predictors: Any number of numerical or categorical variables with any number of levels $\rightarrow$ Logistic regression
 
--   Outcome: Categorical with any number of levels, Predictors: Any number of numerical or categorical variables with any number of levels $\rightarrow$ Generalized linear models -- Not covered in STA 101
+-   Outcome: Categorical with any number of levels, Predictors: Any number of numerical or categorical variables with any number of levels $\rightarrow$ Generalized linear models -- Not covered in STA 113FS
 :::
 
 ## Data + packages {.smaller}
