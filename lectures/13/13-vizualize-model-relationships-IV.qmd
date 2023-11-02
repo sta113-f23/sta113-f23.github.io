@@ -1,0 +1,136 @@
+---
+title: "Visualizing and modeling relationships IV"
+subtitle: Lecture 13
+format: 
+  revealjs:
+    fig-align: center
+    fig-width: 5
+    fig-asp: 0.618
+---
+
+# Warm-up
+
+## Announcements
+
+-   HW 4 posted, due next Thursday
+
+## Today's goals
+
+-   Finish visualizing decision boundaries for classification models
+
+-   Define sensitivity, specificity, and ROC curves
+
+# Logistic regression
+
+## `ae-11-spam` {.smaller}
+
+Ultimate goal: Recreate the following visualization.
+
+![](images/decision-regions-1.png)
+
+## `ae-11-spam` {.smaller}
+
+Reminder of instructions for getting started with application exercises:
+
+::: task
+{{< fa user >}}
+
+-   Go to the course [GitHub org](https://github.com/sta113-f23) and find your `ae-11-spam` (repo name will be suffixed with your GitHub name).
+-   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**). Click on the clipboard icon to copy the repo URL.
+-   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
+-   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+-   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+-   Click *ae-11-spam.qmd* to open the template Quarto file. This is where you will write up your code and narrative for the lab.
+:::
+
+# Evaluating predictive performance
+
+## Sensitivity and specificity
+
+::: columns
+::: {.column width="60%"}
+-   **Sensitivity** is the true positive rate -- is the probability of a positive prediction, given positive observed.
+
+-   **Specificity** is the true negative rate - is the probability of a negative test result given negative observed.
+:::
+
+::: {.column width="40%"}
+![Source: Wikipedia](images/clipboard-3258248075.png){width="300"}
+:::
+:::
+
+## Visualizing sensitivity and specificity
+
+-   The plot we created earlier displays sensitivity and specificity for a given decision bound.
+
+-   An alternative display can visualize various sensitivity and specificity rates for all possible decision bounds.
+
+![](images/decision-regions-1.png){fig-align="center" width="600"}
+
+## ROC curves
+
+**Receiver operating characteristic (ROC) curve**^+^ plot true positive rate vs. false positive rate (1 - specificity).
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(tidymodels)
+
+hp_spam <- read_csv("data/hp-spam.csv")
+hp_spam <- hp_spam |>
+  mutate(type = as.factor(type))
+
+set.seed(109)
+hp_spam_split <- initial_split(hp_spam)
+hp_spam_train <- training(hp_spam_split)
+hp_spam_test <- testing(hp_spam_split)
+
+my_model_fit <- logistic_reg() |>
+  fit(type ~ you + free + credit + charExclamation, data = hp_spam_train)
+my_model_aug <- augment(my_model_fit, hp_spam_test) |>
+  select(contains("pred"), type, you, address)
+```
+
+```{r}
+#| label: roc-curve
+#| output-location: column
+
+my_model_aug |>
+  roc_curve(
+    truth = type,
+    .pred_1,
+    event_level = "second"
+  ) |>
+  autoplot()
+```
+
+::: aside
+Originally developed for operators of military radar receivers, hence the name.
+:::
+
+## Area under ROC curve
+
+::: task
+Do you think a better model has a large or small area under the ROC curve?
+:::
+
+::: columns
+::: {.column width="50%"}
+```{r}
+my_model_aug |>
+  roc_auc(
+    truth = type,
+    .pred_1,
+    event_level = "second"
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: "roc-curve"
+#| echo: false
+```
+:::
+:::
