@@ -89,7 +89,7 @@ Now is a good time to render, commit, and push. Make sure that you commit and pu
 
 # Part 2
 
-In Part 2, you'll use data released in 2022. The dataset is in your `data` folder: `human-freedom-index-2022`. The most recent year this dataset captures is 2020. Note that there isn't a data dictionary associated with dataset so you'll need to match variables to the data dictionary for the old data or look up information online. Working with real data can be tedious!
+In Part 2, you'll use data released in 2022, which comes from <https://www.cato.org/human-freedom-index/2022>. The dataset is in your `data` folder: `human-freedom-index-2022`. The most recent year this dataset captures is 2020. Note that there isn't a data dictionary associated with dataset so you'll need to match variables to the data dictionary for the old data or look up information online. Working with real data can be tedious!
 
 ## Exercise 6
 
