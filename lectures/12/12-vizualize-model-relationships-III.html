@@ -522,23 +522,32 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(hp_spam, <span class="fu">aes</span>(<span class="at">x =</span> capitalTotal)) <span class="sc">+</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
 
 </div>
-<img data-src="12-vizualize-model-relationships-III_files/figure-revealjs/unnamed-chunk-4-1.png" width="768" class="r-stretch"></section>
+<img data-src="12-vizualize-model-relationships-III_files/figure-html/unnamed-chunk-4-1.png" width="768" class="r-stretch"></section>
 <section id="eda-george-is-that-you" class="slide level2">
 <h2>EDA: <code>george</code>, is that <code>you</code>?</h2>
 <div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ggplot</span>(hp_spam, <span class="fu">aes</span>(<span class="at">x =</span> george)) <span class="sc">+</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">geom_histogram</span>()</span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="fu">ggplot</span>(hp_spam, <span class="fu">aes</span>(<span class="at">x =</span> you)) <span class="sc">+</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(hp_spam, <span class="fu">aes</span>(<span class="at">x =</span> george)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">ggplot</span>(hp_spam, <span class="fu">aes</span>(<span class="at">x =</span> you)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
 <div class="cell quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="12-vizualize-model-relationships-III_files/figure-revealjs/unnamed-chunk-5-1.png" width="480"></p>
+<p><img data-src="12-vizualize-model-relationships-III_files/figure-html/unnamed-chunk-5-1.png" width="480"></p>
 </div>
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="12-vizualize-model-relationships-III_files/figure-revealjs/unnamed-chunk-5-2.png" width="480"></p>
+<p><img data-src="12-vizualize-model-relationships-III_files/figure-html/unnamed-chunk-5-2.png" width="480"></p>
 </div>
 </div>
 </div>
@@ -560,7 +569,7 @@ p(y_i = 1) = \frac{1}{1+\text{exp}({- \sum \beta_i x_i })},
 <section id="logistic-regression-visualized" class="slide level2">
 <h2>Logistic regression, visualized</h2>
 
-<img data-src="12-vizualize-model-relationships-III_files/figure-revealjs/unnamed-chunk-6-1.png" width="480" class="r-stretch"></section>
+<img data-src="12-vizualize-model-relationships-III_files/figure-html/unnamed-chunk-6-1.png" width="672" class="r-stretch"></section>
 <section id="using-data-to-estimate-beta_i" class="slide level2">
 <h2>Using data to estimate <span class="math inline">\(\beta_i\)</span></h2>
 <p>To proceed with building our email classifier, we will, as usual, use our data (outcome <span class="math inline">\(y_i\)</span> and predictor <span class="math inline">\(x_i\)</span> pairs), to estimate <span class="math inline">\(\beta\)</span> (find <span class="math inline">\(\hat{\beta}\)</span>) and obtain the model:</p>
@@ -805,44 +814,6 @@ p(y_i = 1) = \frac{1}{1+\text{exp}({- \sum  \hat{\beta}_i x_i})},
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

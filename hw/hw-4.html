@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -288,7 +322,40 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting Started</a>
+  <ul class="collapse">
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#sec-guidelines-tips" id="toc-sec-guidelines-tips" class="nav-link" data-scroll-target="#sec-guidelines-tips">Guidelines + tips</a></li>
+  <li><a href="#workflow-formatting" id="toc-workflow-formatting" class="nav-link" data-scroll-target="#workflow-formatting">Workflow + formatting</a></li>
+  </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#part-1-hfi-in-2016" id="toc-part-1-hfi-in-2016" class="nav-link" data-scroll-target="#part-1-hfi-in-2016">Part 1: HFI in 2016</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  </ul></li>
+  <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a>
+  <ul class="collapse">
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
+  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
+  <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise 9</a></li>
+  </ul></li>
+  <li><a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap up</a>
+  <ul class="collapse">
+  <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review">Review</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/edit/main/hw/hw-4.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -311,9 +378,155 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>To be posted…</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This homework is due Thursday, Nov 9 at 5:00 pm ET.</p>
+</div>
+</div>
+<section id="getting-started" class="level1">
+<h1>Getting Started</h1>
+<ul>
+<li>Go to the <a href="https://github.com/sta113-f23">sta113-f23</a> organization on GitHub. Click on the repo with the prefix <code>hw-4</code>. It contains the starter documents you need to complete the homework assignment.</li>
+<li>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</li>
+<li>In RStudio, go to <em>File</em> ➛ <em>New Project</em> ➛<em>Version Control</em> ➛ <em>Git</em>.</li>
+<li>Copy and paste the URL of your assignment repo into the dialog box <em>Repository URL</em>. Again, please make sure to have <em>SSH</em> highlighted under <em>Clone</em> when you copy the address.</li>
+<li>Click <em>Create Project</em>, and the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</li>
+<li>Click <code>hw-4.qmd</code> to open the template Quarto file. This is where you will write up your code and narrative for the lab.</li>
+</ul>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The Human Freedom Index attempts to summarize the idea of "freedom" through a bunch of different variables for many countries around the globe. It serves as a rough objective measure for the relationships between the different types of freedom - whether it's political, religious, economical or personal freedom - and other social and economic circumstances. The Human Freedom Index is an annually co-published report by the Cato Institute, the Fraser Institute, and the Liberales Institut at the Friedrich Naumann Foundation for Freedom.</p>
+<p>In this assignment, you'll be analyzing data from the Human Freedom Index reports. Your aim will be to summarize a few of the relationships within the data both graphically and numerically in order to find which variables can help tell a story about freedom.</p>
+<p>The assignment is comprised of two parts:</p>
+<ul>
+<li><p>Part 1: Work with older, but well-documented data to fit and interpret a model.</p></li>
+<li><p>Part 2: Work with more recent, but not well-documented data to ask a question of interest to you and answer it with a model (or models) and a visualization (or visualizations).</p></li>
+</ul>
+</section>
+<section id="sec-guidelines-tips" class="level2">
+<h2 class="anchored" data-anchor-id="sec-guidelines-tips">Guidelines + tips</h2>
+<p>Your plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.</p>
+<p>Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete this homework and other assignments in this course. There will be periodic reminders in this assignment to remind you to knit, commit, and push your changes to GithHub. You should have <strong>at least 3 commits with meaningful commit messages</strong> by the end of the assignment.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note: Do not let R output answer the question for you unless the question specifically asks for just a plot. For example, if the question asks for the number of columns in the data set, please type out the number of columns. You are subject to lose points if you do not.</p>
+</div>
+</div>
+</section>
+<section id="workflow-formatting" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-formatting">Workflow + formatting</h2>
+<p>Make sure to</p>
+<ul>
+<li>Update author name on your document.</li>
+<li>Label all code chunks informatively and concisely.</li>
+<li>Follow the Tidyverse code style guidelines.</li>
+<li>Make at least 3 commits.</li>
+<li>Resize figures where needed, avoid tiny or huge plots.</li>
+<li>Use informative title and axis labels.</li>
+<li>Turn in an organized, well formatted document.</li>
+</ul>
+</section>
+</section>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
+</section>
+<section id="part-1-hfi-in-2016" class="level1">
+<h1>Part 1: HFI in 2016</h1>
+<p>The dataset for Part 1 is in the <strong>openintro</strong> package and it’s called <code>hfi</code>. See the data dictionary with <code>?hfi</code>.</p>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<p>The dataset, <code>hfi</code> spans a lot of years, but we are only interested in data from year 2016. Filter the data frame for the year 2016 and assign the result to a data frame named <code>hfi_2016</code>. What are the dimensions of the 2016 dataset? What does each row represent?</p>
+</section>
+<section id="exercise-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+<p>What type of plot would you use to display the relationship between the personal freedom score, <code>pf_score</code>, and <code>pf_expression_control</code>? Plot this relationship using the variable <code>pf_expression_control</code> as the predictor. Does the relationship look linear? If you knew a country's <code>pf_expression_control</code>, or its score out of 10, with 0 being the most, of political pressures and controls on media content, would you be comfortable using a linear model to predict the personal freedom score? If the relationship looks linear, calculate the correlation between <code>pf_expression_control</code> and <code>pf_score</code>.</p>
+</section>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<p>Fit a model predicting <code>pf_score</code> from <code>pf_expression_control</code> and display a tidy output of the model. Then interpret the intercept and the slope of the model in the context of the data.</p>
+</section>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
+<p>Create a residuals vs.&nbsp;predicted plot and evaluate the model fit.</p>
+<div class="render-commit-push">
+<p>Now is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
+</div>
+</section>
+</section>
+<section id="part-2" class="level1">
+<h1>Part 2</h1>
+<p>In Part 2, you’ll use data released in 2022, which comes from <a href="https://www.cato.org/human-freedom-index/2022" class="uri">https://www.cato.org/human-freedom-index/2022</a>. The dataset is in your <code>data</code> folder: <code>human-freedom-index-2022</code>. The most recent year this dataset captures is 2020. Note that there isn’t a data dictionary associated with dataset so you’ll need to match variables to the data dictionary for the old data or look up information online. Working with real data can be tedious!</p>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<p>Split the data into training and testing datasets, in 3-1 ratio. Report how many observations are in each split.</p>
+</section>
+<section id="exercise-7" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<p>Focus on the most recent year, 2020, and fit a model predicting <code>hf_score</code>, human freedom score, from a number of predictors (at least 2) of your choosing. Interpret the intercept and the slope in the context of the data.</p>
+</section>
+<section id="exercise-8" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
+<p>Focus on the most recent year, 2020, again and fit a model predicting a categorical version of the <code>hf_score</code>, human freedom score, a number of predictors (at least 2) of your choosing. You can decide how to make <code>hf_score</code> categorical – it could be below/above 5, or some other cuttoff value. Then, using your model, make predictions for the testing data and calculate the false positive and false negative rates of your predictions. Visualize this information however you see fit.</p>
+</section>
+<section id="exercise-9" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
+<p>Focus on a country (or a small number of countries) of your choosing, and create a visualization that shows how one or more indices of interest has changed over the years. You do not need to fit a model for this question, it’s primarily about your visualization. In a few sentences describe the goal of your visualization as well as any insights you get from it.</p>
+<div class="render-commit-push">
+<p>Render, commit, and push again. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.</p>
+</div>
+</section>
+</section>
+<section id="wrap-up" class="level1">
+<h1>Wrap up</h1>
+<section id="review" class="level2">
+<h2 class="anchored" data-anchor-id="review">Review</h2>
+<p>Before you call it “done”,</p>
+<ul>
+<li>make sure you’ve answered all questions (or, at least, have not skipped any accidentally) and</li>
+<li>review the <a href="#sec-guidelines-tips" class="quarto-xref">Section&nbsp;1.3</a> section and make any edits/corrections needed.</li>
+</ul>
+<p>You can change answers to exercises you’ve “completed” and commit and push again. We will only grade the final version of your assignment. You can commit and push as many times as you like until the deadline.</p>
+</section>
+<section id="submission" class="level2">
+<h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<p>You do not have to do anything special to “submit” your assignment. We will close the repos to further pushes at the deadline, and will take your work as of that time point as your submission.</p>
+<p>If you need to submit late for any reason, contact the professor.</p>
+</section>
+<section id="grading" class="level2">
+<h2 class="anchored" data-anchor-id="grading">Grading</h2>
+<ul>
+<li>Exercise 1-9: 10 points each</li>
+<li>Workflow + formatting: 10 points</li>
+<li>Total: 100 points</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -824,7 +1037,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/edit/main/hw/hw-4.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta113-f23/sta113-f23.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    </div>
     <div class="nav-footer-right">
 <p>This page is built with 🤍 and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
