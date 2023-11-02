@@ -10,7 +10,8 @@ fig-width: 6
 fig-asp: 0.618
 ---
 
-In this application exercise, we'll build a spam filter. Or, at least, learn a bit about how spam filters are built by building a very simple (likely not very effective) one.
+In this application exercise, we'll build a spam filter.
+Or, at least, learn a bit about how spam filters are built by building a very simple (likely not very effective) one.
 
 # Goals
 
@@ -31,12 +32,15 @@ library(ggthemes)
 hp_spam <- read_csv("data/hp-spam.csv")
 ```
 
-To illustrate logistic regression, we will build a spam filter from email data. Today's data consists of `r nrow(hp_spam)` emails that are classified as spam or non-spam.
+To illustrate logistic regression, we will build a spam filter from email data.
+Today's data consists of `r nrow(hp_spam)` emails that are classified as spam or non-spam.
 
 -   `type = 1` is spam
 -   `type = 0` is non-spam
 
-The data was collected at Hewlett-Packard labs and contains `r nrow(hp_spam)` variables. The first 48 variables are specific keywords and each observation is the percentage of appearance of that word in the message. Click [here](https://rdrr.io/cran/kernlab/man/spam.html) to read more.
+The data was collected at Hewlett-Packard labs and contains `r nrow(hp_spam)` variables.
+The first 48 variables are specific keywords and each observation is the percentage of appearance of that word in the message.
+Click [here](https://rdrr.io/cran/kernlab/man/spam.html) to read more.
 
 ```{r}
 #| label: glimpse-data
@@ -46,9 +50,11 @@ glimpse(hp_spam)
 
 The basic logic of our model is that the frequency of certain words can help us determine whether or not an email is spam.
 
-For example, these emails came from George's inbox. If the word "george" (`george`) is not present in the message and the dollar symbol (`charDollar`) is, you might expect the email to be spam.
+For example, these emails came from George's inbox.
+If the word "george" (`george`) is not present in the message and the dollar symbol (`charDollar`) is, you might expect the email to be spam.
 
-Using this data, we want to build a model that **predicts** whether a new email is spam or not. How do we build a model that can do this?
+Using this data, we want to build a model that **predicts** whether a new email is spam or not.
+How do we build a model that can do this?
 
 # Setting default theme
 
@@ -64,7 +70,10 @@ theme_set(theme_minimal())
 
 ## Exercise 1
 
-One predictor model: Visualize a **linear model** where the outcome is `type` (spam or not) and `george` is the only predictor. Then, discuss your visualization with your neighbor. Is this a good model? Why or why not?
+One predictor model: Visualize a **linear model** where the outcome is `type` (spam or not) and `george` is the only predictor.
+Then, discuss your visualization with your neighbor.
+Is this a good model?
+Why or why not?
 
 *Add response here.*
 
@@ -76,7 +85,11 @@ One predictor model: Visualize a **linear model** where the outcome is `type` (s
 
 ## Exercise 2
 
-What type of data is `type`, our outcome variable? What type should it be? Make any adjustments necessary and recreate the visualization from Exercise 1. Does this model look better? Why or why not?
+What type of data is `type`, our outcome variable?
+What type should it be?
+Make any adjustments necessary and recreate the visualization from Exercise 1.
+Does this model look better?
+Why or why not?
 
 ```{r}
 #| label: recode-type
@@ -88,7 +101,7 @@ Moral of the story so far: A linear model is not a good model for binary outcome
 
 # Spending your data
 
-Our ultimate goal is to do prediction (or classification) on new data -- a new email. 
+Our ultimate goal is to do prediction (or classification) on new data -- a new email.
 Therefore, we should build a model using some of the data and then test it on the rest of the data.
 
 Let's divide the data into a training set and testing set.
@@ -104,7 +117,9 @@ hp_spam_test <- testing(hp_spam_split)
 
 ## Exercise 3
 
-Inspect `hp_spam_split`. How many emails are in `hp_spam_train`, how many are in `hp_spam_test`. Check out the documentation for the `initial_split()` function, what ratio does it use for splitting the dataset into training and testing samples?
+Inspect `hp_spam_split`.
+How many emails are in `hp_spam_train`, how many are in `hp_spam_test`.
+Check out the documentation for the `initial_split()` function, what ratio does it use for splitting the dataset into training and testing samples?
 
 *Add response here.*
 
@@ -172,7 +187,11 @@ Read a new email and figure out values of `you` and `capitalTotal` and store the
 
 ## Exercise 8
 
-Using your model, predict whether this email will be classified as spam or not. What does the model predict for the **probability** that this email is spam? With a decision boundary of 0.5, how does the model classify thie email? Do you believe this classification? Why or why not?
+Using your model, predict whether this email will be classified as spam or not.
+What does the model predict for the **probability** that this email is spam?
+With a decision boundary of 0.5, how does the model classify thie email?
+Do you believe this classification?
+Why or why not?
 
 ```{r}
 #| label: predict-new-email
@@ -188,7 +207,9 @@ First, let's start over with a new model.
 
 ## Exercise 9
 
-Train your model on the training set. Build a predictive model using any combination of predictors to predict `type`. Save your fitted model as `my_model_fit` and display its tidy summary.
+Train your model on the training set.
+Build a predictive model using any combination of predictors to predict `type`.
+Save your fitted model as `my_model_fit` and display its tidy summary.
 
 ```{r}
 #| label: my-model-fit
@@ -218,7 +239,8 @@ What are the false positive and false negative rates of this model?
 
 # Visualizing logistic regression
 
-Just because there's greater than 50% probability an email is spam doesn't mean we have to label it as such. We can adjust our **threshold** or **critical probability**, a.k.a. **decision boundary** to be more or less sensitive to spam emails.
+Just because there's greater than 50% probability an email is spam doesn't mean we have to label it as such.
+We can adjust our **threshold** or **critical probability**, a.k.a. **decision boundary** to be more or less sensitive to spam emails.
 
 ```{r}
 #| label: decision-boundary
@@ -240,19 +262,25 @@ In other words, we get to select a number $p^*$ such that if $p > p^*$, then lab
 
 -   What would you set your decision boundary to and why?
 
--   Change `decision_boundary` in the code above to 0.01 and 0.999999. Do the results surprise you? Why or why not?
+-   Change `decision_boundary` in the code above to 0.01 and 0.999999.
+    Do the results surprise you?
+    Why or why not?
 
 *Add response here.*
 
 ## Exercise 13
 
-If you set a lower decision boundary, do you label fewer or more emails as spam? What happens if you set 0 as your boundary? What about 1 as your boundary? If you very much dislike spam, should you set a high or low boundary?
+If you set a lower decision boundary, do you label fewer or more emails as spam?
+What happens if you set 0 as your boundary?
+What about 1 as your boundary?
+If you very much dislike spam, should you set a high or low boundary?
 
 *Add response here.*
 
 ## Exercise 14
 
-Recreate the jittered scatterplot from earlier, this time using color to indicate the following four decision regions and label them on the plot. Make `decision_boundary` a value you can update and re-run the code to see how the decision regions change.
+Recreate the jittered scatterplot from earlier, this time using color to indicate the following four decision regions and label them on the plot.
+Make `decision_boundary` a value you can update and re-run the code to see how the decision regions change.
 
 ```{r}
 #| label: decision-regions
