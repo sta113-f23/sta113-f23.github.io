@@ -95,8 +95,7 @@ Moral of the story so far: A linear model is not a good model for binary outcome
 
 # Spending your data
 
-Our ultimate goal is to do prediction (or classification) on new data -- a new email. 
-Therefore, we should build a model using some of the data and then test it on the rest of the data.
+Our ultimate goal is to do prediction (or classification) on new data -- a new email. Therefore, we should build a model using some of the data and then test it on the rest of the data.
 
 Let's divide the data into a training set and testing set.
 
@@ -289,7 +288,7 @@ If you set a lower decision boundary, do you label fewer or more emails as spam?
 
 *Lower boundary means that we label more emails as spam, high boundary means fewer emails as spam. We can adjust the boundary depending on how much we value receiving important emails vs how much we dislike spam.*
 
-*0 means all emails are spam, 1 means no emails are spam. Note you cannot set decision boundary to 0 or 1 because of logit function (would evaluate to inf or negative inf)*
+*0 means all emails are spam, 1 means no emails are spam. Note you cannot set decision boundary to 0 or 1 because of logit function (would evaluate to infinity or negative infinity).*
 
 ## Exercise 14
 
