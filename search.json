@@ -1934,147 +1934,147 @@
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#announcements",
     "href": "lectures/14/14-visualize-uncertainty-I.html#announcements",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Announcements",
     "text": "Announcements\n\nHW 4 due Thursday\n(Optional) Update your proposals by 5pm on Friday."
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#peer-review-1",
     "href": "lectures/14/14-visualize-uncertainty-I.html#peer-review-1",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Peer review",
     "text": "Peer review\n\n\n\nReviewer\nReviewee\n\n\n\n\nFreedom Riders\ndata diggers\n\n\njanIce\nFreedom Riders\n\n\ndata diggers\njanIce\n\n\n\n\nGo to the team’s repo website and read their proposal\nFill out the questions in the peer review template issue\nDetailed instructions at https://sta113-f23.github.io/project/project-2.html#peer-review\n\n\n\n\n−+\n20:00"
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#is-yawning-contagious",
     "href": "lectures/14/14-visualize-uncertainty-I.html#is-yawning-contagious",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Is yawning contagious?",
     "text": "Is yawning contagious?\n\nDo you think yawning is contagious?"
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#is-yawning-contagious-1",
     "href": "lectures/14/14-visualize-uncertainty-I.html#is-yawning-contagious-1",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Is yawning contagious?",
     "text": "Is yawning contagious?\nAn experiment conducted by the MythBusters tested if a person can be subconsciously influenced into yawning if another person near them yawns.\nIf you’re interested, you can watch the full episode at https://www.dailymotion.com/video/x7ydkt2."
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#packages",
     "href": "lectures/14/14-visualize-uncertainty-I.html#packages",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Packages",
     "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)"
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#study-description",
     "href": "lectures/14/14-visualize-uncertainty-I.html#study-description",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Study description",
     "text": "Study description\nIn this study 50 people were randomly assigned to two groups: 34 to a group where a person near them yawned (treatment) and 16 to a control group where they didn’t see someone yawn (control).\nThe data are in the openintro package: yawn\n\nyawn |&gt;\n  count(group, result)\n\n# A tibble: 4 × 3\n  group result       n\n  &lt;fct&gt; &lt;fct&gt;    &lt;int&gt;\n1 ctrl  not yawn    12\n2 ctrl  yawn         4\n3 trmt  not yawn    24\n4 trmt  yawn        10"
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#proportion-of-yawners",
     "href": "lectures/14/14-visualize-uncertainty-I.html#proportion-of-yawners",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Proportion of yawners",
     "text": "Proportion of yawners\n\n\nyawn |&gt;\n  count(group, result) |&gt;\n  group_by(group) |&gt;\n  mutate(p_hat = n / sum(n))\n\n\n# A tibble: 4 × 4\n# Groups:   group [2]\n  group result       n p_hat\n  &lt;fct&gt; &lt;fct&gt;    &lt;int&gt; &lt;dbl&gt;\n1 ctrl  not yawn    12 0.75 \n2 ctrl  yawn         4 0.25 \n3 trmt  not yawn    24 0.706\n4 trmt  yawn        10 0.294\n\n\n\n\n\nProportion of yawners in the treatment group: \\(\\frac{10}{34} = 0.2941\\)\nProportion of yawners in the control group: \\(\\frac{4}{16} = 0.25\\)\nDifference: \\(0.2941 - 0.25 = 0.0441\\)\nOur results match the ones calculated on the MythBusters episode."
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#independence",
     "href": "lectures/14/14-visualize-uncertainty-I.html#independence",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Independence?",
     "text": "Independence?\n\nBased on the proportions we calculated, do you think yawning is really contagious, i.e. are seeing someone yawn and yawning dependent?\n\n\n\n# A tibble: 4 × 4\n# Groups:   group [2]\n  group result       n p_hat\n  &lt;fct&gt; &lt;fct&gt;    &lt;int&gt; &lt;dbl&gt;\n1 ctrl  not yawn    12 0.75 \n2 ctrl  yawn         4 0.25 \n3 trmt  not yawn    24 0.706\n4 trmt  yawn        10 0.294"
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#dependence-or-another-possible-explanation",
     "href": "lectures/14/14-visualize-uncertainty-I.html#dependence-or-another-possible-explanation",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Dependence, or another possible explanation?",
     "text": "Dependence, or another possible explanation?\n\n\nThe observed differences might suggest that yawning is contagious, i.e. seeing someone yawn and yawning are dependent.\nBut the differences are small enough that we might wonder if they might simple be due to chance.\nPerhaps if we were to repeat the experiment, we would see slightly different results.\nSo we will do just that - well, somewhat - and see what happens.\nInstead of actually conducting the experiment many times, we will simulate our results."
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#hypothesis-testing-1",
     "href": "lectures/14/14-visualize-uncertainty-I.html#hypothesis-testing-1",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Hypothesis testing",
     "text": "Hypothesis testing\nA hypothesis test is a statistical technique used to evaluate competing claims using data.\n\nNull hypothesis, \\(H_o\\): An assumption about the population. “There is nothing going on.”\nAlternative hypothesis, \\(H_A\\): A research question about the population. “There is something going on”.\n\n\n\n\n\n\n\n\n\n\nHypotheses are always at the population level!"
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#populations-vs.-samples",
     "href": "lectures/14/14-visualize-uncertainty-I.html#populations-vs.-samples",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Populations vs. samples",
     "text": "Populations vs. samples\nSuppose you’re cooking a pot of soup:\n\n\nTaste a spoonful and decide if that spoonful has enough salt \\(\\rightarrow\\) exploratory data analysis of the sample\nDecide the pot of soup must also have enough salt since the spoonful does \\(\\rightarrow\\) inference\nMixing the soup in the pot before taking a spoonful \\(\\rightarrow\\) randomizing\nTaking a spoonful with the intention of making an inference about the pot \\(\\rightarrow\\) sampling"
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#two-competing-claims",
     "href": "lectures/14/14-visualize-uncertainty-I.html#two-competing-claims",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Two competing claims",
     "text": "Two competing claims\n\n\nNull hypothesis:\n“There is nothing going on.” Yawning and seeing someone yawn are independent, yawning is not contagious, observed difference in proportions is simply due to chance.\n\nAlternative hypothesis:\n“There is something going on.” Yawning and seeing someone yawn are dependent, yawning is contagious, observed difference in proportions is not due to chance."
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#hypothesis-testing-as-a-court-trial",
     "href": "lectures/14/14-visualize-uncertainty-I.html#hypothesis-testing-as-a-court-trial",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Hypothesis testing as a court trial",
     "text": "Hypothesis testing as a court trial\n\nHypotheses:\n\nNull hypothesis, \\(H_0\\): Defendant is innocent\nAlternative hypothesis, \\(H_A\\): Defendant is guilty\n\n\n\n\nPresent the evidence: Collect data\n\n\n\n\nJudge the evidence: “Could these data plausibly have happened by chance if the null hypothesis were true?”\n\nYes: Fail to reject \\(H_0\\)\nNo: Reject \\(H_0\\)"
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#hypothesis-testing-framework",
     "href": "lectures/14/14-visualize-uncertainty-I.html#hypothesis-testing-framework",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Hypothesis testing framework",
     "text": "Hypothesis testing framework\n\n\nStart with a null hypothesis, \\(H_0\\), that represents the status quo\nSet an alternative hypothesis, \\(H_A\\), that represents the research question, i.e. what we’re testing for\nConduct a hypothesis test under the assumption that the null hypothesis is true and calculate a p-value (probability of observed or more extreme outcome given that the null hypothesis is true)\n\nif the test results suggest that the data do not provide convincing evidence for the alternative hypothesis, stick with the null hypothesis\nif they do, then reject the null hypothesis in favor of the alternative"
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#simulation-by-hand---setup",
     "href": "lectures/14/14-visualize-uncertainty-I.html#simulation-by-hand---setup",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Simulation by hand - setup",
     "text": "Simulation by hand - setup\n\nA regular deck of cards is comprised of 52 cards: 4 aces, 4 of numbers 2-10, 4 jacks, 4 queens, and 4 kings.\nTake out two aces from the deck of cards and set them aside.\nThe remaining 50 playing cards to represent each participant in the study:\n\n14 face cards (including the 2 aces) represent the people who yawn.\n36 non-face cards represent the people who don’t yawn."
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#simulation-by-hand---running",
     "href": "lectures/14/14-visualize-uncertainty-I.html#simulation-by-hand---running",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Simulation by hand - running",
     "text": "Simulation by hand - running\n\nShuffle the 50 cards at least 7 times1 to ensure that the cards counted out are from a random process.\nCount out the top 16 cards and set them aside. These cards represent the people in the control group.\nOut of the remaining 34 cards (treatment group) count the number of face cards (the number of people who yawned in the treatment group).\nCalculate the difference in proportions of yawners (treatment - control), and plot it on the board.\nMark the difference you find on the dot plot on the board.\n\n\n\n[1] http://www.dartmouth.edu/~chance/course/topics/winning_number.html"
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#simulation-by-computation",
     "href": "lectures/14/14-visualize-uncertainty-I.html#simulation-by-computation",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Simulation by computation",
     "text": "Simulation by computation\nGo to Posit Cloud and continue the project titled ae-12-Yawners."
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#types-of-alternative-hypotheses",
     "href": "lectures/14/14-visualize-uncertainty-I.html#types-of-alternative-hypotheses",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Types of alternative hypotheses",
     "text": "Types of alternative hypotheses\n\nOne-sided (one-tailed) alternatives: The parameter is hypothesized to be less than or greater than the null value, &lt; or &gt;\n\n\n\nTwo-sided (two-tailed) alternatives: The parameter is hypothesized to be not equal to the null value, \\(\\ne\\)\n\nCalculated as two times the tail area beyond the observed sample statistic\nMore objective, and hence more widely preferred\n\n\n\n\n\nAverage systolic blood pressure of people with Stage 1 Hypertension is 150 mm Hg. Suppose we want to use a hypothesis test to evaluate whether a new blood pressure medication has an effect on the average blood pressure of heart patients. What are the hypotheses?"
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#discernability-level",
     "href": "lectures/14/14-visualize-uncertainty-I.html#discernability-level",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Discernability level",
     "text": "Discernability level\nWe often use 5% as the cutoff for whether the p-value is low enough that the data are unlikely to have come from the null model. This cutoff value is called the discernability level, \\(\\alpha\\).\n\nIf p-value &lt; \\(\\alpha\\), reject \\(H_0\\) in favor of \\(H_A\\): The data provide convincing evidence for the alternative hypothesis.\nIf p-value &gt; \\(\\alpha\\), fail to reject \\(H_0\\) in favor of \\(H_A\\): The data do not provide convincing evidence for the alternative hypothesis."
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#statistically-discernable",
     "href": "lectures/14/14-visualize-uncertainty-I.html#statistically-discernable",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Statistically discernable",
     "text": "Statistically discernable\n\nIf you’ve taken a statistics course before, or read papers that use hypothesis testing for making a conclusion, you might have encountered the term “statistically significant” or “significance level”.\nWe will use the term “statistically discernable” or discernability level”, because “significant” has a different meaning in everyday language and this often causes misconceptions of what “statistically significant” means. It doesn’t necessarily mean a notable or important event has happened, it just means the data are unlikely to have come from the null model."
   },
   {
     "objectID": "lectures/14/14-visualize-uncertainty-I.html#setting-a-seed",
     "href": "lectures/14/14-visualize-uncertainty-I.html#setting-a-seed",
-    "title": "Visualizing and modeling relationships IV",
+    "title": "Visualizing uncertainty I",
     "section": "Setting a seed",
     "text": "Setting a seed\n\nGoal: Pin down the random generation so that the same random generation happens each time a document is rendered (by you or by someone else wanting to replicate your results)\nWhen: Set a seed each time right before generate()ing new resamples. Setting a seed once in a document would also work for re-rendering the document, but considering we often run the code chunk interactively, it’s best to set the seed again in each code chunk that does random generation.\n\n\n\n\n🔗 sta113-f23.github.io"
   },
