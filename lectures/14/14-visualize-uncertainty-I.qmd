@@ -25,7 +25,7 @@ format:
 | janIce         | Freedom Riders |
 | data diggers   | janIce         |
 
--   Go to the team's repo webste and read their proposal
+-   Go to the team's repo website and read their proposal
 
 -   Fill out the questions in the peer review template issue
 
