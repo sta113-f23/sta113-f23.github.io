@@ -1,0 +1,268 @@
+---
+title: "Visualizing and modeling relationships IV"
+subtitle: Lecture 13
+format: 
+  revealjs:
+    fig-align: center
+    fig-width: 5
+    fig-asp: 0.618
+---
+
+# Warm-up
+
+## Announcements
+
+-   HW 4 due Thursday
+-   (Optional) Update your proposals by 5pm on Friday.
+
+# Peer review
+
+## Peer review
+
+| Reviewer       | Reviewee       |
+|----------------|----------------|
+| Freedom Riders | data diggers   |
+| janIce         | Freedom Riders |
+| data diggers   | janIce         |
+
+-   Go to the team's repo webste and read their proposal
+
+-   Fill out the questions in the peer review template issue
+
+-   Detailed instructions at <https://sta113-f23.github.io/project/project-2.html#peer-review>
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 20)
+```
+
+# Hypothesis testing
+
+## Is yawning contagious?
+
+::: task
+Do you think yawning is contagious?
+:::
+
+::: columns
+::: {.column width="50%"}
+![](images/yawn1.png){fig-alt="Only Charlie Brown yawning" fig-align="center"}
+:::
+
+::: {.column width="50%"}
+![](images/yawn2.png){fig-alt="Both Charlie Brown and Lucy van Pelt yawning" fig-align="center"}
+:::
+:::
+
+## Is yawning contagious?
+
+An experiment conducted by the [MythBusters](https://en.wikipedia.org/wiki/MythBusters) tested if a person can be subconsciously influenced into yawning if another person near them yawns.
+
+If you're interested, you can watch the full episode at <https://www.dailymotion.com/video/x7ydkt2>.
+
+## Packages
+
+```{r}
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+```
+
+## Study description
+
+In this study 50 people were randomly assigned to two groups: 34 to a group where a person near them yawned (treatment) and 16 to a control group where they didn't see someone yawn (control).
+
+The data are in the **openintro** package: `yawn`
+
+```{r}
+yawn |>
+  count(group, result)
+```
+
+## Proportion of yawners
+
+```{r}
+#| output-location: column
+
+yawn |>
+  count(group, result) |>
+  group_by(group) |>
+  mutate(p_hat = n / sum(n))
+```
+
+-   Proportion of yawners in the treatment group: $\frac{10}{34} = 0.2941$
+-   Proportion of yawners in the control group: $\frac{4}{16} = 0.25$
+-   Difference: $0.2941 - 0.25 = 0.0441$
+-   Our results match the ones calculated on the MythBusters episode.
+
+## Independence?
+
+::: task
+Based on the proportions we calculated, do you think yawning is really contagious, i.e. are seeing someone yawn and yawning dependent?
+:::
+
+```{r echo=FALSE}
+yawn |>
+  count(group, result) |>
+  group_by(group) |>
+  mutate(p_hat = n / sum(n))
+```
+
+## Dependence, or another possible explanation?
+
+::: incremental
+-   The observed differences might suggest that yawning is contagious, i.e. seeing someone yawn and yawning are dependent.
+-   But the differences are small enough that we might wonder if they might simple be **due to chance**.
+-   Perhaps if we were to repeat the experiment, we would see slightly different results.
+-   So we will do just that - well, somewhat - and see what happens.
+-   Instead of actually conducting the experiment many times, we will **simulate** our results.
+:::
+
+## Hypothesis testing
+
+A hypothesis test is a statistical technique used to evaluate *competing claims* using data.
+
+-   **Null hypothesis,** $H_o$: An assumption about the population.
+    "There is nothing going on."
+
+-   **Alternative hypothesis,** $H_A$: A research question about the population.
+    "There is something going on".
+
+::: callout-note
+Hypotheses are always at the population level!
+:::
+
+## Populations vs. samples
+
+Suppose you're cooking a pot of soup:
+
+::: incremental
+-   Taste a spoonful and decide if that spoonful has enough salt $\rightarrow$ exploratory data analysis of the sample
+
+-   Decide the pot of soup must also have enough salt since the spoonful does $\rightarrow$ inference
+
+-   Mixing the soup in the pot before taking a spoonful $\rightarrow$ randomizing
+
+-   Taking a spoonful with the intention of making an inference about the pot $\rightarrow$ sampling
+:::
+
+## Two competing claims
+
+::: columns
+::: {.column width="50%"}
+**Null hypothesis:**
+
+"There is nothing going on." Yawning and seeing someone yawn are **independent**, yawning is not contagious, observed difference in proportions is simply due to chance.
+:::
+
+::: {.column width="50%"}
+**Alternative hypothesis:**
+
+"There is something going on." Yawning and seeing someone yawn are **dependent**, yawning is contagious, observed difference in proportions is not due to chance.
+:::
+:::
+
+## Hypothesis testing as a court trial
+
+-   **Hypotheses:**
+
+    -   **Null hypothesis**, $H_0$: Defendant is innocent
+
+    -   **Alternative hypothesis**, $H_A$: Defendant is guilty
+
+. . .
+
+-   **Present the evidence:** Collect data
+
+. . .
+
+-   **Judge the evidence:** "Could these data plausibly have happened by chance if the null hypothesis were true?"
+    -   Yes: Fail to reject $H_0$
+    -   No: Reject $H_0$
+
+## Hypothesis testing framework
+
+::: incremental
+-   Start with a null hypothesis, $H_0$, that represents the status quo
+-   Set an alternative hypothesis, $H_A$, that represents the research question, i.e. what we're testing for
+-   Conduct a hypothesis test under the assumption that the null hypothesis is true and calculate a **p-value** (probability of observed or more extreme outcome given that the null hypothesis is true)
+    -   if the test results suggest that the data do not provide convincing evidence for the alternative hypothesis, stick with the null hypothesis
+    -   if they do, then reject the null hypothesis in favor of the alternative
+:::
+
+## Simulation by hand - setup
+
+1.  A regular deck of cards is comprised of 52 cards: 4 aces, 4 of numbers 2-10, 4 jacks, 4 queens, and 4 kings.
+
+2.  Take out two aces from the deck of cards and set them aside.
+
+3.  The remaining 50 playing cards to represent each participant in the study:
+
+    -   14 face cards (including the 2 aces) represent the people who yawn.
+    -   36 non-face cards represent the people who don't yawn.
+
+## Simulation by hand - running
+
+1.  Shuffle the 50 cards at least 7 times<sup>1</sup> to ensure that the cards counted out are from a random process.
+
+2.  Count out the top 16 cards and set them aside.
+    These cards represent the people in the control group.
+
+3.  Out of the remaining 34 cards (treatment group) count the **number of face cards** (the number of people who yawned in the treatment group).
+
+4.  Calculate the difference in proportions of yawners (treatment - control), and plot it on the board.
+
+5.  Mark the difference you find on the dot plot on the board.
+
+::: aside
+\[1\] http://www.dartmouth.edu/\~chance/course/topics/winning_number.html
+:::
+
+## Simulation by computation
+
+Go to Posit Cloud and continue the project titled `ae-12-Yawners`.
+
+# Recap
+
+## Types of alternative hypotheses
+
+-   One-sided (one-tailed) alternatives: The parameter is hypothesized to be less than or greater than the null value, \< or \>
+
+. . .
+
+-   Two-sided (two-tailed) alternatives: The parameter is hypothesized to be not equal to the null value, $\ne$
+    -   Calculated as two times the tail area beyond the observed sample statistic
+    -   More objective, and hence more widely preferred
+
+. . .
+
+::: task
+Average systolic blood pressure of people with Stage 1 Hypertension is 150 mm Hg.
+Suppose we want to use a hypothesis test to evaluate whether a new blood pressure medication has <b>an effect</b> on the average blood pressure of heart patients.
+What are the hypotheses?
+:::
+
+## Discernability level
+
+We often use 5% as the cutoff for whether the p-value is low enough that the data are unlikely to have come from the null model.
+This cutoff value is called the **discernability level**, $\alpha$.
+
+-   If p-value \< $\alpha$, reject $H_0$ in favor of $H_A$: The data provide convincing evidence for the alternative hypothesis.
+
+-   If p-value \> $\alpha$, fail to reject $H_0$ in favor of $H_A$: The data do not provide convincing evidence for the alternative hypothesis.
+
+## Statistically discernable
+
+-   If you've taken a statistics course before, or read papers that use hypothesis testing for making a conclusion, you might have encountered the term "statistically significant" or "significance level".
+
+-   We will use the term "statistically discernable" or discernability level", because "significant" has a different meaning in everyday language and this often causes misconceptions of what "statistically significant" means. It doesn't necessarily mean a notable or important event has happened, it just means the data are unlikely to have come from the null model.
+
+## Setting a seed
+
+-   Goal: Pin down the random generation so that the same random generation happens each time a document is rendered (by you or by someone else wanting to replicate your results)
+
+-   When: Set a seed each time right before `generate()`ing new resamples.
+    Setting a seed once in a document would also work for re-rendering the document, but considering we often run the code chunk interactively, it's best to set the seed again in each code chunk that does random generation.

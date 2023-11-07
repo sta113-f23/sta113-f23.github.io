@@ -1,0 +1,15 @@
+{
+  "hash": "2cdcbeb45a8e833c669ee8fe982e6726",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Donors and yawners\"\ncategories: \n  - Application exercise\n  - Suggested answers\neditor: visual\neditor_options: \n  chunk_output_type: console\n---\n\n\nIn this application exercise, we'll introduce pipelines for conducting hypothesis tests with randomization.\n\n# Goals\n\n-   Conduct a hypothesis test for a difference in proportions\n\n# Packages and data\n\nWe'll use the **tidyverse** and **tidymodels** packages as usual and the **openintro** package for the datasets.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\n```\n:::\n\n\nUsing the `yawn` dataset in the **openintro** package, conduct a hypothesis test for evaluating whether yawning is contagious.\nFirst, set the hypotheses.\nThen, conduct a randomization test using 1000 simulations.\nVisualize and calculate the p-value and use it to make a conclusion about the statistical discernability of the difference in proportions of yawners in the two groups.\nThen, comment on whether you \"buy\" this conclusion.\n\n## Exercise 1\n\nConstruct the null distribution with 100 resamples.\nName it `null_dist`.\nHow many rows does `null_dist` have?\nHow many columns?\nWhat does each row and each column represent?\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n*Add response here.*\n\n## Exercise 2\n\nWhere do you expect the center of the null distribution to be?\nVisualize it to confirm.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# option 1\n\n# add code here\n\n# option 2\n\n# add code here\n```\n:::\n\n\n## Exercise 2\n\nCalculate the observed difference in proportions.\nName it `obs_stat`.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n## Exercise 3\n\nOverlay the observed statistic on the null distribution and comment on whether an observed outcome as extreme as the observed statistic, or lower, is a likely or unlikely outcome, if in fact the null hypothesis is true.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# option 1\n\n# add code here\n\n# option 2\n\n# add code here\n```\n:::\n\n\n## Exercise 4\n\nCalculate the p-value and comment on whether it provides convincing evidence that yawning is contagious.\n\n*Add response here.*\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# option 1\n\n# add code here\n\n# option 2\n\n# add code here\n```\n:::\n\n\n## Exercise 5\n\nLet's get real!\nRedo the test with 10,000 simulations.\nNote: This can take some time to run.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# add code here\n```\n:::\n\n\n## Exercise 6\n\nUse the p-value to make a conclusion about the statistical discernability of the difference in proportions of yawners in the two groups.\nThen, comment on whether you \"buy\" this conclusion.\n\n*Add response here.*\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
