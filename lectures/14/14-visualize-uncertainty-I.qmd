@@ -1,5 +1,5 @@
 ---
-title: "Visualizing and modeling relationships IV"
+title: "Visualizing uncertainty I"
 subtitle: Lecture 14
 format: 
   revealjs:
