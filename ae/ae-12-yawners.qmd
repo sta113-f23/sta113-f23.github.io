@@ -1,5 +1,5 @@
 ---
-title: "Donors and yawners"
+title: "Yawners"
 categories: 
   - Application exercise
 editor: visual
