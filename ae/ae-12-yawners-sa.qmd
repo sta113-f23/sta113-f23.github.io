@@ -10,10 +10,6 @@ editor_options:
 
 In this application exercise, we'll introduce pipelines for conducting hypothesis tests with randomization.
 
-# Goals
-
--   Conduct a hypothesis test for a difference in proportions
-
 # Packages and data
 
 We'll use the **tidyverse** and **tidymodels** packages as usual and the **openintro** package for the datasets.
@@ -35,6 +31,34 @@ Then, comment on whether you "buy" this conclusion.
 
 ## Exercise 1
 
+Simulate a single difference in proportions assuming the null hypothesis ($p_{treatment} = p_{control}$) is true.
+Record the value.
+
+```{r}
+#| label: sim-1
+
+set.seed(1234)
+
+yawn |>
+  specify(response = result, explanatory = group, success = "yawn") |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1, type = "permute") |>
+  calculate(stat = "diff in props", order = c("trmt", "ctrl"))
+```
+
+## Exercise 2
+
+Simulate one more difference in proportions assuming the null hypothesis ($p_{treatment} = p_{control}$) is true.
+Record the value.
+
+```{r}
+#| label: sim-2
+
+# add code here
+```
+
+## Exercise 3
+
 Construct the null distribution with 100 resamples.
 Name it `null_dist`.
 How many rows does `null_dist` have?
@@ -49,13 +73,21 @@ What does each row and each column represent?
 
 *Add response here.*
 
-## Exercise 2
+## Exercise 4
 
 Where do you expect the center of the null distribution to be?
 Visualize it to confirm.
+First, make a dot plot, coloring each simulated statistic differently.
+Then, make a histogram.
 
 ```{r}
-#| label: null-dist-plot
+#| label: null-dist-dot-plot
+
+# add code here
+```
+
+```{r}
+#| label: null-dist-histogram
 
 # option 1
 
@@ -66,7 +98,7 @@ Visualize it to confirm.
 # add code here
 ```
 
-## Exercise 2
+## Exercise 5
 
 Calculate the observed difference in proportions.
 Name it `obs_stat`.
@@ -77,7 +109,7 @@ Name it `obs_stat`.
 # add code here
 ```
 
-## Exercise 3
+## Exercise 6
 
 Overlay the observed statistic on the null distribution and comment on whether an observed outcome as extreme as the observed statistic, or lower, is a likely or unlikely outcome, if in fact the null hypothesis is true.
 
@@ -93,7 +125,7 @@ Overlay the observed statistic on the null distribution and comment on whether a
 # add code here
 ```
 
-## Exercise 4
+## Exercise 7
 
 Calculate the p-value and comment on whether it provides convincing evidence that yawning is contagious.
 
@@ -111,7 +143,7 @@ Calculate the p-value and comment on whether it provides convincing evidence tha
 # add code here
 ```
 
-## Exercise 5
+## Exercise 8
 
 Let's get real!
 Redo the test with 10,000 simulations.
@@ -123,7 +155,7 @@ Note: This can take some time to run.
 # add code here
 ```
 
-## Exercise 6
+## Exercise 9
 
 Use the p-value to make a conclusion about the statistical discernability of the difference in proportions of yawners in the two groups.
 Then, comment on whether you "buy" this conclusion.

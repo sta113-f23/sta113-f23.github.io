@@ -1,6 +1,6 @@
 ---
 title: "Visualizing and modeling relationships IV"
-subtitle: Lecture 13
+subtitle: Lecture 14
 format: 
   revealjs:
     fig-align: center
@@ -92,6 +92,8 @@ yawn |>
   group_by(group) |>
   mutate(p_hat = n / sum(n))
 ```
+
+. . .
 
 -   Proportion of yawners in the treatment group: $\frac{10}{34} = 0.2941$
 -   Proportion of yawners in the control group: $\frac{4}{16} = 0.25$
