@@ -20,6 +20,7 @@ format:
 ```{r}
 library(tidyverse)
 library(tidymodels)
+library(openintro)
 library(nullabor)  # for visual inference
 library(skimr)     # for skimming data 
 ```
@@ -421,11 +422,15 @@ ggplot(data = bdims_permuted_lineup, aes(x = hgt)) +
 Generate the null distribution
 
 ```{r}
-#| ref-label: generate-null-dist
-#| fig-show: hide
-#| message: true
-#| eval: false
-#| echo: true
+set.seed(20211029)
+
+bdims_permuted_lineup <- lineup(null_dist("hgt", dist = "normal"), n = 10, true = bdims)
+```
+
+## Code: Decrypt
+
+```{r}
+decrypt("K4Ul YG3G R8 oSJR3RS8 Ng")
 ```
 
 ## Generating the null data with residuals from a model
