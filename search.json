@@ -298,7 +298,7 @@
     "href": "index.html",
     "title": "STA 113: Visualizing Data",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n  \n    \n    \n    \n    \n    \n    \n  \n  \n    \n    \n      WEEK\n      DATE\n      TOPIC\n      PREPARE\n      MATERIALS\n      DUE\n    \n  \n  \n    1\nTue, Aug 29\nWelcome to STA 113FS!\n\n\n🖥️ slides\n\n\n    \nThu, Aug 31\nMeet the toolkit (R + RStudio)\n\n📖 socviz: Chp 1\n\n🖥️ slides \n⌨️ ae-01 \n⌨️ ae-02 \n🗝️ ae-02-sa\n\nGetting to know you survey \nGitHub usernames\n\n    2\nTue, Sep 5\nMeet the toolkit (Git + GitHub) + \nGrammar of graphics\n\n📖 r4ds: Chp 2.1 - 2.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-03 \n🗝️ ae-03-sa\n\n\n    \nThu, Sep 7\nVisualizing various types of data\n\n📖 r4ds: Chp 2.5 - 2.8 \n📖 r4ds: Chp 3 \n🎥 video\n\n🖥️ slides \n⌨️ ae-04 \n🗝️ ae-04-sa\n\n\n    3\nTue, Sep 12\n🦠 Class cancelled\n\n\n\n\n    \nThu, Sep 14\nGrammar of data wrangling\n\n📖 r4ds: Chp 4.1 - 4.5 \n🎥 video\n\n🖥️ slides \n⌨️ ae-05 \n🗝️ ae-05-sa\n\n📄 HW 1\n\n    4\nTue, Sep 19\n📊 Project 1 workday\n\n📖 r4ds: Chp 4.5 - 4.7 \n🎥 video\n\n\n\n    \nThu, Sep 21\nRubenstein Library Visit (Rubenstein Room 150)\n\n🎧 podcast \n📖 r4ds: Chp 5\n\n\n📄 HW 2\n\n    5\nTue, Sep 26\nWorking with multiple data frames\n\n📖 r4ds: Chp 20.1 - 20.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-06 \n🗝️ ae-06-sa\n\n\n    \nThu, Sep 28\nTidying data\n\n📖 r4ds: Chp 6 \n🎥 video\n\n🖥️ slides \n⌨️ ae-07 \n🗝️ ae-07-sa\n\n📊 Project 1 proposal\n\n    6\nTue, Oct 3\n✅ Exam 1 - In class\n\n\n\n\n    \nThu, Oct 5\nData types and classes\n\n📖 r4ds: Chp 17 \n🎥 video \n🎥 video\n\n🖥️ slides \n⌨️ ae-08 \n🗝️ ae-08-sa\n\n✅ Exam 1 - Take home\n\n    7\nTue, Oct 10\nPresentation ready plots I: Telling a story\n\n📖 fdv: Chp 29\n\n📊 Project 1 peer review \n🖥️ slides\n\n\n    \nThu, Oct 12\n📊 Project 1 presentation\n\n\n\n📊 Project 1\n\n    \nFri, Oct 13\n\n\n\n✅ Exam 1 - Take home redo (optional)\n\n    8\nTue, Oct 17\n🍂 Fall Break - No lecture\n\n\n\n\n    \nThu, Oct 19\nVisualizing and modeling relationships I\n\n📖 ims2: Chp 7\n\n🖥️ slides \n⌨️ ae-09 \n🗝️ ae-09-sa\n\n\n    9\nTue, Oct 24\nVisualizing and modeling relationships II\n\n📖 ims2: Chp 8\n\n🖥️ slides \n⌨️ ae-10 \n🗝️ ae-10-sa\n\n\n    \nThu, Oct 26\n📊 Project 2 workday\n\n\n\n📄 HW 3\n\n    10\nTue, Oct 31\nVisualizing and modeling relationships III\n\n📖 ims2: Chp 9\n\n🖥️ slides \n⌨️ ae-11 \n🗝️ ae-10-sa\n\n\n    \nThu, Nov 2\nVisualizing and modeling relationships IV\n\n📖 ims2: Chp 10\n\n🖥️ slides\n\n\n    11\nTue, Nov 7\nVisualizing uncertainty I\n\n📖 ims2: Chp 11\n\n📊 Project 2  proposal peer review \n🖥️ slides \n⌨️ ae-12\n\n📊 Project 2 proposal\n\n    \nThu, Nov 9\nVisualizing uncertainty II\n\n📖 ims2: Chp 12\n\n🖥️ slides\n\n📄 HW 4\n\n    \nFri, Nov 10\n\n\n\n📊 Optional: Project 2 proposal - updated\n\n    12\nTue, Nov 14\n✅ Exam 2 - In class\n\n\n\n\n    \nThu, Nov 16\nVisual inference\n\n\n\n✅ Exam 2 - Take home\n\n    13\nTue, Nov 21\nGenerative art\n\n\n\n\n    \nThu, Nov 23\n🦃 Thanksgiving Break - No lecture\n\n\n\n\n    14\nTue, Nov 28\nColors\n\n\n\n\n    \nThu, Nov 30\nAccessibility\n\n\n\n📄 HW 5\n\n    15\nTue, Dec 5\nPresentation ready plots II: Themes + Axes + Annotation\n\n\nProject 2 code review\n\n📊 Project 2 peer review\n\n    \nThu, Dec 7\n📊 Project 2 presentation\n\n\n\n📊 Project 2"
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n  \n    \n    \n    \n    \n    \n    \n  \n  \n    \n    \n      WEEK\n      DATE\n      TOPIC\n      PREPARE\n      MATERIALS\n      DUE\n    \n  \n  \n    1\nTue, Aug 29\nWelcome to STA 113FS!\n\n\n🖥️ slides\n\n\n    \nThu, Aug 31\nMeet the toolkit (R + RStudio)\n\n📖 socviz: Chp 1\n\n🖥️ slides \n⌨️ ae-01 \n⌨️ ae-02 \n🗝️ ae-02-sa\n\nGetting to know you survey \nGitHub usernames\n\n    2\nTue, Sep 5\nMeet the toolkit (Git + GitHub) + \nGrammar of graphics\n\n📖 r4ds: Chp 2.1 - 2.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-03 \n🗝️ ae-03-sa\n\n\n    \nThu, Sep 7\nVisualizing various types of data\n\n📖 r4ds: Chp 2.5 - 2.8 \n📖 r4ds: Chp 3 \n🎥 video\n\n🖥️ slides \n⌨️ ae-04 \n🗝️ ae-04-sa\n\n\n    3\nTue, Sep 12\n🦠 Class cancelled\n\n\n\n\n    \nThu, Sep 14\nGrammar of data wrangling\n\n📖 r4ds: Chp 4.1 - 4.5 \n🎥 video\n\n🖥️ slides \n⌨️ ae-05 \n🗝️ ae-05-sa\n\n📄 HW 1\n\n    4\nTue, Sep 19\n📊 Project 1 workday\n\n📖 r4ds: Chp 4.5 - 4.7 \n🎥 video\n\n\n\n    \nThu, Sep 21\nRubenstein Library Visit (Rubenstein Room 150)\n\n🎧 podcast \n📖 r4ds: Chp 5\n\n\n📄 HW 2\n\n    5\nTue, Sep 26\nWorking with multiple data frames\n\n📖 r4ds: Chp 20.1 - 20.4 \n🎥 video\n\n🖥️ slides \n⌨️ ae-06 \n🗝️ ae-06-sa\n\n\n    \nThu, Sep 28\nTidying data\n\n📖 r4ds: Chp 6 \n🎥 video\n\n🖥️ slides \n⌨️ ae-07 \n🗝️ ae-07-sa\n\n📊 Project 1 proposal\n\n    6\nTue, Oct 3\n✅ Exam 1 - In class\n\n\n\n\n    \nThu, Oct 5\nData types and classes\n\n📖 r4ds: Chp 17 \n🎥 video \n🎥 video\n\n🖥️ slides \n⌨️ ae-08 \n🗝️ ae-08-sa\n\n✅ Exam 1 - Take home\n\n    7\nTue, Oct 10\nPresentation ready plots I: Telling a story\n\n📖 fdv: Chp 29\n\n📊 Project 1 peer review \n🖥️ slides\n\n\n    \nThu, Oct 12\n📊 Project 1 presentation\n\n\n\n📊 Project 1\n\n    \nFri, Oct 13\n\n\n\n✅ Exam 1 - Take home redo (optional)\n\n    8\nTue, Oct 17\n🍂 Fall Break - No lecture\n\n\n\n\n    \nThu, Oct 19\nVisualizing and modeling relationships I\n\n📖 ims2: Chp 7\n\n🖥️ slides \n⌨️ ae-09 \n🗝️ ae-09-sa\n\n\n    9\nTue, Oct 24\nVisualizing and modeling relationships II\n\n📖 ims2: Chp 8\n\n🖥️ slides \n⌨️ ae-10 \n🗝️ ae-10-sa\n\n\n    \nThu, Oct 26\n📊 Project 2 workday\n\n\n\n📄 HW 3\n\n    10\nTue, Oct 31\nVisualizing and modeling relationships III\n\n📖 ims2: Chp 9\n\n🖥️ slides \n⌨️ ae-11 \n🗝️ ae-10-sa\n\n\n    \nThu, Nov 2\nVisualizing and modeling relationships IV\n\n📖 ims2: Chp 10\n\n🖥️ slides\n\n\n    11\nTue, Nov 7\nVisualizing uncertainty I\n\n📖 ims2: Chp 11\n\n📊 Project 2  proposal peer review \n🖥️ slides \n⌨️ ae-12\n\n📊 Project 2 proposal\n\n    \nThu, Nov 9\nVisualizing uncertainty II\n\n📖 ims2: Chp 12\n\n🖥️ slides\n\n📄 HW 4\n\n    \nFri, Nov 10\n\n\n\n📊 Optional: Project 2 proposal - updated\n\n    12\nTue, Nov 14\n✅ Exam 2 - In class\n\n\n\n\n    \nThu, Nov 16\nVisual inference\n\n\n🖥️ slides\n\n✅ Exam 2 - Take home\n\n    13\nTue, Nov 21\nGenerative art\n\n\n\n\n    \nThu, Nov 23\n🦃 Thanksgiving Break - No lecture\n\n\n\n\n    14\nTue, Nov 28\nColors\n\n\n\n\n    \nThu, Nov 30\nAccessibility\n\n\n\n📄 HW 5\n\n    15\nTue, Dec 5\nPresentation ready plots II: Themes + Axes + Annotation\n\n\nProject 2 code review\n\n📊 Project 2 peer review\n\n    \nThu, Dec 7\n📊 Project 2 presentation\n\n\n\n📊 Project 2"
   },
   {
     "objectID": "ae/ae-12-yawners-sa.html",
@@ -1589,6 +1589,76 @@
     "text": "Setting a seed\n\nGoal: Pin down the random generation so that the same random generation happens each time a document is rendered (by you or by someone else wanting to replicate your results)\nWhen: Set a seed each time right before generate()ing new resamples. Setting a seed once in a document would also work for re-rendering the document, but considering we often run the code chunk interactively, it’s best to set the seed again in each code chunk that does random generation.\n\n\n\n\n🔗 sta113-f23.github.io"
   },
   {
+    "objectID": "lectures/06/06-multiple-data-frames.html#reflection",
+    "href": "lectures/06/06-multiple-data-frames.html#reflection",
+    "title": "Working with multiple data frames",
+    "section": "Reflection",
+    "text": "Reflection\n\n What is one thing you learned from your reading or videos that was “new” to you? And what is one question you have from the reading, videos, or material we’ve covered so far, including the previous application exercise?"
+  },
+  {
+    "objectID": "lectures/06/06-multiple-data-frames.html#announcements",
+    "href": "lectures/06/06-multiple-data-frames.html#announcements",
+    "title": "Working with multiple data frames",
+    "section": "Announcements",
+    "text": "Announcements\n\nProject 1 proposal due Thursday at 5 pm\nNext week:\n\nTuesday: Exam 1 - in class\nThursday: Exam 1 - take home due"
+  },
+  {
+    "objectID": "lectures/06/06-multiple-data-frames.html#asking-questions",
+    "href": "lectures/06/06-multiple-data-frames.html#asking-questions",
+    "title": "Working with multiple data frames",
+    "section": "Asking questions",
+    "text": "Asking questions\n\nAsking code related questions on Slack\n\nIdeally: Code formatted text, not screenshots\nIf need be: Screenshots, not photos of screens\nAlways include code along with the error\n\nTroubleshooting 101: Read your error messages in full, out loud if need be\nCode formatting 101:\n\nAlways line breaks after + and |&gt;\nAdd line breaks as needed after , to help fit code on rendered PDF\nThink poetry (short lines), not novellas (long sentences)"
+  },
+  {
+    "objectID": "lectures/06/06-multiple-data-frames.html#joining-student-data",
+    "href": "lectures/06/06-multiple-data-frames.html#joining-student-data",
+    "title": "Working with multiple data frames",
+    "section": "Joining student data",
+    "text": "Joining student data\n\nDescribe a scenario where two datasets that contain information about students from this class may need to be joined. What might the analysis be about? What column (information) could be used to join the datasets?"
+  },
+  {
+    "objectID": "lectures/06/06-multiple-data-frames.html#data-fisheries-of-the-world",
+    "href": "lectures/06/06-multiple-data-frames.html#data-fisheries-of-the-world",
+    "title": "Working with multiple data frames",
+    "section": "Data: Fisheries of the world",
+    "text": "Data: Fisheries of the world\n\nDataset 1: Data from various countries on fishing harvest\nDataset 2: Countries and continents\nObservations: Each row represents a country"
+  },
+  {
+    "objectID": "lectures/06/06-multiple-data-frames.html#plan",
+    "href": "lectures/06/06-multiple-data-frames.html#plan",
+    "title": "Working with multiple data frames",
+    "section": "Plan",
+    "text": "Plan\nWe…\nhave two data frames\nwant to join them, slice them, dice them, juice them, and process them, so we can plot them"
+  },
+  {
+    "objectID": "lectures/06/06-multiple-data-frames.html#ae-06",
+    "href": "lectures/06/06-multiple-data-frames.html#ae-06",
+    "title": "Working with multiple data frames",
+    "section": "ae-06",
+    "text": "ae-06\n\n\n\nGo to the course GitHub org and find your ae-06-fisheries (repo name will be suffixed with your GitHub name).\nClone the repo in Posit Cloud, and set up your PAT:\n\nIn the Console, run usethis::create_github_token() to create a new PAT or grab the one you created previously from a space you might have safely stored it (e.g., 1Password or similar)\nIn the Console, run gitcreds::gitcreds_set() and paste your PAT when prompted.\nIn the Terminal, run git config credential.helper store to make sure your PAT persists throughout the whole time you’re working on this assignment / Cloud project.\n\nOpen the Quarto document (.qmd) and follow along and complete the exercises.\nRender, commit, and push your edits as you work through it\n\n\n\n\n\n🔗 sta113-f23.github.io"
+  },
+  {
+    "objectID": "course-overview.html",
+    "href": "course-overview.html",
+    "title": "Course overview",
+    "section": "",
+    "text": "This is the homepage for STA 113FS - Visualizing Data taught by Dr. Mine Çetinkaya-Rundel in Fall 2023 at Duke University. All course materials will be posted on this site.\nYou can find the course syllabus here and the course schedule here."
+  },
+  {
+    "objectID": "course-overview.html#class-meetings",
+    "href": "course-overview.html#class-meetings",
+    "title": "Course overview",
+    "section": "Class meetings",
+    "text": "Class meetings\n\n\n\nMeeting\nLocation\nTime\n\n\n\n\nLectures\nPerkins LINK 070 (Seminar 4)\nTue & Thu 1:25 - 2:40 pm"
+  },
+  {
+    "objectID": "course-overview.html#license",
+    "href": "course-overview.html#license",
+    "title": "Course overview",
+    "section": "License",
+    "text": "License\n\nThis online work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International. Visit here for more information about the license."
+  },
+  {
     "objectID": "lectures/02/02-meet-toolkit.html#reflection",
     "href": "lectures/02/02-meet-toolkit.html#reflection",
     "title": "Meet the toolkit",
@@ -1715,74 +1785,298 @@
     "text": "Next time\n\nWe’ll continue out “Meet the toolkit” journey, focusing on version control tools, Git and GitHub, the last piece of the puzzle\nWe’ll then move on to the nuts and bolts of data visualization in R with ggplot2\n\n\n\n\n🔗 sta113-f23.github.io"
   },
   {
-    "objectID": "course-overview.html",
-    "href": "course-overview.html",
-    "title": "Course overview",
-    "section": "",
-    "text": "This is the homepage for STA 113FS - Visualizing Data taught by Dr. Mine Çetinkaya-Rundel in Fall 2023 at Duke University. All course materials will be posted on this site.\nYou can find the course syllabus here and the course schedule here."
-  },
-  {
-    "objectID": "course-overview.html#class-meetings",
-    "href": "course-overview.html#class-meetings",
-    "title": "Course overview",
-    "section": "Class meetings",
-    "text": "Class meetings\n\n\n\nMeeting\nLocation\nTime\n\n\n\n\nLectures\nPerkins LINK 070 (Seminar 4)\nTue & Thu 1:25 - 2:40 pm"
-  },
-  {
-    "objectID": "course-overview.html#license",
-    "href": "course-overview.html#license",
-    "title": "Course overview",
-    "section": "License",
-    "text": "License\n\nThis online work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International. Visit here for more information about the license."
-  },
-  {
-    "objectID": "lectures/06/06-multiple-data-frames.html#reflection",
-    "href": "lectures/06/06-multiple-data-frames.html#reflection",
-    "title": "Working with multiple data frames",
-    "section": "Reflection",
-    "text": "Reflection\n\n What is one thing you learned from your reading or videos that was “new” to you? And what is one question you have from the reading, videos, or material we’ve covered so far, including the previous application exercise?"
-  },
-  {
-    "objectID": "lectures/06/06-multiple-data-frames.html#announcements",
-    "href": "lectures/06/06-multiple-data-frames.html#announcements",
-    "title": "Working with multiple data frames",
+    "objectID": "lectures/16/16-visual-inference.html#announcements",
+    "href": "lectures/16/16-visual-inference.html#announcements",
+    "title": "Visual inference",
     "section": "Announcements",
-    "text": "Announcements\n\nProject 1 proposal due Thursday at 5 pm\nNext week:\n\nTuesday: Exam 1 - in class\nThursday: Exam 1 - take home due"
+    "text": "Announcements\n\nProject 2 proposal feedback delayed, will have it for you by the end of tonight!\nWho is in class on Tuesday?"
   },
   {
-    "objectID": "lectures/06/06-multiple-data-frames.html#asking-questions",
-    "href": "lectures/06/06-multiple-data-frames.html#asking-questions",
-    "title": "Working with multiple data frames",
-    "section": "Asking questions",
-    "text": "Asking questions\n\nAsking code related questions on Slack\n\nIdeally: Code formatted text, not screenshots\nIf need be: Screenshots, not photos of screens\nAlways include code along with the error\n\nTroubleshooting 101: Read your error messages in full, out loud if need be\nCode formatting 101:\n\nAlways line breaks after + and |&gt;\nAdd line breaks as needed after , to help fit code on rendered PDF\nThink poetry (short lines), not novellas (long sentences)"
+    "objectID": "lectures/16/16-visual-inference.html#setup",
+    "href": "lectures/16/16-visual-inference.html#setup",
+    "title": "Visual inference",
+    "section": "Setup",
+    "text": "Setup\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(nullabor)  # for visual inference\nlibrary(skimr)     # for skimming data"
   },
   {
-    "objectID": "lectures/06/06-multiple-data-frames.html#joining-student-data",
-    "href": "lectures/06/06-multiple-data-frames.html#joining-student-data",
-    "title": "Working with multiple data frames",
-    "section": "Joining student data",
-    "text": "Joining student data\n\nDescribe a scenario where two datasets that contain information about students from this class may need to be joined. What might the analysis be about? What column (information) could be used to join the datasets?"
+    "objectID": "lectures/16/16-visual-inference.html#section",
+    "href": "lectures/16/16-visual-inference.html#section",
+    "title": "Visual inference",
+    "section": "",
+    "text": "One of the pictures is a photograph of a painting by Piet Mondrian while the other is a photograph of a drawing made by an IBM 7094 digital computer. Which of the two do you think was done by the computer?\n\n\n\nA. M. Noll, “Human or machine: A subjective comparison of piet mondrian’s”composition with lines” (1917) and a computer- generated picture,” The Psychological Record, vol. 16, pp. 1–10, 1966."
   },
   {
-    "objectID": "lectures/06/06-multiple-data-frames.html#data-fisheries-of-the-world",
-    "href": "lectures/06/06-multiple-data-frames.html#data-fisheries-of-the-world",
-    "title": "Working with multiple data frames",
-    "section": "Data: Fisheries of the world",
-    "text": "Data: Fisheries of the world\n\nDataset 1: Data from various countries on fishing harvest\nDataset 2: Countries and continents\nObservations: Each row represents a country"
+    "objectID": "lectures/16/16-visual-inference.html#aside-who-is-piet-mondrian",
+    "href": "lectures/16/16-visual-inference.html#aside-who-is-piet-mondrian",
+    "title": "Visual inference",
+    "section": "Aside: Who is Piet Mondrian?",
+    "text": "Aside: Who is Piet Mondrian?"
   },
   {
-    "objectID": "lectures/06/06-multiple-data-frames.html#plan",
-    "href": "lectures/06/06-multiple-data-frames.html#plan",
-    "title": "Working with multiple data frames",
-    "section": "Plan",
-    "text": "Plan\nWe…\nhave two data frames\nwant to join them, slice them, dice them, juice them, and process them, so we can plot them"
+    "objectID": "lectures/16/16-visual-inference.html#apophenia",
+    "href": "lectures/16/16-visual-inference.html#apophenia",
+    "title": "Visual inference",
+    "section": "Apophenia",
+    "text": "Apophenia\n\nWhat is apophenia?\n\n\n\n\nThe tendency to perceive a connection or meaningful pattern between unrelated or random things."
   },
   {
-    "objectID": "lectures/06/06-multiple-data-frames.html#ae-06",
-    "href": "lectures/06/06-multiple-data-frames.html#ae-06",
-    "title": "Working with multiple data frames",
-    "section": "ae-06",
-    "text": "ae-06\n\n\n\nGo to the course GitHub org and find your ae-06-fisheries (repo name will be suffixed with your GitHub name).\nClone the repo in Posit Cloud, and set up your PAT:\n\nIn the Console, run usethis::create_github_token() to create a new PAT or grab the one you created previously from a space you might have safely stored it (e.g., 1Password or similar)\nIn the Console, run gitcreds::gitcreds_set() and paste your PAT when prompted.\nIn the Terminal, run git config credential.helper store to make sure your PAT persists throughout the whole time you’re working on this assignment / Cloud project.\n\nOpen the Quarto document (.qmd) and follow along and complete the exercises.\nRender, commit, and push your edits as you work through it\n\n\n\n\n\n🔗 sta113-f23.github.io"
+    "objectID": "lectures/16/16-visual-inference.html#visualization-statistical-inference-visual-inference",
+    "href": "lectures/16/16-visual-inference.html#visualization-statistical-inference-visual-inference",
+    "title": "Visual inference",
+    "section": "Visualization, statistical inference, visual inference",
+    "text": "Visualization, statistical inference, visual inference\n\n\nVisualization provides tools to uncover new relationships, tools of curiosity, and much of visualization research focuses on making the chance of finding relationships as high as possible\nStatistical inference provides tools to check whether a relationship really exists (tools of skepticism) and most statistics research focuses on making sure to minimize the chance of finding a relationship that does not exist\n\nTesting: Is there a difference?\nEstimation: How big is the difference?\n\nVisual inference bridges these two conflicting drives to provide a tool for skepticism that can be applied in a curiosity-driven context - Testing: Is what we see really there, i.e., is what we see in a plot of the sample an accurate reflection of the entire population?"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#hypothesis-testing-as-a-court-trial",
+    "href": "lectures/16/16-visual-inference.html#hypothesis-testing-as-a-court-trial",
+    "title": "Visual inference",
+    "section": "Hypothesis testing as a court trial",
+    "text": "Hypothesis testing as a court trial\n\nNull hypothesis, \\(H_0\\): Defendant is innocent\nAlternative hypothesis, \\(H_A\\): Defendant is guilty\nPresent the evidence: Collect data\n\n\n\nJudge the evidence: “Could these data plausibly have happened by chance if the null hypothesis were true?”\n\nYes: Fail to reject \\(H_0\\)\nNo: Reject \\(H_0\\)"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#hypothesis-testing-framework",
+    "href": "lectures/16/16-visual-inference.html#hypothesis-testing-framework",
+    "title": "Visual inference",
+    "section": "Hypothesis testing framework",
+    "text": "Hypothesis testing framework\n\nStart with a null hypothesis, \\(H_0\\), that represents the status quo\nSet an alternative hypothesis, \\(H_A\\), that represents the research question, i.e. what we’re testing for\nConduct a hypothesis test under the assumption that the null hypothesis is true and calculate a p-value (probability of observed or more extreme outcome given that the null hypothesis is true)\n\nif the test results suggest that the data do not provide convincing evidence for the alternative hypothesis, stick with the null hypothesis\nif they do, then reject the null hypothesis in favor of the alternative"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#potential-errors",
+    "href": "lectures/16/16-visual-inference.html#potential-errors",
+    "title": "Visual inference",
+    "section": "Potential errors",
+    "text": "Potential errors\n\nType 1 error (false negative): Acquit / reject \\(H_0\\) when you shouldn’t\nType 2 error (false positive): Falsely convict an innocent / fail to reject \\(H_0\\) when you shouldn’t\nCosts of these errors vary based on the severity of the consequences"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#statistical-vs.-visual-inference",
+    "href": "lectures/16/16-visual-inference.html#statistical-vs.-visual-inference",
+    "title": "Visual inference",
+    "section": "Statistical vs. visual inference",
+    "text": "Statistical vs. visual inference\n\n\nStatistical\n\nTest statistic\np-value compared to significance level\n\n\nVisual\n\nPlot of the data\nHumans’ picking an “innocent” out of a series of null plots"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#the-lineup-protocol",
+    "href": "lectures/16/16-visual-inference.html#the-lineup-protocol",
+    "title": "Visual inference",
+    "section": "The lineup protocol",
+    "text": "The lineup protocol\n\n\nPlot of the real data is randomly embedded amongst a set of null plots\nMatrix of plots is known as a lineup\nNull plots are generated by a method consistent with the null hypothesis\nThe lineup is shown to an observer. If the observer can pick the real data as different from the others, this puts weight on the statistical significance of the structure in the plot.\nThe lineup() function from the nullabor package returns a set of generated null datasets and the real data embedded randomly among these null datasets"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#using-nullaborlineup",
+    "href": "lectures/16/16-visual-inference.html#using-nullaborlineup",
+    "title": "Visual inference",
+    "section": "Using nullabor::lineup()",
+    "text": "Using nullabor::lineup()\n\nGenerating null plots:\n\nOption 1: Provide a method of generation and let the lineup() function generate them\nOption 2: Generating the null datasets yourself and pass them to the lineup() function\n\n\n\n\nPosition of the real dataset is hidden by default\n\nDecrypt to find out which plot is the real dataset"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#will-the-real-mtcars-please-stand-up",
+    "href": "lectures/16/16-visual-inference.html#will-the-real-mtcars-please-stand-up",
+    "title": "Visual inference",
+    "section": "Will the real mtcars please stand up?",
+    "text": "Will the real mtcars please stand up?"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#the-making-of-the-lineup-i",
+    "href": "lectures/16/16-visual-inference.html#the-making-of-the-lineup-i",
+    "title": "Visual inference",
+    "section": "The making of the lineup I",
+    "text": "The making of the lineup I\nStep 1. Permute the data\n\nset.seed(20211029)\nmtcars_permuted_lineup &lt;- lineup(null_permute(\"mpg\"), mtcars)"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#the-making-of-the-lineup-ii",
+    "href": "lectures/16/16-visual-inference.html#the-making-of-the-lineup-ii",
+    "title": "Visual inference",
+    "section": "The making of the lineup II",
+    "text": "The making of the lineup II\nStep 2. Peek at the permuted data\n\nhead(mtcars_permuted_lineup)\n\n      mpg cyl disp  hp drat    wt  qsec vs am gear carb .sample\n...1 10.4   6  160 110 3.90 2.620 16.46  0  1    4    4       1\n...2 21.4   6  160 110 3.90 2.875 17.02  0  1    4    4       1\n...3 14.7   4  108  93 3.85 2.320 18.61  1  1    4    1       1\n...4 15.5   6  258 110 3.08 3.215 19.44  1  0    3    1       1\n...5 30.4   8  360 175 3.15 3.440 17.02  0  0    3    2       1\n...6 15.0   6  225 105 2.76 3.460 20.22  1  0    3    1       1"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#the-making-of-the-lineup-ii-1",
+    "href": "lectures/16/16-visual-inference.html#the-making-of-the-lineup-ii-1",
+    "title": "Visual inference",
+    "section": "The making of the lineup II",
+    "text": "The making of the lineup II\nStep 2. Peek at the permuted data\nn = 20 by default\n\nmtcars_permuted_lineup |&gt;\n  count(.sample)\n\n   .sample  n\n1        1 32\n2        2 32\n3        3 32\n4        4 32\n5        5 32\n6        6 32\n7        7 32\n8        8 32\n9        9 32\n10      10 32\n11      11 32\n12      12 32\n13      13 32\n14      14 32\n15      15 32\n16      16 32\n17      17 32\n18      18 32\n19      19 32\n20      20 32"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#the-making-of-the-lineup-iii",
+    "href": "lectures/16/16-visual-inference.html#the-making-of-the-lineup-iii",
+    "title": "Visual inference",
+    "section": "The making of the lineup III",
+    "text": "The making of the lineup III\nStep 3. Plot the permutations\n\nggplot(data = mtcars_permuted_lineup, aes(x = mpg, y = wt)) +\n  geom_point() +\n  facet_wrap(~ .sample)"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#decrypt-the-lineup",
+    "href": "lectures/16/16-visual-inference.html#decrypt-the-lineup",
+    "title": "Visual inference",
+    "section": "Decrypt the lineup",
+    "text": "Decrypt the lineup\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 g6\")\n\n[1] \"True data in position  16\""
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#the-rorschach-protocol",
+    "href": "lectures/16/16-visual-inference.html#the-rorschach-protocol",
+    "title": "Visual inference",
+    "section": "The Rorschach protocol",
+    "text": "The Rorschach protocol\n\nThe Rorschach protocol is used to calibrate the eyes for variation due to sampling\nPlots generated corresponds to the null datasets, data that is consistent with a null hypothesis\nrorschach() function returns a set of null plots which are shown to observers to calibrate their eyes with variation"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#using-nullaborrorschach",
+    "href": "lectures/16/16-visual-inference.html#using-nullaborrorschach",
+    "title": "Visual inference",
+    "section": "Using nullabor::rorschach()",
+    "text": "Using nullabor::rorschach()\n\nGenerating null plots: Provide a method of generation and let the rorschach() function generate them\nProvide the true data set\nSet n, total number of samples to generate (n = 20 by default)\nSet p, probability of including true data with null data (p = 0 by default)"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#train-your-eyes-to-spot-the-real-mtcars",
+    "href": "lectures/16/16-visual-inference.html#train-your-eyes-to-spot-the-real-mtcars",
+    "title": "Visual inference",
+    "section": "Train your eyes to spot the real mtcars",
+    "text": "Train your eyes to spot the real mtcars"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#the-making-of-the-rorschach-i",
+    "href": "lectures/16/16-visual-inference.html#the-making-of-the-rorschach-i",
+    "title": "Visual inference",
+    "section": "The making of the rorschach I",
+    "text": "The making of the rorschach I\nStep 1. Permute the data\n\nset.seed(20211029)\nmtcars_permuted_rorschach &lt;- rorschach(\n  null_permute(\"mpg\"), mtcars\n)"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#the-making-of-the-rorschach-ii",
+    "href": "lectures/16/16-visual-inference.html#the-making-of-the-rorschach-ii",
+    "title": "Visual inference",
+    "section": "The making of the rorschach II",
+    "text": "The making of the rorschach II\nStep 2. Peek at the permuted data\n\nhead(mtcars_permuted_rorschach)\n\n   mpg cyl disp  hp drat    wt  qsec vs am gear carb .sample\n1 10.4   6  160 110 3.90 2.620 16.46  0  1    4    4       1\n2 21.4   6  160 110 3.90 2.875 17.02  0  1    4    4       1\n3 14.7   4  108  93 3.85 2.320 18.61  1  1    4    1       1\n4 15.5   6  258 110 3.08 3.215 19.44  1  0    3    1       1\n5 30.4   8  360 175 3.15 3.440 17.02  0  0    3    2       1\n6 15.0   6  225 105 2.76 3.460 20.22  1  0    3    1       1"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#the-making-of-the-rorschach-ii-1",
+    "href": "lectures/16/16-visual-inference.html#the-making-of-the-rorschach-ii-1",
+    "title": "Visual inference",
+    "section": "The making of the rorschach II",
+    "text": "The making of the rorschach II\nStep 2. Peek at the permuted data\nn = 20 by default\n\nmtcars_permuted_rorschach |&gt;\n  count(.sample)\n\n   .sample  n\n1        1 32\n2        2 32\n3        3 32\n4        4 32\n5        5 32\n6        6 32\n7        7 32\n8        8 32\n9        9 32\n10      10 32\n11      11 32\n12      12 32\n13      13 32\n14      14 32\n15      15 32\n16      16 32\n17      17 32\n18      18 32\n19      19 32\n20      20 32"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#the-making-of-the-rorschach-iii",
+    "href": "lectures/16/16-visual-inference.html#the-making-of-the-rorschach-iii",
+    "title": "Visual inference",
+    "section": "The making of the rorschach III",
+    "text": "The making of the rorschach III\nStep 3. Plot the permutations\n\nggplot(data = mtcars_permuted_rorschach, aes(x = mpg, y = wt)) +\n  geom_point() +\n  facet_wrap(~ .sample)"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#decrypt-the-rorschach",
+    "href": "lectures/16/16-visual-inference.html#decrypt-the-rorschach",
+    "title": "Visual inference",
+    "section": "Decrypt the rorschach",
+    "text": "Decrypt the rorschach\n\nIn this particular case there’s nothing to decrypt since p (probability of including true data with null data) is set to 0\nIf p is higher than 0, and the true null is included, you get the decryption key\n\n\nset.seed(12345)\nmtcars_permuted_rorschach &lt;- rorschach(null_permute(\"mpg\"), mtcars, p = 0.5)\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 gI\")\n\n[1] \"True data in position  15\""
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#generating-the-null-data-1",
+    "href": "lectures/16/16-visual-inference.html#generating-the-null-data-1",
+    "title": "Visual inference",
+    "section": "Generating the null data",
+    "text": "Generating the null data\n\nBy permuting a variable (what we’ve done so far with mtcars)\nWith a specific distribution\nWith null residuals from a model\nWith null data outside of nullabor (we won’t get into this, but see here for more)"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#generate-null-data-with-a-specific-distribution",
+    "href": "lectures/16/16-visual-inference.html#generate-null-data-with-a-specific-distribution",
+    "title": "Visual inference",
+    "section": "Generate null data with a specific distribution",
+    "text": "Generate null data with a specific distribution\n\n\nThe null_dist() function takes as input a variable name of the data and a particular distribution\nThis variable in the data is substituted by random generations of the particular distribution\nThe different distributions include beta, cauchy, chi-squared, exponential, f, gamma, geometric, log-normal, lognormal, logistic, negative binomial, normal, poisson, t, and weibull\nParameters of the distributions are estimated from the given data (default) or can be provided as a list\nnull_dist() returns a function that generates a null data set given the data"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#case-study-heights-of-adults",
+    "href": "lectures/16/16-visual-inference.html#case-study-heights-of-adults",
+    "title": "Visual inference",
+    "section": "Case study: Heights of adults",
+    "text": "Case study: Heights of adults\n\nThe following histogram shows the distribution of heights of 507 physically active individuals (openintro::bdims$hgt). Do the heights of these individuals follow a normal distribution?"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#spot-the-real-data",
+    "href": "lectures/16/16-visual-inference.html#spot-the-real-data",
+    "title": "Visual inference",
+    "section": "Spot the real data",
+    "text": "Spot the real data\n\nWhich of the following is the plot of the real data? (Note: A different binwidth than the previous plot is used.)"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#code-generate-null-data-with-a-specific-distribution",
+    "href": "lectures/16/16-visual-inference.html#code-generate-null-data-with-a-specific-distribution",
+    "title": "Visual inference",
+    "section": "Code: Generate null data with a specific distribution",
+    "text": "Code: Generate null data with a specific distribution\nGenerate the null distribution"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#generating-the-null-data-with-residuals-from-a-model",
+    "href": "lectures/16/16-visual-inference.html#generating-the-null-data-with-residuals-from-a-model",
+    "title": "Visual inference",
+    "section": "Generating the null data with residuals from a model",
+    "text": "Generating the null data with residuals from a model\n\nnull_lm() takes as input a model specification formula as defined by lm() and method for generating null residuals from the model\nThree built in methods for different (and valid) methods to generate null data when fitting a linear model:\n\nmethod = \"pboot\"\nmethod = \"boot\"\nmethod = \"rotate\"\n\nnull_lm() returns a function which given the data generates a null dataset"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#case-study-black-cherry-trees",
+    "href": "lectures/16/16-visual-inference.html#case-study-black-cherry-trees",
+    "title": "Visual inference",
+    "section": "Case study: Black cherry trees",
+    "text": "Case study: Black cherry trees\nData measures the diameter, height and volume of timber in 31 felled black cherry trees (datasets::trees)\nSummary\n\nskim(datasets::trees)\n\n\n\n── Data Summary ────────────────────────\n                           Values         \nName                       datasets::trees\nNumber of rows             31             \nNumber of columns          3              \n_______________________                   \nColumn type frequency:                    \n  numeric                  3              \n________________________                  \nGroup variables            None           \n\n── Variable type: numeric ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\n  skim_variable n_missing complete_rate mean    sd   p0  p25  p50  p75 p100 hist \n1 Girth                 0             1 13.2  3.14  8.3 11.0 12.9 15.2 20.6 ▃▇▃▅▁\n2 Height                0             1 76    6.37 63   72   76   80   87   ▃▃▆▇▃\n3 Volume                0             1 30.2 16.4  10.2 19.4 24.2 37.3 77   ▇▅▁▂▁"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#case-study-black-cherry-trees-1",
+    "href": "lectures/16/16-visual-inference.html#case-study-black-cherry-trees-1",
+    "title": "Visual inference",
+    "section": "Case study: Black cherry trees",
+    "text": "Case study: Black cherry trees\nPlot"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#fit-the-model",
+    "href": "lectures/16/16-visual-inference.html#fit-the-model",
+    "title": "Visual inference",
+    "section": "Fit the model",
+    "text": "Fit the model\n\ntrees_fit &lt;- lm(log(Volume) ~ log(Girth) + log(Height), \n                data = datasets::trees)\n\ntidy(trees_fit)\n\n# A tibble: 3 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)    -6.63    0.800      -8.29 5.06e- 9\n2 log(Girth)      1.98    0.0750     26.4  2.42e-21\n3 log(Height)     1.12    0.204       5.46 7.81e- 6"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#augment-the-model",
+    "href": "lectures/16/16-visual-inference.html#augment-the-model",
+    "title": "Visual inference",
+    "section": "Augment the model",
+    "text": "Augment the model\n\ntrees_aug &lt;- as_tibble(datasets::trees) |&gt;\n  mutate(\n    .resid = residuals(trees_fit),\n    .fitted = fitted(trees_fit)\n  )\n\ntrees_aug\n\n# A tibble: 31 × 5\n   Girth Height Volume   .resid .fitted\n   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;\n 1   8.3     70   10.3  0.0219     2.31\n 2   8.6     65   10.3  0.0343     2.30\n 3   8.8     63   10.2  0.0138     2.31\n 4  10.5     72   16.4 -0.0106     2.81\n 5  10.7     81   18.8 -0.0430     2.98\n 6  10.8     83   19.7 -0.0420     3.02\n 7  11       66   15.6 -0.0557     2.80\n 8  11       75   18.2 -0.0443     2.95\n 9  11.1     80   22.6  0.0822     3.04\n10  11.2     75   19.9  0.00926    2.98\n# ℹ 21 more rows"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#test",
+    "href": "lectures/16/16-visual-inference.html#test",
+    "title": "Visual inference",
+    "section": "Test",
+    "text": "Test\n\nHypotheses:\n\n\\(H_0\\): Errors are \\(NID(0, \\sigma^2)\\)\n\\(H_A\\): Errors are not \\(NID(0, \\sigma^2)\\)\n\n\n\n\nVisual statistic: Residuals plot (residuals vs. fitted)\n\n\n\n\nNull distributions: Generate residuals from random draws from \\(N(0, \\hat{sigma}^2)\\) using the nullabor package\n\n\nmethod &lt;- null_lm(log(Volume) ~ log(Girth) + log(Height),\n                  method = \"pboot\")\n\n\n\n\nCompare the visual statistic from the data to the null distributions using a lineup\n\n\nset.seed(2020)\ntrees_lineup &lt;- lineup(method, true = trees_aug, n = 10)"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#lineup",
+    "href": "lectures/16/16-visual-inference.html#lineup",
+    "title": "Visual inference",
+    "section": "Lineup",
+    "text": "Lineup\n\nWhich one is the real residuals plot?"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#decrypt",
+    "href": "lectures/16/16-visual-inference.html#decrypt",
+    "title": "Visual inference",
+    "section": "Decrypt",
+    "text": "Decrypt\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 Nq\")\n\n[1] \"True data in position  3\""
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#the-visual-inference-test-1",
+    "href": "lectures/16/16-visual-inference.html#the-visual-inference-test-1",
+    "title": "Visual inference",
+    "section": "The visual inference test",
+    "text": "The visual inference test\n\nNotation:\n\n\\(n\\): number of independent participants\n\\(X\\): number of participants who detect the data plot\n\\(x\\): observed value of \\(X\\)\n\\(m\\): number of plots\n\\(p\\): the probability of selecting the data plot\n\n\n\n\nHypotheses: - \\(H_0: p = 1 / m\\) - The probability of the data plot being selected is \\(1 / m\\) (same as all other plots) - \\(H_A: p &gt; 1 / m\\) - The probability of the data plot being selected is greater than \\(1 / m\\)\n\n\n\n\nUnder \\(H_0, X \\sim B(n, 1/m)\\). Then, visual inference p-value:\n\n\\[ p(X \\ge x) = 1 - P(X \\le x - 1) = \\sum_{k = x}^n {n \\choose k} \\frac{(m - 1)^k}{m^n} \\]\n\nIn R: \\(P(X \\le x)\\) = pbinom(x, n, p)"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#calculating-p-values",
+    "href": "lectures/16/16-visual-inference.html#calculating-p-values",
+    "title": "Visual inference",
+    "section": "Calculating p-values",
+    "text": "Calculating p-values\nWe did three lineup tests today, where - \\(x\\) is the number of people who spotted the real data and - \\(n\\) is the number of people voting\nLet’s calculate the p-values\n\nSpot the real mtcars (n = 20)\n\n\n1 - pbinom(4, 12, 1/20)\n\n\nSpot the real bdims::hgt (n = 10)\n\n\n1 - pbinom(0, 12, 1/10)\n\n\nSpot the real residuals of trees model (n = 10)\n\n\n1 - pbinom(0, 12, 1/20)"
+  },
+  {
+    "objectID": "lectures/16/16-visual-inference.html#acknowledgements-1",
+    "href": "lectures/16/16-visual-inference.html#acknowledgements-1",
+    "title": "Visual inference",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\n\nStatistical inference for exploratory data analysis and model diagnostics by Andreas Buja , Dianne Cook , Heike Hofmann , Michael Lawrence , Eun-Kyung Lee , Deborah F. Swayne, and Hadley Wickham\nGraphical Inference for Infovis by Hadley Wickham, Dianne Cook, Heike Hofmann, and Andreas Buja\nUsing computational tools to determine whether what is seen in the data can be assumed to apply more broadly by Emi Tanaka\nExtending beyond the data, what can and cannot be inferred more generally, given the data collection by Emi Tanaka\nThe nullabor package\n\n\n\n\n🔗 sta113-f23.github.io"
   },
   {
     "objectID": "lectures/10/10-vizualize-model-relationships-I.html#coming-up",
