@@ -428,8 +428,9 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidymodels)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(nullabor)  <span class="co"># for visual inference</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(skimr)     <span class="co"># for skimming data </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(openintro)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(nullabor)  <span class="co"># for visual inference</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(skimr)     <span class="co"># for skimming data </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section>
@@ -861,6 +862,20 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <section id="code-generate-null-data-with-a-specific-distribution" class="slide level2">
 <h2>Code: Generate null data with a specific distribution</h2>
 <p>Generate the null distribution</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">set.seed</span>(<span class="dv">20211029</span>)</span>
+<span id="cb18-2"><a href="#cb18-2"></a></span>
+<span id="cb18-3"><a href="#cb18-3"></a>bdims_permuted_lineup <span class="ot">&lt;-</span> <span class="fu">lineup</span>(<span class="fu">null_dist</span>(<span class="st">"hgt"</span>, <span class="at">dist =</span> <span class="st">"normal"</span>), <span class="at">n =</span> <span class="dv">10</span>, <span class="at">true =</span> bdims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="code-decrypt" class="slide level2">
+<h2>Code: Decrypt</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">decrypt</span>(<span class="st">"K4Ul YG3G R8 oSJR3RS8 Ng"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "True data in position  2"</code></pre>
+</div>
+</div>
 </section>
 <section id="generating-the-null-data-with-residuals-from-a-model" class="slide level2">
 <h2>Generating the null data with residuals from a model</h2>
@@ -880,7 +895,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <p>Data measures the diameter, height and volume of timber in 31 felled black cherry trees (<code>datasets::trees</code>)</p>
 <p><strong>Summary</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">skim</span>(datasets<span class="sc">::</span>trees)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">skim</span>(datasets<span class="sc">::</span>trees)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -909,10 +924,10 @@ Group variables            None
 <div class="cell quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="16-visual-inference_files/figure-revealjs/unnamed-chunk-19-1.png" width="480"></p>
+<p><img data-src="16-visual-inference_files/figure-revealjs/unnamed-chunk-20-1.png" width="480"></p>
 </div>
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="16-visual-inference_files/figure-revealjs/unnamed-chunk-19-2.png" width="480"></p>
+<p><img data-src="16-visual-inference_files/figure-revealjs/unnamed-chunk-20-2.png" width="480"></p>
 </div>
 </div>
 </div>
@@ -920,10 +935,10 @@ Group variables            None
 <section id="fit-the-model" class="slide level2">
 <h2>Fit the model</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>trees_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(Volume) <span class="sc">~</span> <span class="fu">log</span>(Girth) <span class="sc">+</span> <span class="fu">log</span>(Height), </span>
-<span id="cb20-2"><a href="#cb20-2"></a>                <span class="at">data =</span> datasets<span class="sc">::</span>trees)</span>
-<span id="cb20-3"><a href="#cb20-3"></a></span>
-<span id="cb20-4"><a href="#cb20-4"></a><span class="fu">tidy</span>(trees_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>trees_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(Volume) <span class="sc">~</span> <span class="fu">log</span>(Girth) <span class="sc">+</span> <span class="fu">log</span>(Height), </span>
+<span id="cb23-2"><a href="#cb23-2"></a>                <span class="at">data =</span> datasets<span class="sc">::</span>trees)</span>
+<span id="cb23-3"><a href="#cb23-3"></a></span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="fu">tidy</span>(trees_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 5
   term        estimate std.error statistic  p.value
@@ -937,13 +952,13 @@ Group variables            None
 <section id="augment-the-model" class="slide level2">
 <h2>Augment the model</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>trees_aug <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(datasets<span class="sc">::</span>trees) <span class="sc">|&gt;</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb22-3"><a href="#cb22-3"></a>    <span class="at">.resid =</span> <span class="fu">residuals</span>(trees_fit),</span>
-<span id="cb22-4"><a href="#cb22-4"></a>    <span class="at">.fitted =</span> <span class="fu">fitted</span>(trees_fit)</span>
-<span id="cb22-5"><a href="#cb22-5"></a>  )</span>
-<span id="cb22-6"><a href="#cb22-6"></a></span>
-<span id="cb22-7"><a href="#cb22-7"></a>trees_aug</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>trees_aug <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(datasets<span class="sc">::</span>trees) <span class="sc">|&gt;</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb25-3"><a href="#cb25-3"></a>    <span class="at">.resid =</span> <span class="fu">residuals</span>(trees_fit),</span>
+<span id="cb25-4"><a href="#cb25-4"></a>    <span class="at">.fitted =</span> <span class="fu">fitted</span>(trees_fit)</span>
+<span id="cb25-5"><a href="#cb25-5"></a>  )</span>
+<span id="cb25-6"><a href="#cb25-6"></a></span>
+<span id="cb25-7"><a href="#cb25-7"></a>trees_aug</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 31 × 5
    Girth Height Volume   .resid .fitted
@@ -981,8 +996,8 @@ Group variables            None
 <li>Null distributions: Generate residuals from random draws from <span class="math inline">\(N(0, \hat{sigma}^2)\)</span> using the <strong>nullabor</strong> package</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>method <span class="ot">&lt;-</span> <span class="fu">null_lm</span>(<span class="fu">log</span>(Volume) <span class="sc">~</span> <span class="fu">log</span>(Girth) <span class="sc">+</span> <span class="fu">log</span>(Height),</span>
-<span id="cb24-2"><a href="#cb24-2"></a>                  <span class="at">method =</span> <span class="st">"pboot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>method <span class="ot">&lt;-</span> <span class="fu">null_lm</span>(<span class="fu">log</span>(Volume) <span class="sc">~</span> <span class="fu">log</span>(Girth) <span class="sc">+</span> <span class="fu">log</span>(Height),</span>
+<span id="cb27-2"><a href="#cb27-2"></a>                  <span class="at">method =</span> <span class="st">"pboot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -990,8 +1005,8 @@ Group variables            None
 <li>Compare the visual statistic from the data to the null distributions using a <strong>lineup</strong></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">set.seed</span>(<span class="dv">2020</span>)</span>
-<span id="cb25-2"><a href="#cb25-2"></a>trees_lineup <span class="ot">&lt;-</span> <span class="fu">lineup</span>(method, <span class="at">true =</span> trees_aug, <span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">set.seed</span>(<span class="dv">2020</span>)</span>
+<span id="cb28-2"><a href="#cb28-2"></a>trees_lineup <span class="ot">&lt;-</span> <span class="fu">lineup</span>(method, <span class="at">true =</span> trees_aug, <span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1018,8 +1033,8 @@ Group variables            None
 </section>
 <section id="decrypt" class="slide level2">
 <h2>Decrypt</h2>
-<div class="cell" data-hash="16-visual-inference_cache/revealjs/unnamed-chunk-25_59be5d439d773a12d2c348a2b0c6a81b">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">decrypt</span>(<span class="st">"K4Ul YG3G R8 oSJR3RS8 Nq"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="16-visual-inference_cache/revealjs/unnamed-chunk-26_9bc439285ccbf631cc01e7cbb1cfdeb9">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">decrypt</span>(<span class="st">"K4Ul YG3G R8 oSJR3RS8 Nq"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "True data in position  3"</code></pre>
 </div>
@@ -1065,19 +1080,19 @@ Group variables            None
 <li>Spot the real <code>mtcars</code> (n = 20)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">4</span>, <span class="dv">12</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">4</span>, <span class="dv">12</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Spot the real <code>bdims::hgt</code> (n = 10)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Spot the real residuals of <code>trees</code> model (n = 10)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section>
