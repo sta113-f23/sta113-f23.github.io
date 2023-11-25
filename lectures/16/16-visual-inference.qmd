@@ -377,7 +377,6 @@ ggplot(openintro::bdims, aes(x = hgt)) +
 :::
 
 ::: {.column width="20%"}
-
 ```{=html}
 <iframe src="https://app.sli.do/event/iJykXLe5CLzhorAiQhjnrg/embed/polls/2636081d-aad9-449f-aa77-82366fb74e5f" width="300" height="400"></iframe>
 ```
@@ -410,6 +409,7 @@ ggplot(data = bdims_permuted_lineup, aes(x = hgt)) +
   facet_wrap(~ .sample, nrow = 2)
 ```
 :::
+
 ::: {.column width="20%"}
 ```{=html}
 <iframe src="https://app.sli.do/event/iJykXLe5CLzhorAiQhjnrg/embed/polls/98b5ff30-7049-4af9-ab7d-f4cd98070cd5" width="300" height="400"></iframe>
@@ -511,22 +511,22 @@ trees_aug
     -   $H_0$: Errors are $NID(0, \sigma^2)$
     -   $H_A$: Errors are not $NID(0, \sigma^2)$
 
-. . . 
+. . .
 
-- Visual statistic: Residuals plot (residuals vs. fitted)
+-   Visual statistic: Residuals plot (residuals vs. fitted)
 
-. . . 
+. . .
 
-- Null distributions: Generate residuals from random draws from $N(0, \hat{sigma}^2)$ using the **nullabor** package
+-   Null distributions: Generate residuals from random draws from $N(0, \hat{sigma}^2)$ using the **nullabor** package
 
 ```{r}
 method <- null_lm(log(Volume) ~ log(Girth) + log(Height),
                   method = "pboot")
 ```
 
-. . . 
+. . .
 
-- Compare the visual statistic from the data to the null distributions using a **lineup**
+-   Compare the visual statistic from the data to the null distributions using a **lineup**
 
 ```{r}
 set.seed(2020)
@@ -539,8 +539,7 @@ trees_lineup <- lineup(method, true = trees_aug, n = 10)
 Which one is the real residuals plot?
 :::
 
-:::: columns
-
+::: columns
 ::: {.column width="80%"}
 ```{r}
 #| label: trees-lineup
@@ -559,13 +558,13 @@ ggplot(trees_lineup, aes(x = .fitted, y = .resid)) +
   )
 ```
 :::
+
 ::: {.column width="20%"}
 ```{=html}
 <iframe src="https://app.sli.do/event/iJykXLe5CLzhorAiQhjnrg/embed/polls/98b5ff30-7049-4af9-ab7d-f4cd98070cd5" width="300" height="400"></iframe>
 ```
 :::
-
-::::
+:::
 
 ## Decrypt
 
@@ -585,14 +584,13 @@ decrypt("K4Ul YG3G R8 oSJR3RS8 Nq")
     -   $m$: number of plots
     -   $p$: the probability of selecting the data plot
 
-. . . 
+. . .
 
-- Hypotheses: - $H_0: p = 1 / m$ - The probability of the data plot being selected is $1 / m$ (same as all other plots) - $H_A: p > 1 / m$ - The probability of the data plot being selected is greater than $1 / m$
+-   Hypotheses: - $H_0: p = 1 / m$ - The probability of the data plot being selected is $1 / m$ (same as all other plots) - $H_A: p > 1 / m$ - The probability of the data plot being selected is greater than $1 / m$
 
-. . . 
+. . .
 
-- Under $H_0, X \sim B(n, 1/m)$.
-Then, visual inference p-value:
+-   Under $H_0, X \sim B(n, 1/m)$. Then, visual inference p-value:
 
 $$ p(X \ge x) = 1 - P(X \le x - 1) = \sum_{k = x}^n {n \choose k} \frac{(m - 1)^k}{m^n} $$
 
