@@ -20,10 +20,14 @@ This homework is due Tuesday, Dec 5 at 5:00 pm ET.
 
 As we've discussed in lecture, your plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.
 
-Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete this homework and other assignments in this course. There will be periodic reminders in this assignment to remind you to knit, commit, and push your changes to GithHub. You should have **at least 3 commits with meaningful commit messages** by the end of the assignment.
+Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete this homework and other assignments in this course.
+There will be periodic reminders in this assignment to remind you to knit, commit, and push your changes to GithHub.
+You should have **at least 3 commits with meaningful commit messages** by the end of the assignment.
 
 ::: callout-note
-Note: Do not let R output answer the question for you unless the question specifically asks for just a plot. For example, if the question asks for the number of columns in the data set, please type out the number of columns. You are subject to lose points if you do not.
+Note: Do not let R output answer the question for you unless the question specifically asks for just a plot.
+For example, if the question asks for the number of columns in the data set, please type out the number of columns.
+You are subject to lose points if you do not.
 :::
 
 ## Workflow + formatting
@@ -37,17 +41,6 @@ Make sure to
 -   Resize figures where needed, avoid tiny or huge plots.
 -   Use informative title and axis labels.
 -   Turn in an organized, well formatted document.
-
-## Packages
-
-```{r}
-#| label: load-packages
-#| message: false
-
-library(tidyverse)
-library(tidymodels)
-library(openintro)
-```
 
 # Potpourri
 
