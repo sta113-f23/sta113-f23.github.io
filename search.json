@@ -1722,6 +1722,139 @@
     "text": "Grading\n\nExercise 1-9: 10 points each\nWorkflow + formatting: 10 points\nTotal: 100 points"
   },
   {
+    "objectID": "hw/hw-5.html",
+    "href": "hw/hw-5.html",
+    "title": "HW 5",
+    "section": "",
+    "text": "Important\n\n\n\nThis homework is due Tuesday, Dec 5 at 5:00 pm ET."
+  },
+  {
+    "objectID": "hw/hw-5.html#sec-guidelines-tips",
+    "href": "hw/hw-5.html#sec-guidelines-tips",
+    "title": "HW 5",
+    "section": "Guidelines + tips",
+    "text": "Guidelines + tips\nAs we’ve discussed in lecture, your plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.\nRemember that continuing to develop a sound workflow for reproducible data analysis is important as you complete this homework and other assignments in this course. There will be periodic reminders in this assignment to remind you to knit, commit, and push your changes to GithHub. You should have at least 3 commits with meaningful commit messages by the end of the assignment.\n\n\n\n\n\n\nNote\n\n\n\nNote: Do not let R output answer the question for you unless the question specifically asks for just a plot. For example, if the question asks for the number of columns in the data set, please type out the number of columns. You are subject to lose points if you do not."
+  },
+  {
+    "objectID": "hw/hw-5.html#workflow-formatting",
+    "href": "hw/hw-5.html#workflow-formatting",
+    "title": "HW 5",
+    "section": "Workflow + formatting",
+    "text": "Workflow + formatting\nMake sure to\n\nUpdate author name on your document.\nLabel all code chunks informatively and concisely.\nFollow the Tidyverse code style guidelines.\nMake at least 3 commits.\nResize figures where needed, avoid tiny or huge plots.\nUse informative title and axis labels.\nTurn in an organized, well formatted document."
+  },
+  {
+    "objectID": "hw/hw-5.html#packages",
+    "href": "hw/hw-5.html#packages",
+    "title": "HW 5",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)"
+  },
+  {
+    "objectID": "hw/hw-5.html#exercise-1",
+    "href": "hw/hw-5.html#exercise-1",
+    "title": "HW 5",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nMirror, mirror on the wall, who’s the ugliest of them all? Make a plot of the variables in the penguins dataset from the palmerpenguins package. Your plot should use at least two variables, but more is fine too. First, make the plot using the default theme and color scales. Then, update the plot to be as ugly as possible. You will probably want to play around with theme options, colors, fonts, etc. The ultimate goal is the ugliest possible plot, and the sky is the limit!"
+  },
+  {
+    "objectID": "hw/hw-5.html#exercise-2",
+    "href": "hw/hw-5.html#exercise-2",
+    "title": "HW 5",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nA new day, a new plot, a new geom. The goal of this exercise is to learn about a new type of plot (ridgeline plot) and to learn how to make it.\nUse the geom_density_ridges() function from the ggridges package to make a ridge plot of of Airbnb review scores of Edinburgh neighborhoods. The neighborhoods should be ordered by their median review scores. The data can be found in the dsbox package, and it’s called edibnb. Also include an interpretation for your visualization. You should review feedback from your Homework 1 to make sure you capture anything you may have missed previously.\n(Note: This is not a geom we introduced in class, so seeing an example of it in action will be helpful. Read the package README at https://wilkelab.org/ggridges and/or the introduction vignette at https://wilkelab.org/ggridges/articles/introduction.html. There is more information than you need for this question in the vignette; the first section on Geoms should be sufficient to help you get started.)"
+  },
+  {
+    "objectID": "hw/hw-5.html#exercise-3",
+    "href": "hw/hw-5.html#exercise-3",
+    "title": "HW 5",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nRefer back to Exercise 9 from HW 3 and write alternative text for each of the plots. You do not need to recreate the plots for this exercise, you’re only asked for the alternative text."
+  },
+  {
+    "objectID": "hw/hw-5.html#exercise-4",
+    "href": "hw/hw-5.html#exercise-4",
+    "title": "HW 5",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nThe visual uncertainty experience. Watch the video titled The visual uncertainty experience by Jessica Hullman and write a one paragraph summary of what you learned."
+  },
+  {
+    "objectID": "hw/hw-5.html#exercise-5",
+    "href": "hw/hw-5.html#exercise-5",
+    "title": "HW 5",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nTo annotate, or not to annotate? There are two ways you can get text on a ggplot: geom_text() and annoate(geom = \"text\"). Which one should you use when? Hint: Watch this video titled “Always look on the bright side of plots” by Kara Woo."
+  },
+  {
+    "objectID": "hw/hw-5.html#exercise-6",
+    "href": "hw/hw-5.html#exercise-6",
+    "title": "HW 5",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nA second chance for a homework assignment. Take one of the visualizations from a previous homework assignment, ideally one you received more feedback on / lost more points on and improve it. First, write one sentence reminding us of your the specific exercise and a a few sentences on why you chose this plot and how you plan to improve it. Some of these improvements might be “fixes” for things that were pointed out as missing or incorrect. Some of them might be things you hoped to do before the homework deadline, but didn’t get a chance to. Some notes for completing this exercise:\n\nYou will need to add your data from your the homework assignment to the data/ folder in this assignment. You do not need to also add the data dictionary.\nYou will need to copy over any code needed for cleaning / preparing your data for this plot. You can reuse code from your previous assignment but note that we will re-evaluate your code as part of the grading for this exercise. This means we might catch something wrong with it that we didn’t catch before, so if you spot any errors make sure to fix them.\nDon’t worry about being critical of your own work. Even if you lost no points on the plot, if you think it can be improved, articulate how / why. We will not go back and penalize for any mistakes you might point out that we didn’t catch at the time of grading your homework assignment. There’s no risk to being critical!"
+  },
+  {
+    "objectID": "hw/hw-5.html#exercise-7",
+    "href": "hw/hw-5.html#exercise-7",
+    "title": "HW 5",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nA second chance for Project 1. TL;DR - Same as the previous exercise, but for Project 1.\nTake one of the visualizations from your first project, ideally one you received more feedback on / lost more points on and improve it. First, write one sentence reminding us of your project and a a few sentences on why you chose this plot and how you plan to improve it. Some of these improvements might be “fixes” for things that were pointed out as missing or incorrect. Some of them might be things you hoped to do before the project deadline, but didn’t get a chance to. And some might be things you wanted to do in your project but your teammates didn’t agree so you gave up on at the time. Some notes for completing this exercise:\n\nYou will need to add your data from your project to the data/ folder in this assignment. You do not need to also add the data dictionary.\nYou will need to copy over any code needed for cleaning / preparing your data for this plot. You can reuse code from your project but note that we will re-evaluate your code as part of the grading for this exercise. This means we might catch something wrong with it that we didn’t catch before, so if you spot any errors make sure to fix them.\nDon’t worry about being critical of your own work. Even if you lost no points on the plot, if you think it can be improved, articulate how / why. We will not go back and penalize for any mistakes you might point out that we didn’t catch at the time of grading your project. There’s no risk to being critical!"
+  },
+  {
+    "objectID": "hw/hw-5.html#exercise-8",
+    "href": "hw/hw-5.html#exercise-8",
+    "title": "HW 5",
+    "section": "Exercise 8",
+    "text": "Exercise 8\nMurder rates. The following plots visualizing the same data, quite differently. Determine if each of the statements is true or false about how the two plots compare. If false, explain your reasoning.\n\nPlot 1 shows rate of change in murders from one year to the next, while Plot 2 shows the rate of murders per 100,000 people.\nPlot 2 makes it easier to see the trend in murder rates over the years while Plot 1 makes it easier to see yearly changes in murder rates.\nWhen the values in Plot 1 increase, those in Plot 2 decrease.\nThe spike after 2020 appears much bigger in Plot 1 compared to Plot 2."
+  },
+  {
+    "objectID": "hw/hw-5.html#exercise-9",
+    "href": "hw/hw-5.html#exercise-9",
+    "title": "HW 5",
+    "section": "Exercise 9",
+    "text": "Exercise 9\nInequality. The plot below comes from the book titled Inequality by Anthony B. Atkinson. Determine if each of the statements is true or false about how the two plots compare. If false, explain your reasoning.\n\nEach line represents a distinct country.\nThe plot shows how for each country poverty turns into inequality over time.\nThere is a negative relationship between poverty rate and inequality in the countries shown.\nPoverty rate is higher than inequality in each of the countries shown."
+  },
+  {
+    "objectID": "hw/hw-5.html#review",
+    "href": "hw/hw-5.html#review",
+    "title": "HW 5",
+    "section": "Review",
+    "text": "Review\nBefore you call it “done”,\n\nmake sure you’ve answered all questions (or, at least, have not skipped any accidentally) and\nreview the Section 1.1 section and make any edits/corrections needed.\n\nYou can change answers to exercises you’ve “completed” and commit and push again. We will only grade the final version of your assignment. You can commit and push as many times as you like until the deadline."
+  },
+  {
+    "objectID": "hw/hw-5.html#submission",
+    "href": "hw/hw-5.html#submission",
+    "title": "HW 5",
+    "section": "Submission",
+    "text": "Submission\nYou do not have to do anything special to “submit” your assignment. We will close the repos to further pushes at the deadline, and will take your work as of that time point as your submission.\nIf you need to submit late for any reason, contact the professor."
+  },
+  {
+    "objectID": "hw/hw-5.html#grading",
+    "href": "hw/hw-5.html#grading",
+    "title": "HW 5",
+    "section": "Grading",
+    "text": "Grading\n\nExercise 1-9: 10 points each\nWorkflow + formatting: 10 points\nTotal: 100 points"
+  },
+  {
+    "objectID": "course-overview.html",
+    "href": "course-overview.html",
+    "title": "Course overview",
+    "section": "",
+    "text": "This is the homepage for STA 113FS - Visualizing Data taught by Dr. Mine Çetinkaya-Rundel in Fall 2023 at Duke University. All course materials will be posted on this site.\nYou can find the course syllabus here and the course schedule here."
+  },
+  {
+    "objectID": "course-overview.html#class-meetings",
+    "href": "course-overview.html#class-meetings",
+    "title": "Course overview",
+    "section": "Class meetings",
+    "text": "Class meetings\n\n\n\nMeeting\nLocation\nTime\n\n\n\n\nLectures\nPerkins LINK 070 (Seminar 4)\nTue & Thu 1:25 - 2:40 pm"
+  },
+  {
+    "objectID": "course-overview.html#license",
+    "href": "course-overview.html#license",
+    "title": "Course overview",
+    "section": "License",
+    "text": "License\n\nThis online work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International. Visit here for more information about the license."
+  },
+  {
     "objectID": "hw/hw-1.html",
     "href": "hw/hw-1.html",
     "title": "HW 1 - Anti-LGBTQ+ contributions",
@@ -1832,41 +1965,6 @@
     "title": "HW 1 - Anti-LGBTQ+ contributions",
     "section": "Grading",
     "text": "Grading\n\nExercise 1-9: 10 points each\nWorkflow + formatting: 10 points\nTotal: 100 points"
-  },
-  {
-    "objectID": "course-overview.html",
-    "href": "course-overview.html",
-    "title": "Course overview",
-    "section": "",
-    "text": "This is the homepage for STA 113FS - Visualizing Data taught by Dr. Mine Çetinkaya-Rundel in Fall 2023 at Duke University. All course materials will be posted on this site.\nYou can find the course syllabus here and the course schedule here."
-  },
-  {
-    "objectID": "course-overview.html#class-meetings",
-    "href": "course-overview.html#class-meetings",
-    "title": "Course overview",
-    "section": "Class meetings",
-    "text": "Class meetings\n\n\n\nMeeting\nLocation\nTime\n\n\n\n\nLectures\nPerkins LINK 070 (Seminar 4)\nTue & Thu 1:25 - 2:40 pm"
-  },
-  {
-    "objectID": "course-overview.html#license",
-    "href": "course-overview.html#license",
-    "title": "Course overview",
-    "section": "License",
-    "text": "License\n\nThis online work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International. Visit here for more information about the license."
-  },
-  {
-    "objectID": "hw/hw-5.html",
-    "href": "hw/hw-5.html",
-    "title": "HW 5",
-    "section": "",
-    "text": "To be posted…"
-  },
-  {
-    "objectID": "hw/hw-6.html",
-    "href": "hw/hw-6.html",
-    "title": "HW 6",
-    "section": "",
-    "text": "To be posted…"
   },
   {
     "objectID": "hw/hw-4.html",
@@ -2853,7 +2951,7 @@
     "href": "lectures/16/16-visual-inference.html#setup",
     "title": "Visual inference",
     "section": "Setup",
-    "text": "Setup\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(nullabor)  # for visual inference\nlibrary(skimr)     # for skimming data"
+    "text": "Setup\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(tidymodels)\n\n── Attaching packages ────────────────────────────────────── tidymodels 1.1.1 ──\n✔ broom        1.0.5     ✔ rsample      1.2.0\n✔ dials        1.2.0     ✔ tune         1.1.2\n✔ infer        1.0.5     ✔ workflows    1.1.3\n✔ modeldata    1.2.0     ✔ workflowsets 1.0.1\n✔ parsnip      1.1.1     ✔ yardstick    1.2.0\n✔ recipes      1.0.8     \n── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──\n✖ scales::discard() masks purrr::discard()\n✖ dplyr::filter()   masks stats::filter()\n✖ recipes::fixed()  masks stringr::fixed()\n✖ dplyr::lag()      masks stats::lag()\n✖ yardstick::spec() masks readr::spec()\n✖ recipes::step()   masks stats::step()\n• Learn how to get started at https://www.tidymodels.org/start/\n\nlibrary(openintro)\n\nLoading required package: airports\nLoading required package: cherryblossom\nLoading required package: usdata\n\nAttaching package: 'openintro'\n\nThe following object is masked from 'package:modeldata':\n\n    ames\n\nlibrary(nullabor)  # for visual inference\n\n\nAttaching package: 'nullabor'\n\nThe following object is masked from 'package:dials':\n\n    sample_size\n\nlibrary(skimr)     # for skimming data"
   },
   {
     "objectID": "lectures/16/16-visual-inference.html#section",
@@ -2937,7 +3035,7 @@
     "href": "lectures/16/16-visual-inference.html#the-making-of-the-lineup-i",
     "title": "Visual inference",
     "section": "The making of the lineup I",
-    "text": "The making of the lineup I\nStep 1. Permute the data\n\nset.seed(20211029)\nmtcars_permuted_lineup &lt;- lineup(null_permute(\"mpg\"), mtcars)"
+    "text": "The making of the lineup I\nStep 1. Permute the data\n\nset.seed(20211029)\nmtcars_permuted_lineup &lt;- lineup(null_permute(\"mpg\"), mtcars)\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 g6\")"
   },
   {
     "objectID": "lectures/16/16-visual-inference.html#the-making-of-the-lineup-ii",
@@ -2965,7 +3063,7 @@
     "href": "lectures/16/16-visual-inference.html#decrypt-the-lineup",
     "title": "Visual inference",
     "section": "Decrypt the lineup",
-    "text": "Decrypt the lineup\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 g6\")\n\n[1] \"XCLQ lpbp AD kETAbAED  NA\""
+    "text": "Decrypt the lineup\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 g6\")\n\n[1] \"True data in position  16\""
   },
   {
     "objectID": "lectures/16/16-visual-inference.html#the-rorschach-protocol",
@@ -3021,7 +3119,7 @@
     "href": "lectures/16/16-visual-inference.html#decrypt-the-rorschach",
     "title": "Visual inference",
     "section": "Decrypt the rorschach",
-    "text": "Decrypt the rorschach\n\nIn this particular case there’s nothing to decrypt since p (probability of including true data with null data) is set to 0\nIf p is higher than 0, and the true null is included, you get the decryption key\n\n\nset.seed(12345)\nmtcars_permuted_rorschach &lt;- rorschach(null_permute(\"mpg\"), mtcars, p = 0.5)\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 gI\")\n\n[1] \"XCLQ lpbp AD kETAbAED  NA\""
+    "text": "Decrypt the rorschach\n\nIn this particular case there’s nothing to decrypt since p (probability of including true data with null data) is set to 0\nIf p is higher than 0, and the true null is included, you get the decryption key\n\n\nset.seed(12345)\nmtcars_permuted_rorschach &lt;- rorschach(null_permute(\"mpg\"), mtcars, p = 0.5)\n\nK4Ul YG3G R8 oSJR3RS8 gI\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 gI\")\n\n[1] \"True data in position  15\""
   },
   {
     "objectID": "lectures/16/16-visual-inference.html#generating-the-null-data-1",
@@ -3056,14 +3154,14 @@
     "href": "lectures/16/16-visual-inference.html#code-generate-null-data-with-a-specific-distribution",
     "title": "Visual inference",
     "section": "Code: Generate null data with a specific distribution",
-    "text": "Code: Generate null data with a specific distribution\nGenerate the null distribution\n\nset.seed(20211029)\n\nbdims_permuted_lineup &lt;- lineup(null_dist(\"hgt\", dist = \"normal\"), n = 10, true = bdims)"
+    "text": "Code: Generate null data with a specific distribution\nGenerate the null distribution\n\nset.seed(20211029)\n\nbdims_permuted_lineup &lt;- lineup(null_dist(\"hgt\", dist = \"normal\"), n = 10, true = bdims)\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 Ng\")"
   },
   {
     "objectID": "lectures/16/16-visual-inference.html#code-decrypt",
     "href": "lectures/16/16-visual-inference.html#code-decrypt",
     "title": "Visual inference",
     "section": "Code: Decrypt",
-    "text": "Code: Decrypt\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 Ng\")\n\n[1] \"XCLQ lpbp AD kETAbAED  NA\""
+    "text": "Code: Decrypt\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 Ng\")\n\n[1] \"True data in position  2\""
   },
   {
     "objectID": "lectures/16/16-visual-inference.html#generating-the-null-data-with-residuals-from-a-model",
@@ -3105,7 +3203,7 @@
     "href": "lectures/16/16-visual-inference.html#test",
     "title": "Visual inference",
     "section": "Test",
-    "text": "Test\n\nHypotheses:\n\n\\(H_0\\): Errors are \\(NID(0, \\sigma^2)\\)\n\\(H_A\\): Errors are not \\(NID(0, \\sigma^2)\\)\n\n\n\n\nVisual statistic: Residuals plot (residuals vs. fitted)\n\n\n\n\nNull distributions: Generate residuals from random draws from \\(N(0, \\hat{sigma}^2)\\) using the nullabor package\n\n\nmethod &lt;- null_lm(log(Volume) ~ log(Girth) + log(Height),\n                  method = \"pboot\")\n\n\n\n\nCompare the visual statistic from the data to the null distributions using a lineup\n\n\nset.seed(2020)\ntrees_lineup &lt;- lineup(method, true = trees_aug, n = 10)"
+    "text": "Test\n\nHypotheses:\n\n\\(H_0\\): Errors are \\(NID(0, \\sigma^2)\\)\n\\(H_A\\): Errors are not \\(NID(0, \\sigma^2)\\)\n\n\n\n\nVisual statistic: Residuals plot (residuals vs. fitted)\n\n\n\n\nNull distributions: Generate residuals from random draws from \\(N(0, \\hat{sigma}^2)\\) using the nullabor package\n\n\nmethod &lt;- null_lm(log(Volume) ~ log(Girth) + log(Height),\n                  method = \"pboot\")\n\n\n\n\nCompare the visual statistic from the data to the null distributions using a lineup\n\n\nset.seed(2020)\ntrees_lineup &lt;- lineup(method, true = trees_aug, n = 10)\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 Nq\")"
   },
   {
     "objectID": "lectures/16/16-visual-inference.html#lineup",
@@ -3119,7 +3217,7 @@
     "href": "lectures/16/16-visual-inference.html#decrypt",
     "title": "Visual inference",
     "section": "Decrypt",
-    "text": "Decrypt\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 Nq\")\n\n[1] \"XCLQ lpbp AD kETAbAED  NA\""
+    "text": "Decrypt\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 Nq\")\n\n[1] \"True data in position  3\""
   },
   {
     "objectID": "lectures/16/16-visual-inference.html#the-visual-inference-test-1",
