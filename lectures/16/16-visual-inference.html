@@ -661,10 +661,10 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <img data-src="16-visual-inference_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:100.0%" class="r-stretch"></section>
 <section id="decrypt-the-lineup" class="slide level2">
 <h2>Decrypt the lineup</h2>
-<div class="cell" data-hash="16-visual-inference_cache/revealjs/unnamed-chunk-7_45ba8bef89002360e716e96948366e0c">
+<div class="cell" data-hash="16-visual-inference_cache/revealjs/unnamed-chunk-7_e244328223f651d67f2651bb3789a9a4">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">decrypt</span>(<span class="st">"K4Ul YG3G R8 oSJR3RS8 g6"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "True data in position  16"</code></pre>
+<pre><code>[1] "XCLQ lpbp AD kETAbAED  NA"</code></pre>
 </div>
 </div>
 </section></section>
@@ -782,12 +782,12 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <li><p>In this particular case there’s nothing to decrypt since <code>p</code> (probability of including true data with null data) is set to 0</p></li>
 <li><p>If <code>p</code> is higher than 0, and the true null is included, you get the decryption key</p></li>
 </ul>
-<div class="cell" data-hash="16-visual-inference_cache/revealjs/decrypt-mtcars-rorschach-p05_c7e15edc6ab504cc7fad6cf09bdcb349">
+<div class="cell" data-hash="16-visual-inference_cache/revealjs/decrypt-mtcars-rorschach-p05_45f711f46acd49b0a5660268261e1e1c">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
 <span id="cb16-2"><a href="#cb16-2"></a>mtcars_permuted_rorschach <span class="ot">&lt;-</span> <span class="fu">rorschach</span>(<span class="fu">null_permute</span>(<span class="st">"mpg"</span>), mtcars, <span class="at">p =</span> <span class="fl">0.5</span>)</span>
 <span id="cb16-3"><a href="#cb16-3"></a><span class="fu">decrypt</span>(<span class="st">"K4Ul YG3G R8 oSJR3RS8 gI"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "True data in position  15"</code></pre>
+<pre><code>[1] "XCLQ lpbp AD kETAbAED  NA"</code></pre>
 </div>
 </div>
 </section></section>
@@ -873,7 +873,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">decrypt</span>(<span class="st">"K4Ul YG3G R8 oSJR3RS8 Ng"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "True data in position  2"</code></pre>
+<pre><code>[1] "XCLQ lpbp AD kETAbAED  NA"</code></pre>
 </div>
 </div>
 </section>
@@ -1033,10 +1033,10 @@ Group variables            None
 </section>
 <section id="decrypt" class="slide level2">
 <h2>Decrypt</h2>
-<div class="cell" data-hash="16-visual-inference_cache/revealjs/unnamed-chunk-26_9bc439285ccbf631cc01e7cbb1cfdeb9">
+<div class="cell" data-hash="16-visual-inference_cache/revealjs/unnamed-chunk-26_e60171e933ece15e6364c21e8f316ada">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">decrypt</span>(<span class="st">"K4Ul YG3G R8 oSJR3RS8 Nq"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "True data in position  3"</code></pre>
+<pre><code>[1] "XCLQ lpbp AD kETAbAED  NA"</code></pre>
 </div>
 </div>
 </section></section>

@@ -2965,7 +2965,7 @@
     "href": "lectures/16/16-visual-inference.html#decrypt-the-lineup",
     "title": "Visual inference",
     "section": "Decrypt the lineup",
-    "text": "Decrypt the lineup\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 g6\")\n\n[1] \"True data in position  16\""
+    "text": "Decrypt the lineup\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 g6\")\n\n[1] \"XCLQ lpbp AD kETAbAED  NA\""
   },
   {
     "objectID": "lectures/16/16-visual-inference.html#the-rorschach-protocol",
@@ -3021,7 +3021,7 @@
     "href": "lectures/16/16-visual-inference.html#decrypt-the-rorschach",
     "title": "Visual inference",
     "section": "Decrypt the rorschach",
-    "text": "Decrypt the rorschach\n\nIn this particular case there’s nothing to decrypt since p (probability of including true data with null data) is set to 0\nIf p is higher than 0, and the true null is included, you get the decryption key\n\n\nset.seed(12345)\nmtcars_permuted_rorschach &lt;- rorschach(null_permute(\"mpg\"), mtcars, p = 0.5)\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 gI\")\n\n[1] \"True data in position  15\""
+    "text": "Decrypt the rorschach\n\nIn this particular case there’s nothing to decrypt since p (probability of including true data with null data) is set to 0\nIf p is higher than 0, and the true null is included, you get the decryption key\n\n\nset.seed(12345)\nmtcars_permuted_rorschach &lt;- rorschach(null_permute(\"mpg\"), mtcars, p = 0.5)\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 gI\")\n\n[1] \"XCLQ lpbp AD kETAbAED  NA\""
   },
   {
     "objectID": "lectures/16/16-visual-inference.html#generating-the-null-data-1",
@@ -3063,7 +3063,7 @@
     "href": "lectures/16/16-visual-inference.html#code-decrypt",
     "title": "Visual inference",
     "section": "Code: Decrypt",
-    "text": "Code: Decrypt\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 Ng\")\n\n[1] \"True data in position  2\""
+    "text": "Code: Decrypt\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 Ng\")\n\n[1] \"XCLQ lpbp AD kETAbAED  NA\""
   },
   {
     "objectID": "lectures/16/16-visual-inference.html#generating-the-null-data-with-residuals-from-a-model",
@@ -3119,7 +3119,7 @@
     "href": "lectures/16/16-visual-inference.html#decrypt",
     "title": "Visual inference",
     "section": "Decrypt",
-    "text": "Decrypt\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 Nq\")\n\n[1] \"True data in position  3\""
+    "text": "Decrypt\n\ndecrypt(\"K4Ul YG3G R8 oSJR3RS8 Nq\")\n\n[1] \"XCLQ lpbp AD kETAbAED  NA\""
   },
   {
     "objectID": "lectures/16/16-visual-inference.html#the-visual-inference-test-1",
