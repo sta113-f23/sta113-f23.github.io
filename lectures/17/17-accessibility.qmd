@@ -12,7 +12,11 @@ format:
 
 ## Announcements
 
--   ...
+-   Peer eval 1 due today at 5pm, comments will be published later this evening.
+
+-   Set up a meeting with Shelby and your **entire** team for 30 minutes between today and next Tuesday to review your project.
+
+-   Due date of last HW: Fri, Dec 8
 
 ## Setup
 
@@ -31,15 +35,17 @@ library(coloratio) # devtools::install_github("matt-dray/coloratio")
 ![](images/flatten-the-curve.jpeg){fig-align="center"}
 
 ::: aside
-Source: The New York Times. [Flattening the Coronavirus Curve](https://www.nytimes.com/article/flatten-curve-coronavirus.html)
+Source: The New York Times.
+[Flattening the Coronavirus Curve](https://www.nytimes.com/article/flatten-curve-coronavirus.html)
 :::
 
-## Exponential spread
+## Exponential spread {.smaller}
 
 ![](images/wapo-covid.png){fig-align="center" width="1201"}
 
 ::: aside
-Source: The Washington Post. [Why outbreaks like coronavirus spread exponentially, and how to "flatten the curve"](https://www.washingtonpost.com/graphics/2020/world/corona-simulator/)
+Source: The Washington Post.
+[Why outbreaks like coronavirus spread exponentially, and how to "flatten the curve"](https://www.washingtonpost.com/graphics/2020/world/corona-simulator/)
 :::
 
 ## JHU COVID-19 Dashboard
@@ -257,7 +263,30 @@ Arvind Satyanarayan, MIT CSAIL
 
 IEEE Transactions on Visualization & Computer Graphics (Proceedings of IEEE VIS), 2021
 
-> To demonstrate how our model can be applied to evaluate the effectiveness of visualization descriptions, we conduct a mixed-methods evaluation with 30 blind and 90 sighted readers, and find that these reader groups differ significantly on which semantic content they rank as most useful. Together, our model and findings suggest that access to meaningful information is strongly reader-specific, and that research in automatic visualization captioning should orient toward descriptions that more richly communicate overall trends and statistics, sensitive to reader preferences.
+> To demonstrate how our model can be applied to evaluate the effectiveness of visualization descriptions, we conduct a mixed-methods evaluation with 30 blind and 90 sighted readers, and find that these reader groups differ significantly on which semantic content they rank as most useful.
+> Together, our model and findings suggest that access to meaningful information is strongly reader-specific, and that research in automatic visualization captioning should orient toward descriptions that more richly communicate overall trends and statistics, sensitive to reader preferences.
+
+## Adding alt text to plots
+
+-   Short:
+
+```{r}
+#| echo: fenced
+#| fig-alt: Alt text goes here.
+
+# code for plot goes here
+```
+
+-   Longer:
+
+```{r}
+#| echo: fenced
+#| fig-alt: | 
+#|   Longer alt text goes here. Make sure to add line breaks ~roughly
+#|   80 characters.
+
+# code for plot goes here
+```
 
 # Accessibility and colors
 
@@ -350,7 +379,8 @@ nurses_subset |>
 
 -   Best way to test is with users (or collaborators) who have these color deficiencies
 
--   Simulation software also helps, e.g. Sim Daltonism for [Mac](https://michelf.ca/projects/sim-daltonism/) and [PC](https://pcmacstore.com/en/app/693112260/sim-daltonism)
+-   Simulation software also helps, e.g.
+    Sim Daltonism for [Mac](https://michelf.ca/projects/sim-daltonism/) and [PC](https://pcmacstore.com/en/app/693112260/sim-daltonism)
 
 ## Color contrast I
 
@@ -529,10 +559,12 @@ nurses_subset |>
 :::
 :::
 
-## {.center}
+##  {.center}
 
 ::: task
-Find a colorblind friendly color palette other than viridis and those in the colorblindr package. This could be an R package that offers a colorblind friendly color palette or it could be just a palette you find online. Apply it to the scatterplot you previously wrote alt text for.
+Find a colorblind friendly color palette other than viridis and those in the colorblindr package.
+This could be an R package that offers a colorblind friendly color palette or it could be just a palette you find online.
+Apply it to the scatterplot you previously wrote alt text for.
 :::
 
 # Accessibility and fonts
@@ -586,8 +618,10 @@ Examples: <https://datajournalism.com/read/longreads/lets-get-physical-how-to-re
     -   [COVID-19 Dashboard by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU)](https://coronavirus.jhu.edu/map.html)
     -   T. Littlefield (2020) [COVID-19 Statistics Tracker](https://cvstats.net)
 
--   Lundgard, Alan, and Arvind Satyanarayan. ["Accessible Visualization via Natural Language Descriptions: A Four-Level Model of Semantic Content."](https://ieeexplore.ieee.org/abstract/document/9555469) IEEE transactions on visualization and computer graphics (2021).
+-   Lundgard, Alan, and Arvind Satyanarayan.
+    ["Accessible Visualization via Natural Language Descriptions: A Four-Level Model of Semantic Content."](https://ieeexplore.ieee.org/abstract/document/9555469) IEEE transactions on visualization and computer graphics (2021).
 
 -   [A Comprehensive Guide to Accessible Data Visualization](https://www.betterment.com/resources/accessible-data-visualization/)
 
--   Silvia Canelón and Liz Hare. [Revealing Room for Improvement in Accessibility within a Social Media Data Visualization Learning Community](https://spcanelon.github.io/csvConf2021/slides/#1)
+-   Silvia Canelón and Liz Hare.
+    [Revealing Room for Improvement in Accessibility within a Social Media Data Visualization Learning Community](https://spcanelon.github.io/csvConf2021/slides/#1)
