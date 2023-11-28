@@ -586,7 +586,9 @@ decrypt("K4Ul YG3G R8 oSJR3RS8 Nq")
 
 . . .
 
--   Hypotheses: - $H_0: p = 1 / m$ - The probability of the data plot being selected is $1 / m$ (same as all other plots) - $H_A: p > 1 / m$ - The probability of the data plot being selected is greater than $1 / m$
+-   Hypotheses:
+    -   $H_0: p = 1 / m$ - The probability of the data plot being selected is $1 / m$ (same as all other plots)
+    -   $H_A: p > 1 / m$ - The probability of the data plot being selected is greater than $1 / m$
 
 . . .
 
