@@ -419,7 +419,9 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
 <ul>
-<li>…</li>
+<li><p>Peer eval 1 due today at 5pm, comments will be published later this evening.</p></li>
+<li><p>Set up a meeting with Shelby and your <strong>entire</strong> team for 30 minutes between today and next Tuesday to review your project.</p></li>
+<li><p>Due date of last HW: Fri, Dec 8</p></li>
 </ul>
 </section>
 <section id="setup" class="slide level2">
@@ -448,7 +450,7 @@ Dr.&nbsp;Mine Çetinkaya-Rundel
 <aside><div>
 <p>Source: The New York Times. <a href="https://www.nytimes.com/article/flatten-curve-coronavirus.html">Flattening the Coronavirus Curve</a></p>
 </div></aside></section>
-<section id="exponential-spread" class="slide level2">
+<section id="exponential-spread" class="slide level2 smaller">
 <h2>Exponential spread</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -662,6 +664,31 @@ Arvind Satyanarayan, MIT CSAIL</p>
 <blockquote>
 <p>To demonstrate how our model can be applied to evaluate the effectiveness of visualization descriptions, we conduct a mixed-methods evaluation with 30 blind and 90 sighted readers, and find that these reader groups differ significantly on which semantic content they rank as most useful. Together, our model and findings suggest that access to meaningful information is strongly reader-specific, and that research in automatic visualization captioning should orient toward descriptions that more richly communicate overall trends and statistics, sensitive to reader preferences.</p>
 </blockquote>
+</section>
+<section id="adding-alt-text-to-plots" class="slide level2">
+<h2>Adding alt text to plots</h2>
+<ul>
+<li>Short:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="in">#| fig-alt: Alt text goes here.</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="in"># code for plot goes here</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Longer:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="in">#| fig-alt: |</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="in">#|   Longer alt text goes here. Make sure to add line breaks ~roughly</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="in">#|   80 characters.</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="in"># code for plot goes here</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section></section>
 <section>
 <section id="accessibility-and-colors" class="title-slide slide level1 center">
@@ -680,19 +707,19 @@ Arvind Satyanarayan, MIT CSAIL</p>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>nurses_subset <span class="sc">|&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> hourly_wage_median, <span class="at">color =</span> state)) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>  ggthemes<span class="sc">::</span><span class="fu">scale_color_colorblind</span>() <span class="sc">+</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_dollar</span>()) <span class="sc">+</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">labs</span>(</span>
-<span id="cb5-7"><a href="#cb5-7"></a>    <span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Median hourly wage"</span>, <span class="at">color =</span> <span class="st">"State"</span>,</span>
-<span id="cb5-8"><a href="#cb5-8"></a>    <span class="at">title =</span> <span class="st">"Median hourly wage of Registered Nurses"</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a>  <span class="fu">theme</span>(</span>
-<span id="cb5-11"><a href="#cb5-11"></a>    <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.15</span>, <span class="fl">0.75</span>),</span>
-<span id="cb5-12"><a href="#cb5-12"></a>    <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">color =</span> <span class="st">"white"</span>)</span>
-<span id="cb5-13"><a href="#cb5-13"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>nurses_subset <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> hourly_wage_median, <span class="at">color =</span> state)) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>  ggthemes<span class="sc">::</span><span class="fu">scale_color_colorblind</span>() <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_dollar</span>()) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-7"><a href="#cb7-7"></a>    <span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Median hourly wage"</span>, <span class="at">color =</span> <span class="st">"State"</span>,</span>
+<span id="cb7-8"><a href="#cb7-8"></a>    <span class="at">title =</span> <span class="st">"Median hourly wage of Registered Nurses"</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>  <span class="fu">theme</span>(</span>
+<span id="cb7-11"><a href="#cb7-11"></a>    <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.15</span>, <span class="fl">0.75</span>),</span>
+<span id="cb7-12"><a href="#cb7-12"></a>    <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">color =</span> <span class="st">"white"</span>)</span>
+<span id="cb7-13"><a href="#cb7-13"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -726,7 +753,7 @@ Arvind Satyanarayan, MIT CSAIL</p>
 <p><strong>Default ggplot2 scale</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="17-accessibility_files/figure-revealjs/unnamed-chunk-9-1.png" style="width:100.0%"></p>
+<p><img data-src="17-accessibility_files/figure-revealjs/unnamed-chunk-11-1.png" style="width:100.0%"></p>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
@@ -743,7 +770,7 @@ Arvind Satyanarayan, MIT CSAIL</p>
 <h2>Testing for colorblind friendliness</h2>
 <ul>
 <li><p>Best way to test is with users (or collaborators) who have these color deficiencies</p></li>
-<li><p>Simulation software also helps, e.g.&nbsp;Sim Daltonism for <a href="https://michelf.ca/projects/sim-daltonism/">Mac</a> and <a href="https://pcmacstore.com/en/app/693112260/sim-daltonism">PC</a></p></li>
+<li><p>Simulation software also helps, e.g. Sim Daltonism for <a href="https://michelf.ca/projects/sim-daltonism/">Mac</a> and <a href="https://pcmacstore.com/en/app/693112260/sim-daltonism">PC</a></p></li>
 </ul>
 </section>
 <section id="color-contrast-i" class="slide level2">
@@ -757,15 +784,15 @@ Arvind Satyanarayan, MIT CSAIL</p>
 <h2>Color contrast II</h2>
 <p>A WIP R package for checking for color contrast: <a href="https://matt-dray.github.io/coloratio"><strong>coloratio</strong></a></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">cr_get_ratio</span>(<span class="st">"black"</span>, <span class="st">"white"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">cr_get_ratio</span>(<span class="st">"black"</span>, <span class="st">"white"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 21</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">cr_get_ratio</span>(<span class="st">"#FFFFFF"</span>, <span class="st">"#000000"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">cr_get_ratio</span>(<span class="st">"#FFFFFF"</span>, <span class="st">"#000000"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 21</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">cr_get_ratio</span>(<span class="st">"black"</span>, <span class="st">"gray10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">cr_get_ratio</span>(<span class="st">"black"</span>, <span class="st">"gray10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.206596</code></pre>
 </div>
@@ -780,7 +807,7 @@ Arvind Satyanarayan, MIT CSAIL</p>
 <p><strong>Default ggplot2 scale</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="17-accessibility_files/figure-revealjs/unnamed-chunk-11-1.png" style="width:100.0%"></p>
+<p><img data-src="17-accessibility_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:100.0%"></p>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
@@ -809,7 +836,7 @@ Arvind Satyanarayan, MIT CSAIL</p>
 <p><strong>Default ggplot2 scale</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="17-accessibility_files/figure-revealjs/unnamed-chunk-12-1.png" style="width:100.0%"></p>
+<p><img data-src="17-accessibility_files/figure-revealjs/unnamed-chunk-14-1.png" style="width:100.0%"></p>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
@@ -829,7 +856,7 @@ Arvind Satyanarayan, MIT CSAIL</p>
 <p><strong>Default ggplot2 scale</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="17-accessibility_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:100.0%"></p>
+<p><img data-src="17-accessibility_files/figure-revealjs/unnamed-chunk-15-1.png" style="width:100.0%"></p>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
@@ -856,7 +883,7 @@ Arvind Satyanarayan, MIT CSAIL</p>
 <p><strong>Default ggplot2 scale</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="17-accessibility_files/figure-revealjs/unnamed-chunk-14-1.png" style="width:100.0%"></p>
+<p><img data-src="17-accessibility_files/figure-revealjs/unnamed-chunk-16-1.png" style="width:100.0%"></p>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
@@ -876,7 +903,7 @@ Arvind Satyanarayan, MIT CSAIL</p>
 <p><strong>Default ggplot2 scale</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="17-accessibility_files/figure-revealjs/unnamed-chunk-15-1.png" style="width:100.0%"></p>
+<p><img data-src="17-accessibility_files/figure-revealjs/unnamed-chunk-17-1.png" style="width:100.0%"></p>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
