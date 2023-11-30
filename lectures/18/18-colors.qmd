@@ -12,7 +12,8 @@ format:
 
 ## Announcements
 
--   ...
+-   Any project questions?
+-   Any specific requests for tips to cover on Tuesday?
 
 ## Setup
 
@@ -21,11 +22,9 @@ library(countdown)
 library(tidyverse)
 library(scales)
 library(ggthemes)
-
 library(cowplot)
 library(colorspace)
 library(ggrepel)
-library(here)
 
 theme_set(theme_gray(14)) # 16 for full width, 18 for half width 
 ```
