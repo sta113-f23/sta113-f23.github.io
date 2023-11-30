@@ -2902,14 +2902,14 @@
     "href": "lectures/18/18-colors.html#announcements",
     "title": "Colors",
     "section": "Announcements",
-    "text": "Announcements\n\n…"
+    "text": "Announcements\n\nAny project questions?\nAny specific requests for tips to cover on Tuesday?"
   },
   {
     "objectID": "lectures/18/18-colors.html#setup",
     "href": "lectures/18/18-colors.html#setup",
     "title": "Colors",
     "section": "Setup",
-    "text": "Setup\n\nlibrary(countdown)\nlibrary(tidyverse)\nlibrary(scales)\nlibrary(ggthemes)\n\nlibrary(cowplot)\nlibrary(colorspace)\nlibrary(ggrepel)\nlibrary(here)\n\ntheme_set(theme_gray(14)) # 16 for full width, 18 for half width"
+    "text": "Setup\n\nlibrary(countdown)\nlibrary(tidyverse)\nlibrary(scales)\nlibrary(ggthemes)\nlibrary(cowplot)\nlibrary(colorspace)\nlibrary(ggrepel)\n\ntheme_set(theme_gray(14)) # 16 for full width, 18 for half width"
   },
   {
     "objectID": "lectures/18/18-colors.html#uses-of-color-in-data-visualization",
