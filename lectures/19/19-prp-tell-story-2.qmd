@@ -1,0 +1,464 @@
+---
+title: "Presentation ready plots 2:<br>Telling a story"
+subtitle: Lecture 19
+format: 
+  revealjs:
+    fig-align: center
+    fig-width: 5
+    fig-asp: 0.618
+editor_options: 
+  chunk_output_type: console
+---
+
+# Warm-up
+
+## Announcements
+
+-   ...
+
+## Code review
+
+-   Clone your assigned team's project and (try to) render it
+-   First, review the organization of the project/repo
+-   Then, review the code and open issues associated with any lines of code you want to make specific comments about \[DEMO\]
+-   Finally, fill out the "Code review" issue
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 25)
+```
+
+## Setup {.smaller}
+
+```{r}
+#| label: setup
+#| message: false
+
+# load packages
+library(tidyverse)
+library(palmerpenguins)
+library(fs)
+library(lubridate)
+library(scales)
+library(openintro)
+library(colorspace)
+library(glue)
+
+# set theme for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14))
+```
+
+# Themes
+
+## Complete themes {.smaller}
+
+```{r}
+#| message: false
+#| warning: false
+#| layout-ncol: 3
+
+p <- ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point()
+
+p + theme_gray() + labs(title = "Gray")
+p + theme_void() + labs(title = "Void")
+p + theme_dark() + labs(title = "Dark")
+```
+
+## Themes from ggthemes {.smaller}
+
+```{r}
+#| message: false
+#| warning: false
+#| layout-ncol: 3
+
+library(ggthemes)
+
+p + theme_fivethirtyeight() + labs(title = "FiveThirtyEight")
+p + theme_economist() + labs(title = "Economist")
+p + theme_wsj() + labs(title = "Wall Street Journal")
+```
+
+## Themes and color scales from ggthemes {.smaller}
+
+```{r}
+#| message: false
+#| warning: false
+#| fig-width: 10
+#| fig-asp: 0.5
+
+p + 
+  aes(color = species) +
+  scale_color_wsj() +
+  theme_wsj() + 
+  labs(title = "Wall Street Journal")
+```
+
+## Modifying theme elements {.smaller}
+
+```{r}
+#| message: false
+#| warning: false
+#| fig-asp: 0.5
+
+p + 
+  labs(title = "Palmer penguins") +
+  theme(
+    plot.title = element_text(color = "red", face = "bold", family = "Comic Sans MS"),
+    plot.background = element_rect(color = "red", fill = "mistyrose")
+  )
+```
+
+# Axes
+
+## Presidential terms {.smaller}
+
+::: task
+How can the following figure be improved with custom breaks in axes, if at all?
+:::
+
+::: panel-tabset
+## Plot
+
+```{r}
+#| ref.label: presidential-start
+#| echo: false
+#| fig-width: 8
+#| fig-asp: 0.618
+```
+
+## Code
+
+```{r}
+#| label: presidential-start
+#| fig-show: hide
+
+ggplot(presidential, aes(x = start, xend = end, y = name, yend = name)) +
+  geom_segment()
+```
+
+## Data
+
+```{r}
+presidential
+```
+:::
+
+## Context matters: y-axis breaks
+
+```{r}
+presidential |>
+  mutate(name = fct_reorder(name, start)) |>
+  ggplot(aes(x = start, xend = end, y = name, yend = name)) +
+  geom_segment()
+```
+
+## Context matters: y-axis breaks
+
+```{r}
+#| output-location: slide
+#| fig-width: 8
+#| fig-asp: 0.618
+
+presidential |>
+  mutate(
+    name = case_when(
+      name == "Bush" & year(start) == 1989 ~ "Bush I",
+      name == "Bush" & year(start) == 2001 ~ "Bush II",
+      .default = name
+    ),
+    name = fct_reorder(name, start)
+  ) |>
+  ggplot(aes(x = start, xend = end, y = name, yend = name)) +
+  geom_segment()
+```
+
+## Context matters: x-axis breaks
+
+```{r}
+#| output-location: slide
+#| fig-width: 8
+#| fig-asp: 0.618
+
+presidential <- presidential |>
+  mutate(
+    name = case_when(
+      name == "Bush" & year(start) == 1989 ~ "Bush I",
+      name == "Bush" & year(start) == 2001 ~ "Bush II",
+      .default = name
+    ),
+    name = fct_reorder(name, start),
+    start = year(start),
+    end = year(end)
+  )
+
+ggplot(
+  presidential,
+  aes(x = start, xend = end, y = name, yend = name)
+  ) +
+  geom_segment() +
+  scale_x_continuous(
+    breaks = seq(from = 1952, to = 2020, by = 4),
+    minor_breaks = NULL
+  )
+```
+
+## Colors matter
+
+```{r}
+#| output-location: slide
+#| fig-width: 8
+#| fig-asp: 0.618
+
+ggplot(
+  presidential,
+  aes(x = start, xend = end, y = name, yend = name,
+      color = party)
+  ) +
+  geom_segment(show.legend = FALSE) +
+  scale_x_continuous(
+    breaks = seq(from = 1952, to = 2020, by = 4),
+    minor_breaks = NULL
+  ) +
+  scale_color_manual(
+    values = c(
+      "Democratic" = "blue",
+      "Republican" = "red"
+    )
+  )
+```
+
+## Precision matters
+
+```{r}
+#| output-location: slide
+#| fig-width: 8
+#| fig-asp: 0.618
+
+ggplot(
+  presidential,
+  aes(x = start, xend = end, y = name, yend = name, color = party)
+  ) +
+  geom_segment(show.legend = FALSE) +
+  scale_x_continuous(
+    breaks = seq(from = 1952, to = 2020, by = 4),
+    minor_breaks = NULL
+  ) +
+  scale_color_manual(
+    values = c(
+      "Democratic" = "blue",
+      "Republican" = "red"
+    )
+  ) +
+  labs(x = "Election year", y = "President")
+```
+
+# Annotation
+
+## Why annotate?
+
+![](images/stocks.png)
+
+::: aside
+<https://bl.ocks.org/susielu/23dc3082669ee026c552b85081d90976>
+:::
+
+## `geom_text()` {.smaller}
+
+Can be useful when individual observations are identifiable, but can also get overwhelming...
+
+::: task
+How would you improve this visualization?
+:::
+
+::: columns
+::: {.column width="50%"}
+```{r}
+ggplot(state_stats, aes(x = homeownership, y = pop2010)) + 
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+ggplot(state_stats, aes(x = homeownership, y = pop2010)) + 
+  geom_text(aes(label = abbr))
+```
+:::
+:::
+
+## All of the data doesn't tell a story
+
+![](images/recession-1.png){fig-align="center" width="900"}
+
+::: aside
+[How the Recession Reshaped the Economy, in 255 Charts](https://www.nytimes.com/interactive/2014/06/05/upshot/how-the-recession-reshaped-the-economy-in-255-charts.html), NY Times (2014)
+:::
+
+## 
+
+![](images/recession-2.png){fig-align="center" width="900"}
+
+::: aside
+[How the Recession Reshaped the Economy, in 255 Charts](https://www.nytimes.com/interactive/2014/06/05/upshot/how-the-recession-reshaped-the-economy-in-255-charts.html), NY Times (2014)
+:::
+
+## 
+
+![](images/recession-3.png){fig-align="center" width="900"}
+
+::: aside
+[How the Recession Reshaped the Economy, in 255 Charts](https://www.nytimes.com/interactive/2014/06/05/upshot/how-the-recession-reshaped-the-economy-in-255-charts.html), NY Times (2014)
+:::
+
+## Highlighting in ggplot2
+
+We have (at least) two options:
+
+1.  Native ggplot2 -- use layers
+
+2.  gghighlight: <https://yutannihilation.github.io/gghighlight/articles/gghighlight.html>
+
+## Data: SF AQI {.smaller}
+
+```{r}
+#| include: false
+sf_files <- fs::dir_ls(here::here("lectures/19/", "data/san-francisco"))
+```
+
+```{r}
+#| eval: false
+
+sf_files <- fs::dir_ls(here::here("data/san-francisco"))
+```
+
+```{r}
+#| message: false
+
+sf <- read_csv(sf_files, na = c(".", ""))
+
+sf <- sf |>
+  janitor::clean_names() |>
+  mutate(date = mdy(date)) |>
+  arrange(date) |>
+  select(date, aqi_value)
+
+sf
+```
+
+## Data prep {.smaller}
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| code-line-numbers: "|3|4"
+sf <- sf |>
+  mutate(
+    year = year(date),
+    day_of_year = yday(date)
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+# check
+sf |>
+  filter(day_of_year < 3)
+```
+:::
+:::
+
+## Plot AQI over years
+
+```{r}
+ggplot(sf, aes(x = day_of_year, y = aqi_value, group = year)) +
+  geom_line()
+```
+
+## Plot AQI over years
+
+```{r}
+ggplot(sf, aes(x = day_of_year, y = aqi_value, group = year, color = year)) +
+  geom_line()
+```
+
+## Plot AQI over years
+
+```{r}
+ggplot(sf, aes(x = day_of_year, y = aqi_value, group = year, color = factor(year))) +
+  geom_line()
+```
+
+## Highlight 2016 {.smaller}
+
+```{r}
+#| code-line-numbers: "|3"
+
+ggplot(sf, aes(x = day_of_year, y = aqi_value, group = year)) +
+  geom_line(color = "gray") +
+  geom_line(data = sf |> filter(year == 2016), color = "red") +
+  labs(
+    title = "AQI levels in SF in 2016",
+    subtitle = "Versus all years 2016 - 2022",
+    x = "Day of year", y = "AQI value"
+    )
+```
+
+## Highlight 2017 {.smaller}
+
+```{r}
+ggplot(sf, aes(x = day_of_year, y = aqi_value, group = year)) +
+  geom_line(color = "gray") +
+  geom_line(data = sf |> filter(year == 2017), color = "red") +
+  labs(
+    title = "AQI levels in SF in 2017",
+    subtitle = "Versus all years 2016 - 2022",
+    x = "Day of year", y = "AQI value"
+    )
+```
+
+## Highlight 2018 {.smaller}
+
+```{r}
+ggplot(sf, aes(x = day_of_year, y = aqi_value, group = year)) +
+  geom_line(color = "gray") +
+  geom_line(data = sf |> filter(year == 2018), color = "red") +
+  labs(
+    title = "AQI levels in SF in 2018",
+    subtitle = "Versus all years 2016 - 2022",
+    x = "Day of year", y = "AQI value"
+    )
+```
+
+## Highlight any year {.smaller}
+
+```{r}
+#| code-line-numbers: "|1|5|7"
+
+year_to_highlight <- 2018
+
+ggplot(sf, aes(x = day_of_year, y = aqi_value, group = year)) +
+  geom_line(color = "gray") +
+  geom_line(data = sf |> filter(year == year_to_highlight), color = "red") +
+  labs(
+    title = glue("AQI levels in SF in {year_to_highlight}"),
+    subtitle = "Versus all years 2016 - 2022",
+    x = "Day of year", y = "AQI value"
+    )
+```
+
+# Quarto
+
+## Quarto tips
+
+-   Figures and tables
+
+-   Cross references
+
+-   Bibliography
+
+-   Slides
+
+-   
