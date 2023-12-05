@@ -3553,21 +3553,63 @@
     "href": "lectures/19/19-prp-tell-story-2.html#announcements",
     "title": "Presentation ready plots 2:Telling a story",
     "section": "Announcements",
-    "text": "Announcements\n\n…"
+    "text": "Announcements\n\nProject 2 presentations in class on Thursday – food preference?\nAny questions?"
+  },
+  {
+    "objectID": "lectures/19/19-prp-tell-story-2.html#exam-2-redo-optional",
+    "href": "lectures/19/19-prp-tell-story-2.html#exam-2-redo-optional",
+    "title": "Presentation ready plots 2:Telling a story",
+    "section": "Exam 2 redo (optional)",
+    "text": "Exam 2 redo (optional)\n\nDue: Monday 12/11 at 5 pm\nTake home:\n\nMessage me on Slack to let me know if you want to work on this.\nWork in exam-2-redo.qmd, this is a copy of your exam submission, without any changes I might have implemented to get it to render – do not overwrite exam-2.qmd.\n\nIn class:\n\nWrite/type up corrections + reasoning for corrections (even for questions that didn’t originally ask for reasoning) on a separate piece of paper.\nReturn original exam + redo together at my office (slide under door if I’m not there).\n\nImprove your answers working on your own. The same rules as the exam applies.\nYou will be eligible to receive up to 50% of the points you missed on each portion of the exam."
   },
   {
     "objectID": "lectures/19/19-prp-tell-story-2.html#code-review",
     "href": "lectures/19/19-prp-tell-story-2.html#code-review",
     "title": "Presentation ready plots 2:Telling a story",
     "section": "Code review",
-    "text": "Code review\n\nClone your assigned team’s project and (try to) render it\nFirst, review the organization of the project/repo\nThen, review the code and open issues associated with any lines of code you want to make specific comments about [DEMO]\nFinally, fill out the “Code review” issue\n\n\n\n\n−+\n25:00"
+    "text": "Code review\n\nClone your assigned team’s project and (try to) render it\nFirst, review the organization of the project/repo\nThen, review the code and open issues associated with any lines of code you want to make specific comments about [DEMO]\nFinally, fill out the “Code review” issue\nBe critical, but constructive\n\n\n\n\n−+\n25:00"
   },
   {
     "objectID": "lectures/19/19-prp-tell-story-2.html#setup",
     "href": "lectures/19/19-prp-tell-story-2.html#setup",
     "title": "Presentation ready plots 2:Telling a story",
     "section": "Setup",
-    "text": "Setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(palmerpenguins)\nlibrary(fs)\nlibrary(lubridate)\nlibrary(scales)\nlibrary(openintro)\nlibrary(colorspace)\nlibrary(glue)\n\n# set theme for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 14))"
+    "text": "Setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(palmerpenguins)\nlibrary(fs)\nlibrary(openintro)\nlibrary(glue)\n\n# set theme for ggplot2\nggplot2::theme_set(ggplot2::theme_minimal(base_size = 14))"
+  },
+  {
+    "objectID": "lectures/19/19-prp-tell-story-2.html#philosophy",
+    "href": "lectures/19/19-prp-tell-story-2.html#philosophy",
+    "title": "Presentation ready plots 2:Telling a story",
+    "section": "Philosophy",
+    "text": "Philosophy\n\nThe purpose of interactivity is to display more than can be achieved with persistent plot elements, and to invite the reader to engage with the plot.\nAnimation allows more information to be displayed, but developer keeps control\nBeware that it is easy to forget what was just displayed, so keeping some elements persistent, maybe faint, can be useful for the reader"
+  },
+  {
+    "objectID": "lectures/19/19-prp-tell-story-2.html#gganimate",
+    "href": "lectures/19/19-prp-tell-story-2.html#gganimate",
+    "title": "Presentation ready plots 2:Telling a story",
+    "section": "gganimate",
+    "text": "gganimate\n\ngganimate extends the grammar of graphics as implemented by ggplot2 to include the description of animation\nIt provides a range of new grammar classes that can be added to the plot object in order to customize how it should change with time"
+  },
+  {
+    "objectID": "lectures/19/19-prp-tell-story-2.html#how-does-gganimate-work",
+    "href": "lectures/19/19-prp-tell-story-2.html#how-does-gganimate-work",
+    "title": "Presentation ready plots 2:Telling a story",
+    "section": "How does gganimate work?",
+    "text": "How does gganimate work?\n\nStart with a ggplot2 specification\nAdd layers with graphical primitives (geoms)\nAdd formatting specification\nAdd animation specification"
+  },
+  {
+    "objectID": "lectures/19/19-prp-tell-story-2.html#grammar-of-animation",
+    "href": "lectures/19/19-prp-tell-story-2.html#grammar-of-animation",
+    "title": "Presentation ready plots 2:Telling a story",
+    "section": "Grammar of animation",
+    "text": "Grammar of animation\n\nTransitions: transition_*() defines how the data should be spread out and how it relates to itself across time\nViews: view_*() defines how the positional scales should change along the animation\nShadows: shadow_*() defines how data from other points in time should be presented in the given point in time\nEntrances/Exits: enter_*()/exit_*() defines how new data should appear and how old data should disappear during the course of the animation\nEasing: ease_aes() defines how different aesthetics should be eased during transitions"
+  },
+  {
+    "objectID": "lectures/19/19-prp-tell-story-2.html#learn-more",
+    "href": "lectures/19/19-prp-tell-story-2.html#learn-more",
+    "title": "Presentation ready plots 2:Telling a story",
+    "section": "Learn more",
+    "text": "Learn more\n\nSTA 313 lecture on animation: https://vizdata.org/slides/23/23-animation#/animation\ngganimate vignette: https://gganimate.com/articles/gganimate.html"
   },
   {
     "objectID": "lectures/19/19-prp-tell-story-2.html#complete-themes",
@@ -3777,7 +3819,7 @@
     "href": "lectures/19/19-prp-tell-story-2.html#quarto-tips",
     "title": "Presentation ready plots 2:Telling a story",
     "section": "Quarto tips",
-    "text": "Quarto tips\n\nFigures and tables\nCross references\nBibliography\nSlides\n\n\n\n\n\n🔗 sta113-f23.github.io"
+    "text": "Quarto tips\n\nFigures and tables\nCross references\nBibliography\nSlides\n\n\n\n\n🔗 sta113-f23.github.io"
   },
   {
     "objectID": "lectures/16/16-visual-inference.html#announcements",
