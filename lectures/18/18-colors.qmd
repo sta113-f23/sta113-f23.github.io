@@ -6,6 +6,8 @@ format:
     fig-align: center
     fig-width: 5
     fig-asp: 0.618
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Warm-up
@@ -682,7 +684,7 @@ ggplot(temps_months, aes(x = month, y = location, fill = mean)) +
 ```{r temps-tiles8-out, ref.label = "temps-tiles8", echo = FALSE, fig.width = 7, fig.asp = .3}
 ```
 
-## HCL (Hue-Chroma-Luminance) palettes: Sequential
+## HCL (Hue-Chroma-Luminance) palettes: Sequential {.smaller}
 
 ```{r colorspace-palettes-seq, eval = FALSE}
 colorspace::hcl_palettes(type = "sequential", plot = TRUE)
