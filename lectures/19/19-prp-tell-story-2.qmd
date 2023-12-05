@@ -12,9 +12,23 @@ editor_options:
 
 # Warm-up
 
-## Announcements
+## Announcements {.smaller}
 
--   ...
+-   Project 2 presentations in class on Thursday – food preference?
+
+-   Any questions?
+
+## Exam 2 redo (optional) {.smaller}
+
+-   **Due:** Monday 12/11 at 5 pm
+-   Take home:
+    -   Message me on Slack to let me know if you want to work on this.
+    -   Work in `exam-2-redo.qmd`, this is a copy of your exam submission, without any changes I might have implemented to get it to render -- do not overwrite `exam-2.qmd`.
+-   In class:
+    -   Write/type up corrections + reasoning for corrections (even for questions that didn't originally ask for reasoning) on a separate piece of paper.
+    -   Return original exam + redo together at my office (slide under door if I'm not there).
+-   Improve your answers [**working on your own**]{.underline}. The same rules as the exam applies.
+-   You will be eligible to receive up to 50% of the points you missed on each portion of the exam.
 
 ## Code review
 
@@ -22,6 +36,7 @@ editor_options:
 -   First, review the organization of the project/repo
 -   Then, review the code and open issues associated with any lines of code you want to make specific comments about \[DEMO\]
 -   Finally, fill out the "Code review" issue
+-   Be critical, but constructive
 
 ```{r}
 #| echo: false
@@ -39,15 +54,56 @@ countdown::countdown(minutes = 25)
 library(tidyverse)
 library(palmerpenguins)
 library(fs)
-library(lubridate)
-library(scales)
 library(openintro)
-library(colorspace)
 library(glue)
 
 # set theme for ggplot2
 ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14))
 ```
+
+# Animation (as requested)
+
+## Philosophy
+
+-   The purpose of interactivity is to display more than can be achieved with persistent plot elements, and to invite the reader to engage with the plot.
+
+-   Animation allows more information to be displayed, but developer keeps control
+
+-   Beware that it is easy to forget what was just displayed, so keeping some elements persistent, maybe faint, can be useful for the reader
+
+## **gganimate**
+
+-   **gganimate** extends the grammar of graphics as implemented by ggplot2 to include the description of animation
+
+-   It provides a range of new grammar classes that can be added to the plot object in order to customize how it should change with time
+
+## How does gganimate work?
+
+-   Start with a ggplot2 specification
+
+-   Add layers with graphical primitives (geoms)
+
+-   Add formatting specification
+
+-   Add animation specification
+
+## Grammar of animation
+
+-   Transitions: `transition_*()` defines how the data should be spread out and how it relates to itself across time
+
+-   Views: `view_*()` defines how the positional scales should change along the animation
+
+-   Shadows: `shadow_*()` defines how data from other points in time should be presented in the given point in time
+
+-   Entrances/Exits: `enter_*()`/`exit_*()` defines how new data should appear and how old data should disappear during the course of the animation
+
+-   Easing: `ease_aes()` defines how different aesthetics should be eased during transitions
+
+## Learn more
+
+-   STA 313 lecture on animation: <https://vizdata.org/slides/23/23-animation#/animation>
+
+-   gganimate vignette: <https://gganimate.com/articles/gganimate.html>
 
 # Themes
 
@@ -290,7 +346,7 @@ ggplot(state_stats, aes(x = homeownership, y = pop2010)) +
 
 ## All of the data doesn't tell a story
 
-![](images/recession-1.png){fig-align="center" width="900"}
+![](images/recession-1.png){fig-align="center" width="800"}
 
 ::: aside
 [How the Recession Reshaped the Economy, in 255 Charts](https://www.nytimes.com/interactive/2014/06/05/upshot/how-the-recession-reshaped-the-economy-in-255-charts.html), NY Times (2014)
@@ -409,6 +465,8 @@ ggplot(sf, aes(x = day_of_year, y = aqi_value, group = year)) +
 ## Highlight 2017 {.smaller}
 
 ```{r}
+#| code-line-numbers: "3"
+
 ggplot(sf, aes(x = day_of_year, y = aqi_value, group = year)) +
   geom_line(color = "gray") +
   geom_line(data = sf |> filter(year == 2017), color = "red") +
@@ -422,6 +480,8 @@ ggplot(sf, aes(x = day_of_year, y = aqi_value, group = year)) +
 ## Highlight 2018 {.smaller}
 
 ```{r}
+#| code-line-numbers: "3"
+
 ggplot(sf, aes(x = day_of_year, y = aqi_value, group = year)) +
   geom_line(color = "gray") +
   geom_line(data = sf |> filter(year == 2018), color = "red") +
@@ -460,5 +520,3 @@ ggplot(sf, aes(x = day_of_year, y = aqi_value, group = year)) +
 -   Bibliography
 
 -   Slides
-
--   
